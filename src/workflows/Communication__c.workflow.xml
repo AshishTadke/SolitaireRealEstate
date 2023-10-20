@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Non_Contactable</fullName>
+        <description>Non Contactable</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Preferred_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Client_not_contactable</template>
+    </alerts>
+</Workflow>

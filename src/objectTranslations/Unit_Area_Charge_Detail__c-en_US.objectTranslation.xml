@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Unit Area Charge Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Unit Area Charge Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount Type --></label>
+        <name>Amount_Type__c</name>
+        <picklistValues>
+            <masterLabel>Lumpsum</masterLabel>
+            <translation><!-- Lumpsum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation><!-- Percent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rate</masterLabel>
+            <translation><!-- Rate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Discount --></label>
+        <name>Broker_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Percent --></label>
+        <name>Broker_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Rate --></label>
+        <name>Broker_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check --></label>
+        <name>Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global Charges --></label>
+        <name>Global_Charges__c</name>
+        <relationshipLabel><!-- Unit Area Charge Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Gross Amount --></label>
+        <name>Gross_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gross Rate --></label>
+        <name>Gross_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inaugral Discount --></label>
+        <name>Inaugral_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inaugral Percent --></label>
+        <name>Inaugral_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inaugral Rate --></label>
+        <name>Inaugral_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inserted --></label>
+        <name>Inserted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Load --></label>
+        <name>Load__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Cost --></label>
+        <name>Net_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Rate on Unit --></label>
+        <name>Old_Rate_on_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- Unit Area Charge Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rate --></label>
+        <name>Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rebate Amount --></label>
+        <name>Rebate_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rebate Percent --></label>
+        <name>Rebate_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rebate Rate --></label>
+        <name>Rebate_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Amount --></label>
+        <name>Special_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Percent --></label>
+        <name>Special_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Rate --></label>
+        <name>Special_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Pay Plan Header --></label>
+        <name>Standard_Pay_Plan_Header__c</name>
+        <relationshipLabel><!-- Unit Area Charge Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Total rate --></label>
+        <name>Total_rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- UnitAreaTaxationDetail --></label>
+        <name>Unit_Area_Taxation_Detail__c</name>
+        <relationshipLabel><!-- Unit Area Charge Details --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

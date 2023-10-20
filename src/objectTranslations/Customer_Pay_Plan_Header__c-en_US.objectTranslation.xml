@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Customer Pay Plan Header</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Pay Plan Headers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount Demanded Till Date --></label>
+        <name>Amount_Demanded_Till_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount Recd Till Date --></label>
+        <name>Amount_Recd_Till_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount to be Reduced --></label>
+        <name>Amount_to_be_Reduced__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking --></label>
+        <name>Booking__c</name>
+        <relationshipLabel><!-- Customer Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- Customer Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Effect From Date --></label>
+        <name>Effect_From_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effect To Date --></label>
+        <name>Effect_To_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global Charge Name --></label>
+        <name>Global_Charge_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global Charges --></label>
+        <name>Global_Charges__c</name>
+        <relationshipLabel><!-- Customer Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Int Flatcost (Due) --></label>
+        <name>Int_Flatcost_Due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int Flatcost (Pending) --></label>
+        <name>Int_Flatcost_Pending__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int Servicetax (Due) --></label>
+        <name>Int_Servicetax_Due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int Servicetax (Pending) --></label>
+        <name>Int_Servicetax_Pending__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int Flatcost (Paid) --></label>
+        <name>Int_flatcost_Paid_Till_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int Flatcost (Waived) --></label>
+        <name>Int_flatcost_Waived_Till_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int ServiceTax (Paid) --></label>
+        <name>Int_servicetax_paid_till_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int Servicetax (Waived) --></label>
+        <name>Int_servicetax_waived_till_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding Amount --></label>
+        <name>Outstanding_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding Service --></label>
+        <name>Outstanding_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent Demanded --></label>
+        <name>Percent_Demanded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent Paid --></label>
+        <name>Percent_Paid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Code --></label>
+        <name>PlanCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Date --></label>
+        <name>PlanDt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit Status --></label>
+        <name>Project_Unit_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- Customer Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Customer Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quotation --></label>
+        <name>Quotation__c</name>
+        <relationshipLabel><!-- Customer Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rate --></label>
+        <name>Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration Demand Invoice --></label>
+        <name>Registration_Demand_Invoice__c</name>
+        <relationshipLabel><!-- Customer Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Registration Intimation Sent --></label>
+        <name>Registration_Intimation_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration % Reached --></label>
+        <name>Registration_Reached__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Amount (On Quote) --></label>
+        <name>Service_Tax_Amount_Q__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Demanded Till Date --></label>
+        <name>Service_Tax_Demanded_Till_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Recd Till Date --></label>
+        <name>Service_Tax_Recd_Till_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Pay Plan Header --></label>
+        <name>Standard_Pay_Plan_Header__c</name>
+        <relationshipLabel><!-- Customer Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tax Amount 1 --></label>
+        <name>Tax_Amount_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Amount 2 --></label>
+        <name>Tax_Amount_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Name 1 --></label>
+        <name>Tax_Name_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Name 2 --></label>
+        <name>Tax_Name_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Percentage 1 --></label>
+        <name>Tax_Percentage_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Percentage 2 --></label>
+        <name>Tax_Percentage_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Interest Amount --></label>
+        <name>Total_Interest_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tower --></label>
+        <name>Tower__c</name>
+        <relationshipLabel><!-- Customer Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- gst --></label>
+        <name>gst__c</name>
+    </fields>
+    <fields>
+        <label><!-- show registration demand --></label>
+        <name>show_registration_demand__c</name>
+    </fields>
+    <layouts>
+        <layout>Customer Pay Plan Header Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Milestone Details --></label>
+            <section>Milestone Details</section>
+        </sections>
+        <sections>
+            <label><!-- Registration Related --></label>
+            <section>Registration Related</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Customer_Pay_Plan --></label>
+        <name>Customer_Pay_Plan</name>
+    </webLinks>
+</CustomObjectTranslation>

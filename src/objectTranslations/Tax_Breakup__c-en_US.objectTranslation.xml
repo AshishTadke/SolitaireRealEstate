@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Tax Breakup</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tax Breakup</value>
+    </caseValues>
+    <fields>
+        <label><!-- Effective Till --></label>
+        <name>Effective_Till__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective from --></label>
+        <name>Effective_from__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Code --></label>
+        <name>Tax_Code__c</name>
+        <picklistValues>
+            <masterLabel>CBMKKC</masterLabel>
+            <translation><!-- CBMKKC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CBMSBC</masterLabel>
+            <translation><!-- CBMSBC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CBMST</masterLabel>
+            <translation><!-- CBMST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CGST</masterLabel>
+            <translation><!-- CGST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IGST</masterLabel>
+            <translation><!-- IGST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KKCFB</masterLabel>
+            <translation><!-- KKCFB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S12MP</masterLabel>
+            <translation><!-- S12MP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S37FP</masterLabel>
+            <translation><!-- S37FP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBCI</masterLabel>
+            <translation><!-- SBCI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBCM</masterLabel>
+            <translation><!-- SBCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBCSL</masterLabel>
+            <translation><!-- SBCSL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBFB</masterLabel>
+            <translation><!-- SBFB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBSB</masterLabel>
+            <translation><!-- SBSB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SGST</masterLabel>
+            <translation><!-- SGST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMKKC</masterLabel>
+            <translation><!-- SMKKC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMSBC</masterLabel>
+            <translation><!-- SMSBC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMST</masterLabel>
+            <translation><!-- SMST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPKFA</masterLabel>
+            <translation><!-- SPKFA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPKIN</masterLabel>
+            <translation><!-- SPKIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPKMS</masterLabel>
+            <translation><!-- SPKMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPKSC</masterLabel>
+            <translation><!-- SPKSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPKSL</masterLabel>
+            <translation><!-- SPKSL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPKWC</masterLabel>
+            <translation><!-- SPKWC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSBCW</masterLabel>
+            <translation><!-- SSBCW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSBGC</masterLabel>
+            <translation><!-- SSBGC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ST3FP</masterLabel>
+            <translation><!-- ST3FP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STIWP</masterLabel>
+            <translation><!-- STIWP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STKGC</masterLabel>
+            <translation><!-- STKGC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STLCP</masterLabel>
+            <translation><!-- STLCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STPCM</masterLabel>
+            <translation><!-- STPCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STPGC</masterLabel>
+            <translation><!-- STPGC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STPWC</masterLabel>
+            <translation><!-- STPWC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STSBC</masterLabel>
+            <translation><!-- STSBC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDCBC</masterLabel>
+            <translation><!-- TDCBC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDCBF</masterLabel>
+            <translation><!-- TDCBF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDS</masterLabel>
+            <translation><!-- TDS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VT1FP</masterLabel>
+            <translation><!-- VT1FP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tax Name --></label>
+        <name>Tax_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Percentage --></label>
+        <name>Tax_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Percentage (on 100%) --></label>
+        <name>Tax_Percentage_on_100__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Slab --></label>
+        <name>Tax_Slab__c</name>
+        <relationshipLabel><!-- Tax Breakup --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tax Split Type --></label>
+        <name>Tax_Split_Type__c</name>
+        <picklistValues>
+            <masterLabel>Basic</masterLabel>
+            <translation><!-- Basic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CGST</masterLabel>
+            <translation><!-- CGST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KKC</masterLabel>
+            <translation><!-- KKC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBC</masterLabel>
+            <translation><!-- SBC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SGST</masterLabel>
+            <translation><!-- SGST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDS</masterLabel>
+            <translation><!-- TDS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tax Type --></label>
+        <name>Tax_Type__c</name>
+        <picklistValues>
+            <masterLabel>Income Tax - TDS</masterLabel>
+            <translation><!-- Income Tax - TDS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Tax</masterLabel>
+            <translation><!-- Service Tax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VAT</masterLabel>
+            <translation><!-- VAT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Taxable Percentage --></label>
+        <name>Taxable_Percentage__c</name>
+    </fields>
+    <layouts>
+        <layout>Tax Breakup Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

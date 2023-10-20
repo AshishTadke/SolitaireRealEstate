@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Receipt Details</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Receipt Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance Amount in(Rs) --></label>
+        <name>Balance_Amount_in_Rs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charges --></label>
+        <name>Charges__c</name>
+        <relationshipLabel><!-- Receipt Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cheque Date for Integration --></label>
+        <name>Cheque_Date_for_Integration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cheque number for integration --></label>
+        <name>Cheque_number_for_integration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demand Invoice --></label>
+        <name>Demand_Invoice__c</name>
+        <relationshipLabel><!-- Receipt Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- For Service Tax --></label>
+        <name>For_Service_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest flatcost waived --></label>
+        <name>Interest_flatcost_waived__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest servicetax waived --></label>
+        <name>Interest_servicetax_waived__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Advanced Demand --></label>
+        <name>Is_Advanced_Demand__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Cheque Dishonour --></label>
+        <name>Is_Cheque_Dishonour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Interest Settlement ST --></label>
+        <name>Is_Interest_Settlement_ST__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Interest Settlement --></label>
+        <name>Is_Interest_Settlement__c</name>
+    </fields>
+    <fields>
+        <label><!-- On Account Money --></label>
+        <name>On_Account_Money__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Receipt Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Receipts --></label>
+        <name>Receipts__c</name>
+        <relationshipLabel><!-- Receipt Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Standard Customer Pay Plan Detail --></label>
+        <name>Standard_Customer_Pay_Plan_Detail__c</name>
+        <relationshipLabel><!-- Receipt Details --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Receipt Details Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

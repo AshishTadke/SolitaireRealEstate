@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Gallery</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Gallaries</value>
+    </caseValues>
+    <fields>
+        <label><!-- Configuration --></label>
+        <name>Configuration__c</name>
+        <relationshipLabel><!-- Gallaries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Image --></label>
+        <name>Image__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- Gallaries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Gallaries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sequence --></label>
+        <name>Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Elevations</masterLabel>
+            <translation><!-- Elevations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Floor Plan</masterLabel>
+            <translation><!-- Floor Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gallery</masterLabel>
+            <translation><!-- Gallery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Pictures</masterLabel>
+            <translation><!-- Site Pictures --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

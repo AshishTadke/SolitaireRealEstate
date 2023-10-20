@@ -1,0 +1,16 @@
+Dear {!Opportunity.Account},</br></br>
+
+Thank you for visiting our {!Opportunity.Project__c} on {!Site_Visit__c.CreatedDate}. It was a pleasure having you over.</br></br>
+
+You were attended to by <Sales Manager name>. Hope we were able to provide you with all the details and clarify all your doubts. We would love to have feedback on your experience at our site. Do feel free to raise any flags, as we are always looking for better ways to serve you. You can mail in your feedback at <escalations email add>. </br>
+
+If you were happy with the meeting, and have any specific appreciation for your Sales Agent, do let us know and we will pass on the message. </br>
+
+You can also feel free to share your feedback, if any, on the project. Although we do hope that you were satisfied and are looking to finalize your booking. Do contact <sales manager name > at <phone number> to confirm the same. </br>
+
+If not, kindly specify a convenient date and time for you, so that we can speak to you and understand your needs better.</br></br>
+
+Thank you,</br></br>
+
+Warm regards,</br>
+Team SOLITAIRE.</br>

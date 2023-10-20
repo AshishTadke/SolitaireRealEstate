@@ -1,0 +1,1363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Booking</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Booking</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Name (GST) --></label>
+        <name>Account_Name_Service_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Number 1 --></label>
+        <name>Account_Number_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Number 2 --></label>
+        <name>Account_Number_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Number(GST) --></label>
+        <name>Account_Number_Service_tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Number(Unit Cost) --></label>
+        <name>Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Area --></label>
+        <name>Actual_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Advance Registration Reference No. --></label>
+        <name>Advance_Registration_Reference_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Advance registration --></label>
+        <name>Advance_registration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allotment Premium --></label>
+        <name>Allotment_Premium__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application No --></label>
+        <name>Application_Form_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application No. --></label>
+        <name>Application_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved from account team --></label>
+        <name>Approved_from_account_team__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved from tech team --></label>
+        <name>Approved_from_tech_team__c</name>
+    </fields>
+    <fields>
+        <label><!-- Area --></label>
+        <name>Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Loan Status --></label>
+        <name>Bank_Loan_Status__c</name>
+        <picklistValues>
+            <masterLabel>Need help to apply</masterLabel>
+            <translation><!-- Need help to apply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sanctioned</masterLabel>
+            <translation><!-- Sanctioned --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Bank Name 1 --></label>
+        <name>Bank_Name_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Name 2 --></label>
+        <name>Bank_Name_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Name(GST) --></label>
+        <name>Bank_Name_Service_tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Name(Unit Cost) --></label>
+        <name>Bank__c</name>
+    </fields>
+    <fields>
+        <label><!-- Basic Booking Amount --></label>
+        <name>Basic_Booking_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- BookingIId --></label>
+        <name>BookingIId__c</name>
+    </fields>
+    <fields>
+        <label><!-- BookingNo --></label>
+        <name>BookingNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Date --></label>
+        <name>Booking_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Source (CP New) --></label>
+        <name>Booking_Source_CP_New__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Source (CP Registered) --></label>
+        <name>Booking_Source_CP_Registered__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Source Details --></label>
+        <name>Booking_Source_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Source (Reference By Employee) --></label>
+        <name>Booking_Source_Reference_By_Employee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Source (Reference By Others) --></label>
+        <name>Booking_Source_Reference_By_Others__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Source (Reference by Customer) --></label>
+        <name>Booking_Source_Reference_by_Customer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Branch 1 --></label>
+        <name>Branch_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Branch 2 --></label>
+        <name>Branch_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Id --></label>
+        <name>BrokerIId__c</name>
+        <relationshipLabel><!-- Booking20 --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Code --></label>
+        <name>Broker_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Name --></label>
+        <name>Broker_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brokerage Amount --></label>
+        <name>Brokerage_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brokerage % --></label>
+        <name>Brokerage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Back Date --></label>
+        <name>Call_Back_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Centre Rep --></label>
+        <name>Call_Centre_Rep__c</name>
+        <relationshipLabel><!-- Booking (Call Centre Rep) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Call Disposition L2 --></label>
+        <name>Call_Disposition_L2__c</name>
+        <picklistValues>
+            <masterLabel>Change of Mind</masterLabel>
+            <translation><!-- Change of Mind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dependency on CC</masterLabel>
+            <translation><!-- Dependency on CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dependency on Customer</masterLabel>
+            <translation><!-- Dependency on Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dependency on Sales</masterLabel>
+            <translation><!-- Dependency on Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Constraints</masterLabel>
+            <translation><!-- Financial Constraints --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greetings</masterLabel>
+            <translation><!-- Greetings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Misselling</masterLabel>
+            <translation><!-- Misselling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment schedule</masterLabel>
+            <translation><!-- Payment schedule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-allocation not done</masterLabel>
+            <translation><!-- Re-allocation not done --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third-party</masterLabel>
+            <translation><!-- Third-party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong number</masterLabel>
+            <translation><!-- Wrong number --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Disposition --></label>
+        <name>Call_Disposition__c</name>
+        <picklistValues>
+            <masterLabel>Call back request</masterLabel>
+            <translation><!-- Call back request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ringing/Switched Off/Not reachable</masterLabel>
+            <translation><!-- Ringing/Switched Off/Not reachable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome call accepted</masterLabel>
+            <translation><!-- Welcome call accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome call rejected</masterLabel>
+            <translation><!-- Welcome call rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong number/No Number</masterLabel>
+            <translation><!-- Wrong number/No Number --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Carpet Area --></label>
+        <name>Carpet_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+        <picklistValues>
+            <masterLabel>Nagpur</masterLabel>
+            <translation><!-- Nagpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pune</masterLabel>
+            <translation><!-- Pune --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Code --></label>
+        <name>Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commission Calculated --></label>
+        <name>Commission_Calculated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Entity --></label>
+        <name>Company__c</name>
+        <relationshipLabel><!-- Booking --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Consideration Value --></label>
+        <name>Consideration_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact No. of Referer Customer (Custome --></label>
+        <name>Contact_No_of_Referer_Customer_Custome__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Booking --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Credited Amount --></label>
+        <name>Credited_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created On --></label>
+        <name>Cretaed_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Name --></label>
+        <name>Customer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- Booking --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date for offer of Possession --></label>
+        <name>Date_for_offer_of_Possession__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Cancellation --></label>
+        <name>Date_of_Cancellation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dependent --></label>
+        <name>Dependent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct --></label>
+        <name>Direct__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dispatch Mode --></label>
+        <name>Dispatch_Mode__c</name>
+        <picklistValues>
+            <masterLabel>Soft Copy via Email</masterLabel>
+            <translation><!-- Soft Copy via Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soft copy via email and hardcopy</masterLabel>
+            <translation><!-- Soft copy via email and hardcopy --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Document Checklist Header --></label>
+        <name>Document_Checklist_Header__c</name>
+        <relationshipLabel><!-- Booking --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Document Checklist Link --></label>
+        <name>Document_Checklist_Link_del__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective From --></label>
+        <name>Effective_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exclusive Area --></label>
+        <name>Exclusive_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Registration Date --></label>
+        <name>Expected_Registration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Applicants --></label>
+        <name>Flat_Applicants__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit No --></label>
+        <name>Flat_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Typology --></label>
+        <name>Flat_Typology__c</name>
+    </fields>
+    <fields>
+        <label><!-- Floor1 --></label>
+        <name>Floor1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Floor --></label>
+        <name>Floor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Funding Status --></label>
+        <name>Funding_Status__c</name>
+        <picklistValues>
+            <masterLabel>Loan Bank</masterLabel>
+            <translation><!-- Loan Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Funded</masterLabel>
+            <translation><!-- Self Funded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subvention</masterLabel>
+            <translation><!-- Subvention --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Future Correspondence Email --></label>
+        <name>Future_Correspondence_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Future Correspondence Name --></label>
+        <name>Future_Correspondence_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Future Correspondence Phone --></label>
+        <name>Future_Correspondence_Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Future Correspondence Contact Relation --></label>
+        <name>Future_Correspondence_Contact_Relation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Future Correspondence Contact --></label>
+        <name>Future_Correspondence_Contact__c</name>
+        <picklistValues>
+            <masterLabel>1st Applicant</masterLabel>
+            <translation><!-- 1st Applicant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Applicant</masterLabel>
+            <translation><!-- 2nd Applicant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3rd Applicant</masterLabel>
+            <translation><!-- 3rd Applicant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4th Applicant</masterLabel>
+            <translation><!-- 4th Applicant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5th Applicant</masterLabel>
+            <translation><!-- 5th Applicant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channel Partner</masterLabel>
+            <translation><!-- Channel Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- IFSC Code 1 --></label>
+        <name>IFSC_Code_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- IFSC Code 2 --></label>
+        <name>IFSC_Code_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- IFSC Code(Unit Cost) --></label>
+        <name>IFSC_Code_Flat_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- IFSC Code(GST) --></label>
+        <name>IFSC_Code_Service_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Independent --></label>
+        <name>Independent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Call Date --></label>
+        <name>Last_Call_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Booking --></label>
+        <name>Legacy_Booking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level One Approver --></label>
+        <name>Level_One_Approver__c</name>
+        <relationshipLabel><!-- Booking (Level One Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Level Three Approver --></label>
+        <name>Level_Three_Approver__c</name>
+        <relationshipLabel><!-- Booking (Level Three Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Level Two Approver --></label>
+        <name>Level_Two_Approver__c</name>
+        <relationshipLabel><!-- Booking (Level Two Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- MG Effect Date --></label>
+        <name>MG_Effect_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- MG Mon./Year Val. --></label>
+        <name>MG_Mon_Year_Val__c</name>
+    </fields>
+    <fields>
+        <label><!-- MG Months/Year --></label>
+        <name>MG_Months_Year__c</name>
+        <picklistValues>
+            <masterLabel>Month(s)</masterLabel>
+            <translation><!-- Month(s) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Years(s)</masterLabel>
+            <translation><!-- Years(s) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MG Per./Amt. Val. --></label>
+        <name>MG_Per_Amt_Val__c</name>
+    </fields>
+    <fields>
+        <label><!-- MG Per./Amt. --></label>
+        <name>MG_Per_Amt__c</name>
+        <picklistValues>
+            <masterLabel>Amount</masterLabel>
+            <translation><!-- Amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- NAme1 --></label>
+        <name>NAme1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name of Referer Customer (Customer Refer --></label>
+        <name>Name_of_Referer_Customer_Customer_Refer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name of Referer --></label>
+        <name>Name_of_Referer_Direct_Corporate_Book__c</name>
+    </fields>
+    <fields>
+        <label><!-- No. of Parking --></label>
+        <name>No_of_Parking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of parking --></label>
+        <name>Number_of_parking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Booking (Opportunity) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parking Type --></label>
+        <name>Parking_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Plan --></label>
+        <name>Payment_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Applicant Email --></label>
+        <name>Primary_Applicant_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Name --></label>
+        <name>Project_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Booking --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project of Referer Customer (Customer Re --></label>
+        <name>Project_of_Referer_Customer_Customer_Re__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purpose of Purchase --></label>
+        <name>Purpose_of_Purchase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Puzzle --></label>
+        <name>Puzzle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quotation --></label>
+        <name>Quotation__c</name>
+        <relationshipLabel><!-- Booking --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reason For CRM returns to sales --></label>
+        <name>Reason_For_CRM_returns_to_sales__c</name>
+        <picklistValues>
+            <masterLabel>Physical Document Rejected</masterLabel>
+            <translation><!-- Physical Document Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome Call Rejected</masterLabel>
+            <translation><!-- Welcome Call Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason For Cancellation --></label>
+        <name>Reason_For_Cancellation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Receipt --></label>
+        <name>Receipts__c</name>
+        <relationshipLabel><!-- Booking --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Referred By --></label>
+        <name>Referred_By__c</name>
+        <picklistValues>
+            <masterLabel>Employee</masterLabel>
+            <translation><!-- Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management</masterLabel>
+            <translation><!-- Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Manager</masterLabel>
+            <translation><!-- Sales Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reg.No --></label>
+        <name>Reg_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration --></label>
+        <name>Registration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax on Token Amount --></label>
+        <name>ST_Token_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager Approver --></label>
+        <name>Sales_Manager_Approver__c</name>
+        <relationshipLabel><!-- Booking (Sales Manager Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager --></label>
+        <name>Sales_Manager__c</name>
+        <relationshipLabel><!-- Booking (Sales Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Managers --></label>
+        <name>Sales_Managers__c</name>
+        <picklistValues>
+            <masterLabel>Akhil Chaturvedi</masterLabel>
+            <translation><!-- Akhil Chaturvedi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Atul Chordia </masterLabel>
+            <translation><!-- Atul Chordia  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eram Kittur</masterLabel>
+            <translation><!-- Eram Kittur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gaurav Baranwal</masterLabel>
+            <translation><!-- Gaurav Baranwal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gaurav Herwade</masterLabel>
+            <translation><!-- Gaurav Herwade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kiran Shinde</masterLabel>
+            <translation><!-- Kiran Shinde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kunal Takle</masterLabel>
+            <translation><!-- Kunal Takle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lakshadip Thakur</masterLabel>
+            <translation><!-- Lakshadip Thakur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mayank Yadav</masterLabel>
+            <translation><!-- Mayank Yadav --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Namonarayan Shirothiya</masterLabel>
+            <translation><!-- Namonarayan Shirothiya --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nitin Deshpande</masterLabel>
+            <translation><!-- Nitin Deshpande --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parkeen Shah</masterLabel>
+            <translation><!-- Parkeen Shah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parkin Shah</masterLabel>
+            <translation><!-- Parkin Shah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pavan Shinde</masterLabel>
+            <translation><!-- Pavan Shinde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pooja Jadhav</masterLabel>
+            <translation><!-- Pooja Jadhav --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prashant Kalal</masterLabel>
+            <translation><!-- Prashant Kalal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pratik Paleja</masterLabel>
+            <translation><!-- Pratik Paleja --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pratima Soni</masterLabel>
+            <translation><!-- Pratima Soni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ravi Harale</masterLabel>
+            <translation><!-- Ravi Harale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ravi Tripathi</masterLabel>
+            <translation><!-- Ravi Tripathi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sajesh Pattanaik</masterLabel>
+            <translation><!-- Sajesh Pattanaik --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sarfraz Syed</masterLabel>
+            <translation><!-- Sarfraz Syed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaibhav Andhare</masterLabel>
+            <translation><!-- Vaibhav Andhare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaseem Patel</masterLabel>
+            <translation><!-- Vaseem Patel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vishal Bafna </masterLabel>
+            <translation><!-- Vishal Bafna  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vivek Gupta</masterLabel>
+            <translation><!-- Vivek Gupta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yash Kothari</masterLabel>
+            <translation><!-- Yash Kothari --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Send Welcome Email And SMS --></label>
+        <name>Send_Welcome_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service  Receipt --></label>
+        <name>ServiceReceipt__c</name>
+        <relationshipLabel><!-- Booking (Service  Receipt) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sharing Per./Amt. Val. --></label>
+        <name>Sharing_Per_Amt_Val__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sharing Per./Amt. --></label>
+        <name>Sharing_Per_Amt__c</name>
+        <picklistValues>
+            <masterLabel>Amount</masterLabel>
+            <translation><!-- Amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sharing Per./Amt.</masterLabel>
+            <translation><!-- Sharing Per./Amt. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Source Details --></label>
+        <name>Source_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source of Booking --></label>
+        <name>Source_of_Booking__c</name>
+        <picklistValues>
+            <masterLabel>Channel Partner</masterLabel>
+            <translation><!-- Channel Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sourcing Mananger --></label>
+        <name>Sourcing_Mananger__c</name>
+        <picklistValues>
+            <masterLabel>Akhil Chaturvedi</masterLabel>
+            <translation><!-- Akhil Chaturvedi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Atul Chordia</masterLabel>
+            <translation><!-- Atul Chordia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gaurav Baranwal</masterLabel>
+            <translation><!-- Gaurav Baranwal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gaurav Herwade</masterLabel>
+            <translation><!-- Gaurav Herwade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jagrat Ranka</masterLabel>
+            <translation><!-- Jagrat Ranka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kunal Takle</masterLabel>
+            <translation><!-- Kunal Takle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lakshadip Thakur</masterLabel>
+            <translation><!-- Lakshadip Thakur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mayank Yadav</masterLabel>
+            <translation><!-- Mayank Yadav --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Namonarayan Shirothiya</masterLabel>
+            <translation><!-- Namonarayan Shirothiya --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nitin Deshpande</masterLabel>
+            <translation><!-- Nitin Deshpande --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Omkar Patil</masterLabel>
+            <translation><!-- Omkar Patil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parkeen Shah</masterLabel>
+            <translation><!-- Parkeen Shah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pavan Shinde</masterLabel>
+            <translation><!-- Pavan Shinde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pooja Jadhav</masterLabel>
+            <translation><!-- Pooja Jadhav --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prashant Kalal</masterLabel>
+            <translation><!-- Prashant Kalal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pratik Paleja</masterLabel>
+            <translation><!-- Pratik Paleja --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pratima Soni</masterLabel>
+            <translation><!-- Pratima Soni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ravi Tripathi</masterLabel>
+            <translation><!-- Ravi Tripathi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rudresh Bhise</masterLabel>
+            <translation><!-- Rudresh Bhise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sajesh Pattanaik</masterLabel>
+            <translation><!-- Sajesh Pattanaik --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sarfraz Syed</masterLabel>
+            <translation><!-- Sarfraz Syed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tanmay Gore</masterLabel>
+            <translation><!-- Tanmay Gore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaibhav Andhare</masterLabel>
+            <translation><!-- Vaibhav Andhare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaseem Patel</masterLabel>
+            <translation><!-- Vaseem Patel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vishal Bafna</masterLabel>
+            <translation><!-- Vishal Bafna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vishal Mantri</masterLabel>
+            <translation><!-- Vishal Mantri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vivek Gupta</masterLabel>
+            <translation><!-- Vivek Gupta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yash Kothari</masterLabel>
+            <translation><!-- Yash Kothari --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>Andaman &amp; Nicobar</masterLabel>
+            <translation><!-- Andaman &amp; Nicobar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andhra Pradesh</masterLabel>
+            <translation><!-- Andhra Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arunachal Pradesh</masterLabel>
+            <translation><!-- Arunachal Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assam</masterLabel>
+            <translation><!-- Assam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bihar</masterLabel>
+            <translation><!-- Bihar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chandigarh</masterLabel>
+            <translation><!-- Chandigarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chhattisgarh</masterLabel>
+            <translation><!-- Chhattisgarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dadar &amp; Nagar Haveli</masterLabel>
+            <translation><!-- Dadar &amp; Nagar Haveli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daman &amp; Diu</masterLabel>
+            <translation><!-- Daman &amp; Diu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delhi</masterLabel>
+            <translation><!-- Delhi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goa</masterLabel>
+            <translation><!-- Goa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gujarat</masterLabel>
+            <translation><!-- Gujarat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haryana</masterLabel>
+            <translation><!-- Haryana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Himachal Pradesh</masterLabel>
+            <translation><!-- Himachal Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jammu and Kashmir</masterLabel>
+            <translation><!-- Jammu and Kashmir --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jharkhand</masterLabel>
+            <translation><!-- Jharkhand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karnataka</masterLabel>
+            <translation><!-- Karnataka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kerala</masterLabel>
+            <translation><!-- Kerala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lakshadweep</masterLabel>
+            <translation><!-- Lakshadweep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Madhya Pradesh</masterLabel>
+            <translation><!-- Madhya Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maharashtra</masterLabel>
+            <translation><!-- Maharashtra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manipur</masterLabel>
+            <translation><!-- Manipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meghalaya</masterLabel>
+            <translation><!-- Meghalaya --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mizoram</masterLabel>
+            <translation><!-- Mizoram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nagaland</masterLabel>
+            <translation><!-- Nagaland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orissa</masterLabel>
+            <translation><!-- Orissa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pondichery</masterLabel>
+            <translation><!-- Pondichery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punjab</masterLabel>
+            <translation><!-- Punjab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajasthan</masterLabel>
+            <translation><!-- Rajasthan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sikkim</masterLabel>
+            <translation><!-- Sikkim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tamil Nadu</masterLabel>
+            <translation><!-- Tamil Nadu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tripura</masterLabel>
+            <translation><!-- Tripura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uttar Pradesh</masterLabel>
+            <translation><!-- Uttar Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uttaranchal</masterLabel>
+            <translation><!-- Uttaranchal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Bengal</masterLabel>
+            <translation><!-- West Bengal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Booking In Process</masterLabel>
+            <translation><!-- Booking In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UnProcessed</masterLabel>
+            <translation><!-- UnProcessed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account Name (Unit Cost) --></label>
+        <name>Stock__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub-Source Of Booking --></label>
+        <name>Sub_Source__c</name>
+        <picklistValues>
+            <masterLabel>Corporate Tie Ups</masterLabel>
+            <translation><!-- Corporate Tie Ups --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exhibitions</masterLabel>
+            <translation><!-- Exhibitions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Existing</masterLabel>
+            <translation><!-- Existing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Existing Client</masterLabel>
+            <translation><!-- Existing Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hoardings</masterLabel>
+            <translation><!-- Hoardings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inserts</masterLabel>
+            <translation><!-- Inserts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loyalty Programme</masterLabel>
+            <translation><!-- Loyalty Programme --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media Campaigns</masterLabel>
+            <translation><!-- Media Campaigns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newspaper</masterLabel>
+            <translation><!-- Newspaper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reference</masterLabel>
+            <translation><!-- Reference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMS</masterLabel>
+            <translation><!-- SMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Media</masterLabel>
+            <translation><!-- Social Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Websites</masterLabel>
+            <translation><!-- Websites --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Token Amount --></label>
+        <name>Token_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total TDS Amount Paid (In Rs.) --></label>
+        <name>Total_TDS_Amount_Paid_In_Rs__c</name>
+    </fields>
+    <fields>
+        <label><!-- UnitChange --></label>
+        <name>UnitChange__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Carpet Area --></label>
+        <name>Unit_Carpet_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Unit_No__c</name>
+        <relationshipLabel><!-- Booking --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Unit Terrace Area --></label>
+        <name>Unit_Terrace_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Person --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Booking (Sales Person) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Document Verification Status --></label>
+        <name>Verification_status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not started</masterLabel>
+            <translation><!-- Not started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- View Rejected Documents --></label>
+        <name>View_Rejected_Documents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Walk-in Source (Reference By Others) --></label>
+        <name>Walk_in_Source_Reference_By_Others__c</name>
+    </fields>
+    <fields>
+        <label><!-- Welcome Call Done By --></label>
+        <name>Welcome_Call_Done_By__c</name>
+        <relationshipLabel><!-- Booking (Welcome Call Done By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Wing --></label>
+        <name>Wing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone --></label>
+        <name>Zone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Change --></label>
+        <name>isSave__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack --></label>
+        <name>stack__c</name>
+    </fields>
+    <layouts>
+        <layout>Booking Layout</layout>
+        <sections>
+            <label><!-- Bank Details --></label>
+            <section>Bank Details</section>
+        </sections>
+        <sections>
+            <label><!-- Cancellation Details --></label>
+            <section>Cancellation Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Document Verification and Welcome Call Status --></label>
+            <section>Document Verification and Welcome Call Status</section>
+        </sections>
+        <sections>
+            <label><!-- Future Correspondence Details --></label>
+            <section>Future Correspondence Details</section>
+        </sections>
+        <sections>
+            <label><!-- Other Details --></label>
+            <section>Other Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Booking Layout CRM Head</layout>
+        <sections>
+            <label><!-- Bank Details --></label>
+            <section>Bank Details</section>
+        </sections>
+        <sections>
+            <label><!-- Cancellation Details --></label>
+            <section>Cancellation Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Document Verification and Welcome Call Status --></label>
+            <section>Document Verification and Welcome Call Status</section>
+        </sections>
+        <sections>
+            <label><!-- Future Correspondence Details --></label>
+            <section>Future Correspondence Details</section>
+        </sections>
+        <sections>
+            <label><!-- Other Details --></label>
+            <section>Other Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Booking for All</layout>
+        <sections>
+            <label><!-- Bank Details --></label>
+            <section>Bank Details</section>
+        </sections>
+        <sections>
+            <label><!-- Cancellation Details --></label>
+            <section>Cancellation Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Document Verification and Welcome Call Status --></label>
+            <section>Document Verification and Welcome Call Status</section>
+        </sections>
+        <sections>
+            <label><!-- Future Correspondence Details --></label>
+            <section>Future Correspondence Details</section>
+        </sections>
+        <sections>
+            <label><!-- Other Details --></label>
+            <section>Other Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Booking for Site Head</layout>
+        <sections>
+            <label><!-- Bank Details --></label>
+            <section>Bank Details</section>
+        </sections>
+        <sections>
+            <label><!-- Cancellation Details --></label>
+            <section>Cancellation Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Document Verification and Welcome Call Status --></label>
+            <section>Document Verification and Welcome Call Status</section>
+        </sections>
+        <sections>
+            <label><!-- Future Correspondence Details --></label>
+            <section>Future Correspondence Details</section>
+        </sections>
+        <sections>
+            <label><!-- Other Details --></label>
+            <section>Other Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Project must be same. --></errorMessage>
+        <name>SameProjectName</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Cancel_Booking --></label>
+        <name>Cancel_Booking</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Booking --></label>
+        <name>New_Booking</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Process --></label>
+        <name>Process</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Unit_Change --></label>
+        <name>Unit_Change</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewBooking --></label>
+        <name>ViewBooking</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- View_CustomerTakeaway2 --></label>
+        <name>View_CustomerTakeaway2</name>
+    </webLinks>
+</CustomObjectTranslation>

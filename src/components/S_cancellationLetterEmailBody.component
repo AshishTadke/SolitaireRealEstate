@@ -1,0 +1,138 @@
+<apex:component controller="S_CancellationLetter" access="global">
+    <apex:attribute name="cancelId" type="String" description="Attribute on the component." assignTo="{!strcancelId}"/>
+    <head>
+    <style>
+           @page {
+                size: A4;
+                margin: 10mm;
+                @bottom-center {
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            .page-break {
+                display:block;
+                page-break-after:always;
+            }
+           body {
+                font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; 
+                font-weight:normal; 
+                font-size:10.5px; 
+                mso-line-height-rule: exactly;
+            }
+            .infobox {
+                  font-size: 100%;
+            }
+            .sfdc_richtext img {
+              border: 0;
+              width: 100px;
+              height:90px;
+            }
+            .RMStyle {
+                border-collapse: collapse;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #104E8B;
+            }
+            .RMStyle th {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #104E8B;
+                background-color:#E2DDD9;
+            }
+            /* Padding and font style */
+            .RMStyle td {
+                border-style: solid;
+                border-width: .5px;
+                border-color: #CAD1C3;
+            }
+            .paymenttoStyle th {
+                border-style: solid;
+                border-color: #CAD1C3;
+                background-color:#FFD8D8;
+            }
+            .paymenttoStyle {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #CAD1C3B;
+            }
+            .demandStyle th {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #CAD1C3;
+                background-color:#B9D7D9;
+                padding: 3px;
+            }
+            /* Padding and font style */
+            .demandStyle td {
+                border-style: solid;
+                border-width: .5px;
+                border-color: #CAD1C3;
+                padding: 2px;
+            }
+            .demandStyle {
+                border-collapse: collapse;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #CAD1C3;
+            }
+            ul.a {
+    			list-style-type: decimal;
+			}
+			li { 
+			    padding-left: 1em; 
+			    padding-top: 1em;
+			    text-indent: -.7em;
+			}
+
+        </style>
+    </head>
+    {!CancellationLetter}
+    <body >
+    <table id="main" border="0" cellspacing="0" cellpadding="0" align="center">
+    	<tr>
+    		<td>
+    		Dear {!CustomerPrimaryName}
+    		<br/><br/>
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>
+		    	<apex:outputPanel id="format1" rendered="{!format1}">
+		    		This is an important information regarding your {!UnitName} at {!projectName}.
+					We wish to remind you that there is an  outstanding payment against your unit whihc is beyond the due date.
+					Please find attached the reminder notice in this regard.
+					Reqeust you to pay the outstanding amount as mentioned in the attached notice urgently to avoid further penalty / action.
+					For any further information please get in touch with your RM.
+		    	</apex:outputPanel>
+		    	<apex:outputPanel id="format2" rendered="{!format2}">
+		    		This is an important information regarding your {!unitName} at {!projectName}.
+					We regret to inform you that since you have neglected to honor the outstanding payment of {!finalReminderAmount} along with penalties before 
+					<apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!finalReminderDueDate}"/></apex:outputtext> due date we have terminated the said booking with immediate effect.
+					Please find attached the termination notice which has also been sent via registered post to your registered address with us.
+					For any further information please get in touch with your RM.
+		    	</apex:outputPanel>
+		    	<br/><br/>
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>
+    			 Relationship Manager: {!crmName}
+     			<br/>
+   				 Mobile Number: {!crmMobile}
+    			<br/>
+    			Email: {!crmEmail}
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>
+    			<br/>
+    			<br/>
+    			 Regards
+     			<br/>
+   				 <b><apex:outputText style="font-size:12px" value="{!le.Name}"  /></b>
+    		</td>
+    	</tr>
+    </table>
+    </body>
+</apex:component>

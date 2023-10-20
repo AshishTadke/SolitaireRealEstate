@@ -1,0 +1,8 @@
+<messaging:emailTemplate subject="PAYMENT REMINDER" relatedToType="Demand_Invoice__c">
+<messaging:HtmlEmailBody >
+       <table width="100%" border="0" cellspacing="2" cellpadding="0">
+          <tr><td><c:S_DemandLetterReminderC DemandInvId="{!relatedTo.Id}" /></td></tr>
+       </table>
+</messaging:HtmlEmailBody>
+
+</messaging:emailTemplate>

@@ -1,0 +1,183 @@
+<apex:page standardController="Task" extensions="CustomTaskControllerClass" showHeader="false" standardStylesheets="true" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    <html
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <title> View Task </title>
+            <apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+            <script src="/soap/ajax/9.0/connection.js"></script>
+        </head>
+        <body>
+            <!-- REQUIRED SLDS WRAPPER -->
+            <div class="slds">
+                <!-- PRIMARY CONTENT WRAPPER -->
+                <div class="myapp">
+                    <!-- CREATE/EDIT TASK -->
+                    <div aria-labelledby="newtaskform">
+                        <!-- BOXED AREA -->
+                        <fieldset class="slds-box slds-theme--shade slds-container--large slds-container--center slds-grid--align-spread">
+                            <legend id="newtaskform" class="slds-text-heading--medium slds-p-vertical--medium">Visit Form</legend>
+                            <!-- CREATE NEW TASK FORM -->
+                            <apex:form id="newtaskform" styleClass="slds-form--inline">
+                                <div class="slds-notify slds-notify--alert slds-theme--inverse-text slds-theme--alert-texture">
+                                    <apex:pageMessages id="error"/>
+                                </div>
+                                <apex:pageBlock id="pgBlock" mode="edit">
+                                    <apex:pageBlockButtons location="both" styleClass="slds-button-group">
+                                        <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Cancel" action="{!cancel}" immediate="true"  html-formnovalidate="formnovalidate"/>
+                                    </apex:pageBlockButtons>
+                                    <apex:pageBlockSection id="pgBlockSectionCallInfo" title="System Details" collapsible="false" columns="2">
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Customer Name</apex:outputLabel>
+                                            <apex:outputField id="Opportunity" value="{!Task.whoId}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Opportunity Name</apex:outputLabel>
+                                            <apex:outputField id="Opportunity" value="{!Task.whatId}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:outputField id="Subject" value="{!Task.Subject}" />
+                                        <apex:outputField id="Opportunity" value="{!Task.Task_Type__c}" />
+                                    </apex:pageBlockSection>
+                                    <apex:pageBlockSection id="pgBlockSectionVisitDetails" title="Visit Details" collapsible="false" columns="2" rendered="{!NOT(task.Revisit__c)}">
+                                        <apex:pageBlockSectionItem rendered="{!NOT(task.Revisit__c)}">
+                                            <apex:outputLabel >Visit Date</apex:outputLabel>
+                                            <apex:outputField id="DueDate" value="{!Task.ActivityDate}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem rendered="{!NOT(task.Revisit__c)}">
+                                            <apex:outputLabel >Visit Time</apex:outputLabel>
+                                            <apex:outputField id="CallTime" value="{!Task.Call_Time__c}" />
+                                        </apex:pageBlockSectionItem>
+                                        <!-- New Fields added in Task - Netra -->
+                                        <apex:pageBlockSectionItem rendered="{!NOT(task.Revisit__c)}">
+                                            <apex:outputLabel >Visitor Name</apex:outputLabel>
+                                            <apex:outputField id="VisitorName" value="{!Task.Visitor_Name__c}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:outputField id="formNo" value="{!Task.Visit_Form_No__c}" />
+                                        <apex:outputField id="scallrating" value="{!Task.Call_Rating__c}" />
+                                        <apex:outputField id="visittype" value="{!Task.Name_Of_Banks__c}"/>
+                                        <apex:pageBlockSectionItem rendered="{!NOT(task.Revisit__c)}">
+                                            <apex:outputLabel >Sourcing Manager</apex:outputLabel>
+                                            <apex:outputField id="SourcingManager" value="{!Task.Sourcing_Manager__c}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:outputField id="scallAttemptedBy" value="{!Task.Call_Attempted_By_Name__c}" />
+                                        <apex:pageBlockSectionItem rendered="{!NOT(task.Revisit__c)}">
+                                            <apex:outputLabel >Name of Sourcing TL</apex:outputLabel>
+                                            <apex:outputField id="sourcingTL" value="{!Task.Sourcing_TL__c}"/>
+                                        </apex:pageBlockSectionItem>
+                                        <apex:outputField id="NameofTL" value="{!Task.Name_of_TL__c}"/>
+                                        <apex:outputField id="config" value="{!Task.Configuration__c}"/>
+                                        <apex:outputField id="visitstatus" value="{!Task.Event_Status__c}"/>
+                                        <apex:pageBlockSectionItem rendered="{!NOT(task.Revisit__c)}">
+                                            <apex:outputLabel >Next Action Date</apex:outputLabel>
+                                            <apex:outputField id="NextActionDate" value="{!Task.Next_Action_Date__c}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:outputField id="BudgetinLacs" value="{!Task.Budget_Site_Visit_In_Lacs__c}"/>
+                                        <apex:outputField id="Budget" value="{!Task.Budget_Range__c}"/>
+                                        <apex:outputField id="visitedwith" value="{!Task.Visited_With__c}"/>
+                                        <apex:outputField id="reasonsForLost" value="{!Task.Reason_For_Lost__c}"/>
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Visit Remarks</apex:outputLabel>
+                                            <apex:outputField styleClass="slds-textarea" id="comments" value="{!Task.Description}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem rendered="{!NOT(task.Revisit__c)}"></apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                    <apex:pageblocksection title="Walk-in Details" collapsible="false" columns="2">
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Walk-in Source</apex:outputLabel>
+                                            <apex:outputField id="DueDate" value="{!Task.Walk_in_Source__c}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Walk-in Sub Source</apex:outputLabel>
+                                            <apex:outputField id="DueDate" value="{!Task.Walk_in_Sub_Source__c}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Site Visit Details</apex:outputLabel>
+                                            <apex:outputField id="DueDate" value="{!Task.Registraion_Status__c}" />
+                                        </apex:pageBlockSectionItem>
+                                    </apex:pageblocksection>
+                                    <apex:pageBlockSection id="test2" title="Channel Partner Details" collapsible="false" columns="2" rendered="{!if(task.Revisit__c == false && Task.Walk_in_Source__c == 'Channel Partner',true,false)}">
+                                        <apex:outputField id="ChannelPartner" value="{!Task.Channel_Partner__c}" />
+                                    </apex:pageBlockSection>
+                                    <!--------------------- Revisit Details Section ------------------------->
+                                    <apex:pageBlockSection id="pgBlockSectionRevisitDetails" title="Revisit Details" collapsible="false" columns="2" rendered="{!task.Revisit__c}">
+                                        <apex:pageBlockSectionItem rendered="{!task.Revisit__c}">
+                                            <apex:outputLabel >Revisit Date</apex:outputLabel>
+                                            <apex:outputField id="DueDate" value="{!Task.ActivityDate}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem rendered="{!task.Revisit__c}">
+                                            <apex:outputLabel >Revisit Time</apex:outputLabel>
+                                            <apex:outputField id="CallTime" value="{!Task.Call_Time__c}" />
+                                        </apex:pageBlockSectionItem>
+                                        <!-- New Fields added in Task - Netra -->
+                                        <apex:pageBlockSectionItem rendered="{!(task.Revisit__c)}">
+                                            <apex:outputLabel >Visitor Name</apex:outputLabel>
+                                            <apex:outputField id="VisitorName" value="{!Task.Visitor_Name__c}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem rendered="{!task.Revisit__c}">
+                                            <apex:outputLabel >Next Action Date</apex:outputLabel>
+                                            <apex:outputField id="NextDate"  value="{!Task.Next_Action_Date__c}"/>
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Revisit Form Number</apex:outputLabel>
+                                            <apex:outputField id="formNo" value="{!Task.Visit_Form_No__c}"  />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:outputField id="scallrating" value="{!Task.Call_Rating__c}" />
+                                        <apex:pageBlockSectionItem rendered="{!task.Revisit__c}">
+                                            <apex:outputLabel >Sourcing Manager</apex:outputLabel>
+                                            <apex:outputField id="SourcingManager" value="{!Task.Sourcing_Manager__c}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:outputField id="scallAttemptedBy" value="{!Task.Call_Attempted_By_Name__c}" />
+                                        <apex:pageBlockSectionItem rendered="{!task.Revisit__c}">
+                                            <apex:outputLabel >Name of Sourcing TL</apex:outputLabel>
+                                            <apex:outputField id="sourcingTL" value="{!Task.Sourcing_TL__c}"/>
+                                        </apex:pageBlockSectionItem>
+                                        <apex:outputField id="NameofTL" value="{!Task.Name_of_TL__c}"/>
+                                        <apex:outputField id="visittype" value="{!Task.Name_Of_Banks__c}"/>
+                                        <apex:outputField id="visitstatus" value="{!Task.Event_Status__c}"/>
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Revisit Remarks</apex:outputLabel>
+                                            <apex:outputField styleClass="slds-textarea" id="comments" value="{!Task.Description}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:outputField id="reasonsForLost" value="{!Task.Reason_For_Lost__c}"/>
+                                    </apex:pageBlockSection>
+                                    <apex:pageblocksection title="Walk-in Details" collapsible="false" columns="2" rendered="{!task.Revisit__c}">
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Walk-in Source</apex:outputLabel>
+                                            <apex:outputField id="DueDate" value="{!Task.Walk_in_Source__c}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Walk-in Sub Source</apex:outputLabel>
+                                            <apex:outputField id="DueDate" value="{!Task.Walk_in_Sub_Source__c}" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Site Visit Details</apex:outputLabel>
+                                            <apex:outputField id="DueDate" value="{!Task.Registraion_Status__c}" />
+                                        </apex:pageBlockSectionItem>
+                                    </apex:pageblocksection>
+                                    <apex:pageBlockSection id="test" title="Channel Partner Details" collapsible="false" columns="2" rendered="{!if(task.Revisit__c == true && Task.Walk_in_Source__c == 'Channel Partner',true,false)}">
+                                        <apex:outputField id="ChannelPartner" value="{!Task.Channel_Partner__c}" />
+                                   </apex:pageBlockSection>
+                                </apex:pageBlock>
+                            </apex:form>
+                            <!-- CREATE NEW TASK FORM -->
+                        </fieldset>
+                        <!-- / BOXED AREA -->
+                    </div>
+                    <!-- / CREATE NEW TASK -->
+                </div>
+                <!-- / PRIMARY CONTENT WRAPPER -->
+            </div>
+            <!-- / REQUIRED SLDS WRAPPER -->
+            <!-- JAVASCRIPT -->
+            <script>
+      var j$ = jQuery.noConflict();
+ 
+        j$(document).ready(function() {
+        });
+     </script>
+            <!-- / JAVASCRIPT -->
+        </body>
+    </html>
+</apex:page>

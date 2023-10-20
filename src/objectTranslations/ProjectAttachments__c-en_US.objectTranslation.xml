@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ProjectAttachment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ProjectAttachments</value>
+    </caseValues>
+    <fields>
+        <label><!-- AttachmentType --></label>
+        <name>AttachmentType__c</name>
+        <picklistValues>
+            <masterLabel>Brochure</masterLabel>
+            <translation><!-- Brochure --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Email Content --></label>
+        <name>EmailContent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest --></label>
+        <name>Latest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>ProjectName__c</name>
+        <relationshipLabel><!-- ProjectAttachments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <layouts>
+        <layout>ProjectAttachment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>X15_Days_Before_Construction_Schedule</fullName>
+        <ccEmails>sfdcsolitaire@solitaire.in</ccEmails>
+        <description>15 Days Before Construction Schedule</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/X15_days_remainder_of_construction_stage</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Unique_CODE</fullName>
+        <field>Unique_Project_Code__c</field>
+        <formula>Project__c +&apos;-&apos;+ Code__c</formula>
+        <name>Update Unique CODE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Unique_Sequence</fullName>
+        <field>Unique_Sequence_No__c</field>
+        <formula>Project__r.Id +&apos;-&apos;+ Text(Sequence_No__c)</formula>
+        <name>Update Unique Sequence</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>15 days remainder of construction stage</fullName>
+        <active>true</active>
+        <formula>ISBLANK( Actual_date_of_completion__c )&amp;&amp;   NOT(ISNULL(Planned_date_of_completion__c ))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>X15_Days_Before_Construction_Schedule</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Project_Construction_Stages__c.Planned_date_of_completion__c</offsetFromField>
+            <timeLength>-15</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Upadte Unique CODE No On Project Construction Stage</fullName>
+        <actions>
+            <name>Update_Unique_CODE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Project_Construction_Stages__c.Code__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Upadte Unique Sequence No  On Project Construction Stage</fullName>
+        <actions>
+            <name>Update_Unique_Sequence</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Project_Construction_Stages__c.Sequence_No__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

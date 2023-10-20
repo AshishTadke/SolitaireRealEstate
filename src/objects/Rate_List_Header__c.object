@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Effective_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective From</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Till__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective Till</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Payment Plan</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Payment_Plan__c.Project__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Payment_Plan__c</referenceTo>
+        <relationshipLabel>Rate List Headers</relationshipLabel>
+        <relationshipName>Rate_List_Headers</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Charges__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Charges</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Project__c</field>
+                <operation>equals</operation>
+                <valueField>Project_Charges__c.Project__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Project_Charges__c.Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Project_Charges__c</referenceTo>
+        <relationshipLabel>Rate List Headers</relationshipLabel>
+        <relationshipName>Rate_List_Headers</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Rate List Headers</relationshipLabel>
+        <relationshipName>Rate_List_Headers</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Rate_List_Status_Reference__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Rate_List_Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rate List Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rate_List_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate List Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>UnProcessed</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Processed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Rate_list__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate list</label>
+        <picklist>
+            <picklistValues>
+                <fullName>All Charges</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inaugural Discount</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Project__r.Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unique_Project_Charge_Per_Day__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>Unique Project Charge Per Day</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>UniqyePayplanRatelist__c</fullName>
+        <externalId>false</externalId>
+        <label>UniqyePayplanRatelist</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Version_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Version Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Version_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Version Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Rate List Header</label>
+    <nameField>
+        <label>Rate List Header Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Rate List Headers</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>All_Charges</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  ISBLANK(Project_Charges__c)  ,  ISPICKVAL(Rate_list__c, &apos;All Charges&apos;)  )</errorConditionFormula>
+        <errorDisplayField>Project_Charges__c</errorDisplayField>
+        <errorMessage>You have to Choose Project Chages for All Charges</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CreateRateListHeaderOnlyOn_Launch_Stage</fullName>
+        <active>true</active>
+        <description>You can create Rate List Header only on Launch Stage of Project</description>
+        <errorConditionFormula>IF(!ISPICKVAL(Project__r.Project_Stage__c, &apos;Launch&apos;)  , true, false)</errorConditionFormula>
+        <errorMessage>You can create Rate List Header only on Launch Stage of Project</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Effective_Date_Not_Today</fullName>
+        <active>false</active>
+        <errorConditionFormula>Effective_From__c  =   TODAY()  &amp;&amp;  Effective_From__c  &gt;=  Project__r.Start_Date__c</errorConditionFormula>
+        <errorDisplayField>Effective_From__c</errorDisplayField>
+        <errorMessage>You Can not Enter Today as Effective From  date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Effective_Till_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>Effective_Till__c  &lt; Effective_From__c</errorConditionFormula>
+        <errorDisplayField>Effective_Till__c</errorDisplayField>
+        <errorMessage>Effective Till Date Cannot Be Less Than Effective From Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Project_Created_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>Project__r.Start_Date__c &gt; Effective_From__c</errorConditionFormula>
+        <errorDisplayField>Effective_From__c</errorDisplayField>
+        <errorMessage>Effective Date Must be after Start Date of Project</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rate_List_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL(Rate_list__c , &apos;Inaugural Discount&apos;),NOT( ISBLANK(Project_Charges__c) ))</errorConditionFormula>
+        <errorDisplayField>Rate_list__c</errorDisplayField>
+        <errorMessage>You Can not Choose Project Charges for Inaugural Discount</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Process</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Process</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/ratelistprocess?id={!Rate_List_Header__c.Id}&amp;projectid={!Rate_List_Header__c.ProjectId__c}</url>
+    </webLinks>
+</CustomObject>

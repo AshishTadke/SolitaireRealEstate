@@ -1,0 +1,1 @@
+Lead named <u>{!Lead.FirstName} {!Lead.LastName}</u> has been sucessfully converted to an Opportunity.

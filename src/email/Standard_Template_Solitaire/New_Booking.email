@@ -1,0 +1,7 @@
+New Booking has been created with following details:
+
+NAME - {!Booking__c.Future_Correspondence_Contact_Name__c}
+
+Email - {!Booking__c.Future_Correspondence_Contact_Email__c}
+
+Contact - {!Booking__c.Future_Correspondence_Contact_Phone__c}

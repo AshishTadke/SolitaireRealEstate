@@ -1,0 +1,462 @@
+<apex:page showHeader="false" sidebar="false" controller="S_InventoryMatrix"> 
+<head>
+    <title>Inventory Module</title>
+    <!--fonts-->
+        <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'/> 
+       <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'/> 
+       
+       
+       <!--select checkbox-->  
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+       <!--<script src="{!$Resource.jquerysumoselect}"></script>-->
+       <!--<script src="{!$Resource.jquerysumoselectmin}"></script>-->
+    <!--select checkbox-->  
+    <!--//fonts-->      
+        <link href="{!$Resource.bootstrap}" rel="stylesheet" type="text/css" media="all" /> 
+        <link href="{!$Resource.style}" rel="stylesheet" type="text/css" media="all" /> 
+        <!--<link href="{!$Resource.sumoselect}" rel="stylesheet" type="text/css" media="all" />-->            
+
+    <!-- for-mobile-apps -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="soccer Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+        Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps  -->
+    <!-- js -->
+   <script src="{!$Resource.JQuery1}"></script>       
+    <!-- js -->
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#table_id td:contains('Sold')").css('background-color','#FF0000');
+    $("#table_id td:contains('Booked')").css('background-color','#FFFF00');
+    $("#table_id td:contains('Vacant')").css('background-color','#3cb371');
+    $("#table_id td:contains('Leased')").css('background-color','#00B2FF');
+    $("#table_id td:contains('In-Process')").css('background-color','#cb410d');
+    $("#table_id td:contains('Possession Done')").css('background-color','#FF69B4');
+    $("#table_id td:contains('Hold')").css('background-color','#A020F0'); 
+    $("#table_id td:contains('Reserved')").css('background-color','#A9A9A9');
+    $("#table_id td:contains('Blocked')").css('background-color','#FF4500');
+    $("#table_id td:contains('BIP - Sales')").css('background-color','#FF4500');
+    $("#table_id td:contains('CIP')").css('background-color','#E60000');
+    $("#table_id td:contains('Refuge')").css('background-color','#D3D3D3');
+    $("#table_id td:contains('Floor')").css('background-color','#f9ac6b');
+    $("#table_id td:contains('Welcome Call Pending')").css('background-color','#FF4500'); // OLD Color Code:  #FFFF00
+    $("#table_id td:contains('BIP - RM Verification')").css('background-color','#FF4500');// OLD Color Code:  #4682B4
+    $("#table_id td:contains('CRM Returned To Sales')").css('background-color','#FF4500');// OLD Color Code:  #DC143C
+        
+    
+});
+</script>
+<script>
+var optyid =  "{!$CurrentPage.parameters.oppid}";
+var projectId=  "{!$CurrentPage.parameters.optyProject}";   
+
+</script> 
+<script>
+function process()
+{
+var multiselec  = new Array(<?php echo implode(',', $day); ?>);
+var url="https://c.ap1.visual.force.com/apex/TestPAgeClone?tid=" + document.getElementById("tid").value + "&pid=" + multiselect;
+location.href=url;
+return false;
+}
+</script>
+<style type="text/css">
+        
+        .SlectBox{font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;color:#444;font-size:13px;}
+        .SlectBox p,div,ul,li{padding:0px; margin:0px;}
+</style>
+<style>
+.resultstable,table { 
+    //width: 100%;
+    cellpadding:0px;
+    background : white;
+    border:3px solid white;
+    border-spacing: 0px;
+    border-collapse: separate;
+    font-size: 1em;
+    margin-left:auto;
+    margin-right:auto;
+    
+}
+.resultstable td{
+    padding: 6px;
+    border:2px solid white;
+    cursor: pointer;
+}
+.abc input
+{ 
+    background : white;
+}
+.xyz
+{ 
+    display: none;
+}
+.abc , span{
+
+    margin-right:1%;
+}
+
+.divbutton{
+    height: 100px;  
+}
+
+</style>
+<style>
+.towerdisplay table,td,tr,th {
+align:center;
+//background-color:white; 
+color: black; 
+padding : 20px;
+border: 1px solid black;
+}
+.towerdisplay table{
+width:50%;
+margin: auto auto;
+}
+</style>
+<!--show buttons on hover -->
+<script>
+var optyid =  "{!$CurrentPage.parameters.oppid}";   
+  
+$(document).ready(function () {
+ 
+    $(document).on('mouseenter', '.divbutton', function ()                 
+    {
+             
+    var checksold =  document.getElementById('sold').checked;
+    var checkVacant =  document.getElementById('Vacant').checked;
+    var checkLeased =  document.getElementById('Leased').checked;
+    var checkInProcess =  document.getElementById('In-Process').checked;
+    var checkPossessionDone =  document.getElementById('Possession Done').checked;
+    var checkblocked = document.getElementById('blocked').checked;
+    var checkreserved = document.getElementById('Reserved').checked;
+    var checkHold = document.getElementById('Hold').checked; 
+    var checkbooked = document.getElementById('booked').checked;
+    var checkBIPselect = document.getElementById('BIPselect').checked;
+    var checkCIP = document.getElementById('CIP').checked;
+    var checkRefuge = document.getElementById('Refuge').checked;
+
+    
+    var check1bhk =  document.getElementById('1bhk').checked;
+    var check2bhk =  document.getElementById('2bhk').checked;
+    var check3bhk = document.getElementById('3bhk').checked;
+    var check4bhk =document.getElementById('4bhk').checked; 
+    var def = document.getElementById('{!$Component.formid.def}').value;
+    
+    /* document.write(def); */
+                if($(this).text().indexOf('Vacant') > 0 && checkVacant == true)
+              {
+                   //alert("Helllow");
+                   $(this).find("#btncost").show(); 
+                   $(this).find("#parking").show();
+                   $(this).find("#btnblock").show();  
+               }  
+               
+               if($(this).text().indexOf('Reserved') > 0 && checkreserved == true)
+              {
+                   //alert("Helllow");
+                   $(this).find("#btncost").show(); 
+                   $(this).find("#parking").show();
+                   $(this).find("#btnUnblock").show();  
+               }  
+                      
+                }).on('mouseleave', '.divbutton', function () {                  
+                        $(this).find(":button").hide();                                    
+                                    
+                });
+            });
+</script>
+<script>
+function calcall()
+{   
+       var all =  document.getElementById('All').checked;
+       // alert(all);
+       if(all == true)
+       {
+                document.getElementById('sold').checked = true;
+                document.getElementById('Vacant').checked = true;
+                document.getElementById('Leased').checked = true;
+                document.getElementById('In-Process').checked = true;
+                document.getElementById('Possession Done').checked = true;
+                document.getElementById('blocked').checked = true;
+                document.getElementById('Hold').checked = true; 
+                document.getElementById('Reserved').checked = true; 
+                document.getElementById('booked').checked = true;
+                document.getElementById('BIPselect').checked = true;
+                document.getElementById('CIP').checked = true;
+                document.getElementById('Refuge').checked = true;
+                document.getElementById('Welcome').checked = true; 
+                document.getElementById('1bhk').checked = true;
+                document.getElementById('2bhk').checked = true;
+                document.getElementById('3bhk').checked = true;
+                document.getElementById('4bhk').checked = true;
+                
+       }
+       else
+       {
+                document.getElementById('sold').checked = false;
+                document.getElementById('Vacant').checked = false;
+                document.getElementById('Leased').checked = false;
+                document.getElementById('In-Process').checked = false;
+                document.getElementById('Possession Done').checked = false;
+                document.getElementById('blocked').checked = false;
+                document.getElementById('Hold').checked = false; 
+                document.getElementById('booked').checked = false;
+                document.getElementById('Reserved').checked = false;
+                document.getElementById('BIPselect').checked = false;
+                document.getElementById('CIP').checked = false;
+                document.getElementById('Refuge').checked = false;
+                document.getElementById('Welcome').checked = false; 
+                document.getElementById('1bhk').checked = false;
+                document.getElementById('2bhk').checked = false;
+                document.getElementById('3bhk').checked = false;
+                document.getElementById('4bhk').checked = false;
+                
+       }
+       calc();
+}
+</script>
+<script>
+function calc()
+{   
+   
+    $("#table_id td:contains('Sold')").css('background-color','#FF0000');
+    $("#table_id td:contains('Booked')").css('background-color','#FFFF00');
+    $("#table_id td:contains('Vacant')").css('background-color','#3cb371');
+    $("#table_id td:contains('Leased')").css('background-color','#00B2FF');
+    $("#table_id td:contains('In-Process')").css('background-color','#cb410d');
+    $("#table_id td:contains('Possession Done')").css('background-color','#FF69B4');
+    $("#table_id td:contains('Hold')").css('background-color','#A020F0'); 
+    $("#table_id td:contains('Reserved')").css('background-color','#A9A9A9');
+    $("#table_id td:contains('Blocked')").css('background-color','#FF4500');
+    $("#table_id td:contains('BIP - Sales')").css('background-color','#FF4500');
+    $("#table_id td:contains('CIP')").css('background-color','#E60000');
+    $("#table_id td:contains('Refuge')").css('background-color','#D3D3D3');
+    $("#table_id td:contains('Floor')").css('background-color','#f9ac6b');
+    $("#table_id td:contains('Welcome Call Pending')").css('background-color','#FF4500'); // OLD Color Code:  #FFFF00
+    $("#table_id td:contains('BIP - RM Verification')").css('background-color','#FF4500');// OLD Color Code:  #4682B4
+    $("#table_id td:contains('CRM Returned To Sales')").css('background-color','#FF4500');// OLD Color Code:  #DC143C
+   
+    
+    var checksold =  document.getElementById('sold').checked;
+    var checkVacant =  document.getElementById('Vacant').checked;
+    var checkLeased =  document.getElementById('Leased').checked;
+    var checkInProcess =  document.getElementById('In-Process').checked;
+    var checkPossessionDone =  document.getElementById('Possession Done').checked;
+    var checkblocked = document.getElementById('blocked').checked;
+    var checkreserved = document.getElementById('Reserved').checked;
+    var checkHold = document.getElementById('Hold').checked; 
+    var checkbooked = document.getElementById('booked').checked;
+    var checkBIPselect = document.getElementById('BIPselect').checked;
+    var checkCIP = document.getElementById('CIP').checked;
+    var checkRefuge = document.getElementById('Refuge').checked;
+    var check1bhk =  document.getElementById('1bhk').checked;
+    var check2bhk =  document.getElementById('2bhk').checked;
+    var check3bhk = document.getElementById('3bhk').checked;
+    var check4bhk =document.getElementById('4bhk').checked; 
+       
+  if(checksold != true){
+     //alert('inside sold equals true'); 
+     $("#table_id td:contains('Sold')").css('background-color','#000000');                                   
+   }
+   if(checkVacant != true){
+     $("#table_id td:contains('Vacant')").css('background-color','#000000');  
+     
+   }
+   if(checkblocked != true){
+     $("#table_id td:contains('Blocked')").css('background-color','Black');
+   }
+   if(checkHold != true){
+     $("#table_id td:contains('Hold')").css('background-color','Black');
+   }
+   if(checkreserved != true){
+     $("#table_id td:contains('Reserved')").css('background-color','Black');
+   }
+   if(checkBIPselect != true){
+     $("#table_id td:contains('BIP')").css('background-color','Black');
+   }
+   if(checkCIP != true){
+     $("#table_id td:contains('CIP')").css('background-color','Black');
+   }
+   if(checkRefuge != true){
+     $("#table_id td:contains('Refuge')").css('background-color','Black');
+   }
+   if(checkbooked != true){
+     $("#table_id td:contains('Booked')").css('background-color','Black');
+   }   
+   if(checkWelcome != true){
+     $("#table_id td:contains('Welcome Call Pending')").css('background-color','Black');
+   }
+   
+   if(check1bhk != true){
+     $("#table_id td:contains('1 BHK')").css('background-color','#000000');
+   }
+   if(check2bhk != true){
+     $("#table_id td:contains('2 BHK')").css('background-color','#000000');
+   }
+  
+   if(check3bhk != true){
+     $("#table_id td:contains('3 BHK')").css('background-color','Black');
+   }
+  
+   if(check4bhk != true){
+     $("#table_id td:contains('4 BHK')").css('background-color','Black');
+   }
+   
+    var config = document.getElementById('{!$Component.formid.config}').value;    
+    $("h5").not('.'+config).parent().css( 'background-color','Black');  
+   
+  /* if(check5bhk != true){   
+   var str1 = ' ';
+   var str2 = '5 BHK';
+   var str3 = ' ';
+   var res =  str1.concat(str2, str3);
+   
+     $("#table_id td:contains('res')").css('background-color','Black');
+   }*/ 
+}
+
+</script>
+
+</head>
+<body>
+<a href="/home/home.jsp"><img src="{!$Resource.Home}" style="float:left; width:8%; height:8%;"></img></a>
+<!-- <img src="{!$Resource.InventoryLegends}" style="float:right; width:30%; height:8%;"></img>-->
+<apex:form rendered="{!If(SelectedClusterId !=null && selectedTower !=null,true,false)}">
+<a href="/apex/S_InventoryMatrixview"><img src="{!$Resource.newback}"   style="float:right; width:8%; height:8%;"></img></a>
+</apex:form>
+
+<div style="float:right">
+</div>
+         <script>
+                $("span.menu").click(function(){
+                    $(".top-menu ul").slideToggle("slow" , function(){
+                    });
+                });
+         </script>
+
+
+        <script src="{!$Resource.jquery2}"></script> 
+  <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+        auto: true,
+        speed: 300,
+        timeout: 10000,
+        manualControls: '#slider3-pager',
+      });
+    });
+  </script>
+
+<!-- //banner -->
+<!-- //content-bottom -->
+<div class="error">
+    <div class="container">
+       <div align="center" style="font-size:1em;"><!--class="error-main"-->
+           <apex:form id="formid">
+           
+            <apex:selectList id="abc" value="{!selectedVal}" size="1"> 
+                <apex:selectOptions value="{!getProjects}" /> 
+                <apex:actionSupport event="onchange">
+                   <apex:param name="selectedVal" value="{!getProjects}" assignTo="{!selectedVal}"/> 
+               </apex:actionSupport> 
+               </apex:selectList>
+               
+                <apex:selectList id="clustersectn" value="{!SelectedClusterId }" size="1"> 
+                <apex:selectOptions value="{!getClusterNames}" /> 
+                <apex:actionSupport event="onchange">
+                <apex:param name="SelectedClusterId" value="{!getClusterNames}" assignTo="{!SelectedClusterId}"/> 
+                </apex:actionSupport> 
+            </apex:selectList>  
+            
+            <apex:selectList id="def" value="{!selectedTower}" size="1"> 
+                <apex:selectOptions value="{!getTowers}" /> 
+                <apex:actionSupport event="onchange">
+                   <apex:param name="selectedTower" value="{!getTowers}" assignTo="{!selectedTower}"/>
+               </apex:actionSupport>    
+            </apex:selectList>
+            
+            <!-- <apex:selectList id="config" value="{!selectedConf}"  size="1"> 
+                <apex:selectOptions value="{!getProjectunittype}" /> 
+                <apex:actionSupport event="onchange"  onsubmit="return calc();" >
+                   <apex:param name="selectedConf" value="{!getProjectunittype}" assignTo="{!selectedConf}"  />
+               </apex:actionSupport>    
+            </apex:selectList> -->
+            
+            <div class="abc">
+                <br/><b>UNIT STATUS :</b>
+                
+                <span> All :   <input type="checkbox" id ="All" checked="true" onchange="calcall();" /></span>
+                <span> Sold :   <input type="checkbox" id ="sold" value="{!sold}" checked="true" onchange="calc();" /></span>
+                <span> Vacant:   <input type="checkbox" id ="Vacant" value="{!open}" checked="true" onchange="calc();" /></span>
+                <span> Booked : <input type="checkbox" id ="booked" value="{!booked}" checked="true" onchange="calc();" /></span>
+                <span> Blocked : <input type="checkbox" id ="blocked" value="{!blocked}" checked="true" onchange="calc();" /></span>
+                <span> Hold :<input type="checkbox" id ="Hold"  checked="true" onchange="calc();" />  </span> 
+                <span> Reserved :<input type="checkbox" id ="Reserved"  checked="true" onchange="calc();" />  </span>                                  
+                <span class="xyz"> BIP:<input type="checkbox" id ="BIPselect"   checked="true" onchange="calc();" />  </span>                                  
+                <span class="xyz"> CIP:<input type="checkbox" id ="CIP"  checked="true" onchange="calc();" />  </span>  
+                <span class="xyz"> Refuge:<input type="checkbox" id ="Refuge"  checked="true" onchange="calc();" />  </span>  
+                <span class="xyz"> Welcome Call Pending:<input type="checkbox" id ="Welcome"  checked="true" onchange="calc();" />  </span> 
+                <span class="xyz"> Welcome Call Pending:<input type="checkbox" id ="Leased"  checked="true" onchange="calc();" />  </span>
+                <span class="xyz"> Welcome Call Pending:<input type="checkbox" id ="In-Process"  checked="true" onchange="calc();" />  </span>
+                <span class="xyz"> Welcome Call Pending:<input type="checkbox" id ="Possession Done"  checked="true" onchange="calc();" />  </span>
+               
+                
+                  
+                <span>  <input class= "xyz" type="checkbox" id="1bhk" value="{!onebhk}" checked="true" onchange="calc();"/></span>
+                <span>  <input class="xyz" type="checkbox" id="2bhk" value="{!twobhk}" checked="true" onchange="calc();"/></span>
+                <span>  <input class="xyz" type="checkbox" id="3bhk" value="{!threebhk}" checked="true" onchange="calc();"/></span>
+                <span>  <input class="xyz" type="checkbox" id="4bhk" value="{!fourbhk}" checked="true" onchange="calc();"/></span>
+               
+            </div>               
+            <br></br>    
+             <a href="/00OO0000000LLqS?pv0={!URLENCODE(LEFT(selectedVal,15))}" target="_blank"><u>View Unit Summary Report</u></a>
+                      <!-- {!selectedVal} -->                           
+            </apex:form>  
+           </div>     
+    </div>   
+    <br></br> 
+   <table id="table_id" style="width:100%;font-size:1em;" border="1" class="resultstable" >
+        <apex:repeat value="{!floorDescSeqList}" var="floorNo" >               
+        <tr>
+            <td><b>Floor : {!floorNo}</b></td> 
+            <apex:repeat value="{!JMap[floorNo]}" var="J">    
+           <!-- | {!J.Project_Unit_Type__r.Name}     -->       
+               <td id="ppp" class="divbutton">Unit No.: {!J.Name} | {!J.Unit_Status__c} | <h5 class="{!J.Project_Unit_Type__c}">{!J.Project_Unit_Type__r.Name}</h5>  
+               <h5 id="Applicant"><apex:outputText rendered="{!IF(J.Unit_Status__c = 'Sold',true,false)}">|Customer :</apex:outputText><!-- style="display:none;"-->
+               <apex:outputlink value="/{!J.Customers__c}" target="_blank" rendered="{!IF((J.Unit_Status__c = 'Sold')||(J.Unit_Status__c = 'Hold')||(J.Unit_Status__c = 'Reserved'),true,false)}">{!J.Customers__r.Name}</apex:outputlink> </h5> 
+              <br/>
+           <button type="button" id="btncost" style="display:none;" onclick="window.open('/apex/QuotationStartPage?oppId=' +optyid+ '&id={!J}')">Quotation</button> 
+                 <button type="button" id="btnbook" style="display:none;" onclick="window.open('/apex/BookingPageForm2?projectId='+projectId+'&optyid='+optyid+ '&unitId={!J}')">Book</button> 
+                <button type="button" id="btnblock" style="display: none;" onclick="window.open('/apex/BlockingPage?unitid={!J}&optyid='+optyid+'&action=Blocked')">Reserve</button>
+                <button type="button" id="btnUnblock" style="display:none;" onclick="window.open('/apex/BlockingPage?unitid={!J}&optyid={!J.Customers__c}&action=Released')">UnReserve</button>
+                
+                <!-- <button type="button" id="btnbook" style="display:none;" onclick="window.open('/apex/ApplicantForm?optyid='+optyid+'&unitid={!J}' ,'_blank')">Book</button>    
+                <br/><button type="button" id="btncost" style="display:none;" onclick="window.open('/apex/QuotationPage?optyid=' +optyid+ '&id={!J}')">Quotation</button>
+                -->
+                </td>
+              </apex:repeat>
+        </tr>
+        </apex:repeat>
+    </table>
+              
+</div>
+
+<!--footer-->
+<div class="footer">
+     <div class="container">
+         <div class="copywrite">
+             <p>© 2015 All Rights Reserved Design by www.Stetig.in </p>
+         </div>
+         
+         <div class="clearfix"></div>
+     </div>
+</div>
+<!-- //footer -->
+</body>
+    <!-- On click event of Command Button call test Function -->
+    
+</apex:page>

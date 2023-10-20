@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_$Customer_Pay_Plan_Header__c.Customer__c</field>
+    </columns>
+    <columns>
+        <field>Standard_Customer_Pay_Plan_Detail__c.Due_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Standard_Customer_Pay_Plan_Detail__c.Installment__c</field>
+    </columns>
+    <columns>
+        <field>Standard_Customer_Pay_Plan_Detail__c.Is_to_be__c</field>
+    </columns>
+    <description>For due date based demands the report shows the demands that are upcoming in the next 15 days</description>
+    <filter>
+        <criteriaItems>
+            <column>Standard_Customer_Pay_Plan_Detail__c.IsSendDemandLetter__c</column>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Standard_Customer_Pay_Plan_Detail__c.Is_to_be_Paid__c</column>
+            <operator>equals</operator>
+            <value>From Dt. of Booking</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$Customer_Pay_Plan_Header__c.Global_Charges__c</column>
+            <operator>equals</operator>
+            <value>Basic</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$Customer_Pay_Plan_Header__c.Project_Unit_Status__c</column>
+            <operator>equals</operator>
+            <value>Sold</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$Customer_Pay_Plan_Header__c.Customer__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Standard_Customer_Pay_Plan_Detail__c.Project__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Pending Demands - Date linked demands</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Standard_Customer_Pay_Plan_Detail__c@Standard_Customer_Pay_Plan_Detail__c.Customer_Pay_Plan_Header__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

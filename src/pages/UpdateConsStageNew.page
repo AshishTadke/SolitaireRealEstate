@@ -1,0 +1,117 @@
+<apex:page controller="UpdateConsStageNew" showHeader="false" standardStylesheets="true" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+	<head>
+	  <title>Construction Stage Update</title>
+	  <apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	  <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+	  <script src="/soap/ajax/9.0/connection.js"></script>
+	</head>
+	<body>    
+  <!-- REQUIRED SLDS WRAPPER -->
+  <div class="slds">    
+  <!-- PRIMARY CONTENT WRAPPER -->
+    <div class="myapp">   
+        <!-- UPDATE CONS STAGE -->
+      <div aria-labelledby="newconstage">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme--shade slds-container--large slds-container--center slds-grid--align-spread">
+          <legend id="newconstage" class="slds-text-heading--medium slds-p-vertical--medium">Construction Stage Update</legend>
+    
+          <!-- CREATE NEW TASK FORM -->
+            <apex:form id="conststageform" styleClass="slds-form--inline">
+            <apex:outputPanel id="messages">
+            <apex:PageMessages id="pageMsgs" /> 
+            </apex:outputPanel>
+            	<apex:actionFunction name="rerenderFunction" action="{!dummy}" rerender="conststageform"/>
+                <apex:pageBlock id="pgBlock" mode="edit">
+                	<apex:outputtext >Please click refresh if you need to change tower or stage selection </apex:outputtext>
+                    <apex:pageBlockButtons location="top" styleClass="slds-button-group">
+                        <apex:outputPanel id="buttonsPanel">
+                        	<apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Save" action="{!save}" disabled="{!towerId == null || stageId == null}"/>
+                        	<apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Refresh" action="{!refresh}" immediate="true"  html-formnovalidate="formnovalidate"/>
+                        	<apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Go Back" action="{!cancel}" immediate="true"  html-formnovalidate="formnovalidate"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection id="pgBlockSectionCons" title="{!p.Name} Stage Update" collapsible="false" columns="1">
+                    	<apex:pageBlockSectionItem >
+                    	<apex:outputPanel styleclass="slds-form-element">
+							<apex:outputLabel value="Project Name" for="the_account" styleclass="slds-form-element__label"/>
+								<apex:outputLink value="/{!p.Id}" id="theProject">
+									<apex:outputText value="{!p.Name}"/>
+								</apex:outputLink>
+						</apex:outputPanel>
+						</apex:pageBlockSectionItem>
+                    	
+                    	<apex:pageBlockSectionItem >
+	                    	<apex:outputPanel styleclass="slds-form-element">
+	                    		<apex:outputLabel styleclass="slds-form-element__label">Tower</apex:outputLabel>
+		                    	<apex:selectList id="selectTower" size="1" value="{!towerId}" styleclass="slds-select" disabled="{!towerId != null}" onchange="rerenderFunction()">
+		                        	<apex:selectOptions value="{!towerSelectList}"/>         
+		                    	</apex:selectList>
+		                    </apex:outputPanel>
+                    	</apex:pageBlockSectionItem>
+                    	
+                    	<apex:pageBlockSectionItem >
+                    	     <apex:outputPanel id="stagePanel"  styleclass="slds-form-element">
+                        		<apex:outputLabel styleclass="slds-form-element__label">Construction Stage</apex:outputLabel>
+	                            <apex:selectList id="selectStage" size="1" value="{!stageId}" styleclass="slds-select" disabled="{!ConstructionSelectList.size == 0 || stageID != null}" onchange="rerenderFunction()">
+	                                <apex:selectOptions value="{!ConstructionSelectList}"/>         
+	                            </apex:selectList>
+	                         </apex:outputPanel>
+                    	</apex:pageBlockSectionItem>
+                    	
+                    	<apex:pageBlockSectionItem >
+                        	<apex:outputLabel styleClass="slds-form-element__label slds-form-element__label--top" >Date to be updated</apex:outputLabel>
+                            	<apex:selectRadio id="radioSelect" value="{!updateType}" styleClass="radio" onChange="rerenderFunction()" disabled="{!updateType == 'completionDate'}">
+            						<apex:selectOptions value="{!updateOptions}"/>
+            					</apex:selectRadio>
+						</apex:pageBlockSectionItem>                    	
+	                    <apex:pageBlockSectionItem >
+	                    	<apex:outputPanel styleclass="slds-form-element" rendered="{!updateType=='plannedDate' && towerId !=null && stageId !=null }">
+		                    	<apex:outputLabel styleclass="slds-form-element__label">Planned Completion Date</apex:outputLabel>
+				                    <apex:panelGroup styleClass="col02 requiredInput" layout="block">
+			                           <apex:panelGroup styleClass="requiredBlock" layout="block"/>
+			                            	<apex:input styleClass="slds-textarea" value="{!plannedDate}" type="date"/> 
+			                        	</apex:panelGroup>
+	                        	</apex:outputPanel>
+	                    	</apex:pageBlockSectionItem>
+	                    	
+	                    	<apex:pageBlockSectionItem >
+	                    		<apex:outputPanel styleclass="slds-form-element" rendered="{!updateType=='completionDate' && towerId !=null && stageId !=null }">
+		                    		<apex:outputLabel styleclass="slds-form-element__label">Actual Completion Date</apex:outputLabel>
+				                    	<apex:panelGroup styleClass="col02 requiredInput" layout="block">
+			                            <apex:panelGroup styleClass="requiredBlock" layout="block"/>
+			                            	<apex:input styleClass="slds-textarea" value="{!dueDate}" type="date"/> 
+			                        	</apex:panelGroup>
+	                        	</apex:outputPanel>
+	                    	</apex:pageBlockSectionItem>
+                    	
+                    </apex:pageBlockSection>
+                    
+                    <apex:pageBlockSection >
+                   		<apex:pageBlockSectionItem id="secitDOC1" rendered="{!towerId !=null && stageId !=null && updateType == 'completionDate'}">
+			           		<apex:inputFile value="{!objattachment.body}" filename="{!objattachment.name}" id="file"/>
+			            </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+               </apex:pageBlock>  
+            </apex:form>
+          <!-- CREATE NEW TASK FORM -->
+    
+        </fieldset>
+        <!-- / BOXED AREA -->
+      </div>
+  <!-- / CREATE NEW TASK -->
+    </div>
+    <!-- / PRIMARY CONTENT WRAPPER -->
+  </div>
+  <!-- / REQUIRED SLDS WRAPPER -->  
+  </body>
+  <script type="text/javascript">
+		var j$ = jQuery.noConflict();
+        j$(document).ready(function() {
+        });
+ 
+  </script>
+  </html>
+</apex:page>

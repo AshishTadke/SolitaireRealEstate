@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Unit Charges</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Unit Charges</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Area Type --></label>
+        <name>Area_Type__c</name>
+        <relationshipLabel><!-- Unit Chargess --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Booking --></label>
+        <name>Booking__c</name>
+        <relationshipLabel><!-- Unit Chargess --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Discount --></label>
+        <name>Broker_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost As --></label>
+        <name>Cost_As__c</name>
+        <picklistValues>
+            <masterLabel>Lumpsum</masterLabel>
+            <translation><!-- Lumpsum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation><!-- Percent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rate</masterLabel>
+            <translation><!-- Rate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Pay Plan Header --></label>
+        <name>Customer_Pay_Plan_Header__c</name>
+        <relationshipLabel><!-- Unit Chargess --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- Unit Chargess --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Global Charges --></label>
+        <name>Global_Charges__c</name>
+        <relationshipLabel><!-- Unit Chargess --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Inaugral Discount --></label>
+        <name>Inaugral_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inaugral Discount --></label>
+        <name>Ingr_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Cost --></label>
+        <name>Net_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Discount --></label>
+        <name>Net_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>New_Net_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Code --></label>
+        <name>Plan_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Code --></label>
+        <name>Project_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- Unit Charges --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Unit Chargess --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rate --></label>
+        <name>Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rebate Amount --></label>
+        <name>Rebate_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Discount --></label>
+        <name>Special_Discount__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

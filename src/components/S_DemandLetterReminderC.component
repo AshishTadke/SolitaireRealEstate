@@ -1,0 +1,241 @@
+<apex:component controller="S_DemandReminder" access="global">
+    <apex:attribute name="DemandInvId" type="String" description="Attribute on the component." assignTo="{!strDemandInvId}"/>
+    <apex:attribute name="mileStoneList" type="String" description="wrapper class on the component." assignTo="{!strMileStoneList}"/>
+    <apex:attribute name="mode" type="String" description="wrapper class on the component." assignTo="{!strMode}"/>
+    <apex:attribute name="demandType" type="String" description="wrapper class on the component." assignTo="{!strDemandType}"/>
+    <apex:attribute name="advanceAmt" type="Decimal" description="for advanceDemands." assignTo="{!advanceAmtD}"/>
+    <apex:attribute name="stAmt" type="Decimal" description="for advanceDemands." assignTo="{!stAmtD}"/>
+    <apex:attribute name="letterHead" type="Boolean" description="for printing" assignTo="{!letterH}"/> 
+    <head>
+    <style>
+           @page {
+                size: A4;
+                margin: 5mm;
+                @bottom-center {
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            .page-break {
+                display:block;
+                page-break-after:always;
+            }
+           body {
+                font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; 
+                font-weight:normal; 
+                font-size:10.5px; 
+                mso-line-height-rule: exactly;
+            }
+            .infobox {
+                  font-size: 80%;
+            }
+            .sfdc_richtext img {
+              border: 0;
+              width: 100px;
+              height:90px;
+            }
+            .RMStyle {
+                border-collapse: collapse;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #104E8B;
+            }
+            .RMStyle th {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #104E8B;
+                background-color:#E2DDD9;
+            }
+            /* Padding and font style */
+            .RMStyle td {
+                border-style: solid;
+                border-width: .5px;
+                border-color: #CAD1C3;
+            }
+            .paymenttoStyle th {
+                border-style: solid;
+                border-color: #CAD1C3;
+                background-color:#FFD8D8;
+            }
+            .paymenttoStyle {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #CAD1C3B;
+            }
+            .demandStyle th {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #CAD1C3;
+                background-color:#B9D7D9;
+                padding: 3px;
+                text-align:center;
+            }
+            /* Padding and font style */
+            .demandStyle td {
+                border-style: solid;
+                border-width: .5px;
+                border-color: #CAD1C3;
+                padding: 2px;
+            }
+            .demandStyle {
+                border-collapse: collapse;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #CAD1C3;
+            }
+        </style>
+    </head>
+    <body > {!DemandLetter}
+    
+        <table class="demandStyle" id="MainTable" align="Center" cellspacing="0" style="width:100%; font-size:15px">
+        
+        <tr><td>Dear {!CustomerPrimaryName},</td></tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr><td>Greetings from Solitaire!</td></tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr><td>With reference to our Payment Request Letter No. <u>{!DemandInv.Name}</u> <apex:outputtext value=" Date : {0, date, dd'/'MM'/'YYYY}"><apex:param value="{!InvoiceDate}"/></apex:outputtext>, please note that we have still not received the outstanding payment of {!GrandTotalstr}.</td></tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr><td>Details Are As Follows:</td></tr>
+          <tr><td>&nbsp;</td></tr>
+ 
+<tr><td>
+<!----------------------------------------------- added by Ashish (start)--------------------------------->    
+    <!------------------------Agrement value--------------------------------->
+    <apex:outputPanel rendered="{!if(registrationcheck != true,true,false)}">
+    <table class="demandStyle" id="MainTable" align="Center" cellspacing="0" style="width:85%; font-size:12px">
+    <tr style="background:#9CA1A1;color:black; font-size:15px">
+        <td colspan="1"> Due Details</td>
+        <td colspan="2">Amount</td>
+    </tr>
+    
+    <tr>
+        <td colspan="1"> AGREEMENT VALUE </td>
+        <td colspan="2">{!agreementValue}</td>
+    </tr>
+    
+    <tr>
+        <td colspan="1">i) Due Before {!milestoneName} </td>
+        <td colspan="2">{!totalPrincipal}</td>
+    </tr>
+    
+   <tr>
+        <td colspan="1">ii) Previous Amount Due </td>
+       
+        <td colspan="2">{!totalOuststandingFormatted}</td><!--{!PreviousAmountReceivedstr}  {!otherchargeAmountMap['Basic RECD']}-->
+       
+    </tr>
+    
+    <tr>
+        <td colspan="1">iii) Previous Amount Received </td>
+       
+        <td colspan="2">{!PreviousOnAccountFlatcoststr}</td><!--{!PreviousAmountReceivedstr}  {!otherchargeAmountMap['Basic RECD']}-->
+       
+    </tr>
+  
+    <tr>
+        <td colspan="1"><b>(a) Balance as per current due (i+ii-iii)</b></td>
+        <td colspan="2">{!BalanceCurrentDuestr} </td>
+    </tr>
+    
+    
+    <tr>
+        <td colspan="1"><b>Less:- 33.33% Land Cost</b></td>
+        <td colspan="2">{!LessLandCostStr}</td>
+    </tr>
+    
+    <tr>
+        <td colspan="1"><b>Taxable Amount for GST</b></td>
+        <td colspan="2">{!taxlessstr}</td>
+    </tr>
+    
+     
+       
+    
+     <apex:repeat value="{!taxNames}" var="taxName">
+        <tr>
+            <td colspan="1">
+                <apex:outputText value="II)  9% CGST on Taxable Amount" rendered="{!if(taxName == 'CGST',true,false)}"> </apex:outputText>
+                <apex:outputText value="I)  9% SGST on Taxable Amount" rendered="{!if(taxName == 'SGST',true,false)}"> </apex:outputText>
+            </td>
+            <td colspan="2">{!totalTaxesmap[taxName]}</td>
+        </tr>
+    </apex:repeat>
+    
+    <tr>
+        <td colspan="1"><b>b) Balance as per current due GST (I + II)</b></td>
+        <td colspan="2">{!totaloftotalTaxes}</td>
+    </tr>
+  
+    
+    <tr>
+        <td colspan="1">c) Previous GST Due</td>
+        <td colspan="2">{!totalTaxOutstandingformatted}</td>
+    </tr>
+    
+    <tr>
+        <td colspan="1">d) Previous GST Received</td>
+        <td colspan="2">{!PreviousOnAccountGSTStr }</td>
+    </tr>
+    
+    <tr>
+        <td colspan="1"><b>e)Total GST (b+c-d)</b></td>
+        <td colspan="2">{!BalanceCurrentDueGSTstr}</td>
+    </tr>
+    
+    <tr style="background:#9CA1A1;color:black; font-size:11px">
+        <td colspan="1">Grand Total (a+e)</td>
+        <td colspan="2">{!GrandTotalstr}</td>
+    </tr>
+    </table>
+    </apex:outputPanel>
+ <!------------------------------------------------------Stamp duty and registration----------------------------------------------------------------->   
+    <apex:outputPanel rendered="{!if(registrationcheck != False,true,false)}">
+    <table class="demandStyle" id="MainTable" align="Center" cellspacing="0" style="width:85%; font-size:12px">
+    <tr style="background:#9CA1A1;color:black; font-size:15px">
+        <td colspan="1"> Due Details</td>
+        <td colspan="2">Amount</td>
+    </tr>
+    
+    <tr>
+        <td colspan="1"> AGREEMENT VALUE </td>
+        <td colspan="2">{!agreementValue}</td>
+    </tr>
+    
+    <tr>
+        <td colspan="1">a) Stamp duty Charges</td>
+        <td colspan="2">{!Stampdutystr}</td>
+    </tr>
+    
+    <tr>
+        <td colspan="1">b) Registration Charges</td>
+        <td colspan="2">{!Registrationstr}</td>
+       
+    </tr>
+   
+    <tr>
+        <td colspan="1">c) Legal Charges</td>
+        <td colspan="2">{!Legalstr} </td>
+    </tr>
+    
+    <tr style="background:#9CA1A1;color:black; font-size:12px">
+        <td colspan="1">Total Due (a+b+c)</td>
+        <td colspan="2">{!RegistrationTotalstr}</td>
+    </tr>
+    
+   
+    
+    </table>
+    </apex:outputPanel>
+    
+<!----------------------------------------------- added by Ashish (end)----------------------------------->   
+</td></tr>  
+<tr><td>&nbsp;</td></tr>
+  <tr><td>We request you to clear the overdue amount without any further delay and also to avoid further accrual of interest in accordance with the mutually agreed terms as per the agreement to sell. We look forward to your timely co-operation. Please feel free to contact us for any queries.</td></tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr><td></td></tr>
+          <tr><td>NOTE : If the payment has already made, please disregard this email.</td></tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr><td>Regards,<br/>Team CRM</td></tr>  
+    </table>        
+   </body>
+ </apex:component>

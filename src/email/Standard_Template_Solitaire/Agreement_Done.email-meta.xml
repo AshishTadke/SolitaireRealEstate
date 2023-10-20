@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Agreement Done</name>
+    <style>none</style>
+    <subject>Agreement Done.</subject>
+    <textOnly>Dear, {!Opportunity.Future_Correspondence_Contact_Name__c}.
+
+Greetings from Solitaire!
+
+Congratulations on the completion of “Registration” of your property in {!Opportunity.Project__c}.
+
+We are expecting the registered agreement for your unit in the next 3-4 working days. Upon receipt of the document, we will connect with you to take your appointment for handing over the registered document to you.
+
+Please feel free to contact us for any queries.
+
+Regards,
+Team CRM Solitaire</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Residential Cost Sheet</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Cost Sheets</value>
+    </caseValues>
+    <fields>
+        <label><!-- Advance Against Maintenance --></label>
+        <name>Advance_Against_Maintenance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carpet Area as defined in RERA_SQFT --></label>
+        <name>Carpet_Area_as_defined_in_RERA_SQFT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carpet Area as defined in RERA_SQMTS --></label>
+        <name>Carpet_Area_as_defined_in_RERA_SQMTS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carpet Area of Private Terrace_SQFT --></label>
+        <name>Carpet_Area_of_Private_Terrace_SQFT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carpet Area of Private Terrace_SQMTS --></label>
+        <name>Carpet_Area_of_Private_Terrace_SQMTS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carpet Area of balcony sanctioned_SQFT --></label>
+        <name>Carpet_Area_of_balcony_sanctioned_SQFT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carpet Area of balcony sanctioned_SQMTS --></label>
+        <name>Carpet_Area_of_balcony_sanctioned_SQMTS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Central GST --></label>
+        <name>Central_GST__c</name>
+    </fields>
+    <fields>
+        <label><!-- Floor --></label>
+        <name>Floor__c</name>
+    </fields>
+    <fields>
+        <label><!-- GST on Annual Advance Maintenance (@18%) --></label>
+        <name>GST_on_Annual_Advance_Maintenance_18__c</name>
+    </fields>
+    <fields>
+        <label><!-- Infrastructure Charges 2 - Depend/ Stack --></label>
+        <name>Infrastructure_Charges_2_Depend_Stack__c</name>
+    </fields>
+    <fields>
+        <label><!-- Infrastructure Charges --></label>
+        <name>Infrastructure_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- MSEB &amp; Development Charges --></label>
+        <name>MSEB_Development_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maintenance Charges --></label>
+        <name>Maintenance_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Consideration Value --></label>
+        <name>Net_Consideration_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Cost Sheets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payment Plan Type --></label>
+        <name>Payment_Plan_Type__c</name>
+        <relationshipLabel><!-- Cost Sheets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Premium Rate Calculation --></label>
+        <name>Percent_input_field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium Charges Rate --></label>
+        <name>Premium_Charges_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium Charges --></label>
+        <name>Premium_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium Regular Rate --></label>
+        <name>Premium_Regular_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium Unit Charges --></label>
+        <name>Premium_Unit_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- Cost Sheets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Purchaser Name --></label>
+        <name>Purchaser_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refundable Corpus Fund (Deposit) --></label>
+        <name>Refundable_Corpus_Fund_Deposit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration Charges --></label>
+        <name>Registration_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regular Unit Rate --></label>
+        <name>Regular_Unit_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stamp Duty --></label>
+        <name>Stamp_Duty__c</name>
+    </fields>
+    <fields>
+        <label><!-- State GST --></label>
+        <name>State_GST__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subvention Premium Rate --></label>
+        <name>Subvention_Premium_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subvention Unit Rate --></label>
+        <name>Subvention_Unit_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Carpet Area_SQFT --></label>
+        <name>Total_Carpet_Area_SQFT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Carpet Area_SQMTS --></label>
+        <name>Total_Carpet_Area_SQMTS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Charges Payable at Possession --></label>
+        <name>Total_Charges_Payable_at_Possession__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Government Charges --></label>
+        <name>Total_Government_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tower --></label>
+        <name>Tower__c</name>
+        <relationshipLabel><!-- Cost Sheets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Unit Configuration --></label>
+        <name>Unit_Configuration__c</name>
+        <picklistValues>
+            <masterLabel>1 Bedroom</masterLabel>
+            <translation><!-- 1 Bedroom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 Bedroom</masterLabel>
+            <translation><!-- 2 Bedroom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 Bedroom</masterLabel>
+            <translation><!-- 3 Bedroom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Bedroom</masterLabel>
+            <translation><!-- 4 Bedroom --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unit Cost --></label>
+        <name>Unit_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Type --></label>
+        <name>Unit_Type__c</name>
+        <picklistValues>
+            <masterLabel>Commercial</masterLabel>
+            <translation><!-- Commercial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential</masterLabel>
+            <translation><!-- Residential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Wing --></label>
+        <name>Wing__c</name>
+    </fields>
+    <layouts>
+        <layout>Residential Cost Sheet Layout</layout>
+        <sections>
+            <label><!-- Area Detail --></label>
+            <section>Area Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Charges Applicable at possession --></label>
+            <section>Charges Applicable at possession</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Government Charges --></label>
+            <section>Government Charges</section>
+        </sections>
+        <sections>
+            <label><!-- Internal Calculation --></label>
+            <section>Internal Calculation</section>
+        </sections>
+        <sections>
+            <label><!-- Unit Details --></label>
+            <section>Unit Details</section>
+        </sections>
+        <sections>
+            <label><!-- Unit Value Details --></label>
+            <section>Unit Value Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Print_Cost_Sheet --></label>
+        <name>Print_Cost_Sheet</name>
+    </webLinks>
+</CustomObjectTranslation>

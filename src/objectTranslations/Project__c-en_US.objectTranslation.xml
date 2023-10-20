@@ -1,0 +1,1415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Projects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ageing Calculation Running --></label>
+        <name>Ageing_Calculation_Running__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single- Dependent Charges --></label>
+        <name>Allotment_Charges_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single - Independent Charges --></label>
+        <name>Allotment_Charges_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack Charges --></label>
+        <name>Allotment_Charges_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dependable-Stack Charge --></label>
+        <name>Allotment_Charges_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Puzzle Charges --></label>
+        <name>Allotment_Charges_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack 3 Charges --></label>
+        <name>Allotment_Charges_6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Two Wheeler Charges --></label>
+        <name>Allotment_Charges_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allow Duplicate Receipts Printing --></label>
+        <name>Allow_Duplicate_Receipts_Printing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allow Pop Up Reminder For Dues.. --></label>
+        <name>Allow_Pop_Up_Reminder_For_Dues__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amenities --></label>
+        <name>Amenities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Create Dues --></label>
+        <name>Auto_Create_Dues__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Generate Reg No --></label>
+        <name>Auto_Generate_Reg_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Code --></label>
+        <name>Bank_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Receipts --></label>
+        <name>Bank_Receipts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brochure Link --></label>
+        <name>Brochure_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker % Commision Slab [1 to 5] --></label>
+        <name>Broker_Commision_Slab_1_to_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker % Commision Slab [6 to 10] --></label>
+        <name>Broker_Commision_Slab_6_to_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker % Commision Slab [Above 10] --></label>
+        <name>Broker_Commision_Slab_Above_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brokerage Payout Milestone 1 --></label>
+        <name>Brokerage_Payout_Milestone_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brokerage Payout Milestone 2 --></label>
+        <name>Brokerage_Payout_Milestone_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brokerage --></label>
+        <name>Brokerage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculate Broker Adjustment as Sum.. --></label>
+        <name>Calculate_Broker_Adjustment_as_Sum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cash Receipts --></label>
+        <name>Cash_Receipts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cheque Dishonour --></label>
+        <name>Cheque_Dishonour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cheque Payments --></label>
+        <name>Cheque_Payments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Circle Rate --></label>
+        <name>Circle_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- ClientLookup --></label>
+        <name>ClientLookup__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Code State --></label>
+        <name>Code_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completion status details --></label>
+        <name>Completion_status_details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compounding Period Starts From --></label>
+        <name>Compounding_Period_Starts_From__c</name>
+        <picklistValues>
+            <masterLabel>Booking Date</masterLabel>
+            <translation><!-- Booking Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Year</masterLabel>
+            <translation><!-- Financial Year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First Unpaid Due</masterLabel>
+            <translation><!-- First Unpaid Due --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Compounding Period --></label>
+        <name>Compounding_Period__c</name>
+        <picklistValues>
+            <masterLabel>Half Yearly</masterLabel>
+            <translation><!-- Half Yearly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yearly</masterLabel>
+            <translation><!-- Yearly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Const. Stage Grace Period --></label>
+        <name>Const_Stage_Grace_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Details --></label>
+        <name>Contact_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Create Call Notice After Dues --></label>
+        <name>Create_Call_Notice_After_Dues__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Person2 --></label>
+        <name>DRS_Contact_Person2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days from Dt of Booking for NPV --></label>
+        <name>Days_from_Dt_of_Booking_for_NPV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days to Send Demand --></label>
+        <name>Days_to_Send_Demand__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal Approver --></label>
+        <name>Deal_Approver__c</name>
+        <picklistValues>
+            <masterLabel>Ram</masterLabel>
+            <translation><!-- Ram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sham</masterLabel>
+            <translation><!-- Sham --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sita</masterLabel>
+            <translation><!-- Sita --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Default Bank A/c. No. --></label>
+        <name>Default_Bank_A_c_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Broker Relaxation --></label>
+        <name>Default_Broker_Relaxation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Cash A/c. No. --></label>
+        <name>Default_Cash_A_c_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Service Tax A/c. No. --></label>
+        <name>Default_Service_Tax_A_c_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount1 Effective Till --></label>
+        <name>Discount1_Effective_Till__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount1 Lumpsum --></label>
+        <name>Discount1_Lumpsum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount1 Per Sq.Ft --></label>
+        <name>Discount1_Per_Sq_Ft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount1 Type --></label>
+        <name>Discount1_Type__c</name>
+        <picklistValues>
+            <masterLabel>Armed Forces</masterLabel>
+            <translation><!-- Armed Forces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign</masterLabel>
+            <translation><!-- Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee</masterLabel>
+            <translation><!-- Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loyalty</masterLabel>
+            <translation><!-- Loyalty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NRI</masterLabel>
+            <translation><!-- NRI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physically Challenged</masterLabel>
+            <translation><!-- Physically Challenged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referral</masterLabel>
+            <translation><!-- Referral --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount2 Effective Till --></label>
+        <name>Discount2_Effective_Till__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount2 Lumpsum --></label>
+        <name>Discount2_Lumpsum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount2 Per Sq.Ft --></label>
+        <name>Discount2_Per_Sq_Ft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount2 Type --></label>
+        <name>Discount2_Type__c</name>
+        <picklistValues>
+            <masterLabel>Armed Forces</masterLabel>
+            <translation><!-- Armed Forces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign</masterLabel>
+            <translation><!-- Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee</masterLabel>
+            <translation><!-- Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loyalty</masterLabel>
+            <translation><!-- Loyalty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NRI</masterLabel>
+            <translation><!-- NRI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physically Challenged</masterLabel>
+            <translation><!-- Physically Challenged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referral</masterLabel>
+            <translation><!-- Referral --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount3 Effective Till --></label>
+        <name>Discount3_Effective_Till__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount3 Lumpsum --></label>
+        <name>Discount3_Lumpsum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount3 Per Sq.Ft --></label>
+        <name>Discount3_Per_Sq_Ft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount3 Type --></label>
+        <name>Discount3_Type__c</name>
+        <picklistValues>
+            <masterLabel>Armed Forces</masterLabel>
+            <translation><!-- Armed Forces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign</masterLabel>
+            <translation><!-- Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee</masterLabel>
+            <translation><!-- Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loyalty</masterLabel>
+            <translation><!-- Loyalty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NRI</masterLabel>
+            <translation><!-- NRI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physically Challenged</masterLabel>
+            <translation><!-- Physically Challenged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referral</masterLabel>
+            <translation><!-- Referral --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount4 Effective Till --></label>
+        <name>Discount4_Effective_Till__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount4 Lumpsum --></label>
+        <name>Discount4_Lumpsum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount4 Per Sq.Ft --></label>
+        <name>Discount4_Per_Sq_Ft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount4 Type --></label>
+        <name>Discount4_Type__c</name>
+        <picklistValues>
+            <masterLabel>Armed Forces</masterLabel>
+            <translation><!-- Armed Forces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign</masterLabel>
+            <translation><!-- Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee</masterLabel>
+            <translation><!-- Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loyalty</masterLabel>
+            <translation><!-- Loyalty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NRI</masterLabel>
+            <translation><!-- NRI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physically Challenged</masterLabel>
+            <translation><!-- Physically Challenged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referral</masterLabel>
+            <translation><!-- Referral --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount5 Per Sq.Ft --></label>
+        <name>Discount5_Per_Sq_Ft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount5 Type --></label>
+        <name>Discount5_Type__c</name>
+        <picklistValues>
+            <masterLabel>Armed Forces</masterLabel>
+            <translation><!-- Armed Forces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EOI Discount</masterLabel>
+            <translation><!-- EOI Discount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee</masterLabel>
+            <translation><!-- Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NRI</masterLabel>
+            <translation><!-- NRI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physically Challenged</masterLabel>
+            <translation><!-- Physically Challenged --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount6 Per Sq.Ft --></label>
+        <name>Discount6_Per_Sq_Ft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount6 Type --></label>
+        <name>Discount6_Type__c</name>
+        <picklistValues>
+            <masterLabel>Armed Forces</masterLabel>
+            <translation><!-- Armed Forces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee</masterLabel>
+            <translation><!-- Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NRI</masterLabel>
+            <translation><!-- NRI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physically Challenged</masterLabel>
+            <translation><!-- Physically Challenged --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount7 Per Sq.Ft --></label>
+        <name>Discount7_Per_Sq_Ft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount7 Type --></label>
+        <name>Discount7_Type__c</name>
+        <picklistValues>
+            <masterLabel>Armed Forces</masterLabel>
+            <translation><!-- Armed Forces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee</masterLabel>
+            <translation><!-- Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NRI</masterLabel>
+            <translation><!-- NRI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physically Challenged</masterLabel>
+            <translation><!-- Physically Challenged --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount8 Description --></label>
+        <name>Discount8_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount8 Per Sq.Ft --></label>
+        <name>Discount8_Per_Sq_Ft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount8 Type --></label>
+        <name>Discount8_Type__c</name>
+        <picklistValues>
+            <masterLabel>DAM</masterLabel>
+            <translation><!-- DAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special Offer</masterLabel>
+            <translation><!-- Special Offer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount9 Description --></label>
+        <name>Discount9_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount9 Per Sq.Ft --></label>
+        <name>Discount9_Per_Sq_Ft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount9 Type --></label>
+        <name>Discount9_Type__c</name>
+        <picklistValues>
+            <masterLabel>DAM</masterLabel>
+            <translation><!-- DAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special Offer</masterLabel>
+            <translation><!-- Special Offer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount Approval --></label>
+        <name>Discount_Approval__c</name>
+        <picklistValues>
+            <masterLabel>Mohit</masterLabel>
+            <translation><!-- Mohit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rohit</masterLabel>
+            <translation><!-- Rohit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sohit</masterLabel>
+            <translation><!-- Sohit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount Link Option --></label>
+        <name>Discount_Link_Option__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Threshold (SH) --></label>
+        <name>Discount_Threshold_SH__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Threshold (SM) --></label>
+        <name>Discount_Threshold_SM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Threshold (TL) --></label>
+        <name>Discount_Threshold_TL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Value --></label>
+        <name>Discount_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount to be given On Timely Payment.. --></label>
+        <name>Discount_to_be_given_On_Timely_Payment__c</name>
+        <picklistValues>
+            <masterLabel>Basic</masterLabel>
+            <translation><!-- Basic --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Division Code --></label>
+        <name>Division_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dues Delay --></label>
+        <name>Dues_Delay__c</name>
+    </fields>
+    <fields>
+        <label><!-- E-Brochure URL --></label>
+        <name>E_Brochure_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Edit Base Rate --></label>
+        <name>Edit_Base_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Edit Discount Lumsum --></label>
+        <name>Edit_Discount_Lumsum__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Receipt --></label>
+        <name>First_Receipt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Floor Plans --></label>
+        <name>Floor_Plans__c</name>
+    </fields>
+    <fields>
+        <label><!-- Footer Image --></label>
+        <name>Footer_Image__c</name>
+    </fields>
+    <fields>
+        <label><!-- Footer Logo --></label>
+        <name>Footer_Logo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forefeiting % --></label>
+        <name>Forefeiting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gallery HTML Contents --></label>
+        <name>Gallery_HTML_Contents__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Global Unit of Measurement --></label>
+        <name>Global_Unit_Of_Measuremnet__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- HSN Code --></label>
+        <name>HSN_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- ID --></label>
+        <name>ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Advance Registration --></label>
+        <name>In_Advance_Registration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include in Online Projects Data Export --></label>
+        <name>Include_in_Online_Projects_Data_Export__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int. Grace Period --></label>
+        <name>Int_Grace_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integrate with FA --></label>
+        <name>Integrate_with_FA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest Application as --></label>
+        <name>Interest_Application_as__c</name>
+        <picklistValues>
+            <masterLabel>Compound</masterLabel>
+            <translation><!-- Compound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Simple</masterLabel>
+            <translation><!-- Simple --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Interest Applies Over Grace Period --></label>
+        <name>Interest_Applies_Over_Grace_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Broker Change Allowed on Booking --></label>
+        <name>Is_Broker_Change_Allowed_on_Booking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is PDC Allowed --></label>
+        <name>Is_PDC_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is ReadOnly --></label>
+        <name>Is_ReadOnly__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Service Tax Applicable --></label>
+        <name>Is_Service_Tax_Applicable__c</name>
+    </fields>
+    <fields>
+        <label><!-- JV --></label>
+        <name>JV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ledger Narration --></label>
+        <name>Ledger_Narration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Charges --></label>
+        <name>Legal_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal In AV --></label>
+        <name>Legal_In_AV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location Map URL --></label>
+        <name>Location_Map_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Main Picture --></label>
+        <name>Main_Picture__c</name>
+    </fields>
+    <fields>
+        <label><!-- Minimum Base Rate --></label>
+        <name>Minimum_Base_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPV % --></label>
+        <name>NPV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Narration(To be Printed On Receipt) --></label>
+        <name>Narration__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Rate(Increased Area) --></label>
+        <name>New_Rate_Increased_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack 3 (Available) --></label>
+        <name>New_Stack_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack 3 (Booked) --></label>
+        <name>New_Stack_Booked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack 3 (Total) --></label>
+        <name>New_Stack_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- No GST on Token --></label>
+        <name>No_GST_on_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non Contactable Text --></label>
+        <name>Non_Contactable_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes New --></label>
+        <name>Notes_New__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- OpportunityExpires After Days --></label>
+        <name>OpportunityExpires_After_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overview --></label>
+        <name>Overview__c</name>
+    </fields>
+    <fields>
+        <label><!-- Per Annum --></label>
+        <name>Per_Annum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone No. --></label>
+        <name>Phone_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Place of Supply --></label>
+        <name>Place_of_Supply__c</name>
+    </fields>
+    <fields>
+        <label><!-- Print Default Receipt Remark --></label>
+        <name>Print_Default_Receipt_Remark__c</name>
+    </fields>
+    <fields>
+        <label><!-- Print Installment Description On Ledg --></label>
+        <name>Print_Installment_Description_On_Ledg__c</name>
+    </fields>
+    <fields>
+        <label><!-- ProjectName --></label>
+        <name>ProjectName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project CRM Lead --></label>
+        <name>Project_CRM_Lead__c</name>
+        <relationshipLabel><!-- Projects (Project CRM Lead) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Code --></label>
+        <name>Project_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Description Site --></label>
+        <name>Project_Description_Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Details --></label>
+        <name>Project_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Id --></label>
+        <name>Project_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Image --></label>
+        <name>Project_Image__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Property Type --></label>
+        <name>Project_Property_Type__c</name>
+        <picklistValues>
+            <masterLabel>Commercial</masterLabel>
+            <translation><!-- Commercial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential</masterLabel>
+            <translation><!-- Residential --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project Receipt Address --></label>
+        <name>Project_Receipt_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Receipt Header --></label>
+        <name>Project_Receipt_Header__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Site Head --></label>
+        <name>Project_Site_Head__c</name>
+        <relationshipLabel><!-- Projects (Project Site Head) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Stage --></label>
+        <name>Project_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Launch</masterLabel>
+            <translation><!-- Launch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Launch</masterLabel>
+            <translation><!-- Pre-Launch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Pre-Launch</masterLabel>
+            <translation><!-- Pre-Pre-Launch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soft Launch</masterLabel>
+            <translation><!-- Soft Launch --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project site URL --></label>
+        <name>Project_site_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project type --></label>
+        <name>Project_type__c</name>
+        <picklistValues>
+            <masterLabel>Contract</masterLabel>
+            <translation><!-- Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Own</masterLabel>
+            <translation><!-- Own --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Quotation Approver --></label>
+        <name>Quotation_Approver__c</name>
+        <picklistValues>
+            <masterLabel>Munal</masterLabel>
+            <translation><!-- Munal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunal</masterLabel>
+            <translation><!-- Sunal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tunal</masterLabel>
+            <translation><!-- Tunal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Quotation Validity --></label>
+        <name>Quotation_Validity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank --></label>
+        <name>RDS_Bank__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>RDS_City__c</name>
+        <picklistValues>
+            <masterLabel>Bahadurgarh</masterLabel>
+            <translation><!-- Bahadurgarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bengalaruru</masterLabel>
+            <translation><!-- Bengalaruru --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Faridabad</masterLabel>
+            <translation><!-- Faridabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greater Noida</masterLabel>
+            <translation><!-- Greater Noida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gurgaon</masterLabel>
+            <translation><!-- Gurgaon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jaipur</masterLabel>
+            <translation><!-- Jaipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meerut</masterLabel>
+            <translation><!-- Meerut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palwal</masterLabel>
+            <translation><!-- Palwal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pune</masterLabel>
+            <translation><!-- Pune --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sirsa</masterLabel>
+            <translation><!-- Sirsa --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Company Code --></label>
+        <name>RDS_Company_Code__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact Person1 --></label>
+        <name>RDS_Contact_Person1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest Rate % --></label>
+        <name>RDS_Interest_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Description --></label>
+        <name>RDS_Project_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Short Name --></label>
+        <name>RDS_Short_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>RDS_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- RERA Certificate No. --></label>
+        <name>RERA_Certificate_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- RM --></label>
+        <name>RM__c</name>
+        <relationshipLabel><!-- Projects (RM) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Radius Project Type --></label>
+        <name>Radius_Project_Type__c</name>
+        <picklistValues>
+            <masterLabel>Delivered</masterLabel>
+            <translation><!-- Delivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Going</masterLabel>
+            <translation><!-- On Going --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UpComing</masterLabel>
+            <translation><!-- UpComing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Registration Charge % --></label>
+        <name>Registration_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration Charges --></label>
+        <name>Registration_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Text --></label>
+        <name>SMS_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applicable From Floor --></label>
+        <name>S_Applicable_From_Floor__c</name>
+    </fields>
+    <fields>
+        <help><!-- Floor Rise [Per Sq Ft] rate applicable for the entire project --></help>
+        <label><!-- Floor Rise Rate --></label>
+        <name>S_Floor_Rise_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Ready reckoner rates defined by the government for this particular project location [Per Sq.ft Rate] --></help>
+        <label><!-- Ready Reckoner Rate --></label>
+        <name>S_Ready_Reckoner_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- enter the SD% [calculated based on the agreement value] --></help>
+        <label><!-- Stamp Duty --></label>
+        <name>S_Stamp_Duty__c</name>
+    </fields>
+    <fields>
+        <help><!-- enter the VAT%, calculated based on the agreement value --></help>
+        <label><!-- VAT --></label>
+        <name>S_VAT__c</name>
+    </fields>
+    <fields>
+        <help><!-- Per sq ft PLC rate applicable for View 1 --></help>
+        <label><!-- View1 PLC --></label>
+        <name>S_View1_PLC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Per sq ft PLC rate applicable for View 2 --></help>
+        <label><!-- View2 PLC --></label>
+        <name>S_View2_PLC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Per sq ft PLC rate applicable for View 1 --></help>
+        <label><!-- View3 PLC --></label>
+        <name>S_View3_PLC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales MIS --></label>
+        <name>Sales_MIS__c</name>
+        <relationshipLabel><!-- Projects (Sales MIS) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Site Head --></label>
+        <name>Sales_Site_Head__c</name>
+        <relationshipLabel><!-- Projects (Sales Site Head) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sender Code --></label>
+        <name>Sender_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Effective Date --></label>
+        <name>Service_Tax_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check to indicate whether the ST component of the token amount needs to be collected as part of booking process.
+If this is checked unless the entire token amount and service tax is paid, we cant proceed with the booking --></help>
+        <label><!-- Service Tax On Token Amount --></label>
+        <name>Service_Tax_Required_On_Token_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single- Dependent (Assigned) --></label>
+        <name>Single_Open_Assigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single- Dependent (Available) --></label>
+        <name>Single_Open_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single- Dependent (Booked) --></label>
+        <name>Single_Open_Booked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single- Dependent (Total) --></label>
+        <name>Single_Open_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single - Independent (Assigned) --></label>
+        <name>Single_car_park_Assigned_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single - Independent (Available) --></label>
+        <name>Single_car_park_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single - Independent (Booked) --></label>
+        <name>Single_car_park_Booked_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single - Independent (Total) --></label>
+        <name>Single_car_park_Total_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Address Map Link --></label>
+        <name>Site_Address_Map_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Code --></label>
+        <name>Site_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Puzzle (Assigned) --></label>
+        <name>Stack_Assigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Puzzle (Available) --></label>
+        <name>Stack_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Puzzle (Booked) --></label>
+        <name>Stack_Booked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Puzzle (Total) --></label>
+        <name>Stack_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Code Where Supplied --></label>
+        <name>State_Code_Where_Supplied__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TDS Category A/c. No.(Broker) --></label>
+        <name>TDS_Category_A_c_No_Broker__c</name>
+    </fields>
+    <fields>
+        <label><!-- TDS Category A/c. No.(Sub-Broker) --></label>
+        <name>TDS_Category_A_c_No_Sub_Broker__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack (Assigned) --></label>
+        <name>Tandem_Open_Assigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack (Available) --></label>
+        <name>Tandem_Open_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack (Booked) --></label>
+        <name>Tandem_Open_Booked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack (Total) --></label>
+        <name>Tandem_Open_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dependable Stack (Assigned) --></label>
+        <name>Tandem_car_park_Assigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dependable Stack (Available) --></label>
+        <name>Tandem_car_park_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dependable Stack (Booked) --></label>
+        <name>Tandem_car_park_Booked_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dependable Stack (Total) --></label>
+        <name>Tandem_car_park_Total_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terms and Conditions Regular --></label>
+        <name>Tearms_and_Conditions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terms and Conditions Subvention --></label>
+        <name>Terms_and_Condtitions_New__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thank You Text --></label>
+        <name>Thank_You_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Token Amount --></label>
+        <name>Token_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Max discount allowed on this project. The rate is in Per Sq.Ft --></help>
+        <label><!-- Total Max Discount Allowed (Per Sq.Ft) --></label>
+        <name>Total_Max_Discount_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Two Wheeler (Booked) --></label>
+        <name>Two_Wheeler_Booked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Two Wheeler (Total) --></label>
+        <name>Two_Wheeler_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Two wheeler (Available) --></label>
+        <name>Two_wheeler_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Structure Status --></label>
+        <name>Unit_Structure_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- View Cost Sheet Page --></label>
+        <name>View_Cost_Sheet_Page__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visit Confirmed Reminder --></label>
+        <name>Visit_Confirmed_Reminder__c</name>
+    </fields>
+    <layouts>
+        <layout>Project Layout</layout>
+        <sections>
+            <label><!-- Car Park Inventory (Dependable Stack) --></label>
+            <section>Car Park Inventory (Dependable Stack)</section>
+        </sections>
+        <sections>
+            <label><!-- Car Park Inventory (Puzzle) --></label>
+            <section>Car Park Inventory (Puzzle)</section>
+        </sections>
+        <sections>
+            <label><!-- Car Park Inventory (Single - Dependent) --></label>
+            <section>Car Park Inventory (Single - Dependent)</section>
+        </sections>
+        <sections>
+            <label><!-- Car Park Inventory (Single - Independent) --></label>
+            <section>Car Park Inventory (Single - Independent)</section>
+        </sections>
+        <sections>
+            <label><!-- Car Park Inventory (Stack 3) --></label>
+            <section>Car Park Inventory (Stack 3)</section>
+        </sections>
+        <sections>
+            <label><!-- Car Park Inventory (Stack) --></label>
+            <section>Car Park Inventory (Stack)</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Park Inventory (Two Wheeler) --></label>
+            <section>Park Inventory (Two Wheeler)</section>
+        </sections>
+        <sections>
+            <label><!-- Project Level Charge Definitions --></label>
+            <section>Project Level Charge Definitions</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please Fill Bank Receipt --></errorMessage>
+        <name>BankReceiptMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Enter Value in Discount Value after selecting PickList Value of Discount to be given on Timely Payment. --></errorMessage>
+        <name>Blank_Value_Entering_in_Discount_Value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Enter Value in Narration(To be Printed On Receipt) after selecting PickList Value of Discount to be given on Timely Payment. --></errorMessage>
+        <name>Blank_Value_Entering_in_Narration</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill Cash Receipt --></errorMessage>
+        <name>CashReceiptMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Fill Cheque Payments Value --></errorMessage>
+        <name>ChaequePaymentsMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill Division Code --></errorMessage>
+        <name>ChkValueDivisionCode</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill Default Bank A/C No. --></errorMessage>
+        <name>DefaultBankAccountNo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Fill Value Default Cash A/C No. --></errorMessage>
+        <name>DefaultCashAccountNo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cann&apos;t enter in Discount Value as you did not choose any PickList Value of Discount to be given on Timely Payment. --></errorMessage>
+        <name>Discount_Value_Enter_When_None_is_Selec</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Discount should be less than 100 % and not less than 0. --></errorMessage>
+        <name>Discount_Value_When_Percentage_Selected</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Interest Rate Can Not be Greater then the 100 --></errorMessage>
+        <name>Interest_Rate_cannot_greater_than_100</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Fill JV value --></errorMessage>
+        <name>JVMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Project Code must be three Digit --></errorMessage>
+        <name>Length_Count</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cann&apos;t enter in Narration(To be Printed On Receipt) as you did not choose any PickList Value of Discount to be given on Timely Payment. --></errorMessage>
+        <name>Narration_Enter_When_None_is_Selected</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Should not be greater  than today date --></errorMessage>
+        <name>Project_Start_date_validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can select only Discount Link Option or Edit Discount Lumsum not both for the same project --></errorMessage>
+        <name>Select_Discount_Option</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You have  check the Service Tax applicable field, fill the Service Tax Effective Date. --></errorMessage>
+        <name>if_Service_tax_Applicable_select_date</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Activate_Unit_Structure --></label>
+        <name>Activate_Unit_Structure</name>
+    </webLinks>
+</CustomObjectTranslation>

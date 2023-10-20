@@ -1,0 +1,50 @@
+<apex:page controller="WelcomeCallRejectedPageController" sidebar="true">
+  <head>
+      <style>
+      table.tableApp1B {
+       border : 3px Solid Black;
+       width:100%;
+    }
+    table.tableApp1B td {
+        
+        border : 1px Solid Black;
+        padding: 10px;
+       }
+    table.tableApp1B th {
+        text-align : center;
+    }
+    table.tableApp1B tr {
+         width:100%;
+    }
+    table.tableApp1B tr.appheader {
+         width:100%;
+         text-align : center;
+         background:#edf3f3;
+    }
+      </style>
+  </head>
+  
+  <apex:pageBlock title="Welcome Page History"> <!-- Rejected Welcome Call Details -->
+   <apex:pageMessages />   
+         <table class="tableApp1B">
+          <tr><th>Name</th><th>Detail</th><!--<th>Remarks</th>--></tr>
+          
+          <apex:repeat value="{!WCCList}" var="WCCVar">
+          <tr>
+              <td><apex:outputText value="{!WCCVar.Name}" /></td>
+              <td><apex:outputField value="{!WCCVar.Detail__c}"/></td>
+              <!--<td><apex:outputField value="{!WCCVar.Verify__c}"/></td>-->
+              <!--<td><apex:outputField value="{!WCCVar.Remarks__c}"/></td>-->
+           </tr>
+           
+          </apex:repeat>
+          <tr><td><b>Remarks</b></td>
+          <td>
+                 <apex:outputField value="{!WCCList[0].Welcome_Call_Header__r.Remarks__c}"/>             
+          </td>
+           </tr>
+         </table>
+     
+  </apex:pageBlock>
+  
+</apex:page>

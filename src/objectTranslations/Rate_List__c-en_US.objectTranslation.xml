@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Rate List</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Rate Lists</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Area Type --></label>
+        <name>Area_Type__c</name>
+        <relationshipLabel><!-- Rate Lists --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ChargeCost --></label>
+        <name>ChargeCost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge Based On Master --></label>
+        <name>Charge_Based_On_Master__c</name>
+        <picklistValues>
+            <masterLabel>Lumpsum</masterLabel>
+            <translation><!-- Lumpsum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rate</masterLabel>
+            <translation><!-- Rate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Charge on Area Type --></label>
+        <name>Charge_on_Area_Type__c</name>
+        <picklistValues>
+            <masterLabel>Carpet Area</masterLabel>
+            <translation><!-- Carpet Area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saleable Area</masterLabel>
+            <translation><!-- Saleable Area --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Charged Based On --></label>
+        <name>Charged_Based_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- EffectiveFrom --></label>
+        <name>EffectiveFrom__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Till --></label>
+        <name>Effective_Till__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global Charges --></label>
+        <name>Global_Charges__c</name>
+        <relationshipLabel><!-- Rate Lists --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Global Unit of Measurement --></label>
+        <name>Global_Unit_of_Measurement__c</name>
+        <relationshipLabel><!-- Rate Lists --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Param1 --></label>
+        <name>Param1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param2 --></label>
+        <name>Param2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param3 --></label>
+        <name>Param3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param4 --></label>
+        <name>Param4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param5 --></label>
+        <name>Param5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage --></label>
+        <name>Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Charges --></label>
+        <name>Project_Charges__c</name>
+        <relationshipLabel><!-- Rate Lists --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Unit Type --></label>
+        <name>Project_Unit_Type__c</name>
+        <relationshipLabel><!-- Rate Lists --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- Rate Lists --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Rate Lists --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ranges From --></label>
+        <name>Ranges_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ranges To --></label>
+        <name>Ranges_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate List Detail --></label>
+        <name>Rate_List_Detail__c</name>
+        <relationshipLabel><!-- Rate Lists --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rate List Header --></label>
+        <name>Rate_List_HeaderID__c</name>
+        <relationshipLabel><!-- Rate Lists --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rate List Type --></label>
+        <name>Rate_List_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate --></label>
+        <name>Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Deviation Charge --></label>
+        <name>Special_Deviation_Charge_del__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Number --></label>
+        <name>Unit_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Area Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version Number --></label>
+        <name>Version_Number__c</name>
+    </fields>
+    <layouts>
+        <layout>Rate List Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please add the Special Deviation Charge or UnCheck the Special Deviation from the Customer which is Attached with this Project Unit. --></errorMessage>
+        <name>SpecialDeviationOnOpportunity</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can map a Project only on Lauch Stage (Project). --></errorMessage>
+        <name>Tag_Project_Unit_Only_Not_Project</name>
+    </validationRules>
+</CustomObjectTranslation>

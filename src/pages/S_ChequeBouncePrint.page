@@ -1,0 +1,28 @@
+<apex:page id="pageid"  controller="showReceiptsForPrint" showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+	<head>
+	    <style>
+	           @page {
+	                size: A4;
+	                margin: 10mm;
+	                @bottom-center {
+	                    content: "Page " counter(page) " of " counter(pages);
+	                }
+	            }
+	
+	            .page-break {
+	                display:block;
+	                page-break-after:always;
+	            }
+	           body {
+	                font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; 
+	                font-weight:normal; 
+	                font-size:10.5px; 
+	                mso-line-height-rule: exactly;
+	            }
+	      </style>
+      </head>
+      
+      <body>
+     	<c:S_ChequeBounce_c Receipt="{!strReceiptId}" letterHead="{!letterHead}" />
+      </body>
+</apex:page>

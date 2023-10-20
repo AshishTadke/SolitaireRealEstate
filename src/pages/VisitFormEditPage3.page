@@ -1,0 +1,1823 @@
+<apex:page controller="NewSiteVisitController2" showHeader="false" sidebar="false" docType="html-5.0" standardStylesheets="true" cache="false">
+
+<html>
+        <head>
+            <title>Site Visit Form</title>
+            <apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+            <script src="/soap/ajax/9.0/connection.js"></script>
+            <style type="text/css">
+           
+            html,
+            body {
+                font-family: 'Quicksand', sans-serif;
+                font-size: 100%;
+                background-size: cover;  
+                
+                <!-- background-image: url({!projObj.SVF_background_Image__c}) no-repeat; //background: url({!$Resource.BackgroundimgforSVF}) no-repeat;-->
+                background-attachment: fixed;
+            }
+             .heading {
+                font-size: 1.5em;
+                color: black;
+                font-weight: 600;
+                text-transform: uppercase;
+                text-align: center;
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+            
+            input[type="checkbox"].customechkBox {
+                width: 20px;
+                height: 15px;
+                position: relative;
+                top: 5px;
+                margin-right: 5px;
+            }
+        
+            </style>
+             
+        </head>
+  
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"/>
+<script>
+
+$j = jQuery.noConflict();
+
+  $j(document).ready(function() {  
+
+    var cYear = new Date().getFullYear() ;        
+
+    var startYear=(cYear - 110);          
+
+    var endYear=(cYear + 25);          
+
+    var htmlStr='';         
+
+    if(startYear<endYear){
+
+       for(i=startYear;i<endYear+1;i++){
+
+               htmlStr += "<option value=\""+i+"\">"+i+"</option>";
+
+       }
+
+       $j('#calYearPicker').html(htmlStr);
+
+   }
+
+  $j('#sidebarDiv #hideThisHomePageComp').parent().parent().hide();
+
+  } );
+
+</script>
+        <body>
+            <apex:actionStatus id="status">
+                <apex:facet name="start">
+                    <div class="fadeMe">
+            &nbsp;
+        </div>
+                    <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                        <div style="display: inline-block; padding: 2px; background-color: #10e9fb; width: 125px;">
+                            <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                            <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                        </div>
+                    </div>
+                </apex:facet>
+            </apex:actionStatus>
+            <div class="slds">
+                <!-- PRIMARY CONTENT WRAPPER -->
+                <div class="heading" align="center" >
+                    <h1 class="heading"> <!-- style="padding-left:600px;padding-top:50px;" -->
+                        <!--<apex:outputField id="img" value="{!URLFOR($Resource.Vascon_Logo)}" /> -->
+                       <!-- <apex:image url="{!$Resource.Vascon_Logo}" width="150" height="150" /> -->
+                    </h1>
+                </div> 
+                <div class="myapp">
+                    <!-- CREATE/EDIT TASK -->
+                    <div aria-labelledby="newsitevisitform">
+                        <!-- BOXED AREA -->
+                        <fieldset class="slds-box slds-theme--shade slds-container--large slds-container--center slds-grid--align-spread">
+                              <legend id="newtaskform" class="slds-text-heading--medium slds-p-vertical--medium" style="color:#86073D;font-weight: bold;">Site Visit Form</legend>
+                            <legend id="newtaskform" class="slds-text-heading--medium slds-p-vertical--medium" align="Center" style="color:#86073D;font-weight: bold;">Welcome to Solitaire.</legend>
+                           <apex:PageMessages id="pageMsgs" />
+                            <br/>
+                            <br/>
+                            <legend style="color:#ff0000;"> <b>Note : Mandatory Fields Are Marekd With Asterisk (*) </b> </legend>
+                            <apex:form id="svform" styleClass="slds-form--inline" rendered="{!If(isSaved = false,true,false)}">
+                                <apex:pageBlock >
+                                    <apex:pageBlockSection id="personalInformation1" title="Project Information" collapsible="false" columns="2"> 
+                                     <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Project Name</apex:outputLabel>
+                                            <apex:outputField id="pname" value="{!oplist[0].Project__r.Name}"/>
+                                        </apex:pageBlockSectionItem>
+                                         <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Visit Form No </apex:outputLabel>
+                                            <apex:outputField id="pname" value="{!sv.Name}"/>
+                                        </apex:pageBlockSectionItem>
+                                         
+                                         
+                         <!----Type of visit svlist.size()    
+                      
+                                  
+    <apex:pageBlockSectionItem > 
+        <apex:outputLabel >Type Of Visit</apex:outputLabel>  
+        <lable><input type="checkbox" class="customechkBox" id="Fresh" onchange="updatetype(this.id)" /> Fresh </lable>
+        <lable> <input type="checkbox" class="customechkBox" id="Revisit" onchange="updatetype(this.id)" /> Revisit </lable>
+        <apex:inputText label="" value="{!sv.Type_of_Visit__c}" style="display:none;" id="typVisit" />  
+    </apex:pageBlockSectionItem>---->
+    
+    <apex:pageBlockSectionItem > 
+        <apex:outputLabel >Type Of Visit : </apex:outputLabel> 
+        <apex:outputField value="{!sv.Type_of_Visit__c}"/> 
+    </apex:pageBlockSectionItem>
+    
+    <apex:pageBlockSectionItem rendered="{!svlist.size>0}"> 
+        <apex:outputLabel >Last Visit Date : </apex:outputLabel> 
+        <apex:outputText value="{0, date, dd-MMM-yyyy}"><apex:param value="{!(sv.Last_Visit_Date__c)}"/></apex:outputtext>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem rendered="{!svlist.size == 0}"> 
+        <apex:outputLabel >Visit Date : </apex:outputLabel> 
+        <apex:outputText value="{0, date, dd-MMM-yyyy}"><apex:param value="{!Today()}"/></apex:outputtext>
+    </apex:pageBlockSectionItem>
+
+    <apex:pageBlockSectionItem >
+          <apex:outputLabel >Walk-in Details * : </apex:outputLabel>
+          <lable><input type="checkbox" class="customechkBox" id="Individual" onchange="updatewlkd(this.id)" /> Individual </lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Group" onchange="updatewlkd(this.id)" /> Group </lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Family" onchange="updatewlkd(this.id)" /> Family </lable>
+            
+    </apex:pageBlockSectionItem> 
+          <apex:inputText label="" value="{!sv.Walk_in_Details__c}" style="display:none;" id="wlkD" />                     
+                              
+                            
+</apex:pageBlockSection>                                          
+</apex:pageBlock>
+                                         
+<apex:pageBlock >
+<apex:pageBlockSection id="applicantdetails" title="Customer Details : " collapsible="false" columns="2" >
+   <apex:pageBlockSectionItem >
+        <apex:outputLabel >Customer Name : </apex:outputLabel>
+        <apex:outputField id="pname" value="{!sv.Customer_Name__c}"/>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Mobile Number : </apex:outputLabel>
+        <apex:outputField id="pname" value="{!oplist[0].Account.PersonMobilePhone}"/>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem rendered="{!oplist[0].Account.PersonEmail != ''}">
+        <apex:outputLabel >Email : </apex:outputLabel>
+        <apex:outputField id="pname" value="{!oplist[0].Account.PersonEmail}"/>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Date of Birth </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.Date_of_Birth__c}"/>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Ethnicity </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.Ethnicity__c}"/>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Marital Status </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.Marital_Status__c}"/>
+    </apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+                                                                              
+<apex:pageBlockSection id="applicantdetails5" title="Residential Address : " collapsible="false" columns="2" >
+
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Bunglow Name  </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.Bunglw_Name__c}" />
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Location * </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.Location__c}" />
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >City *</apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.City__c}" />
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Pin Code </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.Pin_Code__c}" />
+    </apex:pageBlockSectionItem>
+    
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Current House Ownership * : </apex:outputLabel>
+        <lable><input type="checkbox" class="customechkBox" id="OwnedHouse" onchange="updateownership(this.id)" /> Owned House </lable>
+        <lable> <input type="checkbox" class="customechkBox" id="RentedHouse" onchange="updateownership(this.id)" /> Rented House </lable>
+                                       
+    </apex:pageBlockSectionItem>
+         <apex:inputText label="" value="{!sv.Current_House_Ownership__c}" style="display:none;" id="owner" />
+                     
+</apex:pageBlockSection>
+
+<apex:pageBlockSection id="professional" title="Professional Details" collapsible="false" columns="2">
+
+    <apex:pageBlockSectionItem >
+          <apex:outputLabel >Occupation * : </apex:outputLabel>
+          <lable><input type="checkbox" class="customechkBox" id="Salaried" onchange="updateoccu(this.id)" /> Salaried</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Professional" onchange="updateoccu(this.id)" /> Professional</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Business" onchange="updateoccu(this.id)" /> Business </lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Self Employed" onchange="updateoccu(this.id)" /> Self Employed</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Armed Forces" onchange="updateoccu(this.id)" /> Armed Forces</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Retired" onchange="updateoccu(this.id)" /> Retired</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Housewife" onchange="updateoccu(this.id)" /> Housewife</lable>
+          
+    </apex:pageBlockSectionItem>
+          <apex:inputText label="" value="{!sv.Occupation__c}" style="display:none;" id="occu" />  
+          
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Company Name </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.Company_Name__c}"/>
+    </apex:pageBlockSectionItem>  
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Designation </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.Designation__c}"/>
+    </apex:pageBlockSectionItem>  
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Place of work </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.Place_of_work__c}"/>
+    </apex:pageBlockSectionItem>                            
+</apex:pageBlockSection>
+
+<apex:pageBlockSection id="professional2" title="How did you hear about us ? " collapsible="false" columns="2"> 
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Source </apex:outputLabel> 
+        <apex:outputField id="pname" value="{!sv.Source1__c}"/>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem rendered="{!If(sv.Source1__c !='Channel Partner' ,true,false)}">
+        <apex:outputLabel >Source detail </apex:outputLabel>
+        <apex:outputField id="pname" value="{!sv.Sub_Source2__c}"/>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem rendered="{!If(sv.Source1__c =='Channel Partner' ,true,false)}">
+        <apex:outputLabel >Channel Partner</apex:outputLabel>
+        <apex:inputField id="pname" value="{!sv.Channel_Partner__c}"/>
+    </apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection id="interest" title="Interested in : " collapsible="false" columns="2">
+    <apex:pageBlockSectionItem >
+          <apex:outputLabel >Residential : </apex:outputLabel> 
+          <lable> <input type="checkbox" class="customechkBox" id="twoBHK" onchange="updatebhk(this.id)"/> 2BHK</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="threeBHK" onchange="updatebhk(this.id)" /> 3BHK</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="fourBHK" onchange="updatebhk(this.id)" /> 4BHK</lable>
+          
+    </apex:pageBlockSectionItem>
+         <apex:inputText label="" value="{!sv.Residentail__c}" style="display:none;" id="bhk"/>                     
+                              
+                                       
+                                  
+    <apex:pageBlockSectionItem >
+          <apex:outputLabel >Commercial : </apex:outputLabel>
+          <lable><input type="checkbox" class="customechkBox" id="Office" onchange="updatecomm(this.id)" /> Office Space</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Retail" onchange="updatecomm(this.id)" /> Retail</lable>
+           
+    </apex:pageBlockSectionItem>
+          <apex:inputText label="" value="{!sv.Commercial__c}" style="display:none;" id="comm" />                     
+                            
+    <apex:pageBlockSectionItem >
+          <apex:outputLabel >Desired Possession * : </apex:outputLabel>
+          <lable><input type="checkbox" class="customechkBox" id="rtm" onchange="updatedisP(this.id)" /> Ready-to-Move</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="UC" onchange="updatedisP(this.id)" /> Under Construction</lable>
+          
+    </apex:pageBlockSectionItem>
+          <apex:inputText label="" value="{!sv.Desired_Possession__c}" style="display:none;" id="disP" />
+                             
+    <apex:pageBlockSectionItem >
+          <apex:outputLabel >Purpose of Purchase * : </apex:outputLabel>
+          <lable><input type="checkbox" class="customechkBox" id="PU" onchange="updatepop(this.id)" /> Personal Use</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Insv" onchange="updatepop(this.id)" /> Investment</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="SH" onchange="updatepop(this.id)" /> Second Home</lable>
+           
+    </apex:pageBlockSectionItem>
+          <apex:inputText label="" value="{!sv.Purpose_of_Purchase__c}" style="display:none;" id="pop" />
+          
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel >Budget </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.Budget__c}" />
+    </apex:pageBlockSectionItem>         
+          
+</apex:pageBlockSection>
+                
+<apex:pageBlockSection >
+   
+    <tr align="justify">
+    <td colspan="2">Disclaimer : </td></tr>
+    <tr align="justify"><td colspan="2">*   By Way of signing this form, you also consent and authorize Solitaire, to contact you by way of SMS, 
+    Calls and Emails for customer servicing and solicitation for new product.</td></tr>
+    <tr align="justify"><td colspan="2">*   Any additional commitment made within this transaction is required to be specified in detail, signed by the 
+    applicant and the respective advisors. Unless specified and signed by the respective parties to this transaction, 
+    the company shall not be held accountable for any additional, so called commitment hereon and shall not honor any 
+    such claims if they are to arise at any time.</td>
+    </tr> 
+          <apex:inputCheckbox value="{!ShowSection}" id="test11" label="Sales Manager Section" style="zoom: 1.5;">
+              <apex:actionSupport event="onchange"  rerender="tBlock,secondBlock" status="Status"/>  
+          </apex:inputCheckbox>  
+                                       
+</apex:pageBlockSection>
+                 
+</apex:pageBlock>
+                                    
+                                   
+<apex:pageBlock title="For Internal Use Only :" id="tBlock" >
+
+<apex:pageBlockSection title="(To be filled by the Sales Manager)" collapsible="False" columns="2" rendered="{!ShowSection}"> 
+
+<apex:pageBlockSectionItem >
+        <apex:outputLabel >Sales Manager : </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.Sales_Manager__c}"/>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+        <apex:outputLabel >Sourcing Manager : </apex:outputLabel>
+        <apex:InputField id="pname2" value="{!sv.Sourcing_Manager__c}"/>
+</apex:pageBlockSectionItem>
+                       
+<apex:pageBlockSectionItem >
+        <apex:outputLabel >In Time : </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.In_Time__c}"/>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+        <apex:outputLabel >Out Time : </apex:outputLabel>
+        <apex:InputField id="pname" value="{!sv.Out_Time__c}"/>
+</apex:pageBlockSectionItem>
+                                        
+                  
+<apex:pageBlockSectionItem >
+          <apex:outputLabel >Talked about Competitor </apex:outputLabel>
+          <lable><input type="checkbox" class="customechkBox" id="Yes" onchange="updateTAC(this.id)" /> Yes</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="No" onchange="updateTAC(this.id)" /> No</lable>
+           
+</apex:pageBlockSectionItem>
+         <apex:inputText label="" value="{!sv.Talked_about_competition__c}" style="display:none;" id="TAC" /> 
+          
+<apex:pageBlockSectionItem >
+          <apex:outputLabel >Came With Family : </apex:outputLabel>
+          <lable><input type="checkbox" class="customechkBox" id="Yes1" onchange="updateCWF(this.id)" /> Yes</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="No1" onchange="updateCWF(this.id)" /> No</lable>
+</apex:pageBlockSectionItem>
+         <apex:inputText label="" value="{!sv.Came_With_Family__c}" style="display:none;" id="CWF" />
+
+</apex:pageBlockSection>
+</apex:pageBlock> 
+<!--------------------------------------------------------------------Start of rating matrix------------------------------------------------------------------------------------------------->                                        
+
+<apex:pageBlock id="secondBlock">        
+<apex:pageBlockSection columns="1" rendered="{!ShowSection}">
+
+<apex:pageBlockSectionItem >
+<lable><b>Based on your understanding of the customer so far, choose the levels accordingly : </b></lable>
+<br/>
+<lable> (Rating 1 ,-least preferable, Rating 5 – Most preferable.)</lable>
+</apex:pageBlockSectionItem>
+
+
+<table id="criteriaTab" width="100%">    
+<tr>
+<td>
+                                     
+    <table width="100%" border="2" cellspacing="2"> 
+        <tr border="2">
+            <td style="text-align:center;" rowspan="2"><b>Criteria </b></td>
+            <td colspan="5" style="text-align:center;"><b>Affinity </b></td>
+        </tr>
+        <tr border="2">
+        <td style="text-align:center;">1</td>
+        <td style="text-align:center;">2</td>
+        <td style="text-align:center;">3</td>
+        <td style="text-align:center;">4</td> 
+        <td style="text-align:center;">5</td>
+        </tr>
+        
+        <tr border="2">
+        <td style="text-align:center;"> Product</td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="p1" onchange="updateproduct(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="p2" onchange="updateproduct(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="p3" onchange="updateproduct(this.id)" /></lable></td> 
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="p4" onchange="updateproduct(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="p5" onchange="updateproduct(this.id)" /></lable></td>
+        </tr>
+        
+        <tr border="2">
+        <td style="text-align:center;"> Location</td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="l1" onchange="updateLocation(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="l2" onchange="updateLocation(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="l3" onchange="updateLocation(this.id)" /></lable></td> 
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="l4" onchange="updateLocation(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="l5" onchange="updateLocation(this.id)" /></lable></td>
+        </tr>
+         
+        <tr border="2">
+        <td style="text-align:center;"> Price</td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="pr1" onchange="updatePrice(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="pr2" onchange="updatePrice(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="pr3" onchange="updatePrice(this.id)" /></lable></td> 
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="pr4" onchange="updatePrice(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="pr5" onchange="updatePrice(this.id)" /></lable></td>
+        </tr>
+         
+        <tr border="2">
+        <td style="text-align:center;"> Choice of Inventory</td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="c1" onchange="updateChoice(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="c2" onchange="updateChoice(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="c3" onchange="updateChoice(this.id)" /></lable></td> 
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="c4" onchange="updateChoice(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="c5" onchange="updateChoice(this.id)" /></lable></td>
+        </tr>
+       
+        <tr border="2">
+        <td style="text-align:center;"> Possession Timelines</td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="pt1" onchange="updateTimelines(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="pt2" onchange="updateTimelines(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="pt3" onchange="updateTimelines(this.id)" /></lable></td> 
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="pt4" onchange="updateTimelines(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="pt5" onchange="updateTimelines(this.id)" /></lable></td>
+        </tr>
+       
+        <tr border="2">
+        <td style="text-align:center;"> Ease of Payment</td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="EOP1" onchange="updateEOP(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="EOP2" onchange="updateEOP(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="EOP3" onchange="updateEOP(this.id)" /></lable></td> 
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="EOP4" onchange="updateEOP(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="EOP5" onchange="updateEOP(this.id)" /></lable></td>
+        </tr>
+        
+        <tr border="2">
+        <td style="text-align:center;"> Solitaire Brand </td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="SB1" onchange="updateSB(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="SB2" onchange="updateSB(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="SB3" onchange="updateSB(this.id)" /></lable></td> 
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="SB4" onchange="updateSB(this.id)" /></lable></td>
+        <td style="text-align:center;"><lable><input type="checkbox" class="customechkBox" id="SB5" onchange="updateSB(this.id)" /></lable></td>
+        </tr>
+    
+</table>
+</td>
+</tr>
+</table>
+
+ <!-----------------------------------------------------------------------------------end of rating matrix--------------------------------------------------------------------------------->
+
+
+
+
+
+<apex:pageBlockSectionItem >
+            <apex:outputLabel > <b>Reasons</b> (if not interested) : </apex:outputLabel>
+            <lable><input type="checkbox" class="customechkBox" id="Product design" onchange="updateRINI(this.id)" /> Product design</lable>
+            <lable> <input type="checkbox" class="customechkBox" id="Vaastu" onchange="updateRINI(this.id)" /> Vaastu</lable>
+            <lable> <input type="checkbox" class="customechkBox" id="Location" onchange="updateRINI(this.id)" /> Location</lable>
+            <lable> <input type="checkbox" class="customechkBox" id="Views" onchange="updateRINI(this.id)" /> Views</lable>
+            <lable> <input type="checkbox" class="customechkBox" id="Price" onchange="updateRINI(this.id)" /> Price</lable>
+            <lable> <input type="checkbox" class="customechkBox" id="Construction Timelines" onchange="updateRINI(this.id)" /> Construction Timelines</lable>
+            <lable> <input type="checkbox" class="customechkBox" id="Competition" onchange="updateRINI(this.id)" /> Competition</lable>
+            <lable> <input type="checkbox" class="customechkBox" id="Loan Eligibility Issue" onchange="updateRINI(this.id)" /> Loan Eligibility Issue</lable>
+            
+</apex:pageBlockSectionItem>
+            <apex:inputText label="" value="{!sv.Reasons_if_not_interested__c}" style="display:none;" id="RINI" />
+
+<apex:pageBlockSectionItem >
+          <apex:outputLabel >Purpose of Purchase : </apex:outputLabel>
+          <lable><input type="checkbox" class="customechkBox" id="Personal Use" onchange="updatePOP2(this.id)" /> Personal Use</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Investment" onchange="updatePOP2(this.id)" /> Investment</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Second Home" onchange="updatePOP2(this.id)" /> Second Home </lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Staying There" onchange="updatePOP2(this.id)" /> Staying There</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Weekend Home" onchange="updatePOP2(this.id)" /> Weekend Home</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Gift" onchange="updatePOP2(this.id)" /> Gift</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Capital Gain Tax" onchange="updatePOP2(this.id)" /> Capital Gain Tax</lable>
+          <lable> <input type="checkbox" class="customechkBox" id="Transit Home" onchange="updatePOP2(this.id)" /> Transit Home</lable>
+            
+  </apex:pageBlockSectionItem>
+          <apex:inputText label=""  value="{!sv.Purpose_of_Purchase1__c}" style="display:none;" id="POP2" />
+</apex:pageBlockSection>
+
+<apex:pageBlockSection columns="2" rendered="{!ShowSection}">
+          
+<apex:pageBlockSectionItem >
+        <apex:outputLabel >Remark* : </apex:outputLabel>
+        <apex:InputField id="pname2" value="{!sv.SM_feedback_on_customer_Remarks__c}"/>
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+        <apex:outputLabel >Follow Up Plan : </apex:outputLabel>
+        <apex:InputField id="pname2" value="{!sv.Follow_up_Plan__c}"/>
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+        <apex:outputLabel >Next Follow Up Date : </apex:outputLabel>
+        <apex:InputField id="pname2" value="{!sv.Next_Follow_Up_Date__c}"/>
+</apex:pageBlockSectionItem>
+
+                          </apex:pageBlockSection>         
+                                    <apex:pageBlockButtons location="bottom" styleClass="slds-button-group" style="align:center;">
+                                        <apex:commandButton value="Submit" action="{!Save}" styleClass="slds-button slds-button--brand slds-button--small" status="status"/>
+                                    </apex:pageblockButtons>
+                                    </apex:pageBlock>
+                                    
+                                    
+                                    
+<apex:inputtext label="" value="{!sv.Product__c}" style="display:none;" id="product" />
+<apex:inputText label="" value="{!sv.Location1__c}" style="display:none;" id="Location" />
+<apex:inputText label="" value="{!sv.Price__c}" style="display:none;" id="Price" />
+<apex:inputText label="" value="{!sv.Choice_of_Inventory__c}" style="display:none;" id="Choice" />
+<apex:inputText label="" value="{!sv.Possession_Timelines__c}" style="display:none;" id="Timelines" />
+<apex:inputText label="" value="{!sv.Ease_of_Payment__c}" style="display:none;" id="EOP" />
+<apex:inputText label="" value="{!sv.Solitaire_Brand__c}" style="display:none;" id="SB" />                                                               
+                            
+                            
+                            </apex:form>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+
+<!---------------------------------------------------------------------------Script for Walkin details------------------------------------------------------------------------------------------------>            
+
+<script>
+    function updatewlkd(wlkD)
+    {
+    if(wlkD.indexOf('Individual') >= 0)
+    {
+    if($("[Id$='Individual']").is(':checked'))
+    {
+    $("[Id$='Group']").attr('checked', false);
+    $("[Id$='Family']").attr('checked', false);
+    $("[Id$='wlkD']").val('Individual');
+    }
+    else
+    {
+    $("[Id$='wlkD']").val(' ');
+    }
+    }
+    if(wlkD.indexOf('Group') >= 0)
+    {
+    if($("[Id$='Group']").is(':checked'))
+    {
+    $("[Id$='Individual']").attr('checked', false);
+    $("[Id$='Family']").attr('checked', false);
+    $("[Id$='wlkD']").val('Group');
+    }
+    else
+    {
+    $("[Id$='wlkD']").val('');
+    }
+    }
+    if(wlkD.indexOf('Family') >= 0)
+    {
+    if($("[Id$='Family']").is(':checked'))
+    {
+    $("[Id$='Individual']").attr('checked', false);
+    $("[Id$='Group']").attr('checked', false);
+    $("[Id$='wlkD']").val('Family');
+    }
+    else
+    {
+    $("[Id$='wlkD']").val('');
+    }
+    }
+    
+    }
+</script>
+<!---------------------------------------------------------------------------Script for ownership------------------------------------------------------------------------------------------------>            
+<script>
+    function updateownership(owner)
+    {
+    if(owner.indexOf('OwnedHouse') >= 0)
+    {
+    if($("[Id$='OwnedHouse']").is(':checked'))
+    {
+    $("[Id$='RentedHouse']").attr('checked', false);
+    $("[Id$='owner']").val('Owned House');
+    }
+    else
+    {
+    $("[Id$='owner']").val(' ');
+    }
+    }
+    if(owner.indexOf('RentedHouse') >= 0)
+    {
+    if($("[Id$='RentedHouse']").is(':checked'))
+    {
+    $("[Id$='OwnedHouse']").attr('checked', false);
+    $("[Id$='owner']").val('Rented House');
+    }
+    else
+    {
+    $("[Id$='owner']").val('');
+    }
+    }
+    }
+</script>    
+<!---------------------------------------------------------------------------Script for occupation------------------------------------------------------------------------------------------------>            
+<script>
+    function updateoccu(occu)
+    {
+    if(occu.indexOf('Salaried') >= 0)
+    {
+    if($("[Id$='Salaried']").is(':checked'))
+    {
+    $("[Id$='Professional']").attr('checked', false);
+    $("[Id$='Business']").attr('checked', false);
+    $("[Id$='Self Employed']").attr('checked', false);
+    $("[Id$='Armed Forces']").attr('checked', false);
+    $("[Id$='Retired']").attr('checked', false);
+    $("[Id$='Housewife']").attr('checked', false);
+    $("[Id$='occu']").val('Salaried');
+    }
+    else
+    {
+    $("[Id$='occu']").val(' ');
+    }
+    }
+    if(occu.indexOf('Professional') >= 0)
+    {
+    if($("[Id$='Professional']").is(':checked'))
+    {
+    $("[Id$='Salaried']").attr('checked', false);
+    $("[Id$='Business']").attr('checked', false);
+    $("[Id$='Self Employed']").attr('checked', false);
+    $("[Id$='Armed Forces']").attr('checked', false);
+    $("[Id$='Retired']").attr('checked', false);
+    $("[Id$='Housewife']").attr('checked', false);
+    $("[Id$='occu']").val('Professional');
+    }
+    else
+    {
+    $("[Id$='occu']").val(' ');
+    }
+    }
+    if(occu.indexOf('Business') >= 0)
+    {
+    if($("[Id$='Business']").is(':checked'))
+    {
+    $("[Id$='Professional']").attr('checked', false);
+    $("[Id$='Salaried']").attr('checked', false);
+    $("[Id$='Self Employed']").attr('checked', false);
+    $("[Id$='Armed Forces']").attr('checked', false);
+    $("[Id$='Retired']").attr('checked', false);
+    $("[Id$='Housewife']").attr('checked', false);
+    $("[Id$='occu']").val('Business ');
+    }
+    else
+    {
+    $("[Id$='occu']").val(' ');
+    }
+    }
+    if(occu.indexOf('Self Employed') >= 0)
+    {
+    if($("[Id$='Self Employed']").is(':checked'))
+    {
+    $("[Id$='Business']").attr('checked', false);
+    $("[Id$='Professional']").attr('checked', false);
+    $("[Id$='Salaried']").attr('checked', false);
+    $("[Id$='Armed Forces']").attr('checked', false);
+    $("[Id$='Retired']").attr('checked', false);
+    $("[Id$='Housewife']").attr('checked', false);
+    $("[Id$='occu']").val('Self Employed');
+    }
+    else
+    {
+    $("[Id$='occu']").val(' ');
+    }
+    }
+    if(occu.indexOf('Armed Forces') >= 0)
+    {
+    if($("[Id$='Armed Forces']").is(':checked'))
+    {
+    $("[Id$='Self Employed']").attr('checked', false);
+    $("[Id$='Business']").attr('checked', false);
+    $("[Id$='Professional']").attr('checked', false);
+    $("[Id$='Salaried']").attr('checked', false);
+    $("[Id$='Retired']").attr('checked', false);
+    $("[Id$='Housewife']").attr('checked', false);
+    $("[Id$='occu']").val('Armed Forces');
+    }
+    else
+    {
+    $("[Id$='occu']").val(' ');
+    }
+    }
+    if(occu.indexOf('Retired') >= 0)
+    {
+    if($("[Id$='Retired']").is(':checked'))
+    {
+    $("[Id$='Armed Forces']").attr('checked', false);
+    $("[Id$='Self Employed']").attr('checked', false);
+    $("[Id$='Business']").attr('checked', false);
+    $("[Id$='Professional']").attr('checked', false);
+    $("[Id$='Salaried']").attr('checked', false);
+    $("[Id$='Housewife']").attr('checked', false);
+    $("[Id$='occu']").val('Retired');
+    }
+    else
+    {
+    $("[Id$='occu']").val(' ');
+    }
+    }
+    if(occu.indexOf('Housewife') >= 0)
+    {
+    if($("[Id$='Housewife']").is(':checked'))
+    {
+    $("[Id$='Retired']").attr('checked', false);
+    $("[Id$='Armed Forces']").attr('checked', false);
+    $("[Id$='Self Employed']").attr('checked', false);
+    $("[Id$='Business']").attr('checked', false);
+    $("[Id$='Professional']").attr('checked', false);
+    $("[Id$='Salaried']").attr('checked', false);
+    $("[Id$='occu']").val('Housewife');
+    }
+    else
+    {
+    $("[Id$='occu']").val(' ');
+    }
+    }
+    
+    }
+</script>
+<!---------------------------------------------------------------------------Script for Residential------------------------------------------------------------------------------------------------>            
+<script>
+    function updatebhk(bhk)
+    {
+    
+    if(bhk.indexOf('twoBHK') >= 0)
+    {
+    if($("[Id$='twoBHK']").is(':checked'))
+    {
+    $("[Id$='threeBHK']").attr('checked', false);
+    $("[Id$='fourBHK']").attr('checked', false);
+    $("[Id$='bhk']").val('2BHK');
+   // alert('hiii'+$("[Id$='bhk']").val());
+    }
+    else
+    {
+    $("[Id$='bhk']").val(' ');
+    }
+    }
+    if(bhk.indexOf('threeBHK') >= 0)
+    {
+    if($("[Id$='threeBHK']").is(':checked'))
+    {
+    $("[Id$='twoBHK']").attr('checked', false);
+    $("[Id$='fourBHK']").attr('checked', false);
+    $("[Id$='bhk']").val('3BHK');
+    }
+    else
+    {
+    $("[Id$='bhk']").val('');
+    }
+    }
+    if(bhk.indexOf('fourBHK') >= 0)
+    {
+    if($("[Id$='fourBHK']").is(':checked'))
+    {
+    $("[Id$='threeBHK']").attr('checked', false);
+    $("[Id$='twoBHK']").attr('checked', false);
+    $("[Id$='bhk']").val('4BHK');
+    }
+    else
+    {
+    $("[Id$='bhk']").val('');
+    }
+    }
+    
+    }
+<!---------------------------------------------------------------------------Script for commercial------------------------------------------------------------------------------------------------>            
+    function updatecomm(comm)
+    {
+    if(comm.indexOf('Retail') >= 0)
+    {
+    if($("[Id$='Retail']").is(':checked'))
+    {
+    $("[Id$='Office']").attr('checked', false);
+    $("[Id$='comm']").val('Retail');
+    }
+    else
+    {
+    $("[Id$='comm']").val(' ');
+    }
+    }
+    if(comm.indexOf('Office') >= 0)
+    {
+    if($("[Id$='Office']").is(':checked'))
+    {
+    $("[Id$='Retail']").attr('checked', false);
+    $("[Id$='comm']").val('Office Space');
+    }
+    else
+    {
+    $("[Id$='comm']").val(' ');
+    }
+    }
+    
+    }
+</script>
+<!---------------------------------------------------------------------------Script for Desired possesion------------------------------------------------------------------------------------------------>            
+<script>
+    function updatedisP(disP)
+    {
+    if(disP.indexOf('UC') >= 0)
+    {
+    if($("[Id$='UC']").is(':checked'))
+    {
+    $("[Id$='rtm']").attr('checked', false);
+    $("[Id$='disP']").val('Under Construction');
+    }
+    else
+    {
+    $("[Id$='disP']").val(' ');
+    }
+    }
+    if(disP.indexOf('rtm') >= 0)
+    {
+    if($("[Id$='rtm']").is(':checked'))
+    {
+    $("[Id$='UC']").attr('checked', false);
+    $("[Id$='disP']").val('Ready-to-Move');
+    }
+    else
+    {
+    $("[Id$='disP']").val(' ');
+    }
+    }
+    
+    }
+</script>
+<!---------------------------------------------------------------------------Script for purpose of purchase 1------------------------------------------------------------------------------------------------>            
+<script>
+function updatepop(pop)
+{
+if(pop.indexOf('PU') >= 0)
+{
+if($("[Id$='PU']").is(':checked'))
+{
+$("[Id$='Insv']").attr('checked', false);
+$("[Id$='SH']").attr('checked', false);
+$("[Id$='pop']").val('Personal Use');
+}
+else
+{
+$("[Id$='pop']").val(' ');
+}
+}
+if(pop.indexOf('Insv') >= 0)
+{
+if($("[Id$='Insv']").is(':checked'))
+{
+$("[Id$='PU']").attr('checked', false);
+$("[Id$='SH']").attr('checked', false);
+$("[Id$='pop']").val('Investment');
+}
+else
+{
+$("[Id$='pop']").val('');
+}
+}
+if(pop.indexOf('SH') >= 0)
+{
+if($("[Id$='SH']").is(':checked'))
+{
+$("[Id$='Insv']").attr('checked', false);
+$("[Id$='PU']").attr('checked', false);
+$("[Id$='pop']").val('Second Home');
+}
+else
+{
+$("[Id$='pop']").val('');
+}
+}
+
+}
+</script>            
+
+<!---------------------------------------------------------------------------Script for talk about competation------------------------------------------------------------------------------------------------>            
+
+<script>
+function updateTAC(TAC)
+{
+if(TAC.indexOf('No') >= 0)
+{
+if($("[Id$='No']").is(':checked'))
+{
+$("[Id$='Yes']").attr('checked', false);
+$("[Id$='TAC']").val('No');
+}
+else
+{
+$("[Id$='TAC']").val(' ');
+}
+}
+if(TAC.indexOf('Yes') >= 0)
+{
+if($("[Id$='Yes']").is(':checked'))
+{
+$("[Id$='No']").attr('checked', false);
+$("[Id$='TAC']").val('Yes');
+}
+else
+{
+$("[Id$='TAC']").val(' ');
+}
+}
+
+}
+</script>  
+<!---------------------------------------------------------------------------Script for Came with family------------------------------------------------------------------------------------------------>            
+<script>
+function updateCWF(CWF)
+{
+if(CWF.indexOf('No') >= 0)
+{
+if($("[Id$='No1']").is(':checked'))
+{
+$("[Id$='Yes1']").attr('checked', false);
+$("[Id$='CWF']").val('No');
+}
+else
+{
+$("[Id$='CWF']").val(' ');
+}
+}
+if(CWF.indexOf('Yes1') >= 0)
+{
+if($("[Id$='Yes1']").is(':checked'))
+{
+$("[Id$='No1']").attr('checked', false);
+$("[Id$='CWF']").val('Yes');
+}
+else
+{
+$("[Id$='CWF']").val(' ');
+}
+}
+
+}
+</script> 
+<!---------------------------------------------------------------------------Script for reason of not intrested------------------------------------------------------------------------------------------------>            
+
+
+<script>
+function updateRINI(RINI)
+{
+
+if(RINI.indexOf('Product design') >= 0)
+{
+if($("[Id$='Product design']").is(':checked'))
+{
+$("[Id$='Vaastu']").attr('checked', false);
+$("[Id$='Location']").attr('checked', false);
+$("[Id$='Views']").attr('checked', false);
+$("[Id$='Price']").attr('checked', false);
+$("[Id$='Construction Timelines']").attr('checked', false);
+$("[Id$='Competition']").attr('checked', false);
+$("[Id$='Loan Eligibility Issue']").attr('checked', false);
+$("[Id$='RINI']").val('Product design');
+}
+else
+{
+$("[Id$='RINI']").val(' ');
+}
+}
+if(RINI.indexOf('Vaastu') >= 0)
+{
+if($("[Id$='Vaastu']").is(':checked'))
+{
+$("[Id$='Product design']").attr('checked', false);
+$("[Id$='Location']").attr('checked', false);
+$("[Id$='Views']").attr('checked', false);
+$("[Id$='Price']").attr('checked', false);
+$("[Id$='Construction Timelines']").attr('checked', false);
+$("[Id$='Competition']").attr('checked', false);
+$("[Id$='Loan Eligibility Issue']").attr('checked', false);
+$("[Id$='RINI']").val('Vaastu');
+}
+else
+{
+$("[Id$='RINI']").val(' ');
+}
+}
+if(RINI.indexOf('Location') >= 0)
+{
+if($("[Id$='Location']").is(':checked'))
+{
+$("[Id$='Vaastu']").attr('checked', false);
+$("[Id$='Product design']").attr('checked', false);
+$("[Id$='Views']").attr('checked', false);
+$("[Id$='Price']").attr('checked', false);
+$("[Id$='Construction Timelines']").attr('checked', false);
+$("[Id$='Competition']").attr('checked', false);
+$("[Id$='Loan Eligibility Issue']").attr('checked', false);
+$("[Id$='RINI']").val('Location');
+}
+else
+{
+$("[Id$='RINI']").val(' ');
+}
+}
+if(RINI.indexOf('Views') >= 0)
+{
+if($("[Id$='Views']").is(':checked'))
+{
+$("[Id$='Location']").attr('checked', false);
+$("[Id$='Vaastu']").attr('checked', false);
+$("[Id$='Product design']").attr('checked', false);
+$("[Id$='Price']").attr('checked', false);
+$("[Id$='Construction Timelines']").attr('checked', false);
+$("[Id$='Competition']").attr('checked', false);
+$("[Id$='Loan Eligibility Issue']").attr('checked', false);
+$("[Id$='RINI']").val('Views');
+}
+else
+{
+$("[Id$='RINI']").val(' ');
+}
+}
+if(RINI.indexOf('Price') >= 0)
+{
+if($("[Id$='Price']").is(':checked'))
+{
+$("[Id$='Views']").attr('checked', false);
+$("[Id$='Location']").attr('checked', false);
+$("[Id$='Vaastu']").attr('checked', false);
+$("[Id$='Product design']").attr('checked', false);
+$("[Id$='Construction Timelines']").attr('checked', false);
+$("[Id$='Competition']").attr('checked', false);
+$("[Id$='Loan Eligibility Issue']").attr('checked', false);
+$("[Id$='RINI']").val('Price');
+}
+else
+{
+$("[Id$='RINI']").val(' ');
+}
+}
+if(RINI.indexOf('Construction Timelines') >= 0)
+{
+if($("[Id$='Construction Timelines']").is(':checked'))
+{
+$("[Id$='Price']").attr('checked', false);
+$("[Id$='Location']").attr('checked', false);
+$("[Id$='Vaastu']").attr('checked', false);
+$("[Id$='Product design']").attr('checked', false);
+$("[Id$='Competition']").attr('checked', false);
+$("[Id$='Views']").attr('checked', false);
+$("[Id$='Loan Eligibility Issue']").attr('checked', false);
+$("[Id$='RINI']").val('Construction Timelines');
+}
+else
+{
+$("[Id$='RINI']").val(' ');
+}
+}
+if(RINI.indexOf('Competition') >= 0)
+{
+if($("[Id$='Competition']").is(':checked'))
+{
+$("[Id$='Construction Timelines']").attr('checked', false);
+$("[Id$='Views']").attr('checked', false);
+$("[Id$='Price']").attr('checked', false);
+$("[Id$='Location']").attr('checked', false);
+$("[Id$='Vaastu']").attr('checked', false);
+$("[Id$='Product design']").attr('checked', false);
+$("[Id$='Loan Eligibility Issue']").attr('checked', false);
+$("[Id$='RINI']").val('Competition');
+}
+else
+{
+$("[Id$='RINI']").val(' ');
+}
+}
+if(RINI.indexOf('Loan Eligibility Issue') >= 0)
+{
+if($("[Id$='Loan Eligibility Issue']").is(':checked'))
+{
+$("[Id$='Competition']").attr('checked', false);
+$("[Id$='Construction Timelines']").attr('checked', false);
+$("[Id$='Views']").attr('checked', false);
+$("[Id$='Price']").attr('checked', false);
+$("[Id$='Location']").attr('checked', false);
+$("[Id$='Vaastu']").attr('checked', false);
+$("[Id$='Product design']").attr('checked', false);
+$("[Id$='RINI']").val('Loan Eligibility Issue');
+}
+else
+{
+$("[Id$='RINI']").val(' ');
+}
+}
+
+
+}
+</script>
+
+
+<!---------------------------------------------------------------------------Script for purpose of purchase 2------------------------------------------------------------------------------------------------>            
+<script>
+function updatePOP2(POP2)
+{
+if(POP2.indexOf('Personal Use') >= 0)
+{
+if($("[Id$='Personal Use']").is(':checked'))
+{
+$("[Id$='Investment']").attr('checked', false);
+$("[Id$='Second Home']").attr('checked', false);
+$("[Id$='Staying There']").attr('checked', false);
+$("[Id$='Weekend Home']").attr('checked', false);
+$("[Id$='Gift']").attr('checked', false);
+$("[Id$='Capital Gain Tax']").attr('checked', false);
+$("[Id$='Transit Home']").attr('checked', false);
+$("[Id$='POP2']").val('Personal Use');
+}
+else
+{
+$("[Id$='POP2']").val(' ');
+}
+}
+if(POP2.indexOf('Investment') >= 0)
+{
+if($("[Id$='Investment']").is(':checked'))
+{
+$("[Id$='Personal Use']").attr('checked', false);
+$("[Id$='Second Home']").attr('checked', false);
+$("[Id$='Staying There']").attr('checked', false);
+$("[Id$='Weekend Home']").attr('checked', false);
+$("[Id$='Gift']").attr('checked', false);
+$("[Id$='Capital Gain Tax']").attr('checked', false);
+$("[Id$='Transit Home']").attr('checked', false);
+$("[Id$='POP2']").val('Investment');
+}
+else
+{
+$("[Id$='POP2']").val(' ');
+}
+}
+if(POP2.indexOf('Second Home') >= 0)
+{
+if($("[Id$='Second Home']").is(':checked'))
+{
+$("[Id$='Investment']").attr('checked', false);
+$("[Id$='Personal Use']").attr('checked', false);
+$("[Id$='Staying There']").attr('checked', false);
+$("[Id$='Weekend Home']").attr('checked', false);
+$("[Id$='Gift']").attr('checked', false);
+$("[Id$='Capital Gain Tax']").attr('checked', false);
+$("[Id$='Transit Home']").attr('checked', false);
+$("[Id$='POP2']").val('Second Home ');
+}
+else
+{
+$("[Id$='POP2']").val(' ');
+}
+}
+if(POP2.indexOf('Staying There') >= 0)
+{
+if($("[Id$='Staying There']").is(':checked'))
+{
+$("[Id$='Second Home']").attr('checked', false);
+$("[Id$='Investment']").attr('checked', false);
+$("[Id$='Personal Use']").attr('checked', false);
+$("[Id$='Weekend Home']").attr('checked', false);
+$("[Id$='Gift']").attr('checked', false);
+$("[Id$='Capital Gain Tax']").attr('checked', false);
+$("[Id$='Transit Home']").attr('checked', false);
+$("[Id$='POP2']").val('Staying There');
+}
+else
+{
+$("[Id$='POP2']").val(' ');
+}
+}
+if(POP2.indexOf('Weekend Home') >= 0)
+{
+if($("[Id$='Weekend Home']").is(':checked'))
+{
+$("[Id$='Staying There']").attr('checked', false);
+$("[Id$='Second Home']").attr('checked', false);
+$("[Id$='Investment']").attr('checked', false);
+$("[Id$='Personal Use']").attr('checked', false);
+$("[Id$='Gift']").attr('checked', false);
+$("[Id$='Capital Gain Tax']").attr('checked', false);
+$("[Id$='Transit Home']").attr('checked', false);
+$("[Id$='POP2']").val('Weekend Home');
+}
+else
+{
+$("[Id$='POP2']").val(' ');
+}
+}
+if(POP2.indexOf('Gift') >= 0)
+{
+if($("[Id$='Gift']").is(':checked'))
+{
+$("[Id$='Weekend Home']").attr('checked', false);
+$("[Id$='Staying There']").attr('checked', false);
+$("[Id$='Second Home']").attr('checked', false);
+$("[Id$='Investment']").attr('checked', false);
+$("[Id$='Personal Use']").attr('checked', false);
+$("[Id$='Capital Gain Tax']").attr('checked', false);
+$("[Id$='Transit Home']").attr('checked', false);
+$("[Id$='POP2']").val('Gift');
+}
+else
+{
+$("[Id$='POP2']").val(' ');
+}
+}
+if(POP2.indexOf('Capital Gain Tax') >= 0)
+{
+if($("[Id$='Capital Gain Tax']").is(':checked'))
+{
+$("[Id$='Gift']").attr('checked', false);
+$("[Id$='Weekend Home']").attr('checked', false);
+$("[Id$='Staying There']").attr('checked', false);
+$("[Id$='Second Home']").attr('checked', false);
+$("[Id$='Investment']").attr('checked', false);
+$("[Id$='Personal Use']").attr('checked', false);
+$("[Id$='Transit Home']").attr('checked', false);
+$("[Id$='POP2']").val('Capital Gain Tax');
+}
+else
+{
+$("[Id$='POP2']").val(' ');
+}
+}
+if(POP2.indexOf('Transit Home') >= 0)
+{
+if($("[Id$='Transit Home']").is(':checked'))
+{
+$("[Id$='Gift']").attr('checked', false);
+$("[Id$='Weekend Home']").attr('checked', false);
+$("[Id$='Staying There']").attr('checked', false);
+$("[Id$='Second Home']").attr('checked', false);
+$("[Id$='Investment']").attr('checked', false);
+$("[Id$='Personal Use']").attr('checked', false);
+$("[Id$='Capital Gain Tax']").attr('checked', false);
+$("[Id$='POP2']").val('Transit Home');
+}
+else
+{
+$("[Id$='POP2']").val(' ');
+}
+}
+
+}
+</script>
+<!-------------------------------------------------------------------------------script for rating------------------------------------------------------------------------------------->
+            
+<script>
+        function updateEOP(EOP)
+        {
+            if(EOP.indexOf('EOP1') >= 0)
+            {
+                 if($("[Id$='EOP1']").is(':checked'))
+                {
+                    $("[Id$='EOP2']").attr('checked', false);
+                    $("[Id$='EOP3']").attr('checked', false);
+                    $("[Id$='EOP4']").attr('checked', false);
+                    $("[Id$='EOP5']").attr('checked', false);
+                    $("[Id$='EOP']").val('1');
+                }
+                else
+                {
+                    $("[Id$='EOP']").val(' ');
+                }
+            }
+            if(EOP.indexOf('EOP2') >= 0)
+            {
+                 if($("[Id$='EOP2']").is(':checked'))
+                {
+                    $("[Id$='EOP1']").attr('checked', false);
+                    $("[Id$='EOP3']").attr('checked', false);
+                    $("[Id$='EOP4']").attr('checked', false);
+                    $("[Id$='EOP5']").attr('checked', false);
+                    $("[Id$='EOP']").val('2');
+                }
+                else
+                {
+                    $("[Id$='EOP']").val(' ');
+                }
+            }
+            if(EOP.indexOf('EOP3') >= 0)
+            {
+                 if($("[Id$='EOP3']").is(':checked'))
+                {
+                    $("[Id$='EOP2']").attr('checked', false);
+                    $("[Id$='EOP1']").attr('checked', false);
+                    $("[Id$='EOP4']").attr('checked', false);
+                    $("[Id$='EOP5']").attr('checked', false);
+                    $("[Id$='EOP']").val('3');
+                }
+                else
+                {
+                    $("[Id$='EOP']").val(' ');
+                }
+            }
+            if(EOP.indexOf('EOP4') >= 0)
+            {
+                 if($("[Id$='EOP4']").is(':checked'))
+                {
+                    $("[Id$='EOP2']").attr('checked', false);
+                    $("[Id$='EOP3']").attr('checked', false);
+                    $("[Id$='EOP1']").attr('checked', false);
+                    $("[Id$='EOP5']").attr('checked', false);
+                    $("[Id$='EOP']").val('4');
+                }
+                else
+                {
+                    $("[Id$='EOP']").val(' ');
+                }
+            }
+            if(EOP.indexOf('EOP5') >= 0)
+            {
+                 if($("[Id$='EOP5']").is(':checked'))
+                {
+                    $("[Id$='EOP2']").attr('checked', false);
+                    $("[Id$='EOP3']").attr('checked', false);
+                    $("[Id$='EOP4']").attr('checked', false);
+                    $("[Id$='EOP1']").attr('checked', false);
+                    $("[Id$='EOP']").val('5');
+                }
+                else
+                {
+                    $("[Id$='EOP']").val(' ');
+                }
+            }
+         }
+        function updateTimelines(Timelines)
+        {
+            if(Timelines.indexOf('pt1') >= 0)
+            {
+                 if($("[Id$='pt1']").is(':checked'))
+                {
+                    $("[Id$='pt2']").attr('checked', false);
+                    $("[Id$='pt3']").attr('checked', false);
+                    $("[Id$='pt4']").attr('checked', false);
+                    $("[Id$='pt5']").attr('checked', false);
+                    $("[Id$='Timelines']").val('1');
+                }
+                else
+                {
+                    $("[Id$='Timelines']").val(' ');
+                }
+            }
+            if(Timelines.indexOf('pt2') >= 0)
+            {
+                 if($("[Id$='pt2']").is(':checked'))
+                {
+                    $("[Id$='pt1']").attr('checked', false);
+                    $("[Id$='pt3']").attr('checked', false);
+                    $("[Id$='pt4']").attr('checked', false);
+                    $("[Id$='pt5']").attr('checked', false);
+                    $("[Id$='Timelines']").val('2');
+                }
+                else
+                {
+                    $("[Id$='Timelines']").val(' ');
+                }
+            }
+            if(Timelines.indexOf('pt3') >= 0)
+            {
+                 if($("[Id$='pt3']").is(':checked'))
+                {
+                    $("[Id$='pt2']").attr('checked', false);
+                    $("[Id$='pt1']").attr('checked', false);
+                    $("[Id$='pt4']").attr('checked', false);
+                    $("[Id$='pt5']").attr('checked', false);
+                    $("[Id$='Timelines']").val('3');
+                }
+                else
+                {
+                    $("[Id$='Timelines']").val(' ');
+                }
+            }
+            if(Timelines.indexOf('pt4') >= 0)
+            {
+                 if($("[Id$='pt4']").is(':checked'))
+                {
+                    $("[Id$='pt2']").attr('checked', false);
+                    $("[Id$='pt3']").attr('checked', false);
+                    $("[Id$='pt1']").attr('checked', false);
+                    $("[Id$='pt5']").attr('checked', false);
+                    $("[Id$='Timelines']").val('4');
+                }
+                else
+                {
+                    $("[Id$='Timelines']").val(' ');
+                }
+            }
+            if(Timelines.indexOf('pt5') >= 0)
+            {
+                 if($("[Id$='pt5']").is(':checked'))
+                {
+                    $("[Id$='pt2']").attr('checked', false);
+                    $("[Id$='pt3']").attr('checked', false);
+                    $("[Id$='pt4']").attr('checked', false);
+                    $("[Id$='pt1']").attr('checked', false);
+                    $("[Id$='Timelines']").val('5');
+                }
+                else
+                {
+                    $("[Id$='Timelines']").val(' ');
+                }
+            }
+         }
+        function updateChoice(Choice)
+        {
+            if(Choice.indexOf('c1') >= 0)
+            {
+                 if($("[Id$='c1']").is(':checked'))
+                {
+                    $("[Id$='c2']").attr('checked', false);
+                    $("[Id$='c3']").attr('checked', false);
+                    $("[Id$='c4']").attr('checked', false);
+                    $("[Id$='c5']").attr('checked', false);
+                    $("[Id$='Choice']").val('1');
+                }
+                else
+                {
+                    $("[Id$='Choice']").val(' ');
+                }
+            }
+            if(Choice.indexOf('c2') >= 0)
+            {
+                 if($("[Id$='c2']").is(':checked'))
+                {
+                    $("[Id$='c1']").attr('checked', false);
+                    $("[Id$='c3']").attr('checked', false);
+                    $("[Id$='c4']").attr('checked', false);
+                    $("[Id$='c5']").attr('checked', false);
+                    $("[Id$='Choice']").val('2');
+                }
+                else
+                {
+                    $("[Id$='Choice']").val(' ');
+                }
+            }
+            if(Choice.indexOf('c3') >= 0)
+            {
+                 if($("[Id$='c3']").is(':checked'))
+                {
+                    $("[Id$='c2']").attr('checked', false);
+                    $("[Id$='c1']").attr('checked', false);
+                    $("[Id$='c4']").attr('checked', false);
+                    $("[Id$='c5']").attr('checked', false);
+                    $("[Id$='Choice']").val('3');
+                }
+                else
+                {
+                    $("[Id$='Choice']").val(' ');
+                }
+            }
+            if(Choice.indexOf('c4') >= 0)
+            {
+                 if($("[Id$='c4']").is(':checked'))
+                {
+                    $("[Id$='c2']").attr('checked', false);
+                    $("[Id$='c3']").attr('checked', false);
+                    $("[Id$='c1']").attr('checked', false);
+                    $("[Id$='c5']").attr('checked', false);
+                    $("[Id$='Choice']").val('4');
+                }
+                else
+                {
+                    $("[Id$='Choice']").val(' ');
+                }
+            }
+            if(Choice.indexOf('c5') >= 0)
+            {
+                 if($("[Id$='c5']").is(':checked'))
+                {
+                    $("[Id$='c2']").attr('checked', false);
+                    $("[Id$='c3']").attr('checked', false);
+                    $("[Id$='c4']").attr('checked', false);
+                    $("[Id$='c1']").attr('checked', false);
+                    $("[Id$='Choice']").val('5');
+                }
+                else
+                {
+                    $("[Id$='Choice']").val(' ');
+                }
+            }
+         }
+        function updatePrice(Price)
+        {
+            if(Price.indexOf('pr1') >= 0)
+            {
+                 if($("[Id$='pr1']").is(':checked'))
+                {
+                    $("[Id$='pr2']").attr('checked', false);
+                    $("[Id$='pr3']").attr('checked', false);
+                    $("[Id$='pr4']").attr('checked', false);
+                    $("[Id$='pr5']").attr('checked', false);
+                    $("[Id$='Price']").val('1');
+                }
+                else
+                {
+                    $("[Id$='Price']").val(' ');
+                }
+            }
+            if(Price.indexOf('pr2') >= 0)
+            {
+                 if($("[Id$='pr2']").is(':checked'))
+                {
+                    $("[Id$='pr1']").attr('checked', false);
+                    $("[Id$='pr3']").attr('checked', false);
+                    $("[Id$='pr4']").attr('checked', false);
+                    $("[Id$='pr5']").attr('checked', false);
+                    $("[Id$='Price']").val('2');
+                }
+                else
+                {
+                    $("[Id$='Price']").val(' ');
+                }
+            }
+            if(Price.indexOf('pr3') >= 0)
+            {
+                 if($("[Id$='pr3']").is(':checked'))
+                {
+                    $("[Id$='pr2']").attr('checked', false);
+                    $("[Id$='pr1']").attr('checked', false);
+                    $("[Id$='pr4']").attr('checked', false);
+                    $("[Id$='pr5']").attr('checked', false);
+                    $("[Id$='Price']").val('3');
+                }
+                else
+                {
+                    $("[Id$='Price']").val(' ');
+                }
+            }
+            if(Price.indexOf('pr4') >= 0)
+            {
+                 if($("[Id$='pr4']").is(':checked'))
+                {
+                    $("[Id$='pr2']").attr('checked', false);
+                    $("[Id$='pr3']").attr('checked', false);
+                    $("[Id$='pr1']").attr('checked', false);
+                    $("[Id$='pr5']").attr('checked', false);
+                    $("[Id$='Price']").val('4');
+                }
+                else
+                {
+                    $("[Id$='Price']").val(' ');
+                }
+            }
+            if(Price.indexOf('pr5') >= 0)
+            {
+                 if($("[Id$='pr5']").is(':checked'))
+                {
+                    $("[Id$='pr2']").attr('checked', false);
+                    $("[Id$='pr3']").attr('checked', false);
+                    $("[Id$='pr4']").attr('checked', false);
+                    $("[Id$='pr1']").attr('checked', false);
+                    $("[Id$='Price']").val('5');
+                }
+                else
+                {
+                    $("[Id$='Price']").val(' ');
+                }
+            }
+         }
+        function updateproduct(product)
+        {
+            if(product.indexOf('p1') >= 0)
+            {
+                 if($("[Id$='p1']").is(':checked'))
+                {
+                    $("[Id$='p2']").attr('checked', false);
+                    $("[Id$='p3']").attr('checked', false);
+                    $("[Id$='p4']").attr('checked', false);
+                    $("[Id$='p5']").attr('checked', false);
+                    $("[Id$='product']").val('1');
+                }
+                else
+                {
+                    $("[Id$='product']").val(' ');
+                }
+            }
+            if(product.indexOf('p2') >= 0)
+            {
+                 if($("[Id$='p2']").is(':checked'))
+                {
+                    $("[Id$='p1']").attr('checked', false);
+                    $("[Id$='p3']").attr('checked', false);
+                    $("[Id$='p4']").attr('checked', false);
+                    $("[Id$='p5']").attr('checked', false);
+                    $("[Id$='product']").val('2');
+                }
+                else
+                {
+                    $("[Id$='product']").val(' ');
+                }
+            }
+            if(product.indexOf('p3') >= 0)
+            {
+                 if($("[Id$='p3']").is(':checked'))
+                {
+                    $("[Id$='p2']").attr('checked', false);
+                    $("[Id$='p1']").attr('checked', false);
+                    $("[Id$='p4']").attr('checked', false);
+                    $("[Id$='p5']").attr('checked', false);
+                    $("[Id$='product']").val('3');
+                }
+                else
+                {
+                    $("[Id$='product']").val(' ');
+                }
+            }
+            if(product.indexOf('p4') >= 0)
+            {
+                 if($("[Id$='p4']").is(':checked'))
+                {
+                    $("[Id$='p2']").attr('checked', false);
+                    $("[Id$='p3']").attr('checked', false);
+                    $("[Id$='p1']").attr('checked', false);
+                    $("[Id$='p5']").attr('checked', false);
+                    $("[Id$='product']").val('4');
+                }
+                else
+                {
+                    $("[Id$='product']").val(' ');
+                }
+            }
+            if(product.indexOf('p5') >= 0)
+            {
+                 if($("[Id$='p5']").is(':checked'))
+                {
+                    $("[Id$='p2']").attr('checked', false);
+                    $("[Id$='p3']").attr('checked', false);
+                    $("[Id$='p4']").attr('checked', false);
+                    $("[Id$='p1']").attr('checked', false);
+                    $("[Id$='product']").val('5');
+                }
+                else
+                {
+                    $("[Id$='product']").val(' ');
+                }
+            }
+         }
+        function updateLocation(Location)
+        {
+            if(Location.indexOf('l1') >= 0)
+            {
+                 if($("[Id$='l1']").is(':checked'))
+                {
+                    $("[Id$='l2']").attr('checked', false);
+                    $("[Id$='l3']").attr('checked', false);
+                    $("[Id$='l4']").attr('checked', false);
+                    $("[Id$='l5']").attr('checked', false);
+                    $("[Id$='Location']").val('1');
+                }
+                else
+                {
+                    $("[Id$='Location']").val(' ');
+                }
+            }
+            if(Location.indexOf('l2') >= 0)
+            {
+                 if($("[Id$='l2']").is(':checked'))
+                {
+                    $("[Id$='l1']").attr('checked', false);
+                    $("[Id$='l3']").attr('checked', false);
+                    $("[Id$='l4']").attr('checked', false);
+                    $("[Id$='l5']").attr('checked', false);
+                    $("[Id$='Location']").val('2');
+                }
+                else
+                {
+                    $("[Id$='Location']").val(' ');
+                }
+            }
+            if(Location.indexOf('l3') >= 0)
+            {
+                 if($("[Id$='l3']").is(':checked'))
+                {
+                    $("[Id$='l2']").attr('checked', false);
+                    $("[Id$='l1']").attr('checked', false);
+                    $("[Id$='l4']").attr('checked', false);
+                    $("[Id$='l5']").attr('checked', false);
+                    $("[Id$='Location']").val('3');
+                }
+                else
+                {
+                    $("[Id$='Location']").val(' ');
+                }
+            }
+            if(Location.indexOf('l4') >= 0)
+            {
+                 if($("[Id$='l4']").is(':checked'))
+                {
+                    $("[Id$='l2']").attr('checked', false);
+                    $("[Id$='l3']").attr('checked', false);
+                    $("[Id$='l1']").attr('checked', false);
+                    $("[Id$='l5']").attr('checked', false);
+                    $("[Id$='Location']").val('4');
+                }
+                else
+                {
+                    $("[Id$='Location']").val(' ');
+                }
+            }
+            if(Location.indexOf('l5') >= 0)
+            {
+                 if($("[Id$='l5']").is(':checked'))
+                {
+                    $("[Id$='l2']").attr('checked', false);
+                    $("[Id$='l3']").attr('checked', false);
+                    $("[Id$='l4']").attr('checked', false);
+                    $("[Id$='l1']").attr('checked', false);
+                    $("[Id$='Location']").val('5');
+                }
+                else
+                {
+                    $("[Id$='Location']").val(' ');
+                }
+            }
+         }
+        function updateSB(SB)
+        {
+            if(SB.indexOf('SB1') >= 0)
+            {
+                 if($("[Id$='SB1']").is(':checked'))
+                {
+                    $("[Id$='SB2']").attr('checked', false);
+                    $("[Id$='SB3']").attr('checked', false);
+                    $("[Id$='SB4']").attr('checked', false);
+                    $("[Id$='SB5']").attr('checked', false);
+                    $("[Id$='SB']").val('1');
+                }
+                else
+                {
+                    $("[Id$='SB']").val(' ');
+                }
+            }
+            if(SB.indexOf('SB2') >= 0)
+            {
+                 if($("[Id$='SB2']").is(':checked'))
+                {
+                    $("[Id$='SB1']").attr('checked', false);
+                    $("[Id$='SB3']").attr('checked', false);
+                    $("[Id$='SB4']").attr('checked', false);
+                    $("[Id$='SB5']").attr('checked', false);
+                    $("[Id$='SB']").val('2');
+                }
+                else
+                {
+                    $("[Id$='SB']").val(' ');
+                }
+            }
+            if(SB.indexOf('SB3') >= 0)
+            {
+                 if($("[Id$='SB3']").is(':checked'))
+                {
+                    $("[Id$='SB2']").attr('checked', false);
+                    $("[Id$='SB1']").attr('checked', false);
+                    $("[Id$='SB4']").attr('checked', false);
+                    $("[Id$='SB5']").attr('checked', false);
+                    $("[Id$='SB']").val('3');
+                }
+                else
+                {
+                    $("[Id$='SB']").val(' ');
+                }
+            }
+            if(SB.indexOf('SB4') >= 0)
+            {
+                 if($("[Id$='SB4']").is(':checked'))
+                {
+                    $("[Id$='SB2']").attr('checked', false);
+                    $("[Id$='SB3']").attr('checked', false);
+                    $("[Id$='SB1']").attr('checked', false);
+                    $("[Id$='SB5']").attr('checked', false);
+                    $("[Id$='SB']").val('4');
+                }
+                else
+                {
+                    $("[Id$='SB']").val(' ');
+                }
+            }
+            if(SB.indexOf('SB5') >= 0)
+            {
+                 if($("[Id$='SB5']").is(':checked'))
+                {
+                    $("[Id$='SB2']").attr('checked', false);
+                    $("[Id$='SB3']").attr('checked', false);
+                    $("[Id$='SB4']").attr('checked', false);
+                    $("[Id$='SB1']").attr('checked', false);
+                    $("[Id$='SB']").val('5');
+                }
+                else
+                {
+                    $("[Id$='SB']").val(' ');
+                }
+            }
+         }
+</script>
+<!-------------------------------------------------------------------------------script for rating------------------------------------------------------------------------------------->
+        </body>
+        
+        
+    </html>
+</apex:page>

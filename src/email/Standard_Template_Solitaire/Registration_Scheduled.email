@@ -1,0 +1,9 @@
+Dear {!Opportunity.Account},<br/><br/>
+Greetings from Solitaire! <br/><br/>
+We wish to confirm that the agreement registration of your unit no. {!Opportunity.Project_Unit__c} is scheduled on {!Opportunity.Registration_Scheduled_Date__c} the address for the registration is {!Opportunity.Address_For_Registration__c}.<br/><br/>
+The Google Maps link for your reference:{!Opportunity.Registration_Address_Map_Link__c} <br/><br/>
+Contact Person: {!Opportunity.Contact_Person_Name_And_Number__c}<br/><br/>
+Request presence of all the applicants and do carry the Original Pan Card and 2 Passport size color photos of all the applicants.<br/><br/>
+For any concern please feel free to contact us.<br/><br/>
+Regards, <br/>
+Team CRM @ Solitaire

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CallDetails</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CallDetails</value>
+    </caseValues>
+    <fields>
+        <label><!-- Call_Duration --></label>
+        <name>Call_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- LeadId --></label>
+        <name>LeadId__c</name>
+    </fields>
+    <fields>
+        <label><!-- accountName --></label>
+        <name>accountName__c</name>
+        <relationshipLabel><!-- CallDetails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- callId --></label>
+        <name>callId__c</name>
+    </fields>
+    <fields>
+        <label><!-- campaignId --></label>
+        <name>campaignId__c</name>
+    </fields>
+    <fields>
+        <label><!-- clearTripName --></label>
+        <name>clearTripName__c</name>
+    </fields>
+    <fields>
+        <label><!-- contactName --></label>
+        <name>contactName__c</name>
+    </fields>
+    <fields>
+        <label><!-- customerCRTId --></label>
+        <name>customerCRTId__c</name>
+    </fields>
+    <fields>
+        <label><!-- dialedNumber --></label>
+        <name>dialedNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- dispositionClass --></label>
+        <name>dispositionClass__c</name>
+    </fields>
+    <fields>
+        <label><!-- dispositionCode --></label>
+        <name>dispositionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- leadName --></label>
+        <name>leadName__c</name>
+        <relationshipLabel><!-- CallDetails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- objectId --></label>
+        <name>objectId__c</name>
+    </fields>
+    <fields>
+        <label><!-- objectType --></label>
+        <name>objectType__c</name>
+    </fields>
+    <fields>
+        <label><!-- recordingFileUrl --></label>
+        <name>recordingFileUrl__c</name>
+    </fields>
+    <fields>
+        <label><!-- systemDisposition --></label>
+        <name>systemDisposition__c</name>
+    </fields>
+    <fields>
+        <label><!-- userCrtObjectId --></label>
+        <name>userCrtObjectId__c</name>
+    </fields>
+    <fields>
+        <label><!-- userId --></label>
+        <name>userId__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

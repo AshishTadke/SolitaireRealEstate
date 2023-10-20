@@ -1,0 +1,228 @@
+<apex:page readOnly="true" showHeader="false" renderAs="pdf" standardController="Residential_Cost_Sheet__c">
+    <body width="100%">
+    
+              <table align="Center" cellspacing="0" style="width:100%">
+                 <tr>
+                     <td colspan="3" style="background-color:#9CA1A1;"><b>INDICATIVE COST SHEET</b>
+                     </td>
+                 </tr>
+              </table>
+                 
+              <table border = "0">
+                 <tr>
+                     <td>
+                         Calculations mentioned below are for a typical unit. This will vary for specific units depending on area, floor, side, estimate for specifc unit may be provided on request.
+                     </td>
+                 </tr><br/>
+              </table>   
+                     
+              <table cellspacing="0" style="width:100%">  
+                 <tr>
+                     <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">UNIT DETAILS
+                     </td>
+                 </tr>
+              </table>
+                 
+              <table cellspacing="0" style="width:100%">
+                   
+                     <tr>
+                         <td style="width:5%">Purchaser Name</td>
+                         <td style="width:5%">{!Residential_Cost_Sheet__c.Purchaser_Name__c}</td>
+                     </tr>
+                     
+                     <tr>
+                         <td style="width:5%">Source</td>
+                         <td style="width:11%">{!Residential_Cost_Sheet__c.Source__c}</td>
+                     </tr>    
+                     
+                     <tr>    
+                         <td>Tower</td>
+                         <td style="width:11%">{!Residential_Cost_Sheet__c.Tower__r.Name}</td>
+                     </tr>
+                     
+                     <tr>    
+                         <td >Unit Category</td>
+                         <td style="width:11%">{!Residential_Cost_Sheet__c.Unit_Type__c}</td>
+                     </tr>
+                     
+                     <tr>    
+                         <td>Unit Type</td>
+                         <td style="width:11%">{!Residential_Cost_Sheet__c.Unit_Configuration__c}</td>
+                     </tr>
+                     
+                     <tr>    
+                         <td>Wing</td>
+                         <td style="width:11%">{!Residential_Cost_Sheet__c.Wing__c}</td>
+                     </tr>
+                     
+                     <tr>    
+                         <td>Floor</td>
+                         <td style="width:11%">{!Residential_Cost_Sheet__c.Floor__c}</td>
+                     </tr>
+                     
+                     <tr>    
+                         <td>Unit Number</td>
+                         <td style="width:11%">{!Residential_Cost_Sheet__c.Project_Unit__r.Name}</td>
+                     </tr>
+                     
+                     <tr>    
+                         <td >Payment Plan Type</td>
+                         <td style="width:11%">{!Residential_Cost_Sheet__c.Payment_Plan_Type__r.Name}</td>
+                     </tr>
+                     
+                     <tr><td></td></tr>
+                     <tr><td></td></tr>
+                      <br/>
+              </table>
+             
+              <table cellspacing="0" style="width:100%">
+                     <tr>
+                          <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">AREA DETAILS</td>
+                          <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">SQMTS</td>
+                          <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">SQFT</td>
+                     </tr>
+                     
+                     
+                      <tr>    
+                         <td colspan="3">Carpet Area as defined in RERA</td> 
+                         <td colspan="3">{!Residential_Cost_Sheet__c.Carpet_Area_as_defined_in_RERA_SQMTS__c}</td>
+                         <td colspan="3">{!Residential_Cost_Sheet__c.Carpet_Area_as_defined_in_RERA_SQFT__c}</td>
+   
+                     </tr>
+                      
+                         
+                     <tr>
+                         <td colspan="3">Carpet Area of Open/ Enclosed balcony as sanctioned</td>
+                         <td colspan="3">{!Residential_Cost_Sheet__c.Carpet_Area_of_balcony_sanctioned_SQMTS__c}</td>
+                         <td colspan="3">{!Residential_Cost_Sheet__c.Carpet_Area_of_balcony_sanctioned_SQFT__c}</td>
+                     </tr>
+                         
+                     <tr>    
+                         <td colspan="3">Carpet Area of Private Terrace</td>
+                         <td colspan="3">{!Residential_Cost_Sheet__c.Carpet_Area_of_Private_Terrace_SQMTS__c}</td>
+                         <td colspan="3">{!Residential_Cost_Sheet__c.Carpet_Area_of_Private_Terrace_SQFT__c}</td>
+                     </tr>
+                     
+                     <tr>    
+                         <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">TOTAL CARPET AREA</td>
+                         <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">{!Residential_Cost_Sheet__c.Total_Carpet_Area_SQMTS__c}</td>
+                         <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">{!Residential_Cost_Sheet__c.Total_Carpet_Area_SQFT__c}</td>
+                         
+                     </tr> 
+                     <br/>
+              </table>
+                
+              <table cellspacing="0" style="width:100%">
+                 <tr>
+                     <td colspan="3" width="82%" style="font-weight:Bold;background:#D3D3D3;">UNIT VALUE DETAILS</td>
+                     <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">INR</td>
+                 </tr>
+
+                 <tr>    
+                     <td colspan="3">Unit Cost</td>
+                     <td colspan="3">{!Residential_Cost_Sheet__c.Unit_Cost__c}</td> 
+                 </tr>
+                     
+                 <tr>    
+                     <td colspan="3">MSEB and Development Charges</td>
+                     <td colspan="3">{!Residential_Cost_Sheet__c.MSEB_Development_Charges__c}</td> 
+                 </tr>
+                     
+                 <tr>    
+                     <td colspan="3">Infrastructure Charges</td>
+                     <td colspan="3">{!Residential_Cost_Sheet__c.Infrastructure_Charges__c}</td> 
+                 </tr>
+                     
+                 <tr>    
+                     <td colspan="3">Premium Charges</td>
+                     <td colspan="3">{!Residential_Cost_Sheet__c.Premium_Charges__c}</td> 
+                 </tr>
+                     
+                 <tr>
+                     <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">NET CONSIDERATION VALUE</td>
+                     <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">{!Residential_Cost_Sheet__c.Net_Consideration_Value__c}</td>
+                 </tr><br/>
+                    
+              </table>
+
+
+              <table cellspacing="0" style="width:100%">
+                       
+                     <tr>
+                         <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">GOVERNMENT CHARGES</td>
+                         <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">INR</td>
+                     </tr>
+
+                     <tr>    
+                         <td colspan="3">Stamp Duty- 6%</td>
+                         <td colspan="3">{!Residential_Cost_Sheet__c.Stamp_Duty__c}</td> 
+                     </tr>
+                     
+                     <tr>    
+                         <td colspan="3">Registration Charges</td>
+                         <td colspan="3">{!Residential_Cost_Sheet__c.Registration_Charges__c}</td> 
+                     </tr>
+                     
+                     <tr>    
+                         <td colspan="3">Central GST (@9% of 2/3rd of Net Consideration Value)</td>
+                         <td colspan="3">{!Residential_Cost_Sheet__c.Central_GST__c}</td> 
+                     </tr>
+                     
+                     <tr>    
+                         <td colspan="3">State GST (@9% of 2/3rd of Net Consideration Value)</td>
+                         <td colspan="3">{!Residential_Cost_Sheet__c.State_GST__c}</td> 
+                     </tr>
+                     
+                     <tr>
+                         <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">TOTAL GOVERNMENT CHARGES</td>
+                         <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">{!Residential_Cost_Sheet__c.Total_Government_Charges__c}</td>
+                     </tr>
+                   
+                     <br/>
+                    
+              </table>
+                   
+               
+              <table cellspacing="0" style="width:100%">   
+                   
+                    <tr>
+                         <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">CHARGES APPLICABLE AT POSSESSION</td>
+                         <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">INR</td>
+                     </tr>
+                     
+                     <tr>    
+                         <td colspan="3">Advance Against Maintenance</td>
+                         <td id="areaamt">{!Residential_Cost_Sheet__c.Advance_Against_Maintenance__c}</td> 
+                     </tr>
+                     
+                     <tr>    
+                         <td colspan="3">GST on Annual Advance Maintenance (@18%)</td>
+                         <td colspan="3">{!Residential_Cost_Sheet__c.GST_on_Annual_Advance_Maintenance_18__c}</td> 
+                     </tr>
+                     
+                     <tr>    
+                         <td colspan="3">Refundable Corpus Fund (Deposit)</td>
+                         <td colspan="3">{!Residential_Cost_Sheet__c.Refundable_Corpus_Fund_Deposit__c}</td> 
+                     </tr>
+                                   
+                     <tr>
+                         <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">TOTAL CHARGES PAYABLE AT POSSESSION</td>
+                         <td colspan="3" style="font-weight:Bold;background:#D3D3D3;">{!Residential_Cost_Sheet__c.Total_Charges_Payable_at_Possession__c}</td>
+                     </tr><br/>  
+
+              </table>        
+             
+              <table cellspacing="0" style="width:100%">
+                 <tr>
+                     <td><strong style="font-size:14px;"><b><u>PLEASE NOTE</u></b>
+                    </strong></td>
+                 </tr>
+               
+                 <tr>
+                     <td><strong style="font-size:14px;">
+                         The above is an indicative cost estimate sheet. The Company reserves the right to ammend/terminate the same without any prior notice. In case an intending purchaser makes an offer and the same is accepted, unit value shall be as per the Agreement. Stamp Duty and Registration Charges are payable at rates applicable as on Agreement Date. Government charges/taxes/duties/premium are subject to change and would be applicable at actuals.
+                     </strong></td>
+                 </tr>    
+              </table>
+   </body>
+</apex:page>

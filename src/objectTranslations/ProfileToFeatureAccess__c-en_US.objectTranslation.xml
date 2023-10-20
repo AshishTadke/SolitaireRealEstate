@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ProfileToFeatureAccess</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ProfileToFeatureAccess</value>
+    </caseValues>
+    <fields>
+        <label><!-- Feature Accessible --></label>
+        <name>Feature_Accessible__c</name>
+    </fields>
+    <fields>
+        <label><!-- FeaturesList --></label>
+        <name>FeaturesList__c</name>
+        <picklistValues>
+            <masterLabel>CRM Interaction</masterLabel>
+            <translation><!-- CRM Interaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enquiry Received</masterLabel>
+            <translation><!-- Enquiry Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HWC</masterLabel>
+            <translation><!-- HWC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presales Call</masterLabel>
+            <translation><!-- Presales Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Call</masterLabel>
+            <translation><!-- Sales Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Visit</masterLabel>
+            <translation><!-- Site Visit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VDNB Call</masterLabel>
+            <translation><!-- VDNB Call --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ProfileList --></label>
+        <name>ProfileList__c</name>
+        <picklistValues>
+            <masterLabel>Admin</masterLabel>
+            <translation><!-- Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CRM Head</masterLabel>
+            <translation><!-- CRM Head --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CRM User</masterLabel>
+            <translation><!-- CRM User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Inhouse</masterLabel>
+            <translation><!-- Direct Inhouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PSC TL</masterLabel>
+            <translation><!-- PSC TL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PSC caller</masterLabel>
+            <translation><!-- PSC caller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PreSales Team Lead</masterLabel>
+            <translation><!-- PreSales Team Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presales User</masterLabel>
+            <translation><!-- Presales User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Data Entry</masterLabel>
+            <translation><!-- Sales Data Entry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Strategy Admin</masterLabel>
+            <translation><!-- Sales Strategy Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Strategy Operation</masterLabel>
+            <translation><!-- Sales Strategy Operation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Team Lead</masterLabel>
+            <translation><!-- Sales Team Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales User</masterLabel>
+            <translation><!-- Sales User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Administrator</masterLabel>
+            <translation><!-- System Administrator --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Single User Access Exception --></label>
+        <name>Single_User_Access_Exception__c</name>
+        <relationshipLabel><!-- ProfileToFeatureAccess --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>ProfileToFeatureAccess Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

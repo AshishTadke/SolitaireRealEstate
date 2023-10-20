@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SMS Schedule SMS</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SMS Schedule SMS</value>
+    </caseValues>
+    <fields>
+        <label><!-- Context Record (Opportunity) --></label>
+        <name>Context_Record_Opportunity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Context Record (Lead) --></label>
+        <name>Context_Record__c</name>
+    </fields>
+    <fields>
+        <label><!-- Immediate --></label>
+        <name>Immediate__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Text --></label>
+        <name>Message_Content__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Long text --></label>
+        <name>SMS_Long_text__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Time --></label>
+        <name>SMS_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sender Mobile --></label>
+        <name>Sender_Mobile__c</name>
+    </fields>
+    <layouts>
+        <layout>SMS Schedule SMS Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

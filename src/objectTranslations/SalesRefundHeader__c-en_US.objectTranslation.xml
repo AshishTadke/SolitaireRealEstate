@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SalesRefundHeader</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SalesRefundHeaders</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount payable with intreset --></label>
+        <name>Amount_payable_with_intreset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brokerage to be recovered --></label>
+        <name>Brokerage_to_be_recovered__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Charges --></label>
+        <name>Cancellation_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Txn No. --></label>
+        <name>Cancellation_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest Payable --></label>
+        <name>Interest_Payable__c</name>
+        <picklistValues>
+            <masterLabel>%Per</masterLabel>
+            <translation><!-- %Per --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lumpsum</masterLabel>
+            <translation><!-- Lumpsum --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Net Amount Credited --></label>
+        <name>Net_Amount_Credited__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Amount Refunded --></label>
+        <name>Net_Amount_Refunded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- SalesRefundHeaders (Opportunity) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PartialPayment --></label>
+        <name>PartialPayment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partial Refund Customer --></label>
+        <name>Partial_Refund_Customer__c</name>
+        <relationshipLabel><!-- SalesRefundHeaders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payable Interest Value --></label>
+        <name>Payable_Interest_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- PreviousRefundValue --></label>
+        <name>PreviousRefundValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process Date --></label>
+        <name>Process_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- SalesRefundHeaders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- SalesRefundHeaders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for making --></label>
+        <name>Reason_for_making__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refund Date --></label>
+        <name>Refund_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refund Type Name --></label>
+        <name>Refund_Type_Name__c</name>
+        <picklistValues>
+            <masterLabel>Cancellation Refund</masterLabel>
+            <translation><!-- Cancellation Refund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partial Refund</masterLabel>
+            <translation><!-- Partial Refund --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Refund Type --></label>
+        <name>Refund_Type__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unprocessed</masterLabel>
+            <translation><!-- Unprocessed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Series Code --></label>
+        <name>Series_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Created</masterLabel>
+            <translation><!-- Created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pending for Approval</masterLabel>
+            <translation><!-- pending for Approval --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>SalesRefundHeader Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Forfeit --></label>
+        <name>Forfeit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Cancellation_with_Interest --></label>
+        <name>New_Cancellation_with_Interest</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Complete_Cancellation --></label>
+        <name>New_Complete_Cancellation</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Partial_Refund --></label>
+        <name>Partial_Refund</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Process --></label>
+        <name>Process</name>
+    </webLinks>
+</CustomObjectTranslation>

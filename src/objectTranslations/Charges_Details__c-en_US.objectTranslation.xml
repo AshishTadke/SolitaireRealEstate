@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Charges Details</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Charges Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Club Membership --></label>
+        <name>Club_Membership__c</name>
+    </fields>
+    <fields>
+        <label><!-- Infrastructure Charges --></label>
+        <name>Infrastructure_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Charges --></label>
+        <name>Legal_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- MVAT @ 1% --></label>
+        <name>MVAT_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1 yr Maintenance * --></label>
+        <name>One_yr_Maintenance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration Charges --></label>
+        <name>Registration_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Share Money ST --></label>
+        <name>Share_Money_ST__c</name>
+    </fields>
+    <fields>
+        <label><!-- Share Money --></label>
+        <name>Share_Money__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sinking Funds --></label>
+        <name>Sinking_Funds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Society Formation ST --></label>
+        <name>Society_Formation_ST__c</name>
+    </fields>
+    <fields>
+        <label><!-- Society Formation --></label>
+        <name>Society_Formation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stamp Duty @ 5% --></label>
+        <name>Stamp_Duty_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Utility Charges ** --></label>
+        <name>Utility_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2 Yr Advance Maintenance ST --></label>
+        <name>X2_Yr_Advance_Maintenance_ST__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2 Yr Advance Maintenance --></label>
+        <name>X2_Yr_Advance_Maintenance__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

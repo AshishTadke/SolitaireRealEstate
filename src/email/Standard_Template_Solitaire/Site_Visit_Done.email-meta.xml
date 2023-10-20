@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Site Visit Done</name>
+    <style>none</style>
+    <subject>TEAM SOLITAIRE</subject>
+    <textOnly>Dear {!Opportunity.Account}, Thank you for visiting our {!Opportunity.Project__c} on {!Site_Visit__c.CreatedDate}. It was a pleasure having you over. You were attended to by . Hope we were able to provide you with all the details and clarify all your doubts. We would love to have feedback on your experience at our site. Do feel free to raise any flags, as we are always looking for better ways to serve you. You can mail in your feedback at .  If you were happy with the meeting, and have any specific appreciation for your Sales Agent, do let us know and we will pass on the message.  You can also feel free to share your feedback, if any, on the project. Although we do hope that you were satisfied and are looking to finalize your booking. Do contact  at  to confirm the same.  If not, kindly specify a convenient date and time for you, so that we can speak to you and understand your needs better. Thank you, Warm regards, Team SOLITAIRE.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

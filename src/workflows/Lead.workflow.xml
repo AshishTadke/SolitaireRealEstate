@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Lead_Converted</fullName>
+        <description>Lead Converted</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Lead_Convert</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Open_Lead_Notification</fullName>
+        <description>New Open Lead Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/LeadsWebtoLeademailresponseSAMPLE</template>
+    </alerts>
+    <alerts>
+        <fullName>New_lead_Notification</fullName>
+        <description>New lead Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/LeadsWebtoLeademailresponseSAMPLE</template>
+    </alerts>
+    <rules>
+        <fullName>New Lead Notification</fullName>
+        <actions>
+            <name>New_lead_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LastName</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

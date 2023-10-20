@@ -1,0 +1,1797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AdvancedSetup</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <fields>
+        <fullName>ActualCost</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Advertisement_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Advertisement Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Print Advertisement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hoarding Campaign</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>AmountAllOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>AmountWonOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>BudgetedCost</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>CampaignMemberRecordTypeId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Code</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Type</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Campaign_type_dropdown__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ATL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BTL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Capture_Point__c</fullName>
+        <externalId>false</externalId>
+        <label>Capture Point</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Lead Generating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brand level</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Channel_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DB_Campaign_Tactic__c</fullName>
+        <description>This is a field that is installed by and used with the Adoption Dashboard AppExchange package. If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and then delete this field.</description>
+        <externalId>false</externalId>
+        <label>DB Campaign Tactic</label>
+        <picklist>
+            <controllingField>Type</controllingField>
+            <picklistValues>
+                <fullName>Print Advertisement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employment Seminars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Webinars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partners</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Referral Program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lunches</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Call Down</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Online Banners/Ads</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal Website</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Digital_Maketing_Campaign_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Digital Maketing Campaign Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EndDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>ExpectedResponse</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>ExpectedRevenue</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>HierarchyActualCost</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyAmountAllOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyAmountWonOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyBudgetedCost</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyExpectedRevenue</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfContacts</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfConvertedLeads</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfLeads</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfResponses</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfWonOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberSent</fullName>
+    </fields>
+    <fields>
+        <fullName>IsActive</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Keyword__c</fullName>
+        <externalId>false</externalId>
+        <label>Keyword</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Local_NRI__c</fullName>
+        <externalId>false</externalId>
+        <label>Local/NRI</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Local</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NRI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <picklist>
+            <controllingField>Advertisement_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Front Page</fullName>
+                <default>false</default>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3rd Page</fullName>
+                <default>false</default>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5th Page</fullName>
+                <default>false</default>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Back Page</fullName>
+                <default>false</default>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Insert</fullName>
+                <default>false</default>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>NumberOfContacts</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfConvertedLeads</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfLeads</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfResponses</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfWonOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberSent</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Page_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Page URL</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phase__c</fullName>
+        <externalId>false</externalId>
+        <label>Phase</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Project Launch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Phase/Building Launch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sustenance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Place_Of_Stay__c</fullName>
+        <externalId>false</externalId>
+        <label>Place Of Stay</label>
+        <picklist>
+            <controllingField>Region__c</controllingField>
+            <picklistValues>
+                <fullName>Apta</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhivpuri Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dolavli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hamrapur</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jite</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Karjat</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kasu</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kelavli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Khopoli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lowjee</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nagothane</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Neral</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nidi</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Palasdari</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pen</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rasayani</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roha</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Somatane</fullName>
+                <default>false</default>
+                <controllingFieldValues>Beyond Panvel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bandra</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chembur</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chunabhatti</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dadar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elphinstone Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Govandi</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guru Tegh Bahadur Nagar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Khar Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>King&apos;s Circle</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kurla</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mahim</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mankhurd</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Matunga</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Matunga Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mumbai Central</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sion</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tilak Nagar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wadala Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhandup</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Suburbs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ghatkopar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Suburbs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kanjurmarg</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Suburbs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mulund</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Suburbs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nahur</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Suburbs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thane</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Suburbs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vidyavihar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Suburbs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vikhroli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Central Suburbs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambarnath</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambivli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asangaon</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Atgaon</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Badlapur</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diva</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dombivli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kalwa</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kalyan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kasara</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Khadavli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Khardi</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kopar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mumbra</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thakurli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thansit</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Titwala</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ulhasnagar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Umbermali</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vasind</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vithalwadi</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Central</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Boisar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Western</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dahanu Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Western</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kelve Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Western</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Naigaon</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Western</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nala Sopara</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Western</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Palghar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Western</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Saphale</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Western</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Umroli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Western</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vaitarna</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Western</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vangaon</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Western</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vasai Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Western</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Virar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Extended Western</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Airoli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CBD Belapur</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ghansoli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Juinagar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kalamboli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Khandeshwar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kharghar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kopar Khairane</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mansarovar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Navade Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nerul</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Panvel</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rabale</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sanpada</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seawoods-Darave</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Taloja</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turbhe</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vashi</fullName>
+                <default>false</default>
+                <controllingFieldValues>Navi Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outside India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Singapore</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outside India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UAE</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outside India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UK</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outside India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outside India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bangalore</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outside Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NCR</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outside Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pune</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outside Mumbai</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Byculla</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Charni Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chhatrapati Shivaji Terminus</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chinchpokli</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Churchgate</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cotton Green</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Currey Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dockyard Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grant Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lower Parel</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mahalaxmi</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marine Lines</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Masjid</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parel</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reay Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sandhurst Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sewri</fullName>
+                <default>false</default>
+                <controllingFieldValues>SoBo</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Andheri</fullName>
+                <default>false</default>
+                <controllingFieldValues>Western Suburb</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhayandar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Western Suburb</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Borivali</fullName>
+                <default>false</default>
+                <controllingFieldValues>Western Suburb</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dahisar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Western Suburb</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Goregaon</fullName>
+                <default>false</default>
+                <controllingFieldValues>Western Suburb</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jogeshwari</fullName>
+                <default>false</default>
+                <controllingFieldValues>Western Suburb</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kandivali</fullName>
+                <default>false</default>
+                <controllingFieldValues>Western Suburb</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malad</fullName>
+                <default>false</default>
+                <controllingFieldValues>Western Suburb</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mira Road</fullName>
+                <default>false</default>
+                <controllingFieldValues>Western Suburb</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Santacruz</fullName>
+                <default>false</default>
+                <controllingFieldValues>Western Suburb</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vile Parle</fullName>
+                <default>false</default>
+                <controllingFieldValues>Western Suburb</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Qatar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outside India</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Placement__c</fullName>
+        <externalId>false</externalId>
+        <label>Placement</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Primary Project</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Campaigns</relationshipLabel>
+        <relationshipName>Campaigns</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Print_Adverstisement_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Print Adverstisement Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <picklist>
+            <controllingField>Advertisement_Type__c</controllingField>
+            <picklistValues>
+                <fullName>HMILL Prabhadevi</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Tst Project</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Atmosphere</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>W54</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anmol Fortne</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wadhwa Pokhran Road 2</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TestProject</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Publication_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>Publication</label>
+        <picklist>
+            <controllingField>Advertisement_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Times Properties</fullName>
+                <default>false</default>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Times of India</fullName>
+                <default>false</default>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Publisher__c</fullName>
+        <externalId>false</externalId>
+        <label>Publisher</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <picklist>
+            <controllingField>Advertisement_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Beyond Panvel</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Central Mumbai</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Central Suburbs</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extended Central</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extended Western</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Navi Mumbai</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outside India</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outside Mumbai</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SoBo</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Western Suburb</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hoarding Campaign</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Size__c</fullName>
+        <externalId>false</externalId>
+        <label>Size</label>
+        <picklist>
+            <controllingField>Advertisement_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Quarter Page</fullName>
+                <default>false</default>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Half Page</fullName>
+                <default>false</default>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Full Page</fullName>
+                <default>false</default>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jacket</fullName>
+                <default>false</default>
+                <controllingFieldValues>Print Advertisement</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StartDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aborted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Tollfree_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Tollfree Number</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>TransactionID__c</fullName>
+        <displayFormat>CA{00000}</displayFormat>
+        <externalId>false</externalId>
+        <label>ID</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Newspapers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Magazines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hoardings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exhibition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>E-Mailer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Site branding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SMS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TWG Website</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Mailer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bulk Upload</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Billboard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Collateral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loyalty Program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Channel Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Database Calling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type_Digital__c</fullName>
+        <externalId>false</externalId>
+        <label>Type (Digital)</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <controllingField>Category__c</controllingField>
+            <picklistValues>
+                <fullName>Newspapers</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Magazines</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hoardings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radio</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exhibition</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mailers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Site branding</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SMS</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TWG Website</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brochure</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leaflet</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spiral</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stationary</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3D Walk through</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3D rendering</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Project model</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internet marketing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Micro site</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New media</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Photography</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed AV</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flash presentation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>E-mailer</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TVC</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct marketing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PR</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lead Generating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <controllingFieldValues>Brand level</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporate Ads</fullName>
+                <default>false</default>
+                <controllingFieldValues>Brand level</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporate brochure</fullName>
+                <default>false</default>
+                <controllingFieldValues>Brand level</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awards</fullName>
+                <default>false</default>
+                <controllingFieldValues>Brand level</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diwali cards</fullName>
+                <default>false</default>
+                <controllingFieldValues>Brand level</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Calendar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Brand level</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mini-corporate brochure</fullName>
+                <default>false</default>
+                <controllingFieldValues>Brand level</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporate AV</fullName>
+                <default>false</default>
+                <controllingFieldValues>Brand level</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <listViews>
+        <fullName>AllActiveCampaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>Digital_Maketing_Campaign_Code__c</columns>
+        <columns>CAMPAIGN.ACTIVE</columns>
+        <columns>CAMPAIGN.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>Marketing</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.BUDGETED_COST</columns>
+        <columns>CAMPAIGN.ACTUAL_COST</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.NAME</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Marketing</label>
+    </listViews>
+    <listViews>
+        <fullName>MyActiveCampaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CAMPAIGN.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Active Campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>My_View</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>Tollfree_Number__c</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.ACTIVE</columns>
+        <columns>CAMPAIGN.BUDGETED_COST</columns>
+        <columns>CAMPAIGN.ACTUAL_COST</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>Digital_Maketing_Campaign_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>My View</label>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>CAMPAIGN.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CAMPAIGN.STATUS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CAMPAIGN.START_DATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CAMPAIGN.NAME</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CAMPAIGN.NAME</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>CAMPAIGN.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CAMPAIGN.CAMPAIGN_TYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PARENT_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CAMPAIGN.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CAMPAIGN.START_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CAMPAIGN.END_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CAMPAIGN.NUM_RESPONSES</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>FullAccess</sharingModel>
+    <validationRules>
+        <fullName>Lock_Budget</fullName>
+        <active>true</active>
+        <errorConditionFormula>(ISCHANGED(BudgetedCost))&amp;&amp;((PRIORVALUE(BudgetedCost) != 0)||(PRIORVALUE(BudgetedCost) != null))</errorConditionFormula>
+        <errorMessage>You Cannot change the Budget Cost</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>ViewAllCampaignMembers</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View All Campaign Members</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/camp/rptcmpgncalldown.jsp?scope=1&amp;scopeid={!Campaign_Name}</url>
+        <width>500</width>
+    </webLinks>
+    <webLinks>
+        <fullName>ViewCampaignInfluenceReport</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View Campaign Influence Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/00O?rt=117&amp;break0=CAN&amp;scope=1&amp;scopeid_lkid={!Campaign.Id}&amp;scopeid={!Campaign_Name}&amp;c=CAN&amp;c=MR&amp;c=PCS&amp;c=CFN&amp;c=RN&amp;c=ON&amp;c=OA&amp;c=OS&amp;c=OCD&amp;c=AN&amp;s=OA&amp;duel0=CAN%2CMR%2CCFN%2CRN%2CAN%2CON%2CPCS%2COS%2COCD%2COA&amp;details=yes&amp;format=t</url>
+        <width>500</width>
+    </webLinks>
+</CustomObject>

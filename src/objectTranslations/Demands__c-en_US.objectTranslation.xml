@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Demand</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Demands</value>
+    </caseValues>
+    <fields>
+        <label><!-- Booking --></label>
+        <name>Booking__c</name>
+        <relationshipLabel><!-- Demands --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Demand Letter --></label>
+        <name>Demand_Letter__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

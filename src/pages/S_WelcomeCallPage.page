@@ -1,0 +1,716 @@
+<apex:page id="PageId" controller="S_WelcomeCallPageController" sidebar="true" >
+
+<style>
+  .Heading
+    {
+        font-weight: bold;
+    }
+    
+    .DNC
+    {
+        font-weight : bold;
+        font-size : 14px;
+        width: 67.5%;
+    }
+    
+    .custPopup{
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding:10px;
+            width: 100%;
+            position: absolute;
+            height:200px;
+            /* These are the 3 css properties you will need to change so the popup 
+            displays in the center of the screen. First set the width. Then set 
+            margin-left to negative half of what the width is. You can add 
+            the height property for a fixed size pop up if you want.*/
+            width: 500px;
+            margin-left: -250px;
+            top:300px;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+    table.tableApp1B {
+       border : 3px Solid Black;
+       width:100%;
+    }
+    table.tableApp1B td {
+        
+        border : 1px Solid Black;
+        padding: 10px;
+       }
+    table.tableApp1B th {
+        text-align : center;
+    }
+    table.tableApp1B tr {
+         width:100%;
+    }
+    table.tableApp1B tr.appheader {
+         width:100%;
+         text-align : center;
+         background:#edf3f3;
+         font-weight:bold;
+    }
+    
+</style>
+
+<script>
+    function EnableDisableFunding()
+    {
+        var x = document.getElementById('PageId:formid:Pbid:pbsId:FundingId').value;
+        if (x == 'Self Funding')
+        {
+            document.getElementById('PageId:formid:Pbid:pbsId:LoanId').disabled = true;
+            document.getElementById('PageId:formid:Pbid:pbsId:needHlpId').disabled = true;
+            document.getElementById('IdBankDetails').style.display = 'none';
+            
+        }
+        else
+        {
+            document.getElementById('PageId:formid:Pbid:pbsId:LoanId').disabled = false;
+            document.getElementById('PageId:formid:Pbid:pbsId:needHlpId').disabled = false;
+            document.getElementById('IdBankDetails').style.display = 'block';
+            
+        }
+    }
+    
+    /*function createTask(v)
+    {
+        //var y = document.getElementById('PageId:formid:Pbid:pbsId:CallDispositionId').value;
+        if(v == 'Call back request')
+        {
+            alert('You should create a call back task');            
+            document.getElementById('idCallBackDate').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('idCallBackDate').style.display = 'none';
+        }
+    }*/
+    
+    function showhidebutton()
+    {
+        var x = document.getElementById('PageId:formid:Pbid:pbsinternalid:CallDispositionId').value;
+       /* if(x == 'Welcome call accepted')
+        {            
+            document.getElementById('PageId:formid:Pbid:PBBIdAccept:bottom:SaveId').style.display = 'none';
+            document.getElementById('PageId:formid:Pbid:PBBIdAccept:bottom:AcceptId').style.display = 'initial';
+            document.getElementById('PageId:formid:Pbid:PBBIdAccept:bottom:rejectId').style.display = 'none';
+        }
+        else if(x == 'Welcome call rejected')
+        {
+            document.getElementById('PageId:formid:Pbid:PBBIdAccept:bottom:SaveId').style.display = 'none';
+            document.getElementById('PageId:formid:Pbid:PBBIdAccept:bottom:rejectId').style.display = 'initial';
+            document.getElementById('PageId:formid:Pbid:PBBIdAccept:bottom:AcceptId').style.display = 'none';
+        }
+        else
+        {
+            document.getElementById('PageId:formid:Pbid:PBBIdAccept:bottom:SaveId').style.display = 'initial';
+            document.getElementById('PageId:formid:Pbid:PBBIdAccept:bottom:AcceptId').style.display = 'none';
+            document.getElementById('PageId:formid:Pbid:PBBIdAccept:bottom:rejectId').style.display = 'none';
+            
+        }*/
+        
+         /* if(x == 'Welcome call rejected'){
+         document.getElementById('rejectRemarksid').style.display = 'block';
+        }
+        else{
+            document.getElementById('rejectRemarksid').style.display = 'none';
+        } */
+        
+        if(x == 'Call back request')
+        {
+            document.getElementById('rejectRemarksid').style.display = 'none';
+            alert('You should create a call back task');            
+            document.getElementById('idCallBackDate').style.display = 'block';
+           
+            
+        }
+        else
+        {
+            document.getElementById('idCallBackDate').style.display = 'none';
+            document.getElementById('rejectRemarksid').style.display = 'block';
+        }
+    }
+    
+    function TaskCreated()
+    {
+        var x = document.getElementById('PageId:formid:Pbid:pbsinternalid:CallDispositionId').value;
+        if(x == 'Call back request')
+        {
+            alert('Your task has been created.');
+        }
+    }
+    
+    function checkLoan(x)
+    {
+        //alert(x);
+    }
+   
+</script>
+<apex:actionStatus id="status">
+    <apex:facet name="start">
+    <div class="fadeMe">
+        &nbsp;
+    </div>
+    <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+        <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+            <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+            <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+        </div>
+    </div>
+    </apex:facet>
+ </apex:actionStatus>
+<apex:pageMessages id="msgs"/>
+<apex:outputPanel rendered="{!If(ermsg == 'no',True,False)}">
+<apex:form id="formid" >     
+        <apex:commandLink value="Back to Welcome Call Dashboard" action="/apex/S_PickWelcomeCall" style="color:blue;"/>
+        <br/>
+        <!--<apex:pageMessages id="MsgId"></apex:pageMessages>-->
+        <apex:pageBlock title="Welcome Call History" rendered="{!WCHList.size > 0}">
+        <table class="tableApp1B" style="width:50%; margin:auto;">
+          <tr><th>Details</th><th>Last Call Made By</th><th>Date</th><th>Call Disposition</th><th>Remarks</th></tr>
+          <apex:repeat value="{!WCHList}" var="WCHeader">
+              <tr>
+              <td><apex:outputlink value="/apex/WelcomeCallRejectedPage" target="_blank">View Details<apex:param name="WCHid" value="{!WCHeader.Id}" /> </apex:outputlink></td>
+              <td><apex:outputField value="{!WCHeader.Owner.Name}"/></td>
+              <td><apex:outputField value="{!WCHeader.Call_Date__c}"/></td>
+              <td><apex:outputField value="{!WCHeader.Call_Disposition__c}"/></td>
+              <td><apex:outputField value="{!WCHeader.Remarks__c}"/></td>
+              </tr>
+          </apex:repeat>
+         </table>
+        </apex:pageBlock>
+        <apex:pageBlock id="Pbid" title=" Welcome Call With -  {!objBooking.customer__r.name} ({!objBooking.Project__r.Name})" rendered="{!if(objBooking.OwnerId == $User.Id , true, false)}">
+         
+            <table class="tableApp1B">
+                <tr><th>&nbsp;</th><th>Instructions</th><th>Detail</th><th>Verify</th><!--<th>Remarks</th>--></tr>
+                <!-----------------------Applicant 1------------------------->
+               <apex:outputLabel rendered="{!applicantList.size > 0}">
+               <tr class="appheader"><td colspan="5">Applicant Details</td></tr>
+               <tr>
+               <td><apex:outputLabel value="Main Applicant Name" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:outputLabel value="{!applicantList[0].Salutation__c} {!applicantList[0].Name}"/></td> 
+               <td><apex:inputField value="{!objWCC1.Verify__c}" label=""/></td>
+              <!-- <td><apex:inputField value="{!objWCC1.Remarks__c}" label=""/></td>-->
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Email Address" styleClass="Heading"/></td>
+               <td>Spell Check The ID</td>  
+               <td colspan="2"><apex:outputLabel value="{!applicantList[0].Email_Address__c}"/></td> 
+               <td><apex:inputField value="{!objWCC2.Verify__c}" label=""/></td>
+               <!--<td><apex:inputField value="{!objWCC2.Remarks__c}" label=""/></td>-->
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Mobile No." styleClass="Heading"/></td>
+               <td>Check The Number</td>  
+               <td colspan="2"><apex:outputLabel value="{!applicantList[0].Mobile_Number__c}"/></td> 
+               <td><apex:inputField value="{!objWCC3.Verify__c}" label=""/></td>
+               <!--<td><apex:inputField value="{!objWCC3.Remarks__c}" label=""/></td>-->
+               </tr>
+              <!-- <tr>
+               <td><apex:outputLabel value="DOB" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputField value="{!applicantList[0].DOB__c}"/></td> 
+               <td><apex:inputField value="{!objWCC4.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC4.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Landline Number" styleClass="Heading"/></td>
+               <td>Check The Number</td>  
+               <td><apex:outputLabel value="{!applicantList[0].Landline_Number__c}"/></td> 
+               <td><apex:inputField value="{!objWCC5.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC5.Remarks__c}" label=""/></td>
+               </tr>-->
+               <tr>
+               <td><apex:outputLabel value="Permanent Address" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:outputLabel value="{!applicantList[0].Permanent_Address__c}"/>,{!applicantList[0].Country__c},{!applicantList[0].Pincode__c}</td> 
+               <td><apex:inputField value="{!objWCC6.Verify__c}" label=""/></td>
+               <!--<td><apex:inputField value="{!objWCC6.Remarks__c}" label=""/></td>-->
+               </tr>
+               </apex:outputLabel>
+               <apex:outputLabel rendered="{!applicantList.size > 1}">              
+               <tr>
+               <td><apex:outputLabel value="Name(s) of Co-Applicants" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:outputLabel value="{!Coowners}"/></td> 
+               <td><apex:inputField value="{!objWCC7.Verify__c}" label=""/></td>
+               <!--<td><apex:inputField value="{!objWCC7.Remarks__c}" label=""/></td>-->
+               </tr>
+               </apex:outputLabel>
+               <!-----------------------Applicant 2------------------------->
+              <!-- <apex:outputLabel rendered="{!applicantList.size > 1}">
+               <tr class="appheader"><td colspan="5">Applicant 2</td></tr>
+               <tr>
+               <td><apex:outputLabel value="Applicant Name" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputLabel value="{!applicantList[1].Name}"/></td> 
+               <td><apex:inputField value="{!objWCC7.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC7.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Email Address" styleClass="Heading"/></td>
+               <td>Spell Check The ID</td>  
+               <td><apex:outputLabel value="{!applicantList[1].Email_Address__c}"/></td> 
+               <td><apex:inputField value="{!objWCC8.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC8.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Mobile No." styleClass="Heading"/></td>
+               <td>Check The Number</td>  
+               <td><apex:outputLabel value="{!applicantList[1].Mobile_Number__c}"/></td> 
+               <td><apex:inputField value="{!objWCC9.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC9.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="DOB" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputField value="{!applicantList[1].DOB__c}"/></td> 
+               <td><apex:inputField value="{!objWCC10.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC10.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Landline Number" styleClass="Heading"/></td>
+               <td>Check The Number</td>  
+               <td><apex:outputLabel value="{!applicantList[1].Landline_Number__c}"/></td> 
+               <td><apex:inputField value="{!objWCC11.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC11.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Permanent Address" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputLabel value="{!applicantList[1].Permanent_Address__c}"/>,{!applicantList[1].Country__c},{!applicantList[1].Pincode__c}</td> 
+               <td><apex:inputField value="{!objWCC12.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC12.Remarks__c}" label=""/></td>
+               </tr>
+               </apex:outputLabel>-->
+               <!-----------------------Applicant 3------------------------->
+               <!--<apex:outputLabel rendered="{!applicantList.size > 2}">
+               <tr class="appheader"><td colspan="5">Applicant 3</td></tr>
+               <tr>
+               <td><apex:outputLabel value="Applicant Name" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputLabel value="{!applicantList[2].Name}"/></td> 
+               <td><apex:inputField value="{!objWCC13.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC13.Remarks__c}" label=""/></td>
+               </tr>
+              <!-- <tr>
+               <td><apex:outputLabel value="Email Address" styleClass="Heading"/></td>
+               <td>Spell Check The ID</td>  
+               <td><apex:outputLabel value="{!applicantList[2].Email_Address__c}"/></td> 
+               <td><apex:inputField value="{!objWCC14.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC14.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Mobile No." styleClass="Heading"/></td>
+               <td>Check The Number</td>  
+               <td><apex:outputLabel value="{!applicantList[2].Mobile_Number__c}"/></td> 
+               <td><apex:inputField value="{!objWCC15.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC15.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="DOB" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputField value="{!applicantList[2].DOB__c}"/></td> 
+               <td><apex:inputField value="{!objWCC16.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC16.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Landline Number" styleClass="Heading"/></td>
+               <td>Check The Number</td>  
+               <td><apex:outputLabel value="{!applicantList[2].Landline_Number__c}"/></td> 
+               <td><apex:inputField value="{!objWCC17.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC17.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Permanent Address" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputLabel value="{!applicantList[2].Permanent_Address__c}"/>,{!applicantList[2].Country__c},{!applicantList[2].Pincode__c}</td> 
+               <td><apex:inputField value="{!objWCC18.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC18.Remarks__c}" label=""/></td>
+               </tr>
+               </apex:outputLabel>-->
+               <!-----------------------Applicant 4------------------------->
+               <!--<apex:outputLabel rendered="{!applicantList.size > 3}">
+               <tr class="appheader"><td colspan="5">Applicant 4</td></tr>
+               <tr>
+               <td><apex:outputLabel value=" Applicant Name" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputLabel value="{!applicantList[3].Name}"/></td> 
+               <td><apex:inputField value="{!objWCC19.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC19.Remarks__c}" label=""/></td>
+               </tr>
+             <!--  <tr>
+               <td><apex:outputLabel value="Email Address" styleClass="Heading"/></td>
+               <td>Spell Check The ID</td>  
+               <td><apex:outputLabel value="{!applicantList[3].Email_Address__c}"/></td> 
+               <td><apex:inputField value="{!objWCC20.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC20.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Mobile No." styleClass="Heading"/></td>
+               <td>Check The Number</td>  
+               <td><apex:outputLabel value="{!applicantList[3].Mobile_Number__c}"/></td> 
+               <td><apex:inputField value="{!objWCC21.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC21.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="DOB" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputField value="{!applicantList[3].DOB__c}"/></td> 
+               <td><apex:inputField value="{!objWCC22.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC22.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Landline Number" styleClass="Heading"/></td>
+               <td>Check The Number</td>  
+               <td><apex:outputLabel value="{!applicantList[3].Landline_Number__c}"/></td> 
+               <td><apex:inputField value="{!objWCC23.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC23.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Permanent Address" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputLabel value="{!applicantList[3].Permanent_Address__c}"/>,{!applicantList[3].Country__c},{!applicantList[3].Pincode__c}</td> 
+               <td><apex:inputField value="{!objWCC24.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC24.Remarks__c}" label=""/></td>
+               </tr>
+               </apex:outputLabel>-->
+               <!-----------------------Applicant 5 ------------------------->
+               <!--<apex:outputLabel rendered="{!applicantList.size > 4}">
+               <tr class="appheader"><td colspan="5">Applicant 5</td></tr>
+               <tr>
+               <td><apex:outputLabel value="Applicant Name" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputLabel value="{!applicantList[4].Name}"/></td> 
+               <td><apex:inputField value="{!objWCC25.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC25.Remarks__c}" label=""/></td>
+               </tr>
+              <!-- <tr>
+               <td><apex:outputLabel value="Email Address" styleClass="Heading"/></td>
+               <td>Spell Check The ID</td>  
+               <td><apex:outputLabel value="{!applicantList[4].Email_Address__c}"/></td> 
+               <td><apex:inputField value="{!objWCC26.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC26.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Mobile No." styleClass="Heading"/></td>
+               <td>Check The Number</td>  
+               <td><apex:outputLabel value="{!applicantList[4].Mobile_Number__c}"/></td> 
+               <td><apex:inputField value="{!objWCC27.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC27.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="DOB" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputField value="{!applicantList[4].DOB__c}"/></td> 
+               <td><apex:inputField value="{!objWCC28.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC28.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Landline Number" styleClass="Heading"/></td>
+               <td>Check The Number</td>  
+               <td><apex:outputLabel value="{!applicantList[4].Landline_Number__c}"/></td> 
+               <td><apex:inputField value="{!objWCC29.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC29.Remarks__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Permanent Address" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputLabel value="{!applicantList[4].Permanent_Address__c}"/>,{!applicantList[4].Country__c},{!applicantList[4].Pincode__c}</td> 
+               <td><apex:inputField value="{!objWCC30.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC30.Remarks__c}" label=""/></td>
+               </tr>
+               </apex:outputLabel>-->
+               <!------------------By Ashish 21-9-18 edit applicants----------------------------------->
+               <apex:outputLabel rendered="{!applicantList.size > 0}">
+               <tr>
+               <td colspan="3">Edit First Applicant Details</td>
+               <td colspan="2"><a href="/{!applicantList[0].Id}" target="_blank">Click here</a></td>
+               </tr>
+               </apex:outputLabel>
+               <apex:outputLabel rendered="{!applicantList.size > 1}">
+               <tr>
+               <td colspan="3">Edit Second Applicant Details</td>
+               <td colspan="2"><a href="/{!applicantList[1].Id}" target="_blank">Click here</a></td>
+               </tr>
+               </apex:outputLabel>
+               <apex:outputLabel rendered="{!applicantList.size > 2}">
+               <tr>
+               <td colspan="3">Edit Third Applicant Details</td>
+               <td colspan="2"><a href="/{!applicantList[2].Id}" target="_blank">Click here</a></td>
+               </tr>
+               </apex:outputLabel>
+               <apex:outputLabel rendered="{!applicantList.size > 3}">
+               <tr>
+               <td colspan="3">Edit Fourth Applicant Details</td>
+               <td colspan="2"><a href="/{!applicantList[3].Id}" target="_blank">Click here</a></td>
+               </tr>
+               </apex:outputLabel>
+               <apex:outputLabel rendered="{!applicantList.size > 4}">
+               <tr>
+               <td colspan="3">Edit Fifth Applicant Details</td>
+               <td colspan="2"><a href="/{!applicantList[4].Id}" target="_blank">Click here</a></td>
+               </tr>
+               </apex:outputLabel>
+               <!-----------------------Generic Details ------------------------->
+               <tr class="appheader"><td colspan="5">General Details</td></tr>
+               <tr>
+               <td><apex:outputLabel value="Project" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:outputLabel value="{!lstBooking[0].Project__r.Name}"/></td> 
+               <td><apex:inputField value="{!objWCC31.Verify__c}" label=""/></td>
+               <!--<td><apex:inputField value="{!objWCC31.Remarks__c}" label=""/></td>-->
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Unit Typology" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:outputLabel value="{!lstBooking[0].Flat_Typology__c}"/></td> 
+               <td><apex:inputField value="{!objWCC32.Verify__c}" label=""/></td>
+               <!--<td><apex:inputField value="{!objWCC32.Remarks__c}" label=""/></td>-->
+               </tr>
+              <!-- <tr>
+               <td><apex:outputLabel value="Zone" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputLabel value="{!lstBooking[0].Zone__c}"/></td> 
+               <td><apex:inputField value="{!objWCC33.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC33.Remarks__c}" label=""/></td>
+               </tr>-->
+               <tr>
+               <td><apex:outputLabel value="Wing" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:outputLabel value="{!lstBooking[0].Wing__c}"/></td> 
+               <td><apex:inputField value="{!objWCC34.Verify__c}" label=""/></td>
+               <!--<td><apex:inputField value="{!objWCC34.Remarks__c}" label=""/></td>-->
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Floor" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:outputLabel value="{!lstBooking[0].Floor1__c}"/></td> 
+               <td><apex:inputField value="{!objWCC35.Verify__c}" label=""/></td>
+              <!-- <td><apex:inputField value="{!objWCC35.Remarks__c}" label=""/></td>-->
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Unit No" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:outputLabel value="{!lstBooking[0].Flat_No__c}"/></td> 
+               <td><apex:inputField value="{!objWCC36.Verify__c}" label=""/></td>
+               <!--<td><apex:inputField value="{!objWCC36.Remarks__c}" label=""/></td>-->
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Carpet Area" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:outputLabel value="{!lstBooking[0].Carpet_Area__c}"/></td> 
+               <td><apex:inputField value="{!objWCC37.Verify__c}" label=""/></td>
+              <!-- <td><apex:inputField value="{!objWCC37.Remarks__c}" label=""/></td>-->
+               </tr>
+               
+               <tr>
+               <td><apex:outputLabel value="Exclusive Area [Terrace Area/Balcony Area/Enclosed Balcony Area/Passage Area/Mezzanine etc.]" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:outputLabel value="{!lstBooking[0].Unit_No__r.Exclusive_Area__c}"/></td> 
+               <td><apex:inputField value="{!objWCC54.Verify__c}" label=""/></td>
+               <!--<td><apex:inputField value="{!objWCC54.Remarks__c}" label=""/></td>-->
+               </tr>
+               
+               <tr>
+               <td><apex:outputLabel value="No Of Parkings" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2">
+                 <apex:outputText rendered="{!If((lstBooking[0].Quotation__r.Total_Stack__c != 0 ) ,True,False)}"><h4>Stack-{!lstBooking[0].Quotation__r.Total_Stack__c}</h4></apex:outputText>
+                 <apex:outputText rendered="{!If((lstBooking[0].Quotation__r.Total_Independent__c!= 0 ) ,True,False)}"><h4> Independent-{!lstBooking[0].Quotation__r.Total_Independent__c}</h4></apex:outputText>
+                 <apex:outputText rendered="{!If((lstBooking[0].Quotation__r.Total_Dependent__c!= 0 ) ,True,False)}"><h4> Dependent-{!lstBooking[0].Quotation__r.Total_Dependent__c}</h4></apex:outputText>
+                 <apex:outputText rendered="{!If((lstBooking[0].Quotation__r.Total_Puzzle__c!= 0 ) ,True,False)}"><h4> Puzzle-{!lstBooking[0].Quotation__r.Total_Puzzle__c}</h4></apex:outputText>
+                 <apex:outputText rendered="{!If((lstBooking[0].Quotation__r.Total_New_stack__c!= 0 ) ,True,False)}"><h4>Stack(3)-{!lstBooking[0].Quotation__r.Total_New_stack__c}</h4></apex:outputText>
+                 <apex:outputText rendered="{!If((lstBooking[0].Quotation__r.Total_Dependable_Stack__c!= 0 ) ,True,False)}"><h4> Dependable-Stack-{!lstBooking[0].Quotation__r.Total_Dependable_Stack__c}</h4></apex:outputText>
+ 
+              <!-- <apex:outputLabel value="{!lstBooking[0].No_of_Parking__c}"/>-->
+               </td> 
+               <td><apex:inputField value="{!objWCC38.Verify__c}" label=""/></td>
+               <!--<td><apex:inputField value="{!objWCC38.Remarks__c}" label=""/></td>-->
+               </tr>
+               <!-- <tr>
+               <td><apex:outputLabel value="Parkings Type" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td><apex:outputLabel value="{!lstBooking[0].Parking_Type__c}"/></td> 
+               <td><apex:inputField value="{!objWCC39.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC39.Remarks__c}" label=""/></td>
+               </tr>-->
+               <tr>
+               <td><apex:outputLabel value="Consideration Value" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:outputLabel value="{!alotment}"/></td> 
+               <td><apex:inputField value="{!objWCC40.Verify__c}" label=""/></td>
+               <!--<td><apex:inputField value="{!objWCC40.Remarks__c}" label=""/></td>-->
+               </tr>
+              <!-- <tr>
+               <td><apex:outputLabel value="Booking Token Amount" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:outputLabel value="{!ReceiptToken.Cheque_DD_Amount_Rs__c}"/></td> 
+               <td><apex:inputField value="{!objWCC41.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC41.Remarks__c}" label=""/></td>
+               </tr>-->
+               <tr>
+               <td><apex:outputLabel value="Payment Plan" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><a href="View_Payment_Plan?qId={!lstBooking[0].Quotation__r.Id}" target="_blank">Click here</a></td> 
+               <td><apex:inputField value="{!objWCC42.Verify__c}" label=""/></td>
+             <!--  <td><apex:inputField value="{!objWCC42.Remarks__c}" label=""/></td> -->
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Payments Made" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><a href="S_PaymentsPaidPage?Bookingid={!lstBooking[0].Id}" target="_blank">Click here</a></td> 
+               <td><apex:inputField value="{!objWCC56.Verify__c}" label=""/></td>
+              <!-- <td><apex:inputField value="{!objWCC56.Remarks__c}" label=""/></td> -->
+               </tr>
+               <!--<tr>
+               <td><apex:outputLabel value="Next Installment" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td></td> 
+               <td><apex:inputField value="{!objWCC43.Verify__c}" label=""/></td>
+               <td><apex:inputField value="{!objWCC43.Remarks__c}" label=""/></td>
+               </tr>-->
+               <tr>
+               <td><apex:outputLabel value="Source Of Booking" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2">{!lstBooking[0].Source_of_Booking__c} - {!lstBooking[0].Sub_Source__c} {!lstBooking[0].Source_Details__c} </td> 
+               <td><apex:inputField value="{!objWCC44.Verify__c}" label=""/></td>
+               <!--<td><apex:inputField value="{!objWCC44.Remarks__c}" label=""/></td>-->
+               </tr>
+               <!-----------------------Payment Options ------------------------->
+               <tr class="appheader"><td colspan="5">Payment Options</td></tr>
+               <tr>
+               <td><apex:outputLabel value="Mode of Funding" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <!-- <td>
+               <apex:inputField value="{!objWCC45.Funding__c}" label=""/>
+               <apex:inputField value="{!objWCC45.Bank_Loan_Status__c}" label=""/>
+               </td>   -->  
+               <td colspan="2"><apex:inputfield value="{!lstBooking[0].Funding_Status__c}"/></td> <!--Funding_Status__c -->
+               <td><apex:inputField value="{!objWCC45.Verify__c}" label="" rendered="{!If(lstBooking[0].Funding_Status__c ==null,False,True)}"/></td>
+               </tr>
+               
+              <!-- <tr>
+               <td><apex:outputLabel value="How would you prefer your invoices and receipts going forward" styleClass="Heading"/></td>
+               <td>Tell the customer we promote being environment friendly as much as possible and confirm how would the customer prefer his/her Invoices and receipts going forward</td>  
+               <td><apex:inputField value="{!objWCC46.Delivery_of_Invoices_and_receipts__c }" label=""/></td> 
+               <td colspan="2"><apex:inputField value="{!objWCC46.Verify__c}" label=""/></td>
+               </tr> -->
+               
+               <!-----------------------RM Details ------------------------->
+               <tr class="appheader"><td colspan="5">Important Information to be shared with customer</td></tr>
+               <tr>
+               <td><apex:outputLabel value="RM Name" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:inputField value="{!lstusers[0].Name}" label=""/></td> 
+               <td><apex:inputField value="{!objWCC47.Verify__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="RM Contact Number" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2"><apex:OutputField value="{!lstusers[0].Mobilephone}" label=""/></td> 
+               <td><apex:inputField value="{!objWCC48.Verify__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="RM's Work Hours" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2">9:30 to 7:30,Mon to Sat</td> 
+               <td><apex:inputField value="{!objWCC49.Verify__c}" label=""/></td>
+               </tr>
+               <tr>
+               <td><apex:outputLabel value="Customer Care Email" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2">crm@solitaireworld.in</td> <!--- <apex:OutputField value="{!lstusers[0].Email}" label=""/> --->
+               <td><apex:inputField value="{!objWCC50.Verify__c}" label=""/></td>
+               </tr>
+              <!--- <tr>
+               <td><apex:outputLabel value="Customer Care Number" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2">0000000000000</td>
+               <td><apex:inputField value="{!objWCC51.Verify__c}" label=""/></td>
+               </tr> --->
+               <tr>
+               <td><apex:outputLabel value="RM's Care Desk Work Hours" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2">9:30 to 7:30,Mon to Sat</td>
+               <td><apex:inputField value="{!objWCC52.Verify__c}" label=""/></td>
+               </tr>
+                <!-----------------------Disclaimers------------------------->
+              <!--- <tr class="appheader"><td colspan="5">Important Disclaimers to be read carefully</td></tr>
+               <tr>
+               <td><apex:outputLabel value="Disclaimers for DND" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2">
+               Dear {!applicantList[0].Salutation__c} {!applicantList[0].Name}, I would also want to take this opportunity to seek
+                        
+                        your permission for sharing updates regarding our projects and
+                        
+                        promotions and other communications over sms and email. May I confirm your
+                        
+                        agreement on the same.
+               </td> 
+               <td><apex:inputField value="{!objWCC53.Verify__c}" label=""/></td>
+               </tr> --->
+             <!---  <tr>
+               <td><apex:outputLabel value="Disclaimers for Forfeiture" styleClass="Heading"/></td>
+               <td>&nbsp;</td>  
+               <td colspan="2">
+                   Dear {!applicantList[0].Salutation__c} {!applicantList[0].Name} as a process we are supposed to inform you that incase
+                   you cancel thesaid application,without any default at our end,there shall be a forfeiture
+                   charge which is <u>{!objbooking.Project__r.Forefeiting__c}</u>% of the agreement value
+               </td> 
+               <td><apex:inputField value="{!objWCC54.Verify__c}" label=""/></td>
+               </tr> --->
+            </table> 
+             <!-----------------------Call Disposition------------------------->
+              <apex:pageBlockSection id="pbsinternalid" columns="2"> 
+                <apex:outputLabel value="Call Disposition" styleClass="Heading" />  
+                <apex:inputField id="CallDispositionId" value="{!objWCD.Call_Disposion__c}" label="" onchange="showhidebutton();"/>   
+                <apex:outputLabel value="Send Welcome SMS" styleClass="Heading" />  
+                <apex:inputField id="CallDispositionL2Id" value="{!lstBooking[0].Send_Welcome_Email__c}" label=""/>        
+             </apex:pageBlockSection>
+             
+             <div id="rejectRemarksid">   <!--  style="display:none;" --->
+                <apex:pageBlockSection >
+                    <apex:inputField value="{!objopp.Reason_For_Rejection__c}" style="width:100%;"/>
+                </apex:pageBlockSection>
+            </div>
+            <div id="idCallBackDate" style="display:none;">
+            <apex:pageBlockSection columns="4" >
+            <!---- OLD Field OF SAS FOCUS---->
+                <!--<apex:outputLabel value="Call Back Date" styleClass="Heading" id="CallBackMainLabel" />
+                <apex:inputField id="CallBackDateId" value="{!objTask.ActivityDate}" label="" />-->
+                <apex:outputLabel value="Call Back Date" styleClass="Heading" id="CallBackMainLabel" />
+                <apex:inputField id="CallBackDateId" value="{!objTask.Call_Back_Date__c}" label="" />
+                <apex:outputLabel value="Reminder Date and time" styleClass="Heading"/>
+                <apex:inputField value="{!objTask.ReminderDateTime}" label=""/>
+           </apex:pageBlockSection>
+            </div>
+               <apex:pageBlockSection >
+              <apex:commandButton Value="SUBMIT" action="{!Submit}" rendered="{!BooSuccess}" status="status"/>
+            </apex:pageBlockSection>
+            <!-----------------------Anuja's Page Ends Here------------------------->
+            
+        
+        </apex:pageBlock>
+    </apex:form>
+ </apex:outputPanel>
+ <script>
+  showhidebutton();
+ </script>
+</apex:page>

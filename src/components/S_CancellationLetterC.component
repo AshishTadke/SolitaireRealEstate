@@ -1,0 +1,562 @@
+<apex:component controller="S_CancellationLetter" access="global">
+    <apex:attribute name="cancelId" type="String" description="Attribute on the component." assignTo="{!strcancelId}"/>
+    <apex:attribute name="mode" type="String" description="wrapper class on the component." assignTo="{!strMode}"/>
+    <apex:attribute name="letterHead" type="Boolean" description="for printing" assignTo="{!letterH}"/> 
+    <head>
+    <style>
+           @page {
+                size: A4;
+                margin: 10mm;
+                @bottom-center {
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            .page-break {
+                display:block;
+                page-break-after:always;
+            }
+           body {
+                font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; 
+                font-weight:normal; 
+                font-size:10.5px; 
+                mso-line-height-rule: exactly;
+            }
+            .infobox {
+                  font-size: 100%;
+            }
+            .sfdc_richtext img {
+              border: 0;
+              width: 100px;
+              height:90px;
+            }
+            .RMStyle {
+                border-collapse: collapse;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #104E8B;
+            }
+            .RMStyle th {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #104E8B;
+                background-color:#E2DDD9;
+            }
+            /* Padding and font style */
+            .RMStyle td {
+                border-style: solid;
+                border-width: .5px;
+                border-color: #CAD1C3;
+            }
+            .paymenttoStyle th {
+                border-style: solid;
+                border-color: #CAD1C3;
+                background-color:#FFD8D8;
+            }
+            .paymenttoStyle {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #CAD1C3B;
+            }
+            .demandStyle th {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #CAD1C3;
+                background-color:#B9D7D9;
+                padding: 3px;
+                font-size:9px;
+            }
+            /* Padding and font style */
+            .demandStyle td {
+                border-style: solid;
+                border-width: .5px;
+                border-color: #CAD1C3;
+                padding: 2px;
+                font-size:9px;
+            }
+            .demandStyle {
+                border-collapse: collapse;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #CAD1C3;
+            }
+            ul.a {
+    			list-style-type: decimal;
+			}
+			li { 
+			    padding-left: 1em; 
+			    padding-top: 1em;
+			    text-indent: -.7em;
+			}
+
+        </style>
+    </head>
+    <body >
+    {!CancellationLetter}
+    <table id="main" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+    <td>
+        <table width="100%">
+            <tr width="100%">
+                <td colspan="3" align="center">
+                    <!-- <h2>{!letterType}</h2> -->
+                </td>
+                <td colpsan="1" width="5%" align="right" valign="top">
+                    <apex:outputField value="{!Customer.Project__r.Project_Image__c}" rendered="{!letterH}"></apex:outputField>
+                  
+                </td>
+            </tr>
+       </table>
+    </td>
+    </tr>
+    <tr>
+        <td>
+            <table>
+               <tr width="100%">
+                     <td colspan="1" align="left" width="40%" valign="top">
+                        <apex:panelGrid columns="1" styleClass="infobox">
+                            <b> To,</b> <apex:outputText value="{!CustomerPrimaryName},"/>
+                         <apex:outputText value="{!CustomerOtherApplicantName }"/>
+                            <apex:outputPanel >
+                                <apex:outputText value="Address: {!CustomerMailingAddress}"/>
+                            </apex:outputPanel>
+                            <apex:outputText value="Phone: {!CustomerMobilePhone}"/>
+                          </apex:panelGrid>
+                    </td>
+                    <td colspan="1" align="right" valign="top" width="5%">
+                    	<apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!letterDate}"/></apex:outputtext>
+                    </td>
+                   </tr>
+              </table>
+         </td>
+     </tr>
+     <!-- Default on token letter format contents -->
+     <apex:outputPanel id="point1" rendered="{!cLetter.Letter_Category__c == 'L1'}">
+     <tr>
+     	<td colspan="2">
+     		<br/><br/>
+	     	Dear Sir/Madam, <br/><br/>
+			Re: &nbsp; &nbsp;&nbsp; &nbsp; Application Form {!applicationNumber} dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!applicationDate}"/></apex:outputtext> (“Application Form”) in respect of Flat no. {!UnitName} in the {!floorNo} floor of Wing {!TowerName} 
+			of the building known as {!ProjectName} being constructed on {!ProjectAddress} (“said Flat”).
+		</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<br/> <br/> Sub:&nbsp; &nbsp;&nbsp; &nbsp; {!Subject}
+     	</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<ul class="a">
+     		<li>We refer to the captioned Application Form {!applicationNumber} wherein you have applied for the allotment of 
+			the said Flat at and for the Allotment Premium and on other terms and conditions as 
+			contained therein. </li>
+			<li>At the time of booking, you had issued Cheque No.{!receipt.Cheque_DD__c}, dated: <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!receipt.Cheque_DD_Date__c}"/></apex:outputtext> drawn 
+			on {!receipt.DraweeBank__c} for a sum of {!amountStr} {!amountStrWords}, towards Allotment 
+			Premium/earnest money, however the said cheque issued by you was 
+			dishonoured/returned unpaid by your banker on its presentation for payment with reason 
+			“{!reasonForRejection}”.</li>
+			<li>In view of the above, Application form in respect of the said Flat stands cancelled without 
+			any further notice or recourse to you, which please note.</li>
+			<li>We further inform you that in view of the cancellation/termination of your Application in 
+			respect of the said Flat, you have ceased to have any right or interest in the said Flat or any 
+			part thereof and we are fully entitled to deal with the said Flat as we may in our sole 
+			absolute and unfettered discretion deem fit and proper, without any further recourse to you.</li>
+			</ul>
+     	</td>
+     </tr>
+     </apex:outputPanel>
+     
+     <!-- first reminders all categories start here -->
+     <apex:outputPanel id="point2" rendered="{!(cLetter.Letter_Category__c == 'L2' || cLetter.Letter_Category__c == 'L4' || cLetter.Letter_Category__c == 'L8') }" >
+     <tr>
+     	<td colspan="2">
+	     	Dear Sir/Madam, <br/><br/>
+			Re: &nbsp; &nbsp;&nbsp; &nbsp; Demand Invoice {!invoiceNumber} dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!invoiceDate}"/></apex:outputtext> 
+			for the payment of {!invoiceAmount}  (“Demand Invoice”) in respect of Application Form {!applicationNumber} dated 
+			<apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!applicationDate}"/></apex:outputtext> (“Application Form”) in respect of Flat no. {!UnitName} in the {!floorNo} floor of Wing {!TowerName} 
+			of the building known as {!ProjectName} being constructed on {!ProjectAddress} (“said Flat”).
+		</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<br/> <br/> Sub:&nbsp; &nbsp;&nbsp; &nbsp; {!Subject}
+     	</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<ul class="a">
+     		<li>We refer to the captioned Application Form {!applicationNumber} wherein you have applied for the allotment of the said Flat at and for the 
+     		Allotment Premium and on other terms and conditions as contained therein.</li>
+			<li>Pursuant thereto, we had vide our Demand Invoice raised a demand for the payment of {!invoiceAmount}  {!invoiceAmountWords} 
+			as per the Payment Schedule contained in the Application Form. 
+				<apex:outputPanel rendered="{!NOT(letterH)}">
+					A copy of the Demand Invoice is enclosed herewith.
+				</apex:outputPanel>
+			</li>
+			<li>However, you have failed and neglected to pay the aforesaid sum of {!invoiceAmount}  {!invoiceAmountWords} as contained in our Demand Invoice.</li>
+			<li>In view thereof, you are now liable to pay a sum of {!outstandingAmount}  {!outstandingAmountWords} 
+			including the interest calculated up to the date hereof as set out below:
+			<br/><br/>
+			<table class="demandStyle" width="100%">
+				<tr>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Milestone Name</b></td>
+                    <td colspan="1"  width="8%" bgcolor="#E8FDFF" align="center"><b>Invoice No</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Invoice Date</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Payment Due Date</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Flat cost Outstanding</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>ServiceTax Outstanding</b></td>
+                    <td colspan="1" width="10%" bgcolor="#E8FDFF" align="center"><b>{!colHeaderInterest}</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Total</b></td>
+                  </tr>
+                   <apex:repeat value="{!dwList}" var="d">
+                    <tr width="100%">
+                        <td>{!d.col1}</td>
+                        <td  width="8%">{!d.col2}</td>
+                        <td>{!d.col3}</td>
+                        <td>{!d.col4}</td>
+                        <td>{!d.col5}</td>
+                        <td>{!d.col6}</td>
+                        <td  width="10%">{!d.col7}</td>
+                        <td>{!d.col8}</td>
+                    </tr>
+                  </apex:repeat>
+			</table>
+			<br/><br/>
+			* Note : we shall be adjusting all future payments by you as per the Application Form. 
+			</li>
+			
+			<li> 
+				<apex:outputPanel rendered="{!(cLetter.Letter_Category__c == 'L2')}" > 
+					In view of the above and as per the terms and conditions of the Application Form, 
+					we hereby call upon you to make the payment of the aforesaid 
+					outstanding dues within a period of 30 (Thirty) days from the date of this letter, 
+					failing which your Application in respect of the said Flat shall stand withdrawn / 
+					cancelled as per the terms and conditions contained in the Application Form, which you please note.
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!(cLetter.Letter_Category__c == 'L4' || cLetter.Letter_Category__c == 'L8')}" >
+					We hereby kindly remind you to make the payment of the aforesaid outstanding amounts immediately. 
+				</apex:outputPanel>
+			</li>
+			</ul>
+     	</td>
+     </tr>
+     </apex:outputPanel>
+     
+     <!--  second reminders all categories start here -->
+     <apex:outputPanel id="point5" rendered="{!(cLetter.Letter_Category__c == 'L5' || cLetter.Letter_Category__c == 'L9') }" >
+     <tr>
+     	<td colspan="2">
+	     	Dear Sir/Madam, <br/><br/>
+			Re: &nbsp; &nbsp;&nbsp; &nbsp; First Reminder Letter dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!previousReminderDate}"/></apex:outputtext> 
+			for the outstanding dues with interest of {!previousReminderAmount} {!previousReminderAmountWords}
+			in respect of Application Form {!applicationNumber} dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!applicationDate}"/></apex:outputtext> (“Application Form”) in respect of Flat no. {!UnitName} in the {!floorNo} floor of Wing {!TowerName} 
+			of the building known as {!ProjectName} being constructed on {!ProjectAddress} (“said Flat”).
+		</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<br/> <br/> Sub:&nbsp; &nbsp;&nbsp; &nbsp; {!Subject}
+     	</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<ul class="a">
+     		<li>We refer to our First Reminder Letter dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!previousReminderDate}"/></apex:outputtext> wherein we had intimated you regarding your outstanding dues 
+     		along with interest thereon in respect of your   Application for booking the said Flat in the building known as {!projectName} 
+     		and called upon you to pay the same.</li>
+			
+			<li>We regret to inform you that despite the aforesaid you have failed and neglected to make the payment of the outstanding dues.</li>
+			
+			<li>In view thereof, you are now liable to pay a sum of {!outstandingAmount}  {!outstandingAmountWords} 
+			including the interest calculated up to the date here of as set out below:
+			<br/><br/>
+			
+			<table class="demandStyle" width="100%">
+				<tr>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Milestone Name</b></td>
+                    <td colspan="1"  width="8%" bgcolor="#E8FDFF" align="center"><b>Invoice No</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Invoice Date</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Payment Due Date</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Flat cost Outstanding</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>ServiceTax Outstanding</b></td>
+                    <td colspan="1"  width="10%" bgcolor="#E8FDFF" align="center"><b>{!colHeaderInterest}</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Total</b></td>
+                  </tr>
+                   <apex:repeat value="{!dwList}" var="d">
+                    <tr width="100%">
+                        <td>{!d.col1}</td>
+                        <td  width="8%">{!d.col2}</td>
+                        <td>{!d.col3}</td>
+                        <td>{!d.col4}</td>
+                        <td>{!d.col5}</td>
+                        <td>{!d.col6}</td>
+                        <td  width="10%">{!d.col7}</td>
+                        <td>{!d.col8}</td>
+                    </tr>
+                  </apex:repeat>
+			</table>
+			<br/><br/>
+			* Note : we shall be adjusting all future payments by you as per the Application Form. 
+			</li>
+			
+			<li> 
+				We hereby kindly remind you to make the payment of the aforesaid outstanding amounts immediately. 
+			</li>
+			</ul>
+     	</td>
+     </tr>
+     </apex:outputPanel>
+     
+     <!--  final reminders all categories start here -->
+     <apex:outputPanel id="point6" rendered="{!(cLetter.Letter_Category__c == 'L6' || cLetter.Letter_Category__c == 'L10') }" >
+     <tr>
+     	<td colspan="2">
+	     	Dear Sir/Madam, <br/><br/>
+			Re: &nbsp; &nbsp;&nbsp; &nbsp; Second Reminder Letter dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!previousReminderDate}"/></apex:outputtext> 
+			for the outstanding dues with interest of {!previousReminderAmount} {!previousReminderAmountWords}
+			in respect of Application Form {!applicationNumber} dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!applicationDate}"/></apex:outputtext> (“Application Form”) in respect of Flat no. {!UnitName} in the {!floorNo} floor of Wing {!TowerName} 
+			of the building known as {!ProjectName} being constructed on {!ProjectAddress} (“said Flat”).
+		</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<br/> <br/> Sub:&nbsp; &nbsp;&nbsp; &nbsp; {!Subject}
+     	</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<ul class="a">
+     		<li>We refer to our Second Reminder Letter dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!previousReminderDate}"/></apex:outputtext> wherein we had intimated you regarding your outstanding dues 
+     		along with interest thereon in respect of your   Application for booking the said Flat in the building known as {!projectName} 
+     		and called upon you to pay the same.</li>
+			
+			<li>We regret to inform you that despite the aforesaid you have failed and neglected to make the payment of the outstanding dues.</li>
+			
+			<li>In view thereof, you are now liable to pay a sum of {!outstandingAmount}  {!outstandingAmountWords} 
+			including the interest calculated up to the date here of as set out below:
+			<br/><br/>
+			
+			<table class="demandStyle" width="100%">
+				<tr>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Milestone Name</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Invoice No</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Invoice Date</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Payment Due Date</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Flat cost Outstanding</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>ServiceTax Outstanding</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>{!colHeaderInterest}</b></td>
+                    <td colspan="1" bgcolor="#E8FDFF" align="center"><b>Total</b></td>
+                  </tr>
+                   <apex:repeat value="{!dwList}" var="d">
+                    <tr width="100%">
+                        <td>{!d.col1}</td>
+                        <td>{!d.col2}</td>
+                        <td>{!d.col3}</td>
+                        <td>{!d.col4}</td>
+                        <td>{!d.col5}</td>
+                        <td>{!d.col6}</td>
+                        <td>{!d.col7}</td>
+                        <td>{!d.col8}</td>
+                    </tr>
+                  </apex:repeat>
+			</table>
+			<br/><br/>
+			* Note : we shall be adjusting all future payments by you as per the Application Form. 
+			</li>
+			
+			<li> 
+				In view of maintaining cordial relations, we are hereby making this last and final attempt of
+				once again calling upon you to make the payment of the aforesaid outstanding dues within a 
+				period of 30 (Thirty) days from the date of this letter, failing which your Application in respect 
+				of the said Flat shall stand withdrawn / cancelled as per the terms and conditions contained in 
+				the Application Form, which you please note.
+			</li>
+			</ul>
+     	</td>
+     </tr>
+     </apex:outputPanel>
+     
+     
+     <!--  Termination Letters all categories start here -->
+     <!-- L3 letter format contents -->
+     <apex:outputPanel id="point3" rendered="{!cLetter.Letter_Category__c == 'L3'}">
+     <tr>
+     	<td colspan="2">
+	     	Dear Sir/Madam, <br/><br/>
+			Re: &nbsp; &nbsp;&nbsp; &nbsp; Reminder Letter dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!finalReminderDate}"/></apex:outputtext> 
+			for the outstanding dues with interest of {!finalReminderAmount} {!finalReminderAmountWords} 
+			in respect of Application Form {!applicationNumber} dated 
+			<apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!applicationDate}"/></apex:outputtext> (“Application Form”) 
+			in respect of Flat no. {!UnitName} in the {!floorNo} floor of Wing {!TowerName} 
+			of the building known as {!ProjectName} being constructed on {!ProjectAddress} (“said Flat”).
+		</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<br/> <br/> Sub:&nbsp; &nbsp;&nbsp; &nbsp; {!Subject}
+     	</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<ul class="a">
+	     		<li>We refer to Reminder Letter dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!finalReminderDate}"/></apex:outputtext> ,  
+		     		wherein we had intimated you regarding your outstanding  dues along with interest thereon in respect of your Application 
+		     		for the said Flat in the aforesaid building known as {!projectName} and called upon you to pay the outstanding dues 
+		     		along with interest thereon, as mentioned therein. </li>
+	     		
+				<li>Please note that you have committed breach of the terms and conditions of the Application Form dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!applicationDate}"/></apex:outputtext>. 
+					As per the said Application Form, in the event you commit any default in the payment of installments of the 
+					Allotment Premium we have the option to cancel your Application in respect of the said Flat 
+					after giving the notice. In view of the non-payment of the outstanding dues even after giving the requisite notice, 
+					as per the terms of the Application Form, we assume that you are no longer interested in continuing with the 
+					aforesaid Application and therefore as provided in the said Application Form, 
+					we regret to inform you that your Application has stood cancelled and terminated with immediate effect 
+					on the expiry of the 30 days from the  Reminder Letter dated 
+					<apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!finalReminderDate}"/></apex:outputtext>.</li>
+				
+				<li>We shall refund of the monies paid by you under the Application Form as per the terms and conditions of the Application Form.</li>
+				
+				<li>We further inform you that in view of the cancellation/termination of your Application in 
+					respect of the said Flat, you have ceased to have any right or interest in the said Flat or any part thereof and we are fully 
+					entitled to deal with the said Flat as we may in our sole absolute and unfettered discretion deem fit and proper, 
+					without any further recourse to you.</li>
+			</ul>
+     	</td>
+     </tr>
+     </apex:outputPanel>
+     
+     <!-- L7 letter format contents -->
+     <apex:outputPanel id="point7" rendered="{!cLetter.Letter_Category__c == 'L7'}">
+     <tr>
+     	<td colspan="2">
+	     	Dear Sir/Madam, <br/><br/>
+			Re: &nbsp; &nbsp;&nbsp; &nbsp; Final Reminder Letter dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!finalReminderDate}"/></apex:outputtext> 
+			for the outstanding dues with interest of {!finalReminderAmount} {!finalReminderAmountWords} 
+			in respect of Application Form {!applicationNumber} dated 
+			<apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!applicationDate}"/></apex:outputtext> (“Application Form”) 
+			in respect of Flat no. {!UnitName} in the {!floorNo} floor of Wing {!TowerName} 
+			of the building known as {!ProjectName} being constructed on {!ProjectAddress} (“said Flat”).
+		</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<br/> <br/> Sub:&nbsp; &nbsp;&nbsp; &nbsp; {!Subject}
+     	</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<ul class="a">
+	     		<li>We refer to First Reminder Letter dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!firstReminderDate}"/></apex:outputtext>, 
+	     			Second Reminder Letter dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!secondReminderDate}"/></apex:outputtext>
+		     		and Final Reminder Letter dated  <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!finalReminderDate}"/></apex:outputtext> ,  
+		     		wherein we had intimated you regarding your outstanding  dues along with interest thereon in respect of your Application 
+		     		for the said Flat in the aforesaid building known as {!projectName} and called upon you to pay the outstanding dues 
+		     		along with interest thereon, as mentioned therein. </li>
+					
+				<li>Please note that you have committed breach of the terms and conditions of the Application Form dated 
+					<apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!applicationDate}"/></apex:outputtext>. 
+					As per the said Application Form, in the event you commit any default in the payment of installments of the 
+					Allotment Premium we have the option to cancel your Application in respect of the said Flat 
+					after giving the notice. In view of the non-payment of the outstanding dues even after giving the requisite notice, 
+					as per the terms of the Application Form, we assume that you are no longer interested in continuing with the 
+					aforesaid Application and therefore as provided in the said Application Form, 
+					we regret to inform you that your Application has stood cancelled and terminated with immediate effect 
+					on the expiry of the 30 days from the  Reminder Letter dated 
+					<apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!finalReminderDate}"/></apex:outputtext>.</li>
+				
+				<li>We shall refund of the monies paid by you under the Application Form as per the terms and conditions of the Application Form.</li>
+				
+				<li>We further inform you that in view of the cancellation/termination of your Application in 
+					respect of the said Flat, you have ceased to have any right or interest in the said Flat or any part thereof and we are fully 
+					entitled to deal with the said Flat as we may in our sole absolute and unfettered discretion deem fit and proper, 
+					without any further recourse to you.</li>
+			</ul>
+     	</td>
+     </tr>
+     </apex:outputPanel>
+     
+     <!-- L11 letter format contents -->
+     <apex:outputPanel id="point11" rendered="{!cLetter.Letter_Category__c == 'L11'}">
+     <tr>
+     	<td colspan="2">
+	     	Dear Sir/Madam, <br/><br/>
+			Re: &nbsp; &nbsp;&nbsp; &nbsp; Final Reminder Letter dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!finalReminderDate}"/></apex:outputtext> 
+			for the outstanding dues with interest of {!finalReminderAmount} {!finalReminderAmountWords} 
+			in respect of in respect of Agreement for Sale dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!agreementDate}"/></apex:outputtext>, 
+			registered under Serial No. {!agreementNumber} (Said “Agreement”),
+			in respect of Flat no. {!UnitName} in the {!floorNo} floor of Wing {!TowerName} 
+			of the building known as {!ProjectName} being constructed on {!ProjectAddress} (“said Flat”).
+		</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<br/> <br/> Sub:&nbsp; &nbsp;&nbsp; &nbsp; {!Subject}
+     	</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		<ul class="a">
+	     		<li>We refer to First Reminder Letter dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!firstReminderDate}"/></apex:outputtext>, 
+	     			Second Reminder Letter dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!secondReminderDate}"/></apex:outputtext>
+		     		and Final Reminder Letter dated  <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!finalReminderDate}"/></apex:outputtext> ,  
+		     		wherein we had intimated you regarding your outstanding dues alongwith interest thereon in respect of the aforesaid 
+					Agreement for the purchase of the said Flat in the building known as {!projectName} and called 
+					upon you to pay the outstanding dues alongwith interest thereon, as mentioned therein .</li>
+	     		
+				<li>Please note that you have committed breach of the terms and conditions of the Agreement. As per clause __ of the Agreement, 
+					in the event you commit any default in the payment of installments of the consideration payable under the said Agreement we have the option to 
+					cancel the Agreement in respect of the said Flat after giving the notice. In view of the non-payment of the outstanding dues 
+					by you even after receiving the requisite notice, as per the terms of the Agreement, we assume that you are no longer 
+					interested in continuing with the aforesaid Agreement and purchasing the said Flat and therefore as provided in the said 
+					Agreement, we regret to inform you that the said Agreement has stood cancelled and 
+					terminated with immediate effect on the expiry of the 30 days from the Final Reminder Letter 
+					dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!finalReminderDate}"/></apex:outputtext>.</li>
+					
+				<li>We shall refund of the monies paid by you under the Agreement in respect of the said Flat, as per the terms and conditions of the Agreement.</li>
+				
+				<li>We further inform you that in view of the cancellation/termination of the Agreement in respect
+					of the said Flat, you have ceased to have any right or interest in the said Flat or any part thereof 
+					and we are fully entitled to deal with the said Flat as we may in our sole absolute and 
+					unfettered discretion deem fit and proper, without any further recourse to you.</li>
+			</ul>
+     	</td>
+     </tr>
+     </apex:outputPanel>
+     
+     
+     <tr>
+     	<td colspan="1">
+     		Thanking you, <br/> <br/>
+     		Your faithfully, <br/>
+     		For <b><apex:outputText style="font-size:12px" value="{!le.Name}"  /></b>
+     	</td>
+     </tr>
+     <tr>
+        <td>
+            <table class="infobox" width="100%">
+                    <tr width="100%">
+                      <td width="50%"> 
+	                      <b> 
+	                      	<apex:outputText value="System generated Signature not required" rendered="{!letterH}" /> 
+	                      </b> 
+                      </td>
+                    </tr>
+            </table>
+        </td>
+    </tr>
+     <tr>
+        <td>
+            <table>
+                <tr width="100%">
+                    <td width="100%" colspan="2" align="center">
+                    <apex:outputField value="{!Customer.Project__r.Footer_Image__c}" rendered="{!letterH}"></apex:outputField>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    </table>
+   
+    </body>
+ </apex:component>

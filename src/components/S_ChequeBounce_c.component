@@ -1,0 +1,143 @@
+<apex:component controller="showReceiptDetails" access="global">
+    <apex:attribute name="Receipt" type="Id" description="Receipt Details" assignTo="{!receiptId}"/>
+    <apex:attribute name="letterHead" type="Boolean" description="for printing" assignTo="{!letterH}"/>  
+    <head>
+    <style>
+           @page {
+                size: A4;
+                margin: 10mm;
+                @bottom-center {
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            .page-break {
+                display:block;
+                page-break-after:always;
+            }
+           body {
+                font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; 
+                font-weight:normal; 
+                font-size:10.5px; 
+                mso-line-height-rule: exactly;
+            }
+            .sfdc_richtext img {
+              border: 0;
+              width: 100px;
+              height:90px;
+            }
+            .infobox {
+                  font-size: 110%;
+            }
+      </style>
+      </head>
+      <body>
+      {!receiptDetails}
+        <table border="0">
+            <tr>
+                <td>
+                   <table width="100%">
+                        <tr width="100%">
+                            <td colspan="3" align="center">
+                                <h2>Cheque Dishonour Intimation</h2>
+                            </td>
+                            <td colpsan="1" width="5%" align="right" valign="top">
+                                <apex:outputField value="{!receiptList[0].Project__r.Project_Image__c}" rendered="{!letterH}"></apex:outputField>
+                              
+                            </td>
+                        </tr>
+                   </table>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                           <tr width="100%">
+                                 <td colspan="1" align="left" width="30%" valign="top">
+                                    <apex:panelGrid columns="1" styleClass="infobox">
+                                        <b> To,</b> <apex:outputText value="{!CustomerPrimaryName},"/>
+                                        <apex:outputText value="{!CustomerOtherApplicantName }"/>
+                                        <apex:outputPanel >
+                                            <apex:outputText value="Address: {!CustomerMailingAddress}"/>
+                                        </apex:outputPanel>
+                                        <apex:outputText value="Phone: {!CustomerMobilePhone  }"/>
+                                      </apex:panelGrid>
+                                      <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!TODAY()}"/></apex:outputtext> 
+                                </td>
+                            </tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr>
+                                <td align="left" colspan="2">
+                                    Dear {!CustomerPrimaryName},
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    We refer to the cheque bearing no. {!rd.Cheque_DD__c} for Rs.{!rd.Amount_Rs__c} /- 
+                                    dated <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!rd.Cheque_DD_Date__c}"/></apex:outputtext>  
+                                    drawn on {!rd.DraweeBank__c} (“said Cheque”) issued by you in favour of {!bankAccount} towards 
+                                    {!paymentTowards} payable by you in terms of the Agreement of Sale in respect of Flat 
+                                    bearing no. {!rd.Project_Unit__r.Name} in {!rd.Project__r.Name}.
+                                    <br/>
+                                    <br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    We had deposited the said cheque into our {!rd.Drawn_in_favour_of__c} Bank account on 
+                                    <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!rd.Receipt_Date__c}"/></apex:outputtext>. However, the 
+                                    said cheque was dishonoured by your banker {!rd.DraweeBank__c} and was returned 
+                                    unpaid to our bankers i.e. {!bankAccount} Bank, with the reason “{!reasonForRejection}”.  
+                                    Our bankers have forwarded the said returned cheque to us along with the Rejection Memo.
+                                    <br/>
+                                    <br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    You are aware that, dishonour of a cheque is a criminal offence under the amended provisions vide
+                                    Chapter 17 under Section s 138 to 147 of the Negotiable Instruments Act as amended and both of 
+                                    you are liable to be prosecuted for the commission of the aforesaid offence.
+                                    <br/>
+                                    <br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    Please note that we will re-deposit the aforesaid cheque to our bank on <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!TODAY() + 5}"/></apex:outputtext> . We call 
+                                    upon you to make necessary funds available in your bank account to ensure that the said cheque is 
+                                    honoured failing which, we will be constrained to initiate a criminal prosecution against both of you 
+                                    under Section 138 read with 141 of the Negotiable Instruments Act, 1881, in the competent 
+                                    Magistrate’s Court at Mumbai, without any further notice to you, which you may please note.
+                                    <br/>
+                                    <br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    Yours sincerely
+                                    <br/>
+                                    <br/>
+                                    For Solitaire Developers.
+                                </td>
+                            </tr>
+                    </table> 
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <table>
+                        <tr width="100%">
+                            <td width="100%" colspan="2">
+                            <apex:outputField value="{!receiptList[0].Project__r.Footer_Image__c}" rendered="{!letterH}"></apex:outputField>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+      </body>  
+      
+</apex:component>

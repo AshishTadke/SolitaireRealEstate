@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Demand Invoice</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Demand Invoices</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agreement Value --></label>
+        <name>Agreement_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Owner Email --></label>
+        <name>Booking_Owner_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Demand (Installment) --></label>
+        <name>Current_Demand_Installment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Demand Service Tax(Basic) --></label>
+        <name>Current_Demand_Service_Tax_Basic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Demand Service Tax(KKC) --></label>
+        <name>Current_Demand_Service_Tax_KKC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Demand Service Tax(SBC) --></label>
+        <name>Current_Demand_Service_Tax_SBC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Demand (Service Tax) --></label>
+        <name>Current_Demand_Service_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- Demand Invoices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Day 0 ServiceTax Amount --></label>
+        <name>Day_0_ServiceTax_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Day 0 demand generation --></label>
+        <name>Day_0_demand_generation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery/ Return Date --></label>
+        <name>Delivery_Return_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery status --></label>
+        <name>Delivery_status__c</name>
+        <picklistValues>
+            <masterLabel>Delivered</masterLabel>
+            <translation><!-- Delivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Demand Generated --></label>
+        <name>Demand_Generated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demand Number --></label>
+        <name>Demand_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dispatch date --></label>
+        <name>Dispatch_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Future Correspondence Email --></label>
+        <name>Future_Correspondence_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest Amount --></label>
+        <name>Interest_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Date --></label>
+        <name>Invoice_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Advanced Demand --></label>
+        <name>Is_Advanced_Demand__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Printed --></label>
+        <name>Is_Printed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Charges Amount --></label>
+        <name>Legal_Charges_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Charges Service Tax(Basic) --></label>
+        <name>Legal_Charges_Service_Tax_Basic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Charges Service Tax(KKC) --></label>
+        <name>Legal_Charges_Service_Tax_KKC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Charges Service Tax(SBC) --></label>
+        <name>Legal_Charges_Service_Tax_SBC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Charges Service Tax --></label>
+        <name>Legal_Charges_Service_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- MVAT Amount --></label>
+        <name>MVAT_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Milestone Name --></label>
+        <name>Milestone_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding (Installment) --></label>
+        <name>Outstanding_Installment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding Service Tax(Basic) --></label>
+        <name>Outstanding_Service_Tax_Basic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding Service Tax(KKC) --></label>
+        <name>Outstanding_Service_Tax_KKC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding Service Tax(SBC) --></label>
+        <name>Outstanding_Service_Tax_SBC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding (Service Tax) --></label>
+        <name>Outstanding_Service_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO no --></label>
+        <name>PO_no__c</name>
+    </fields>
+    <fields>
+        <label><!-- Print Invoice --></label>
+        <name>Print_Invoice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Construction Stages --></label>
+        <name>Project_Construction_Stage__c</name>
+        <relationshipLabel><!-- Demand Invoices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Demand Invoices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ready Reckoner Value --></label>
+        <name>Ready_Reckoner_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for failure --></label>
+        <name>Reason_for_failure__c</name>
+        <picklistValues>
+            <masterLabel>Non-existing Address</masterLabel>
+            <translation><!-- Non-existing Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Accepted</masterLabel>
+            <translation><!-- Not Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Person Unavailable</masterLabel>
+            <translation><!-- Person Unavailable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong Address</masterLabel>
+            <translation><!-- Wrong Address --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Registration Charges Amount --></label>
+        <name>Registration_Charges_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration Demand Generation --></label>
+        <name>Registration_Demand_Generation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remark --></label>
+        <name>Remark__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Rate --></label>
+        <name>Service_Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest (ServiceTax) --></label>
+        <name>Service_Tax_on_Interest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stamp Duty Amount --></label>
+        <name>Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Customer Pay Plan Detail --></label>
+        <name>Standard_Customer_Pay_Plan_Detail__c</name>
+        <relationshipLabel><!-- Demand Invoices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- TDSAmount --></label>
+        <name>TDSAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- TDS Rate --></label>
+        <name>TDS_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Update --></label>
+        <name>To_Update__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Amount --></label>
+        <name>Total_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Demanded (Installment) --></label>
+        <name>Total_Demanded_Installment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Demanded Service Tax(Basic) --></label>
+        <name>Total_Demanded_Service_Tax_Basic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Demanded Service Tax(KKC) --></label>
+        <name>Total_Demanded_Service_Tax_KKC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Demanded Service Tax(SBC) --></label>
+        <name>Total_Demanded_Service_Tax_SBC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Demanded (Service Tax) --></label>
+        <name>Total_Demanded_Service_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Payable (Installment) --></label>
+        <name>Total_Payable_Installment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Payable (Overall) --></label>
+        <name>Total_Payable_Overall__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Payable (Service Tax) --></label>
+        <name>Total_Payable_Service_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Recd (Installment) --></label>
+        <name>Total_Recd_Installment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Recd Service Tax(Basic) --></label>
+        <name>Total_Recd_Service_Tax_Basic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Recd Service Tax(KKC) --></label>
+        <name>Total_Recd_Service_Tax_KKC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Recd Service Tax(SBC) --></label>
+        <name>Total_Recd_Service_Tax_SBC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Recd (Service Tax) --></label>
+        <name>Total_Recd_Service_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Key --></label>
+        <name>Unique_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- cc1 Email --></label>
+        <name>cc1_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- cc2 Email --></label>
+        <name>cc2_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- cc3 email --></label>
+        <name>cc3_email__c</name>
+    </fields>
+    <fields>
+        <label><!-- cc4 email --></label>
+        <name>cc4_email__c</name>
+    </fields>
+    <fields>
+        <label><!-- gst --></label>
+        <name>gst__c</name>
+    </fields>
+    <fields>
+        <label><!-- is delivered --></label>
+        <name>is_delivered__c</name>
+    </fields>
+    <layouts>
+        <layout>Demand Invoice Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dispatch Details --></label>
+            <section>Dispatch Details</section>
+        </sections>
+        <sections>
+            <label><!-- Email Addresses --></label>
+            <section>Email Addresses</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Summary as on this demand --></label>
+            <section>Payment Summary as on this demand</section>
+        </sections>
+        <sections>
+            <label><!-- Registration --></label>
+            <section>Registration</section>
+        </sections>
+        <sections>
+            <label><!-- Tax Breakup details --></label>
+            <section>Tax Breakup details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Demands for All</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dispatch Details --></label>
+            <section>Dispatch Details</section>
+        </sections>
+        <sections>
+            <label><!-- Email Addresses --></label>
+            <section>Email Addresses</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Summary as on this demand --></label>
+            <section>Payment Summary as on this demand</section>
+        </sections>
+        <sections>
+            <label><!-- Registration --></label>
+            <section>Registration</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- ShowInvoice --></label>
+        <name>ShowInvoice</name>
+    </webLinks>
+</CustomObjectTranslation>

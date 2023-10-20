@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Site_Visit__c.Type_of_Visit__c</field>
+    </columns>
+    <columns>
+        <field>Site_Visit__c.Source1__c</field>
+    </columns>
+    <columns>
+        <field>Site_Visit__c.Sub_Source2__c</field>
+    </columns>
+    <columns>
+        <field>Site_Visit__c.Sales_Manager__c</field>
+    </columns>
+    <columns>
+        <field>FK_OPP_LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Site_Visit__c.SM_feedback_on_customer_Remarks__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$Opportunity.Project__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>Monthly Site Visit</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Site_Visit__c@Site_Visit__c.Customer_Name__c</reportType>
+    <scope>team</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Site_Visit__c.Type_of_Visit__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

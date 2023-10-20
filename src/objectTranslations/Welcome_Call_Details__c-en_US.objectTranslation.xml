@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Welcome Call Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Welcome Call Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreement Value --></label>
+        <name>Agreement_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applicant Mobile No --></label>
+        <name>Applicant_Mobile_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank RM Contact Number --></label>
+        <name>Bank_RM_Contact_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank RM Email --></label>
+        <name>Bank_RM_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank RM --></label>
+        <name>Bank_RM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank RM details for followup --></label>
+        <name>Bank_RM_details_for_followup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank --></label>
+        <name>Bank__c</name>
+        <relationshipLabel><!-- Welcome Call Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Booking amount --></label>
+        <name>Booking_amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Disposition --></label>
+        <name>Call_Disposion__c</name>
+        <picklistValues>
+            <masterLabel>Call back request</masterLabel>
+            <translation><!-- Call back request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hold/Needs More Time</masterLabel>
+            <translation><!-- Hold/Needs More Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ringing/Switched Off/Not reachable</masterLabel>
+            <translation><!-- Ringing/Switched Off/Not reachable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome call accepted</masterLabel>
+            <translation><!-- Welcome call accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome call rejected</masterLabel>
+            <translation><!-- Welcome call rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Disposition L2 --></label>
+        <name>Call_Disposition_L2__c</name>
+        <picklistValues>
+            <masterLabel>Change of Mind</masterLabel>
+            <translation><!-- Change of Mind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dependency on CC</masterLabel>
+            <translation><!-- Dependency on CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dependency on Customer</masterLabel>
+            <translation><!-- Dependency on Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dependency on Sales</masterLabel>
+            <translation><!-- Dependency on Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Constraints</masterLabel>
+            <translation><!-- Financial Constraints --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greetings</masterLabel>
+            <translation><!-- Greetings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Misselling</masterLabel>
+            <translation><!-- Misselling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment schedule</masterLabel>
+            <translation><!-- Payment schedule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-allocation not done</masterLabel>
+            <translation><!-- Re-allocation not done --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third-party</masterLabel>
+            <translation><!-- Third-party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong number</masterLabel>
+            <translation><!-- Wrong number --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Car Parks --></label>
+        <name>Car_Parks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clients expectation for registration --></label>
+        <name>Clients_expectation_for_registration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Co-Applicant Name --></label>
+        <name>Co_Applicant_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- Welcome Call Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DNC Disclaimer --></label>
+        <name>DNC_Disclaimer__c</name>
+    </fields>
+    <fields>
+        <label><!-- DOB --></label>
+        <name>DOB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earnest money forefeiture amount --></label>
+        <name>Earnest_money_forefeiture_amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flat No --></label>
+        <name>Flat_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forefeiture Disclaimer --></label>
+        <name>Forefeiture_Disclaimer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Funding --></label>
+        <name>Funding_Self_Funding_or_Bank_Funding__c</name>
+        <picklistValues>
+            <masterLabel>Bank Funding</masterLabel>
+            <translation><!-- Bank Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Funding</masterLabel>
+            <translation><!-- Self Funding --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Landline --></label>
+        <name>Landline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan sanctioned or not? --></label>
+        <name>Loan_sanctioned_or_not__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Main Applicant Name --></label>
+        <name>Main_Applicant_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile --></label>
+        <name>Mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Need help in home loan --></label>
+        <name>Need_help_in_home_loan__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Next Payment due --></label>
+        <name>Next_Payment_due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Share working hours with the customer --></label>
+        <name>Our_office_hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- PAN card of Co Applicant --></label>
+        <name>PAN_card_of_Co_Applicant__c</name>
+    </fields>
+    <fields>
+        <label><!-- PAN card of Main Applicant --></label>
+        <name>PAN_card_of_Main_Applicant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next payment schedule --></label>
+        <name>Payment_schedule__c</name>
+    </fields>
+    <fields>
+        <label><!-- Token amount date(CHQ/DD/RTGS) --></label>
+        <name>Pending_booking_amount_with_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remark --></label>
+        <name>Remark__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source of Booking (broker name) --></label>
+        <name>Source_of_Booking_broker_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tentative date for posession to be share --></label>
+        <name>Tentative_date_for_Possession__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tentative date for registration --></label>
+        <name>Tentative_date_for_registration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tower --></label>
+        <name>Tower__c</name>
+    </fields>
+    <layouts>
+        <layout>Welcome Call Detail Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

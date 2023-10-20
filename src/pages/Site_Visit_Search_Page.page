@@ -1,0 +1,207 @@
+<apex:page controller="SVsearch" sidebar="false" docType="html-5.0" showHeader="false">
+    <head>
+            <title>Walkin Search</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <link rel="stylesheet"
+              href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="{!URLFOR($Resource.Bootstrap4,'/css/bootstrap.css')}" />
+            <link rel="stylesheet" href="{!URLFOR($Resource.Bootstrap4,'/css/bootstrap.css.map')}" />
+            <link rel="stylesheet" href="{!URLFOR($Resource.Bootstrap4,'/css/bootstrap.min.css')}" />
+            <link rel="stylesheet" href="{!URLFOR($Resource.Bootstrap4,'/css/bootstrap.min.css.map')}" />
+            <link rel="stylesheet" href="{!URLFOR($Resource.Bootstrap4,'/css/bootstrap-grid.css')}" />
+            <link rel="stylesheet" href="{!URLFOR($Resource.Bootstrap4,'/css/bootstrap-grid.css.map')}" />
+            <link rel="stylesheet" href="{!URLFOR($Resource.Bootstrap4,'/css/bootstrap-reboot.css')}" />
+            <link rel="stylesheet" href="{!URLFOR($Resource.Bootstrap4,'/css/bootstrap-reboot.css.map')}" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <!-- metatags-->
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="keywords" content="Sports Club Membership Registration form a Flat Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+            <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+                    function hideURLbar(){ window.scrollTo(0,1); } </script>
+            <!-- Meta tag Keywords -->
+            <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+            <!--style_sheet-->
+            <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700" />
+        <!-- <link href="{!$Resource.customCSS}" rel="stylesheet" type="text/css" media="all" />-->
+            <!--online_fonts-->
+            <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
+            <!--online_fonts-->
+        
+        </head>
+    <style type="text/css">
+        #MainPanel{background-color:#808080;height:1000px;}
+        #Output{text-color:red;}
+        #panel{margin-left:20%;margin-right:20%;margin-top:1%;}
+        
+        </style>
+    
+    <!--<apex:stylesheet value="//cdn.jsdrivr.net/webjars/bootstrap-sf1/0.1.0-beta.6/css/bootstrap-namespaced.min.css"/>-->
+  <body>
+
+        <div class="container-fluid" id="MainPanel"> 
+        
+        <apex:form styleclass="form">
+            
+            <a href="/home/home.jsp" class="btn btn-default btn-lg" style="padding-left:28px;padding-right:28px;">
+                <span class="glyphicon glyphicon-home"></span> Home
+            </a>
+        <h2 style="margin-left:35%;color:white;">Site Visit Page</h2>      
+        <div class="jumbotron" id="panel">
+          
+          <apex:outputLabel value="{!strError}" style="color:red;"></apex:outputLabel>
+            <br/>
+            Project Name:<apex:selectList value="{!strProjectId}" size="1" multiselect="false" styleClass="form-control">
+                            <apex:selectOptions value="{!lstProjectList}"/> 
+                            <!--<apex:actionSupport event="onchange"/>-->
+                        </apex:selectList>
+          <br/>
+          <br/>
+            Mobile Number:<apex:inputText value="{!NewLead.MobilePhone}" styleClass="form-control"/>
+          <br />
+          <br/>
+               Email-ID: <apex:inputText value="{!NewLead.Email}" styleClass="form-control"/>
+          <br />
+          <br/>
+                <center><apex:commandButton value="Search" action="{!searchAllLead}" styleClass="btn btn-primary" style="padding-left:30px;padding-right:30px;"/></center>
+          
+      <br/>
+      
+        <apex:outputPanel rendered="{!AND(!isNew, !isDuplicateLeadExist,!isDuplicateOptyExist,!isDuplicateAccountExist)}">
+            
+            <center style="color:red;">No lead found, Please Click on Continue to create a new lead.</center>
+            <br/>
+            <center><apex:commandButton value="Continue" action="{!saveMethod}" styleClass="btn btn-primary" style="padding-left:28px;padding-right:28px;"/></center>
+            </apex:outputPanel>
+      
+      
+            <apex:outputpanel layout="block" rendered="{!AND(isDuplicateLeadExist)}">
+                <center style="color:red;">
+                     Lead Exist in the system. Please click on below link to Continue.
+                </center>
+            </apex:outputpanel>
+        <apex:outputpanel layout="block" rendered="{!AND(isDuplicateOptyExist)}">
+                <center style="color:red;">
+                    Opportunity found with Same project. Please click on below link to Continue.
+                </center>
+        </apex:outputpanel> 
+        
+            <apex:outputpanel layout="block" rendered="{!AND(isDuplicateAccountExist)}">
+                <center style="color:red;">
+                    Account found in the System. Please click on below link to Continue.
+                </center>
+            </apex:outputpanel>
+            
+            
+      <apex:outputPanel rendered="{!isDuplicateLeadExist}">
+          <div class="table-responsive col-sm-12">
+          <h4 style="margin-left:35%">Lead Record Found</h4>
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Project Name</th>
+                      <th>Mobile Number</th>
+                      <th>Lead Owner</th>
+                      <th>Email</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <apex:repeat value="{!lstDuplicateLeads}" var="lead">
+                      <tr>
+                          <td><apex:outputLink value="{!'/apex/VisitFormEditPage2?Leadid='+lead.Id+'&projectId='+strProjectId}">{!lead.Name}</apex:outputLink></td>
+                          <td>{!lead.RDS_Project__r.Name}</td>
+                          <td>{!lead.MobilePhone}</td>
+                          <td>{!lead.Owner.Name}</td>
+                          <td>{!lead.Email}</td>
+                      </tr>
+                  </apex:repeat>
+                  <apex:repeat value="{!lstDuplicateLeadsEmail}" var="lead" rendered="{!isMailDuplicateLeadExist}">
+                      <tr>
+                          <td><apex:outputLink value="{!'/apex/VisitFormEditPage2?Leadid='+lead.Id+'&projectId='+strProjectId}">{!lead.Name}</apex:outputLink></td>
+                          <td>{!lead.RDS_Project__r.Name}</td>
+                          <td>{!lead.MobilePhone}</td>
+                          <td>{!lead.Owner.Name}</td>
+                          <td>{!lead.Email}</td>
+                      </tr>
+                  </apex:repeat>
+                  
+              </tbody>  
+          </table>
+          </div>
+      </apex:outputPanel>
+      
+      <apex:outputPanel rendered="{!isDuplicateAccountExist}">
+          <div class="table-responsive col-sm-12">
+          <h4 style="margin-left:35%">Account Record Found</h4>
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Mobile Number</th>
+                      <th>Email</th>
+                      <th>Account Owner</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <apex:repeat value="{!lstDuplicateAccount}" var="acc">
+                      <tr>
+                          <td><apex:outputLink value="{!'/apex/VisitFormEditPage2?Accid='+acc.Id+'&projectId='+strProjectId}">{!acc.Name}</apex:outputLink></td>
+                          <td>{!acc.PersonMobilePhone}</td>
+                          <td>{!acc.PersonEmail}</td>
+                          <td>{!acc.Owner.Name}</td>
+                      </tr>
+                  </apex:repeat>
+                  <apex:repeat value="{!lstDuplicateAccountEmail}" var="acc" rendered="{!isDuplicateAccountExistEmail}">
+                      <tr>
+                          <td><apex:outputLink value="{!'/apex/VisitFormEditPage2?Accid='+acc.Id+'&projectId='+strProjectId}">{!acc.Name}</apex:outputLink></td>
+                          <td>{!acc.PersonMobilePhone}</td>
+                          <td>{!acc.PersonEmail}</td>
+                          <td>{!acc.Owner.Name}</td>
+                      </tr>
+                  </apex:repeat>
+              </tbody>
+          </table>
+          </div>
+      </apex:outputPanel>
+          
+       <apex:outputPanel rendered="{!isDuplicateOptyExist}">
+           <div class="table-responsive col-sm-12">
+           
+          <h4 style="margin-left:35%">Opportunity Record Found</h4>
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>Opportunity Name</th>
+                      <th>Sales Manager Name</th>
+                      <th>Date Of Visit</th>
+                      <th>Site Visit Number</th>
+                      <th>Opportunity Owner</th>
+                      <th>Tag Visit</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <apex:repeat value="{!lstDuplicateOpty}" var="opp">
+                      <tr>
+                          <td>{!opp.Name}</td>
+                          <td>{!opp.Sales_Manager__c}</td>
+                          <td>{!opp.Date_Of_Visit__c}</td>
+                          <td>{!opp.Unique_SVF_Number__c}</td>
+                          <td>{!opp.Owner.Name}</td>
+                          <td><apex:commandlink action="{!updateRevisitOnOpty}" value="Click Here"> <!-- value="{!'/apex/CIFFormPage?optyid=' + opp.id+'&projectId='+strProjectId}" -->
+                              <apex:param name="OpportunityId" value="{!Opp.Id}" assignTo="{!OpportunityId}"/>
+                              </apex:commandlink></td>
+                          
+                      </tr>
+                  </apex:repeat>
+              </tbody>  
+          </table>
+          </div>
+      </apex:outputPanel>
+       </div>
+       </apex:form>
+      </div>
+    </body>  
+</apex:page>

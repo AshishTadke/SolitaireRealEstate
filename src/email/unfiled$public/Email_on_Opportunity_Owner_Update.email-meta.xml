@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Email on Opportunity Owner Update</name>
+    <style>none</style>
+    <subject>Opportunity has been assigned</subject>
+    <textOnly>Dear {!Opportunity.OwnerFullName},
+
+
+
+Below opportunity  has been assigned to you .
+
+Opportunity Details :
+
+Opportunity Name Project Project Unit Project Type Lead Source Lead Sub Source Status
+Details {!Opportunity.Name}  {!Opportunity.Project__c}  {!Opportunity.Project_Unit__c}  {!Opportunity.Project_Type__c}  {!Opportunity.Lead_Source__c}  {!Opportunity.Lead_Sub_Source__c}  {!Opportunity.Status__c}
+
+
+
+Opportunity Link : https://ap6.salesforce.com/{!Opportunity.Id}
+
+
+
+Regards,
+Solitaire Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

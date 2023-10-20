@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>UnitAreaTaxationDetail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>UnitAreaTaxationDetails</value>
+    </caseValues>
+    <fields>
+        <label><!-- Apply Due On --></label>
+        <name>Apply_Due_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apply additional amount --></label>
+        <name>Apply_additional_amount__c</name>
+        <picklistValues>
+            <masterLabel>As a single and subsequent installments</masterLabel>
+            <translation><!-- As a single and subsequent installments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Over prior installments</masterLabel>
+            <translation><!-- Over prior installments --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Area Type --></label>
+        <name>Area_Type__c</name>
+        <relationshipLabel><!-- UnitAreaTaxationDetails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Value --></label>
+        <name>New_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Area Value --></label>
+        <name>Old_Area_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- UnitAreaTaxationDetails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- UnitAreaTaxationDetails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- UnitAreaTaxationHeader --></label>
+        <name>UnitAreaTaxationHeader__c</name>
+        <relationshipLabel><!-- UnitAreaTaxationDetails --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New --></label>
+        <name>New</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Unit Allied Charge Txn Dtl</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Unit Allied Charge Txn Dtls</value>
+    </caseValues>
+    <fields>
+        <label><!-- Param 1 --></label>
+        <name>Param_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 2 --></label>
+        <name>Param_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 3 --></label>
+        <name>Param_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 4 --></label>
+        <name>Param_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 5 --></label>
+        <name>Param_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit Type --></label>
+        <name>Project_Unit_Type__c</name>
+        <relationshipLabel><!-- Unit Allied Charge Txn Dtls --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- Unit Allied Charge Txn Dtls --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Unit Allied Charge Txn Hdr --></label>
+        <name>Unit_Allied_Charge_Txn_Hdr__c</name>
+        <relationshipLabel><!-- Unit Allied Charge Txn Dtls --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Unit Number Structure --></label>
+        <name>Unit_Number_Structure__c</name>
+        <relationshipLabel><!-- Unit Allied Charge Txn Dtls --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

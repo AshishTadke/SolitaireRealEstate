@@ -1,0 +1,3229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Receipt</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Receipts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Info --></label>
+        <name>Additional_Info__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjust Receipt --></label>
+        <name>Adjust_Receipt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Adjustment_Customer__c</name>
+        <relationshipLabel><!-- Receipts (Adjustment Customer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Amount (Rs.) --></label>
+        <name>Amount_Rs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount in Foreign Currency --></label>
+        <name>Amount_in_Foreign_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent for Approval</masterLabel>
+            <translation><!-- Sent for Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Receipt cannot be approved untill cheque is physically received. --></help>
+        <label><!-- Approval Validation Message --></label>
+        <name>Approval_Validation_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Calculate Service Tax --></label>
+        <name>Auto_Calculate_Service_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drawee Bank --></label>
+        <name>Bank__c</name>
+        <relationshipLabel><!-- Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payment Status --></label>
+        <name>Banking__c</name>
+        <picklistValues>
+            <masterLabel>Payment Failed - Insufficient Funds</masterLabel>
+            <translation><!-- Payment Failed - Insufficient Funds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment Failed – Amount Mismatch</masterLabel>
+            <translation><!-- Payment Failed – Amount Mismatch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment Failed – Overwriting</masterLabel>
+            <translation><!-- Payment Failed – Overwriting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment Failed – PDC</masterLabel>
+            <translation><!-- Payment Failed – PDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment Failed – Signature mismatch</masterLabel>
+            <translation><!-- Payment Failed – Signature mismatch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment Failed – Stop payment by client</masterLabel>
+            <translation><!-- Payment Failed – Stop payment by client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment Successful</masterLabel>
+            <translation><!-- Payment Successful --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Batch Upload Msg --></label>
+        <name>Batch_Upload_Msg__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Status --></label>
+        <name>Booking_Status__c</name>
+        <picklistValues>
+            <masterLabel>Booked</masterLabel>
+            <translation><!-- Booked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacant</masterLabel>
+            <translation><!-- Vacant --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Booking --></label>
+        <name>Booking__c</name>
+        <relationshipLabel><!-- Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Branch --></label>
+        <name>Branch__c</name>
+        <picklistValues>
+            <masterLabel>Adilabad</masterLabel>
+            <translation><!-- Adilabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adoni</masterLabel>
+            <translation><!-- Adoni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agartala</masterLabel>
+            <translation><!-- Agartala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agra</masterLabel>
+            <translation><!-- Agra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ahmedabad</masterLabel>
+            <translation><!-- Ahmedabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ahmednagar</masterLabel>
+            <translation><!-- Ahmednagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aizawl</masterLabel>
+            <translation><!-- Aizawl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ajmer</masterLabel>
+            <translation><!-- Ajmer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Akbarpur</masterLabel>
+            <translation><!-- Akbarpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Akola</masterLabel>
+            <translation><!-- Akola --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aligarh</masterLabel>
+            <translation><!-- Aligarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alipurduar</masterLabel>
+            <translation><!-- Alipurduar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Allahabad</masterLabel>
+            <translation><!-- Allahabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alwar</masterLabel>
+            <translation><!-- Alwar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambala</masterLabel>
+            <translation><!-- Ambala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambikapur</masterLabel>
+            <translation><!-- Ambikapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amravati</masterLabel>
+            <translation><!-- Amravati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amritsar</masterLabel>
+            <translation><!-- Amritsar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amroha</masterLabel>
+            <translation><!-- Amroha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anand</masterLabel>
+            <translation><!-- Anand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anantapur</masterLabel>
+            <translation><!-- Anantapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anantnag</masterLabel>
+            <translation><!-- Anantnag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Angul</masterLabel>
+            <translation><!-- Angul --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arrah</masterLabel>
+            <translation><!-- Arrah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asansol</masterLabel>
+            <translation><!-- Asansol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aurangabad</masterLabel>
+            <translation><!-- Aurangabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Azamgarh</masterLabel>
+            <translation><!-- Azamgarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Badgam</masterLabel>
+            <translation><!-- Badgam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bagaha</masterLabel>
+            <translation><!-- Bagaha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahadurgarh</masterLabel>
+            <translation><!-- Bahadurgarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baharampur</masterLabel>
+            <translation><!-- Baharampur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahraich</masterLabel>
+            <translation><!-- Bahraich --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Balasore</masterLabel>
+            <translation><!-- Balasore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ballia</masterLabel>
+            <translation><!-- Ballia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Balurghat</masterLabel>
+            <translation><!-- Balurghat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Banda</masterLabel>
+            <translation><!-- Banda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bandipora</masterLabel>
+            <translation><!-- Bandipora --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bangalore</masterLabel>
+            <translation><!-- Bangalore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bangaon</masterLabel>
+            <translation><!-- Bangaon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bankura</masterLabel>
+            <translation><!-- Bankura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Banswara</masterLabel>
+            <translation><!-- Banswara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barabanki</masterLabel>
+            <translation><!-- Barabanki --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baramulla</masterLabel>
+            <translation><!-- Baramulla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baran</masterLabel>
+            <translation><!-- Baran --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baraut</masterLabel>
+            <translation><!-- Baraut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barbil</masterLabel>
+            <translation><!-- Barbil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bardhaman</masterLabel>
+            <translation><!-- Bardhaman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bareilly</masterLabel>
+            <translation><!-- Bareilly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baripada</masterLabel>
+            <translation><!-- Baripada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barmer</masterLabel>
+            <translation><!-- Barmer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barnala</masterLabel>
+            <translation><!-- Barnala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Basar</masterLabel>
+            <translation><!-- Basar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Basirhat</masterLabel>
+            <translation><!-- Basirhat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Basti</masterLabel>
+            <translation><!-- Basti --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Batala</masterLabel>
+            <translation><!-- Batala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bathinda</masterLabel>
+            <translation><!-- Bathinda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Begusarai</masterLabel>
+            <translation><!-- Begusarai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belgaum</masterLabel>
+            <translation><!-- Belgaum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bellary</masterLabel>
+            <translation><!-- Bellary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bettiah</masterLabel>
+            <translation><!-- Bettiah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhadrak</masterLabel>
+            <translation><!-- Bhadrak --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhagalpur</masterLabel>
+            <translation><!-- Bhagalpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bharatpur</masterLabel>
+            <translation><!-- Bharatpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bharuch</masterLabel>
+            <translation><!-- Bharuch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhavnagar</masterLabel>
+            <translation><!-- Bhavnagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhawanipatna</masterLabel>
+            <translation><!-- Bhawanipatna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhilwara</masterLabel>
+            <translation><!-- Bhilwara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhimavaram</masterLabel>
+            <translation><!-- Bhimavaram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhind</masterLabel>
+            <translation><!-- Bhind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhiwandi</masterLabel>
+            <translation><!-- Bhiwandi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhiwani</masterLabel>
+            <translation><!-- Bhiwani --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhopal</masterLabel>
+            <translation><!-- Bhopal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhubaneshwar</masterLabel>
+            <translation><!-- Bhubaneshwar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bihar Sharif</masterLabel>
+            <translation><!-- Bihar Sharif --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bijapur</masterLabel>
+            <translation><!-- Bijapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bijnor</masterLabel>
+            <translation><!-- Bijnor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bikaner</masterLabel>
+            <translation><!-- Bikaner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bilaspur</masterLabel>
+            <translation><!-- Bilaspur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bokaro Steel City</masterLabel>
+            <translation><!-- Bokaro Steel City --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bomdila</masterLabel>
+            <translation><!-- Bomdila --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bongaigaon</masterLabel>
+            <translation><!-- Bongaigaon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Botad</masterLabel>
+            <translation><!-- Botad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brahmapur</masterLabel>
+            <translation><!-- Brahmapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budaun</masterLabel>
+            <translation><!-- Budaun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bulandshahr</masterLabel>
+            <translation><!-- Bulandshahr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bundi</masterLabel>
+            <translation><!-- Bundi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burhanpur</masterLabel>
+            <translation><!-- Burhanpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Buxar</masterLabel>
+            <translation><!-- Buxar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chakdaha</masterLabel>
+            <translation><!-- Chakdaha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chamba</masterLabel>
+            <translation><!-- Chamba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chandausi</masterLabel>
+            <translation><!-- Chandausi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chandigarh</masterLabel>
+            <translation><!-- Chandigarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chandrapur</masterLabel>
+            <translation><!-- Chandrapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chennai</masterLabel>
+            <translation><!-- Chennai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chhapra</masterLabel>
+            <translation><!-- Chhapra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chhatarpur</masterLabel>
+            <translation><!-- Chhatarpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chirkunda</masterLabel>
+            <translation><!-- Chirkunda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chittoor</masterLabel>
+            <translation><!-- Chittoor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chittorgarh</masterLabel>
+            <translation><!-- Chittorgarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Churu</masterLabel>
+            <translation><!-- Churu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coimbatore</masterLabel>
+            <translation><!-- Coimbatore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooch Behar</masterLabel>
+            <translation><!-- Cooch Behar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cuttack</masterLabel>
+            <translation><!-- Cuttack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daman</masterLabel>
+            <translation><!-- Daman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dankuni</masterLabel>
+            <translation><!-- Dankuni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Darbhanga</masterLabel>
+            <translation><!-- Darbhanga --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Darjeeling</masterLabel>
+            <translation><!-- Darjeeling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dausa</masterLabel>
+            <translation><!-- Dausa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Davanagere</masterLabel>
+            <translation><!-- Davanagere --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dehradun</masterLabel>
+            <translation><!-- Dehradun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dehri</masterLabel>
+            <translation><!-- Dehri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delhi</masterLabel>
+            <translation><!-- Delhi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deoghar</masterLabel>
+            <translation><!-- Deoghar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deoria</masterLabel>
+            <translation><!-- Deoria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dewas</masterLabel>
+            <translation><!-- Dewas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dhanbad</masterLabel>
+            <translation><!-- Dhanbad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dhenkanal</masterLabel>
+            <translation><!-- Dhenkanal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dholpur</masterLabel>
+            <translation><!-- Dholpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dhule</masterLabel>
+            <translation><!-- Dhule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dhulian</masterLabel>
+            <translation><!-- Dhulian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dibrugarh</masterLabel>
+            <translation><!-- Dibrugarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dimapur</masterLabel>
+            <translation><!-- Dimapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diu</masterLabel>
+            <translation><!-- Diu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Doda</masterLabel>
+            <translation><!-- Doda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dungarpur</masterLabel>
+            <translation><!-- Dungarpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Durg-Bhilainagar</masterLabel>
+            <translation><!-- Durg-Bhilainagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Durgapur</masterLabel>
+            <translation><!-- Durgapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eluru</masterLabel>
+            <translation><!-- Eluru --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erode</masterLabel>
+            <translation><!-- Erode --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Etah</masterLabel>
+            <translation><!-- Etah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Etawah</masterLabel>
+            <translation><!-- Etawah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Faizabad</masterLabel>
+            <translation><!-- Faizabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Faridabad</masterLabel>
+            <translation><!-- Faridabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Farrukhabad-cum-Fategarh</masterLabel>
+            <translation><!-- Farrukhabad-cum-Fategarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fatehpur</masterLabel>
+            <translation><!-- Fatehpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Firozabad</masterLabel>
+            <translation><!-- Firozabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Firozpur</masterLabel>
+            <translation><!-- Firozpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ganderbal</masterLabel>
+            <translation><!-- Ganderbal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gandhidham</masterLabel>
+            <translation><!-- Gandhidham --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gandhinagar</masterLabel>
+            <translation><!-- Gandhinagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gangtok</masterLabel>
+            <translation><!-- Gangtok --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gaya</masterLabel>
+            <translation><!-- Gaya --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Geyzing</masterLabel>
+            <translation><!-- Geyzing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ghaziabad</masterLabel>
+            <translation><!-- Ghaziabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ghazipur</masterLabel>
+            <translation><!-- Ghazipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Giridih</masterLabel>
+            <translation><!-- Giridih --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Godhra</masterLabel>
+            <translation><!-- Godhra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gonda</masterLabel>
+            <translation><!-- Gonda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gorakhpur</masterLabel>
+            <translation><!-- Gorakhpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greater Noida</masterLabel>
+            <translation><!-- Greater Noida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gulbarga</masterLabel>
+            <translation><!-- Gulbarga --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guntur</masterLabel>
+            <translation><!-- Guntur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gurgaon</masterLabel>
+            <translation><!-- Gurgaon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guwahati</masterLabel>
+            <translation><!-- Guwahati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gwalior</masterLabel>
+            <translation><!-- Gwalior --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Habra</masterLabel>
+            <translation><!-- Habra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hajipur</masterLabel>
+            <translation><!-- Hajipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haldia</masterLabel>
+            <translation><!-- Haldia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haldwani-cum-Kathgodam</masterLabel>
+            <translation><!-- Haldwani-cum-Kathgodam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hamirpur</masterLabel>
+            <translation><!-- Hamirpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hanumangarh</masterLabel>
+            <translation><!-- Hanumangarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hapur</masterLabel>
+            <translation><!-- Hapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hardoi</masterLabel>
+            <translation><!-- Hardoi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haridwar</masterLabel>
+            <translation><!-- Haridwar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hathras</masterLabel>
+            <translation><!-- Hathras --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hazaribagh</masterLabel>
+            <translation><!-- Hazaribagh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hindupur</masterLabel>
+            <translation><!-- Hindupur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hisar</masterLabel>
+            <translation><!-- Hisar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hissar</masterLabel>
+            <translation><!-- Hissar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hoshiarpur</masterLabel>
+            <translation><!-- Hoshiarpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hubballi-Dharwad</masterLabel>
+            <translation><!-- Hubballi-Dharwad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hyderabad</masterLabel>
+            <translation><!-- Hyderabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imphal</masterLabel>
+            <translation><!-- Imphal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indore</masterLabel>
+            <translation><!-- Indore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>International</masterLabel>
+            <translation><!-- International --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Itanagar</masterLabel>
+            <translation><!-- Itanagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jabalpur</masterLabel>
+            <translation><!-- Jabalpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jagdalpur</masterLabel>
+            <translation><!-- Jagdalpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jaipur</masterLabel>
+            <translation><!-- Jaipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jaisalmer</masterLabel>
+            <translation><!-- Jaisalmer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jajpur</masterLabel>
+            <translation><!-- Jajpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jalandhar</masterLabel>
+            <translation><!-- Jalandhar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jalgaon</masterLabel>
+            <translation><!-- Jalgaon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jalor</masterLabel>
+            <translation><!-- Jalor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jalpaiguri</masterLabel>
+            <translation><!-- Jalpaiguri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jamalpur</masterLabel>
+            <translation><!-- Jamalpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jammu</masterLabel>
+            <translation><!-- Jammu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jamnagar</masterLabel>
+            <translation><!-- Jamnagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jamshedpur</masterLabel>
+            <translation><!-- Jamshedpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jangipur</masterLabel>
+            <translation><!-- Jangipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jaunpur</masterLabel>
+            <translation><!-- Jaunpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jehanabad</masterLabel>
+            <translation><!-- Jehanabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jhalawar</masterLabel>
+            <translation><!-- Jhalawar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jhansi</masterLabel>
+            <translation><!-- Jhansi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jharsuguda</masterLabel>
+            <translation><!-- Jharsuguda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jhunjhunu</masterLabel>
+            <translation><!-- Jhunjhunu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jind</masterLabel>
+            <translation><!-- Jind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jodhpur</masterLabel>
+            <translation><!-- Jodhpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jorhat</masterLabel>
+            <translation><!-- Jorhat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Junagadh</masterLabel>
+            <translation><!-- Junagadh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kadapa</masterLabel>
+            <translation><!-- Kadapa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kaithal</masterLabel>
+            <translation><!-- Kaithal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kakinada</masterLabel>
+            <translation><!-- Kakinada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kalyan-Dombivali</masterLabel>
+            <translation><!-- Kalyan-Dombivali --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kangra</masterLabel>
+            <translation><!-- Kangra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kannur</masterLabel>
+            <translation><!-- Kannur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kanpur</masterLabel>
+            <translation><!-- Kanpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kapurthala</masterLabel>
+            <translation><!-- Kapurthala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karauli</masterLabel>
+            <translation><!-- Karauli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kargil</masterLabel>
+            <translation><!-- Kargil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karimnagar</masterLabel>
+            <translation><!-- Karimnagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karnal</masterLabel>
+            <translation><!-- Karnal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kasganj</masterLabel>
+            <translation><!-- Kasganj --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kashipur</masterLabel>
+            <translation><!-- Kashipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kathua</masterLabel>
+            <translation><!-- Kathua --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Katihar</masterLabel>
+            <translation><!-- Katihar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kavaratti</masterLabel>
+            <translation><!-- Kavaratti --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Khammam</masterLabel>
+            <translation><!-- Khammam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Khandwa</masterLabel>
+            <translation><!-- Khandwa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Khanna</masterLabel>
+            <translation><!-- Khanna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kharagpur</masterLabel>
+            <translation><!-- Kharagpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Khurja</masterLabel>
+            <translation><!-- Khurja --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kishanganj</masterLabel>
+            <translation><!-- Kishanganj --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kishtwar</masterLabel>
+            <translation><!-- Kishtwar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kochi</masterLabel>
+            <translation><!-- Kochi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kolhapur</masterLabel>
+            <translation><!-- Kolhapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kolkata</masterLabel>
+            <translation><!-- Kolkata --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kollam</masterLabel>
+            <translation><!-- Kollam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Korba</masterLabel>
+            <translation><!-- Korba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kota</masterLabel>
+            <translation><!-- Kota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kottayam</masterLabel>
+            <translation><!-- Kottayam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kozhikode</masterLabel>
+            <translation><!-- Kozhikode --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Krishnanagar</masterLabel>
+            <translation><!-- Krishnanagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kulgam</masterLabel>
+            <translation><!-- Kulgam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kullu</masterLabel>
+            <translation><!-- Kullu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kupwara</masterLabel>
+            <translation><!-- Kupwara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kurnool</masterLabel>
+            <translation><!-- Kurnool --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lakhimpur</masterLabel>
+            <translation><!-- Lakhimpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lalitpur</masterLabel>
+            <translation><!-- Lalitpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latur</masterLabel>
+            <translation><!-- Latur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leh</masterLabel>
+            <translation><!-- Leh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lucknow</masterLabel>
+            <translation><!-- Lucknow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ludhiana</masterLabel>
+            <translation><!-- Ludhiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Madanapalle</masterLabel>
+            <translation><!-- Madanapalle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Madurai</masterLabel>
+            <translation><!-- Madurai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mahasamund</masterLabel>
+            <translation><!-- Mahasamund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mahbubnagar</masterLabel>
+            <translation><!-- Mahbubnagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mainpuri</masterLabel>
+            <translation><!-- Mainpuri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malappuram</masterLabel>
+            <translation><!-- Malappuram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malda</masterLabel>
+            <translation><!-- Malda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malerkotla</masterLabel>
+            <translation><!-- Malerkotla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mandi</masterLabel>
+            <translation><!-- Mandi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mangalore</masterLabel>
+            <translation><!-- Mangalore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mangan</masterLabel>
+            <translation><!-- Mangan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Margao</masterLabel>
+            <translation><!-- Margao --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mathura</masterLabel>
+            <translation><!-- Mathura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maunath Bhanjan</masterLabel>
+            <translation><!-- Maunath Bhanjan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mayabunder</masterLabel>
+            <translation><!-- Mayabunder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medininagar</masterLabel>
+            <translation><!-- Medininagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medinipur</masterLabel>
+            <translation><!-- Medinipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meerut</masterLabel>
+            <translation><!-- Meerut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miryalaguda</masterLabel>
+            <translation><!-- Miryalaguda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mirzapur-cum-Vindhyachal</masterLabel>
+            <translation><!-- Mirzapur-cum-Vindhyachal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modinagar</masterLabel>
+            <translation><!-- Modinagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moga</masterLabel>
+            <translation><!-- Moga --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moradabad</masterLabel>
+            <translation><!-- Moradabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morbi</masterLabel>
+            <translation><!-- Morbi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motihari</masterLabel>
+            <translation><!-- Motihari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mubarakpur</masterLabel>
+            <translation><!-- Mubarakpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mughalsarai</masterLabel>
+            <translation><!-- Mughalsarai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muktasar</masterLabel>
+            <translation><!-- Muktasar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mumbai</masterLabel>
+            <translation><!-- Mumbai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Munger</masterLabel>
+            <translation><!-- Munger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Murwara (Katni)</masterLabel>
+            <translation><!-- Murwara (Katni) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muzaffarnagar</masterLabel>
+            <translation><!-- Muzaffarnagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muzaffarpur</masterLabel>
+            <translation><!-- Muzaffarpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mysore</masterLabel>
+            <translation><!-- Mysore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nabadwip</masterLabel>
+            <translation><!-- Nabadwip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nadiad</masterLabel>
+            <translation><!-- Nadiad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nagaon</masterLabel>
+            <translation><!-- Nagaon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nagaur</masterLabel>
+            <translation><!-- Nagaur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nagpur</masterLabel>
+            <translation><!-- Nagpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nalgonda</masterLabel>
+            <translation><!-- Nalgonda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Namchi</masterLabel>
+            <translation><!-- Namchi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nanded</masterLabel>
+            <translation><!-- Nanded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nandyal</masterLabel>
+            <translation><!-- Nandyal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Narasaraopet</masterLabel>
+            <translation><!-- Narasaraopet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nashik</masterLabel>
+            <translation><!-- Nashik --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Navi Mumbai</masterLabel>
+            <translation><!-- Navi Mumbai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Navsari</masterLabel>
+            <translation><!-- Navsari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nawada</masterLabel>
+            <translation><!-- Nawada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nellore</masterLabel>
+            <translation><!-- Nellore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nizamabad</masterLabel>
+            <translation><!-- Nizamabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Noida</masterLabel>
+            <translation><!-- Noida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ongole</masterLabel>
+            <translation><!-- Ongole --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orai</masterLabel>
+            <translation><!-- Orai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pali</masterLabel>
+            <translation><!-- Pali --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palwal</masterLabel>
+            <translation><!-- Palwal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panaji</masterLabel>
+            <translation><!-- Panaji --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panchkula</masterLabel>
+            <translation><!-- Panchkula --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panipat</masterLabel>
+            <translation><!-- Panipat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pasighat</masterLabel>
+            <translation><!-- Pasighat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patiala</masterLabel>
+            <translation><!-- Patiala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patna</masterLabel>
+            <translation><!-- Patna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phagwara</masterLabel>
+            <translation><!-- Phagwara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phusro</masterLabel>
+            <translation><!-- Phusro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pilibhit</masterLabel>
+            <translation><!-- Pilibhit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pimpri-Chinchwad</masterLabel>
+            <translation><!-- Pimpri-Chinchwad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pondicherry</masterLabel>
+            <translation><!-- Pondicherry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poonch</masterLabel>
+            <translation><!-- Poonch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Porbandar</masterLabel>
+            <translation><!-- Porbandar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Port Blair</masterLabel>
+            <translation><!-- Port Blair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pratapgarh[1]</masterLabel>
+            <translation><!-- Pratapgarh[1] --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prodattur</masterLabel>
+            <translation><!-- Prodattur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pulwama</masterLabel>
+            <translation><!-- Pulwama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pune</masterLabel>
+            <translation><!-- Pune --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puri</masterLabel>
+            <translation><!-- Puri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purnia</masterLabel>
+            <translation><!-- Purnia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purulia</masterLabel>
+            <translation><!-- Purulia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raebareli</masterLabel>
+            <translation><!-- Raebareli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raichur</masterLabel>
+            <translation><!-- Raichur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raiganj</masterLabel>
+            <translation><!-- Raiganj --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raigarh</masterLabel>
+            <translation><!-- Raigarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raipur</masterLabel>
+            <translation><!-- Raipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajahmundry</masterLabel>
+            <translation><!-- Rajahmundry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajkot</masterLabel>
+            <translation><!-- Rajkot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajouri</masterLabel>
+            <translation><!-- Rajouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajsamand</masterLabel>
+            <translation><!-- Rajsamand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ramagundam</masterLabel>
+            <translation><!-- Ramagundam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ramban</masterLabel>
+            <translation><!-- Ramban --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ramgarh</masterLabel>
+            <translation><!-- Ramgarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rampur</masterLabel>
+            <translation><!-- Rampur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ranaghat</masterLabel>
+            <translation><!-- Ranaghat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ranchi</masterLabel>
+            <translation><!-- Ranchi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ratlam</masterLabel>
+            <translation><!-- Ratlam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reasi</masterLabel>
+            <translation><!-- Reasi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rewa</masterLabel>
+            <translation><!-- Rewa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rewari</masterLabel>
+            <translation><!-- Rewari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rishikesh</masterLabel>
+            <translation><!-- Rishikesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rohtak</masterLabel>
+            <translation><!-- Rohtak --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roorkee</masterLabel>
+            <translation><!-- Roorkee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rourkela</masterLabel>
+            <translation><!-- Rourkela --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rudrapur</masterLabel>
+            <translation><!-- Rudrapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sagar</masterLabel>
+            <translation><!-- Sagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saharanpur</masterLabel>
+            <translation><!-- Saharanpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saharsa</masterLabel>
+            <translation><!-- Saharsa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salem</masterLabel>
+            <translation><!-- Salem --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Samba</masterLabel>
+            <translation><!-- Samba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sambalpur</masterLabel>
+            <translation><!-- Sambalpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sambhal</masterLabel>
+            <translation><!-- Sambhal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sangli</masterLabel>
+            <translation><!-- Sangli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sasaram</masterLabel>
+            <translation><!-- Sasaram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Satna</masterLabel>
+            <translation><!-- Satna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sawai Madhopur</masterLabel>
+            <translation><!-- Sawai Madhopur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shahjahanpur</masterLabel>
+            <translation><!-- Shahjahanpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shamli</masterLabel>
+            <translation><!-- Shamli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shantipur</masterLabel>
+            <translation><!-- Shantipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shikohabad</masterLabel>
+            <translation><!-- Shikohabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shillong</masterLabel>
+            <translation><!-- Shillong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shimla</masterLabel>
+            <translation><!-- Shimla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shivamogga (Shimoga)</masterLabel>
+            <translation><!-- Shivamogga (Shimoga) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shivpuri</masterLabel>
+            <translation><!-- Shivpuri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shopian</masterLabel>
+            <translation><!-- Shopian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sidhpur</masterLabel>
+            <translation><!-- Sidhpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sikar</masterLabel>
+            <translation><!-- Sikar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silchar</masterLabel>
+            <translation><!-- Silchar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siliguri</masterLabel>
+            <translation><!-- Siliguri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silvassa</masterLabel>
+            <translation><!-- Silvassa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Singrauli</masterLabel>
+            <translation><!-- Singrauli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sirmaur</masterLabel>
+            <translation><!-- Sirmaur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sirohi</masterLabel>
+            <translation><!-- Sirohi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sirsa</masterLabel>
+            <translation><!-- Sirsa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sitamarhi</masterLabel>
+            <translation><!-- Sitamarhi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sitapur</masterLabel>
+            <translation><!-- Sitapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siwan</masterLabel>
+            <translation><!-- Siwan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solan</masterLabel>
+            <translation><!-- Solan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solapur</masterLabel>
+            <translation><!-- Solapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sonipat</masterLabel>
+            <translation><!-- Sonipat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sri Ganganagar</masterLabel>
+            <translation><!-- Sri Ganganagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Srikakulam</masterLabel>
+            <translation><!-- Srikakulam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Srinagar</masterLabel>
+            <translation><!-- Srinagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sultanpur</masterLabel>
+            <translation><!-- Sultanpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surat</masterLabel>
+            <translation><!-- Surat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surendranagar</masterLabel>
+            <translation><!-- Surendranagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suryapet</masterLabel>
+            <translation><!-- Suryapet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tadepalligudem</masterLabel>
+            <translation><!-- Tadepalligudem --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tenali</masterLabel>
+            <translation><!-- Tenali --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tezpur</masterLabel>
+            <translation><!-- Tezpur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thane</masterLabel>
+            <translation><!-- Thane --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thiruvananthapuram</masterLabel>
+            <translation><!-- Thiruvananthapuram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thoothukkudi</masterLabel>
+            <translation><!-- Thoothukkudi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thrissur</masterLabel>
+            <translation><!-- Thrissur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tinsukia</masterLabel>
+            <translation><!-- Tinsukia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tiruchirappalli</masterLabel>
+            <translation><!-- Tiruchirappalli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tirunelveli</masterLabel>
+            <translation><!-- Tirunelveli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tirupati</masterLabel>
+            <translation><!-- Tirupati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tiruppur</masterLabel>
+            <translation><!-- Tiruppur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tonk</masterLabel>
+            <translation><!-- Tonk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tumkur</masterLabel>
+            <translation><!-- Tumkur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Udaipur</masterLabel>
+            <translation><!-- Udaipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Udhampur</masterLabel>
+            <translation><!-- Udhampur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ujjain</masterLabel>
+            <translation><!-- Ujjain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Una</masterLabel>
+            <translation><!-- Una --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unnao</masterLabel>
+            <translation><!-- Unnao --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vadodara</masterLabel>
+            <translation><!-- Vadodara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Varanasi</masterLabel>
+            <translation><!-- Varanasi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vasai-Virar</masterLabel>
+            <translation><!-- Vasai-Virar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vellore</masterLabel>
+            <translation><!-- Vellore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Veraval</masterLabel>
+            <translation><!-- Veraval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vidisha</masterLabel>
+            <translation><!-- Vidisha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vijayawada</masterLabel>
+            <translation><!-- Vijayawada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vishakhapatnam</masterLabel>
+            <translation><!-- Vishakhapatnam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vizianagaram</masterLabel>
+            <translation><!-- Vizianagaram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warangal</masterLabel>
+            <translation><!-- Warangal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yamunanagar</masterLabel>
+            <translation><!-- Yamunanagar --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner --></label>
+        <name>Broker__c</name>
+        <relationshipLabel><!-- Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Initiated --></label>
+        <name>Cancellation_Initiated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Challan No --></label>
+        <name>Challan_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- CheckReceipt --></label>
+        <name>CheckReceipt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Cheque_DD_Amount_Rs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Cheque_DD_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cheque/DD No. --></label>
+        <name>Cheque_DD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>Currency__c</name>
+        <picklistValues>
+            <masterLabel>Australian Dollar</masterLabel>
+            <translation><!-- Australian Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahrain Dinar</masterLabel>
+            <translation><!-- Bahrain Dinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canadian Dollar</masterLabel>
+            <translation><!-- Canadian Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chinese Yuan</masterLabel>
+            <translation><!-- Chinese Yuan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dubai Dirham</masterLabel>
+            <translation><!-- Dubai Dirham --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>European Euro</masterLabel>
+            <translation><!-- European Euro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hong Kong Dollar</masterLabel>
+            <translation><!-- Hong Kong Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indian Rupee</masterLabel>
+            <translation><!-- Indian Rupee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japanese Yen</masterLabel>
+            <translation><!-- Japanese Yen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kuwaiti Dinar</masterLabel>
+            <translation><!-- Kuwaiti Dinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saudi Riyal</masterLabel>
+            <translation><!-- Saudi Riyal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Singapore Dollar</masterLabel>
+            <translation><!-- Singapore Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UK Pound</masterLabel>
+            <translation><!-- UK Pound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Dollar</masterLabel>
+            <translation><!-- US Dollar --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Different Project --></label>
+        <name>Different_Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct --></label>
+        <name>Direct__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Amount --></label>
+        <name>Discount_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Value --></label>
+        <name>Discount_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount on Dues --></label>
+        <name>Discount_on_Dues__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount to be given on Timely payment --></label>
+        <name>Discount_to_begiven_on_Timely_payment__c</name>
+        <picklistValues>
+            <masterLabel>As Amount</masterLabel>
+            <translation><!-- As Amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>As percentage Installments</masterLabel>
+            <translation><!-- As percentage Installments --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dishonour Reason --></label>
+        <name>Dishonour_Reason__c</name>
+        <picklistValues>
+            <masterLabel>A/C Closed</masterLabel>
+            <translation><!-- A/C Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amount In Words and Figures Differ</masterLabel>
+            <translation><!-- Amount In Words and Figures Differ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Branch Not Found</masterLabel>
+            <translation><!-- Branch Not Found --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cheque is Multilated/Stale</masterLabel>
+            <translation><!-- Cheque is Multilated/Stale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drawer&apos;s Signature Differ</masterLabel>
+            <translation><!-- Drawer&apos;s Signature Differ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Effects Not Cleared</masterLabel>
+            <translation><!-- Effects Not Cleared --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insufficient Fund</masterLabel>
+            <translation><!-- Insufficient Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Drawn On Us</masterLabel>
+            <translation><!-- Not Drawn On Us --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment Stopped By Drawer</masterLabel>
+            <translation><!-- Payment Stopped By Drawer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refer to Drawer</masterLabel>
+            <translation><!-- Refer to Drawer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Drawee Bank --></label>
+        <name>DraweeBank__c</name>
+        <picklistValues>
+            <masterLabel>AHMEDNAGAR MERCHANTS CO-OP BANK LTD</masterLabel>
+            <translation><!-- AHMEDNAGAR MERCHANTS CO-OP BANK LTD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Abhyudaya Co-operative Bank</masterLabel>
+            <translation><!-- Abhyudaya Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ahmedabad Mercantile Co-Op Bank</masterLabel>
+            <translation><!-- Ahmedabad Mercantile Co-Op Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Akola Janata Commercial Co-operative Bank</masterLabel>
+            <translation><!-- Akola Janata Commercial Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Akola Urban Co-operative Bank</masterLabel>
+            <translation><!-- Akola Urban Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Allahabad Bank</masterLabel>
+            <translation><!-- Allahabad Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andaman and Nicobar State Co-operative Bank</masterLabel>
+            <translation><!-- Andaman and Nicobar State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andhra Bank</masterLabel>
+            <translation><!-- Andhra Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andhra Pradesh Mahesh Co-Op Urban Bank</masterLabel>
+            <translation><!-- Andhra Pradesh Mahesh Co-Op Urban Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andhra Pradesh State Co-operative Bank</masterLabel>
+            <translation><!-- Andhra Pradesh State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arunachal Pradesh State Co-operative Apex Bank</masterLabel>
+            <translation><!-- Arunachal Pradesh State Co-operative Apex Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assam Co-operative Apex Bank</masterLabel>
+            <translation><!-- Assam Co-operative Apex Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Axis Bank</masterLabel>
+            <translation><!-- Axis Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bank of Baroda</masterLabel>
+            <translation><!-- Bank of Baroda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bank of India</masterLabel>
+            <translation><!-- Bank of India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bank of Maharashtra</masterLabel>
+            <translation><!-- Bank of Maharashtra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baramati Sahakari Bank Ltd</masterLabel>
+            <translation><!-- Baramati Sahakari Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bassein Catholic Co-operative Bank</masterLabel>
+            <translation><!-- Bassein Catholic Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bharat Co-operative Bank</masterLabel>
+            <translation><!-- Bharat Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bharat Co-operative Bank (Mumbai)</masterLabel>
+            <translation><!-- Bharat Co-operative Bank (Mumbai) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bharati Sahakari Bank</masterLabel>
+            <translation><!-- Bharati Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bihar State Co-operative Bank</masterLabel>
+            <translation><!-- Bihar State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bombay Mercantile Co-operative Bank</masterLabel>
+            <translation><!-- Bombay Mercantile Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CITI bank</masterLabel>
+            <translation><!-- CITI bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canara Bank</masterLabel>
+            <translation><!-- Canara Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Catholic Syrian Bank Ltd.</masterLabel>
+            <translation><!-- Catholic Syrian Bank Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central Bank of India</masterLabel>
+            <translation><!-- Central Bank of India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chandigarh State Co-operative Bank</masterLabel>
+            <translation><!-- Chandigarh State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chhattisgarh Rajya Sahakari Bank Maryadit</masterLabel>
+            <translation><!-- Chhattisgarh Rajya Sahakari Bank Maryadit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citizen Credit Co-operative Bank</masterLabel>
+            <translation><!-- Citizen Credit Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporation Bank</masterLabel>
+            <translation><!-- Corporation Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cosmos Co-Operative Bank Ltd.</masterLabel>
+            <translation><!-- Cosmos Co-Operative Bank Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cosmos Co-operative Urban Bank</masterLabel>
+            <translation><!-- Cosmos Co-operative Urban Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCB Bank</masterLabel>
+            <translation><!-- DCB Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHFL(Dewan Housing Finance Corporation)</masterLabel>
+            <translation><!-- DHFL(Dewan Housing Finance Corporation) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Darussalam Co Operative Urban Bank Ltd; hyderabad</masterLabel>
+            <translation><!-- Darussalam Co Operative Urban Bank Ltd; hyderabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delhi State Co-operative Bank</masterLabel>
+            <translation><!-- Delhi State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dena Bank</masterLabel>
+            <translation><!-- Dena Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dhanalakshmi Bank Limited.</masterLabel>
+            <translation><!-- Dhanalakshmi Bank Limited. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dombivli Nagari Sahakari Bank</masterLabel>
+            <translation><!-- Dombivli Nagari Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eenadu Urban Co operative Bank</masterLabel>
+            <translation><!-- Eenadu Urban Co operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equitas Finance Bank</masterLabel>
+            <translation><!-- Equitas Finance Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal Bank</masterLabel>
+            <translation><!-- Federal Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal Bank Ltd.</masterLabel>
+            <translation><!-- Federal Bank Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goa State Co-operative Bank</masterLabel>
+            <translation><!-- Goa State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goa Urban Co-operative Bank</masterLabel>
+            <translation><!-- Goa Urban Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gopinath Patil Parsik Janata Sahakari Bank</masterLabel>
+            <translation><!-- Gopinath Patil Parsik Janata Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greater Bombay Co-operative Bank</masterLabel>
+            <translation><!-- Greater Bombay Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gujarat State Co-operative Agriculture &amp; Rural Development Bank</masterLabel>
+            <translation><!-- Gujarat State Co-operative Agriculture &amp; Rural Development Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gujarat State Co-operative Bank</masterLabel>
+            <translation><!-- Gujarat State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HDFC Bank Ltd.</masterLabel>
+            <translation><!-- HDFC Bank Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haryana State Co-opertive Apex Bank</masterLabel>
+            <translation><!-- Haryana State Co-opertive Apex Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Himachal Pradesh State Co-operative Bank</masterLabel>
+            <translation><!-- Himachal Pradesh State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ICICI Bank</masterLabel>
+            <translation><!-- ICICI Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IDBI Bank   Industrial Development Bank of India</masterLabel>
+            <translation><!-- IDBI Bank   Industrial Development Bank of India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IDBI Bank Limited</masterLabel>
+            <translation><!-- IDBI Bank Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ING Vysya Bank</masterLabel>
+            <translation><!-- ING Vysya Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indian Bank</masterLabel>
+            <translation><!-- Indian Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indian Mercantile Co-operative Bank</masterLabel>
+            <translation><!-- Indian Mercantile Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indian Overseas Bank</masterLabel>
+            <translation><!-- Indian Overseas Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indrayani Co-operative Bank</masterLabel>
+            <translation><!-- Indrayani Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IndusInd Bank Limited</masterLabel>
+            <translation><!-- IndusInd Bank Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JANASEVA SAHAKARI BANK LIMITED</masterLabel>
+            <translation><!-- JANASEVA SAHAKARI BANK LIMITED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jalgaon Janata Sahakari Bank</masterLabel>
+            <translation><!-- Jalgaon Janata Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jalgaon Peoples Co-Operative Bank Limited</masterLabel>
+            <translation><!-- Jalgaon Peoples Co-Operative Bank Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jammu &amp; Kashmir Bank Ltd.</masterLabel>
+            <translation><!-- Jammu &amp; Kashmir Bank Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jammu and Kashmir State Co-operative Bank</masterLabel>
+            <translation><!-- Jammu and Kashmir State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Janakalyan Sahakari Bank</masterLabel>
+            <translation><!-- Janakalyan Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Janalaxmi Co-operative Bank</masterLabel>
+            <translation><!-- Janalaxmi Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Janata Sahakari Bank</masterLabel>
+            <translation><!-- Janata Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Janata Sahakari Bank Ltd.</masterLabel>
+            <translation><!-- Janata Sahakari Bank Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jankalyan Urban Co-op Bank Ltd</masterLabel>
+            <translation><!-- Jankalyan Urban Co-op Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jharkhand State Co-operative Bank</masterLabel>
+            <translation><!-- Jharkhand State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kallappanna Awade Ichalkaranji Janata Sahakari Bank</masterLabel>
+            <translation><!-- Kallappanna Awade Ichalkaranji Janata Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kalupur Commercial Coop. Bank</masterLabel>
+            <translation><!-- Kalupur Commercial Coop. Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kalyan Janata Sahakari Bank</masterLabel>
+            <translation><!-- Kalyan Janata Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kapole Co-operative Bank</masterLabel>
+            <translation><!-- Kapole Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karad Urban Co-operative Bank</masterLabel>
+            <translation><!-- Karad Urban Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karnataka Bank</masterLabel>
+            <translation><!-- Karnataka Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karnataka State Co-operative Apex Bank</masterLabel>
+            <translation><!-- Karnataka State Co-operative Apex Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karur Vysya Bank Limited.</masterLabel>
+            <translation><!-- Karur Vysya Bank Limited. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kerala State Co-operative Bank</masterLabel>
+            <translation><!-- Kerala State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kotak Mahindra Bank Limited</masterLabel>
+            <translation><!-- Kotak Mahindra Bank Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lakshmi Vilas Bank Ltd</masterLabel>
+            <translation><!-- Lakshmi Vilas Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MACO BANK</masterLabel>
+            <translation><!-- MACO BANK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MAHESH SAHAKARI BANK LTD</masterLabel>
+            <translation><!-- MAHESH SAHAKARI BANK LTD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Madhya Pradesh Rajya Sahakari Bank Maryadit</masterLabel>
+            <translation><!-- Madhya Pradesh Rajya Sahakari Bank Maryadit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mahanagar Co-operative Bank</masterLabel>
+            <translation><!-- Mahanagar Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maharashtra Bank</masterLabel>
+            <translation><!-- Maharashtra Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maharashtra State Co-operative Bank</masterLabel>
+            <translation><!-- Maharashtra State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manipur State Co-operative Bank</masterLabel>
+            <translation><!-- Manipur State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mapusa Urban Co-operative Bank of Goa</masterLabel>
+            <translation><!-- Mapusa Urban Co-operative Bank of Goa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meghalaya Co-operative Apex Bank</masterLabel>
+            <translation><!-- Meghalaya Co-operative Apex Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mehsana Urban Co-Op Bank</masterLabel>
+            <translation><!-- Mehsana Urban Co-Op Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mizoram Co-operative Apex Bank</masterLabel>
+            <translation><!-- Mizoram Co-operative Apex Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mogaveera Co-operative Bank</masterLabel>
+            <translation><!-- Mogaveera Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NKGSB Co-operative Bank</masterLabel>
+            <translation><!-- NKGSB Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nagaland State Co-operative Bank</masterLabel>
+            <translation><!-- Nagaland State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nagar Bank</masterLabel>
+            <translation><!-- Nagar Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nagar Urban Co-operative Bank</masterLabel>
+            <translation><!-- Nagar Urban Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nainital Bank Ltd.</masterLabel>
+            <translation><!-- Nainital Bank Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Navi Mumbai Co-op Bank Ltd</masterLabel>
+            <translation><!-- Navi Mumbai Co-op Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New India Co-operative Bank</masterLabel>
+            <translation><!-- New India Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nutan Nagarik Sahakari Bank</masterLabel>
+            <translation><!-- Nutan Nagarik Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oriental Bank of Commerce</masterLabel>
+            <translation><!-- Oriental Bank of Commerce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orissa State Co-operative Bank</masterLabel>
+            <translation><!-- Orissa State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIRAMAL CAPITAL &amp; HOUSING FINANCE LTD.</masterLabel>
+            <translation><!-- PIRAMAL CAPITAL &amp; HOUSING FINANCE LTD. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pondichery State Co-operative Bank</masterLabel>
+            <translation><!-- Pondichery State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Office Saving Bank</masterLabel>
+            <translation><!-- Post Office Saving Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pravara Sahakari Bank</masterLabel>
+            <translation><!-- Pravara Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pune District Central Co-Op Bank Ltd</masterLabel>
+            <translation><!-- Pune District Central Co-Op Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pune People&apos;s Co-Op Bank Ltd</masterLabel>
+            <translation><!-- Pune People&apos;s Co-Op Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pune Urban Co-Op Bank</masterLabel>
+            <translation><!-- Pune Urban Co-Op Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punjab &amp; Maharashtra Co-operative Bank</masterLabel>
+            <translation><!-- Punjab &amp; Maharashtra Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punjab &amp; Sind Bank</masterLabel>
+            <translation><!-- Punjab &amp; Sind Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punjab National Bank</masterLabel>
+            <translation><!-- Punjab National Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punjab State Co-operative Bank</masterLabel>
+            <translation><!-- Punjab State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RBL Bank Limited</masterLabel>
+            <translation><!-- RBL Bank Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajarambapu Sahakari Bank Ltd</masterLabel>
+            <translation><!-- Rajarambapu Sahakari Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajasthan State Co-operative Bank</masterLabel>
+            <translation><!-- Rajasthan State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajdhani Nagar Sahkari Bank</masterLabel>
+            <translation><!-- Rajdhani Nagar Sahkari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajkot Nagrik Sahakari Bank</masterLabel>
+            <translation><!-- Rajkot Nagrik Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ramella Ramesh Bank</masterLabel>
+            <translation><!-- Ramella Ramesh Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rohit Kataria Co-operative Bank</masterLabel>
+            <translation><!-- Rohit Kataria Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rupee Co-operative Bank</masterLabel>
+            <translation><!-- Rupee Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SUVARNA SAHAKARI BANK LTD</masterLabel>
+            <translation><!-- SUVARNA SAHAKARI BANK LTD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SVC Co-Operative Bank</masterLabel>
+            <translation><!-- SVC Co-Operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SVC Cooperative Bank Ltd</masterLabel>
+            <translation><!-- SVC Cooperative Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sampada Sahakari Bank Ltd</masterLabel>
+            <translation><!-- Sampada Sahakari Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sangli District Primary Teachers Bank Ltd; Sangli</masterLabel>
+            <translation><!-- Sangli District Primary Teachers Bank Ltd; Sangli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sangli Urban Co-operative Bank</masterLabel>
+            <translation><!-- Sangli Urban Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saraswat Co-operative Bank</masterLabel>
+            <translation><!-- Saraswat Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sardar Bhiladwala Pardi Peoples Coop Bank</masterLabel>
+            <translation><!-- Sardar Bhiladwala Pardi Peoples Coop Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shamrao Vithal Co-operative Bank</masterLabel>
+            <translation><!-- Shamrao Vithal Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shikshak Sahakari Bank</masterLabel>
+            <translation><!-- Shikshak Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shree Sharada Sahkari Bank Ltd</masterLabel>
+            <translation><!-- Shree Sharada Sahkari Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shri Laxmi Co-op Bank Ltd.</masterLabel>
+            <translation><!-- Shri Laxmi Co-op Bank Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shrimant Malojiraje Sahakari Bank Ltd</masterLabel>
+            <translation><!-- Shrimant Malojiraje Sahakari Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siddhivinayk Trading Co.</masterLabel>
+            <translation><!-- Siddhivinayk Trading Co. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sikkim State Co-operative Bank</masterLabel>
+            <translation><!-- Sikkim State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solapur Janata Sahakari Bank</masterLabel>
+            <translation><!-- Solapur Janata Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Indian Bank Ltd.</masterLabel>
+            <translation><!-- South Indian Bank Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard Chartered Bank</masterLabel>
+            <translation><!-- Standard Chartered Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State Bank of Bikaner and Jaipur</masterLabel>
+            <translation><!-- State Bank of Bikaner and Jaipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State Bank of Hyderabad</masterLabel>
+            <translation><!-- State Bank of Hyderabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State Bank of India</masterLabel>
+            <translation><!-- State Bank of India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State Bank of Mysore</masterLabel>
+            <translation><!-- State Bank of Mysore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State Bank of Patiala</masterLabel>
+            <translation><!-- State Bank of Patiala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State Bank of Travancore</masterLabel>
+            <translation><!-- State Bank of Travancore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surat Peoples Coop Bank</masterLabel>
+            <translation><!-- Surat Peoples Coop Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suvarnayug Sahakari Bank Ltd</masterLabel>
+            <translation><!-- Suvarnayug Sahakari Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Syndicate Bank</masterLabel>
+            <translation><!-- Syndicate Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TJSB Sahakari Bank</masterLabel>
+            <translation><!-- TJSB Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tamil Nadu State Apex Co-operative Bank</masterLabel>
+            <translation><!-- Tamil Nadu State Apex Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tamilnad Mercantile Bank Ltd.</masterLabel>
+            <translation><!-- Tamilnad Mercantile Bank Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telangana State Co-Operative Apex Bank Limited</masterLabel>
+            <translation><!-- Telangana State Co-Operative Apex Bank Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thane Bharat Sahakari Bank</masterLabel>
+            <translation><!-- Thane Bharat Sahakari Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Vishweshwar Sahakari Bank Ltd</masterLabel>
+            <translation><!-- The Vishweshwar Sahakari Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tripura State Co-operative Bank</masterLabel>
+            <translation><!-- Tripura State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tumkur Grain Merchant&apos;s Co-operative Bank</masterLabel>
+            <translation><!-- Tumkur Grain Merchant&apos;s Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UCO Bank</masterLabel>
+            <translation><!-- UCO Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Union Bank of India</masterLabel>
+            <translation><!-- Union Bank of India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United Bank Of India</masterLabel>
+            <translation><!-- United Bank Of India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uttar Pradesh Co-operative Bank</masterLabel>
+            <translation><!-- Uttar Pradesh Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uttarakhand State Co-operative Bank</masterLabel>
+            <translation><!-- Uttarakhand State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vidya Sahakari Bank Ltd</masterLabel>
+            <translation><!-- Vidya Sahakari Bank Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vijaya Bank</masterLabel>
+            <translation><!-- Vijaya Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Bengal State Co-operative Bank</masterLabel>
+            <translation><!-- West Bengal State Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes Bank</masterLabel>
+            <translation><!-- Yes Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zoroastrian Co-operative Bank</masterLabel>
+            <translation><!-- Zoroastrian Co-operative Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>narayana madhubabu bank</masterLabel>
+            <translation><!-- narayana madhubabu bank --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Drawee Bank(If Others) --></label>
+        <name>Drawee_Bank_If_Others__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drawn in favour of --></label>
+        <name>Drawn_in_favour_of__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Amount (Rs.) --></label>
+        <name>Due_Amount_Rs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forex Amount --></label>
+        <name>FOREX__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Receipt --></label>
+        <name>First_Receipt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Foreign Currency Type --></label>
+        <name>Foreign_Currency_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsTDS And NoDemandRaised --></label>
+        <name>IsTDS_And_NoDemandRaised__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Run --></label>
+        <name>Job_Run__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manual Receipt Date --></label>
+        <name>Manual_Receipt_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mode Selection --></label>
+        <name>Mode_Selection__c</name>
+        <picklistValues>
+            <masterLabel>Forex</masterLabel>
+            <translation><!-- Forex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rupees</masterLabel>
+            <translation><!-- Rupees --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Instrument --></label>
+        <name>Mode__c</name>
+        <picklistValues>
+            <masterLabel>Cash</masterLabel>
+            <translation><!-- Cash --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cheque</masterLabel>
+            <translation><!-- Cheque --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Note</masterLabel>
+            <translation><!-- Credit Note --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD/Pay Order</masterLabel>
+            <translation><!-- DD/Pay Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EFT</masterLabel>
+            <translation><!-- EFT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDS</masterLabel>
+            <translation><!-- TDS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MyID --></label>
+        <name>MyID__c</name>
+    </fields>
+    <fields>
+        <label><!-- NEFT --></label>
+        <name>NEFT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Narration --></label>
+        <name>Narration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Receipt No. --></label>
+        <name>Old_Receipt_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- On Account Money --></label>
+        <name>On_Account_Money__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Email Id --></label>
+        <name>Opportunity_Email_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Email --></label>
+        <name>Opportunity_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PAN no of TDS Deductee --></label>
+        <name>PAN_no_of_TDS_Deductee__c</name>
+    </fields>
+    <fields>
+        <label><!-- PAN no of TDS Deductor --></label>
+        <name>PAN_no_of_TDS_Deductor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Order --></label>
+        <name>Pay_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Plan --></label>
+        <name>Pay_Plan__c</name>
+        <relationshipLabel><!-- Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Physically Cheque Received --></label>
+        <name>Physically_Cheque_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Posted to Fa --></label>
+        <name>Posted_to_Fa__c</name>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UnProcessed</masterLabel>
+            <translation><!-- UnProcessed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Print Cheque Bounce --></label>
+        <name>Print_Cheque_Bounce__c</name>
+    </fields>
+    <fields>
+        <label><!-- Print Cheque Bounce [on LetterHead] --></label>
+        <name>Print_Cheque_Bounce_on_LetterHead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Print Receipt On Letterhead --></label>
+        <name>Print_Receipt_On_Letterhead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Print Receipt --></label>
+        <name>Print_Receipt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- RTGS --></label>
+        <name>RTGS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for cheque rejection --></label>
+        <name>Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Receipt Rejection --></label>
+        <name>Reason_for_Reject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Physical Verification Status --></label>
+        <name>Reason_for_rejection_new__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected-Amount mismatch</masterLabel>
+            <translation><!-- Rejected-Amount mismatch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected-Date lapsed</masterLabel>
+            <translation><!-- Rejected-Date lapsed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected-Old Cheque Format CTS2010</masterLabel>
+            <translation><!-- Rejected-Old Cheque Format CTS2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected-Over writing</masterLabel>
+            <translation><!-- Rejected-Over writing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected-Signature missing</masterLabel>
+            <translation><!-- Rejected-Signature missing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected-Third Party</masterLabel>
+            <translation><!-- Rejected-Third Party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected-Wrong Favoring</masterLabel>
+            <translation><!-- Rejected-Wrong Favoring --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Receipt Against --></label>
+        <name>Receipt_Against__c</name>
+        <picklistValues>
+            <masterLabel>Flat Cost</masterLabel>
+            <translation><!-- Flat Cost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GST</masterLabel>
+            <translation><!-- GST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stamp Duty And Registration</masterLabel>
+            <translation><!-- Stamp Duty And Registration --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Receipt Date For SMS --></label>
+        <name>Receipt_Date_For_SMS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Receipt Date --></label>
+        <name>Receipt_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Receipt No (Manual) --></label>
+        <name>Receipt_No_Manual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Receipt No --></label>
+        <name>Receipt_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Receipt Number --></label>
+        <name>Receipt_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Receipt Status --></label>
+        <name>Receipt_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cleared</masterLabel>
+            <translation><!-- Cleared --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dishonored</masterLabel>
+            <translation><!-- Dishonored --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physical Verification Rejected</masterLabel>
+            <translation><!-- Physical Verification Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed-Finance Submission Pending</masterLabel>
+            <translation><!-- Processed-Finance Submission Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed-Sent for Banking</masterLabel>
+            <translation><!-- Processed-Sent for Banking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UnProcessed</masterLabel>
+            <translation><!-- UnProcessed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Receipt Type --></label>
+        <name>Receipt_Type__c</name>
+        <picklistValues>
+            <masterLabel>Adjustment Receipt</masterLabel>
+            <translation><!-- Adjustment Receipt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-Presented Cheque</masterLabel>
+            <translation><!-- Re-Presented Cheque --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regular</masterLabel>
+            <translation><!-- Regular --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reg.No --></label>
+        <name>Reg_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>RemarksText__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sharing Project Name --></label>
+        <name>Sharing_ProjectName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Customer Pay Plan Detail --></label>
+        <name>Standard_Customer_Pay_Plan_Detail__c</name>
+        <relationshipLabel><!-- Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status Change Date --></label>
+        <name>Status_Change_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- TDS Amount (In Rs.) --></label>
+        <name>TDS_Amount_In_Rs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Token Amount Receipt --></label>
+        <name>Token_Amount_Receipt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Token Amount ST --></label>
+        <name>Token_Amount_ST__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Amount --></label>
+        <name>Total_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit No --></label>
+        <name>Unit_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- WebLink --></label>
+        <name>WebLink__c</name>
+    </fields>
+    <fields>
+        <label><!-- test --></label>
+        <name>test__c</name>
+    </fields>
+    <layouts>
+        <layout>Receipt Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Instrument Details --></label>
+            <section>Instrument Details</section>
+        </sections>
+        <sections>
+            <label><!-- Print Receipts --></label>
+            <section>Print Receipts</section>
+        </sections>
+        <sections>
+            <label><!-- Receipt Status --></label>
+            <section>Receipt Status</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Can not Approve Receipt, Your check has not been received yet. --></errorMessage>
+        <name>Can_not_Approve_without_check_Recieve</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cheque DD --></errorMessage>
+        <name>Cheque_DD_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Should not be less than today date --></errorMessage>
+        <name>Cheque_DD_date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Enter Drawee Bank(If Other) --></errorMessage>
+        <name>Drawee_Bank_if_others_Mnadatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Draft/Pay Order of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Draft_Rupees2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Draft/Pay Order of Mode PickList and Rupees of Mode Selection Pick List,Drawee Bank cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Draft_Rupees3</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Draft/Pay Order of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Amount (Rs.)	 cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Draft_Rupees4</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Local Cheque of Mode PickList and Forex of Mode Selection Pick List,Cheque/DD No. cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Local_Ch_Forex1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Local Cheque of Mode PickList and Forex of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Local_Ch_Forex2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Local Cheque of Mode PickList and Forex of Mode Selection Pick List,Currency cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Local_Ch_Forex3</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Local Cheque of Mode PickList and Forex of Mode Selection Pick List,Forex Amount cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Local_Ch_Forex4</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Local Cheque of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD No. cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Local_Ch_Rupee1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Local Cheque of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Local_Ch_Rupee2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Local Cheque of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Amount (Rs.) cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Local_Ch_Rupee3</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Local Cheque of Mode PickList and Rupees of Mode Selection Pick List,Forex Amount cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Local_Ch_Rupee4</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Outstation Cheque of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD No. cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Outsta_Ch_Rupe1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Outstation Cheque of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Outsta_Ch_Rupe2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Outstation Cheque of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Amount (Rs.) cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Outsta_Ch_Rupe3</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Outstation Cheque of Mode PickList and Rupees of Mode Selection Pick List,Drawee Bank (Rs.) cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Outsta_Ch_Rupe4</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Outstation Cheque of Mode PickList and Forex of Mode Selection Pick List,Cheque/DD No. cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Outsta_Ch_fore1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Outstation Cheque of Mode PickList and Forex of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Outsta_Ch_fore2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Outstation Cheque of Mode PickList and Forex of Mode Selection Pick List,Currency cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Outsta_Ch_fore3</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Outstation Cheque of Mode PickList and Forex of Mode Selection Pick List,Forex Amount cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_Outsta_Ch_fore4</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting RTGS of Mode PickList and forex of Mode Selection Pick List,	Cheque/DD Date cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_RTGS_Forex1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting RTGS of Mode PickList and forex of Mode Selection Pick List, RTGS cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_RTGS_Forex2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting RTGS of Mode PickList and forex of Mode Selection Pick List, Currency cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_RTGS_Forex3</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting RTGS of Mode PickList and forex of Mode Selection Pick List, Forex Amount cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_RTGS_Forex4</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting RTGS of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_RTGS_Rupee1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting RTGS of Mode PickList and Rupees of Mode Selection Pick List,RTGS cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_RTGS_Rupee2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting RTGS of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Amount (Rs.) cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_RTGS_Rupee3</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting RTGS of Mode PickList and Rupees of Mode Selection Pick List,Forex Amount cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_RTGS_Rupee4</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting TT of Mode PickList and Forex of Mode Selection Pick List,Cheque/DD No. cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_TT_Forex1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting TT of Mode PickList and Forex of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_TT_Forex2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting TT of Mode PickList and Forex of Mode Selection Pick List,Currency cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_TT_Forex3</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting TT of Mode PickList and Forex of Mode Selection Pick List,Forex Amount cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_TT_Forex4</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting TT of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD No. cann&apos;t be blank --></errorMessage>
+        <name>Mandatory_Validation_for_TT_Rupees1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting TT of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank. --></errorMessage>
+        <name>Mandatory_Validation_for_TT_Rupees2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Once a Receipt is processed,it cann&apos;t be edit. --></errorMessage>
+        <name>Process_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Receipt can be made for Token or for Service Tax Only --></errorMessage>
+        <name>Receipt_can_either_be_for_token_or_ST</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Cash of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Cheque/DD No. --></errorMessage>
+        <name>Rupees_Validation_Cash_Cheque_DDNo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Cash of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Drawee Bank --></errorMessage>
+        <name>Rupees_Validation_Cash_Drawee_Bank</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Cash of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Forex Amount --></errorMessage>
+        <name>Rupees_Validation_Cash_Forex_Amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Draft/Pay Order of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Forex Amount --></errorMessage>
+        <name>Rupees_Validation_Draft_Forex_Amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Local Cheque of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Forex Amount --></errorMessage>
+        <name>Rupees_Validation_Local_Che_Forex_Amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting RTGS of Mode PickList and Rupess of Mode Selection Pick List,You cann&apos;t enter in Forex Amount --></errorMessage>
+        <name>Rupees_Validation_RTGS_Forex_Amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting TT of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Cheque/DD Amount (Rs.) --></errorMessage>
+        <name>Rupees_Validation_TT_Cheque_DD_Am</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting TT of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Drawee Bank --></errorMessage>
+        <name>Rupees_Validation_TT_Drawee_Bank</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Receipt Date can&apos;t be greater than Today&apos;s Date and not less than project Start date --></errorMessage>
+        <name>Validation_for_Receipt_Date</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- AdjustmentRecieptProces --></label>
+        <name>AdjustmentRecieptProces</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_Receipt --></label>
+        <name>Edit_Receipt</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Adjustment_Receipt --></label>
+        <name>New_Adjustment_Receipt</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Receipts --></label>
+        <name>New_Receipts</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Print_Receipt --></label>
+        <name>Print_Receipt</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Process --></label>
+        <name>Process</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Receipt --></label>
+        <name>Send_Receipt</name>
+    </webLinks>
+</CustomObjectTranslation>

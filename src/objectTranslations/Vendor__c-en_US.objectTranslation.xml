@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Vendor</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>vendor</value>
+    </caseValues>
+    <fields>
+        <label><!-- Param 1 Name --></label>
+        <name>Param_1_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 1 Status --></label>
+        <name>Param_1_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 1 Value --></label>
+        <name>Param_1_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 2 Name --></label>
+        <name>Param_2_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 2 Status --></label>
+        <name>Param_2_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 2 Value --></label>
+        <name>Param_2_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 3 Name --></label>
+        <name>Param_3_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 3 Status --></label>
+        <name>Param_3_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 3 Value --></label>
+        <name>Param_3_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 4 Name --></label>
+        <name>Param_4_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 4 Status --></label>
+        <name>Param_4_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 4 Value --></label>
+        <name>Param_4_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 5 Name --></label>
+        <name>Param_5_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 5 Status --></label>
+        <name>Param_5_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 5 Value --></label>
+        <name>Param_5_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 6 Name --></label>
+        <name>Param_6_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 6 Status --></label>
+        <name>Param_6_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 6 Value --></label>
+        <name>Param_6_Value__c</name>
+        <picklistValues>
+            <masterLabel>DND</masterLabel>
+            <translation><!-- DND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>abcd</masterLabel>
+            <translation><!-- abcd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ndnd</masterLabel>
+            <translation><!-- ndnd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pqrs</masterLabel>
+            <translation><!-- pqrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xyz</masterLabel>
+            <translation><!-- xyz --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Param 7 Name --></label>
+        <name>Param_7_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 7 Status --></label>
+        <name>Param_7_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 7 Value --></label>
+        <name>Param_7_Value__c</name>
+        <picklistValues>
+            <masterLabel>normal</masterLabel>
+            <translation><!-- normal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>small</masterLabel>
+            <translation><!-- small --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>smstype</masterLabel>
+            <translation><!-- smstype --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Param 8 Name --></label>
+        <name>Param_8_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Param 8 Status --></label>
+        <name>Param_8_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Status --></label>
+        <name>Vendor_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor URL --></label>
+        <name>Vendor_URL__c</name>
+    </fields>
+    <layouts>
+        <layout>Vendor Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

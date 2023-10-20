@@ -1,0 +1,29 @@
+<apex:component controller="showReceiptDetails" access="global">
+      
+    <apex:attribute name="Receipt" type="Id" description="Receipt Details" assignTo="{!receiptId}"/> 
+    <body >
+    {!receiptDetails}
+    
+            Dear {!rd.Opportunity__r.Primary_Name__c},
+            <br/> <br/>
+            
+            Payment made by you via {!rd.Mode__c} bearing no. {!rd.Cheque_DD__c} dated  
+            <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!rd.Cheque_DD_Date__c}"/></apex:outputtext> 
+            drawn on {!rd.DraweeBank__c} in favour of {!bankAccount} of amount Rs.{!rd.Amount_Rs__c}/- against your unit no. {!rd.Project_Unit__r.Name} in {!rd.Project__r.Name} 
+            has been rejected due to {!reasonForRejection}.<br/><br/>
+            
+            You are requested to make the outstanding payment within due date to avoid any penalties.
+            <br/>
+            <br/>
+            <apex:outputPanel rendered="{! (rd.Mode__c == 'Cheque' && rd.receipt_status__c == 'Dishonored')}">
+                As per company policy you have been debited with cheque bounce charges of Rs.
+                {!rd.Project__r.Cheque_Dishonour__c} plus service tax 
+                which shall be deducted form your next payment. 
+                You are requested to make the outstanding payment along with cheque 
+                bounce charges within due date to avoid any penalties.
+            </apex:outputPanel>
+            <br/><br/>
+            Regards,<br/>
+            Solitaire Developers<br/><br/>
+     </body>
+</apex:component>

@@ -1,0 +1,12 @@
+Dear <b>{!Opportunity.Account}</b>,</br></br>
+Greetings of the day, </br></br>
+Thank you for your interest in {!Opportunity.Project__c}, one of our exclusive and state-of-the-art projects. We are aware of your discussions with {!Opportunity.Last_call_attempted_by__c} and would love to host you at our site on {!Opportunity.call_proposed_date_of_visit__c}</br>
+
+Your visit has been scheduled and our executive will show you around and be there to answer all your queries. This site visit will provide you with a better understanding of the project details, amenities, facilities, and other offerings. </br>
+
+We do understand that you have a busy schedule, so in case you want to reschedule your appointment, or if you have any other questions, feel free to give us a call at 020-67166716   and one of our executives will be more than happy to help you.</br></br>
+
+Thank you,</br></br>
+
+Warm regards,</br>
+Team SOLITAIRE.</br>

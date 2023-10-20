@@ -1,0 +1,6 @@
+Dear {!Opportunity.Account},<br/><br/>
+Greetings from Solitaire!<br/><br/>
+We confirm that the registered agreement of your unit no-{!Opportunity.Project_Unit__c} has been handed over to you today. Kindly confirm the receipt.<br/><br/>
+Please feel free to contact us for any queries.<br/><br/>
+Regards,<br/>
+Team CRM Solitaire

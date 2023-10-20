@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Demand_Invoice__c.Project__c</field>
+    </columns>
+    <columns>
+        <field>Demand_Invoice__c.Customer__c</field>
+    </columns>
+    <columns>
+        <field>Demand_Invoice__c.Agreement_Value__c</field>
+    </columns>
+    <columns>
+        <field>Demand_Invoice__c.Registration_Charges_Amount__c</field>
+    </columns>
+    <columns>
+        <field>Demand_Invoice__c.Stamp__c</field>
+    </columns>
+    <columns>
+        <field>Demand_Invoice__c.Legal_Charges_Amount__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>mis</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Demand_Invoice__c@Demand_Invoice__c.Standard_Customer_Pay_Plan_Detail__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>FK_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,5 @@
+The following Opportunity has been assigned to you.<br/>  
+
+Opportunity  Name: {!Opportunity.Name}  <br/>
+
+Click on the link to access the lead directly:  {!Opportunity.Link}<br/>

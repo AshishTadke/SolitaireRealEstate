@@ -1,0 +1,1920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Site Visit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Site Visits</value>
+    </caseValues>
+    <fields>
+        <label><!-- Budget --></label>
+        <name>Budget1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budget --></label>
+        <name>Budget__c</name>
+        <picklistValues>
+            <masterLabel>1 Cr – 2 Cr</masterLabel>
+            <translation><!-- 1 Cr – 2 Cr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 Cr - 4 Cr</masterLabel>
+            <translation><!-- 2 Cr - 4 Cr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Cr and Above</masterLabel>
+            <translation><!-- 4 Cr and Above --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 Lacs – 1Cr</masterLabel>
+            <translation><!-- 50 Lacs – 1Cr --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Bungalow Name --></label>
+        <name>Bunglw_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Came With Family --></label>
+        <name>Came_With_Family__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Contact --></label>
+        <name>Channel_Partner_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner ID --></label>
+        <name>Channel_Partner_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner --></label>
+        <name>Channel_Partner__c</name>
+        <relationshipLabel><!-- Site Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Choice of Inventory --></label>
+        <name>Choice_of_Inventory__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Name --></label>
+        <name>Client_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commercial --></label>
+        <name>Commercial__c</name>
+        <picklistValues>
+            <masterLabel>Office Space</masterLabel>
+            <translation><!-- Office Space --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Company Name --></label>
+        <name>Company_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current House Ownership: --></label>
+        <name>Current_House_Ownership__c</name>
+        <picklistValues>
+            <masterLabel>Owned house</masterLabel>
+            <translation><!-- Owned house --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rented House</masterLabel>
+            <translation><!-- Rented House --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Name --></label>
+        <name>Customer_Name1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Name --></label>
+        <name>Customer_Name__c</name>
+        <relationshipLabel><!-- Site Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date of Birth --></label>
+        <name>Date_of_Birth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Designation --></label>
+        <name>Designation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Desired Possession --></label>
+        <name>Desired_Possession__c</name>
+        <picklistValues>
+            <masterLabel>Ready-to-Move</masterLabel>
+            <translation><!-- Ready-to-Move --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under Construction</masterLabel>
+            <translation><!-- Under Construction --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Ease of Payment --></label>
+        <name>Ease_of_Payment__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ethnicity --></label>
+        <name>Ethnicity__c</name>
+        <picklistValues>
+            <masterLabel>Bengali</masterLabel>
+            <translation><!-- Bengali --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Christian</masterLabel>
+            <translation><!-- Christian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gujarati</masterLabel>
+            <translation><!-- Gujarati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marathi</masterLabel>
+            <translation><!-- Marathi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marwari</masterLabel>
+            <translation><!-- Marwari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muslim</masterLabel>
+            <translation><!-- Muslim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Indian Hindu</masterLabel>
+            <translation><!-- North Indian Hindu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parsi</masterLabel>
+            <translation><!-- Parsi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punjabi</masterLabel>
+            <translation><!-- Punjabi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sindhi</masterLabel>
+            <translation><!-- Sindhi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Indian Hindu</masterLabel>
+            <translation><!-- South Indian Hindu --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Follow-up Plan --></label>
+        <name>Follow_up_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Time --></label>
+        <name>In_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Visit Date --></label>
+        <name>Last_Visit_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location1__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marital Status --></label>
+        <name>Marital_Status__c</name>
+        <picklistValues>
+            <masterLabel>Married</masterLabel>
+            <translation><!-- Married --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Un-Married</masterLabel>
+            <translation><!-- Un-Married --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mobile No --></label>
+        <name>Mobile_No2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile No --></label>
+        <name>Mobile_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Follow-Up Date --></label>
+        <name>Next_Follow_Up_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Occupation --></label>
+        <name>Occupation__c</name>
+        <picklistValues>
+            <masterLabel>Armed Forces</masterLabel>
+            <translation><!-- Armed Forces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business</masterLabel>
+            <translation><!-- Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Housewife</masterLabel>
+            <translation><!-- Housewife --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional</masterLabel>
+            <translation><!-- Professional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retired</masterLabel>
+            <translation><!-- Retired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salaried</masterLabel>
+            <translation><!-- Salaried --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Employed</masterLabel>
+            <translation><!-- Self Employed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Out Time --></label>
+        <name>Out_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pin Code --></label>
+        <name>Pin_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Place of work --></label>
+        <name>Place_of_work__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possession Timelines --></label>
+        <name>Possession_Timelines__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price --></label>
+        <name>Price__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Site Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Purpose of Purchase --></label>
+        <name>Purpose_of_Purchase1__c</name>
+        <picklistValues>
+            <masterLabel>Appreciation</masterLabel>
+            <translation><!-- Appreciation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gain Tax</masterLabel>
+            <translation><!-- Capital Gain Tax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gift</masterLabel>
+            <translation><!-- Gift --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investment</masterLabel>
+            <translation><!-- Investment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Use</masterLabel>
+            <translation><!-- Personal Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rental</masterLabel>
+            <translation><!-- Rental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Second Home</masterLabel>
+            <translation><!-- Second Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staying there</masterLabel>
+            <translation><!-- Staying there --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transit Home</masterLabel>
+            <translation><!-- Transit Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekend Home</masterLabel>
+            <translation><!-- Weekend Home --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Purpose of Purchase --></label>
+        <name>Purpose_of_Purchase__c</name>
+        <picklistValues>
+            <masterLabel>Investment</masterLabel>
+            <translation><!-- Investment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Use</masterLabel>
+            <translation><!-- Personal Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Second Home</masterLabel>
+            <translation><!-- Second Home --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reasons (if not interested) --></label>
+        <name>Reasons_if_not_interested__c</name>
+        <picklistValues>
+            <masterLabel>Competition</masterLabel>
+            <translation><!-- Competition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction Timelines</masterLabel>
+            <translation><!-- Construction Timelines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Eligibility Issue</masterLabel>
+            <translation><!-- Loan Eligibility Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Location</masterLabel>
+            <translation><!-- Location --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product design</masterLabel>
+            <translation><!-- Product design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaastu</masterLabel>
+            <translation><!-- Vaastu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Views</masterLabel>
+            <translation><!-- Views --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Residentail --></label>
+        <name>Residentail__c</name>
+        <picklistValues>
+            <masterLabel>2BHK</masterLabel>
+            <translation><!-- 2BHK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3BHK</masterLabel>
+            <translation><!-- 3BHK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4BHK</masterLabel>
+            <translation><!-- 4BHK --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SM feedback on customer/Remarks --></label>
+        <name>SM_feedback_on_customer_Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager --></label>
+        <name>Sales_ManagerL__c</name>
+        <relationshipLabel><!-- Site Visits (Sales Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager --></label>
+        <name>Sales_Manager__c</name>
+        <picklistValues>
+            <masterLabel>Akhil Chaturvedi</masterLabel>
+            <translation><!-- Akhil Chaturvedi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Atul Chordia</masterLabel>
+            <translation><!-- Atul Chordia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dharmesh Sanghavi</masterLabel>
+            <translation><!-- Dharmesh Sanghavi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eram Kittur</masterLabel>
+            <translation><!-- Eram Kittur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gaurav B</masterLabel>
+            <translation><!-- Gaurav B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gaurav Herwade</masterLabel>
+            <translation><!-- Gaurav Herwade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jagrat Ranka</masterLabel>
+            <translation><!-- Jagrat Ranka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kunal Takle</masterLabel>
+            <translation><!-- Kunal Takle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lakshadip Thakur</masterLabel>
+            <translation><!-- Lakshadip Thakur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mayank Yadav</masterLabel>
+            <translation><!-- Mayank Yadav --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Namonarayan</masterLabel>
+            <translation><!-- Namonarayan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nitin Deshpande</masterLabel>
+            <translation><!-- Nitin Deshpande --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Omkar Patil</masterLabel>
+            <translation><!-- Omkar Patil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parkeen Shah</masterLabel>
+            <translation><!-- Parkeen Shah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pavan Shinde</masterLabel>
+            <translation><!-- Pavan Shinde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pooja Jadhav</masterLabel>
+            <translation><!-- Pooja Jadhav --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prashant Kalal</masterLabel>
+            <translation><!-- Prashant Kalal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pratik Paleja</masterLabel>
+            <translation><!-- Pratik Paleja --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pratima Soni</masterLabel>
+            <translation><!-- Pratima Soni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purnima Upadhyay</masterLabel>
+            <translation><!-- Purnima Upadhyay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ravi Tripathi</masterLabel>
+            <translation><!-- Ravi Tripathi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rudresh Bhise</masterLabel>
+            <translation><!-- Rudresh Bhise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sajesh Pattanaik</masterLabel>
+            <translation><!-- Sajesh Pattanaik --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sarfraz Syed</masterLabel>
+            <translation><!-- Sarfraz Syed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunny Faldu</masterLabel>
+            <translation><!-- Sunny Faldu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tanmay Gore</masterLabel>
+            <translation><!-- Tanmay Gore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaibhav Andhare</masterLabel>
+            <translation><!-- Vaibhav Andhare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaseem Patel</masterLabel>
+            <translation><!-- Vaseem Patel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vishal Bafna</masterLabel>
+            <translation><!-- Vishal Bafna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vivek Gupta</masterLabel>
+            <translation><!-- Vivek Gupta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yash Kothari</masterLabel>
+            <translation><!-- Yash Kothari --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Show Section --></label>
+        <name>Show_Section__c</name>
+    </fields>
+    <fields>
+        <label><!-- Solitaire Brand --></label>
+        <name>Solitaire_Brand__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source1__c</name>
+        <picklistValues>
+            <masterLabel>Alternate Sales</masterLabel>
+            <translation><!-- Alternate Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BTL Activity</masterLabel>
+            <translation><!-- BTL Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channel Partner</masterLabel>
+            <translation><!-- Channel Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corprate Activity</masterLabel>
+            <translation><!-- Corprate Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Reference</masterLabel>
+            <translation><!-- Customer Reference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Database calling</masterLabel>
+            <translation><!-- Database calling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital</masterLabel>
+            <translation><!-- Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Mailers</masterLabel>
+            <translation><!-- Direct Mailers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Door to Door Activity</masterLabel>
+            <translation><!-- Door to Door Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Reference</masterLabel>
+            <translation><!-- Employee Reference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exhibition</masterLabel>
+            <translation><!-- Exhibition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hoardings</masterLabel>
+            <translation><!-- Hoardings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loyalty &amp; Referral Team</masterLabel>
+            <translation><!-- Loyalty &amp; Referral Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magazine Ads</masterLabel>
+            <translation><!-- Magazine Ads --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management Reference</masterLabel>
+            <translation><!-- Management Reference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newspaper</masterLabel>
+            <translation><!-- Newspaper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outstation Activity</masterLabel>
+            <translation><!-- Outstation Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Perimeter</masterLabel>
+            <translation><!-- Perimeter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio</masterLabel>
+            <translation><!-- Radio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMS</masterLabel>
+            <translation><!-- SMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Walk-In</masterLabel>
+            <translation><!-- Site Walk-In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Television Ads</masterLabel>
+            <translation><!-- Television Ads --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Website</masterLabel>
+            <translation><!-- Website --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word of Mouth</masterLabel>
+            <translation><!-- Word of Mouth --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sourcing Manager --></label>
+        <name>Sourcing_Manager1__c</name>
+        <relationshipLabel><!-- Site Visits (Sourcing Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sourcing Manager --></label>
+        <name>Sourcing_Manager__c</name>
+        <picklistValues>
+            <masterLabel>Akhil Chaturvedi</masterLabel>
+            <translation><!-- Akhil Chaturvedi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anurag Rangankar</masterLabel>
+            <translation><!-- Anurag Rangankar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Atul Chordia</masterLabel>
+            <translation><!-- Atul Chordia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Avishkar Dandwate</masterLabel>
+            <translation><!-- Avishkar Dandwate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dharmesh Sanghavi</masterLabel>
+            <translation><!-- Dharmesh Sanghavi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gaurav B</masterLabel>
+            <translation><!-- Gaurav B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gaurav Herwade</masterLabel>
+            <translation><!-- Gaurav Herwade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jagrat Ranka</masterLabel>
+            <translation><!-- Jagrat Ranka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kunal Takle</masterLabel>
+            <translation><!-- Kunal Takle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lakshadip Thakur</masterLabel>
+            <translation><!-- Lakshadip Thakur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lokesh Shewaramani</masterLabel>
+            <translation><!-- Lokesh Shewaramani --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mayank Yadav</masterLabel>
+            <translation><!-- Mayank Yadav --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Namonarayan Shirothiya</masterLabel>
+            <translation><!-- Namonarayan Shirothiya --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nitin Deshpande</masterLabel>
+            <translation><!-- Nitin Deshpande --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Omkar Patil</masterLabel>
+            <translation><!-- Omkar Patil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parkeen Shah</masterLabel>
+            <translation><!-- Parkeen Shah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pavan Shinde</masterLabel>
+            <translation><!-- Pavan Shinde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pooja Jadhav</masterLabel>
+            <translation><!-- Pooja Jadhav --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prashant Kalal</masterLabel>
+            <translation><!-- Prashant Kalal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pratik Paleja</masterLabel>
+            <translation><!-- Pratik Paleja --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pratima Soni</masterLabel>
+            <translation><!-- Pratima Soni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rahul Arora</masterLabel>
+            <translation><!-- Rahul Arora --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ravi Tripathi</masterLabel>
+            <translation><!-- Ravi Tripathi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ravindra Patil</masterLabel>
+            <translation><!-- Ravindra Patil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rudresh Bhise</masterLabel>
+            <translation><!-- Rudresh Bhise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sagar Date</masterLabel>
+            <translation><!-- Sagar Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sajesh Pattanaik</masterLabel>
+            <translation><!-- Sajesh Pattanaik --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sarfraz Syed</masterLabel>
+            <translation><!-- Sarfraz Syed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunny Faldu</masterLabel>
+            <translation><!-- Sunny Faldu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tanmay Gore</masterLabel>
+            <translation><!-- Tanmay Gore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaibhav Andhare</masterLabel>
+            <translation><!-- Vaibhav Andhare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaseem Patel</masterLabel>
+            <translation><!-- Vaseem Patel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vishal Bafna</masterLabel>
+            <translation><!-- Vishal Bafna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vivek Gupta</masterLabel>
+            <translation><!-- Vivek Gupta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yash Kothari</masterLabel>
+            <translation><!-- Yash Kothari --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Source --></label>
+        <name>Sub_Source2__c</name>
+        <picklistValues>
+            <masterLabel>99 acres</masterLabel>
+            <translation><!-- 99 acres --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aaj Ka Anand</masterLabel>
+            <translation><!-- Aaj Ka Anand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliate Websites</masterLabel>
+            <translation><!-- Affiliate Websites --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Akurdi</masterLabel>
+            <translation><!-- Akurdi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ala</masterLabel>
+            <translation><!-- Ala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alandi Devachi</masterLabel>
+            <translation><!-- Alandi Devachi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alandi Khed</masterLabel>
+            <translation><!-- Alandi Khed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alandi Road</masterLabel>
+            <translation><!-- Alandi Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alternate Sales</masterLabel>
+            <translation><!-- Alternate Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambegaon BK</masterLabel>
+            <translation><!-- Ambegaon BK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anandnagar</masterLabel>
+            <translation><!-- Anandnagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ane</masterLabel>
+            <translation><!-- Ane --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Armament</masterLabel>
+            <translation><!-- Armament --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aundh</masterLabel>
+            <translation><!-- Aundh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aundh Road</masterLabel>
+            <translation><!-- Aundh Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Avalon City</masterLabel>
+            <translation><!-- Avalon City --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BTL Activity</masterLabel>
+            <translation><!-- BTL Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Balaji Nagar</masterLabel>
+            <translation><!-- Balaji Nagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Balewadi</masterLabel>
+            <translation><!-- Balewadi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baner</masterLabel>
+            <translation><!-- Baner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baner Road</masterLabel>
+            <translation><!-- Baner Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belha</masterLabel>
+            <translation><!-- Belha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhandarkar Road</masterLabel>
+            <translation><!-- Bhandarkar Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhavani Peth</masterLabel>
+            <translation><!-- Bhavani Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhawani Peth Road</masterLabel>
+            <translation><!-- Bhawani Peth Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhor</masterLabel>
+            <translation><!-- Bhor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhosari</masterLabel>
+            <translation><!-- Bhosari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhosarigaon</masterLabel>
+            <translation><!-- Bhosarigaon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bibvewadi</masterLabel>
+            <translation><!-- Bibvewadi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Big FM</masterLabel>
+            <translation><!-- Big FM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bing</masterLabel>
+            <translation><!-- Bing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blogs</masterLabel>
+            <translation><!-- Blogs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bopodi</masterLabel>
+            <translation><!-- Bopodi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budhwar Peth</masterLabel>
+            <translation><!-- Budhwar Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bund Garden Road</masterLabel>
+            <translation><!-- Bund Garden Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Camp</masterLabel>
+            <translation><!-- Camp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chakan</masterLabel>
+            <translation><!-- Chakan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channel Partner</masterLabel>
+            <translation><!-- Channel Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chikhali</masterLabel>
+            <translation><!-- Chikhali --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chinchwad</masterLabel>
+            <translation><!-- Chinchwad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chinchwad East</masterLabel>
+            <translation><!-- Chinchwad East --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chinchwadgaon</masterLabel>
+            <translation><!-- Chinchwadgaon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Common Floor</masterLabel>
+            <translation><!-- Common Floor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Website</masterLabel>
+            <translation><!-- Company Website --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Condenast</masterLabel>
+            <translation><!-- Condenast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dapodi</masterLabel>
+            <translation><!-- Dapodi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Database calling</masterLabel>
+            <translation><!-- Database calling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dattawadi</masterLabel>
+            <translation><!-- Dattawadi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daund</masterLabel>
+            <translation><!-- Daund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deccan Gymkhana</masterLabel>
+            <translation><!-- Deccan Gymkhana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dehu Road</masterLabel>
+            <translation><!-- Dehu Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dhankawadi</masterLabel>
+            <translation><!-- Dhankawadi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dhayari</masterLabel>
+            <translation><!-- Dhayari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dhole Patil Road</masterLabel>
+            <translation><!-- Dhole Patil Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Different Projects</masterLabel>
+            <translation><!-- Different Projects --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dighi Camp</masterLabel>
+            <translation><!-- Dighi Camp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Mailers</masterLabel>
+            <translation><!-- Direct Mailers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Door to Door Activity</masterLabel>
+            <translation><!-- Door to Door Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Economic Times</masterLabel>
+            <translation><!-- Economic Times --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Economist</masterLabel>
+            <translation><!-- Economist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Reference</masterLabel>
+            <translation><!-- Employee Reference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erandwana</masterLabel>
+            <translation><!-- Erandwana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ex Servicemen Colony</masterLabel>
+            <translation><!-- Ex Servicemen Colony --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facebook</masterLabel>
+            <translation><!-- Facebook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fatima Nagar</masterLabel>
+            <translation><!-- Fatima Nagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fergusson College Road</masterLabel>
+            <translation><!-- Fergusson College Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fever 104</masterLabel>
+            <translation><!-- Fever 104 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forbes</masterLabel>
+            <translation><!-- Forbes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ganesh Peth</masterLabel>
+            <translation><!-- Ganesh Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ganeshkhind</masterLabel>
+            <translation><!-- Ganeshkhind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ghorpade Peth</masterLabel>
+            <translation><!-- Ghorpade Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ghorpuri</masterLabel>
+            <translation><!-- Ghorpuri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gokhale Nagar</masterLabel>
+            <translation><!-- Gokhale Nagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google Adwords</masterLabel>
+            <translation><!-- Google Adwords --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gultekdi</masterLabel>
+            <translation><!-- Gultekdi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guruwar Peth</masterLabel>
+            <translation><!-- Guruwar Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hadapsar</masterLabel>
+            <translation><!-- Hadapsar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hadapsar Indl Estate</masterLabel>
+            <translation><!-- Hadapsar Indl Estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haveli</masterLabel>
+            <translation><!-- Haveli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hingane Khurd</masterLabel>
+            <translation><!-- Hingane Khurd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hingne Khurd</masterLabel>
+            <translation><!-- Hingne Khurd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hinjewadi</masterLabel>
+            <translation><!-- Hinjewadi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I.A.T. Pune</masterLabel>
+            <translation><!-- I.A.T. Pune --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India Today</masterLabel>
+            <translation><!-- India Today --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indian Express</masterLabel>
+            <translation><!-- Indian Express --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indrayani Darshan Dehu Road</masterLabel>
+            <translation><!-- Indrayani Darshan Dehu Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Instagram</masterLabel>
+            <translation><!-- Instagram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jain Jagruti</masterLabel>
+            <translation><!-- Jain Jagruti --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jangali Maharaj Road</masterLabel>
+            <translation><!-- Jangali Maharaj Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jet Airways</masterLabel>
+            <translation><!-- Jet Airways --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Junnar</masterLabel>
+            <translation><!-- Junnar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kalewadi</masterLabel>
+            <translation><!-- Kalewadi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kalyani Nagar</masterLabel>
+            <translation><!-- Kalyani Nagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karve Nagar</masterLabel>
+            <translation><!-- Karve Nagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karve Road</masterLabel>
+            <translation><!-- Karve Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kasarwadi</masterLabel>
+            <translation><!-- Kasarwadi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kasba Peth</masterLabel>
+            <translation><!-- Kasba Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Katraj</masterLabel>
+            <translation><!-- Katraj --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Khadaki</masterLabel>
+            <translation><!-- Khadaki --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Khadakwasla</masterLabel>
+            <translation><!-- Khadakwasla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Khadki</masterLabel>
+            <translation><!-- Khadki --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kharadi</masterLabel>
+            <translation><!-- Kharadi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Khed</masterLabel>
+            <translation><!-- Khed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kondhwa</masterLabel>
+            <translation><!-- Kondhwa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kondhwa Budruk</masterLabel>
+            <translation><!-- Kondhwa Budruk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kondhwa Khurd</masterLabel>
+            <translation><!-- Kondhwa Khurd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Koregaon Park</masterLabel>
+            <translation><!-- Koregaon Park --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Koregaon Park Road 1</masterLabel>
+            <translation><!-- Koregaon Park Road 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kothrud</masterLabel>
+            <translation><!-- Kothrud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Law College Road</masterLabel>
+            <translation><!-- Law College Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laxmi Road</masterLabel>
+            <translation><!-- Laxmi Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LinkedIn</masterLabel>
+            <translation><!-- LinkedIn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lohegaon</masterLabel>
+            <translation><!-- Lohegaon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lokmat</masterLabel>
+            <translation><!-- Lokmat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loksatta</masterLabel>
+            <translation><!-- Loksatta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lonavala</masterLabel>
+            <translation><!-- Lonavala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loni Kalbhor</masterLabel>
+            <translation><!-- Loni Kalbhor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loyalty &amp; Referral Team</masterLabel>
+            <translation><!-- Loyalty &amp; Referral Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lulla Nagar</masterLabel>
+            <translation><!-- Lulla Nagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magic Bricks</masterLabel>
+            <translation><!-- Magic Bricks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maharashtra Times</masterLabel>
+            <translation><!-- Maharashtra Times --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mahatma Gandhi Road</masterLabel>
+            <translation><!-- Mahatma Gandhi Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mall Activities</masterLabel>
+            <translation><!-- Mall Activities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management Reference</masterLabel>
+            <translation><!-- Management Reference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mangalwar Peth</masterLabel>
+            <translation><!-- Mangalwar Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manik Baug</masterLabel>
+            <translation><!-- Manik Baug --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Market Yard</masterLabel>
+            <translation><!-- Market Yard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Model Colony</masterLabel>
+            <translation><!-- Model Colony --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mudra</masterLabel>
+            <translation><!-- Mudra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mukund Nagar</masterLabel>
+            <translation><!-- Mukund Nagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mundhwa</masterLabel>
+            <translation><!-- Mundhwa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nagar Road</masterLabel>
+            <translation><!-- Nagar Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nana Peth</masterLabel>
+            <translation><!-- Nana Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Narayan Peth</masterLabel>
+            <translation><!-- Narayan Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Narayangaon</masterLabel>
+            <translation><!-- Narayangaon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Navi Peth</masterLabel>
+            <translation><!-- Navi Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Navsahyadri</masterLabel>
+            <translation><!-- Navsahyadri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newspaper Insert</masterLabel>
+            <translation><!-- Newspaper Insert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nigdi</masterLabel>
+            <translation><!-- Nigdi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outstation Activity</masterLabel>
+            <translation><!-- Outstation Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Padmavati</masterLabel>
+            <translation><!-- Padmavati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parvati</masterLabel>
+            <translation><!-- Parvati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pashan</masterLabel>
+            <translation><!-- Pashan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paud Road</masterLabel>
+            <translation><!-- Paud Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Perimeter</masterLabel>
+            <translation><!-- Perimeter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phursungi</masterLabel>
+            <translation><!-- Phursungi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pimpri</masterLabel>
+            <translation><!-- Pimpri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pimpri Chinchwad</masterLabel>
+            <translation><!-- Pimpri Chinchwad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pimpri Colony</masterLabel>
+            <translation><!-- Pimpri Colony --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pirangut</masterLabel>
+            <translation><!-- Pirangut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prabhat Road</masterLabel>
+            <translation><!-- Prabhat Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project website</masterLabel>
+            <translation><!-- Project website --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pune</masterLabel>
+            <translation><!-- Pune --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pune City</masterLabel>
+            <translation><!-- Pune City --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pune Mirror</masterLabel>
+            <translation><!-- Pune Mirror --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pune Railway Station</masterLabel>
+            <translation><!-- Pune Railway Station --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio Mirchi</masterLabel>
+            <translation><!-- Radio Mirchi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio One</masterLabel>
+            <translation><!-- Radio One --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Range Hill</masterLabel>
+            <translation><!-- Range Hill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rasta Peth</masterLabel>
+            <translation><!-- Rasta Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raviwar Peth</masterLabel>
+            <translation><!-- Raviwar Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red FM</masterLabel>
+            <translation><!-- Red FM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Robb Report</masterLabel>
+            <translation><!-- Robb Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S.P. College</masterLabel>
+            <translation><!-- S.P. College --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBH Baner</masterLabel>
+            <translation><!-- SBH Baner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBH Wakad</masterLabel>
+            <translation><!-- SBH Wakad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBH Yerwada</masterLabel>
+            <translation><!-- SBH Yerwada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMS</masterLabel>
+            <translation><!-- SMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sadashiv Peth</masterLabel>
+            <translation><!-- Sadashiv Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sahakar Nagar</masterLabel>
+            <translation><!-- Sahakar Nagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sakal</masterLabel>
+            <translation><!-- Sakal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salunke Vihar</masterLabel>
+            <translation><!-- Salunke Vihar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sanghavi</masterLabel>
+            <translation><!-- Sanghavi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sasoon Road</masterLabel>
+            <translation><!-- Sasoon Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Satara Road</masterLabel>
+            <translation><!-- Satara Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary School Certificate</masterLabel>
+            <translation><!-- Secondary School Certificate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Senapati Bapat Marg</masterLabel>
+            <translation><!-- Senapati Bapat Marg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shaniwar Peth</masterLabel>
+            <translation><!-- Shaniwar Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shivaji Housing Society</masterLabel>
+            <translation><!-- Shivaji Housing Society --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shivaji Nagar</masterLabel>
+            <translation><!-- Shivaji Nagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shivajinagar</masterLabel>
+            <translation><!-- Shivajinagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shukrawar Peth</masterLabel>
+            <translation><!-- Shukrawar Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sinhagad</masterLabel>
+            <translation><!-- Sinhagad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sinhagad Road</masterLabel>
+            <translation><!-- Sinhagad Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Walk-In</masterLabel>
+            <translation><!-- Site Walk-In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solitaire World</masterLabel>
+            <translation><!-- Solitaire World --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Somwar Peth</masterLabel>
+            <translation><!-- Somwar Peth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sumansa Dubai</masterLabel>
+            <translation><!-- Sumansa Dubai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swargate</masterLabel>
+            <translation><!-- Swargate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Talegaon Dabhade</masterLabel>
+            <translation><!-- Talegaon Dabhade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Television Ads</masterLabel>
+            <translation><!-- Television Ads --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thergaon</masterLabel>
+            <translation><!-- Thergaon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tilak Road</masterLabel>
+            <translation><!-- Tilak Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Times EXPO PCMC</masterLabel>
+            <translation><!-- Times EXPO PCMC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Times Property</masterLabel>
+            <translation><!-- Times Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Times of India</masterLabel>
+            <translation><!-- Times of India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twitter</masterLabel>
+            <translation><!-- Twitter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uruli</masterLabel>
+            <translation><!-- Uruli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vadgaon Budruk</masterLabel>
+            <translation><!-- Vadgaon Budruk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vadgaon Sheri</masterLabel>
+            <translation><!-- Vadgaon Sheri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Viman Nagar</masterLabel>
+            <translation><!-- Viman Nagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vishrantwadi</masterLabel>
+            <translation><!-- Vishrantwadi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wadgaon Budruk</masterLabel>
+            <translation><!-- Wadgaon Budruk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wagholi</masterLabel>
+            <translation><!-- Wagholi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wakad</masterLabel>
+            <translation><!-- Wakad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wakadewadi</masterLabel>
+            <translation><!-- Wakadewadi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wanawadi</masterLabel>
+            <translation><!-- Wanawadi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wanowri</masterLabel>
+            <translation><!-- Wanowri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wanworie</masterLabel>
+            <translation><!-- Wanworie --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warje</masterLabel>
+            <translation><!-- Warje --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warje Malwadi</masterLabel>
+            <translation><!-- Warje Malwadi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Website</masterLabel>
+            <translation><!-- Website --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yerawada</masterLabel>
+            <translation><!-- Yerawada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>You Tube</masterLabel>
+            <translation><!-- You Tube --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>email</masterLabel>
+            <translation><!-- email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>whatsapp</masterLabel>
+            <translation><!-- whatsapp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>word of mouth</masterLabel>
+            <translation><!-- word of mouth --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Talked about competition --></label>
+        <name>Talked_about_competition__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type of Visit --></label>
+        <name>Type_of_Visit__c</name>
+        <picklistValues>
+            <masterLabel>Fresh</masterLabel>
+            <translation><!-- Fresh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revisit</masterLabel>
+            <translation><!-- Revisit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Visit Rating --></label>
+        <name>Visit_Rating__c</name>
+        <picklistValues>
+            <masterLabel>Cold</masterLabel>
+            <translation><!-- Cold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot</masterLabel>
+            <translation><!-- Hot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warm</masterLabel>
+            <translation><!-- Warm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Walk-in Details --></label>
+        <name>Walk_in_Details__c</name>
+        <picklistValues>
+            <masterLabel>Family</masterLabel>
+            <translation><!-- Family --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group</masterLabel>
+            <translation><!-- Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Individual</masterLabel>
+            <translation><!-- Individual --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Site Visit Layout</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Detailed Rating --></label>
+            <section>Detailed Rating</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Interested In --></label>
+            <section>Interested In</section>
+        </sections>
+        <sections>
+            <label><!-- Profesional Information --></label>
+            <section>Profesional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Rating --></label>
+            <section>Rating</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Site Visit Form --></label>
+        <name>Site_Visit_Form</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Site revisit --></label>
+        <name>Site_revisit</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

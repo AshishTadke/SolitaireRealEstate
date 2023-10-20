@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Client not contactable</name>
+    <style>none</style>
+    <subject>Client Not Contactable</subject>
+    <textOnly>Dear {!Opportunity.Account},  Greetings from Solitaire!  This is regarding your booking in {!Opportunity.Project__c}. We tried reaching you on your mobile number however, there was no response/your number was not reachable/your number was switched off. Request you to call us back on 020-6716 6716 at the earliest.  We look forward to hearing from you.  Regards, Team CRM @ Solitaire</textOnly>
+    <type>custom</type>
+</EmailTemplate>

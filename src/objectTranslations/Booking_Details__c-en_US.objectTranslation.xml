@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Booking Details</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Booking Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount Type --></label>
+        <name>Amount_Type__c</name>
+        <picklistValues>
+            <masterLabel>Lumpsum</masterLabel>
+            <translation><!-- Lumpsum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation><!-- Percent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rate</masterLabel>
+            <translation><!-- Rate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking --></label>
+        <name>Booking__c</name>
+        <relationshipLabel><!-- Booking Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Discount Percentage --></label>
+        <name>Broker_Discount_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Discount --></label>
+        <name>Broker_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Rate --></label>
+        <name>Broker_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge --></label>
+        <name>Charge__c</name>
+        <relationshipLabel><!-- Booking Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- Booking Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dp Discount --></label>
+        <name>Dp_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flat/Podium No --></label>
+        <name>Flat_Podium_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global Charges --></label>
+        <name>Global_Charges__c</name>
+        <relationshipLabel><!-- Booking Details (Global Charges) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Global Unit of Measurement --></label>
+        <name>Global_Unit_of_Measurement__c</name>
+        <relationshipLabel><!-- Booking Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- InAugural Discount --></label>
+        <name>InAugural_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- InAugural Percentage --></label>
+        <name>InAugural_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- InAugural Rate --></label>
+        <name>InAugural_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Load --></label>
+        <name>Load__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Cost --></label>
+        <name>Net_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Discount --></label>
+        <name>Net_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Of Car Parking --></label>
+        <name>No_Of_Car_Parking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent --></label>
+        <name>Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- PlanCode --></label>
+        <name>PlanCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- Booking Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rebate Rate --></label>
+        <name>Rebate_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Discount --></label>
+        <name>Special_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Percentage --></label>
+        <name>Special_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Rate --></label>
+        <name>Special_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Pay Plan Header --></label>
+        <name>Standard_Pay_Plan_Header__c</name>
+        <relationshipLabel><!-- Booking Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type Of Car --></label>
+        <name>Type_Of_Car__c</name>
+        <picklistValues>
+            <masterLabel>Big Car</masterLabel>
+            <translation><!-- Big Car --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small Car</masterLabel>
+            <translation><!-- Small Car --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rate --></label>
+        <name>nRate__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

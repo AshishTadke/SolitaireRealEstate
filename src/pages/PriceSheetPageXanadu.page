@@ -1,0 +1,599 @@
+<apex:page showHeader="false" standardController="Quotation__c" extensions="PriceSheetXanadu" ><!-- -->
+<head>     
+        <style>
+        
+       /*@media print {
+        body {-webkit-print-color-adjust: exact;}
+        #nonprintable1 { display: none; }
+        #printable { display: block; }
+        */
+        @page {
+                size: A4;
+                margin:  2mm         //5mm;
+                @bottom-center {
+                content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+            .page-break {
+                display:block;
+                page-break-after:always;
+            }
+        body
+        {
+               
+        }
+        table {
+            font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+            width:80%;
+            border:1px solid #CCC;
+            margin-left:auto;
+            margin-right:auto;
+            font-size:10px;
+        }
+        
+        td {
+            font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+            font-size:10px;
+            border:1px solid black;
+        }
+        span {
+            //font-weight:bold;
+        }
+        h5{
+        
+            font-weight:normal;    
+        }
+        </style>
+</head>
+
+
+
+
+<body  onload="newfun()">          <!-- window.print();-->
+<apex:actionStatus id="status">
+    <apex:facet name="start">
+    <div class="fadeMe">
+        &nbsp;
+    </div>
+    <!--<div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+        <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+            <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+            <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+        </div>
+    </div>-->
+    </apex:facet>
+</apex:actionStatus>
+<apex:form id="costsheetForm">
+<apex:outputText id="abc"></apex:outputText>
+         <apex:pageMessages id="pagemsg"/>
+     <div id="nonprintable1">
+<!--                      <button id="PrintQuote" name="print" value="print" style="float:right; padding:5px;" onclick="window.print(); "> Print Quotation</button>-->
+                     <br/><br/>
+     <!--<apex:pageBlock id="pgblock1" >
+               <button id="PrintQuote" name="print" value="print" style="float:right; padding:5px;" onclick="window.print(); "> Print Quotation</button> 
+              <br/>
+    </apex:pageBlock>-->
+  
+</div>
+  
+<div id="printable" >
+    <apex:outputPanel id="showpanel">
+        <apex:outputPanel id="showsection" ><!-- rendered="{!IF(AND(quotationobj.Opportunity__c != '',selectedPaymentMaster != ''),True,False)}" -->
+                 <table id="MainTable"  cellspacing="0"  > 
+                     <tr><td  align="center" colspan="3" style="background:#9CA1A1;"><h2>Solitaire </h2>
+                         <br>{!Quotation__c.Project__r.Name}{!qList[0].Project__r.Name}  Price Sheet Dated &nbsp;
+                             <apex:outputtext value="{0, date,dd'-'MMM'-'yyyy}"> <!-- >{!qList[0].Project__r.Name} -->
+                                 <apex:param value="{!qList[0].Prepared_Date__c}"/>
+                             </apex:outputtext></br>
+                         </td>
+                     </tr> 
+                    <!--<tr><td colspan="3">&nbsp;</td></tr>-->
+                     <tr>
+                          <td colspan="3" align="Center" style="font-weight:Bold;background:#D3D3D3;">Residence Details</td>
+                     </tr>
+                     <tr>
+                         <td colspan="2" width="30%">Cluster</td>
+                         <td width="15%">{!qList[0].Zone__c}</td>
+                     </tr>    
+                     <tr>    
+                         <td colspan="2" >Wing</td>
+                         <td >{!qList[0].Wing__c}</td>
+                     </tr>
+                     <tr>    
+                         <td colspan="2">Typology</td>
+                         <td >{!qList[0].Appartment_Configuration__c}</td>
+                     </tr>
+                     <tr>    
+                         <td colspan="2">Floor</td>
+                         <td >{!qList[0].FloorNo__c}</td>
+                     </tr>
+                     <tr>    
+                         <td colspan="2">Unit #</td>
+                         <td >{!qList[0].Project_Unit__r.Name}</td>
+                     </tr>
+                     <tr>    
+                         <td colspan="2">Area</td>
+                         <td id="testtd">{!qList[0].Saleable__c}</td>
+                     </tr>
+                   <!--   <tr><td colspan="3">&nbsp;</td></tr> -->
+                     <tr id="Rates">
+                         <td colspan="3" align="Center" style="font-weight:Bold;background:#D3D3D3;">Rates</td>
+                     </tr>
+                     <tr>
+                         <td width="40%">Base Rate</td>
+                         <td  width="5%" >Rs.</td>
+                         <td >{!qList[0].Base_Rate_PSF__c}</td>
+                     </tr>
+                     <tr>
+                         <td>Floor Rise</td>
+                         <td>Rs.</td>
+                         <td >{!qList[0].Floor_Rise_PSF__c}</td>
+                     </tr>
+                     <tr id="PremiumDes1" >
+                         <td>{!qList[0].Premium_Charges_Description_1__c}</td>
+                         <td>Rs.psf</td>
+                         <td id="PremiumAmt1">{!qList[0].Premium_Charges_Amount_1__c}</td>
+                     </tr>
+                      <tr id="PremiumDes2">
+                         <td>{!qList[0].Premium_Charges_Description_2__c}</td>
+                         <td>Rs.psf</td>
+                         <td  id="PremiumAmt2">{!qList[0].Premium_Charges_Amount_2__c}</td>
+                     </tr>
+                      <tr id="PremiumDes3">
+                         <td>{!qList[0].Premium_Charges_Description_3__c}</td>
+                         <td>Rs.psf</td>
+                         <td  id="PremiumAmt3">{!qList[0].Premium_Charges_Amount_3__c}</td>
+                     </tr>
+                      <tr id="PremiumDes4">
+                         <td>{!qList[0].Premium_Charges_Description_4__c}</td>
+                         <td>Rs.psf</td>
+                         <td id="PremiumAmt4">{!qList[0].Premium_Charges_Amount_4__c}</td>
+                     </tr>
+                      <tr id="DiscType1">
+                         <td >{!qList[0].Discount_1_Type__c}</td>
+                         <td>Rs.psf</td>
+                         <td id="Discpsf1">{!qList[0].Discount_1_PSF__c}</td>
+                     </tr>
+                     <tr id="DiscType2">
+                         <td >{!qList[0].Discount_2_Type__c}</td>
+                         <td>Rs.psf</td>
+                         <td id="Discpsf2">{!qList[0].Discount_2_PSF__c}</td>
+                     </tr>
+                     <tr style="Font-Size:90;">
+                         <td id="TotalRate"><b>Total Rate*</b></td>
+                         <td><b>Rs.psf</b></td>
+                         <td id="TotalRateAmt">{!totalRate}</td>
+                     </tr>
+                     <!--<tr><td colspan="3">&nbsp;</td></tr>-->
+                     <tr>
+                         <td colspan= "3" align="center" style="font-weight:Bold;background:#D3D3D3;">Consideration Value</td>
+                     </tr>
+                     <tr>
+                          <td>Flat Cost</td>
+                          <td>Rs.</td>
+                          <td>{!flatCost}</td>
+                     </tr>
+                     <tr>
+                          <td>Infrastructure charges</td>
+                          <td>Rs.</td>
+                          <td>{!qList[0].Infrastructure_charges__c}</td>
+                     </tr>
+                     <tr id="devcharge">
+                          <td>Development Charges</td>
+                          <td>Rs.</td>
+                          <td id="devChargesAmt">{!qList[0].Development_Charges_PSF__c}</td>
+                     </tr>
+                     <tr>
+                          <td><b>Sub-Total 1:</b></td>
+                          <td><b>Rs.</b></td>
+                          <td>{!subTotal1}</td>
+                     </tr>
+                     <!--<tr><td colspan="3">&nbsp;</td></tr>-->
+                     <tr id="Registration">
+                         <td colspan="3" align="center" style="font-weight:Bold;background:#D3D3D3;">Stamp Duty and Registration Charges</td>
+                     </tr>
+                     <tr>
+                         <td>Stamp Duty*</td>    
+                         <td>Rs.</td>
+                         <td>{!qList[0].Stamp_Duty__c}</td>
+                     </tr>
+                     <tr>
+                         <td>Registration Charges and Processing Fees*</td>    
+                         <td>Rs.</td>
+                         <td>{!qList[0].Registration_Charges__c}</td>
+                     </tr>
+                     <tr>
+                         <td>MVAT*</td>    
+                         <td>Rs.</td>
+                         <td>{!qList[0].MVAT__c}</td>
+                     </tr>
+                     <tr>
+                         <td>Service Tax**</td>    
+                         <td>Rs.</td>
+                         <td>{!qList[0].Service_Tax_Total__c}</td>
+                     </tr>
+                     <tr id="projectDes1">
+                         <td>{!qList[0].Project_Specific_Charges_Description_1__c}</td>    
+                         <td>Rs.</td>
+                         <td id="projectAmt1">{!qList[0].Project_Specific_Charges_Amount_1__c}</td>
+                     </tr>
+                     <tr id="projectDes2">
+                         <td>{!qList[0].Project_Specific_Charges_Description_2__c}</td>    
+                         <td>Rs.</td>
+                         <td id="projectAmt2">{!qList[0].Project_Specific_Charges_Amount_2__c}</td>
+                     </tr>
+                     <tr id="projectDes3">
+                         <td>{!qList[0].Project_Specific_Charges_Description_3__c}</td>    
+                         <td>Rs.</td>
+                         <td id="projectAmt3">{!qList[0].Project_Specific_Charges_Amount_3__c}</td>
+                     </tr>
+                     <tr id="subTotal2">
+                         <td><b>Sub-Total 2: S.D. and Reg. Chgs.</b></td>    
+                         <td><b>Rs.</b></td>
+                         <td id="subTotalAmt2">{!subTotal2}</td>
+                     </tr>
+                     <!--<tr><td colspan="3">&nbsp;</td></tr>-->
+                     <tr id="Mainthead">
+                         <td align="Center" colspan="3" style="font-weight:Bold;background:#D3D3D3;">Maintenance</td>
+                     </tr>
+                     <tr id="maintDes1">
+                         <td>{!qList[0].Proj_Maint_Charges_Desc_1__c}</td>
+                         <td>Rs.</td>
+                         <td id="maintAmt1">{!qList[0].Project_Maintenance_Charges_Amount_1__c}</td>
+                     </tr>
+                     <tr id="maintDes2">
+                         <td>{!qList[0].Proj_Maint_Charges_Desc_2__c}</td>
+                         <td>Rs.</td>
+                         <td id="maintAmt2">{!qList[0].Project_Maintenance_Charges_Amount_2__c}</td>
+                     </tr>
+                     <tr id="maintDes3">
+                         <td>{!qList[0].Proj_Maint_Charges_Desc_3__c}</td>
+                         <td>Rs.</td>
+                         <td id="maintAmt3">{!qList[0].Project_Maintenance_Charges_Amount_3__c}</td>
+                     </tr>
+                     <tr id="subTotal3">
+                         <td><b>Sub-Total 3: Society and Maintainence Charges</b></td>
+                         <td><b>Rs.</b></td>
+                         <td id="subTotalAmt3">{!subTotal3}</td>
+                     </tr>     
+                     <!-- <tr><td colspan="4">&nbsp;</td></tr> -->
+                      <tr id="otherhead"> 
+                             <td  align="Center" colspan = "3" style="font-weight:Bold;background:#D3D3D3;" >Other Charges</td>
+                     </tr>
+                     <tr id="row1">
+                         <td>{!qList[0].Other_Charges_Desc_1__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges1">{!qList[0].Other_Charges_Amount_1__c}</td>
+                         <!-- <td id="othercharges"><apex:outputText value="{!qList[0].Other_Charges_Amount_1__c}"/> </td>-->
+                     </tr>
+                     <tr id="row2">
+                         <td>{!qList[0].Other_Charges_Desc_2__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges2">{!qList[0].Other_Charges_Amount_2__c}</td>
+                     </tr>
+                     <tr id="row3">
+
+                         <td>{!qList[0].Other_Charges_Desc_3__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges3">{!qList[0].Other_Charges_Amount_3__c}</td>
+                     </tr>
+                     <tr id="row4">
+   
+                         <td>{!qList[0].Other_Charges_Desc_4__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges4">{!qList[0].Other_Charges_Amount_4__c}</td>
+                     </tr>
+                     <tr id="row5">
+
+                         <td>{!qList[0].Other_Charges_Desc_5__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges5">{!qList[0].Other_Charges_Amount_5__c}</td>
+                     </tr>
+                     <tr id="row6">
+   
+                         <td>{!qList[0].Other_Charges_Desc_6__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges6">{!qList[0].Other_Charges_Amount_6__c}</td>
+                     </tr>
+                     <tr id="row7">
+  
+                         <td>{!qList[0].Other_Charges_Desc_7__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges7">{!qList[0].Other_Charges_Amount_7__c}</td>
+                     </tr>
+                     <tr id="row8">
+
+                         <td>{!qList[0].Other_Charges_Desc_8__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges8">{!qList[0].Other_Charges_Amount_8__c}</td>
+                     </tr>
+                     <tr id="row9">
+
+                         <td>{!qList[0].Other_Charges_Desc_9__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges9">{!qList[0].Other_Charges_Amount_9__c}</td>
+                     </tr>
+                     <tr id="row10">
+
+                         <td>{!qList[0].Other_Charges_Desc_10__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges10">{!qList[0].Other_Charges_Amount_10__c}</td>
+                     </tr>
+                     <tr id="row11">
+
+                         <td>{!qList[0].Other_Charges_Desc_11__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges11">{!qList[0].Other_Charges_Amount_11__c}</td>
+                     </tr>
+                     <tr id="row12">
+                         <td>{!qList[0].Other_Charges_Desc_12__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges12">{!qList[0].Other_Charges_Amount_12__c}</td>
+                     </tr>
+                     <tr id="row13">
+                         <td>{!qList[0].Other_Charges_Desc_13__c}</td>
+                         <td>Rs.</td>
+                         <td id="othercharges13">{!qList[0].Other_Charges_Amount_13__c}</td>
+                     </tr>
+                     <tr id="row14">
+                         <td><b>Sub-Total 4: Other Charges</b></td>
+                         <td><b>Rs.</b></td>
+                         <td id="othercharges14">{!subTotal4}</td>
+                     </tr>
+                     <!-- <tr><td colspan="4">&nbsp;</td></tr>-->
+                     <tr><td colspan="3" align="Center" style="font-weight:Bold;background:#D3D3D3;">Initial Amounts</td></tr>
+                         <apex:repeat value="{!wrapperList}" var="x" >
+                             <tr>
+                                     <td>{!x.isToBePaid1}</td>
+                                     <td>Rs.</td> 
+                                     <td>{!x.installment1}</td>
+                             </tr>
+                         </apex:repeat>
+                     <!--<tr>
+                          <td>Booking Amount</td>
+                          <td>Rs.</td>
+                          <td>xxx</td>
+                     </tr>
+                      <tr>     
+                          <td>First Instalment (Within 21 days of booking)</td>
+                          <td>10.0%</td>
+                          <td>xxx</td>
+                     </tr>
+                     <tr>
+                         <td>Second Instalment (Within 45 days of booking)</td>
+                         <td>9.9%</td>
+                         <td>xxx</td>
+                     </tr>  -->
+                      
+                     <tr><td colspan="4">^ - Please Note - First instalment is less booking amount of Rs. 9 Lac</td></tr>
+                     <tr><td colspan="4">*Tentative: Subject to change, revision</td></tr>
+                     <tr><td colspan="4">All statutory charges and taxes will be borne by customer as per the rates applicable from time to time</td></tr>
+                     <tr><td colspan="4">#not including municipal taxes and property Taxes</td></tr>
+                     <tr><td colspan="4">** On actuals, subject to change</td></tr>
+             </table>
+        </apex:outputPanel>
+    </apex:outputPanel>
+</div>
+</apex:form>
+
+    <script>
+            function newfun()
+            {
+                    // alert('Hi Netra');
+                    var tdElem = document.getElementById( "othercharges1" );                                    
+                   var tdText = tdElem.innerHTML;
+                   //alert(tdText);
+                   
+                   if(tdText  =='0' )
+                   {
+                       //alert ('tdText : ' + tdText);
+                       document.getElementById("row1").style.display = 'none';
+                   }
+                  
+                   var tdElem = document.getElementById( "othercharges2" );                                   
+                   var tdText = tdElem.innerHTML;
+                   //alert(tdText);
+                   
+                   if(tdText  =='0' )
+                   {
+                       //alert ('tdText : ' + tdText);
+                       document.getElementById("row2").style.display = 'none';
+                   }
+                                      
+                   var tdElem = document.getElementById( "othercharges3" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("row3").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "othercharges4" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("row4").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "othercharges5" );                                     
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("row5").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "othercharges6" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  == '0' )
+                   {
+                       document.getElementById("row6").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "othercharges7" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  == '0' )
+                   {
+                       document.getElementById("row7").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "othercharges8" );                                     
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  == '0' )
+                   {
+                       document.getElementById("row8").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "othercharges9" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText == '0' )
+                   {
+                       document.getElementById("row9").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "othercharges10" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  == '0' )
+                   {
+                       document.getElementById("row10").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "othercharges11" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  == '0.00' )
+                   {
+                       document.getElementById("row11").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "othercharges12" );                                     
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  == '0.00' )
+                   {
+                       document.getElementById("row12").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "othercharges13" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  == '0.00' )
+                   {
+                       document.getElementById("row13").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "othercharges14" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  == '0.00' )
+                   {
+                       document.getElementById("row14").style.display = 'none';
+                       document.getElementById("otherhead").style.display = 'none';
+                   }
+                   // ----------------------------------------------------------
+                   var tdElem = document.getElementById( "PremiumAmt1" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("PremiumDes1").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "PremiumAmt2" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("PremiumDes2").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "PremiumAmt3" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("PremiumDes3").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "PremiumAmt4" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("PremiumDes4").style.display = 'none';
+                   }
+                   
+                   var tdElem = document.getElementById( "Discpsf1" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("DiscType1").style.display = 'none';
+                   }
+                   //DiscType1Discpsf1
+                   var tdElem = document.getElementById( "Discpsf2" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("DiscType2").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "TotalRateAmt" );                                     
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("TotalRate").style.display = 'none';
+                       
+                   }
+                   
+                   // ------------------------------------------------------------------------------------
+                   var tdElem = document.getElementById( "projectAmt1" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0.00' )
+                   {
+                       document.getElementById("projectDes1").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "projectAmt2" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0.00' )
+                   {
+                       document.getElementById("projectDes2").style.display = 'none';
+                   }
+                   
+                   var tdElem = document.getElementById( "projectAmt3" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0.00' )
+                   {
+                       document.getElementById("projectDes3").style.display = 'none';
+                   }
+                   // <tr id="subTotal2">
+                   var tdElem = document.getElementById( "subTotalAmt2" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0.00' )
+                   {
+                       document.getElementById("subTotal2").style.display = 'none';
+                       document.getElementById("Registration").style.display = 'none';
+                   }
+                   
+                   //---------------------------------------------------------------------
+                   
+                   var tdElem = document.getElementById( "maintAmt1" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("maintDes1").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "maintAmt2" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("maintDes2").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "maintAmt3" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("maintDes3").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "maintAmt3" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("maintDes3").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "subTotalAmt3" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("subTotal3").style.display = 'none';
+                       document.getElementById("Mainthead").style.display = 'none';
+                   }
+                   
+                   var tdElem = document.getElementById( "devChargesAmt" );                                   
+                   var tdText = tdElem.innerHTML;
+                   //alert(subTotalAmt3);
+                   if(tdText  =='0' )
+                   {
+                       document.getElementById("devcharge").style.display = 'none';
+                   }
+            }
+    </script>
+   
+   
+
+</body>
+</apex:page>

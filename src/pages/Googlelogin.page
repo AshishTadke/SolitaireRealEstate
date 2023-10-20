@@ -1,0 +1,58 @@
+<apex:page controller="NewSiteVisitController2" showHeader="false" sidebar="false" docType="html-5.0" standardStylesheets="true" cache="false">
+<html lang="en">
+<head>
+<meta name="google-signin-scope" content="profile email"/>
+<meta name="google-signin-client_id" content="1066637942831-vb0022h5vhbkuik9r8b8gnhgpincplgo.apps.googleusercontent.com"/>
+<script src="https://apis.google.com/js/platform.js"></script><!---->
+
+</head>
+<body>
+<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" ></div>
+<script>
+
+
+  function onSignIn(googleUser) {
+  
+    // Useful data for your client-side scripts:
+    var profile = googleUser.getBasicProfile();
+    console.log("ID: " + profile.getId()); 
+    console.log('Full Name: ' + profile.getName());
+    console.log('Given Name: ' + profile.getGivenName());
+    console.log('Family Name: ' + profile.getFamilyName());
+    console.log("Image URL: " + profile.getImageUrl());
+    console.log("Email: " + profile.getEmail());
+            var GFullName = profile.getName();
+            //alert('Full Name'+ FullName );
+            
+             
+            var GEmail = profile.getEmail();
+            //alert('Email'+ Email);
+            
+            document.write('Details of the logged in User'+"<br>"+"<br>");
+            
+            document.write('Full Name : '+ GFullName + "<br>");
+            
+            document.write('Email : '+ GEmail);
+            
+
+    // The ID token you need to pass to your backend:
+    var id_token = googleUser.getAuthResponse().id_token;
+    console.log("ID Token: " + id_token);
+    
+   
+  }
+</script>
+<a href="#" onclick="signOut();">Sign out</a>
+<script>
+function signOut() {
+var auth2 = gapi.auth2.getAuthInstance();
+auth2.signOut().then(function () {
+  console.log('User signed out.');
+});
+}
+</script>
+
+</body>
+</html>
+
+</apex:page>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Welcome Call Email</name>
+    <style>none</style>
+    <subject>Welcome Email - SOLITAIRE</subject>
+    <textOnly>Dear {!Booking__c.Future_Correspondence_Contact_Name__c},
+
+Congratulations on your purchase at {!Booking__c.Project__c} and a warm welcome to the family.
+
+Solitaire is a service driven real estate brand committed to individuals seeking the best in everything.
+
+We are pleased to inform you that your application has been accepted. The following details were discussed and agreed over the Welcome call and will serve as a ready reference for you in the future.
+
+Details of the Booking :
+
+Application / Booking Date  {!DATEVALUE(Booking__c.Booking_Date__c)}
+Unit No. &amp; Floor  Unit - {!Booking__c.Unit_No__c}, Floor - {!Booking__c.Floor__c}
+Type of Unit  {!Booking__c.Flat_Typology__c}
+Source of Booking  {!Booking__c.Source_of_Booking__c}
+Payment Plan  {!Booking__c.Payment_Plan__c}
+Purpose of Purchase ( Investment/End Use)  {!Booking__c.Purpose_of_Purchase__c}
+Carpet Area (Sq.Ft)  {!Booking__c.Unit_Carpet_Area__c}
+Exclusive Area (Balcony/Terrace/Enclosed Balcony/Mezzanine) (Sq.Ft)  {!Booking__c.Exclusive_Area__c}
+Consideration Value(Rs.)  {!Booking__c.Allotment_Premium__c}
+Number of parking slots included with the unit  Stack-{!Booking__c.stack__c},  Independent-{!Booking__c.Independent__c},  Dependent -{!Booking__c.Dependent__c},  Puzzle-{!Booking__c.Puzzle__c }.
+
+
+
+We assure you of our impeccable service and support through your journey with us. To guide you along your journey from booking to registration &amp; possession, we have compiled an information kit, which shall reach your registered address shortly. Kindly acknowledge once received. The Welcome Kit includes, Welcome Letter, CRM Orientation, Allotment Letter, Copy of Application Form, Copy of Cost Sheet and Payment Schedule and Payment Receipts.
+
+You may reach us at 020-67166716 and on our email address CRM@ solitaire.in It shall be our pleasure to assist you in completing your purchase formalities.
+
+I truly wish to make your journey until possession of your purchase a very pleasurable one. Looking forward to being of service to you.
+
+Thank you,
+
+Regards,
+TEAM CRM (SOLITAIRE)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>PU_name_updation</fullName>
+        <field>Name</field>
+        <formula>(Param1__c +if(OR(ISBLANK(Param1__c),AND(ISBLANK(Param2__c),ISBLANK(Param3__c),ISBLANK(Param4__c),ISBLANK(Param5__c))),&apos;&apos;, Delimeter__c)+
+Param2__c +if(OR(ISBLANK(Param2__c),AND(ISBLANK(Param3__c),ISBLANK(Param4__c),ISBLANK(Param5__c))),&apos;&apos;, Delimeter__c)+
+Param3__c +if(OR(ISBLANK(Param3__c),AND(ISBLANK(Param4__c),ISBLANK(Param5__c))),&apos;&apos;, Delimeter__c)+
+Param4__c +if(OR(ISBLANK(Param4__c),AND(ISBLANK(Param5__c))),&apos;&apos;, Delimeter__c)+
+Param5__c )</formula>
+        <name>PU name updation.</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Project_Name_update</fullName>
+        <field>Name</field>
+        <formula>UnitNo__c</formula>
+        <name>Project Name update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Project_Unit_Status_Update</fullName>
+        <field>Unit_Status__c</field>
+        <literalValue>Vacant</literalValue>
+        <name>Project Unit Status Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Project_Unit_Status_Update_rule</fullName>
+        <field>Unit_Status__c</field>
+        <literalValue>Hold</literalValue>
+        <name>Project Unit Status Update rule</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sharing_Rule_Project_Name</fullName>
+        <field>Sharing_ProjectName__c</field>
+        <formula>TowerName__r.ProjectName__r.Name</formula>
+        <name>Sharing Rule : Project Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Financial_Institution_Name</fullName>
+        <field>Name_of_the_Financial_Institution__c</field>
+        <formula>&quot;Not Applicable&quot;</formula>
+        <name>Update Financial Institution Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Unique_Unit_No</fullName>
+        <field>UnitNo__c</field>
+        <formula>lpad(UnitNo__c ,4,&apos;0&apos;)</formula>
+        <name>Update Unique Unit No.</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Mortgage Status and Financial Institute</fullName>
+        <actions>
+            <name>Update_Financial_Institution_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Project_Unit__c.Unit_Morgage_Status__c</field>
+            <operation>equals</operation>
+            <value>Un-mortgaged</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Project Unit Status Update rule</fullName>
+        <actions>
+            <name>Project_Unit_Status_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Reserved__c = false &amp;&amp; Booking__c = Null &amp;&amp; ISPICKVAL(Unit_Status__c, &apos;Vacant&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Project unit Name updation</fullName>
+        <actions>
+            <name>PU_name_updation</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Project_Unit__c.CreatedDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sharing Rule %3A Project Name Update</fullName>
+        <actions>
+            <name>Sharing_Rule_Project_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>1=1</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Unique Unit No%2E</fullName>
+        <actions>
+            <name>Update_Unique_Unit_No</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Project Unit Status Reserved</fullName>
+        <actions>
+            <name>Project_Unit_Status_Update_rule</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Reserved__c =true &amp;&amp; Booking__c = Null &amp;&amp; ISPICKVAL(Unit_Status__c, &apos;Vacant&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vacant unit after 48 Hrs</fullName>
+        <active>false</active>
+        <formula>AND((ISCHANGED( Unit_Status__c)),(ISPICKVAL( Unit_Status__c ,&apos;Hold&apos;)))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

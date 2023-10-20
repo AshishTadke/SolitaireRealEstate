@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Demand Invoice Dashboard</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom66: Dice</motif>
+    <page>S_sendDemandInvoice2</page>
+</CustomTab>

@@ -1,0 +1,334 @@
+<apex:page controller="PrintReceipt" applyHtmlTag="false" sidebar="false" showHeader="false" standardStylesheets="false" docType="html-5.0"><!-- renderAs="PDF" -->
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+            <script src="/soap/ajax/9.0/connection.js"></script>
+    <style>
+            @page {
+                size: A4;
+                margin:  2mm         //5mm;
+                @bottom-center {
+                content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+            .page-break {
+                display:block;
+                page-break-after:always;
+            }
+            body {
+                font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+                font-weight:normal; 
+                font-size:12px; 
+                mso-line-height-rule: exactly;
+            }
+            .infobox {
+                  font-size: 90%;
+            }
+            .sfdc_richtext img {
+              border: 0;
+              width: 100px;
+              height:90px;
+            }
+            .RMStyle {
+                border-collapse: collapse;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #104E8B;
+            }
+            .RMStyle th {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #104E8B;
+                background-color:#E2DDD9;
+            }
+            /* Padding and font style */
+            .RMStyle td {
+                border-style: solid;
+                border-width: .5px;
+                border-color: #CAD1C3;
+            }
+            .paymenttoStyle th {
+                border-style: solid;
+                border-color: #CAD1C3;
+                background-color:#FFD8D8;
+            }
+            .paymenttoStyle {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #CAD1C3B;
+            }
+            .demandStyle th {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #CAD1C3;
+                background-color:#B9D7D9;
+                padding: 3px;
+            }
+            /* Padding and font style */
+            .demandStyle td {
+                border-style: solid;
+                border-width: .5px;
+                border-color: #CAD1C3;
+                padding: 2px;
+            }
+            .demandStyle {
+                border-collapse: collapse;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #CAD1C3;
+            }
+            
+        </style>
+    </head>
+    <body width="100%" onload="window.print();" ><!-- onload="window.print(); myFunction()" -->
+        <br/>
+       <!--
+        <span style="padding:5px;"> 
+                <button name="print" value="print" style="float:right; padding:5px;" onclick="window.print();" class="no-print"> Print Receipt </button> 
+       </span>
+    -->
+    <table id="main" border="0" cellspacing="0" cellpadding="0" align="center" width="80%">
+    <tr>
+    <td>
+        <table style="width:80%">
+            <tr>
+                <td colaspan="2" rowspan="2" align="left" valign="top">
+                     <apex:outputField value="{!lstReceipt[0].Project__r.Project_Image__c}"></apex:outputField>
+                </td>
+                <td align="center">
+                   <h2>{!legalEntityName}</h2>
+                </td>
+                 </tr>
+                  <tr>
+                <td align="center" >
+                   <h4> “Solitaire World”, Level 8, S. No. 36/1/1, Mumbai Bangalore Highway, Baner, Pune – 411 045</h4>
+                </td>
+            </tr>
+       </table>
+    </td>
+    </tr>            
+    <tr>
+        <td>
+            <table width="100%" cellspacing="0" >
+               <tr width="100%">
+                     <td colspan="1" rowspan="2" align="left" width="55%" valign="top">
+                        <h2>RECEIPT</h2>
+                    </td>
+                                 <td colspan="2" align="right" width="45%" valign="top"><!--width="50%" -->
+                           
+                                 <apex:outputText value="Receipt No:"/>
+                                 <apex:outputText value="{!lstReceipt[0].Receipt_Number__c}"/>
+                     </td>
+                     <tr>
+                     <td colspan="2" align="right" width="45%" valign="top"><!--width="50%" -->
+                                 <apex:outputText value="Receipt Date:"/>
+                                 <apex:outputText value="{0, date, dd MMM,yyyy}"><apex:param value="{!lstReceipt[0].Receipt_Date__c}"/></apex:outputtext>
+                         </td>      
+                          </tr> 
+                      
+                </tr>
+          </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+           
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="infobox" width="100%">
+           <h4>THANK YOU.</h4>
+        </td>    
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    
+   <!-- || lstReceipt[0].Drawn_in_favour_of__c.contains('Service Tax')  || lstReceipt[0].Drawn_in_favour_of__c.contains('Flat Cost') || contains(lstReceipt[0].Drawn_in_favour_of__c,"Service Tax") || contains(lstReceipt[0].Drawn_in_favour_of__c ,"Flat Cost") -->
+     <tr>
+       <td style="display:{!IF((lstReceipt[0].Receipt_Against__c == "GST") || contains(lstReceipt[0].Drawn_in_favour_of__c,"Service Tax"),'block','none')}">
+        We’ve Received a Sum of <u>{!amountRs}</u>(<u>{!amountRsinwords} only.</u>) by Cheque No./RTGS No.-<u>{!lstReceipt[0].Cheque_DD__c}{!lstReceipt[0].Challan_No__c}{!lstReceipt[0].NEFT__c}</u> 
+        Towards Unit No.-<u>{!UnitName}</u> on <u>Floor {!lstReceipt[0].Project_Unit__r.Floor1__c}. </u>  at Project Named- <u>{!towerName} (against GST) </u></td>
+    </tr>
+    
+    <tr>
+       <td style="display:{!IF((lstReceipt[0].Receipt_Against__c == "Flat Cost") || contains(lstReceipt[0].Drawn_in_favour_of__c ,"Flat Cost"),'block','none')}">
+        We’ve Received a Sum of <u>{!amountRs}</u>(<u>{!amountRsinwords} only.</u>) by Cheque No./RTGS No.-<u>{!lstReceipt[0].Cheque_DD__c}{!lstReceipt[0].Challan_No__c}{!lstReceipt[0].NEFT__c}</u> 
+        Towards Unit No.-<u>{!UnitName}</u> on <u>Floor {!lstReceipt[0].Project_Unit__r.Floor1__c}. </u>  at Project Named- <u>{!towerName} (against Agreement Value) </u></td>
+    </tr>
+    
+    <tr>
+<td style="display:{!IF(((lstReceipt[0].Receipt_Against__c == "Stamp Duty And Registration") || contains(lstReceipt[0].Drawn_in_favour_of__c ,"Stamp Duty And Registration"))&&(lstReceipt[0].Mode__c != "Cash") ,'block','none')}">        We’ve Received a Sum of <u>{!amountRs}</u>(<u>{!amountRsinwords} only.</u>) by Cheque No./RTGS No.-<u>{!lstReceipt[0].Cheque_DD__c}{!lstReceipt[0].Challan_No__c}{!lstReceipt[0].NEFT__c}</u> 
+        Towards Unit No.-<u>{!UnitName}</u> on <u>Floor {!lstReceipt[0].Project_Unit__r.Floor1__c}. </u> at Project Named- <u>{!towerName} (against Stamp Duty, Registration And Legal Charges) </u></td>
+    </tr>
+    
+    <tr>
+       <td style="display:{!IF(((lstReceipt[0].Receipt_Against__c == "Stamp Duty And Registration") || contains(lstReceipt[0].Drawn_in_favour_of__c ,"Stamp Duty And Registration"))&&(lstReceipt[0].Mode__c == "Cash") ,'block','none')}">
+        We’ve Received a Sum of <u>{!amountRs}</u>(<u>{!amountRsinwords} only.</u>) by Cash. 
+        Towards Unit No.-<u>{!UnitName}</u> on <u>Floor {!lstReceipt[0].Project_Unit__r.Floor1__c}. </u> at Project Named- <u>{!towerName} (against Legal Charges) </u></td>
+    </tr>
+
+       
+    <tr><td> </td></tr>
+    <tr>
+        <td>
+         <h4><u>DETAILS FOR OUR RECORDS: </u></h4>
+        </td>
+    </tr>
+    <tr>
+        <td>
+           PAYEE NAME:  <u>{!CustomerPrimaryName}</u>  
+        </td>    
+    </tr>
+    <tr>
+       <td style="display:{!IF((lstReceipt[0].Mode__c != "Cash") ,'block','none')}">
+           CHEQUE /DD /RTGS NO: <u>{!lstReceipt[0].Cheque_DD__c}{!lstReceipt[0].Challan_No__c}{!lstReceipt[0].NEFT__c}</u> 
+        </td>    
+    </tr>
+    <tr>
+        <td style="display:{!IF((lstReceipt[0].Mode__c != "Cash") ,'block','none')}">
+           DRAWN ON BANK: <u>{!lstReceipt[0].DraweeBank__c}</u>  
+        </td>    
+    </tr>
+    
+ 
+     
+    <tr>
+        <td class="infobox" width="100%">
+           DATE: <u><apex:outputText value="{0, date, dd MMM,yyyy}"><apex:param value="{!lstReceipt[0].Cheque_DD_Date__c}"/></apex:outputtext></u>
+        </td>    
+    </tr>
+    
+     <tr >
+        <td align="right" >
+         <h4> For {!legalEntityName} </h4>
+          </td>    
+    </tr>
+    <tr>
+        <td>
+            <table id="main" border="0" cellspacing="0" cellpadding="0" align="center" width="100%">
+                <tr width="100%">
+                    <td width="50%" class="infobox">
+                        <h4>Disclaimer :</h4>
+                                    - Receipt is subject to realization of Cheque.<br/>
+                                    - This is system generate Receipt.
+                        
+                    </td>
+                </tr>
+           </table>
+        </td>
+    </tr> 
+    <tr>
+        <td>
+            <table width="100%">
+                <tr width="100%">
+                    <td width="100%" colspan="4"><apex:outputField value="{!lstReceipt[0].Project__r.Footer_Image__c}"  rendered="{!If(letterhead == '1',false,True)}" ></apex:outputField>
+                    </td>
+              </tr>
+             
+            </table>
+        </td>
+     </tr> 
+    </table>
+   
+</body>
+                    <!--------------------- JAVASCRIPT -------------------->    
+                    <!--------------------- JAVASCRIPT -------------------->
+   
+    <script> 
+        //var tbl = document.getElementById('table');   
+        //alert(tbl);      
+        var accmoney = ('{!accMoney}');
+        //alert (accmoney);
+        // Hide Last Row if On Account Money value 
+        //$('#invoiceDetails tr .accMoney').filter(function () {
+       /* $('#invoiceDetails td').filter(function () 
+        {
+            return $(this).text() === "Rs 0/-";               
+        }).parent().hide();*/
+        
+        /*function func()
+        {
+             $('#invoiceDetails tr td').filter(function () {
+                   return $(this).text() === "Rs 0/-";        
+              }).parent().hide();
+        }
+       */
+       //$("#invoiceDetails tr td:contains('Rs 0/-')").parent().remove();
+       
+       //parent.window.opener.close();    
+       //window.parent.close();
+       //window.opener.close();
+       //child.opener.close();
+       //window.opener.justClose();
+      
+       
+       //-----------------------------------------------------------------------------------------------
+        
+        function myFunction() 
+        {
+             
+             function getQueryVariable(variable) 
+             {
+                 var query = window.location.search.substring(1);
+                 var vars = query.split("&");
+                     //alert("Page is loaded" + query +" xxx " + vars );
+                     for (var i=0;i<vars.length;i++) 
+                     {
+                        var pair = vars[i].split("=");
+                        if (pair[0] == variable) 
+                        {
+                          return pair[1];
+                        }
+                      } 
+                     // alert('Query Variable ' + variable + ' not found');       
+             }
+             
+             var param1var = getQueryVariable("letterhead");
+             //alert ("Letter Head : " + param1var );
+             if(param1var == 0)
+             {
+                 document.getElementById("rowB").style.display="none";
+             }
+             if(param1var == 1)
+             {
+                 document.getElementById("rowA").style.display="none";
+             }
+        }
+        
+        
+        function getUrlParameter(sParam) 
+        {
+                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+                
+                for (i = 0; i < sURLVariables.length; i++)
+                {
+                        sParameterName = sURLVariables[i].split('=');
+                
+                        if (sParameterName[0] === sParam) 
+                        {
+                            return sParameterName[1] === undefined ? true : sParameterName[1];
+                        }
+                }
+       }
+                    
+</script>
+<script>
+$ = jQuery.noConflict();
+$("td.accMoney").each(function() {
+    var amount = $(this).text();
+    //alert('this :'+amount);
+    if (amount === 'Rs 0/-')
+    {
+        $(this).parent().hide();
+    }
+    
+});
+</script>
+    
+    </html>
+</apex:page>

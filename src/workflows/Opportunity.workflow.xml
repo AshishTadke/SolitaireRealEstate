@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>AGREEMENT_HANDOVER</fullName>
+        <ccEmails>sfdcsolitaire@solitaire.in</ccEmails>
+        <description>AGREEMENT HANDOVER</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Future_Correspondence_Contact_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/AGREEMENT_HANDOVER</template>
+    </alerts>
+    <alerts>
+        <fullName>Agreement_Done</fullName>
+        <ccEmails>sfdcsolitaire@solitaire.in</ccEmails>
+        <description>Agreement Done</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Future_Correspondence_Contact_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Agreement_Done</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_Opportunity_Owner_on_Opportunity_Assignment</fullName>
+        <description>Email to Opportunity Owner on Opportunity Assignment</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_on_Opportunity_Owner_Update</template>
+    </alerts>
+    <alerts>
+        <fullName>Negotiation_Alert</fullName>
+        <description>Negotiation Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Negotiation_Mail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Decision_In_Process</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_for_lost_Deal</fullName>
+        <description>Notification for lost Deal</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Notify_closed_deal</template>
+    </alerts>
+    <alerts>
+        <fullName>Open_Opportunity_alert</fullName>
+        <description>Open Opportunity alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Opp_Open_mail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Open_opportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Assignment</fullName>
+        <description>Opportunity Assignment</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Opportunity_Assignment</template>
+    </alerts>
+    <alerts>
+        <fullName>Possession_Greetings</fullName>
+        <ccEmails>sfdcsolitaire@solitaire.in</ccEmails>
+        <description>Possession Greetings</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Future_Correspondence_Contact_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Possession_Greetings</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_alert</fullName>
+        <description>Proposal alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Proposal_shared_mail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Proposal_Shared</template>
+    </alerts>
+    <alerts>
+        <fullName>Registration_Scheduled</fullName>
+        <ccEmails>sfdcsolitaire@solitaire.in</ccEmails>
+        <description>Registration Scheduled</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Future_Correspondence_Contact_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Registration_Scheduled</template>
+    </alerts>
+    <alerts>
+        <fullName>Registration_Scheduled_Remainder</fullName>
+        <ccEmails>sfdcsolitaire@solitaire.in</ccEmails>
+        <description>Registration Scheduled Remainder</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Future_Correspondence_Contact_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Registration_Scheduled_Remainder</template>
+    </alerts>
+    <alerts>
+        <fullName>Token_Alert</fullName>
+        <description>Token Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Token_Mail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Token_Pending</template>
+    </alerts>
+    <alerts>
+        <fullName>Unit_Alert</fullName>
+        <description>Unit Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Unit_Mail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Unit_Selected</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Physical_document_received</fullName>
+        <field>Date_Of_Form_Receipt_From_Sales_Team__c</field>
+        <formula>TODAY()</formula>
+        <name>Physical document received</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Followup for proposal shared</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Opportunity Identified</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <timeLength>5</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Notification for lost deal</fullName>
+        <actions>
+            <name>Notification_for_lost_Deal</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Physical document received</fullName>
+        <actions>
+            <name>Physical_document_received</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Physical_document_received__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

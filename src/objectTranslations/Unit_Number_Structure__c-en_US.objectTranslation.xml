@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Unit Number Structure</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Unit Number Structures</value>
+    </caseValues>
+    <fields>
+        <label><!-- Delimiter --></label>
+        <name>Delimiter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mandatory --></label>
+        <name>Mandatory__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Maximum Length --></label>
+        <name>Maximum_Length__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Unit Number Structures --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sequence No. --></label>
+        <name>Sequence_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sorting Sequence --></label>
+        <name>Sorting_Sequence__c</name>
+        <picklistValues>
+            <masterLabel>AlphaNumeric</masterLabel>
+            <translation><!-- AlphaNumeric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Numeric</masterLabel>
+            <translation><!-- Numeric --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>FLOOR</masterLabel>
+            <translation><!-- FLOOR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PROJECT</masterLabel>
+            <translation><!-- PROJECT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TOWER</masterLabel>
+            <translation><!-- TOWER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UNIT NO.</masterLabel>
+            <translation><!-- UNIT NO. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unique Sequence No --></label>
+        <name>Unique_Sequence_No__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Maximum length cannot be greater than 5 OR Less than 1 --></errorMessage>
+        <name>Maximum_Length_of_Unit_Structure</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Once Unit Structure is Activated,You cannot create or edit Unit Structure. --></errorMessage>
+        <name>No_Modification_after_Unit_Structure_act</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sequence Number value Can only be between 1-5 --></errorMessage>
+        <name>Sequence_Number_Value</name>
+    </validationRules>
+</CustomObjectTranslation>

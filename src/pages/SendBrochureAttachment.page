@@ -1,0 +1,57 @@
+<apex:page Controller="SendBrochureAttachmentClass" sidebar="false" showHeader="false" >
+<apex:form >
+    <apex:pageBlock title="Project Brochure">
+    <span><!-- <h3 style="color:blue;">Projects which do not have a brochure will not be shown in the Projects dropdown. You may contact your administrator to have the project brochure uploaded.</h3>--></span>
+         <br/><br/>     
+        
+        <!-- FOR SENDING Project BROCHURE -->
+          <apex:pageBlockButtons location="bottom" >
+                <!--<apex:commandButton action="{!getPAT}" value="Search Brochure"/>-->
+            <apex:commandButton id="button1" action="{!callSendBrochure}" value="Send Project Brochure"/><!-- callSendBrochure -->
+            </apex:pageBlockButtons>
+         <apex:outputPanel id="ouput" > 
+            <apex:pageBlockSection title="Send Project Brochure">
+                 <apex:selectList id="abc" value="{!selectedProject}" size="1"> 
+                    <apex:selectOptions value="{!getProjects}" /> 
+                    <apex:actionSupport event="onchange" action="{!getPAT}">
+                       <apex:param name="selectedProject" value="{!getProjects}" assignTo="{!selectedProject}"/>
+                   </apex:actionSupport>
+                </apex:selectList>
+             </apex:pageBlockSection>
+        </apex:outputPanel>
+         <apex:pageMessages id="topMessage" rendered="{!LEN(isError)>0}"/>
+        </apex:pageBlock> <!-- Main page Block --> 
+         
+         
+         
+         <!-- For Sending Tower Brochure -->
+<!--
+         <apex:pageBlock title="Tower Brochure">
+         <span><h3 style="color:blue;">Towers which do not have a brochure will not be shown in the Towers dropdown. Should you wish to send a project brochure then you may use the 'Send Project Brochure' section above.</h3></span>
+         <br/><br/>
+         <apex:pageBlockButtons location="bottom" >
+            <apex:commandButton id="button2" action="{!SendTBrochure}" value="Send Tower Brochure"/>
+         </apex:pageBlockButtons>
+             <apex:outputPanel id="tower" >
+                <apex:pageBlockSection title="Send Tower Brochure">
+                     
+                     <apex:selectList id="abc111" value="{!selectedPojectForTower}" size="1"> 
+                        <apex:selectOptions value="{!getProjectsforTower}" /> 
+                        <apex:actionSupport event="onchange" action="{!getPAT2}">
+                           <apex:param name="selectedPojectForTower" value="{!getProjectsforTower}" assignTo="{!selectedPojectForTower}"/>
+                       </apex:actionSupport>
+                    </apex:selectList>
+                    
+                    <apex:selectList id="abc222" value="{!selectedTower}" size="1"> 
+                        <apex:selectOptions value="{!getTowers}" /> 
+                        <apex:actionSupport event="onchange" action="{!getPAT2}" >
+                           <apex:param name="selectedTower" value="{!getTowers}" assignTo="{!selectedTower}"/>
+                       </apex:actionSupport>
+                    </apex:selectList>                
+                 </apex:pageBlockSection>
+            </apex:outputPanel> 
+            <apex:pageMessages id="BotmMessage" rendered="{!LEN(isErrorBtm)>0}"/> 
+            </apex:pageBlock>          
+-->       
+</apex:form>
+</apex:page>

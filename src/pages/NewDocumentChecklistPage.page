@@ -1,0 +1,1733 @@
+<apex:page controller="DocumentChecklistPageController"  standardStylesheets="false">
+<head>
+    <title>Document Checklist</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    
+<style>
+body{
+     /* width: 1400px;*/
+      width: 100%;
+      height : 200px;
+      margin: 0px auto 0 auto;
+      font-family: Arial, Helvetica;
+      font-size: small;
+      background-color: white;
+     /*background-image:"house1.jpg";*/
+      
+    }
+    
+    #resizable { margin:10px 20px 20px 170px; width: 1000px; height: 500px; padding: 0.5em; }
+    #resizable h3 { text-align: center; margin: 0; }
+
+    /* ------------------------------------------------- */
+
+    #tabs {
+      overflow: hidden;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #tabs li {
+      float: left;
+      margin: 0 -15px 0 0;
+  }
+
+    #tabs a {
+      float: left;
+      position: relative;
+      padding: 0 60px;
+      height: 0;
+      line-height: 30px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;      
+      border-right: 30px solid transparent;
+      border-bottom: 30px solid #3D3D3D;
+      border-bottom-color: #777\9;
+      opacity: .3;
+      filter: alpha(opacity=30);      
+    }
+
+    #tabs a:hover,
+    #tabs a:focus {
+      border-bottom-color: #2ac7e1;
+      opacity: 1;
+      filter: alpha(opacity=100);
+    }
+
+    #tabs a:focus {
+      outline: 0;
+    }
+
+    #tabs #current {
+      z-index: 3;
+      border-bottom-color: #3d3d3d;
+      opacity: 2;
+      filter: alpha(opacity=100);      
+    }
+
+    /* ----------- */
+    #content {
+        background: #D6DDDD;
+        border-top: 0px solid #3d3d3d;
+        padding: 2em;
+        //height: 500px;
+        /*background-image:"house1.jpg";*/
+    }
+
+    #content h2,
+      #content h3,
+      #content p {
+        margin: 0 0 15px 0;
+    }  
+
+    /* Demo page only */
+    #about {
+        color: #0ad;
+        text-align: center;
+        font: 0.9em Arial, Helvetica;
+    }
+
+    #about a {
+        color: #777;
+    }     
+    table.tableApp1A {
+        width:90%;        
+    }
+    table.tableApp1A th{
+        text-align : center;        
+    }
+    
+    
+    table.tableApp1B {
+        
+        //display : none ;
+        border : 3px Solid Black;
+        width:100%;
+        
+    }
+    table.tableApp1B th{
+        text-align : center;        
+    }
+    table.tableApp1B td {
+        
+        border : 1px Solid Black;
+        padding: 10px;
+        fixed-width : 80%;
+       }
+     table.tableApp1B tr{
+       
+       fixed-width : 80%;
+      }
+    
+    }
+          
+</style>
+<script>
+//alert(document.getElementById("{!$Component.ApplicantSubType}").value);
+function showDiv(thisselect,thisselect1){
+    alert("here");
+    
+     //var selected = thisselect.options[thisselect.selectedIndex].value;
+     selected = thisselect;
+    //alert('subtype : ' +selected);
+    document.getElementById(thisselect1).style.display ="Block";    
+    var i;
+    for(i = 1; i<= 18 ; i++)
+    {
+        document.getElementById(thisselect1).rows[i].style.display ="Block";
+        document.getElementById(thisselect1).rows[i].setAttribute("style","width:100%");
+
+    }
+    if(selected == 'Indian Customers'){
+        for(i = 4; i<= 18 ; i++)
+        {
+            document.getElementById(thisselect1).rows[i].style.display ="none";
+            document.getElementById(thisselect1).rows[i].cols[3].setAttribute("required","true");
+        }
+    }
+    if(selected == 'Foreign Nationals Of Indian Origin'){
+       for(i = 7; i <= 18 ; i++)
+        {
+            
+            document.getElementById(thisselect1).rows[i].style.display ="none";
+            //document.getElementById(thisselect1).rows[i].setAttribute("style","width:100%");
+        }
+        document.getElementById(thisselect1).rows[1].style.display ="none";        
+        document.getElementById(thisselect1).rows[2].style.display ="none";
+    }
+    if(selected == 'For NRI'){
+        for(i = 9; i <= 18 ; i++)
+        {
+            
+            document.getElementById(thisselect1).rows[i].style.display ="none";
+        }
+        document.getElementById(thisselect1).rows[2].style.display ="none";
+        document.getElementById(thisselect1).rows[4].style.display ="none";
+        document.getElementById(thisselect1).rows[5].style.display ="none";
+    }
+    if(selected == 'For Company'){
+        for(i = 2; i <= 8 ; i++)
+        {
+            
+            document.getElementById(thisselect1).rows[i].style.display ="none";
+        }
+        for(i = 16; i <= 18 ; i++)
+        {
+            document.getElementById(thisselect1).rows[i].style.display ="none";
+        }
+    }
+    if(selected == 'Partnership Firm'){
+        for(i = 2; i <= 14 ; i++)
+        {
+           document.getElementById(thisselect1).rows[i].style.display ="none";
+        }        
+    } 
+   
+}
+</script>
+
+</head>
+<body>
+<apex:form id="ApplicantForm"> 
+<apex:actionStatus id="status">
+    <apex:facet name="start">
+    <div class="fadeMe">
+        &nbsp;
+    </div>
+    <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+        <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+            <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+            <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+        </div>
+    </div>
+    </apex:facet>
+ </apex:actionStatus>
+<apex:outputPanel id="messages">
+    <apex:pageMessages />
+</apex:outputPanel>
+
+<apex:outputPanel id="ccd">
+
+</apex:outputPanel>
+
+<apex:OutputPanel rendered="{!If(LEN(error)== 0,True,False)}">
+<apex:outputPanel id="buttons">
+<div align="center">
+    <h1>Document Verification Checklist</h1>
+    <br/><br/>
+    <apex:commandButton value="Accept" onclick="Accept();return false;" disabled="{!(isAccepted) || (isRejected)}" status="status"/> &nbsp;
+    <apex:commandButton value="Reject" onclick="createArray();" disabled="{!(isAccepted) || (isRejected)}" rerender="ccd" status="status"/> 
+    <apex:commandButton value="Home" onclick="finalRedirect();return false;" rendered="{!(isAccepted) || (isRejected)}" status="status"/>
+   
+</div>
+</apex:outputPanel>
+
+<div>
+
+       <br/>
+       <br/>
+      <table id="checklist" class="tableApp1B">
+      <!-----------------------------------------------Client Signatures--------------------------------->
+        <tr style="width:90%;"><th style="width:50%;">Description</th><th style="width:20%;">Values</th><th style="width:5%;">Verified</th> <th style="width:20%;">Rejection Remarks</th></tr>
+        <tr style="background:#edf3f3;" id="row101"><td colspan="4"><h4>Client Signatures</h4></td></tr>
+        
+        <tr><td>All pages of Booking form to be signed by all applicants. Empty applicant pages if not signed are ok.</td><td>N/A</td><td><apex:inputField value="{!DocRow1.Verified__c}" id="doc1verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan1" status="status"/> </apex:inputField>
+        </td><td><apex:actionRegion > <apex:outputPanel id="pan1"> <apex:inputText value="{!DocRow1.Rejection_Remarks__c}" id="doc1remarks" disabled="{!DocRow1.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td></tr>
+        
+        <tr><td>Quotation page is signed by all applicants</td><td>N/A</td><td><apex:inputField value="{!DocRow2.Verified__c}" id="doc2verified">
+        <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan2" status="status"/> </apex:inputField>
+        </td><td><apex:actionRegion > <apex:outputPanel id="pan2"><apex:inputText value="{!DocRow2.Rejection_Remarks__c}" id="doc2remarks" disabled="{!DocRow2.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td></tr>
+        
+        <tr><td>Floor plan and other Annexure mentioned in Booking form signed by all applicants</td><td>N/A</td><td><apex:inputField value="{!DocRow3.Verified__c}"  id="doc3verified">
+        <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan3" status="status"/> </apex:inputField>
+        </td><td><apex:actionRegion > <apex:outputPanel id="pan3"><apex:inputtext value="{!DocRow3.Rejection_Remarks__c}" id="doc3remarks" disabled="{!DocRow3.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td></tr>  
+              
+        <tr><td>All supporting documents to be self attested by the said applicant</td><td>N/A</td><td><apex:inputField value="{!DocRow4.Verified__c}" id="doc4verified">
+        <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan4" status="status"/> </apex:inputField>
+        </td><td><apex:actionRegion > <apex:outputPanel id="pan4"><apex:inputtext value="{!DocRow4.Rejection_Remarks__c}" id="doc4remarks" disabled="{!DocRow4.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td></tr>  
+        
+      <!-----------------------------------------------Strike Out--------------------------------->
+        <tr style="background:#edf3f3;" id="row102"><td colspan="4"><h4>Strike Out</h4></td></tr>
+        <tr><td>All empty applicant pages to be striked out (document checker can strike out on his/her own incase not done)</td><td>N/A</td><td><apex:inputField value="{!DocRow5.Verified__c}" id="doc5verified">
+        <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan5" status="status"/> </apex:inputField>
+        </td><td><apex:actionRegion > <apex:outputPanel id="pan5"><apex:inputtext value="{!DocRow5.Rejection_Remarks__c}" id="doc5remarks" disabled="{!DocRow5.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td></tr>
+      
+        <!-----------------------------------------------Overwriting--------------------------------->
+        <tr style="background:#edf3f3;" id="row103"><td colspan="4"><h4>Overwriting</h4></td>
+        </tr>  
+        <tr>
+            <td>No white ink can be used in the entire application form. Check full application form.</td> <td>N/A</td><td><apex:inputField value="{!DocRow6.Verified__c}" id="doc6verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan6" status="status"/> </apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan6"><apex:inputtext value="{!DocRow6.Rejection_Remarks__c}" id="doc6remarks" disabled="{!DocRow6.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+            
+        </tr>
+        <tr>
+            <td>Mistakes if any can be corrected only on the applicant pages of form by cutting the mistake, making the change and coutersigning by said applicant. Check full application form.</td><td>N/A</td>
+            <td><apex:inputField value="{!DocRow7.Verified__c}" id="doc7verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan7" status="status"/> </apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan7"><apex:inputtext value="{!DocRow7.Rejection_Remarks__c}" id="doc7remarks" disabled="{!DocRow7.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+        </tr>
+        <tr>
+            <td>Any mistake on the Unit details page - new application form needs to be filled. Check full application form.</td><td>N/A</td>
+            <td><apex:inputField value="{!DocRow8.Verified__c}"  id="doc8verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan8" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan8"><apex:inputtext value="{!DocRow8.Rejection_Remarks__c}" id="doc8remarks" disabled="{!DocRow8.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+        </tr>
+        
+        
+        <!-----------------------------------------------Future Correspondence--------------------------------->
+        <tr style="background:#edf3f3;" id="row104"><td colspan="4"><h4>Future Correspondence</h4></td>
+        </tr>
+        <tr>
+            <td>Future Correspondence Contact</td><td><h4>{!lstBooking[0].Future_Correspondence_Contact__c}</h4></td>
+            <td><apex:inputField value="{!DocRow9.Verified__c}"  id="doc9verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan9" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan9"><apex:inputtext value="{!DocRow9.Rejection_Remarks__c}" id="doc9remarks" disabled="{!DocRow9.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+        
+        </tr>   
+        <tr>
+            <td>Future Correspondence Contact Relation</td><td><h4> {!lstBooking[0].Future_Correspondence_Contact_Relation__c}</h4></td>
+            <td><apex:inputField value="{!DocRow10.Verified__c}"  id="doc10verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan10" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan10"><apex:inputtext value="{!DocRow10.Rejection_Remarks__c}" id="doc10remarks" disabled="{!DocRow10.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+        </tr>
+        <tr>
+        <td>Future Correspondence Contact Name </td><td><h4> {!lstBooking[0].Future_Correspondence_Contact_Name__c}</h4></td>
+        <td><apex:inputField value="{!DocRow11.Verified__c}"  id="doc11verified">
+        <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan11" status="status"/></apex:inputField>
+        </td><td><apex:actionRegion > <apex:outputPanel id="pan11"><apex:inputtext value="{!DocRow11.Rejection_Remarks__c}" id="doc11remarks" disabled="{!DocRow11.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+        </tr>
+        <tr>
+            <td>Future Correspondence Contact Mobile</td><td><h4> {!lstBooking[0].Future_Correspondence_Contact_Phone__c}</h4></td>
+            <td><apex:inputField value="{!DocRow12.Verified__c}"  id="doc12verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan12" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan12"><apex:inputtext value="{!DocRow12.Rejection_Remarks__c}" id="doc12remarks" disabled="{!DocRow12.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+        </tr>
+        <tr>    
+            <td>Future Correspondence Contact Email</td><td><h4> {!lstBooking[0].Future_Correspondence_Contact_Email__c}</h4></td>
+            <td><apex:inputField value="{!DocRow13.Verified__c}"  id="doc13verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan13" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan13"><apex:inputtext value="{!DocRow13.Rejection_Remarks__c}" id="doc13remarks" disabled="{!DocRow13.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+        </tr>  
+        
+        <!-----------------------------------------------Booking Details--------------------------------->
+        <tr style="background:#edf3f3;" id="row105"><td colspan="10"><h4>Booking Details</h4></td>
+            
+        </tr>
+        
+       <!-- <tr>
+            <td>Zone</td><td>Zone:<h4> {!lstBooking[0].Zone__c}</h4> </td><td rowspan="10"><apex:inputField value="{!DocRow5.Verified__c}" id="doc5verified" onclick="EditOnoff();"/></td>
+            <td rowspan="10"><apex:inputField id="doc5remarks" value="{!DocRow5.Rejection_Remarks__c}"/></td> 
+        </tr>-->
+        <tr>
+            <td>Booking Date Matching With Application Form Date</td><td>
+            <h4>
+                    <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                         <apex:param value="{!lstBooking[0].Booking_Date__c}"/>
+                    </apex:outputtext>
+            </h4></td>
+            <td><apex:inputField value="{!DocRow14.Verified__c}" id="doc14verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan14" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan14"><apex:inputtext value="{!DocRow14.Rejection_Remarks__c}" id="doc14remarks" disabled="{!DocRow14.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+        </tr>
+        <tr>
+            <td>Wing</td><td><h4> {!lstBooking[0].Wing__c}</h4></td>
+            <td><apex:inputField value="{!DocRow15.Verified__c}" id="doc15verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan15" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan15"><apex:inputtext value="{!DocRow15.Rejection_Remarks__c}" id="doc15remarks" disabled="{!DocRow15.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+
+        </tr>
+        <tr>
+            <td>Unit Typology</td><td><h4> {!lstBooking[0].Flat_Typology__c}</h4></td>
+            <td><apex:inputField value="{!DocRow16.Verified__c}"  id="doc16verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan16" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan16"><apex:inputtext value="{!DocRow16.Rejection_Remarks__c}" id="doc16remarks" disabled="{!DocRow16.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+
+        </tr>
+        <tr>
+            <td>Floor</td><td><h4> {!lstBooking[0].Floor1__c}</h4></td>
+            <td><apex:inputField value="{!DocRow17.Verified__c}" id="doc17verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan17" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan17"><apex:inputtext value="{!DocRow17.Rejection_Remarks__c}" id="doc17remarks" disabled="{!DocRow17.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+
+        </tr>
+        <tr>
+            <td>Unit No.</td><td><h4> {!lstBooking[0].Flat_No__c}</h4></td>
+            <td><apex:inputField value="{!DocRow18.Verified__c}" id="doc18verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan18" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan18"><apex:inputtext value="{!DocRow18.Rejection_Remarks__c}" id="doc18remarks" disabled="{!DocRow18.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+
+        </tr>
+        <tr>
+            <td>Carpet Area</td><td><h4> {!lstBooking[0].Carpet_Area__c}</h4></td>
+            <td><apex:inputField value="{!DocRow19.Verified__c}" id="doc19verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan19" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan19"><apex:inputtext value="{!DocRow19.Rejection_Remarks__c}" id="doc19remarks" disabled="{!DocRow19.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+
+        </tr>
+        <tr>
+            <td> Exclusive Area (sq. Ft.)[Terrace Area/Balcony
+Area/Enclosed Balcony Area/Passage
+Area/Mezzanine etc.]
+</td><td><h4> {!lstBooking[0].Unit_No__r.Exclusive_Area__c}</h4></td>
+            <td><apex:inputField value="{!DocRow20.Verified__c}" id="doc20verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan20" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan20"><apex:inputtext value="{!DocRow20.Rejection_Remarks__c}" id="doc20remarks" disabled="{!DocRow20.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+
+        </tr>
+        <tr>
+            <td>No. of Parking</td>
+            <td>
+             <apex:outputText rendered="{!If((lstBooking[0].Quotation__r.Total_Stack__c != 0 ) ,True,False)}"><h4>Stack-{!lstBooking[0].Quotation__r.Total_Stack__c}</h4></apex:outputText>
+             <apex:outputText rendered="{!If((lstBooking[0].Quotation__r.Total_Independent__c!= 0 ) ,True,False)}"><h4> Independent-{!lstBooking[0].Quotation__r.Total_Independent__c}</h4></apex:outputText>
+             <apex:outputText rendered="{!If((lstBooking[0].Quotation__r.Total_Dependent__c!= 0 ) ,True,False)}"><h4> Dependent-{!lstBooking[0].Quotation__r.Total_Dependent__c}</h4></apex:outputText>
+             <apex:outputText rendered="{!If((lstBooking[0].Quotation__r.Total_Puzzle__c!= 0 ) ,True,False)}"><h4> Puzzle-{!lstBooking[0].Quotation__r.Total_Puzzle__c}</h4></apex:outputText>
+             <apex:outputText rendered="{!If((lstBooking[0].Quotation__r.Total_Dependable_Stack__c != 0 ) ,True,False)}"><h4> Dependable Stack-{!lstBooking[0].Quotation__r.Total_Dependable_Stack__c}</h4></apex:outputText>  
+             <apex:outputText rendered="{!If((lstBooking[0].Quotation__r.Total_New_stack__c!= 0 ) ,True,False)}"><h4>Stack(3)-{!lstBooking[0].Quotation__r.Total_New_stack__c}</h4></apex:outputText>
+   
+           </td>
+            <td><apex:inputField value="{!DocRow21.Verified__c}" id="doc21verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan21" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan21"><apex:inputtext value="{!DocRow21.Rejection_Remarks__c}" id="doc21remarks" disabled="{!DocRow21.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+
+        </tr>
+        
+        <tr>
+            <td>Consideration Value </td><td><h4> {!alotment}</h4></td>
+            <td><apex:inputField value="{!DocRow22.Verified__c}" id="doc22verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan22" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan22"><apex:inputtext value="{!DocRow22.Rejection_Remarks__c}" id="doc22remarks" disabled="{!DocRow22.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+
+        </tr>
+        
+
+       <!-----------------------------------------------Receipt Details (Token Amount)---------------------------------> 
+       <tr style="background:#edf3f3;" id="row106"><td colspan="4"><h4>Receipt Details&nbsp;&nbsp;&nbsp;
+          <apex:commandLink id="receipt" value="View all Receipts" action="{!receipt}" target="_blank" > 
+                                    </apex:commandLink> 
+                                    </h4></td>
+       </tr>       
+       
+       <tr><td>Check All Receipt for any Discreminities </td><td>N/A</td><td><apex:inputField value="{!DocRow23.Verified__c}" id="doc23verified">
+       <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan23" status="status"/></apex:inputField>
+       </td><td><apex:actionRegion > <apex:outputPanel id="pan23"><apex:inputtext value="{!DocRow23.Rejection_Remarks__c}" id="doc23remarks" disabled="{!DocRow23.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td></tr> 
+         
+      <!-- <tr>
+           <td>Amount</td><td><h4> {!tokenamt}</h4></td><td rowspan="5"><apex:inputField value="{!DocRow6.Verified__c}" id="doc6 /></td>
+           <!-- <td rowspan="5"><apex:inputField id="doc6remarks" value="{!DocRow6.Rejection_Remarks__c}"/></td> 
+        </tr> -->
+       <!-- <tr>    
+           <!--<td>Cheque no </td><td>Cheque no:<h4> {!lstReceiptTokenToShow.Cheque_DD__c}{!lstReceiptTokenToShow.NEFT__c}{!lstReceiptTokenToShow.RTGS__c}{!lstReceiptTokenToShow.Challan_No__c}{!lstReceiptTokenToShow.Pay_Order__c}</h4></td>
+           <td>Cheque no </td><td><h4> {!lstReceiptTokenToShow.Cheque_DD__c}{!lstReceiptTokenToShow.NEFT__c}{!lstReceiptTokenToShow.Challan_No__c}</h4></td>
+        </tr>   
+        <tr>
+            <td>Cheque date</td><td><h4><apex:outputField value="{!lstReceiptTokenToShow.Cheque_DD_Date__c}" /></h4></td>
+        </tr>    
+        <tr>    
+            <td>Bank name </td><td><h4> {!lstReceiptTokenToShow.DraweeBank__c}</h4></td>
+        </tr> 
+        <tr>    
+            <td>In Favor of (should match with correct SPV name of the said unit)</td><td><h4> {!infavourtoken1}</h4></td>
+        </tr>   -->
+        
+       <!-----------------------------------------------Receipt Details ( Service Tax)---------------------------------> 
+       <!--<apex:outputPanel rendered="{!lstReceiptServiceTax.size > 0}"> -->
+     <!--  <apex:outputPanel>
+       <tr style="background:#edf3f3;" id="row107"><td colspan="4"><h4><apex:OutputText value="{!DocRow7.Description__c}"/>
+        &nbsp;&nbsp;&nbsp;<apex:commandLink id="streceipt" value="View all Receipts" action="{!receipt}" target="_blank" ></apex:commandLink> 
+       </h4></td>
+          
+       </tr> -->
+    
+        <!--<tr>
+           <td>Amount</td><td><h4> {!STamt}</h4></td> <td rowspan="5"><apex:inputField value="{!DocRow7.Verified__c}" id="doc7verified" onclick="EditOnoff();"/></td>
+           <!-- <td rowspan="5"><apex:inputField id="doc7remarks" value="{!DocRow7.Rejection_Remarks__c}"/></td>
+        </tr>  -->
+      <!--  <tr>    
+          <!-- <td>Cheque no </td><td>Cheque no:<h4> {!lstReceiptServiceTaxToShow.Cheque_DD__c}{!lstReceiptServiceTaxToShow.NEFT__c}{!lstReceiptServiceTaxToShow.RTGS__c}{!lstReceiptServiceTaxToShow.Challan_No__c}{!lstReceiptServiceTaxToShow.Pay_Order__c}</h4></td>-->
+          <!--  <td>Cheque no </td><td><h4> {!lstReceiptServiceTaxToShow.Cheque_DD__c}{!lstReceiptServiceTaxToShow.NEFT__c}{!lstReceiptServiceTaxToShow.Challan_No__c}</h4></td>
+        </tr> -->   
+       <!-- <tr>
+            <td>Cheque date</td><td><h4><apex:outputField value="{!lstReceiptServiceTaxToShow.Cheque_DD_Date__c}"/> </h4></td>
+        </tr>    
+        <tr>    
+            <td>Bank name </td><td><h4> {!lstReceiptServiceTaxToShow.DraweeBank__c}</h4></td>
+        </tr>    
+        <tr>    
+            <td>In Favor of (should match with correct SPV name of the said unit)</td><td><h4> {!infavourST1}</h4></td>
+        </tr> -->
+      <!--  </apex:outputPanel> -->
+        <!-----------------------------------------------Source of Booking Details---------------------------------> 
+         <tr style="background:#edf3f3;" id="row108"><td colspan="4"><h4>Source of Booking Details</h4></td>
+           
+       </tr> 
+        <tr>
+            <td>Booking Source And Sub-Source </td><td><h4> {!lstBooking[0].Source_of_Booking__c} {!subsource}</h4></td>
+            <td><apex:inputField value="{!DocRow24.Verified__c}" id="doc24verified">
+            <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan24" status="status"/></apex:inputField>
+            </td><td><apex:actionRegion > <apex:outputPanel id="pan24"><apex:inputtext value="{!DocRow24.Rejection_Remarks__c}" id="doc24remarks" disabled="{!DocRow24.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td></tr>
+       <!-- <tr>
+            <td>Booking Source (Reference By Others)</td><td><h4> {!lstBooking[0].Booking_Source_Reference_By_Others__c}</h4></td>
+        </tr>
+        <tr>
+            <td>Booking Source (Reference By Employee)</td><td><h4> {!lstBooking[0].Booking_Source_Reference_By_Employee__c}</h4></td>
+        </tr>
+        <tr>
+            <td>Booking Source (Reference by Booked Customer)</td><td><h4> {!lstBooking[0].Booking_Source_Reference_by_Customer__c}</h4></td>
+        </tr>
+        <tr>
+            <td>Booking Source (Channel Partner Registerted)</td><td><h4> {!lstBooking[0].Booking_Source_CP_Registered__c}</h4></td>
+        </tr>
+        <tr>
+            <td>Booking Source (Channel Partner New)</td><td><h4> {!lstBooking[0].Booking_Source_CP_New__c}</h4></td>
+        </tr>-->
+        
+       <!-- <tr>
+            <td>Referred By</td><td><h4> {!lstBooking[0].Referred_By__c}</h4></td>
+        </tr>
+        <tr>
+            <td>Name of Referer (Direct / Corporate Bookings)</td><td><h4>{!lstBooking[0].Customer__r.Name_of_Refree__c}</h4></td>
+        </tr>
+        <tr>
+            <td>Name of Referer Customer (Customer Referral) </td><td><h4>{!lstBooking[0].Customer__r.Respective_Customer_Account__r.Name}</h4></td>
+        </tr>
+        <tr>
+            <td>Contact No. of Referer Customer (Customer Referral) </td><td><h4>{!lstBooking[0].Customer__r.Mobile_of_Refree__c}</h4></td>
+        </tr>
+        <tr>
+            <td>Project of Referer Customer (Customer Referral)</td><td>N/A</td>
+        </tr>
+        <tr>
+            <td>Unit No. of Referer Customer (Customer Referral)</td><td>N/A</td>
+        </tr>
+        <tr>
+            <td>Name of Contact Person to be mentioned (if it does not match - its ok) - it should oly be mentioned</td><td><h4>{!lstBooking[0].Future_Correspondence_Contact_Name__c }</h4></td>
+        </tr>
+        <tr>
+            <td>Company Name</td><td><h4>{!applicantList[0].Organization_Name__c}</h4></td>
+        </tr>
+        <tr>
+            <td>Channel Partner ID</td><td><h4>{!lstBooking[0].Customer__r.Walk_in_Channel_Partner__r.Name}</h4></td>
+        </tr>
+        <tr>
+            <td>Signature and Stamp of Channel Partner Company</td><td>N/A</td>
+        </tr>
+        -->
+        
+        <!-----------------------------------------------Deal Approval Details : SNAPSHOT---------------------------------> 
+        <!--
+         <tr style="background:#edf3f3;" id="row109"><td colspan="4"><h4><apex:OutputText value="{!DocRow9.Description__c}"/></h4></td>
+           
+         </tr>
+         <tr>
+             <td>Name of Applicants</td><td><h4>{!ApplicantNames}</h4> </td><td rowspan="15"><apex:inputField value="{!DocRow9.Verified__c}" id="doc9verified" onclick="EditOnoff();"/></td>
+           <td rowspan="15"><apex:inputField id="doc9remarks" value="{!DocRow9.Rejection_Remarks__c}"/></td>
+         </tr>
+         <tr>
+             <td>Booking Date</td><td><h4><apex:Outputfield value="{!lstBooking[0].Booking_Date__c}" /></h4></td>
+         </tr>
+         <tr>
+             <td>Zone</td><td><h4>{!lstBooking[0].Zone__c}</h4></td>
+         </tr>
+         <tr>
+             <td>Wing</td><td><h4>{!lstBooking[0].Wing__c}</h4></td>
+         </tr>
+         <tr>
+             <td>Unit Typology</td><td><h4>{!lstBooking[0].Flat_Typology__c}</h4></td>
+         </tr>
+         <tr>
+             <td>Floor</td><td><h4>{!lstBooking[0].Floor__c}</h4></td>
+         </tr>
+         <tr>
+             <td>Unit No</td><td><h4>{!lstBooking[0].Flat_No__c}</h4></td>
+         </tr>
+         <tr>
+             <td>Carpet Area</td><td><h4>{!lstBooking[0].Carpet_Area__c}</h4></td>
+         </tr>
+         <tr>
+             <td>No of parking</td><td><h4>{!lstBooking[0].No_of_Parking__c}</h4></td>
+         </tr>
+         <!--<tr>
+             <td>Parking Type</td><td><h4>{!lstBooking[0].Parking_Type__c}</h4></td>
+         </tr>-->
+         <tr>
+             <td>Signature of Sales Manager</td><td><h4>{!lstBooking[0].Sales_Managers__c}</h4></td>
+             <td><apex:inputField value="{!DocRow25.Verified__c}" id="doc25verified">
+             <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan25" status="status"/></apex:inputField>
+             </td><td><apex:actionRegion > <apex:outputPanel id="pan25"><apex:inputtext value="{!DocRow25.Rejection_Remarks__c}" id="doc25remarks" disabled="{!DocRow25.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+         </tr>
+         
+        <!-- 
+        <tr>
+             <td>Source of Booking</td><td><h4>{!lstBooking[0].Source_of_Booking__c}</h4></td>
+         </tr>
+         <tr>
+             <td>Signature of Site Sales Head</td><td><h4>{!lstBooking[0].Level_One_Approver__r.Name}</h4></td>
+         </tr>
+         <tr>
+             <td>Signature of Sales Head</td><td><h4>{!lstBooking[0].Level_Two_Approver__r.Name}</h4></td>
+         </tr>
+         <tr>
+             <td>Signature of Business Head - as mandated by Project</td><td><h4>{!lstBooking[0].Level_Three_Approver__r.Name}</h4></td>
+         </tr>
+         -->
+         <!-----------------------------------------------Deal Approval Details : Discount---------------------------------> 
+         <tr style="background:#edf3f3;" id="row110"><td colspan="4">Deal Approval Details : Discount</td>
+           
+         </tr>
+         <tr>
+              <td>Base Price</td><td><h4>{!lstBooking[0].Quotation__r.Base_Rate_PSF__c}</h4></td>
+              <td><apex:inputField value="{!DocRow26.Verified__c}"  id="doc26verified">
+              <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan26" status="status"/></apex:inputField>
+              </td><td><apex:actionRegion > <apex:outputPanel id="pan26"><apex:inputtext value="{!DocRow26.Rejection_Remarks__c}" id="doc26remarks" disabled="{!DocRow26.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+           
+         </tr>
+         <tr>
+              <td>Discount</td><td><h4>{!lstBooking[0].Quotation__r.Customer_Total_Discount_PSF__c}</h4></td>
+              <td><apex:inputField value="{!DocRow27.Verified__c}" id="doc27verified">
+              <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan27" status="status"/></apex:inputField>
+              </td><td><apex:actionRegion > <apex:outputPanel id="pan27"><apex:inputtext value="{!DocRow27.Rejection_Remarks__c}" id="doc27remarks" disabled="{!DocRow27.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+         </tr>
+         <tr>
+              <td>Consideration Value (Agreement Value)</td><td><h4>{!alotment}</h4></td>
+              <td><apex:inputField value="{!DocRow28.Verified__c}"  id="doc28verified">
+              <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan28" status="status"/></apex:inputField>
+              </td><td><apex:actionRegion > <apex:outputPanel id="pan28"><apex:inputtext value="{!DocRow28.Rejection_Remarks__c}" id="doc28remarks" disabled="{!DocRow28.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+         </tr>
+         <tr>
+              <td>Signature of Business Head and Sales Head - as mandated by Project</td>
+              <td>
+                  <apex:outputText rendered="{!If((lstBooking[0].Level_Three_Approver__r.Name != '') && (lstBooking[0].Level_Two_Approver__r.Name != ''),True,False)}"><h4>{!lstBooking[0].Level_Three_Approver__r.Name}, {!lstBooking[0].Level_Two_Approver__r.Name}</h4></apex:outputText>
+                 <apex:outputText rendered="{!If((lstBooking[0].Level_Three_Approver__r.Name == '') && (lstBooking[0].Level_Two_Approver__r.Name == ''),True,False)}">N/A</apex:outputText>
+              </td>
+              <td><apex:inputField value="{!DocRow29.Verified__c}" id="doc29verified">
+              <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan29" status="status"/></apex:inputField>
+              </td><td><apex:actionRegion > <apex:outputPanel id="pan29"><apex:inputtext value="{!DocRow29.Rejection_Remarks__c}" id="doc29remarks" disabled="{!DocRow29.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+         </tr>
+         
+         
+         <!-----------------------------------------------Deal Approval Details : Quotation---------------------------------> 
+         <tr style="background:#edf3f3;" id="row11"><td colspan="4"><h4>Deal Approval Details : Quotation</h4></td>
+           
+         </tr>
+         <tr>
+             <td>Signed by all applicants</td><td>N/A</td>
+             <td><apex:inputField value="{!DocRow30.Verified__c}" id="doc30verified">
+             <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan30" status="status"/></apex:inputField>
+             </td><td><apex:actionRegion > <apex:outputPanel id="pan30"><apex:inputtext value="{!DocRow30.Rejection_Remarks__c}" id="doc30remarks" disabled="{!DocRow30.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+           
+         </tr>
+         <tr>
+             <td>Signature of Business Head and Sales Head - as mandated by Project</td>
+             <td>
+                 <apex:outputText rendered="{!If((lstBooking[0].Level_Three_Approver__r.Name != '') && (lstBooking[0].Level_Two_Approver__r.Name != ''),True,False)}"><h4>{!lstBooking[0].Level_Three_Approver__r.Name}, {!lstBooking[0].Level_Two_Approver__r.Name}</h4></apex:outputText>
+                 <apex:outputText rendered="{!If((lstBooking[0].Level_Three_Approver__r.Name == '') && (lstBooking[0].Level_Two_Approver__r.Name == ''),True,False)}">N/A</apex:outputText>
+             </td>
+             <td><apex:inputField value="{!DocRow31.Verified__c}" id="doc31verified">
+             <apex:actionSupport event="onchange" rerender="j_id0:ApplicantForm:pan31" status="status"/></apex:inputField>
+             </td><td><apex:actionRegion > <apex:outputPanel id="pan31"><apex:inputtext value="{!DocRow31.Rejection_Remarks__c}" id="doc31remarks" disabled="{!DocRow31.Verified__c}"/></apex:outputPanel> </apex:actionRegion></td>
+         </tr>
+
+            <!-----------------------------------------------Applicant Details---------------------------------> 
+           <!--  <tr style="background:#edf3f3;" id="row112"><td colspan="4"><h4><apex:OutputText value="{!DocRow12.Description__c}"/></h4></td>
+               
+             </tr>
+              <tr>
+                  <td>Name : Clearly written and matches with SFDC Booking</td><td><h4> {!applicantList[0].Salutation__c}.{!applicantList[0].Name}</h4></td><td rowspan="10"><apex:inputField value="{!DocRow12.Verified__c}"/></td>
+               <td rowspan="10"><apex:inputField value="{!DocRow12.Rejection_Remarks__c}"/></td>
+              </tr>
+              <tr>
+                  <td>Permanent address : Clearly written and matches with SFDC Booking</td><td><h4> {!applicantList[0].Permanent_Address__c} 'Pincode :' {!applicantList[0].Pincode__c}'Country :' {!applicantList[0].Country__c}</h4></td>
+              </tr>
+              <tr>
+                  <td>Mailing/Correspondance address : If different - should be mentioned clearly and matches with SFDC</td><td><h4>{!applicantList[0].Mailing_Address__c} 'Pincode :' {!applicantList[0].Mailing_Pincode__c}'Country :' {!applicantList[0].Mailing_Country__c}</h4></td>
+              </tr>
+              <tr>
+                  <td>"Permanent Address : (The following should match with SFDC data)</td><td>N/A</td>
+              </tr>
+              <tr>
+                  <td>Type of address proof document</td><td>N/A</td>
+              </tr>
+              <tr>
+                  <td>Address on photocopy</td><td>N/A</td>
+              </tr>
+              <tr>
+                  <td>Name on address proof matches with Name</td><td>N/A</td>
+              </tr>
+              <tr>
+                  <td>Address matches with permanent address"</td><td>N/A</td>
+              </tr>
+              <tr>
+                  <td>Mobile No ( Should be mentioned with 10 digits)</td><td><h4> {!applicantList[0].Mobile_Number__c}</h4></td>
+              </tr>
+              <tr>
+                  <td>Email Address (Should be mentioned)</td><td><h4> {!applicantList[0].Email_Address__c}</h4></td>
+              </tr>  -->
+        </table>
+</div>
+<br/><br/>
+<apex:outputPanel id="out"></apex:outputPanel>
+<ul id="tabs">
+<li><a href="#" name="#tab1">Applicant 1</a></li>
+<li><a href="#" name="#tab2">Applicant 2</a></li>
+<li><a href="#" name="#tab3">Applicant 3</a></li>
+<li><a href="#" name="#tab4">Applicant 4</a></li>
+<li><a href="#" name="#tab5">Applicant 5</a></li>
+</ul>
+<div id="content">
+  <div id="tab1">
+        <h1>Applicant 1</h1>
+        <br/>
+        <table  class="tableApp1A">
+        <tr><td>
+        <apex:outputLabel value="Applicant Name 1: " for="ApplicantName"/>
+        <apex:OutputText id="ApplicantName"  value="{!applicant.Name}"/>
+        </td><td>
+        <apex:outputLabel value="Applicant Type: " for="ApplicantType" />
+        <apex:OutputText id="ApplicantType"  value="{!applicant.Type_Of_Applicant__c}" />
+        </td><td>
+        <apex:outputLabel value="Applicant SubType: " for="ApplicantSubType" />
+        <apex:OutputText id="ApplicantSubType"  value="{!applicant.Subtype_Of_Applicant__c}"/>
+        </td></tr>
+        </table>
+         <br/>
+        <table id="ApplicantTable1" class="tableApp1B">
+        <!-------------------------------------Applicant 1 Detail-------------------------------------->
+        <apex:outputPanel rendered="{!applicantList.size > 0}">
+              <tr style="width:100%;" id="row112"><th colspan="6"><h4>Applicant 1 Detail<!--<apex:OutputText value="{!DocRow12.Description__c}"/>--></h4></th> </tr> 
+            
+              <tr>
+                  <td>true</td><td>Name : Clearly written and matches with SFDC Booking</td><td>N/A</td><td><apex:OutputText value="{!applicant.Salutation__c}" />.<apex:OutputText value="{!applicant.Name}" /></td><td><input type="checkbox" name="verified3" id="verified3"/></td><!-- <td><input type="text" /></td> --></tr>
+              <tr>
+                  <td>true</td><td>Permanent address : Clearly written and matches with SFDC Booking</td><td>N/A</td><td><apex:OutputText value="{!applicant.Permanent_Address__c}"  /> Pincode :  <apex:OutputText value="{!applicant.Pincode__c}" />Country :  <apex:OutputText value="{!applicant.Country__c}" /></td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              <tr>
+                  <td>true</td><td>Correspondance address : If different - should be mentioned clearly and matches with SFDC</td><td>N/A</td><td><apex:OutputText value="{!applicant.Mailing_Address__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              
+              <tr>
+                  <td>true</td><td>Mobile No ( Should be mentioned with 10 digits)</td><td>N/A</td><td><apex:OutputText value="{!applicant.Mobile_Number__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              <tr>
+                  <td>true</td><td>Email Address (Should be mentioned)</td><td>N/A</td><td><apex:OutputText value="{!applicant.Email_Address__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+               
+        </apex:outputPanel>       
+        <!-------------------------------------Applicant 1 Document-------------------------------------->
+        <tr style="width:100%;"><th style="width:5%;">&nbsp;</th><th style="width:50%;">Document Name</th><th style="width:10%;">Document Type</th><th style="width:20%;">Document Details</th><th style="width:5%;">Verified</th><!--<th style="width:10%;">Rejection Remarks</th>--></tr>
+        
+        <tr id="row1"><td><apex:OutputText value="{!applicant.Pancard__c}" /></td>
+            <td>PAN : 
+                Numbers on photocopy matches with: SFDC and Booking form
+                Name on PAN matches with SFDC and Booking form completely
+            </td>
+            <td>N/A</td><td><apex:OutputText value="{!applicant.PancardNo__c}"  /></td><td><input type="checkbox" name="verified1" id="verified1" /></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row2"><td><apex:OutputText value="{!applicant.Address_Proof__c}"/></td>
+        <td>Permanent Address : ( The following should match with SFDC data) 
+            Type of address proof document
+            Address on photocopy
+            Name on address proof matches with Name
+            Address matches with permanent address.
+        </td>
+        <td><apex:OutputText value="{!applicant.Address_Proof_Document__c}"/></td><td><apex:OutputText value="{!applicant.Address_Proof_Number__c}"/></td><td><input type="checkbox" name="verified2" id="verified2"/></td><!--<td><input type="text" /></td>--></tr>
+      
+        <tr id="row3"><td><apex:OutputText value="{!applicant.One_Passport_Size_Color_Photograph__c}"/></td><td>One Passport Size Color Photograph.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row4"><td><apex:OutputText value="{!applicant.Funds_from_NRE_FCNR__c}"/></td><td>Proof of payment of funds from NRE / FCNR A/c</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified4" id="verified4"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row5"><td><apex:OutputText value="{!applicant.Self_attested_copy_of_PIO_or_OCI_Card__c}"/></td>
+        <td>PIO Card : 
+            Numbers on photocopy matches with: SFDC and Booking form
+            Name on PIO Card matches with SFDC and Booking form completely.
+        </td>
+        <td><apex:OutputText value="{!applicant.Type_Of_Origin__c}"/></td><td><apex:OutputText value="{!applicant.Origin_Details__c}"/></td><td><input type="checkbox" name="verified5" id="verified5"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row6"><td><apex:OutputText value="{!applicant.PassportNumber__c}"/></td><td>Self-attested copy of Passport - front and back</td><td>N/A</td><td><apex:OutputText value="{!applicant.PassportNoDetails__c}"/></td><td><input type="checkbox" name="verified6" id="verified6"/></td><!--<td><input type="text"/></td>--></tr>
+       
+        <tr id="row7"><td><apex:OutputText value="{!applicant.Funds_from_NRE_NRO__c}"/></td><td>Proof of payment of funds from NRE / NRO A/c</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified7" id="verified7"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row8"><td><apex:OutputText value="{!applicant.Copy_of_Workpermit_Employment_contract__c}"/></td><td>Self-attested copy of Work permit / Employment contract issued by the Employer</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified8" id="verified8"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row9"><td><apex:OutputText value="{!applicant.Copy_of_Memorandu_of_Association__c}"/></td><td>Certified copy of Memorandum of Association</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified9" id="verified9"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row10"><td><apex:OutputText value="{!applicant.Certified_copy_of_Article_of_Association__c}"/></td><td>Certified copy of Articles of Association.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified10" id="verified10"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row11"><td><apex:OutputText value="{!applicant.Certified_copy_of_Board_Resolution__c}"/></td><td>Certified copy of Board Resolution authorizing signig authority – BR to be stamped by companies banker.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified11" id="verified11"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row12"><td><apex:OutputText value="{!applicant.Certified_copy_of_ROC_Incorporation__c}"/></td><td>Certified copy of ROC Incorporation.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified12" id="verified12"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row13"><td><apex:OutputText value="{!applicant.Self_attested_List_of_Shareholders__c}"/></td><td>Self-attested List of Shareholders and their percentage holding.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified13" id="verified13"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row14"><td><apex:OutputText value="{!applicant.Self_attested_List_of_Directors__c}"/></td><td>Self-attested List of Directors.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified14" id="verified14"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row15"><td><apex:OutputText value="{!applicant.PanCard_of_Authority_Signatory__c}"/></td><td>Self-attested copy of Pan Card of Authority Signatory.</td><td>N/A</td><td><apex:OutputText value="{!applicant.Pan_Card_Number_of_Authority_Signatory__c}"/></td><td><input type="checkbox" name="verified15" id="verified15"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row16"><td><apex:OutputText value="{!applicant.Certified_copy_of_Partnership_Deed__c}"/></td><td>Certified copy of Partnership Deed (s).</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified16" id="verified16"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row17"><td><apex:OutputText value="{!applicant.Certified_extract_of_Registration__c}"/></td><td>Certified extract of Registration from Registrar of firms / Certificate of LLP.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified17" id="verified17"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        <tr id="row18"><td><apex:OutputText value="{!applicant.Copy_of_Authorization_Letter_POA__c}"/></td><td>Self-attested copy of Authorization Letter / Power of Attorney from All Partners.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified18" id="verified18"/></td><!--<td><input type="text"/></td>--></tr>
+        
+        </table>
+  </div>            
+  <div id="tab2" onload="showDiv(this,'ApplicantTable2')">
+       <h1>Applicant 2</h1>
+       <br/>
+      
+       <table  class="tableApp1A">
+        <tr><td>
+        <apex:outputLabel value="Applicant Name 2: " for="ApplicantName2"/>
+        <apex:OutputText id="ApplicantName2" value="{!applicant2.Name}"/>
+        </td><td>
+        <apex:outputLabel value="Applicant Type: " for="ApplicantType2" />
+        <apex:OutputText id="ApplicantType2"  value="{!applicant2.Type_Of_Applicant__c}" />
+        </td><td>
+        <apex:outputLabel value="Applicant SubType: " for="ApplicantSubType2" style="margin-right:1em;"/>
+        <apex:OutputText id="ApplicantSubType2"  value="{!applicant2.Subtype_Of_Applicant__c}" />
+        </td></tr>
+       </table>
+        <br/>
+       <table id="applicantTable2" class="tableApp1B">
+       <!-------------------------------------Applicant 2 Detail-------------------------------------->
+       <apex:outputPanel rendered="{!applicantList.size > 1}">
+             <tr style="width:100%;" id="row112"><th colspan="6"><h4>Applicant 2 Detail<!--<apex:OutputText value="{!DocRow12.Description__c}"/>--></h4></th> </tr> 
+            
+              <tr>
+                  <td>true</td><td>Name : Clearly written and matches with SFDC Booking</td><td>N/A</td><td><apex:OutputText value="{!applicant2.Salutation__c}" />.<apex:OutputText value="{!applicant2.Name}" /></td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              <tr>
+                  <td>true</td><td>Permanent address : Clearly written and matches with SFDC Booking</td><td>N/A</td><td><apex:OutputText value="{!applicant2.Permanent_Address__c}"  /> Pincode :  <apex:OutputText value="{!applicant2.Pincode__c}" />Country :  <apex:OutputText value="{!applicant2.Country__c}" /></td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              <tr>
+                  <td>true</td><td>Correspondance address : If different - should be mentioned clearly and matches with SFDC</td><td>N/A</td><td><apex:OutputText value="{!applicant2.Mailing_Address__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              
+              <tr>
+                  <td>true</td><td>Mobile No ( Should be mentioned with 10 digits)</td><td>N/A</td><td><apex:OutputText value="{!applicant2.Mobile_Number__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              <tr>
+                  <td>true</td><td>Email Address (Should be mentioned)</td><td>N/A</td><td><apex:OutputText value="{!applicant2.Email_Address__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+        </apex:outputPanel>
+       <!-------------------------------------Applicant 2 Document-------------------------------------->
+       
+        <tr style="width:100%;"><th style="width:5%;">&nbsp;</th><th style="width:50%;">Document Name</th><th style="width:10%;">Document Type</th><th style="width:20%;">Document Details</th><th style="width:5%;">Verified</th><!--<th style="width:10%;">Rejection Remarks</th>--></tr>
+        
+        <tr id="row1"><td><apex:OutputText value="{!applicant2.Pancard__c}" /></td>
+            <td>
+                PAN : 
+                Numbers on photocopy matches with: SFDC and Booking form
+                Name on PAN matches with SFDC and Booking form completely.
+            </td>
+            <td>N/A</td><td><apex:OutputText value="{!applicant2.PancardNo__c}"  /></td><td><input type="checkbox" name="verified1" id="verified1"/></td> <!--<td><input type="text" name="Remarks1" id="Remarks1"/></td>--></tr>
+        
+        <tr id="row2"><td><apex:OutputText value="{!applicant2.Address_Proof__c}"/></td>
+        <td>
+            Permanent Address : ( The following should match with SFDC data)
+            Type of address proof document
+            Address on photocopy
+            Name on address proof matches with Name
+            Address matches with permanent address.
+        </td>
+        <td><apex:OutputText value="{!applicant2.Address_Proof_Document__c}"/></td><td><apex:OutputText value="{!applicant2.Address_Proof_Number__c}"/></td><td><input type="checkbox" name="verified2" id="verified2"/></td><!--<td><input type="text" /></td>--></tr>
+      
+        <tr id="row3"><td><apex:OutputText value="{!applicant2.One_Passport_Size_Color_Photograph__c}"/></td><td>One Passport Size Color Photograph.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row4"><td><apex:OutputText value="{!applicant2.Funds_from_NRE_FCNR__c}"/></td><td>Proof of payment of funds from NRE / FCNR A/c</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified4" id="verified4"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row5"><td><apex:OutputText value="{!applicant2.Self_attested_copy_of_PIO_or_OCI_Card__c}"/></td>
+            <td>
+                PIO Card : 
+                Numbers on photocopy matches with: SFDC and Booking form
+                Name on PIO Card matches with SFDC and Booking form completely.
+            </td>
+            <td><apex:OutputText value="{!applicant2.Type_Of_Origin__c}"/></td><td><apex:OutputText value="{!applicant2.Origin_Details__c}"/></td><td><input type="checkbox" name="verified5" id="verified5"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row6"><td><apex:OutputText value="{!applicant2.PassportNumber__c}"/></td><td>Self-attested copy of Passport - front and back</td><td>N/A</td><td><apex:OutputText value="{!applicant2.PassportNoDetails__c}"/></td><td><input type="checkbox" name="verified6" id="verified6"/></td><!--<td><input type="text" /></td>--></tr>
+       
+        <tr id="row7"><td><apex:OutputText value="{!applicant2.Funds_from_NRE_NRO__c}"/></td><td>Proof of payment of funds from NRE / NRO A/c</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified7" id="verified7"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row8"><td><apex:OutputText value="{!applicant2.Copy_of_Workpermit_Employment_contract__c}"/></td><td>Self-attested copy of Work permit / Employment contract issued by the Employer</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified8" id="verified8"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row9"><td><apex:OutputText value="{!applicant2.Copy_of_Memorandu_of_Association__c}"/></td><td>Certified copy of Memorandum of Association</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified9" id="verified9"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row10"><td><apex:OutputText value="{!applicant2.Certified_copy_of_Article_of_Association__c}"/></td><td>Certified copy of Articles of Association.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified10" id="verified10"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row11"><td><apex:OutputText value="{!applicant2.Certified_copy_of_Board_Resolution__c}"/></td><td>Certified copy of Board Resolution authorizing signig authority – BR to be stamped by companies banker.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified11" id="verified11"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row12"><td><apex:OutputText value="{!applicant2.Certified_copy_of_ROC_Incorporation__c}"/></td><td>Certified copy of ROC Incorporation.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified12" id="verified12"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row13"><td><apex:OutputText value="{!applicant2.Self_attested_List_of_Shareholders__c}"/></td><td>Self-attested List of Shareholders and their percentage holding.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified13" id="verified13"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row14"><td><apex:OutputText value="{!applicant2.Self_attested_List_of_Directors__c}"/></td><td>Self-attested List of Directors.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified14" id="verified14"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row15"><td><apex:OutputText value="{!applicant2.PanCard_of_Authority_Signatory__c}"/></td><td>Self-attested copy of Pan Card of Authority Signatory.</td><td>N/A</td><td><apex:OutputText value="{!applicant2.Pan_Card_Number_of_Authority_Signatory__c}"/></td><td><input type="checkbox" name="verified15" id="verified15"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row16"><td><apex:OutputText value="{!applicant2.Certified_copy_of_Partnership_Deed__c}"/></td><td>Certified copy of Partnership Deed (s).</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified16" id="verified16"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row17"><td><apex:OutputText value="{!applicant2.Certified_extract_of_Registration__c}"/></td><td>Certified extract of Registration from Registrar of firms / Certificate of LLP.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified17" id="verified17"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row18"><td><apex:OutputText value="{!applicant2.Copy_of_Authorization_Letter_POA__c}"/></td><td>Self-attested copy of Authorization Letter / Power of Attorney from All Partners.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified18" id="verified18"/></td><!--<td><input type="text" /></td>--></tr>
+        </table>
+  </div>  
+  <div id="tab3" onload="showDiv(this,'ApplicantTable3')">
+       <h1>Applicant 3</h1>
+       <br/>
+       <table  class="tableApp1A">
+        <tr><td>
+        <apex:outputLabel value="Applicant Name 3: " for="ApplicantName3" />
+        <apex:OutputText id="ApplicantName3" value="{!applicant3.Name}"/>
+        </td><td>
+        <apex:outputLabel value="Applicant Type: " for="ApplicantType3" />
+        <apex:OutputText id="ApplicantType3"  value="{!applicant3.Type_Of_Applicant__c}" />
+        </td><td>
+        <apex:outputLabel value="Applicant SubType: " for="ApplicantSubType3" style="margin-right:1em;"/>
+        <apex:OutputText id="ApplicantSubType3"  value="{!applicant3.Subtype_Of_Applicant__c}"/>
+        </td></tr>
+       </table>
+          <br/>
+        <table id="applicantTable3" class="tableApp1B">
+        <!-------------------------------------Applicant 3 Detail-------------------------------------->
+        <apex:outputPanel rendered="{!applicantList.size > 2}">
+              <tr style="width:100%;" id="row112"><th colspan="6"><h4>Applicant 3 Detail<!--<apex:OutputText value="{!DocRow12.Description__c}"/>--></h4></th> </tr> 
+            
+              <tr>
+                  <td>true</td><td>Name : Clearly written and matches with SFDC Booking</td><td>N/A</td><td><apex:OutputText value="{!applicant3.Salutation__c}" />.<apex:OutputText value="{!applicant3.Name}" /></td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              <tr>
+                  <td>true</td><td>Permanent address : Clearly written and matches with SFDC Booking</td><td>N/A</td><td><apex:OutputText value="{!applicant3.Permanent_Address__c}"  /> Pincode :  <apex:OutputText value="{!applicant3.Pincode__c}" />Country :  <apex:OutputText value="{!applicant3.Country__c}" /></td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              <tr>
+                  <td>true</td><td>Correspondance address : If different - should be mentioned clearly and matches with SFDC</td><td>N/A</td><td><apex:OutputText value="{!applicant3.Mailing_Address__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              
+              <tr>
+                  <td>true</td><td>Mobile No ( Should be mentioned with 10 digits)</td><td>N/A</td><td><apex:OutputText value="{!applicant3.Mobile_Number__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              <tr>
+                  <td>true</td><td>Email Address (Should be mentioned)</td><td>N/A</td><td><apex:OutputText value="{!applicant3.Email_Address__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+        </apex:outputPanel>
+        <!-------------------------------------Applicant 3 Document-------------------------------------->
+        
+        <tr style="width:100%;"><th style="width:5%;">&nbsp;</th><th style="width:50%;">Document Name</th><th style="width:10%;">Document Type</th><th style="width:20%;">Document Details</th><th style="width:5%;">Verified</th><!--<th style="width:10%;">Rejection Remarks</th>--></tr>
+        
+        <tr id="row1"><td><apex:OutputText value="{!applicant3.Pancard__c}" /></td>
+            <td>PAN : 
+                Numbers on photocopy matches with: SFDC and Booking form
+                Name on PAN matches with SFDC and Booking form completely.
+            </td>
+            
+            <td>N/A</td><td><apex:OutputText value="{!applicant3.PancardNo__c}"  /></td><td><input type="checkbox"  name="verified1" id="verified1"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row2"><td><apex:OutputText value="{!applicant3.Address_Proof__c}"/></td>
+            <td>
+                Permanent Address : ( The following should match with SFDC data)
+                Type of address proof document
+                Address on photocopy
+                Name on address proof matches with Name
+                Address matches with permanent address.
+            </td>
+            <td><apex:OutputText value="{!applicant3.Address_Proof_Document__c}"/></td><td><apex:OutputText value="{!applicant3.Address_Proof_Number__c}"/></td><td><input type="checkbox" name="verified2" id="verified2"/></td><!--<td><input type="text" /></td>--></tr>
+      
+        <tr id="row3"><td><apex:OutputText value="{!applicant3.One_Passport_Size_Color_Photograph__c}"/></td><td>One Passport Size Color Photograph.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row4"><td><apex:OutputText value="{!applicant3.Funds_from_NRE_FCNR__c}"/></td><td>Proof of payment of funds from NRE / FCNR A/c</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified4" id="verified4"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row5"><td><apex:OutputText value="{!applicant3.Self_attested_copy_of_PIO_or_OCI_Card__c}"/></td>
+            <td>PIO Card : 
+                Numbers on photocopy matches with: SFDC and Booking form
+                Name on PIO Card matches with SFDC and Booking form completely.
+            </td>
+            <td><apex:OutputText value="{!applicant3.Type_Of_Origin__c}"/></td><td><apex:OutputText value="{!applicant3.Origin_Details__c}"/></td><td><input type="checkbox" name="verified5" id="verified5"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row6"><td><apex:OutputText value="{!applicant3.PassportNumber__c}"/></td><td>Self-attested copy of Passport - front and back</td><td>N/A</td><td><apex:OutputText value="{!applicant3.PassportNoDetails__c}"/></td><td><input type="checkbox" name="verified6" id="verified6"/></td><!--<td><input type="text" /></td>--></tr>
+       
+        <tr id="row7"><td><apex:OutputText value="{!applicant3.Funds_from_NRE_NRO__c}"/></td><td>Proof of payment of funds from NRE / NRO A/c</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified7" id="verified7"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row8"><td><apex:OutputText value="{!applicant3.Copy_of_Workpermit_Employment_contract__c}"/></td><td>Self-attested copy of Work permit / Employment contract issued by the Employer</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified8" id="verified8"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row9"><td><apex:OutputText value="{!applicant3.Copy_of_Memorandu_of_Association__c}"/></td><td>Certified copy of Memorandum of Association</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified9" id="verified9"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row10"><td><apex:OutputText value="{!applicant3.Certified_copy_of_Article_of_Association__c}"/></td><td>Certified copy of Articles of Association.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified10" id="verified10"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row11"><td><apex:OutputText value="{!applicant3.Certified_copy_of_Board_Resolution__c}"/></td><td>Certified copy of Board Resolution authorizing signig authority – BR to be stamped by companies banker.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified11" id="verified11"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row12"><td><apex:OutputText value="{!applicant3.Certified_copy_of_ROC_Incorporation__c}"/></td><td>Certified copy of ROC Incorporation.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified12" id="verified12"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row13"><td><apex:OutputText value="{!applicant3.Self_attested_List_of_Shareholders__c}"/></td><td>Self-attested List of Shareholders and their percentage holding.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified13" id="verified13"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row14"><td><apex:OutputText value="{!applicant3.Self_attested_List_of_Directors__c}"/></td><td>Self-attested List of Directors.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified14" id="verified14"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row15"><td><apex:OutputText value="{!applicant3.PanCard_of_Authority_Signatory__c}"/></td><td>Self-attested copy of Pan Card of Authority Signatory.</td><td>N/A</td><td><apex:OutputText value="{!applicant3.Pan_Card_Number_of_Authority_Signatory__c}"/></td><td><input type="checkbox" name="verified15" id="verified15"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row16"><td><apex:OutputText value="{!applicant3.Certified_copy_of_Partnership_Deed__c}"/></td><td>Certified copy of Partnership Deed (s).</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified16" id="verified16"/></td><td><input type="text" /></td></tr>
+        
+        <tr id="row17"><td><apex:OutputText value="{!applicant3.Certified_extract_of_Registration__c}"/></td><td>Certified extract of Registration from Registrar of firms / Certificate of LLP.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified17" id="verified17"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row18"><td><apex:OutputText value="{!applicant3.Copy_of_Authorization_Letter_POA__c}"/></td><td>Self-attested copy of Authorization Letter / Power of Attorney from All Partners.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified18" id="verified18"/></td><!--<td><input type="text" /></td>--></tr>
+        </table>
+  </div>     
+  <div id="tab4" onload="showDiv(this,'ApplicantTable4')">
+       <h1>Applicant 4</h1>
+       <br/>
+       <table  class="tableApp1A">
+        <tr><td>
+        <apex:outputLabel value="Applicant Name 4: " for="ApplicantName4" />
+        <apex:OutputText id="ApplicantName4" value="{!applicant4.Name}"/>
+        </td><td>
+        <apex:outputLabel value="Applicant Type: " for="ApplicantType4" />
+        <apex:OutputText id="ApplicantType4"  value="{!applicant4.Type_Of_Applicant__c}" />
+        </td><td>
+        <apex:outputLabel value="Applicant SubType: " for="ApplicantSubType4" style="margin-right:1em;"/>
+        <apex:OutputText id="ApplicantSubType4"  value="{!applicant4.Subtype_Of_Applicant__c}"/>
+        </td></tr>
+       </table>
+        <br/>
+       <table id="applicantTable4" class="tableApp1B">
+       <!-------------------------------------Applicant 4 Detail-------------------------------------->
+        <apex:outputPanel rendered="{!applicantList.size > 3}">
+      <tr style="width:100%;" id="row112"><th colspan="6"><h4>Applicant 4 Detail<!--<apex:OutputText value="{!DocRow12.Description__c}"/>--></h4></th> </tr> 
+            
+              
+              <tr>
+                  <td>true</td><td>Name : Clearly written and matches with SFDC Booking</td><td>N/A</td><td><apex:OutputText value="{!applicant4.Salutation__c}" />.<apex:OutputText value="{!applicant4.Name}" /></td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              <tr>
+                  <td>true</td><td>Permanent address : Clearly written and matches with SFDC Booking</td><td>N/A</td><td><apex:OutputText value="{!applicant4.Permanent_Address__c}"  /> Pincode :  <apex:OutputText value="{!applicant4.Pincode__c}" />Country :  <apex:OutputText value="{!applicant4.Country__c}" /></td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              <tr>
+                  <td>true</td><td>Correspondance address : If different - should be mentioned clearly and matches with SFDC</td><td>N/A</td><td><apex:OutputText value="{!applicant4.Mailing_Address__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              
+              <tr>
+                  <td>true</td><td>Mobile No ( Should be mentioned with 10 digits)</td><td>N/A</td><td><apex:OutputText value="{!applicant4.Mobile_Number__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              <tr>
+                  <td>true</td><td>Email Address (Should be mentioned)</td><td>N/A</td><td><apex:OutputText value="{!applicant4.Email_Address__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+                 
+        </apex:outputPanel>
+        <!-------------------------------------Applicant 4 Document-------------------------------------->
+        
+        
+       
+        <tr style="width:100%;"><th style="width:5%;">&nbsp;</th><th style="width:50%;">Document Name</th><th style="width:10%;">Document Type</th><th style="width:20%;">Document Details</th><th style="width:5%;">Verified</th><!--<th style="width:10%;">Rejection Remarks</th>--></tr>
+        
+        <tr id="row1"><td><apex:OutputText value="{!applicant4.Pancard__c}" /></td>
+        <td>PAN : 
+            Numbers on photocopy matches with: SFDC and Booking form
+            Name on PAN matches with SFDC and Booking form completely.</td>
+        <td>N/A</td>
+        <td><apex:OutputText value="{!applicant4.PancardNo__c}"  /></td><td><input type="checkbox" name="verified1" id="verified1"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row2"><td><apex:OutputText value="{!applicant4.Address_Proof__c}"/></td>
+            <td>Permanent Address : ( The following should match with SFDC data)
+                Type of address proof document
+                Address on photocopy
+                Name on address proof matches with Name
+                Address matches with permanent address.
+            </td><td><apex:OutputText value="{!applicant4.Address_Proof_Document__c}"/></td><td><apex:OutputText value="{!applicant4.Address_Proof_Number__c}"/></td><td><input type="checkbox" name="verified2" id="verified2"/></td><!--<td><input type="text" /></td>--></tr>
+      
+        <tr id="row3"><td><apex:OutputText value="{!applicant4.One_Passport_Size_Color_Photograph__c}"/></td><td>One Passport Size Color Photograph.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row4"><td><apex:OutputText value="{!applicant4.Funds_from_NRE_FCNR__c}"/></td><td>Proof of payment of funds from NRE / FCNR A/c</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified4" id="verified4"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row5"><td><apex:OutputText value="{!applicant4.Self_attested_copy_of_PIO_or_OCI_Card__c}"/></td>
+            <td>PIO Card : 
+                Numbers on photocopy matches with: SFDC and Booking form
+                Name on PIO Card matches with SFDC and Booking form completely.
+            </td>
+        <td><apex:OutputText value="{!applicant4.Type_Of_Origin__c}"/></td><td><apex:OutputText value="{!applicant4.Origin_Details__c}"/></td><td><input type="checkbox" name="verified5" id="verified5"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row6"><td><apex:OutputText value="{!applicant4.PassportNumber__c}"/></td><td>Self-attested copy of Passport - front and back</td><td>N/A</td><td><apex:OutputText value="{!applicant4.PassportNoDetails__c}"/></td><td><input type="checkbox" name="verified6" id="verified6"/></td><!--<td><input type="text" /></td>--></tr>
+       
+        <tr id="row7"><td><apex:OutputText value="{!applicant4.Funds_from_NRE_NRO__c}"/></td><td>Proof of payment of funds from NRE / NRO A/c</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified7" id="verified7"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row8"><td><apex:OutputText value="{!applicant4.Copy_of_Workpermit_Employment_contract__c}"/></td><td>Self-attested copy of Work permit / Employment contract issued by the Employer</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified8" id="verified8"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row9"><td><apex:OutputText value="{!applicant4.Copy_of_Memorandu_of_Association__c}"/></td><td>Certified copy of Memorandum of Association</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified9" id="verified9"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row10"><td><apex:OutputText value="{!applicant4.Certified_copy_of_Article_of_Association__c}"/></td><td>Certified copy of Articles of Association.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified10" id="verified10"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row11"><td><apex:OutputText value="{!applicant4.Certified_copy_of_Board_Resolution__c}"/></td><td>Certified copy of Board Resolution authorizing signig authority – BR to be stamped by companies banker.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified11" id="verified11"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row12"><td><apex:OutputText value="{!applicant4.Certified_copy_of_ROC_Incorporation__c}"/></td><td>Certified copy of ROC Incorporation.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified12" id="verified12"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row13"><td><apex:OutputText value="{!applicant4.Self_attested_List_of_Shareholders__c}"/></td><td>Self-attested List of Shareholders and their percentage holding.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified13" id="verified13"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row14"><td><apex:OutputText value="{!applicant4.Self_attested_List_of_Directors__c}"/></td><td>Self-attested List of Directors.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified14" id="verified14"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row15"><td><apex:OutputText value="{!applicant4.PanCard_of_Authority_Signatory__c}"/></td><td>Self-attested copy of Pan Card of Authority Signatory.</td><td>N/A</td><td><apex:OutputText value="{!applicant4.Pan_Card_Number_of_Authority_Signatory__c}"/></td><td><input type="checkbox" name="verified15" id="verified15"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row16"><td><apex:OutputText value="{!applicant4.Certified_copy_of_Partnership_Deed__c}"/></td><td>Certified copy of Partnership Deed (s).</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified16" id="verified16"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row17"><td><apex:OutputText value="{!applicant4.Certified_extract_of_Registration__c}"/></td><td>Certified extract of Registration from Registrar of firms / Certificate of LLP.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified17" id="verified17"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row18"><td><apex:OutputText value="{!applicant4.Copy_of_Authorization_Letter_POA__c}"/></td><td>Self-attested copy of Authorization Letter / Power of Attorney from All Partners.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified18" id="verified18"/></td><!--<td><input type="text" /></td>--></tr>
+        </table>
+  </div>
+  <div id="tab5" onload="showDiv(this,'ApplicantTable5')">
+       <h1>Applicant 5</h1>
+       <br/>
+       <table  class="tableApp1A">
+        <tr><td>
+        <apex:outputLabel value="Applicant Name 5: " for="ApplicantName5" />
+        <apex:OutputText id="ApplicantName5" value="{!applicant5.Name}"/>
+        </td><td>
+        <apex:outputLabel value="Applicant Type: " for="ApplicantType5" />
+        <apex:OutputText id="ApplicantType5"  value="{!applicant5.Type_Of_Applicant__c}" />
+        </td><td>
+        <apex:outputLabel value="Applicant SubType: " for="ApplicantSubType5" style="margin-right:1em;"/>
+        <apex:OutputText id="ApplicantSubType5"  value="{!applicant5.Subtype_Of_Applicant__c}"/>
+        </td></tr>
+       </table>
+        <br/>
+        <table id="applicantTable5" class="tableApp1B">
+        <!-------------------------------------Applicant 5 Detail-------------------------------------->
+        <apex:outputPanel rendered="{!applicantList.size > 4}">
+              <tr style="width:100%;" id="row112"><th colspan="6"><h4>Applicant 5 Detail<!--<apex:OutputText value="{!DocRow12.Description__c}"/>--></h4></th> </tr> 
+            
+              <tr>
+                  <td>true</td><td>Name : Clearly written and matches with SFDC Booking</td><td>N/A</td><td><apex:OutputText value="{!applicant5.Salutation__c}" />.<apex:OutputText value="{!applicant5.Name}" /></td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              <tr>
+                  <td>true</td><td>Permanent address : Clearly written and matches with SFDC Booking</td><td>N/A</td><td><apex:OutputText value="{!applicant5.Permanent_Address__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              <tr>
+                  <td>true</td><td>Correspondance address : If different - should be mentioned clearly and matches with SFDC</td><td>N/A</td><td><apex:OutputText value="{!applicant5.Mailing_Address__c}"  /> Pincode : <apex:OutputText value="{!applicant5.Mailing_Pincode__c}"  /> Country : <apex:OutputText value="{!applicant5.Mailing_Country__c}"  /></td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              
+              <tr>
+                  <td>true</td><td>Mobile No ( Should be mentioned with 10 digits)</td><td>N/A</td><td><apex:OutputText value="{!applicant5.Mobile_Number__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+              
+              <tr>
+                  <td>true</td><td>Email Address (Should be mentioned)</td><td>N/A</td><td><apex:OutputText value="{!applicant5.Email_Address__c}"  /> </td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+               
+        </apex:outputPanel>
+        <!-------------------------------------Applicant 5 Document-------------------------------------->
+        
+        
+        
+        <tr style="width:100%;"><th style="width:5%;">&nbsp;</th><th style="width:50%;">Document Name</th><th style="width:10%;">Document Type</th><th style="width:20%;">Document Details</th><th style="width:5%;">Verified</th><!--<th style="width:10%;">Rejection Remarks</th>--></tr>
+        
+        <tr id="row1"><td><apex:OutputText value="{!applicant5.Pancard__c}" /></td>
+        <td>PAN : 
+            Numbers on photocopy matches with: SFDC and Booking form
+            Name on PAN matches with SFDC and Booking form completely.
+        </td>
+            <td>N/A</td><td><apex:OutputText value="{!applicant5.PancardNo__c}"  /></td><td><input type="checkbox" name="verified1" id="verified1"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row2"><td><apex:OutputText value="{!applicant5.Address_Proof__c}"/></td>
+        <td>Permanent Address : ( The following should match with SFDC data)
+            Type of address proof document
+            Address on photocopy
+            Name on address proof matches with Name
+            Address matches with permanent address.
+        </td>
+        <td><apex:OutputText value="{!applicant5.Address_Proof_Document__c}"/></td><td><apex:OutputText value="{!applicant5.Address_Proof_Number__c}"/></td><td><input type="checkbox" name="verified2" id="verified2"/></td><!--<td><input type="text" /></td>--></tr>
+      
+        <tr id="row3"><td><apex:OutputText value="{!applicant5.One_Passport_Size_Color_Photograph__c}"/></td><td>One Passport Size Color Photograph.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified3" id="verified3"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row4"><td><apex:OutputText value="{!applicant5.Funds_from_NRE_FCNR__c}"/></td><td>Proof of payment of funds from NRE / FCNR A/c</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified4" id="verified4"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row5"><td><apex:OutputText value="{!applicant5.Self_attested_copy_of_PIO_or_OCI_Card__c}"/></td>
+        <td>PIO Card : 
+            Numbers on photocopy matches with: SFDC and Booking form
+            Name on PIO Card matches with SFDC and Booking form completely.
+        </td>
+            <td><apex:OutputText value="{!applicant5.Type_Of_Origin__c}"/></td><td><apex:OutputText value="{!applicant5.Origin_Details__c}"/></td><td><input type="checkbox" name="verified5" id="verified5"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row6"><td><apex:OutputText value="{!applicant5.PassportNumber__c}"/></td><td>Self-attested copy of Passport - front and back</td><td>N/A</td><td><apex:OutputText value="{!applicant5.PassportNoDetails__c}"/></td><td><input type="checkbox" name="verified6" id="verified6"/></td><!--<td><input type="text" /></td>--></tr>
+       
+        <tr id="row7"><td><apex:OutputText value="{!applicant5.Funds_from_NRE_NRO__c}"/></td><td>Proof of payment of funds from NRE / NRO A/c</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified7" id="verified7"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row8"><td><apex:OutputText value="{!applicant5.Copy_of_Workpermit_Employment_contract__c}"/></td><td>Self-attested copy of Work permit / Employment contract issued by the Employer</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified8" id="verified8"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row9"><td><apex:OutputText value="{!applicant5.Copy_of_Memorandu_of_Association__c}"/></td><td>Certified copy of Memorandum of Association</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified9" id="verified9"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row10"><td><apex:OutputText value="{!applicant5.Certified_copy_of_Article_of_Association__c}"/></td><td>Certified copy of Articles of Association.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified10" id="verified10"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row11"><td><apex:OutputText value="{!applicant5.Certified_copy_of_Board_Resolution__c}"/></td><td>Certified copy of Board Resolution authorizing signig authority – BR to be stamped by companies banker.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified11" id="verified11"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row12"><td><apex:OutputText value="{!applicant5.Certified_copy_of_ROC_Incorporation__c}"/></td><td>Certified copy of ROC Incorporation.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified12" id="verified12"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row13"><td><apex:OutputText value="{!applicant5.Self_attested_List_of_Shareholders__c}"/></td><td>Self-attested List of Shareholders and their percentage holding.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified13" id="verified13"/></td><!--td><input type="text" /></td>--></tr>
+        
+        <tr id="row14"><td><apex:OutputText value="{!applicant5.Self_attested_List_of_Directors__c}"/></td><td>Self-attested List of Directors.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified14" id="verified14"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row15"><td><apex:OutputText value="{!applicant5.PanCard_of_Authority_Signatory__c}"/></td><td>Self-attested copy of Pan Card of Authority Signatory.</td><td>N/A</td><td><apex:OutputText value="{!applicant5.Pan_Card_Number_of_Authority_Signatory__c}"/></td><td><input type="checkbox" name="verified15" id="verified15"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row16"><td><apex:OutputText value="{!applicant5.Certified_copy_of_Partnership_Deed__c}"/></td><td>Certified copy of Partnership Deed (s).</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified16" id="verified16"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row17"><td><apex:OutputText value="{!applicant5.Certified_extract_of_Registration__c}"/></td><td>Certified extract of Registration from Registrar of firms / Certificate of LLP.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified17" id="verified17"/></td><!--<td><input type="text" /></td>--></tr>
+        
+        <tr id="row18"><td><apex:OutputText value="{!applicant5.Copy_of_Authorization_Letter_POA__c}"/></td><td>Self-attested copy of Authorization Letter / Power of Attorney from All Partners.</td><td>N/A</td><td>N/A</td><td><input type="checkbox" name="verified18" id="verified18"/></td><!--<td><input type="text" /></td>--></tr>
+       
+        </table>
+  </div>                  
+</div>
+</apex:outputPanel>
+    <apex:outputPanel id="err1" style="color:red;font-weight:bold;">{!err}</apex:outputPanel><!--rendered="{!LEN(err)>0}"-->
+    <apex:actionRegion >
+    <apex:actionFunction name="arrayTest" action="{!saveArray}" rerender="err1,messages,buttons" status="status">
+        <apex:param name="ArrayApplicant1String" value="" assignTo="{!ArrayApplicant1String}"/>      
+        <apex:param name="ArrayApplicant2String" value="" assignTo="{!ArrayApplicant2String}"/> 
+        <apex:param name="ArrayApplicant3String" value="" assignTo="{!ArrayApplicant3String}"/> 
+        <apex:param name="ArrayApplicant4String" value="" assignTo="{!ArrayApplicant4String}"/> 
+        <apex:param name="ArrayApplicant5String" value="" assignTo="{!ArrayApplicant5String}"/>  
+        <!--<apex:param name="docrow1checkbox" value="{!DocRow1.Verified__c}" assignTo="{!docrow1checkbox}"/>  -->
+        <apex:param name="d1" value="" assignTo="{!d1}"/>
+        <apex:param name="d2" value="" assignTo="{!d2}"/>
+        <apex:param name="d3" value="" assignTo="{!d3}"/>
+        <apex:param name="d4" value="" assignTo="{!d4}"/>        
+        <apex:param name="d5" value="" assignTo="{!d5}"/>          
+        <apex:param name="d6" value="" assignTo="{!d6}"/>
+        <apex:param name="d7" value="" assignTo="{!d7}"/> 
+        <apex:param name="d8" value="" assignTo="{!d8}"/>
+        <apex:param name="d9" value="" assignTo="{!d9}"/>
+        <apex:param name="d10" value="" assignTo="{!d10}"/>        
+        <apex:param name="d11" value="" assignTo="{!d11}"/>
+        <apex:param name="d12" value="" assignTo="{!d12}"/>
+        <apex:param name="d13" value="" assignTo="{!d13}"/>
+        <apex:param name="d14" value="" assignTo="{!d14}"/>
+        <apex:param name="d15" value="" assignTo="{!d15}"/>
+        <apex:param name="d16" value="" assignTo="{!d16}"/>
+        <apex:param name="d17" value="" assignTo="{!d17}"/>
+        <apex:param name="d18" value="" assignTo="{!d18}"/>
+        <apex:param name="d19" value="" assignTo="{!d19}"/>
+        <apex:param name="d20" value="" assignTo="{!d20}"/>
+        <apex:param name="d21" value="" assignTo="{!d21}"/>
+        <apex:param name="d22" value="" assignTo="{!d22}"/>
+        <apex:param name="d23" value="" assignTo="{!d23}"/>
+        <apex:param name="d24" value="" assignTo="{!d24}"/>
+        <apex:param name="d25" value="" assignTo="{!d25}"/>
+        <apex:param name="d26" value="" assignTo="{!d26}"/>
+        <apex:param name="d27" value="" assignTo="{!d27}"/>
+        <apex:param name="d28" value="" assignTo="{!d28}"/>
+        <apex:param name="d29" value="" assignTo="{!d29}"/>
+        <apex:param name="d30" value="" assignTo="{!d30}"/>
+        <apex:param name="d31" value="" assignTo="{!d31}"/>
+
+        
+            
+        
+        <apex:param name="drow1" value="" assignTo="{!drow1}"/>
+        <apex:param name="drow2" value="" assignTo="{!drow2}"/>
+        <apex:param name="drow3" value="" assignTo="{!drow3}"/>
+        <apex:param name="drow4" value="" assignTo="{!drow4}"/>        
+        <apex:param name="drow5" value="" assignTo="{!drow5}"/>          
+        <apex:param name="drow6" value="" assignTo="{!drow6}"/>
+        <apex:param name="drow7" value="" assignTo="{!drow7}"/>
+        <apex:param name="drow8" value="" assignTo="{!drow8}"/>
+        <apex:param name="drow9" value="" assignTo="{!drow9}"/>       
+        <apex:param name="drow10" value="" assignTo="{!drow10}"/>        
+        <apex:param name="drow11" value="" assignTo="{!drow11}"/>
+        <apex:param name="drow12" value="" assignTo="{!drow12}"/>
+        <apex:param name="drow13" value="" assignTo="{!drow13}"/>
+        <apex:param name="drow14" value="" assignTo="{!drow14}"/>        
+        <apex:param name="drow15" value="" assignTo="{!drow15}"/>          
+        <apex:param name="drow16" value="" assignTo="{!drow16}"/>
+        <apex:param name="drow17" value="" assignTo="{!drow17}"/>
+        <apex:param name="drow18" value="" assignTo="{!drow18}"/>
+        <apex:param name="drow19" value="" assignTo="{!drow19}"/>       
+        <apex:param name="drow20" value="" assignTo="{!drow20}"/>
+        <apex:param name="drow21" value="" assignTo="{!drow21}"/>
+        <apex:param name="drow22" value="" assignTo="{!drow22}"/>
+        <apex:param name="drow23" value="" assignTo="{!drow23}"/>
+        <apex:param name="drow24" value="" assignTo="{!drow24}"/>        
+        <apex:param name="drow25" value="" assignTo="{!drow25}"/>          
+        <apex:param name="drow26" value="" assignTo="{!drow26}"/>
+        <apex:param name="drow27" value="" assignTo="{!drow27}"/>
+        <apex:param name="drow28" value="" assignTo="{!drow28}"/>
+        <apex:param name="drow29" value="" assignTo="{!drow29}"/>       
+        <apex:param name="drow30" value="" assignTo="{!drow30}"/>
+        <apex:param name="drow31" value="" assignTo="{!drow31}"/>
+                
+        
+                    
+    </apex:actionFunction>
+    </apex:actionRegion>
+    <apex:actionFunction name="callAcceptFunc" action="{!Accept}" rerender="err1,messages,buttons" status="status" >
+    <apex:param name="test" value="" assignTo="{!test}"/>   
+    </apex:actionFunction>
+</apex:form> 
+<script>
+function resetTabs(){
+            $("#content > div").hide(); //Hide all content
+            $("#tabs a").attr("id",""); //Reset ids      
+        }
+
+        var myUrl = window.location.href; //get URL
+        var myUrlTab = myUrl.substring(myUrl.indexOf("#")); // For localhost/tabs.html#tab2, myUrlTab = #tab2     
+        var myUrlTabName = myUrlTab.substring(0,4); // For the above example, myUrlTabName = #tab
+
+        (function(){
+            $("#content > div").hide(); // Initially hide all content
+            $("#tabs li:first a").attr("id","current"); // Activate first tab
+            $("#content > div:first").fadeIn(); // Show first tab content
+            
+            $("#tabs a").on("click",function(e) {
+                e.preventDefault();
+                if ($(this).attr("id") == "current"){ //detection for current tab
+                 return       
+                }
+                else{             
+                resetTabs();
+                $(this).attr("id","current"); // Activate this
+                $($(this).attr('name')).fadeIn(); // Show content for current tab
+                }
+            });
+
+            for (i = 1; i <= $("#tabs li").length; i++) {
+              if (myUrlTab == myUrlTabName + i) {
+                  resetTabs();
+                  $("a[name='"+myUrlTab+"']").attr("id","current"); // Activate url tab
+                  $(myUrlTab).fadeIn(); // Show url tab content        
+              }
+            }
+        })()
+</script>
+<script>
+$('td').filter(function () {
+                return $(this).text() === 'false';
+                
+          }).parent().hide();
+</script>
+
+<script>
+function Accept(){
+if({!NoST} == true){
+var doc7  = 'N/A';
+}
+else{
+  var doc7 = document.getElementById("{!$Component.ApplicantForm.doc7verified}").checked;  
+}
+var doc1 = document.getElementById("{!$Component.ApplicantForm.doc1verified}").checked; 
+var doc2 = document.getElementById("{!$Component.ApplicantForm.doc2verified}").checked;
+var doc3 = document.getElementById("{!$Component.ApplicantForm.doc3verified}").checked;
+var doc4 = document.getElementById("{!$Component.ApplicantForm.doc4verified}").checked;
+var doc5 = document.getElementById("{!$Component.ApplicantForm.doc5verified}").checked;
+var doc6 = document.getElementById("{!$Component.ApplicantForm.doc6verified}").checked;
+var doc7 = document.getElementById("{!$Component.ApplicantForm.doc7verified}").checked;
+var doc8 = document.getElementById("{!$Component.ApplicantForm.doc8verified}").checked;
+var doc9 = document.getElementById("{!$Component.ApplicantForm.doc9verified}").checked;
+var doc10 = document.getElementById("{!$Component.ApplicantForm.doc10verified}").checked;
+var doc11 = document.getElementById("{!$Component.ApplicantForm.doc11verified}").checked;
+var doc12 = document.getElementById("{!$Component.ApplicantForm.doc12verified}").checked;
+var doc13 = document.getElementById("{!$Component.ApplicantForm.doc13verified}").checked;
+var doc14 = document.getElementById("{!$Component.ApplicantForm.doc14verified}").checked;
+var doc15 = document.getElementById("{!$Component.ApplicantForm.doc15verified}").checked;
+var doc16 = document.getElementById("{!$Component.ApplicantForm.doc16verified}").checked;
+var doc17 = document.getElementById("{!$Component.ApplicantForm.doc17verified}").checked;
+var doc18 = document.getElementById("{!$Component.ApplicantForm.doc18verified}").checked;
+var doc19 = document.getElementById("{!$Component.ApplicantForm.doc19verified}").checked;
+var doc20 = document.getElementById("{!$Component.ApplicantForm.doc20verified}").checked;
+var doc21 = document.getElementById("{!$Component.ApplicantForm.doc21verified}").checked;
+var doc22 = document.getElementById("{!$Component.ApplicantForm.doc22verified}").checked;
+var doc23 = document.getElementById("{!$Component.ApplicantForm.doc23verified}").checked;
+var doc24 = document.getElementById("{!$Component.ApplicantForm.doc24verified}").checked;
+var doc25 = document.getElementById("{!$Component.ApplicantForm.doc25verified}").checked;
+var doc26 = document.getElementById("{!$Component.ApplicantForm.doc26verified}").checked;
+var doc27 = document.getElementById("{!$Component.ApplicantForm.doc27verified}").checked;
+var doc28 = document.getElementById("{!$Component.ApplicantForm.doc28verified}").checked;
+var doc29 = document.getElementById("{!$Component.ApplicantForm.doc29verified}").checked;
+var doc30 = document.getElementById("{!$Component.ApplicantForm.doc30verified}").checked;
+var doc31 = document.getElementById("{!$Component.ApplicantForm.doc31verified}").checked;
+
+//alert(doc1);
+var checkval ;
+ if(doc1 == false || doc2 == false || doc3 == false || doc4 == false || doc5 == false || doc6 == false || doc7 == false || doc8  == false  || doc9 == false || doc10  == false 
+ || doc11  == false || doc12 == false || doc13 == false || doc14 == false || doc15 == false || doc16 == false || doc17 == false || doc18  == false || doc19 == false || doc20  == false
+ || doc21  == false || doc22 == false || doc23 == false || doc24 == false || doc25 == false || doc26 == false || doc27 == false || doc28  == false || doc29 == false || doc30  == false || doc31  == false)
+        {
+             alert('Please Verify all Documents to accept');
+              return False;
+         }  
+$('table tr').each(function(){
+    if($(this).find('td').eq(0).text() == 'true')
+    {
+        //alert("Age of  is "+$(this).find('td').eq(4).text());   
+        if(!$(this).find('input').is(':checked'))
+         {
+            checkval = 'false';
+            alert('Please Verify all Documents to accept.');    
+            return False;            
+         }  
+         else{
+             checkval ='true';
+           
+         }  
+     }    
+});
+if(checkval == 'true'){
+         //alert('inside checkval');
+         callAcceptFunc();
+         //alert('hi');
+         }   
+}
+</script>
+
+<script>
+function createArray(){
+//console.log('here');
+//alert({!DocRow1.Verified__c});
+//alert({!DocRow1.Rejection_Remarks__c});
+//alert("hiiiiiiiiii");
+var i=0;
+var myTableArray = [];
+var myTableArray2 = [];
+var myTableArray3 = [];
+var myTableArray4 = [];
+var myTableArray5 = [];
+/***************Applicant table 1***************/
+$('#ApplicantTable1 tr').each(function () {
+var arrayOfThisRow = [];
+var arrayOfThisRowNew = [];
+var tableData = $(this).find('td'); 
+if (tableData.length > 0) {
+    tableData.each(function() {  
+              
+        if($(this).find('input').length) 
+          { 
+              
+            if($(this).find('input:text').length)
+            {   
+                
+                if($(this).find('input').val()== ''){
+                     //alert("empty");
+                     arrayOfThisRow.push('BlankValue');  
+                 }
+                 else{
+                        var x = $(this).find('input').val();
+                        var validtext = x.replace(/,/g, "");  
+                        arrayOfThisRow.push(validtext);  
+                 }            
+            }
+            else
+            {
+                 if(!$(this).find('input').is(':checked'))
+                 {
+                     arrayOfThisRow.push('false');                    
+                 }
+                 else
+                 {
+                    arrayOfThisRow.push('true');                    
+                 }
+            }
+            
+        }    
+        else
+        {                
+             arrayOfThisRow.push($(this).text()); 
+             //alert('not input type');           
+
+        }
+    });
+    if(arrayOfThisRow[0] == 'true'){
+         //alert('Row -App1 : '+arrayOfThisRow);
+         myTableArray.push(arrayOfThisRow);
+    
+    }
+   
+}
+
+});
+/***************Applicant table 2***************/
+$('#applicantTable2 tr').each(function () {
+var arrayOfThisRow = [];
+var arrayOfThisRowNew = [];
+var tableData = $(this).find('td'); 
+if (tableData.length > 0) {
+    tableData.each(function() {        
+       if($(this).find('input').length) 
+          { 
+            if($(this).find('input:text').length)
+            {     
+                if($(this).find('input').val()== ''){
+                     arrayOfThisRow.push('BlankValue');  
+                 }
+                 else{
+                 
+                      //alert("Not empty");
+                      //arrayOfThisRow.push($(this).find('input').val());  
+                      var x = $(this).find('input').val();
+                      var validtext = x.replace(/,/g, "");  
+                      arrayOfThisRow.push(validtext); 
+                 }            
+            }
+            else
+            {
+                 if(!$(this).find('input').is(':checked'))
+                 {
+                     arrayOfThisRow.push('false');                    
+                 }
+                 else
+                 {
+                    arrayOfThisRow.push('true');                    
+                 }
+            }
+        }    
+        else
+        {                
+             arrayOfThisRow.push($(this).text()); 
+             //alert('not input type');           
+
+        }
+    });
+    if(arrayOfThisRow[0] == 'true'){
+         //alert('Row -App2 : '+arrayOfThisRow);
+         myTableArray2.push(arrayOfThisRow);
+    
+    }
+   
+}
+});
+/***************Applicant table 3***************/
+$('#applicantTable3 tr').each(function () {
+var arrayOfThisRow = [];
+var arrayOfThisRowNew = [];
+var tableData = $(this).find('td'); 
+if (tableData.length > 0) {
+    tableData.each(function() {        
+       if($(this).find('input').length) 
+          { 
+            if($(this).find('input:text').length)
+            {     
+                if($(this).find('input').val()== ''){
+                     arrayOfThisRow.push('BlankValue');  
+                 }
+                 else{
+                 
+                      //alert("Not empty");
+                      //arrayOfThisRow.push($(this).find('input').val()); 
+                      var x = $(this).find('input').val();
+                      var validtext = x.replace(/,/g, "");  
+                      arrayOfThisRow.push(validtext);  
+                 }            
+            }
+            else
+            {
+                 if(!$(this).find('input').is(':checked'))
+                 {
+                     arrayOfThisRow.push('false');                    
+                 }
+                 else
+                 {
+                    arrayOfThisRow.push('true');                    
+                 }
+            }
+        }    
+        else
+        {                
+             arrayOfThisRow.push($(this).text()); 
+             //alert('not input type');           
+
+        }
+    });
+    if(arrayOfThisRow[0] == 'true'){
+         //alert('Row -App3 : '+arrayOfThisRow);
+         myTableArray3.push(arrayOfThisRow);
+    
+    }
+   
+}
+});
+/***************Applicant table 4***************/
+$('#applicantTable4 tr').each(function () {
+var arrayOfThisRow = [];
+var arrayOfThisRowNew = [];
+var tableData = $(this).find('td'); 
+if (tableData.length > 0) {
+    tableData.each(function() {        
+       if($(this).find('input').length) 
+          { 
+            if($(this).find('input:text').length)
+            {     
+                if($(this).find('input').val()== ''){
+                     arrayOfThisRow.push('BlankValue');  
+                 }
+                 else{
+                 
+                      //alert("Not empty");
+                      //arrayOfThisRow.push($(this).find('input').val());  
+                      var x = $(this).find('input').val();
+                      var validtext = x.replace(/,/g, "");  
+                      arrayOfThisRow.push(validtext); 
+                 }            
+            }
+            else
+            {
+                 if(!$(this).find('input').is(':checked'))
+                 {
+                     arrayOfThisRow.push('false');                    
+                 }
+                 else
+                 {
+                    arrayOfThisRow.push('true');                    
+                 }
+            }
+        }    
+        else
+        {                
+             arrayOfThisRow.push($(this).text()); 
+             //alert('not input type');           
+
+        }
+    });
+    if(arrayOfThisRow[0] == 'true'){
+         //alert('Row -App4 : '+arrayOfThisRow);
+         myTableArray4.push(arrayOfThisRow);
+    
+    }
+   
+}
+});
+/***************Applicant table 5***************/
+$('#applicantTable5 tr').each(function () {
+var arrayOfThisRow = [];
+var arrayOfThisRowNew = [];
+var tableData = $(this).find('td'); 
+if (tableData.length > 0) {
+    tableData.each(function() {        
+       if($(this).find('input').length) 
+          { 
+            if($(this).find('input:text').length)
+            {     
+                if($(this).find('input').val()== ''){
+                     arrayOfThisRow.push('BlankValue');  
+                 }
+                 else{
+                 
+                      //alert("Not empty");
+                      //arrayOfThisRow.push($(this).find('input').val());  
+                      var x = $(this).find('input').val();
+                      var validtext = x.replace(/,/g, "");  
+                      arrayOfThisRow.push(validtext); 
+                 }            
+            }
+            else
+            {
+                 if(!$(this).find('input').is(':checked'))
+                 {
+                     arrayOfThisRow.push('false');                    
+                 }
+                 else
+                 {
+                    arrayOfThisRow.push('true');                    
+                 }
+            }
+        }    
+        else
+        {                
+             arrayOfThisRow.push($(this).text()); 
+             //alert('not input type');           
+
+        }
+    });
+    if(arrayOfThisRow[0] == 'true'){
+         //alert('Row -App5 : '+arrayOfThisRow);
+         myTableArray5.push(arrayOfThisRow);
+    
+    }
+   
+}
+});
+/////////////////////////////////////Getting checkbox values in javascript///////////////////////////
+
+var doc71 = document.getElementById("{!$Component.ApplicantForm.doc1verified}").checked; 
+var doc72 = document.getElementById("{!$Component.ApplicantForm.doc2verified}").checked;
+var doc73 = document.getElementById("{!$Component.ApplicantForm.doc3verified}").checked;
+var doc74 = document.getElementById("{!$Component.ApplicantForm.doc4verified}").checked;
+var doc75 = document.getElementById("{!$Component.ApplicantForm.doc5verified}").checked;
+var doc76 = document.getElementById("{!$Component.ApplicantForm.doc6verified}").checked;
+var doc77 = document.getElementById("{!$Component.ApplicantForm.doc7verified}").checked;
+var doc78 = document.getElementById("{!$Component.ApplicantForm.doc8verified}").checked;
+var doc79 = document.getElementById("{!$Component.ApplicantForm.doc9verified}").checked;
+var doc80 = document.getElementById("{!$Component.ApplicantForm.doc10verified}").checked;
+var doc81 = document.getElementById("{!$Component.ApplicantForm.doc11verified}").checked;
+var doc82 = document.getElementById("{!$Component.ApplicantForm.doc12verified}").checked;
+var doc83 = document.getElementById("{!$Component.ApplicantForm.doc13verified}").checked;
+var doc84 = document.getElementById("{!$Component.ApplicantForm.doc14verified}").checked;
+var doc85 = document.getElementById("{!$Component.ApplicantForm.doc15verified}").checked;
+var doc86 = document.getElementById("{!$Component.ApplicantForm.doc16verified}").checked;
+var doc87 = document.getElementById("{!$Component.ApplicantForm.doc17verified}").checked;
+var doc88 = document.getElementById("{!$Component.ApplicantForm.doc18verified}").checked;
+var doc89 = document.getElementById("{!$Component.ApplicantForm.doc19verified}").checked;
+var doc90 = document.getElementById("{!$Component.ApplicantForm.doc20verified}").checked;
+var doc91 = document.getElementById("{!$Component.ApplicantForm.doc21verified}").checked;
+var doc92 = document.getElementById("{!$Component.ApplicantForm.doc22verified}").checked;
+var doc93 = document.getElementById("{!$Component.ApplicantForm.doc23verified}").checked;
+var doc94 = document.getElementById("{!$Component.ApplicantForm.doc24verified}").checked;
+var doc95 = document.getElementById("{!$Component.ApplicantForm.doc25verified}").checked;
+var doc96 = document.getElementById("{!$Component.ApplicantForm.doc26verified}").checked;
+var doc97 = document.getElementById("{!$Component.ApplicantForm.doc27verified}").checked;
+var doc98 = document.getElementById("{!$Component.ApplicantForm.doc28verified}").checked;
+var doc99 = document.getElementById("{!$Component.ApplicantForm.doc29verified}").checked;
+var doc100 = document.getElementById("{!$Component.ApplicantForm.doc30verified}").checked;
+var doc101 = document.getElementById("{!$Component.ApplicantForm.doc31verified}").checked;
+
+
+
+var drow1 = document.getElementById("{!$Component.ApplicantForm.doc1remarks}").value;
+var drow2 = document.getElementById("{!$Component.ApplicantForm.doc2remarks}").value;
+var drow3 = document.getElementById("{!$Component.ApplicantForm.doc3remarks}").value;
+var drow4 = document.getElementById("{!$Component.ApplicantForm.doc4remarks}").value;
+var drow5 = document.getElementById("{!$Component.ApplicantForm.doc5remarks}").value;
+var drow6 = document.getElementById("{!$Component.ApplicantForm.doc6remarks}").value;
+var drow7 = document.getElementById("{!$Component.ApplicantForm.doc7remarks}").value;
+var drow8 = document.getElementById("{!$Component.ApplicantForm.doc8remarks}").value;
+var drow9 = document.getElementById("{!$Component.ApplicantForm.doc9remarks}").value;
+var drow10 = document.getElementById("{!$Component.ApplicantForm.doc10remarks}").value;
+var drow11 = document.getElementById("{!$Component.ApplicantForm.doc11remarks}").value;
+var drow12 = document.getElementById("{!$Component.ApplicantForm.doc12remarks}").value;
+var drow13 = document.getElementById("{!$Component.ApplicantForm.doc13remarks}").value;
+var drow14 = document.getElementById("{!$Component.ApplicantForm.doc14remarks}").value;
+var drow15 = document.getElementById("{!$Component.ApplicantForm.doc15remarks}").value;
+var drow16 = document.getElementById("{!$Component.ApplicantForm.doc16remarks}").value;
+var drow17 = document.getElementById("{!$Component.ApplicantForm.doc17remarks}").value;
+var drow18 = document.getElementById("{!$Component.ApplicantForm.doc18remarks}").value;
+var drow19 = document.getElementById("{!$Component.ApplicantForm.doc19remarks}").value;
+var drow20 = document.getElementById("{!$Component.ApplicantForm.doc20remarks}").value;
+var drow21 = document.getElementById("{!$Component.ApplicantForm.doc21remarks}").value;
+var drow22 = document.getElementById("{!$Component.ApplicantForm.doc22remarks}").value;
+var drow23 = document.getElementById("{!$Component.ApplicantForm.doc23remarks}").value;
+var drow24 = document.getElementById("{!$Component.ApplicantForm.doc24remarks}").value;
+var drow25 = document.getElementById("{!$Component.ApplicantForm.doc25remarks}").value;
+var drow26 = document.getElementById("{!$Component.ApplicantForm.doc26remarks}").value;
+var drow27 = document.getElementById("{!$Component.ApplicantForm.doc27remarks}").value;
+var drow28 = document.getElementById("{!$Component.ApplicantForm.doc28remarks}").value;
+var drow29 = document.getElementById("{!$Component.ApplicantForm.doc29remarks}").value;
+var drow30 = document.getElementById("{!$Component.ApplicantForm.doc30remarks}").value;
+var drow31 = document.getElementById("{!$Component.ApplicantForm.doc31remarks}").value;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+var x = arrayTest(myTableArray.toString(), myTableArray2.toString(),myTableArray3.toString(),myTableArray4.toString(),myTableArray5.toString(),doc71,doc72,doc73,doc74,doc75,doc76,doc77,doc78,doc79,doc80,doc81,doc82,doc83,doc84,doc85,doc86,doc87,doc88,doc89,doc90,doc91,doc92,doc93,doc94,doc95,doc96,doc97,doc98,doc99,doc100,doc101, 
+drow1, drow2, drow3, drow4, drow5, drow6, drow7, drow8, drow9, drow10,
+drow11, drow12, drow13, drow14, drow15, drow16, drow17, drow18, drow19, drow20,
+drow21, drow22, drow23, drow24, drow25, drow26, drow27, drow28, drow29, drow30, drow31);
+
+}
+function EditOnOff()
+    {
+       
+         if(doc1verified == false)
+         document.getElementById("{!$Component.doc1remarks}").disabled=true;
+         else
+         document.getElementById("{!$Component.doc1remarks}").disabled=false;
+
+       
+    }
+
+</script>
+<script>    
+    function finalRedirect()
+    {
+        window.location = "apex/S_PickWelcomeCall";
+    }
+  </script>
+</body>
+</apex:page>

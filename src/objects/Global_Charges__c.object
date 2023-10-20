@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ACH__c</fullName>
+        <externalId>false</externalId>
+        <label>+ ACH</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACNO__c</fullName>
+        <externalId>false</externalId>
+        <label>ACNO</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Charge_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Charge ID</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Charge_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Charge Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Basic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interest Rcvd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refund Head</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brokerage Expense</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation Charges</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interest Payable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Power Backup</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Car Parking</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cheque Dishonor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tax</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MVAT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stamp Duty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal Charges</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Society Charges</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amenity Charge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Code__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Code</label>
+        <length>3</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Master_Config__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Master_Config</label>
+        <referenceTo>Master__c</referenceTo>
+        <relationshipLabel>Global Charges</relationshipLabel>
+        <relationshipName>Global_Charges</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Nature_of_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>Nature of Charge</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Income</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Debtors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Liability</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PC__c</fullName>
+        <externalId>false</externalId>
+        <label>+ PC</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Posting_to_FA_system__c</fullName>
+        <externalId>false</externalId>
+        <label>Posting to FA system</label>
+        <picklist>
+            <picklistValues>
+                <fullName>CLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ACNO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sequence_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Sequence No</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Short_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Short Name</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Standard_Charge_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Standard Charge ID</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tax_Charge__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Tax Charges</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Global_Charges__c.Charge_Type__c</field>
+                <operation>equals</operation>
+                <value>Tax</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Global_Charges__c</referenceTo>
+        <relationshipLabel>Global Charges</relationshipLabel>
+        <relationshipName>Global_Charges1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Global Charges</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Sequence_No__c</columns>
+        <columns>Charge_Type__c</columns>
+        <columns>Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Global Charges Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Global Charges</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Length_Code_Count</fullName>
+        <active>true</active>
+        <errorConditionFormula>LEN( Code__c) !=3</errorConditionFormula>
+        <errorDisplayField>Code__c</errorDisplayField>
+        <errorMessage>Global Charge Code must be three digit.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Posting_To_Fa_System_ACNO</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Posting_to_FA_system__c , &apos;CLC&apos;) , NOT(  ISBLANK(  ACNO__c  )    ) )</errorConditionFormula>
+        <errorDisplayField>ACNO__c</errorDisplayField>
+        <errorMessage>After Selecting CLC  Pick Value,You cannn&apos;t enter in ACNO</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Posting_To_Fa_System_CLC</fullName>
+        <active>true</active>
+        <description>When User Select ACNO of PickList and Enter data in +PC</description>
+        <errorConditionFormula>AND( ISPICKVAL( Posting_to_FA_system__c , &apos;ACNO&apos;) , NOT( ISBLANK(  PC__c  ) ) )</errorConditionFormula>
+        <errorDisplayField>PC__c</errorDisplayField>
+        <errorMessage>After Selecting ACNO Pick Value,You cannn&apos;t enter in  +PC</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Posting_To_Fa_System_CLC_ACNO</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Posting_to_FA_system__c , &apos;ACNO&apos;) , NOT( ISBLANK(  ACH__c  ) ) )</errorConditionFormula>
+        <errorDisplayField>ACH__c</errorDisplayField>
+        <errorMessage>After Selecting ACNO Pick Value,You cannn&apos;t enter in +ACH</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Tax_Charge_must_be_value</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Charge_Type__c, &apos;tax&apos;),LEN(Tax_Charge__c)&gt;0 )</errorConditionFormula>
+        <errorDisplayField>Tax_Charge__c</errorDisplayField>
+        <errorMessage>You Cannot Select Tax Charge for Tax</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Without_Selecting_Entering_in_ACNO</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Posting_to_FA_system__c , &apos;&apos;) , NOT( ISBLANK(  ACNO__c  ) ) )</errorConditionFormula>
+        <errorDisplayField>ACNO__c</errorDisplayField>
+        <errorMessage>You cannn&apos;t enter in ACNO without selecting Posting to FA System Pick Value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Without_Selecting_Entering_in_CLC</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Posting_to_FA_system__c , &apos;&apos;) , NOT( ISBLANK( ACH__c  ) ) )</errorConditionFormula>
+        <errorDisplayField>ACH__c</errorDisplayField>
+        <errorMessage>You cannn&apos;t enter in ACH without selecting Posting to FA System Pick Value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Without_Selecting_Entering_in_PC</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Posting_to_FA_system__c , &apos;&apos;) , NOT( ISBLANK( PC__c ) ) )</errorConditionFormula>
+        <errorDisplayField>PC__c</errorDisplayField>
+        <errorMessage>You cannn&apos;t enter in PC without selecting Posting to FA System Pick Value.</errorMessage>
+    </validationRules>
+</CustomObject>

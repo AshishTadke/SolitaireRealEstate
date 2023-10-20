@@ -1,0 +1,471 @@
+<apex:page showHeader="false" standardController="Quotation__c" extensions="PriceSheetXanadu" >
+<legend align="Center">Page 2 of 2</legend>
+<head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+            <script src="/soap/ajax/9.0/connection.js"></script>
+    <style>
+            @page {
+                size: A4;
+                margin:  2mm         //5mm;
+                @bottom-center {
+                content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+            .page-break {
+                display:block;
+                page-break-after:always;
+            }
+            #MainTable
+            {
+                margin-top:25px;
+                font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;//'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+                border:0.5px solid black;
+                border-collapse: collapse;
+
+            }
+            tr,td
+            {
+                font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;//'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+                border:1px solid black;
+                
+            }
+            body 
+            {
+                font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;//'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+                font-weight:normal; 
+                font-size:13px; 
+                mso-line-height-rule: exactly;
+            }
+            .infobox {
+                  font-size: 80%;
+            }
+            .noBorder{
+                 border:0px solid White;
+            
+            }
+            /*.sfdc_richtext img {
+              border: 0;
+              width: 100px;
+              height:90px;
+            }
+            */
+        </style>
+        
+     
+        
+        
+</head>
+    <body width="100%"  onload=" test('{!qList[0].Quote_Status__c}');"  >   
+    
+<apex:form id="costsheetForm"> 
+                <table id="msgtab">
+                <tr>
+                <td> <center>
+                 <apex:pageMessages >
+                 </apex:pageMessages>
+                  </center>
+               
+                </td>  </tr> </table>
+<!-------------------------------------------------------------------------Subvention start--------------------------------------------------------------------------------->                
+         <apex:outputPanel rendered="{!IF(qList[0].PaymentPlan__r.Sub_Vention__c, True,False)}">         <!-- rendered="{!qList[0].Payment_Plan__r.Sub_Vention__c}">-->
+                 <table id="MainTable" align="Center" cellspacing="0" style="width:80%">
+                     <tr><td  align="center" colspan="6" style="background:#9CA1A1;"><h2>{!qList[0].Project__r.Name}</h2>
+                         </td>  
+                     </tr>
+                     <tr><td  align="center" colspan="6" style="background:#9CA1A1;"><h2>Payment Plan </h2>
+                         </td>  
+                     </tr>  
+                     
+                  
+                  <tr><td colspan="6">&nbsp;</td></tr>  
+                  
+                    
+                   <tr style="font-weight:Bold;background:#D3D3D3;" >
+                         <td align="Center">Particulars</td>
+                         <td align="Center">Payment %</td>
+                         <td align="Center">Contribution By</td>
+                         <td align="Center">AMOUNT<br/>(INR)</td>
+                         <td align="Center">GST<br/>(INR)</td>
+                         <td align="Center">TOTAL<br/>(INR)</td>
+                   </tr> 
+                         <apex:repeat value="{!scppListForBasic}" var="sc">
+                           <tr>
+                                     <td><apex:outputField value="{!sc.Is_to_be__c}" rendered="{!if(sc.Project_Construction_Stages__c == null && sc.Is_to_be__c != '0Day(s) from date of booking.',true,false)}"/>
+                                         <apex:outputText value="On Booking" rendered="{!if(sc.Project_Construction_Stages__c == null && sc.Is_to_be__c == '0Day(s) from date of booking.',true,false)}"/>
+                                         <apex:outputField value="{!sc.Project_Construction_Stages__r.Name}" rendered="{!if(sc.Project_Construction_Stages__c != null,true,false)}"/> </td>
+                                     <td align="Center"><apex:outputField value="{!sc.Amount_Value__c}"/></td>
+                                     <td align="Center"><apex:outputField value="{!sc.Contribution_From__c}"/></td> 
+                                     <td align="Center"><apex:outputField value="{!sc.Installment__c}"/></td>
+                                     <td align="Center"><apex:outputField value="{!sc.Service_Tax_Amount_Q__c}"/></td>
+                                     <td align="Center"><apex:outputField value="{!sc.Total_of_Tax_Av_Milestone_wise__c}"/></td>
+                                     
+                             </tr>
+                       </apex:repeat>   
+                       
+                        <tr style="font-weight:Bold;background:#D3D3D3;">
+                            <td class="bold header">Total Consideration Value</td>
+                            <td align="Center" class="bold header">100.00</td>
+                            <td align="Center" class="bold header"></td>
+                            <td align="Center" class="bold header">{!Considerationvaluestring}</td>
+                            <td align="Center" class="bold header">{!gstonCVString}</td>
+                            <td align="Center" class="bold header"></td>
+                            
+                        </tr>
+                                    
+                                        
+                    <tr><td colspan="6">&nbsp;</td></tr>
+                      
+                   <tr id="govrment" >
+                      <td colspan="2"><b>Stamp Duty, Registration And Legal Charges Before Agreement</b></td>
+                      <td align="Center">Customer</td>
+                      <td colspan="6" id="govrmentAmt"><b>{!SubTotal2New}</b></td>
+                      
+                   </tr>
+                   
+             </table>
+              <br/>
+          
+            <table id="nxttab" class="noBorder"  align="Center" cellspacing="0" style="width:80%">
+                <tr class="noBorder">
+                    <td class="noBorder"><b><apex:outputField value="{!qList[0].Project__r.Terms_and_Condtitions_New__c}"/></b> 
+                    </td>
+                </tr>
+                
+            </table>
+             </apex:outputPanel>
+             
+<!-------------------------------------------------------------------------Subvention End & Regular start--------------------------------------------------------------------------------->                
+
+             
+             <apex:outputPanel rendered="{!IF(!qList[0].PaymentPlan__r.Sub_Vention__c, True,False)}">        
+                 <table id="MainTable" align="Center" cellspacing="0" style="width:80%">
+                     <tr><td  align="center" colspan="5" style="background:#9CA1A1;"><h2>{!qList[0].Project__r.Name}</h2>
+                         </td>  
+                     </tr>
+                     <tr><td  align="center" colspan="5" style="background:#9CA1A1;"><h2>Payment Plan </h2>
+                         </td>  
+                     </tr>  
+                     
+                  
+                  <tr><td colspan="5">&nbsp;</td></tr>  
+                  
+                    
+                   <tr style="font-weight:Bold;background:#D3D3D3;" >
+                         <td align="Center">Particulars</td>
+                         <td align="Center">Payment %</td>
+                         <td align="Center">AMOUNT<br/>(INR)</td>
+                         <td align="Center">GST<br/>(INR)</td>
+                         <td align="Center">TOTAL<br/>(INR)</td>
+                   </tr> 
+                         <apex:repeat value="{!scppListForBasic}" var="sc">
+                           <tr>
+                                     <td><apex:outputField value="{!sc.Is_to_be__c}" rendered="{!if(sc.Project_Construction_Stages__c == null && sc.Is_to_be__c != '0Day(s) from date of booking.',true,false)}"/>
+                                         <apex:outputText value="On Booking" rendered="{!if(sc.Project_Construction_Stages__c == null && sc.Is_to_be__c == '0Day(s) from date of booking.',true,false)}"/>
+                                         <apex:outputField value="{!sc.Project_Construction_Stages__r.Name}" rendered="{!if(sc.Project_Construction_Stages__c != null,true,false)}"/> </td>
+                                     <td align="Center"><apex:outputField value="{!sc.Amount_Value__c}"/></td>
+                                     <td align="Center"><apex:outputField value="{!sc.Installment__c}"/></td>
+                                     <td align="Center"><apex:outputField value="{!sc.Service_Tax_Amount_Q__c}"/></td>
+                                     <td align="Center"><apex:outputField value="{!sc.Total_of_Tax_Av_Milestone_wise__c}"/></td>
+                                     
+                             </tr>
+                       </apex:repeat>   
+                       
+                        <tr style="font-weight:Bold;background:#D3D3D3;">
+                            <td class="bold header">Total Consideration Value</td>
+                            <td align="Center" class="bold header">100.00</td>
+                            <td align="Center" class="bold header">{!Considerationvaluestring}</td>
+                            <td align="Center" class="bold header">{!gstonCVString}</td>
+                            <td align="Center" class="bold header"></td>
+                        </tr>
+                                    
+                                        
+                    <tr><td colspan="5">&nbsp;</td></tr>
+                      
+                   <tr id="govrment" >
+                      <td colspan="2"><b>Stamp Duty, Registration And Legal Charges Before Agreement</b></td>
+                      <td colspan="5" id="govrmentAmt"><b>{!stampTotalInString}</b></td>
+                      
+                   </tr>
+                   
+             </table>
+              <br/>
+          
+            <table id="nxttab" class="noBorder"  align="Center" cellspacing="0" style="width:80%">
+                <tr class="noBorder">
+                    <td class="noBorder"><b><apex:outputField value="{!qList[0].Project__r.Tearms_and_Conditions__c}"/></b>
+                </td>
+                </tr>
+                
+            </table>
+             </apex:outputPanel>
+<!-------------------------------------------------------------------------Regular End--------------------------------------------------------------------------------->                
+             
+            
+            <br/>
+            <br/>
+            <table id="nxttab2" class="noBorder" cellspacing="0" cellpadding="0" align="center" width="90%">
+                <tr class="noBorder">
+                    <td class="noBorder" align="center">­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­_______________________________</td>
+                    <td class="noBorder" align="center">_______________________________</td>
+                    <td class="noBorder" align="center">_______________________________</td>
+                </tr>
+                <tr class="noBorder">
+                    <td class="noBorder" align="center">Sales Manager</td>
+                    <td class="noBorder" align="center">1st Applicant/ Client</td>
+                    <td class="noBorder" align="center">Sales Head/TL</td>
+                </tr>
+                <tr>
+                    <td class="noBorder" align="center">{!qList[0].Opportunity__r.Sales_Manager__c}</td>  <!--  &#8826;Name of SM&#8827;  -->
+                    <td class="noBorder" align="center">{!qList[0].Opportunity__r.Primary_Name__c}</td>  <!---- &#8826;Name of Primary Applicant&#8827; --->
+                    <td class="noBorder" align="center">{!qList[0].Opportunity__r.Name_of_TL__c}</td>
+                </tr>
+            </table> 
+            
+                 
+         </apex:form>
+
+        
+           
+            <script>
+            function newfun()
+            {
+                 //   alert('Hi Netra');
+                  
+                  
+                   
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       //alert ('tdText : ' + tdText);
+                       document.getElementById("row1").style.display = 'none';
+                   }
+                  
+                   var tdElem = document.getElementById( "othercharges2");                                   
+                   var tdText = tdElem.innerHTML;
+               //    alert(tdText);
+                   
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       alert ('tdText : ' + tdText);
+                       document.getElementById("row2").style.display = 'none';
+                   }
+                                      
+              
+              
+               var tdElem = document.getElementById( "baserateAmt");                                   
+                   var tdText = tdElem.innerHTML;
+               //    alert(tdText);
+                   
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       alert ('tdText : ' + tdText);
+                       document.getElementById("baserate").style.display = 'none';
+                   }
+               
+                 var tdElem = document.getElementById( "govrmentAmt");                                   
+                   var tdText = tdElem.innerHTML;
+               //    alert(tdText);
+                   
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       alert ('tdText : ' + tdText);
+                       document.getElementById("govrment").style.display = 'none';
+                   } 
+                   
+                 var tdElem = document.getElementById( "otherAmt");                                   
+                   var tdText = tdElem.innerHTML;
+                   
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       alert ('tdText : ' + tdText);
+                       document.getElementById("other").style.display = 'none';
+                   }    
+                  
+               
+                 var tdElem = document.getElementById( "Newstamp");                                   
+                   var tdText = tdElem.innerHTML;
+               //    alert(tdText);
+                   
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       alert ('tdText : ' + tdText);
+                       document.getElementById("stampDutyRowNew").style.display = 'none';
+                   } 
+                  
+                  
+                  
+                   // ----------------------------------------------------------
+                   var tdElem = document.getElementById( "PremiumAmt1" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("PremiumDes1").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "PremiumAmt2" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("PremiumDes2").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "PremiumAmt3" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("PremiumDes3").style.display = 'none';
+                   }
+                   var tdElem = document.getElementById( "PremiumAmt4" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("PremiumDes4").style.display = 'none';
+                   }
+                   
+                   
+                   var tdElem = document.getElementById( "total1" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("total").style.display = 'none';
+                   }
+                 
+                   
+                   var tdElem = document.getElementById( "Discpsf1" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("DiscType1").style.display = 'none';
+                   }
+                  
+                   var tdElem = document.getElementById( "subtotal1" );                                    
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("subtotal").style.display = 'none';
+                   }
+                  
+                  
+                   // --------------------------------------------------------------
+                 
+                   
+                   //-------------------------------------------------------------------------------------------
+                  
+                   //alert('Hi Netra');
+                  
+                 
+                   
+                   var tdElem = document.getElementById( "stampDutyAmt" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("stampDutyRow").style.display = 'none';
+                   }
+                   
+                   var tdElem = document.getElementById( "regAmt" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("regRow").style.display = 'none';
+                   }
+                   
+                   
+                   var tdElem = document.getElementById( "regAmtNew" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("regRowNew").style.display = 'none';
+                   }
+                   
+                   
+                   var tdElem = document.getElementById( "mVatAmt" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("mVatRow").style.display = 'none';
+                   }
+                   
+                  
+                
+                   var tdElem = document.getElementById( "mVatAmtNew" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("mVatRowNew").style.display = 'none';
+                   }
+                  
+                  
+                   var tdElem = document.getElementById( "serviceTaxAmtNew" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("serviceTaxNew").style.display = 'none';
+                   }
+                  
+                  
+                  
+                  var tdElem = document.getElementById( "totalcost" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText =='0/-')
+                   {
+                       document.getElementById("totalcostAmt").style.display = 'none';
+                   }
+                  
+                  
+                
+                
+                
+                   // Area
+                   var tdElem = document.getElementById( "areaamt" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText == '' || tdText =='0/-')
+                   {
+                       document.getElementById("area").style.display = 'none';
+                   }
+                   //Flat Cost, 
+                   var tdElem = document.getElementById( "flatCostAmt" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText == '' || tdText =='0/-')
+                   {
+                       document.getElementById("flatCost").style.display = 'none';
+                   }
+                   
+                   //
+                   var tdElem = document.getElementById( "floorRiseAmt" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText == '' || tdText =='0/-')
+                   {
+                       document.getElementById("floorRise").style.display = 'none';
+                   }
+                   ///
+                   var tdElem = document.getElementById( "serviceTaxAmt" );                                   
+                   var tdText = tdElem.innerHTML;
+                   if(tdText =='0.00' || tdText =='0' || tdText == '' || tdText =='0/-')
+                   {
+                       document.getElementById("serviceTax").style.display = 'none';
+                   }
+                   
+                   
+            }
+            function test(status){
+             if(status == 'Approval Pending'){
+                document.getElementById( "MainTable").style.display = 'none';
+                document.getElementById( "nxttab").style.display = 'none';
+                document.getElementById( "nxttab2").style.display = 'none';
+                document.getElementById( "rhId").style.display = 'none';
+                
+             }
+             else{
+                   document.getElementById("msgtab").style.display = 'none';
+                   
+                   window.print(); 
+                   newfun();
+             }
+              
+            }
+    </script>
+
+
+
+        
+</body>
+</apex:page>

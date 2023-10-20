@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>PAYMENT_REMINDER_Reminder_8th_Day_and_14th_Day</fullName>
+        <ccEmails>sfdcsolitaire@solitaire.in</ccEmails>
+        <description>PAYMENT REMINDER - (Reminder 8th Day and 14th Day)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Future_Correspondence_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/Reminder_8th_Day_and_14th_Day</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Demand_Invoice_as_Attachment</fullName>
+        <ccEmails>vikas.gavhane@stetig.in</ccEmails>
+        <description>Send Demand Invoice as Attachment</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Booking_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Future_Correspondence_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>cc1_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>cc2_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>cc3_email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>cc4_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Standard_Template_Solitaire/DemandLetterWithAttachment</template>
+    </alerts>
+    <rules>
+        <fullName>Send Demand Invoice</fullName>
+        <actions>
+            <name>Send_Demand_Invoice_as_Attachment</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Demand_Invoice__c.Is_Advanced_Demand__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Demand_Invoice__c.Day_0_demand_generation__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

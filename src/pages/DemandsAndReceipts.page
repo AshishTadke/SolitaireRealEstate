@@ -1,0 +1,246 @@
+<apex:page Controller="DemandsAndReceiptsClass" showHeader="false" standardStylesheets="true" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+  <html
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <title>Collections Details</title>
+            <apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+            <script src="/soap/ajax/9.0/connection.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+        </head>
+        <!-- Define Tab panel .css styles -->
+    <style>
+    .activeTab {
+    background-color: #104E8B; 
+    color:white; 
+    background-image:none;
+    font-family: Lato,verdana, arial, sans-serif;
+    font-size: 15px;    
+    }
+    .inactiveTab { 
+    background-color: #525C65; 
+    color:white; 
+    background-image:none;
+    font-family: Lato,verdana, arial, sans-serif;
+    font-size: 15px;
+    }
+    .slds table {
+        font-family: Lato,verdana, arial, sans-serif;
+        font-size: 14px;
+        empty-cells:show;
+        width:100%;
+    }
+    .slds th {
+        padding: 3px;
+        background-color:#104E8B;
+        text-align:center;
+    }
+ 
+    .slds td {
+        text-align:center;
+    }       
+    </style>           
+  <body>    
+  <!-- REQUIRED SLDS WRAPPER -->
+  <div class="slds">    
+  <!-- PRIMARY CONTENT WRAPPER -->
+    <div class="myapp">   
+        <!-- SEARCH DEMANDS-->
+      <div aria-labelledby="DSform">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme--shade slds-container--large slds-container--center slds-grid--align-spread">
+          <legend id="dsForm" class="slds-text-heading--medium slds-p-vertical--medium">Collections History</legend>
+          <!-- DEMAND SEARCH FORM -->   
+          <apex:form > 
+           <apex:pageBlock >
+           <apex:outputPanel id="CallLogButton">
+                <center>
+               <apex:commandLink target="_Blank" action="{!redirectUser}">
+               <apex:commandButton value="New Case" styleClass="slds-button slds-button--brand slds-button--small" action="{!redirectUser}"/>                                         
+               </apex:commandLink>
+                </center>
+                <br/>                  
+           </apex:outputPanel> 
+            <apex:pageblockSection title="General Details" rendered="{!SCPPDList.size != 0}" columns="1" >
+            <apex:pageBlockTable value="{!SCPPDList}" var="t" styleClass="slds">  
+                             <apex:column headerValue="Account Name" >
+                                <!-- <apex:Outputtext value="{!SCPPDList[0].Customer_Pay_Plan_Header__r.Customer__r.Account.Name}"/> -->
+                                <a href="/{!SCPPDList[0].Customer_Pay_Plan_Header__r.Customer__r.AccountId}" target="_blank">{!SCPPDList[0].Customer_Pay_Plan_Header__r.Customer__r.Account.Name}</a>
+                             </apex:column>
+                             <apex:column headerValue="Opportunity Name" >
+                                <!-- <apex:Outputtext value="{!SCPPDList[0].Customer_Pay_Plan_Header__r.Customer__r.Name}"/> -->
+                                <a href="/{!SCPPDList[0].Customer_Pay_Plan_Header__r.Customer__r.Id}" target="_blank">{!SCPPDList[0].Customer_Pay_Plan_Header__r.Customer__r.Name}</a>
+                             </apex:column>    
+                             <apex:column headerValue="Milestone Name" >
+                                <apex:Outputtext value="{!SCPPDList[0].Is_to_be__c}"/>
+                             </apex:column> 
+                             <apex:column headerValue="Project Name" >
+                                <!--<apex:Outputtext value="{!SCPPDList[0].Customer_Pay_Plan_Header__r.Customer__r.Project__r.Name}"/>-->
+                                <a href="/{!SCPPDList[0].Customer_Pay_Plan_Header__r.Customer__r.Project__r.Id}" target="_blank">{!SCPPDList[0].Customer_Pay_Plan_Header__r.Customer__r.Project__r.Name}</a>
+                             </apex:column> 
+                             <apex:column headerValue="Unit Name" >
+                                <!-- <apex:Outputtext value="{!SCPPDList[0].Customer_Pay_Plan_Header__r.Customer__r.Project_Unit__r.Name}"/> -->
+                                <a href="/{!SCPPDList[0].Customer_Pay_Plan_Header__r.Customer__r.Project_Unit__r.Id}" target="_blank">{!SCPPDList[0].Customer_Pay_Plan_Header__r.Customer__r.Project_Unit__r.Name}</a>
+                             </apex:column>        
+            </apex:pageBlockTable>
+            </apex:pageblockSection>
+            <apex:pageblockSection title="Collections Call History" rendered="{!tasklist.size != 0}" columns="1" >
+                    <apex:pageBlockTable value="{!tasklist}" var="t" styleClass="slds">                                               
+                            <apex:column headerValue="Date" >
+                                <!-- <a href="/{!t.id}" target="_blank" style="float:left;"><u>View</u></a>&nbsp;&nbsp;&nbsp; -->
+                               <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                 <apex:param value="{!t.ActivityDate}"/>
+                                 </apex:outputtext>
+                             </apex:column>                             
+                             <apex:column headerValue="Communication Type" >
+                                <apex:Outputtext value="{!t.Communication_Type__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="Reason For Call">
+                                <apex:Outputtext value="{!t.Reason_For_Call__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="Reason For Category">
+                                <apex:Outputtext value="{!t.L2__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="Reason For SubCategory">
+                                <apex:Outputtext value="{!t.L3__c}"/>
+                             </apex:column>                                                    
+                            <!-- <apex:column headerValue="Disposition" >
+                                <apex:Outputtext value="{!t.Call_Disposition__c}"/>
+                             </apex:column>-->
+                             <apex:column headerValue="Next Action Date" >
+                                 <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                 <apex:param value="{!t.Next_Action_Date__c}"/>
+                                 </apex:outputtext>
+                             </apex:column>
+                             <apex:column headerValue="PTP Amount" >
+                                <apex:Outputtext value="{!t.PTP_Amount__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="PTP Instrument" >
+                                <apex:Outputtext value="{!t.Payment_Instrument__c}"/>
+                             </apex:column>
+                             
+                            
+                             <!--<apex:column headerValue="Milestone" >
+                                <apex:Outputtext value="{!t.Standard_Customer_Pay_Plan_Detail__r.Is_to_be__c}"/>
+                             </apex:column>   -->                         
+                            <!-- <apex:column headerValue="Actions">
+                                <a href="www.google.com"><u>View Details</u></a>&nbsp;&nbsp;&nbsp;<a href="www.facebook.com"><u>Log a Call</u></a>
+                             </apex:column>-->
+                    </apex:pageBlockTable> 
+                </apex:pageblockSection>   
+             <apex:pageblockSection title="Demands" rendered="{!Demand.size != 0}" columns="1">
+                    <apex:pageBlockTable value="{!Demand}" var="d">                                                                           
+                            <apex:column headerValue="Number" >
+                                 <a href="/{!d.id}" target="_blank" style="float:left;"><u>View</u></a>&nbsp;&nbsp;&nbsp;
+                                <apex:Outputtext value="{!d.Name}"/>
+                             </apex:column>
+                             <apex:column headerValue="Invoice Date" >
+                                 <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                 <apex:param value="{!d.Invoice_Date__c}"/>
+                                 </apex:outputtext>
+                             </apex:column>
+                             <apex:column headerValue="Due Date" >
+                                  <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                  <apex:param value="{!d.Due_Date__c}"/>
+                                  </apex:outputtext>
+                             </apex:column>
+                             <apex:column headerValue="Advance Demand " >
+                                <apex:OutputField value="{!d.Is_Advanced_Demand__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="Total Payable" >
+                                <apex:Outputtext value="{!d.Total_Amount__c}"/>
+                             </apex:column>                            
+                             <apex:column headerValue="Milestone" >
+                                <apex:Outputtext value="{!d.Standard_Customer_Pay_Plan_Detail__r.Is_to_be__c}"/>
+                             </apex:column>   
+                             <apex:column headerValue="Call Comments" >
+                                <apex:Outputtext value="{!d.Standard_Customer_Pay_Plan_Detail__r.Call_Comments__c}"/>
+                             </apex:column>                                                     
+                    </apex:pageBlockTable>        
+                </apex:pageblockSection> 
+                <apex:pageblockSection title="Receipts" rendered="{!Receipts.size != 0}" columns="1" >
+                    <apex:pageBlockTable value="{!Receipts}" var="R">                                               
+                            <apex:column headerValue="Receipt Number" >
+                                 <a href="/{!R.id}" target="_blank" style="float:left;"><u>View</u></a>&nbsp;&nbsp;&nbsp;
+                                <apex:Outputtext value="{!R.Name}"/>
+                             </apex:column>
+                             <apex:column headerValue="Receipt Date" >
+                                  <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                  <apex:param value="{!R.Receipt_Date__c}"/>
+                                  </apex:outputtext>
+                             </apex:column>
+                             <apex:column headerValue="Receipt Number" >
+                                <apex:Outputtext value="{!R.Name}"/>
+                             </apex:column>
+                             <apex:column headerValue="Status" >
+                                <apex:Outputtext value="{!R.Receipt_Status__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="Instrument" >
+                                <apex:Outputtext value="{!R.Mode__c}"/>
+                             </apex:column>
+                              <apex:column headerValue="Receipt Type" >
+                                <apex:OutputField value="{!R.Receipt_Against__c}"/>
+                             </apex:column>
+                            <!-- <apex:column headerValue="Token Amount" >
+                                <apex:OutputField value="{!R.Token_Amount_Receipt__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="ST on Token Amount" >
+                                <apex:OutputField value="{!R.Token_Amount_ST__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="Milestone" >
+                                <apex:Outputtext value="{!R.Standard_Customer_Pay_Plan_Detail__r.Is_to_be__c}"/>
+                             </apex:column>-->
+                             
+                    </apex:pageBlockTable>        
+                </apex:pageblockSection>   
+                <!---- Added by Shailesh to Show Collection Related Case History -->
+                 <apex:pageblockSection title="Case History" rendered="{!caseList.size != 0}" columns="1" >
+                    <apex:pageBlockTable value="{!caseList}" var="c">                                               
+                            <apex:column headerValue="Case Number" >
+                                 <a href="/{!c.id}" target="_blank" style="float:left;"><u>View</u></a>&nbsp;&nbsp;&nbsp;
+                                <apex:Outputtext value="{!c.CaseNumber}"/>
+                             </apex:column>
+                              <apex:column headerValue="Case Origin" >
+                                <apex:OutputField value="{!c.Origin}"/>
+                             </apex:column>
+                             <apex:column headerValue="Mode" >
+                                <apex:Outputtext value="{!c.Mode__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="Status" >
+                                <apex:Outputtext value="{!c.Status}"/>
+                             </apex:column>
+                             <apex:column headerValue="Date/Time Opened " >
+                                 <!-- <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                  <apex:param value="{!c.CreatedDate}"/> -->
+                                  <apex:outputfield value="{!c.CreatedDate}">
+                                  </apex:outputfield>
+                             </apex:column>
+                              <apex:column headerValue="Date/Time Closed " >
+                               <!-- <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                <apex:param value="{!c.ClosedDate}"/> -->
+                                <apex:outputfield value="{!c.ClosedDate}">
+                                  </apex:outputfield>
+                             </apex:column>
+                             <apex:column headerValue="Attempted By" >
+                                <apex:OutputField value="{!c.Attempted_By__c}"/>
+                             </apex:column>
+                            
+                  </apex:pageBlockTable>        
+                </apex:pageblockSection>   
+             </apex:pageBlock>   
+             </apex:form>   
+        </fieldset>
+        <!-- / BOXED AREA -->
+      </div>
+  <!-- / SEARCH DEMANDS -->
+    </div>
+    <!-- / PRIMARY CONTENT WRAPPER -->
+  </div>
+  <!-- / REQUIRED SLDS WRAPPER -->  
+  
+  
+  </body>
+ </html>
+</apex:page>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Possession Greetings</name>
+    <style>none</style>
+    <subject>Possession Greetings</subject>
+    <textOnly>Dear {!Opportunity.Account},
+
+Congratulations!!
+
+Our best wishes to you on owning the new property at Solitaire. We hope you get all the growth and success in the future.
+
+It is our continuous endeavor to provide you with consistent and superior customer experience. As you are a valued customer of SOLITAIRE, it is our goal to ensure that all your requirements are taken care of. We have tried our best to serve quality service for all your concern from post booking till the possession.
+
+Please feel free to connect for any clarifications.
+
+Best of luck!
+
+Best Regards,
+Team CRM</textOnly>
+    <type>custom</type>
+</EmailTemplate>

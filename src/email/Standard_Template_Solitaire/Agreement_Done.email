@@ -1,0 +1,12 @@
+Dear {!Opportunity.Future_Correspondence_Contact_Name__c},
+<br/><br/>
+Greetings from Solitaire!
+<br/><br/>
+Congratulations on the completion of “Registration” of your property in {!Opportunity.Project__c}. 
+<br/><br/>
+We are expecting the registered agreement for your unit in the next 3-4 working days. Upon receipt of the document, we will connect with you to take your appointment for handing over the registered document to you.
+<br/><br/>
+Please feel free to contact us for any queries. 
+<br/><br/>
+Regards,<br/>
+Team CRM Solitaire

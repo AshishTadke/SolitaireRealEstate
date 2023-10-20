@@ -1,0 +1,234 @@
+<apex:page controller="S_CollectionsDashboardClass" showHeader="false" standardStylesheets="true" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    <html
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <title>Collections Dashboard</title>
+            <apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+            <script src="/soap/ajax/9.0/connection.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+        </head>
+        <!-- Define Tab panel .css styles -->
+    <style>
+  
+  
+ 
+    .activeTab {
+    background-color: #104E8B; 
+    color:white; 
+    background-image:none;
+    font-family: Lato,verdana, arial, sans-serif;
+    font-size: 15px;    
+    }
+    .inactiveTab { 
+    background-color: #525C65; 
+    color:white; 
+    background-image:none;
+    font-family: Lato,verdana, arial, sans-serif;
+    font-size: 15px;
+    }
+    .slds table {
+        font-family: Lato,verdana, arial, sans-serif;
+        font-size: 12px;
+        empty-cells:show;
+    }
+    .slds th {
+        padding: 1px;
+        background-color:#104E8B;
+        text-align:center;
+    }
+ 
+    .slds td {
+        text-align:left;
+    }
+    
+    </style>
+   
+     <apex:actionStatus id="status">
+    <apex:facet name="start">
+    <div class="fadeMe">
+        &nbsp;
+    </div>
+    <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+        <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+            <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+            <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+        </div>
+    </div>
+    </apex:facet>
+ </apex:actionStatus>
+            
+<body>    
+
+
+
+
+<!-- REQUIRED SLDS WRAPPER -->
+<div class="slds">    
+<!-- PRIMARY CONTENT WRAPPER -->
+<div class="myapp">   
+<!-- SEARCH DEMANDS-->
+<div aria-labelledby="DSform">
+<!-- BOXED AREA -->
+<fieldset class="slds-box slds-theme--shade slds-container--large slds-container--center slds-grid--align-spread">
+  <legend id="dsForm" class="slds-text-heading--medium slds-p-vertical--medium"><a href="/home/home.jsp"><img src="{!$Resource.Home}" style="float:left; width:8%; height:8%;"></img></a>&nbsp;&nbsp;Collections Dashboard</legend>
+    <apex:form id="pendRegistration" styleClass="slds-form--inline">
+    
+     <apex:outputPanel id="showmsg">
+ <apex:pageMessages escape="False"/>
+</apex:outputPanel>
+    
+            <apex:outputPanel id="messages">
+                <apex:PageMessages id="pageMsgs" />
+            </apex:outputPanel>
+           <!-- <apex:actionFunction name="rerenderTowerFunction2" action="{!dummy}" rerender="towersPanel2"/>
+            <apex:actionFunction name="searchFunction1" action="{!search}" rerender="customerPanel2,messages">
+            <apex:param name="criteria" assignTo="{!selectedCriteria}" value="Registration" />
+            </apex:actionFunction>                           -->
+                <apex:outputPanel id="searchButton">
+                    <center>                        
+                            <apex:selectList id="abc" value="{!selectedProjectId}" size="1"> 
+                                <apex:selectOptions value="{!lstProjects}" /> 
+                                <apex:actionSupport event="onchange" reRender="RM" status="status">
+                           <!--    <apex:param name="selectedProjectId" value="{!getRMs}" assignTo="{!selectedProjectId}"  /> -->
+                               </apex:actionSupport>
+                            </apex:selectList>                                                 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            
+                            <apex:selectList id="RM" value="{!selectedRM}" size="1" > 
+                                <apex:selectOptions value="{!getRMs}" /> 
+                            </apex:selectList>
+                            
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <apex:selectList id="disposition" value="{!selectedDisposition}" size="1"> 
+                                <apex:selectOption itemValue="All" itemLabel="Select a Disposition"/>                                
+                                <apex:selectOption itemValue="Promised to pay" itemLabel="PTP"/>
+                                <apex:selectOption itemValue="Delay Expected" itemLabel="Delay Expected"/>        
+                                <apex:selectOption itemValue="Not Contactable" itemLabel="Not Contactable"/>
+                                <apex:selectOption itemValue="DNC" itemLabel="DNC"/>
+                                <apex:selectOption itemValue="For Bank Disbursement" itemLabel="For Bank Disbursement"/>
+                            </apex:selectList> 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                            
+                            <apex:commandButton value="Submit" styleClass="slds-button slds-button--brand slds-button--small" action="{!getCollectionsList}"/>
+                    </center>  <br/>                                 
+                </apex:outputPanel>
+                <apex:outputPanel id="customerPanel2">
+                <apex:pageblock id="collectionspageblock">
+                    <apex:outputLabel ></apex:outputLabel>                                    
+                    <apex:pageblockSection title="Collections List" columns="1" collapsible="false" id="collectionspageblocksection">
+                          <apex:pageBlockTable value="{!wrapperscppdList}" var="Customer" id="collectionstable">                                               
+                                <apex:column headerValue="RM" >
+                                    <apex:outputtext value="{!Customer.stdCustomerPayPlan.Customer_Pay_Plan_Header__r.Booking__r.Owner.Name}"/>
+                                </apex:column> 
+                                  <apex:column headerValue="Flat No." >
+                                    <apex:outputtext value="{!Customer.stdCustomerPayPlan.Customer_Pay_Plan_Header__r.Booking__r.Unit_No__r.Name}"/>
+                                </apex:column>  
+                                <apex:column headerValue="Booking Details" >
+                                   <apex:outputLink value="/{!Customer.stdCustomerPayPlan.Customer_Pay_Plan_Header__r.Booking__c}" target="_Blank">{!Customer.stdCustomerPayPlan.Customer_Pay_Plan_Header__r.Customer__r.Name}</apex:outputLink>
+                                </apex:column>
+                                <apex:column headerValue="Contact Person" >
+                                    <apex:outputtext value="{!Customer.stdCustomerPayPlan.Customer_Pay_Plan_Header__r.Booking__r.Future_Correspondence_Contact_Name__c}"/>
+                                </apex:column> 
+                                <apex:column headerValue="Contact Relation" >
+                                    <apex:outputtext value="{!Customer.stdCustomerPayPlan.Customer_Pay_Plan_Header__r.Booking__r.Future_Correspondence_Contact_Relation__c}"/>
+                                </apex:column>
+                                <apex:column headerValue="Mobile" >
+                                    <apex:Outputtext value="{!Customer.stdCustomerPayPlan.Customer_Pay_Plan_Header__r.Booking__r.Future_Correspondence_Contact_Phone__c}"/>                                                    
+                                </apex:column>                              
+                                <apex:column headerValue="Milestone Name " >
+                                    <apex:outputtext value="{!Customer.stdCustomerPayPlan.Is_to_be__c}"/>
+                                </apex:column>                                
+                               <apex:column headerValue="Funding" >
+                                    <apex:outputtext value="{!Customer.stdCustomerPayPlan.Customer_Pay_Plan_Header__r.Booking__r.Funding_Status__c}"/>
+                                </apex:column>
+                                <apex:column headerValue="Total Payable" >
+                                    <apex:outputtext value="{!Customer.Amount1}"/>
+                                </apex:column>
+                               <!-- <apex:column headerValue="Amount Paid" >
+                                    <apex:outputtext value="{!Customer.Charge_Amount_Paid__c}"/>
+                                </apex:column>-->
+                                <apex:column headerValue="Installment Due" >    
+                                    <apex:outputtext value="{!Customer.Amount2}"/>
+                                </apex:column>
+                                <apex:column headerValue="GST Due" >
+                                    <apex:outputtext value="{!Customer.Amount3}"/>
+                                </apex:column>
+                                <apex:column headerValue="Interest" >
+                                    <apex:outputtext value="{!Customer.Amount5}"/>
+                                </apex:column>
+                               <apex:column headerValue="Last Call Disposition " >
+                                    <apex:outputtext value="{!Customer.stdCustomerPayPlan.L2__c}"/>-<apex:outputtext value="{!Customer.stdCustomerPayPlan.L3__c}"/>
+                                </apex:column>
+                               <apex:column headerValue="Next Action Date">
+                               <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                     <apex:param value="{!Customer.stdCustomerPayPlan.PTP_Date__c}"/> 
+                                </apex:outputtext>
+                                </apex:column>
+                                <apex:column headerValue="PTP Amount">
+                                     <apex:outputtext value="{!Customer.Amount4}"/>
+                                </apex:column>
+                               
+                                <apex:column headerValue="Overdue">
+                                     <apex:outputField value="{!Customer.stdCustomerPayPlan.IsPaymentOverdue__c}" styleClass="paymentoverdue"/>
+                                </apex:column>                                                
+                                <apex:column headerValue="Actions">
+                                    <a href="/apex/DemandsAndReceipts?CPPHid={!Customer.stdCustomerPayPlan.Id}" target="_blank"><u>Details</u></a>&nbsp;&nbsp;&nbsp;
+ <!--  commented by vikas for new case   ----------------------------------- <a href="/apex/CallAttemptEditPage2?origin=Page&scppd={!Customer.stdCustomerPayPlan.Id}&status=Completed&subject=Post+Sales+Call&tasktype=Post+Sales+Call&what_id={!Customer.stdCustomerPayPlan.Customer_Pay_Plan_Header__r.Customer__c}&who_id={!Customer.stdCustomerPayPlan.Customer_Pay_Plan_Header__r.Customer__r.Account.Id}&retURL=/apex/DemandsAndReceipts?CPPHid={!Customer.stdCustomerPayPlan.Id}&SaveURL=/apex/DemandsAndReceipts?CPPHid={!Customer.stdCustomerPayPlan.Id}&CancelURL=/apex/DemandsAndReceipts?CPPHid={!Customer.stdCustomerPayPlan.Id}" target="_blank"><u>LogCall</u></a> -->
+     <!-- Added by vikas for new case ----------------------------<a href="/500/e?retURL=/apex/DemandsAndReceipts?CPPHid={!Customer.stdCustomerPayPlan.Id}&SaveURL=/apex/DemandsAndReceipts?CPPHid={!Customer.stdCustomerPayPlan.Id}&CancelURL=/apex/DemandsAndReceipts?CPPHid={!Customer.stdCustomerPayPlan.Id}" target="_blank"><u>NewCase</u></a> ---->
+            <!-- Added by vikas for new case ------------------------------><a href="/500/e?retURL=/apex/DemandsAndReceipts?CPPHid={!Customer.stdCustomerPayPlan.Id}&SaveURL=/apex/DemandsAndReceipts?CPPHid={!Customer.stdCustomerPayPlan.Id}&CF00NR0000001pLyN={!Customer.stdCustomerPayPlan.Customer_Pay_Plan_Header__r.Customer__r.Name}&def_account_id={!Customer.stdCustomerPayPlan.Customer_Pay_Plan_Header__r.Customer__r.AccountId}&CancelURL=/apex/DemandsAndReceipts?CPPHid={!Customer.stdCustomerPayPlan.Id}" target="_blank"><u>NewLog</u></a>
+                         </apex:column>                                         
+                                <!--<apex:column headerValue="View">
+                                 <!--<apex:commandLink value="{!Customer.Name}" action="{!getDemandReciepts}">
+                                            <apex:param name="selectedPlan" value="{!Customer.Customer_Pay_Plan_Header__c}" assignTo="{!selectedPlan}"/>
+                                 </apex:commandLink>-->                                                
+                            </apex:pageBlockTable> 
+                        </apex:pageblockSection>                                        
+                    </apex:pageblock>
+                </apex:outputPanel>
+            </apex:form>
+<!--  </apex:tab>
+            
+        </apex:tabPanel>-->
+  <!-- DEMAND SEARCH FORM -->
+
+</fieldset>
+<!-- / BOXED AREA -->
+</div>
+<!-- / SEARCH DEMANDS -->
+</div>
+<!-- / PRIMARY CONTENT WRAPPER -->
+</div>
+<!-- / REQUIRED SLDS WRAPPER -->  
+<script>
+    var j$ = jQuery.noConflict();
+    j$(document).ready(function() {
+        bindEvents();
+    });
+    function bindEvents() {
+        //colorLinks();
+        //colorRows();
+    }
+    function getCustomers(towerName) {
+        getCustomersFunction(towerName);
+    }
+    function colorLinks() { 
+        var links = document.getElementsByTagName('a');
+        for (var a = 0; a < links.length; a++) {
+            var randomColor = '#' + (Math.random().toFixed(6).toString(16)).slice(2);
+            links[a].style.color = randomColor;
+        }
+    }        
+    function selectAllCheckboxes(obj,receivedInputID){
+        var inputCheckBox = document.getElementsByTagName("input");                  
+        for(var i=0; i<inputCheckBox.length; i++){          
+            if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+                inputCheckBox[i].checked = obj.checked;
+            }
+        }
+    }
+</script>
+</body>
+  </html>
+</apex:page>

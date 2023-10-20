@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project Charges</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Project Charges</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apply This Charge --></label>
+        <name>Applied_This_Charge_To_FA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applied at the time of FCN --></label>
+        <name>Applied_at_the_time_of_FCN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Area Type Id --></label>
+        <name>Area_Type_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brokerage Applicable on this charge --></label>
+        <name>Brokerage_Applicable_on_this_charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brokerage Based on Basic --></label>
+        <name>Brokerage_Based_on_Basic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge Code --></label>
+        <name>Charge_Code1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge --></label>
+        <name>Charge_Code__c</name>
+        <relationshipLabel><!-- Project Charges --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Charge Id --></label>
+        <name>Charge_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Finished --></label>
+        <name>Finished__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest Applicable on this charge --></label>
+        <name>Interest_Applicable_on_this_charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Plan Applicable --></label>
+        <name>Payment_Plan_Applicable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Area Type --></label>
+        <name>Project_Area_Type__c</name>
+        <relationshipLabel><!-- Project Charges --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Id --></label>
+        <name>Project_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Project Charges --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rate --></label>
+        <name>Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration charge --></label>
+        <name>Registration_charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge Bucket --></label>
+        <name>S_Charge_Bucket__c</name>
+        <picklistValues>
+            <masterLabel>Agreement Value</masterLabel>
+            <translation><!-- Agreement Value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Charges</masterLabel>
+            <translation><!-- Other Charges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Society Charges</masterLabel>
+            <translation><!-- Society Charges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stamp Duty and Registration</masterLabel>
+            <translation><!-- Stamp Duty and Registration --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Charge Calculated As --></label>
+        <name>S_Charge_Calculated_As__c</name>
+        <picklistValues>
+            <masterLabel>Higher of Ready Reckoner or Agreement Value</masterLabel>
+            <translation><!-- Higher of Ready Reckoner or Agreement Value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Higher of Ready Reckoner or Flatcost</masterLabel>
+            <translation><!-- Higher of Ready Reckoner or Flatcost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lumpsum at Project Level</masterLabel>
+            <translation><!-- Lumpsum at Project Level --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage of Agreement Value</masterLabel>
+            <translation><!-- Percentage of Agreement Value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rate List at Unit Level</masterLabel>
+            <translation><!-- Rate List at Unit Level --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Charge % --></label>
+        <name>S_Charge_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lumpsum Charge Amount --></label>
+        <name>S_Lumpsum_Charge_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payable At --></label>
+        <name>S_Payable_At__c</name>
+        <picklistValues>
+            <masterLabel>As per the payment milestone</masterLabel>
+            <translation><!-- As per the payment milestone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>At Possession</masterLabel>
+            <translation><!-- At Possession --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>At Registration</masterLabel>
+            <translation><!-- At Registration --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Applicable on this charge --></label>
+        <name>Service_Tax_Applicable_on_this_charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Percentage --></label>
+        <name>Service_Tax_Percentage__c</name>
+        <picklistValues>
+            <masterLabel>GST</masterLabel>
+            <translation><!-- GST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GST-0</masterLabel>
+            <translation><!-- GST-0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GST-18</masterLabel>
+            <translation><!-- GST-18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GST-5</masterLabel>
+            <translation><!-- GST-5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Tax 1</masterLabel>
+            <translation><!-- Service Tax 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Tax 2</masterLabel>
+            <translation><!-- Service Tax 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Tax 3</masterLabel>
+            <translation><!-- Service Tax 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Tax 4</masterLabel>
+            <translation><!-- Service Tax 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Tax Mudra</masterLabel>
+            <translation><!-- Service Tax Mudra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Tax SBH-B</masterLabel>
+            <translation><!-- Service Tax SBH-B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Tax SBH-W</masterLabel>
+            <translation><!-- Service Tax SBH-W --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Tax SW-B</masterLabel>
+            <translation><!-- Service Tax SW-B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Tax Test Admin</masterLabel>
+            <translation><!-- Service Tax Test Admin --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subvention Charge --></label>
+        <name>Subvention_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Field --></label>
+        <name>Unique_Field__c</name>
+    </fields>
+    <layouts>
+        <layout>Project Charges Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- How to charge and when to charge --></label>
+            <section>How to charge and when to charge</section>
+        </sections>
+        <sections>
+            <label><!-- Taxes and Penalities --></label>
+            <section>Taxes and Penalities</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

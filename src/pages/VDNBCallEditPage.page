@@ -1,0 +1,154 @@
+<apex:page standardController="Task"  extensions="CustomTaskControllerClass" showHeader="false" standardStylesheets="true" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">    
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+
+<head>
+  <title>Task Edit</title>
+  <apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+  <script src="/soap/ajax/9.0/connection.js"></script>
+</head>
+<body> 
+<apex:actionStatus id="status">
+    <apex:facet name="start">
+    <div class="fadeMe">
+        &nbsp;
+    </div>
+    <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+        <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+            <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+            <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+        </div>
+    </div>
+    </apex:facet>
+ </apex:actionStatus>   
+  <!-- REQUIRED SLDS WRAPPER -->
+  <div class="slds">    
+  <!-- PRIMARY CONTENT WRAPPER -->
+    <div class="myapp">   
+        <!-- CREATE/EDIT TASK -->
+      <div aria-labelledby="newtaskform">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme--shade slds-container--large slds-container--center slds-grid--align-spread">
+          <legend id="newtaskform" class="slds-text-heading--medium slds-p-vertical--medium">HWC Form</legend>
+    
+          <!-- CREATE NEW TASK FORM -->
+            <apex:form id="newtaskform" styleClass="slds-form--inline">
+                <!--<div class="slds-notify slds-notify--alert slds-theme--inverse-text slds-theme--alert-texture">
+                    <apex:pageMessages id="error"/>
+                </div>
+               <apex:pageBlock id="pgBlock" mode="edit">
+                    <apex:pageBlockButtons location="both" styleClass="slds-button-group">
+                        <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Save" action="{!save}" disabled="{!(error)}"/>
+                        <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Cancel" action="{!cancel}" immediate="true"  html-formnovalidate="formnovalidate"/>
+                    </apex:pageBlockButtons>
+
+                <apex:pageBlockSection id="pgBlockSectionCallInfo" title="System Details" collapsible="false" columns="2">
+                        <apex:pageBlockSectionItem >
+                           <apex:outputLabel >Customer Name</apex:outputLabel>
+                           <apex:outputField id="Opportunity" value="{!Task.whoId}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >Opportunity Name</apex:outputLabel>
+                           <apex:outputField id="Opportunity" value="{!Task.whatId}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem > 
+                            <apex:outputLabel >Created Date</apex:outputLabel>
+                            <apex:outputField id="createdDate" value="{!Task.CreatedDate}"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem > 
+                            <apex:outputLabel >Last Modified Date</apex:outputLabel>
+                            <apex:outputField id="modifyDate" value="{!Task.LastModifiedDate}"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:outputField id="Subject" value="{!Task.Subject}" />
+                     
+                        
+               </apex:pageBlockSection>
+               <apex:pageBlockSection id="pgBlockSectionVisitDetails" title="Visit Details" collapsible="false" columns="2">
+               <!-- Shifted From  System Details Section to Visit Details Section - Netra -->
+                       
+                      <!--  <apex:pageBlockSectionItem > 
+                            <apex:outputLabel >Update Date</apex:outputLabel>
+                            <apex:InputField id="DueDate" value="{!Task.ActivityDate}" required="true" />
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem >   
+                            <apex:outputLabel >Visit Time</apex:outputLabel>
+                            <apex:InputField id="CallTime" value="{!Task.Call_Time__c}" required="false" />
+                        </apex:pageBlockSectionItem>   --
+                                               
+                        <!-- New Fields added in Task - Netra --
+                        <apex:pageBlockSectionItem > 
+                            <apex:outputLabel >Visitor Name</apex:outputLabel>
+                            <apex:InputField id="VisitorName" value="{!Task.Visitor_Name__c}" required="true" />
+                        </apex:pageBlockSectionItem>
+                        
+                    
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel >Next Action Date</apex:outputLabel>
+                            <apex:InputField id="NextDate"  value="{!Task.Next_Action_Date__c}" Required="false"/>
+                          </apex:pageBlockSectionItem>
+                        <apex:InputField id="exprevisitDate"  value="{!Task.Expected_Revisit_Date__c}" Required="false"/>
+                        <apex:InputField id="expclosureDate"  value="{!Task.Expected_closure_date__c}" Required="false"/>
+                       
+                         <apex:inputField id="visittype" value="{!Task.Name_Of_Banks__c}" required="false"/>   
+                        <apex:inputField id="decisionmaker" value="{!Task.Decision_Maker__c}" required="false"/> 
+                       
+                        <apex:inputField id="VDNBrating" value="{!Task.VDNB_Rating__c}" required="true" />
+                        <apex:inputField id="Followupstatus" value="{!Task.Follow_Up_Status__c}" required="false"/>  
+                        
+                       <!-- <apex:inputField id="VDNDstatus" value="{!Task.VDNB_Status__c}" required="True"/>   --
+                        
+                        <apex:inputField id="VDNDattemptedby" value="{!Task.VDNB_Attempted_By__c}" required="True"/>                
+                        
+                        <apex:inputField id="reasonsForLostcancelled" value="{!Task.VDNB_Lost_Cancelled__c}" required="false"/>
+                         
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel >HWC Call Date </apex:outputLabel>
+                        <apex:inputField id="callproposeddate" value="{!Task.Call_Proposed_Date_Of_Visit__c}" required="true"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >Visit Remarks</apex:outputLabel>
+                            <apex:inputField styleClass="slds-textarea" id="comments" value="{!Task.Description}" required="true"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        
+                  </apex:pageBlockSection>   
+                        
+
+              </apex:pageBlock>-->
+              </apex:form>
+          <!-- CREATE NEW TASK FORM -->
+    
+        </fieldset>
+        <!-- / BOXED AREA -->
+      </div>
+  <!-- / CREATE NEW TASK -->
+    </div>
+    <!-- / PRIMARY CONTENT WRAPPER -->
+  </div>
+  <!-- / REQUIRED SLDS WRAPPER -->    
+    <!-- JAVASCRIPT -->
+    <script>
+      var j$ = jQuery.noConflict();
+ 
+        j$(document).ready(function() {
+        });
+     </script>
+     
+     <script>
+         function ShowWalkInSource()
+         { 
+             
+         }    
+     </script>
+     
+     
+     
+     
+     
+    <!-- / JAVASCRIPT -->
+</body>
+</html>
+</apex:page>

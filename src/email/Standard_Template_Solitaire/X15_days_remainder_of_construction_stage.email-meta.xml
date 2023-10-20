@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>15 days remainder of construction stage</name>
+    <style>none</style>
+    <subject>Remainder</subject>
+    <textOnly>Hi, Dear Recovery Manager, This is the remainder of the planned date of construction Milestone is About To come 15 days from now, Following are details: Project Name - {!Project_Construction_Stages__c.Project__c} Tower Name - {!Project_Construction_Stages__c.Tower__c} So please consider the same. Thanks- Solitaire</textOnly>
+    <type>custom</type>
+</EmailTemplate>

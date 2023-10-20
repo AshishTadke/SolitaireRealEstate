@@ -1,0 +1,79 @@
+<apex:component controller="UserComponentController1" access="global">
+    <apex:attribute name="BookingId" type="String" description="Attribute on the component." assignTo="{!strBookingId}"/>
+      {!UserDetails}
+      
+<html>
+<head>
+<title>PB Perfect Living</title>
+<meta name="author" content="Mitul Thesia, mthesia@gmail.com" />
+</head>
+<body>
+<center>
+<table width="650" border="0" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+  <tr>
+    <td valign="top"><div>
+          <!-- <img src="https://c.cs5.content.force.com/servlet/servlet.ImageServer?id=015O00000011rTS&oid=00DO0000000Wh9L&lastMod=1464181304000" align="left" border="0" style="margin:0"/> -->
+          <img src="https://c.cs5.content.force.com/servlet/servlet.ImageServer?id=015O00000011rTS&oid=00DO0000000Wh9L&lastMod=1467446878000" align="left" border="0" style="margin:0"/>
+          
+        </div></td>
+  </tr>
+  <tr>
+    <td valign="top" style="border-left:1px solid #fee7d9; border-right:1px solid #fee7d9; padding-left:9px; padding-right:9px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top" bgcolor="#fee7d9" style="padding-left:3.5em; padding-right:2.5em; padding-top:.9em;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size:.75em; font-weight:normal; color:#6d646a; text-align:justify; line-height:1.8; padding-bottom:1em;"><strong>Dear {!BookingList[0].Customer__r.Primary_Name__c},</strong><br /><br />A moment like this is auspicious for you as it is for us. We congratulate you on choosing Project
+              Bandra as your new home and ensures that you experience the best and the most exquisite luxury living in the heart of the city. Project Bandra is the perfect ensemble of the finest elements being brought alive in brick and mortar, perfection in luxury living as you know has been redefined altogether.<br /><br />We believe in adding that extra personal touch to every interaction and hence take this opportunity to introduce to you, your exclusive Relationship Manager, {!BookingList[0].Owner.Name}, who will personally
+              be your one point of contact in ensuring that you enjoy the very best of this residential experience.</td>
+            </tr>
+          <tr>
+            <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="20" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size:.75em; font-weight:bold; color:#58595c; text-align:justify;">You can reach him/her on {!BookingList[0].Owner.Email}, or call on {!BookingList[0].Owner.Phone}.</td>
+                </tr>
+              <tr>
+                <td height="50" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size:.75em; font-weight:bold; color:#58595c; text-align:justify">You can also reach us at our dedicated Customer Care Desk on 1800 121 9090 or
+                  <a href="mailto:customercare@solitairedevelopers.com" target="_blank" style="text-decoration:none; color:#58595c;">customercare@solitairedevelopers.com</a></td>
+                </tr>
+              <tr>
+                <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="21%" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size:.75em; font-weight:bold; color:#58595c;">Applicant Name</td>
+                    <td width="79%" height="17" valign="top" bgcolor="#FFFFFF" style="font-family: Arial, Helvetica, sans-serif; font-size:.75em; font-weight:normal; color:#605a5f; padding-left:5px; padding-top:3px;">{!BookingList[0].Customer__r.Primary_Name__c}</td>
+                    </tr>
+                  </table></td>
+                </tr>
+              <tr>
+                <td valign="top" style="padding-top:8px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="21%" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size:.75em; font-weight:bold; color:#58595c;">Unit Number</td>
+                    <td width="79%" height="17" valign="top" bgcolor="#FFFFFF" style="font-family: Arial, Helvetica, sans-serif; font-size:.75em; font-weight:normal; color:#605a5f; padding-left:5px; padding-top:3px;">{!BookingList[0].Unit_No__r.Name}</td>
+                    </tr>
+                  </table></td>
+                </tr>
+              </table></td>
+            </tr>
+          <tr>
+            <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size:.75em; font-weight:normal; color:#6d646a; line-height:1.8; padding-bottom:3em; padding-top:1em;">Your suggestions are important to us, do share your feedback to help us serve you better. I once
+              again welcome you to the Project Bandra.<br /><br />Sincerely,<br />
+              <strong>{!BookingList[0].Owner.Name},</strong><br />
+              Lead - Client Relations</td>
+            </tr>
+          </table>
+          </td>
+      </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td valign="top"><div>
+      <img src="https://c.cs5.content.force.com/servlet/servlet.ImageServer?id=015O00000011rTX&oid=00DO0000000Wh9L&lastMod=1464182568000" align="left" border="0" style="margin:0"/>
+      </div></td>
+  </tr>
+  </tbody>
+</table>
+</center>
+</body>
+</html>
+
+</apex:component>

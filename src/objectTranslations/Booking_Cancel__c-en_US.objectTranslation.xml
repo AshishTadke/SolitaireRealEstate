@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Booking Cancellation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Booking Cancellation</value>
+    </caseValues>
+    <fields>
+        <label><!-- Booking --></label>
+        <name>Booking__c</name>
+        <relationshipLabel><!-- Booking Cancellation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Name --></label>
+        <name>Broker_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner --></label>
+        <name>Broker__c</name>
+        <relationshipLabel><!-- Booking Cancellation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Type --></label>
+        <name>Cancellation_Type__c</name>
+        <picklistValues>
+            <masterLabel>CHANGE OF LAYOUT PLAN</masterLabel>
+            <translation><!-- CHANGE OF LAYOUT PLAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COURT CASE</masterLabel>
+            <translation><!-- COURT CASE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NON-PAYMENT OF DUES</masterLabel>
+            <translation><!-- NON-PAYMENT OF DUES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REFUND DEMANDED BY CUSTOMER</masterLabel>
+            <translation><!-- REFUND DEMANDED BY CUSTOMER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRANSFER TO OTHER UNIT/PROJECT</masterLabel>
+            <translation><!-- TRANSFER TO OTHER UNIT/PROJECT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UNCLEAR LAND</masterLabel>
+            <translation><!-- UNCLEAR LAND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UNIT ABANDONED</masterLabel>
+            <translation><!-- UNIT ABANDONED --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CancelledOn --></label>
+        <name>CancelledOn__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsApproved --></label>
+        <name>IsApproved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Transaction Date --></label>
+        <name>Last_Transaction_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>NewUser__c</name>
+        <relationshipLabel><!-- Booking Cancellation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Booking Cancellation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- Booking Cancellation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Booking Cancellation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remark --></label>
+        <name>Remark__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UnProcessed</masterLabel>
+            <translation><!-- UnProcessed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Credit Amount --></label>
+        <name>Total_Credit_Amount__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Date must be greater than Booking Date and not greater than Today Date --></errorMessage>
+        <name>ValidateCancelledOn</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Booking_Cancel --></label>
+        <name>New_Booking_Cancel</name>
+    </webLinks>
+</CustomObjectTranslation>

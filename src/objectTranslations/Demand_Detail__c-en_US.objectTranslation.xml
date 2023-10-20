@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Demand Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Demand Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount Demanded --></label>
+        <name>Amount_Demanded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount Outstanding --></label>
+        <name>Amount_Outstanding__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount Received --></label>
+        <name>Amount_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge Name --></label>
+        <name>Charge_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demand Invoice --></label>
+        <name>Demand_Invoice__c</name>
+        <relationshipLabel><!-- Demand Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Instalment Amount --></label>
+        <name>Installment_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest Outstanding --></label>
+        <name>Interest_Outstanding__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Amount 1 --></label>
+        <name>Tax_Amount_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Amount 2 --></label>
+        <name>Tax_Amount_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Amount 3 --></label>
+        <name>Tax_Amount_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Breakup 1 --></label>
+        <name>Tax_Breakup_1__c</name>
+        <relationshipLabel><!-- Demand Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tax Breakup 2 --></label>
+        <name>Tax_Breakup_2__c</name>
+        <relationshipLabel><!-- Demand Details (Tax Breakup 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tax Breakup 3 --></label>
+        <name>Tax_Breakup_3__c</name>
+        <relationshipLabel><!-- Demand Details (Tax Breakup 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tax Demanded --></label>
+        <name>Tax_Demanded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Outstanding --></label>
+        <name>Tax_Outstanding__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Received --></label>
+        <name>Tax_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Taxable Amount 1 --></label>
+        <name>Taxable_Amount_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Taxable Amount 2 --></label>
+        <name>Taxable_Amount_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Amount --></label>
+        <name>Total_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Tax --></label>
+        <name>Total_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Current</masterLabel>
+            <translation><!-- Current --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outstanding</masterLabel>
+            <translation><!-- Outstanding --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Standard Customer Pay Plan Detail 1 --></label>
+        <name>scppd_1__c</name>
+        <relationshipLabel><!-- Demand Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Standard Customer Pay Plan Detail 2 --></label>
+        <name>scppd_2__c</name>
+        <relationshipLabel><!-- Demand Details (Standard Customer Pay Plan Detail) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Standard Customer Pay Plan Detail 3 --></label>
+        <name>scppd_3__c</name>
+        <relationshipLabel><!-- Demand Details (Standard Customer Pay Plan Detail 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Standard Customer Pay Plan Detail 4 --></label>
+        <name>scppd_4__c</name>
+        <relationshipLabel><!-- Demand Details (Standard Customer Pay Plan Detail 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Instalment Breakup 1 --></label>
+        <name>scppd_amount_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instalment Breakup 2 --></label>
+        <name>scppd_amount_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instalment Breakup 3 --></label>
+        <name>scppd_amount_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instalment Breakup 4 --></label>
+        <name>scppd_amount_4__c</name>
+    </fields>
+    <layouts>
+        <layout>Demand Detail Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

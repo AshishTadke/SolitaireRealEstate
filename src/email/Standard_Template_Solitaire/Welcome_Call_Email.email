@@ -1,0 +1,64 @@
+Dear {!Booking__c.Future_Correspondence_Contact_Name__c},<br/><br/>
+Congratulations on your purchase at {!Booking__c.Project__c} and a warm welcome to the family. <br/><br/>
+Solitaire is a service driven real estate brand committed to individuals seeking the best in everything. <br/><br/>
+<b><u>We are pleased to inform you that your application has been accepted. The following details were discussed and agreed over the Welcome call and will serve as a ready reference for you in the future.</u></b><br/><br/>
+<h3><u>Details of the Booking : </u></h3>
+<table border="1px" cellspacing="0px">
+<tr>
+<td colspan="1">Application / Booking Date</td>
+<td colspan="6">{!DATEVALUE(Booking__c.Booking_Date__c)}</td>
+</tr>
+<tr>
+<td colspan="1">Unit No. & Floor</td>
+<td colspan="6">Unit - {!Booking__c.Unit_No__c}, Floor - {!Booking__c.Floor__c}</td>
+</tr>
+<tr>
+<td colspan="1">Type of Unit</td>
+<td colspan="6">{!Booking__c.Flat_Typology__c}</td>
+</tr>
+<tr>
+<td colspan="1">Source of Booking</td>
+<td colspan="6">{!Booking__c.Source_of_Booking__c}</td>
+</tr>
+<tr>
+<td colspan="1">Payment Plan</td>
+<td colspan="6">{!Booking__c.Payment_Plan__c}</td>
+</tr>
+<tr>
+<td colspan="1">Purpose of Purchase ( Investment/End Use)</td>
+<td colspan="6">{!Booking__c.Purpose_of_Purchase__c}</td>
+</tr>
+<tr>
+<td colspan="1">Carpet Area (Sq.Ft)</td>
+<td colspan="6">{!Booking__c.Unit_Carpet_Area__c}</td>
+</tr> 
+<tr>
+<td colspan="1">Exclusive Area (Balcony/Terrace/Enclosed Balcony/Mezzanine) (Sq.Ft)</td>
+<td colspan="6">{!Booking__c.Exclusive_Area__c}</td>
+</tr>
+<tr>
+<td colspan="1">Consideration Value(Rs.)</td>
+<td colspan="6">{!Booking__c.Allotment_Premium__c}</td>
+</tr>
+<tr>
+<td colspan="1">Number of parking slots included with the unit</td>
+<td style="display:{IF( Booking__c.stack__c == 0 , 'block', 'none')} ">Stack-{!Booking__c.stack__c},</td>
+<td  style="display:{IF( Booking__c.Independent__c == 0 , 'block', 'none')} ">Independent-{!Booking__c.Independent__c},</td>
+<td  style="display:{!IF( Booking__c.Dependent __c == 0 , 'block', 'none')} ">Dependent -{!Booking__c.Dependent__c},</td>
+<td  style="display:{!IF( Booking__c.Puzzle__c == 0 , 'block', 'none')} ">Puzzle-{!Booking__c.Puzzle__c }.</td>
+</tr>
+<!--<tr>
+<td colspan="1">Expected Registration Date</td>
+<td colspan="6">{!Booking__c.Expected_Registration_Date__c}</td>
+</tr>-->
+</table>
+<br/><br/>
+We assure you of our impeccable service and support through your journey with us. To guide you along your journey from booking to registration & possession, we have compiled an information kit, which shall reach your registered address shortly. Kindly acknowledge once received. The Welcome Kit includes, Welcome Letter, CRM Orientation, Allotment Letter, Copy of Application Form, Copy of Cost Sheet and Payment Schedule and Payment Receipts.<br/><br/>
+You may reach us at  <u>020-67166716</u> and on our email address <u>CRM@ solitaire.in</u>  It shall be our pleasure to assist you in completing your purchase formalities.<br/><br/>
+
+I truly wish to make your journey until possession of your purchase a very pleasurable one. Looking forward to being of service to you.<br/><br/>
+
+Thank you,<br/><br/>
+
+Regards,<br/>
+TEAM CRM (SOLITAIRE)

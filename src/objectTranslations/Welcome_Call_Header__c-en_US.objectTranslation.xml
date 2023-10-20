@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Welcome Call Header</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>WelcomeCallHeaders</value>
+    </caseValues>
+    <fields>
+        <label><!-- Booking --></label>
+        <name>Booking__c</name>
+        <relationshipLabel><!-- Welcome Call History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Call Date --></label>
+        <name>Call_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Disposition L2 --></label>
+        <name>Call_Disposition_L2__c</name>
+        <picklistValues>
+            <masterLabel>Change of Mind</masterLabel>
+            <translation><!-- Change of Mind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dependency on CC</masterLabel>
+            <translation><!-- Dependency on CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dependency on Customer</masterLabel>
+            <translation><!-- Dependency on Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dependency on Sales</masterLabel>
+            <translation><!-- Dependency on Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Constraints</masterLabel>
+            <translation><!-- Financial Constraints --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greetings</masterLabel>
+            <translation><!-- Greetings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Misselling</masterLabel>
+            <translation><!-- Misselling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment schedule</masterLabel>
+            <translation><!-- Payment schedule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-allocation not done</masterLabel>
+            <translation><!-- Re-allocation not done --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third-party</masterLabel>
+            <translation><!-- Third-party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong number</masterLabel>
+            <translation><!-- Wrong number --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Disposition --></label>
+        <name>Call_Disposition__c</name>
+        <picklistValues>
+            <masterLabel>Call Back requested</masterLabel>
+            <translation><!-- Call Back requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ringing/Switched Off/Not reachable</masterLabel>
+            <translation><!-- Ringing/Switched Off/Not reachable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome call accepted</masterLabel>
+            <translation><!-- Welcome call accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome call rejected</masterLabel>
+            <translation><!-- Welcome call rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong Number/No number</masterLabel>
+            <translation><!-- Wrong Number/No number --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- WelcomeCallHeaders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remarks__c</name>
+    </fields>
+    <layouts>
+        <layout>Welcome Call Header Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

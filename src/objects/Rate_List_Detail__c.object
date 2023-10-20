@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Area_Type_Charge__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Area Type</label>
+        <referenceTo>Area_Type__c</referenceTo>
+        <relationshipLabel>Rate List Details</relationshipLabel>
+        <relationshipName>Rate_List_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Area_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Area Type</label>
+        <referenceTo>Area_Type__c</referenceTo>
+        <relationshipLabel>Rate List Details (Area Type)</relationshipLabel>
+        <relationshipName>Rate_List_Details1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Based_on_Property_Area__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Based on Property Area</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Based_on_Property_Number_Structure__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Based on Property Number Structure</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Based_on_Property_Type__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Based on Property Type</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Charge_Based_On__c</fullName>
+        <externalId>false</externalId>
+        <label>Charge Based On</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lumpsum</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Percent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Charge_based_On_Project_Area_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Charge based On Project Area Type</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Project__c</field>
+                <operation>equals</operation>
+                <valueField>Project_Area_Type__c.Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Project_Area_Type__c</referenceTo>
+        <relationshipLabel>Rate List Details</relationshipLabel>
+        <relationshipName>Rate_List_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Chk_param1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Chk_param1</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Chk_param2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Chk_param2</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Chk_param3__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Chk_param3</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Chk_param4__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Chk_param4</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Chk_param5__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Chk_param5</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Floor_Range_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Floor Range From</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Floor_Range_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Floor Range To</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Global_Unit_of_Measurement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Global Unit of Measurement</label>
+        <referenceTo>Global_Unit_Of_Measurement__c</referenceTo>
+        <relationshipLabel>Rate List Details</relationshipLabel>
+        <relationshipName>Rate_List_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Param2__c</fullName>
+        <externalId>false</externalId>
+        <label>Param2</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Param_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Param 1</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Param_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Param 3</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Param_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Param 4</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Param_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Param 5</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Percent__c</fullName>
+        <externalId>false</externalId>
+        <label>Charge Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Area_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Area Type</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Project__c</field>
+                <operation>equals</operation>
+                <valueField>Project_Area_Type__c.Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Project_Area_Type__c</referenceTo>
+        <relationshipLabel>Rate List Details (Project Area Type)</relationshipLabel>
+        <relationshipName>Rate_List_Details1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Unit_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Unit Type</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Project__c</field>
+                <operation>equals</operation>
+                <valueField>Project_Unit_Type__c.RDS_Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Project_Unit_Type__c</referenceTo>
+        <relationshipLabel>Rate List Details</relationshipLabel>
+        <relationshipName>Rate_List_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Unit__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Unit</label>
+        <referenceTo>Project_Unit__c</referenceTo>
+        <relationshipLabel>Rate List Details</relationshipLabel>
+        <relationshipName>Rate_List_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Name</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Rate List Details</relationshipLabel>
+        <relationshipName>Rate_List_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ranges_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Ranges From</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ranges_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Ranges To</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rate_List_Header__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Rate List Header</label>
+        <referenceTo>Rate_List_Header__c</referenceTo>
+        <relationshipLabel>Rate List Details</relationshipLabel>
+        <relationshipName>Rate_List_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Unit_Number_Structure__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Unit Number Structure</label>
+        <referenceTo>Unit_Number_Structure__c</referenceTo>
+        <relationshipLabel>Rate List Details</relationshipLabel>
+        <relationshipName>Rate_List_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Unit_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Unit Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Rate List Detail</label>
+    <nameField>
+        <label>Rate List Detail Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Rate List Details</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Based_on_Property_Area</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF(  Based_on_Property_Area__c =true , ISNULL(  Area_Type__c ) , NOT( ISNULL(      Area_Type__c  ) ))</errorConditionFormula>
+        <errorDisplayField>Based_on_Property_Area__c</errorDisplayField>
+        <errorMessage>Check this Field</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Based_on_Property_Type</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF(  Based_on_Property_Type__c =true , ISNULL(  Global_Unit_of_Measurement__c ) , NOT( ISNULL(  Global_Unit_of_Measurement__c ) ))</errorConditionFormula>
+        <errorDisplayField>Based_on_Property_Type__c</errorDisplayField>
+        <errorMessage>Check this Field</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Charge_Based_On</fullName>
+        <active>false</active>
+        <errorConditionFormula>ISPICKVAL( Charge_Based_On__c ,&quot;Rate&quot;)  &amp;&amp; NOT( ISNULL(Percent__c)) || 
+ISPICKVAL( Charge_Based_On__c ,&quot;Lumpsum&quot;)  &amp;&amp; NOT( ISNULL(Percent__c))</errorConditionFormula>
+        <errorDisplayField>Charge_Based_On__c</errorDisplayField>
+        <errorMessage>Pick Percent from Picklist</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Dont_Save_If_Processed</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( Rate_List_Header__r.Rate_List_Status__c  , &apos;Processed&apos;)</errorConditionFormula>
+        <errorMessage>Cannot Save Record because the Rate List is already processed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Percent_Value_must_be_between_100</fullName>
+        <active>false</active>
+        <errorConditionFormula>Percent__c &lt;1 ||  Percent__c&gt;100</errorConditionFormula>
+        <errorDisplayField>Percent__c</errorDisplayField>
+        <errorMessage>Percent value should between 100</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Property_Number_Structure</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF( Based_on_Property_Number_Structure__c=true ,  ISNULL( Unit_Number_Structure__c ) , NOT( ISNULL( Unit_Number_Structure__c ) ))</errorConditionFormula>
+        <errorDisplayField>Based_on_Property_Number_Structure__c</errorDisplayField>
+        <errorMessage>Check this field</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Rate_List_Detail</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Rate List Detail</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/ratelistsdetail?id={!Rate_List_Header__c.Id}</url>
+    </webLinks>
+</CustomObject>

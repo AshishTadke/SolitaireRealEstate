@@ -1,0 +1,54 @@
+<apex:page controller="S_ProcessDocumentVerification" id="Pid" sidebar="false" >
+<script>
+    
+</script>
+  
+  <apex:form id="FormId" >
+      
+      <apex:pageMessages id="MsgId"></apex:pageMessages>
+
+     <!--<apex:pageBlock id="PBid" title="{!UserName } - ({!ProfileName})">-->
+      <apex:pageBlock id="PBid" title="Document Verification Dashboard">
+          <apex:pageBlockSection title="Document Verification List" columns="1" id="PbsId" >
+              <apex:variable var="i"  value="{!0}"/>
+                  <apex:pageBlockTable id="PBTid" value="{!lstBooking}" var="ObjVar">
+                      <apex:column headerValue="Booking Name" value="{!ObjVar.Name}" />
+                      <apex:column headerValue="Project Name" value="{!ObjVar.Project__r.name}" />
+                      <apex:column headerValue="Project Unit" value="{!ObjVar.Unit_No__c}" />
+                      <apex:column headerValue="Customer" value="{!ObjVar.Opportunity__c}" />
+                      <!--<apex:column headerValue="Status" value="{!ObjVar.Unit_No__r.Unit_Status__c}"/>-->
+                      <apex:column headerValue="Verification Status" value="{!ObjVar.Verification_status__c}"/>
+                     <!-- <apex:column headerValue="Rejected Documents" value="{!ObjVar.View_Rejected_Documents__c}"/> -->
+
+                      <apex:column headerValue="Process">
+                      <apex:commandLink id="ProcessId" value="Process" style="color:red;" action="{!Process}" target="_blank" rendered="{!if(AND(OR(ObjVar.Unit_No__r.Unit_Status__c = 'BIP - RM Verification', ObjVar.Verification_status__c = 'Rejected' ),ObjVar.Opportunity__r.Physical_document_received__c = true), true, false)}">
+                      <apex:param name="rowNo" value="{!i}" assignTo="{!ProcessRowNo}"/> 
+                      </apex:commandLink>
+                      </apex:column>
+                      
+                      <!--<apex:column headerValue="Self Release" rendered="{!if((ProfileName == 'System Administrator' || ObjVar.Call_Centre_Rep__c != null && ObjVar.Call_Centre_Rep__c == $User.Id), true, false)}"  >
+                      <apex:commandLink id="ReleaseId" value="Release" style="color:red;" reRender="PbsId,MsgId" action="{!Release}">
+                      <apex:param name="rowNo" value="{!i}" assignTo="{!ReleaseRowNo}"/> 
+                      </apex:commandLink>
+                      
+                      </apex:column>-->
+                      
+                      
+                      <apex:column headerValue="Documents Received">
+                      <apex:commandLink id="AssignmentId" value="Documents Received" style="color:red;" reRender="PbsId,MsgId" action="{!Assign}"  rendered="{!if(ObjVar.Opportunity__r.Physical_document_received__c != true , true, false)}">
+                      <apex:param name="rowNo" value="{!i}" assignTo="{!AssignRowNo}"/> 
+                      </apex:commandLink>
+                      <apex:variable var="i" value="{!i+1}"/>
+                      </apex:column>
+                      <apex:column headerValue="Booking Date" value="{!ObjVar.Booking_Date__c}"/>
+                      <apex:column headerValue="Owner" value="{!ObjVar.Owner.Name}"/>
+                      <!--<apex:column headerValue="Last Call Disposition" value="{!ObjVar.Call_Disposition__c}"/>-->
+                      
+                      
+                      
+                  </apex:pageBlockTable>
+                  
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

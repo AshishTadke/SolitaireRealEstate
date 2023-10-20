@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Fresh Enquiry Lead</name>
+    <style>none</style>
+    <subject>TEAM SOLITAIRE</subject>
+    <textOnly>Dear {!Lead.Name}, Hope you are having a great day. Thank you for your interest in {!Lead.RDS_Project__c}, one of our exclusive and state-of-the-art projects.  We would love to meet you and discuss our offerings and services with regards to the same. It will be great if you can confirm a convenient date, time, and place so that we can schedule your meeting with our Sales Manager. We look forward to connecting with you. You can also contact our team between 9.30 am to 6.00 pm on 020-67166716  and one of our executives will be more than happy to help you. Thank you, Warm regards, Team SOLITAIRE</textOnly>
+    <type>custom</type>
+</EmailTemplate>

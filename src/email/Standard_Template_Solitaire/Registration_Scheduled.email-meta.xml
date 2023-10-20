@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Registration Scheduled</name>
+    <style>none</style>
+    <subject>Registration Scheduled</subject>
+    <textOnly>Dear {!Opportunity.Account},
+
+Greetings from Solitaire!
+
+We wish to confirm that the agreement registration of your unit no. {!Opportunity.Project_Unit__c} is scheduled on {!Opportunity.Registration_Scheduled_Date__c} the address for the registration is {!Opportunity.Address_For_Registration__c}.
+
+The Google Maps link for your reference:{!Opportunity.Registration_Address_Map_Link__c}
+
+Contact Person: {!Opportunity.Contact_Person_Name_And_Number__c}
+
+Request presence of all the applicants and do carry the Original Pan Card and 2 Passport size color photos of all the applicants.
+
+For any concern please feel free to contact us.
+
+Regards,
+Team CRM @ Solitaire</textOnly>
+    <type>custom</type>
+</EmailTemplate>

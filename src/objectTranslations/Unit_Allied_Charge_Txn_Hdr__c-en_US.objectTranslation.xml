@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Unit Allied Charge Txn Hdr</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Unit Allied Charge Txn Hdrs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Applicable to --></label>
+        <name>Applicable_to__c</name>
+        <picklistValues>
+            <masterLabel>All Units</masterLabel>
+            <translation><!-- All Units --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On the Basis of Part of Unit No</masterLabel>
+            <translation><!-- On the Basis of Part of Unit No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On the Basis of Unit Types</masterLabel>
+            <translation><!-- On the Basis of Unit Types --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Applied On --></label>
+        <name>Applied_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global Charges --></label>
+        <name>Global_Charges__c</name>
+        <relationshipLabel><!-- Unit Allied Charge Txn Hdrs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Global Unit of Measurement --></label>
+        <name>Global_Unit_of_Measurement__c</name>
+        <relationshipLabel><!-- Unit Allied Charge Txn Hdrs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Area Type --></label>
+        <name>Project_Area_Type__c</name>
+        <relationshipLabel><!-- Unit Allied Charge Txn Hdrs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Unit Allied Charge Txn Hdrs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rate/Amount Value --></label>
+        <name>Rate_Amount_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate/Amount --></label>
+        <name>Rate_Amount__c</name>
+        <picklistValues>
+            <masterLabel>Amount</masterLabel>
+            <translation><!-- Amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rate</masterLabel>
+            <translation><!-- Rate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Remove Charge --></label>
+        <name>Remove_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Pay Plan Header --></label>
+        <name>Standard_Pay_Plan_Header__c</name>
+        <relationshipLabel><!-- Unit Allied Charge Txn Hdrs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unprocessed</masterLabel>
+            <translation><!-- Unprocessed --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

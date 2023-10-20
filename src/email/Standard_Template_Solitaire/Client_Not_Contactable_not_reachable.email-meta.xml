@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Client Not Contactable/not reachable</name>
+    <style>none</style>
+    <subject>TEAM SOLITAIRE</subject>
+    <textOnly>Dear {!Lead.Name}, Hope you are having a great day. We wanted to check on you as your number was not reachable. You had earlier shown interest in one of our projects, and we tried to get in touch with you to provide further details. Unfortunately, we couldn’t get through to you.  Do provide us with the appropriate or an alternate number, so that our product expert can give you a call at a time convenient for you. Alternately, you can also reach us at 020-67166716  and one of our executives will be more than happy to help you. Thank you, Warm regards, Team SOLITAIRE.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

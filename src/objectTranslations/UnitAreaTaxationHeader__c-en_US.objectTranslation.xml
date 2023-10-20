@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Change Area Cost</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>UnitAreaTaxationHeader</value>
+    </caseValues>
+    <fields>
+        <label><!-- Batch Date --></label>
+        <name>Batch_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Description --></label>
+        <name>Batch_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch No --></label>
+        <name>Batch_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Status --></label>
+        <name>Batch_Status__c</name>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UnProcessed</masterLabel>
+            <translation><!-- UnProcessed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Change Area Costs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status Indicator --></label>
+        <name>Status__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please Enter Today&apos;s Date. --></errorMessage>
+        <name>Batch_Date_Cant_be_less_Project_Date</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Process --></label>
+        <name>Process</name>
+    </webLinks>
+</CustomObjectTranslation>

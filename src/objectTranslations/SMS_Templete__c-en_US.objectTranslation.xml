@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SMS Templete</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SMS Templete</value>
+    </caseValues>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>Is_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reminder Before (HH:MM) --></label>
+        <name>ReminderBefore__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please use $ before the name of variables.
+For Eg: $ProjectName, $Date, $Time, $DateTIme, $LeadName, $LeadMobile, $LeadMobileAlt, $SalesRepName, $SalesRepContact, $AssistantContact, --></help>
+        <label><!-- SMS Templete --></label>
+        <name>SMS_Templete__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

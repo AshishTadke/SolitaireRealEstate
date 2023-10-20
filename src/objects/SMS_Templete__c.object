@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Please use $ before the name of variables. 
+ Eg: 
+For SiteVisit Templetes = $ProjectName, $Date, $Time, $DateTime, $LeadName, $LeadMobile, $LeadMobileAlt, $SalesRepName, $SalesRepContact, $AssistantContact.
+
+For Booking Templetes =  $RcptNo, $Amount, $Amount, $PaymentMilestone, $UnitNo, $Tower, $ProjectName, $CustomerName, $NewCustomerName</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReminderBefore__c</fullName>
+        <defaultValue>&apos;00:00&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Reminder Before (HH:MM)</label>
+        <length>7</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SMS_Templete__c</fullName>
+        <description>Please use $ before the name of variables.
+For Eg: $ProjectName, $Date, $Time, $DateTIme, $LeadName, $LeadMobile, $LeadMobileAlt, $SalesRepName, $SalesRepContact, $AssistantContact,</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please use $ before the name of variables.
+For Eg: $ProjectName, $Date, $Time, $DateTIme, $LeadName, $LeadMobile, $LeadMobileAlt, $SalesRepName, $SalesRepContact, $AssistantContact,</inlineHelpText>
+        <label>SMS Templete</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>SMS Templete</label>
+    <visibility>Public</visibility>
+</CustomObject>

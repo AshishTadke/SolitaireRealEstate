@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>All Charges Details From Quotation (For Deal Description)</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Club_Membership__c</fullName>
+        <externalId>false</externalId>
+        <label>Club Membership</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Infrastructure_Charges__c</fullName>
+        <externalId>false</externalId>
+        <label>Infrastructure Charges</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legal_Charges__c</fullName>
+        <externalId>false</externalId>
+        <label>Legal Charges</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MVAT_1__c</fullName>
+        <externalId>false</externalId>
+        <label>MVAT @ 1%</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>One_yr_Maintenance__c</fullName>
+        <externalId>false</externalId>
+        <label>1 yr Maintenance *</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Registration_Charges__c</fullName>
+        <externalId>false</externalId>
+        <label>Registration Charges</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Share_Money_ST__c</fullName>
+        <externalId>false</externalId>
+        <label>Share Money ST</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Share_Money__c</fullName>
+        <externalId>false</externalId>
+        <label>Share Money</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sinking_Funds__c</fullName>
+        <externalId>false</externalId>
+        <label>Sinking Funds</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Society_Formation_ST__c</fullName>
+        <externalId>false</externalId>
+        <label>Society Formation ST</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Society_Formation__c</fullName>
+        <externalId>false</externalId>
+        <label>Society Formation</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stamp_Duty_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Stamp Duty @ 5%</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Utility_Charges__c</fullName>
+        <externalId>false</externalId>
+        <label>Utility Charges **</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_Yr_Advance_Maintenance_ST__c</fullName>
+        <externalId>false</externalId>
+        <label>2 Yr Advance Maintenance ST</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_Yr_Advance_Maintenance__c</fullName>
+        <externalId>false</externalId>
+        <label>2 Yr Advance Maintenance</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Charges Details</label>
+    <visibility>Public</visibility>
+</CustomObject>

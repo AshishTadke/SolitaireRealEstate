@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PAYMENT REMINDER -  (Reminder 8th Day and 14th Day)</name>
+    <style>none</style>
+    <subject>PAYMENT REMINDER (Over Due)</subject>
+    <textOnly>Dear {!Opportunity.Future_Correspondence_Contact_Name__c},
+
+Greetings from Solitaire!
+
+With reference to our Demand Letter- dated {!Demand_Invoice__c.Invoice_Date__c}, please note that we have still not received the outstanding payment of Rs. {!Demand_Invoice__c.Total_Amount__c}.
+
+We request you to clear the overdue amount without any further delay and also to avoid further accrual of interest in accordance with the mutually agreed terms as per the agreement to sell. We look forward to your timely co-operation. Please feel free to contact us for any queries.
+
+Regards,
+
+Team CRM</textOnly>
+    <type>custom</type>
+</EmailTemplate>

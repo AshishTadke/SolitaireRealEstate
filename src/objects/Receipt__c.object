@@ -1,0 +1,4167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Additional_Info__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Info</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Adjust_Receipt__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/apex/S_ReceiptModule?id=&quot;+Id,&quot;Adjust Link&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Adjust Receipt</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Adjustment_Customer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Customer</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Receipts (Adjustment Customer)</relationshipLabel>
+        <relationshipName>Receipts1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Amount_Rs__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Amount (Rs.)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount_in_Foreign_Currency__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount in Foreign Currency</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Sent for Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Validation_Message__c</fullName>
+        <defaultValue>&quot;Receipt cannot be approved untill cheque is physically received.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Receipt cannot be approved untill cheque is physically received.</inlineHelpText>
+        <label>Approval Validation Message</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Auto_Calculate_Service_Tax__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Auto Calculate Service Tax</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Bank__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Drawee Bank</label>
+        <referenceTo>Bank__c</referenceTo>
+        <relationshipLabel>Receipts</relationshipLabel>
+        <relationshipName>Receipts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Banking__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Payment Successful</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment Failed - Insufficient Funds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment Failed – Signature mismatch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment Failed – PDC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment Failed – Stop payment by client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment Failed – Overwriting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment Failed – Amount Mismatch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Batch_Upload_Msg__c</fullName>
+        <externalId>false</externalId>
+        <label>Batch Upload Msg</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Booking_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Booking Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Vacant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Booked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Booking__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Booking</label>
+        <referenceTo>Booking__c</referenceTo>
+        <relationshipLabel>Receipts</relationshipLabel>
+        <relationshipName>Receipts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Branch__c</fullName>
+        <externalId>false</externalId>
+        <label>Branch</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Adilabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Adoni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agartala</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ahmedabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ahmednagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aizawl</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ajmer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Akbarpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Akola</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aligarh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alipurduar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Allahabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alwar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambala</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambikapur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amravati</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amritsar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amroha</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anand</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anantapur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anantnag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Angul</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Arrah</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asansol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aurangabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Azamgarh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Badgam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bagaha</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bahadurgarh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baharampur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bahraich</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Balasore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ballia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Balurghat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Banda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bandipora</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bangalore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bangaon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bankura</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Banswara</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barabanki</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baramulla</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baran</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baraut</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barbil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bardhaman</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bareilly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baripada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barmer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barnala</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Basar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Basirhat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Basti</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Batala</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bathinda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Begusarai</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Belgaum</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bellary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bettiah</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhadrak</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhagalpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bharatpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bharuch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhavnagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhawanipatna</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhilwara</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhimavaram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhind</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhiwandi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhiwani</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhopal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhubaneshwar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bihar Sharif</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bijapur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bijnor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bikaner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bilaspur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bokaro Steel City</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bomdila</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bongaigaon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Botad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brahmapur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budaun</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bulandshahr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bundi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Burhanpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Buxar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chakdaha</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chamba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chandausi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chandigarh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chandrapur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chennai</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chhapra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chhatarpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chirkunda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chittoor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chittorgarh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Churu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coimbatore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cooch Behar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cuttack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daman</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dankuni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Darbhanga</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Darjeeling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dausa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Davanagere</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dehradun</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dehri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delhi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deoghar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deoria</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dewas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dhanbad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dhenkanal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dholpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dhule</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dhulian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dibrugarh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dimapur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Doda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dungarpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Durgapur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Durg-Bhilainagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eluru</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Erode</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Etah</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Etawah</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Faizabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Faridabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Farrukhabad-cum-Fategarh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fatehpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Firozabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Firozpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ganderbal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gandhidham</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gandhinagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gangtok</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gaya</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Geyzing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ghaziabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ghazipur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Giridih</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Godhra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gonda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gorakhpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greater Noida</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gulbarga</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guntur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gurgaon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guwahati</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gwalior</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Habra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hajipur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Haldia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Haldwani-cum-Kathgodam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hamirpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hanumangarh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hapur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hardoi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Haridwar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hathras</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hazaribagh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hindupur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hisar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hissar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hoshiarpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hubballi-Dharwad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hyderabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Imphal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Itanagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jabalpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jagdalpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jaipur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jaisalmer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jajpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jalandhar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jalgaon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jalor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jalpaiguri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jamalpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jammu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jamnagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jamshedpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jangipur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jaunpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jehanabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jhalawar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jhansi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jharsuguda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jhunjhunu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jind</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jodhpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jorhat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Junagadh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kadapa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kaithal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kakinada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kalyan-Dombivali</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kangra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kannur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kanpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kapurthala</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Karauli</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kargil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Karimnagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Karnal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kasganj</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kashipur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kathua</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Katihar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kavaratti</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Khammam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Khandwa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Khanna</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kharagpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Khurja</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kishanganj</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kishtwar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kochi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kolhapur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kolkata</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kollam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Korba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kota</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kottayam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kozhikode</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Krishnanagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kulgam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kullu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kupwara</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kurnool</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lakhimpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lalitpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Latur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lucknow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ludhiana</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Madanapalle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Madurai</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mahasamund</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mahbubnagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mainpuri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malappuram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malerkotla</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mandi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mangalore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mangan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Margao</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mathura</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maunath Bhanjan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mayabunder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medininagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medinipur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meerut</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Miryalaguda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mirzapur-cum-Vindhyachal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Modinagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moga</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moradabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Morbi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motihari</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mubarakpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mughalsarai</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Muktasar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mumbai</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Munger</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Murwara (Katni)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Muzaffarnagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Muzaffarpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mysore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nabadwip</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nadiad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nagaon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nagaur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nagpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nalgonda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Namchi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nanded</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nandyal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Narasaraopet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nashik</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Navi Mumbai</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Navsari</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nawada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nellore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nizamabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Noida</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ongole</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Orai</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pali</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Palwal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Panaji</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Panchkula</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Panipat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pasighat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Patiala</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Patna</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phagwara</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phusro</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pilibhit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pimpri-Chinchwad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pondicherry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poonch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Porbandar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Port Blair</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pratapgarh[1]</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prodattur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pulwama</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pune</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Puri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Purnia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Purulia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Raebareli</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Raichur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Raiganj</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Raigarh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Raipur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rajahmundry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rajkot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rajouri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rajsamand</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ramagundam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ramban</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ramgarh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rampur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ranaghat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ranchi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ratlam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reasi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rewa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rewari</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rishikesh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rohtak</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roorkee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rourkela</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rudrapur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Saharanpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Saharsa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Samba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sambalpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sambhal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sangli</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sasaram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Satna</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sawai Madhopur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shahjahanpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shamli</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shantipur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shikohabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shillong</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shimla</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shivamogga (Shimoga)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shivpuri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shopian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sidhpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sikar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Silchar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Siliguri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Silvassa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Singrauli</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sirmaur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sirohi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sirsa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sitamarhi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sitapur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Siwan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solapur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sonipat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sri Ganganagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Srikakulam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Srinagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sultanpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Surat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Surendranagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suryapet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tadepalligudem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tenali</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tezpur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thane</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thiruvananthapuram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thoothukkudi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thrissur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tinsukia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tiruchirappalli</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tirunelveli</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tirupati</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tiruppur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tonk</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tumkur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Udaipur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Udhampur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ujjain</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Una</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unnao</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vadodara</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Varanasi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vasai-Virar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vellore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Veraval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vidisha</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vijayawada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vishakhapatnam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vizianagaram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warangal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yamunanagar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>International</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Broker__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Channel Partner</label>
+        <referenceTo>Broker__c</referenceTo>
+        <relationshipLabel>Receipts</relationshipLabel>
+        <relationshipName>Receipts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Initiated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Cancellation Initiated</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Challan_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Challan No</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CheckReceipt__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CheckReceipt</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cheque_DD_Amount_Rs__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cheque_DD_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cheque_DD__c</fullName>
+        <externalId>false</externalId>
+        <label>Cheque/DD No.</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Currency__c</fullName>
+        <externalId>false</externalId>
+        <label>Currency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Indian Rupee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Dollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UK Pound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Canadian Dollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dubai Dirham</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Australian Dollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Singapore Dollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kuwaiti Dinar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bahrain Dinar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Saudi Riyal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Japanese Yen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chinese Yuan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hong Kong Dollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>European Euro</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Different_Project__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Different Project</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Direct__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Direct</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Discount_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Discount_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Discount_on_Dues__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount on Dues</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Discount_to_begiven_on_Timely_payment__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount to be given on Timely payment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>As Amount</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>As percentage Installments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Dishonour_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Dishonour Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A/C Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amount In Words and Figures Differ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Branch Not Found</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cheque is Multilated/Stale</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drawer&apos;s Signature Differ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Effects Not Cleared</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Insufficient Fund</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Drawn On Us</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment Stopped By Drawer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refer to Drawer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DraweeBank__c</fullName>
+        <externalId>false</externalId>
+        <label>Drawee Bank</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Abhyudaya Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ahmedabad Mercantile Co-Op Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Akola Janata Commercial Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Akola Urban Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Allahabad Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Andaman and Nicobar State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Andhra Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Andhra Pradesh Mahesh Co-Op Urban Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Andhra Pradesh State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Arunachal Pradesh State Co-operative Apex Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assam Co-operative Apex Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Axis Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bank of Baroda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bank of India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bank of Maharashtra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bassein Catholic Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bharat Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bharat Co-operative Bank (Mumbai)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bharati Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bihar State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bombay Mercantile Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Canara Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Catholic Syrian Bank Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Central Bank of India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chandigarh State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chhattisgarh Rajya Sahakari Bank Maryadit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CITI bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Citizen Credit Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporation Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cosmos Co-operative Urban Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Darussalam Co Operative Urban Bank Ltd; hyderabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delhi State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dena Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dombivli Nagari Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eenadu Urban Co operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Goa State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Goa Urban Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gopinath Patil Parsik Janata Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greater Bombay Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gujarat State Co-operative Agriculture &amp; Rural Development Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gujarat State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Haryana State Co-opertive Apex Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Himachal Pradesh State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICICI Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IDBI Bank   Industrial Development Bank of India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IDBI Bank Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indian Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indian Mercantile Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indian Overseas Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IndusInd Bank Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ING Vysya Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jalgaon Janata Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jammu and Kashmir State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Janakalyan Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Janalaxmi Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Janata Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jharkhand State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kallappanna Awade Ichalkaranji Janata Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kalupur Commercial Coop. Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Karad Urban Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Karnataka Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Karnataka State Co-operative Apex Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Karur Vysya Bank Limited.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kerala State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kotak Mahindra Bank Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MACO BANK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Madhya Pradesh Rajya Sahakari Bank Maryadit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mahanagar Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maharashtra Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maharashtra State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MAHESH SAHAKARI BANK LTD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manipur State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mapusa Urban Co-operative Bank of Goa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meghalaya Co-operative Apex Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mehsana Urban Co-Op Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mizoram Co-operative Apex Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mogaveera Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nagaland State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nagar Urban Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>narayana madhubabu bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New India Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NKGSB Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nutan Nagarik Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oriental Bank of Commerce</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Orissa State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pondichery State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pravara Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Punjab &amp; Maharashtra Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Punjab &amp; Sind Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Punjab National Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Punjab State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rajasthan State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rajdhani Nagar Sahkari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rajkot Nagrik Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ramella Ramesh Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RBL Bank Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rohit Kataria Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rupee Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sangli District Primary Teachers Bank Ltd; Sangli</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sangli Urban Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Saraswat Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sardar Bhiladwala Pardi Peoples Coop Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shamrao Vithal Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shikshak Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sikkim State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solapur Janata Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Bank of Bikaner and Jaipur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Bank of Hyderabad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Bank of India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Bank of Mysore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Bank of Patiala</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Bank of Travancore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Surat Peoples Coop Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SVC Cooperative Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Syndicate Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tamilnad Mercantile Bank Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telangana State Co-Operative Apex Bank Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thane Bharat Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dhanalakshmi Bank Limited.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Federal Bank Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HDFC Bank Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jammu &amp; Kashmir Bank Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kalyan Janata Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kapole Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lakshmi Vilas Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nainital Bank Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tamil Nadu State Apex Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TJSB Sahakari Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tripura State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tumkur Grain Merchant&apos;s Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UCO Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Union Bank of India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United Bank Of India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uttarakhand State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uttar Pradesh Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vijaya Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>West Bengal State Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zoroastrian Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Vishweshwar Sahakari Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AHMEDNAGAR MERCHANTS CO-OP BANK LTD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JANASEVA SAHAKARI BANK LIMITED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SUVARNA SAHAKARI BANK LTD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SVC Co-Operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South Indian Bank Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vidya Sahakari Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pune People&apos;s Co-Op Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shri Laxmi Co-op Bank Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pune Urban Co-Op Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Janata Sahakari Bank Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post Office Saving Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baramati Sahakari Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sampada Sahakari Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DCB Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pune District Central Co-Op Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suvarnayug Sahakari Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shree Sharada Sahkari Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nagar Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jankalyan Urban Co-op Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Navi Mumbai Co-op Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Siddhivinayk Trading Co.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shrimant Malojiraje Sahakari Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rajarambapu Sahakari Bank Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DHFL(Dewan Housing Finance Corporation)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indrayani Co-operative Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Standard Chartered Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cosmos Co-Operative Bank Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PIRAMAL CAPITAL &amp; HOUSING FINANCE LTD.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Federal Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jalgaon Peoples Co-Operative Bank Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Equitas Finance Bank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Drawee_Bank_If_Others__c</fullName>
+        <externalId>false</externalId>
+        <label>Drawee Bank(If Others)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drawn_in_favour_of__c</fullName>
+        <externalId>false</externalId>
+        <label>Drawn in favour of</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Amount_Rs__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Amount (Rs.)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FOREX__c</fullName>
+        <externalId>false</externalId>
+        <label>Forex Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Receipt__c</fullName>
+        <externalId>false</externalId>
+        <label>First Receipt</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Foreign_Currency_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Foreign Currency Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsTDS_And_NoDemandRaised__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsTDS And NoDemandRaised</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Job_Run__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Job Run</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Manual_Receipt_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Manual Receipt Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Mode_Selection__c</fullName>
+        <externalId>false</externalId>
+        <label>Mode Selection</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Rupees</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Forex</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mode__c</fullName>
+        <externalId>false</externalId>
+        <label>Instrument</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Cheque</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD/Pay Order</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EFT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cash</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Credit Note</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MyID__c</fullName>
+        <externalId>false</externalId>
+        <label>MyID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NEFT__c</fullName>
+        <externalId>false</externalId>
+        <label>NEFT</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Narration__c</fullName>
+        <externalId>false</externalId>
+        <label>Narration</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Old_Receipt_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Old Receipt No.</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>On_Account_Money__c</fullName>
+        <externalId>false</externalId>
+        <label>On Account Money</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Email_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity Email Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Email__c</formula>
+        <label>Opportunity Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Project__c</field>
+                <operation>equals</operation>
+                <valueField>Opportunity.Project__r.Id</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Receipts</relationshipLabel>
+        <relationshipName>Receipts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PAN_no_of_TDS_Deductee__c</fullName>
+        <externalId>false</externalId>
+        <label>PAN no of TDS Deductee</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PAN_no_of_TDS_Deductor__c</fullName>
+        <externalId>false</externalId>
+        <label>PAN no of TDS Deductor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pay_Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Pay Order</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pay_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Pay Plan</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>$Source.Project__c</field>
+                <operation>equals</operation>
+                <valueField>Standard_Pay_Plan_Header__c.Project__r.Id</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Standard_Pay_Plan_Header__c</referenceTo>
+        <relationshipLabel>Receipts</relationshipLabel>
+        <relationshipName>Receipts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Physically_Cheque_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Physically Cheque Received</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Posted_to_Fa__c</fullName>
+        <externalId>false</externalId>
+        <label>Posted to Fa</label>
+        <picklist>
+            <picklistValues>
+                <fullName>UnProcessed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Processed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Print_Cheque_Bounce__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Receipt_Status__c, &quot;Dishonored&quot;), HYPERLINK(&quot;apex/S_ChequeBouncePrint?receiptId=&quot;+Id+&quot;&amp;letterHead=false&quot;,&quot;Click Here&quot; ), &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Print Cheque Bounce</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Print_Cheque_Bounce_on_LetterHead__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Receipt_Status__c, &quot;Dishonored&quot;), HYPERLINK(&quot;apex/S_ChequeBouncePrint?receiptId=&quot;+Id+&quot;&amp;letterHead=true&quot;,&quot;Click Here&quot; ), &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Print Cheque Bounce [on LetterHead]</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Print_Receipt_On_Letterhead__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/apex/S_PrintReceipt?id=&quot;+Id+&quot;&amp;letterhead=&quot;+&apos;1&apos;,&quot;Click Here&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Print Receipt On Letterhead</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Print_Receipt__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/apex/S_PrintReceipt?id=&quot;+Id+&quot;&amp;letterhead=&quot;+&apos;0&apos;,&quot;Click Here&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Print Receipt</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Unit__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Unit</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Project_Unit__c.Unit_Status__c</field>
+                <operation>equals</operation>
+                <value>Block, CRM Returned To Sales, Hold, Sold, Vacant, Welcome Call Pending, BIP - Sales, BIP - RM Verification, BIP - CRM, BIP</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.Project__c</field>
+                <operation>equals</operation>
+                <valueField>Project_Unit__c.Project__c</valueField>
+            </filterItems>
+            <infoMessage>Block, CRM Returned To Sales, Vacant, Welcome Call Pending, BIP - Sales, BIP - RM Verification, Sold, Block</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Project_Unit__c</referenceTo>
+        <relationshipLabel>Receipts</relationshipLabel>
+        <relationshipName>Receipts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Receipts</relationshipLabel>
+        <relationshipName>Receipts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RTGS__c</fullName>
+        <externalId>false</externalId>
+        <label>RTGS</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for cheque rejection</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Reject__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Receipt Rejection</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_for_rejection_new__c</fullName>
+        <externalId>false</externalId>
+        <label>Physical Verification Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected-Over writing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected-Third Party</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected-Date lapsed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected-Wrong Favoring</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected-Amount mismatch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected-Signature missing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected-Old Cheque Format CTS2010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Receipt_Against__c</fullName>
+        <externalId>false</externalId>
+        <label>Receipt Against</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Flat Cost</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stamp Duty And Registration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Receipt_Date_For_SMS__c</fullName>
+        <externalId>false</externalId>
+        <label>Receipt Date For SMS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Receipt_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Receipt Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Receipt_No_Manual__c</fullName>
+        <externalId>false</externalId>
+        <label>Receipt No (Manual)</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Receipt_No__c</fullName>
+        <displayFormat>{0000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Receipt No</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Receipt_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Project__r.RDS_Short_Name__c) &amp; &apos;/&apos; &amp; Left( Project_Unit__r.TowerName__r.Name ,2) &amp; &apos;-&apos; &amp;  Project_Unit__r.Name &amp; &apos;/&apos; &amp;  TEXT(Receipt_Date__c)  &amp; &apos;/&apos; &amp;  Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Receipt Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Receipt_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Receipt Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>UnProcessed</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Processed-Finance Submission Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Processed-Sent for Banking</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dishonored</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cleared</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Physical Verification Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Receipt_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Receipt Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Regular</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Re-Presented Cheque</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Adjustment Receipt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reg_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Reg.No</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RemarksText__c</fullName>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Remarks__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sharing_ProjectName__c</fullName>
+        <externalId>false</externalId>
+        <label>Sharing Project Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Standard_Customer_Pay_Plan_Detail__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Standard Customer Pay Plan Detail</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Standard_Customer_Pay_Plan_Detail__c.Customer_Pay_Plan_Header__r.Customer__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Adjustment_Customer__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Standard_Customer_Pay_Plan_Detail__c</referenceTo>
+        <relationshipLabel>Receipts</relationshipLabel>
+        <relationshipName>Receipts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status_Change_Date__c</fullName>
+        <description>used for reporting, to pull receipts whose status has change today</description>
+        <externalId>false</externalId>
+        <label>Status Change Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>TDS_Amount_In_Rs__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>TDS Amount (In Rs.)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Token_Amount_Receipt__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Token Amount Receipt</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Token_Amount_ST__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Token Amount ST</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Total_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unit_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project_Unit__r.UnitNo__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unit No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WebLink__c</fullName>
+        <externalId>false</externalId>
+        <label>WebLink</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>test__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Project_Unit__r.Booking__r.Application_No__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>test</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Receipt</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Booking__c</columns>
+        <columns>Cheque_DD_Date__c</columns>
+        <columns>Receipt_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>R-{0000}</displayFormat>
+        <label>Receipt Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Receipts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Can_not_Approve_without_check_Recieve</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(Approval_Status__c  , &quot;Approved&quot;) &amp;&amp;  Physically_Cheque_Received__c = false &amp;&amp;  ISPICKVAL( Mode__c , &quot;Cheque&quot;)</errorConditionFormula>
+        <errorMessage>Can not Approve Receipt, Your check has not been received yet.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cheque_DD_Validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>OR(
+ Cheque_DD_Date__c  &gt;  Receipt_Date__c  + 1, 
+
+
+ Cheque_DD_Date__c  &lt;  Receipt_Date__c -  180 )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Date__c</errorDisplayField>
+        <errorMessage>Cheque DD</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cheque_DD_date</fullName>
+        <active>false</active>
+        <errorConditionFormula>Cheque_DD_Date__c &lt; TODAY()</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Date__c</errorDisplayField>
+        <errorMessage>Should not be less than today date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Drawee_Bank_if_others_Mnadatory</fullName>
+        <active>false</active>
+        <description>If drawee bank is other then drawee bank(if other) field mndatory</description>
+        <errorConditionFormula>AND( ISPICKVAL( DraweeBank__c , &apos;Other&apos;) , 
+ISBLANK(Drawee_Bank_If_Others__c)||    ISNULL(Drawee_Bank_If_Others__c))</errorConditionFormula>
+        <errorMessage>Please Enter Drawee Bank(If Other)</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Draft_Rupees2</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Draft/Pay Order&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) ,  ISBLANK(Cheque_DD_Date__c ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Date__c</errorDisplayField>
+        <errorMessage>After Selecting Draft/Pay Order of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Draft_Rupees3</fullName>
+        <active>true</active>
+        <description>When User SelectDraft/Pay Order of Mode PickList and Rupees of Mode Selection then not entering data in Drawee Bank</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Draft/Pay Order&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , ISBLANK( Bank__c ) )</errorConditionFormula>
+        <errorDisplayField>Bank__c</errorDisplayField>
+        <errorMessage>After Selecting Draft/Pay Order of Mode PickList and Rupees of Mode Selection Pick List,Drawee Bank cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Draft_Rupees4</fullName>
+        <active>true</active>
+        <description>When User SelectDraft/Pay Order of Mode PickList and Rupees of Mode Selection then not entering data in Cheque/DD Amount (Rs.)</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Draft/Pay Order&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , ISBLANK(  Cheque_DD_Amount_Rs__c  ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Amount_Rs__c</errorDisplayField>
+        <errorMessage>After Selecting Draft/Pay Order of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Amount (Rs.)	 cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Local_Ch_Forex1</fullName>
+        <active>true</active>
+        <description>When User Local Cheque of Mode PickList and Forex of Mode Selection then not entering data in Cheque/DD No.</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Local Cheque&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Forex&apos;) , ISBLANK( Cheque_DD__c  ) )</errorConditionFormula>
+        <errorMessage>After Selecting Local Cheque of Mode PickList and Forex of Mode Selection Pick List,Cheque/DD No. cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Local_Ch_Forex2</fullName>
+        <active>true</active>
+        <description>When User Select  Local Cheque of Mode PickList and Forex of Mode Selection then not entering data in Cheque/DD Date</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Local Cheque&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Forex&apos;) , ISBLANK( Cheque_DD_Date__c  ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Date__c</errorDisplayField>
+        <errorMessage>After Selecting Local Cheque of Mode PickList and Forex of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Local_Ch_Forex3</fullName>
+        <active>true</active>
+        <description>When User Local Cheque of Mode PickList and Forex of Mode Selection then not entering data in Currency</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Local Cheque&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Forex&apos;) ,  ISPICKVAL( Currency__c , &apos;&apos;)  )</errorConditionFormula>
+        <errorDisplayField>Currency__c</errorDisplayField>
+        <errorMessage>After Selecting Local Cheque of Mode PickList and Forex of Mode Selection Pick List,Currency cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Local_Ch_Forex4</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Local Cheque&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Forex&apos;) ,  ISBLANK( FOREX__c )  )</errorConditionFormula>
+        <errorDisplayField>FOREX__c</errorDisplayField>
+        <errorMessage>After Selecting Local Cheque of Mode PickList and Forex of Mode Selection Pick List,Forex Amount cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Local_Ch_Rupee1</fullName>
+        <active>true</active>
+        <description>When User Select  Local Cheque of Mode PickList and Rupees of Mode Selection then not entering data in Cheque/DD No.</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Local Cheque&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , ISBLANK(  Cheque_DD__c  ) )</errorConditionFormula>
+        <errorMessage>After Selecting Local Cheque of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD No. cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Local_Ch_Rupee2</fullName>
+        <active>true</active>
+        <description>When User Local Cheque of Mode PickList and Rupees of Mode Selection then not entering data in Cheque/DD Date</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Local Cheque&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , ISBLANK(  Cheque_DD_Date__c ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Date__c</errorDisplayField>
+        <errorMessage>After Selecting Local Cheque of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Local_Ch_Rupee3</fullName>
+        <active>true</active>
+        <description>When User Select  Local Cheque of Mode PickList and Rupees of Mode Selection then not entering data in Cheque/DD Amount (Rs.)</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Local Cheque&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , ISBLANK(  Cheque_DD_Amount_Rs__c ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Amount_Rs__c</errorDisplayField>
+        <errorMessage>After Selecting Local Cheque of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Amount (Rs.) cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Local_Ch_Rupee4</fullName>
+        <active>true</active>
+        <description>When User Select  Local Cheque of Mode PickList and Rupees of Mode Selection then not entering data in Forex Amount</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Local Cheque&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , ISBLANK(  FOREX__c  ) )</errorConditionFormula>
+        <errorDisplayField>FOREX__c</errorDisplayField>
+        <errorMessage>After Selecting Local Cheque of Mode PickList and Rupees of Mode Selection Pick List,Forex Amount cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Outsta_Ch_Rupe1</fullName>
+        <active>true</active>
+        <description>When User Select Outstation Cheque of Mode PickList and Rupees of Mode Selection then not entering data in Cheque/DD No.</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Outstation Cheque&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Rupees&apos;) , ISBLANK(  Cheque_DD__c  ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD__c</errorDisplayField>
+        <errorMessage>After Selecting Outstation Cheque of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD No. cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Outsta_Ch_Rupe2</fullName>
+        <active>true</active>
+        <description>When User Select Outstation Cheque of Mode PickList and Rupees of Mode Selection then not entering data in Cheque/DD Date</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Outstation Cheque&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Rupees&apos;) , ISBLANK(  Cheque_DD_Date__c ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Date__c</errorDisplayField>
+        <errorMessage>After Selecting Outstation Cheque of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Outsta_Ch_Rupe3</fullName>
+        <active>true</active>
+        <description>When User Select Outstation Cheque of Mode PickList and Rupees of Mode Selection then not entering data in Cheque/DD Amount (Rs.)</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Outstation Cheque&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Rupees&apos;) , ISBLANK(  Cheque_DD_Amount_Rs__c  ) )</errorConditionFormula>
+        <errorMessage>After Selecting Outstation Cheque of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Amount (Rs.) cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Outsta_Ch_Rupe4</fullName>
+        <active>true</active>
+        <description>When User Select Outstation Cheque of Mode PickList and Rupees of Mode Selection then not entering data in Drawee Bank</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Outstation Cheque&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Rupees&apos;) , ISBLANK(  Bank__c ) )</errorConditionFormula>
+        <errorDisplayField>Bank__c</errorDisplayField>
+        <errorMessage>After Selecting Outstation Cheque of Mode PickList and Rupees of Mode Selection Pick List,Drawee Bank (Rs.) cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Outsta_Ch_fore1</fullName>
+        <active>true</active>
+        <description>When User Select Outstation Cheque of Mode PickList and Forex of Mode Selection then not entering data in Cheque/DD No.</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Outstation Cheque&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Forex&apos;) , ISBLANK(  Cheque_DD__c ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD__c</errorDisplayField>
+        <errorMessage>After Selecting Outstation Cheque of Mode PickList and Forex of Mode Selection Pick List,Cheque/DD No. cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Outsta_Ch_fore2</fullName>
+        <active>true</active>
+        <description>When User Select Outstation Cheque of Mode PickList and Forex of Mode Selection then not entering data in Cheque/DD Date</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Outstation Cheque&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Forex&apos;) , ISBLANK(  Cheque_DD_Date__c ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Date__c</errorDisplayField>
+        <errorMessage>After Selecting Outstation Cheque of Mode PickList and Forex of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Outsta_Ch_fore3</fullName>
+        <active>true</active>
+        <description>When User Select Outstation Cheque of Mode PickList and Forex of Mode Selection then not entering data in Currency</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Outstation Cheque&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Forex&apos;) ,  ISPICKVAL( Currency__c , &apos;&apos;)  )</errorConditionFormula>
+        <errorDisplayField>Currency__c</errorDisplayField>
+        <errorMessage>After Selecting Outstation Cheque of Mode PickList and Forex of Mode Selection Pick List,Currency cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_Outsta_Ch_fore4</fullName>
+        <active>true</active>
+        <description>When User Select Outstation Cheque of Mode PickList and Forex of Mode Selection then not entering data in Forex Amount</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Outstation Cheque&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Forex&apos;) , ISBLANK(  FOREX__c  ) )</errorConditionFormula>
+        <errorDisplayField>FOREX__c</errorDisplayField>
+        <errorMessage>After Selecting Outstation Cheque of Mode PickList and Forex of Mode Selection Pick List,Forex Amount cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_RTGS_Forex1</fullName>
+        <active>true</active>
+        <description>When User Select RTGS of Mode PickList and Forex of Mode Selection then not entering data in Cheque/DD Date</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;RTGS&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Forex&apos;) , ISBLANK(  Cheque_DD_Date__c  ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Date__c</errorDisplayField>
+        <errorMessage>After Selecting RTGS of Mode PickList and forex of Mode Selection Pick List,	Cheque/DD Date cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_RTGS_Forex2</fullName>
+        <active>true</active>
+        <description>When User Select RTGS of Mode PickList and Forex of Mode Selection then not entering data in RTGS</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;RTGS&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Forex&apos;) , ISBLANK(  RTGS__c ) )</errorConditionFormula>
+        <errorDisplayField>RTGS__c</errorDisplayField>
+        <errorMessage>After Selecting RTGS of Mode PickList and forex of Mode Selection Pick List, RTGS cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_RTGS_Forex3</fullName>
+        <active>true</active>
+        <description>When User Select RTGS of Mode PickList and Forex of Mode Selection then not entering data in Currency</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;RTGS&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Forex&apos;) , ISPICKVAL( Currency__c , &apos;&apos;))</errorConditionFormula>
+        <errorDisplayField>Currency__c</errorDisplayField>
+        <errorMessage>After Selecting RTGS of Mode PickList and forex of Mode Selection Pick List, Currency cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_RTGS_Forex4</fullName>
+        <active>true</active>
+        <description>When User Select RTGS of Mode PickList and Forex of Mode Selection then not entering data in Forex Amount</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;RTGS&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Forex&apos;) , ISBLANK(  FOREX__c  ) )</errorConditionFormula>
+        <errorDisplayField>FOREX__c</errorDisplayField>
+        <errorMessage>After Selecting RTGS of Mode PickList and forex of Mode Selection Pick List, Forex Amount cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_RTGS_Rupee1</fullName>
+        <active>true</active>
+        <description>When User Select RTGS of Mode PickList and Rupees of Mode Selection then not entering data in Cheque/DD Date</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;RTGS&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Rupees&apos;) , ISBLANK( Cheque_DD_Date__c ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Date__c</errorDisplayField>
+        <errorMessage>After Selecting RTGS of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_RTGS_Rupee2</fullName>
+        <active>true</active>
+        <description>When User Select RTGS of Mode PickList and Rupees of Mode Selection then not entering data in RTGS</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;RTGS&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Rupees&apos;) , ISBLANK(  RTGS__c ) )</errorConditionFormula>
+        <errorDisplayField>RTGS__c</errorDisplayField>
+        <errorMessage>After Selecting RTGS of Mode PickList and Rupees of Mode Selection Pick List,RTGS cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_RTGS_Rupee3</fullName>
+        <active>true</active>
+        <description>When User Select RTGS of Mode PickList and Rupees of Mode Selection then not entering data in Cheque/DD Amount (Rs.)</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;RTGS&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Rupees&apos;) , ISBLANK(  Cheque_DD_Amount_Rs__c  ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Amount_Rs__c</errorDisplayField>
+        <errorMessage>After Selecting RTGS of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Amount (Rs.) cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_RTGS_Rupee4</fullName>
+        <active>true</active>
+        <description>When User Select RTGS of Mode PickList and Rupees of Mode Selection then not entering data in Forex Amount</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;RTGS&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Rupees&apos;) , ISBLANK(  FOREX__c  ) )</errorConditionFormula>
+        <errorDisplayField>FOREX__c</errorDisplayField>
+        <errorMessage>After Selecting RTGS of Mode PickList and Rupees of Mode Selection Pick List,Forex Amount cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_TT_Forex1</fullName>
+        <active>true</active>
+        <description>When User Select TT of Mode PickList and Forex of Mode Selection then not entering data in Cheque/DD No.</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;TT&apos;) , ISPICKVAL( Mode_Selection__c,&apos;forex&apos;) , ISBLANK( Cheque_DD__c ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD__c</errorDisplayField>
+        <errorMessage>After Selecting TT of Mode PickList and Forex of Mode Selection Pick List,Cheque/DD No. cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_TT_Forex2</fullName>
+        <active>true</active>
+        <description>When User Select TT of Mode PickList and Forex of Mode Selection then not entering data in Cheque/DD Date</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;TT&apos;) , ISPICKVAL( Mode_Selection__c,&apos;forex&apos;) , ISBLANK(  Cheque_DD_Date__c  ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Date__c</errorDisplayField>
+        <errorMessage>After Selecting TT of Mode PickList and Forex of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_TT_Forex3</fullName>
+        <active>true</active>
+        <description>When User Select TT of Mode PickList and Forex of Mode Selection then not entering data in Currency</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;TT&apos;) , ISPICKVAL( Mode_Selection__c,&apos;forex&apos;) ,  ISPICKVAL( Currency__c , &apos;&apos;)  )</errorConditionFormula>
+        <errorDisplayField>Currency__c</errorDisplayField>
+        <errorMessage>After Selecting TT of Mode PickList and Forex of Mode Selection Pick List,Currency cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_TT_Forex4</fullName>
+        <active>true</active>
+        <description>When User Select TT of Mode PickList and Forex of Mode Selection then not entering data in Forex Amount</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;TT&apos;) , ISPICKVAL( Mode_Selection__c,&apos;forex&apos;) , ISBLANK(  FOREX__c  ) )</errorConditionFormula>
+        <errorDisplayField>FOREX__c</errorDisplayField>
+        <errorMessage>After Selecting TT of Mode PickList and Forex of Mode Selection Pick List,Forex Amount cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_TT_Rupees1</fullName>
+        <active>true</active>
+        <description>When User Select TT of Mode PickList and Rupees of Mode Selection then not entering data in Cheque/DD No.</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;TT&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Rupees&apos;) , ISBLANK( Cheque_DD__c ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD__c</errorDisplayField>
+        <errorMessage>After Selecting TT of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD No. cann&apos;t be blank</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_Validation_for_TT_Rupees2</fullName>
+        <active>true</active>
+        <description>When User Select TT of Mode PickList and Rupees of Mode Selection then not entering data in Cheque/DD Date</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;TT&apos;) , ISPICKVAL( Mode_Selection__c,&apos;Rupees&apos;) , ISBLANK(  Cheque_DD_Date__c ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Date__c</errorDisplayField>
+        <errorMessage>After Selecting TT of Mode PickList and Rupees of Mode Selection Pick List,Cheque/DD Date cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Process_Validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>OR(  ISPICKVAL( Receipt_Status__c , &apos;Processed&apos;)  , ISPICKVAL( Receipt_Status__c , &apos;Cancelled&apos;))</errorConditionFormula>
+        <errorMessage>Once a Receipt is processed,it cann&apos;t be edit.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Receipt_can_either_be_for_token_or_ST</fullName>
+        <active>false</active>
+        <errorConditionFormula>(Token_Amount_Receipt__c = TRUE)  &amp;&amp;  (Token_Amount_ST__c = TRUE)</errorConditionFormula>
+        <errorMessage>Receipt can be made for Token or for Service Tax Only</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rupees_Validation_Cash_Cheque_DDNo</fullName>
+        <active>true</active>
+        <description>When User Select Cash of Mode PickList and Rupees of Mode Selection  then Enter data in Cheque/DD No.</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c  , &apos;Cash&apos;) , ISPICKVAL( Mode_Selection__c ,&apos;Rupees&apos;) ,  NOT( ISBLANK(  Cheque_DD__c  ) ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD__c</errorDisplayField>
+        <errorMessage>After Selecting Cash of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Cheque/DD No.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rupees_Validation_Cash_Drawee_Bank</fullName>
+        <active>true</active>
+        <description>When User Select Cash of Mode PickList and Rupees of Mode Selection then Enter data in Drawee Bank</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Cash&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , NOT( ISBLANK( Bank__c ) ) )</errorConditionFormula>
+        <errorDisplayField>Bank__c</errorDisplayField>
+        <errorMessage>After Selecting Cash of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Drawee Bank</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rupees_Validation_Cash_Forex_Amount</fullName>
+        <active>true</active>
+        <description>When User Select Cash of Mode PickList and Rupees of Mode Selection then Enter data in Forex Amount</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Cash&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , NOT( ISBLANK(  FOREX__c  ) ) )</errorConditionFormula>
+        <errorDisplayField>FOREX__c</errorDisplayField>
+        <errorMessage>After Selecting Cash of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Forex Amount</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rupees_Validation_Draft_Forex_Amount</fullName>
+        <active>true</active>
+        <description>When User Select Draft/Pay Order of Mode PickList and Rupees of Mode Selection then Enter data in Forex Amount</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Draft/Pay Order&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , NOT( ISBLANK( FOREX__c ) ) )</errorConditionFormula>
+        <errorDisplayField>FOREX__c</errorDisplayField>
+        <errorMessage>After Selecting Draft/Pay Order of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Forex Amount</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rupees_Validation_Local_Che_Forex_Amount</fullName>
+        <active>true</active>
+        <description>When User Select Local Cheque of Mode PickList and Rupees of Mode Selection then Enter data in Forex Amount</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;Local Cheque&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , NOT( ISBLANK( FOREX__c ) ) )</errorConditionFormula>
+        <errorDisplayField>FOREX__c</errorDisplayField>
+        <errorMessage>After Selecting Local Cheque of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Forex Amount</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rupees_Validation_RTGS_Forex_Amount</fullName>
+        <active>true</active>
+        <description>When User Select RTGS of Mode PickList and Rupees of Mode Selection then Enter data in Forex Amount</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;RTGS&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , NOT( ISBLANK( FOREX__c ) ) )</errorConditionFormula>
+        <errorMessage>After Selecting RTGS of Mode PickList and Rupess of Mode Selection Pick List,You cann&apos;t enter in Forex Amount</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rupees_Validation_TT_Cheque_DD_Am</fullName>
+        <active>true</active>
+        <description>When User Select TT of Mode PickList and Rupees of Mode Selection then Enter data in Cheque/DD Amount (Rs.)</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;TT&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , NOT( ISBLANK( Cheque_DD_Amount_Rs__c ) ) )</errorConditionFormula>
+        <errorDisplayField>Cheque_DD_Amount_Rs__c</errorDisplayField>
+        <errorMessage>After Selecting TT of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Cheque/DD Amount (Rs.)</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rupees_Validation_TT_Drawee_Bank</fullName>
+        <active>true</active>
+        <description>When User Select TT of Mode PickList and Rupees of Mode Selection then Enter data in Drawee Bank</description>
+        <errorConditionFormula>AND( ISPICKVAL( Mode__c , &apos;TT&apos;) , ISPICKVAL( Mode_Selection__c , &apos;Rupees&apos;) , NOT( ISBLANK( Bank__c ) ) )</errorConditionFormula>
+        <errorDisplayField>Bank__c</errorDisplayField>
+        <errorMessage>After Selecting TT of Mode PickList and Rupees of Mode Selection Pick List,You cann&apos;t enter in Drawee Bank</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Validation_for_Receipt_Date</fullName>
+        <active>true</active>
+        <description>When User Enter data in Receipt Date</description>
+        <errorConditionFormula>OR( Receipt_Date__c &gt;TODAY() , Receipt_Date__c&lt; Project__r.Start_Date__c   )</errorConditionFormula>
+        <errorDisplayField>Receipt_Date__c</errorDisplayField>
+        <errorMessage>Receipt Date can&apos;t be greater than Today&apos;s Date and not less than project Start date</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>AdjustmentRecieptProces</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Process - Adjustment Receipt</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/AdjustmentRecieptProcess?id={!Receipt__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Edit_Receipt</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Edit Receipt</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/CreateReceipt?rid={!Receipt__c.Id}&amp;task=edit</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Adjustment_Receipt</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Adjustment Receipt</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/ReceiptAdjustment?id={!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Receipts</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Receipts</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/CreateReceipt?id={!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Print_Receipt</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Print Receipt</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/PaymentReceipt?id={!Receipt__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Process</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Process</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/ReceiptProcess?id={!Receipt__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_Receipt</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Receipt</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!requireScript(&quot;/soap/ajax/20.0/connection.js&quot;)} 
+{!requireScript(&quot;/soap/ajax/20.0/apex.js&quot;)} 
+
+
+sforce.apex.execute(&quot;SendReceipt&quot;,&quot;callApproval&quot;,{receiptId:&quot;{!Receipt__c.Id}&quot;,emailId:&quot;{!Receipt__c.Opportunity_Email__c}&quot;});
+     alert(&apos;Email will be sent to -   {!Receipt__c.Opportunity_Email__c}&apos;);</url>
+    </webLinks>
+</CustomObject>

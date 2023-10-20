@@ -1,0 +1,35 @@
+<apex:page standardController="Account">
+        <button id='linkButton'>Open Plaid Link</button>
+            <script src="https://cdn.plaid.com/link/stable/link-initialize.js"></script>
+            <script type="text/javascript">
+            var linkHandler = Plaid.create({
+            env: 'tartan',
+            clientName: 'Plaid Test',
+            key: 'xxxxxKeyxxxxx',
+            product: 'auth',
+            selectAccount: true,
+            onSuccess: function(public_token, metadata) {
+            // Send the public_token and account ID to your app server.
+            console.log('public_token: ' + public_token);
+            console.log('account ID: ' + metadata.account_id);
+                var ptoken = public_token;
+                var acctId = metadata.account_id;
+            document.getElementbyId('{!$Component.theForm.thepageblock.publicToken}').value = ptoken;
+                return false;
+            },
+            });
+
+            // Trigger the Link UI
+            document.getElementById('linkButton').onclick = function() {
+            linkHandler.open();
+            };
+        </script>
+
+        <apex:form id="theForm">
+            <apex:pageblock id="thepageblock">
+                    <apex:inputText id="publicToken"/>
+                    <br />
+                    <apex:inputText id="accountId"/>
+            </apex:pageblock>
+        </apex:form>
+</apex:page>

@@ -1,0 +1,167 @@
+<apex:page controller="S_ChequeReceiving" showHeader="false" standardStylesheets="true" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    <html
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <title>Cheque Receiving</title>
+            <apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+            <script src="/soap/ajax/9.0/connection.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+            <link href='https://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css' />
+        </head>
+        <!-- Define Tab panel .css styles -->
+    <style>
+    .slds h1, .slds h2, .slds h3, .slds h4, .slds h5, .slds h6, .slds th, .slds td {
+        font-family: Lato,verdana, arial, sans-serif;
+    }
+    .slds .slds-theme--shade {
+    background-color: aliceblue;
+    }
+    .slds .slds-button {
+        background-color:#838B8B;
+    }
+    body .bPageBlock .pbBody .pbSubheader {
+        background-color:#838B8B;
+        border-color:#838B8B;
+    }
+    .header {
+        text-align:center;
+    }
+    .slds table {
+        font-size: 11.5px;
+        empty-cells:show;
+    }
+    .slds th {
+        padding: 3px;
+        background-color:#104E8B;
+        text-align:center;
+    }
+ 
+    .slds td {
+        text-align:left;
+    }
+    
+    div.fadeMe {
+      opacity:    0.5; 
+      background: #D9E9FF; 
+      width:      100%;
+      height:     100%; 
+      z-index:    1000;
+      top:        0; 
+      left:       0; 
+      position:   fixed; 
+    }
+    .error {
+        border-color: red !important;
+        background-color: light blue;
+        border-width: 2px;
+    }
+    </style>
+            
+  <body>    
+    <a href="/home/home.jsp"><img src="{!$Resource.Home}" style="float:left; width:4%; height:4%;"></img></a>
+  <br/><br/>
+  <!-- REQUIRED SLDS WRAPPER -->
+  <div class="slds">    
+  <!-- PRIMARY CONTENT WRAPPER -->
+    <div class="myapp">   
+        <!-- SEARCH DEMANDS-->
+      <div aria-labelledby="DSform">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme--shade slds-container--large slds-container--center slds-grid--align-spread">
+          <legend id="dsForm" class="slds-text-heading--medium slds-p-vertical--medium">View / Update Cheques</legend>
+            <apex:form id="chequeform" styleClass="slds-form--inline">
+                <apex:actionStatus id="status">
+                    <apex:facet name="start">
+                        <div class="fadeMe">
+                        &nbsp;
+                        </div>
+                        <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                            <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                                <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                                <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                            </div>
+                        </div>
+                    </apex:facet>
+                </apex:actionStatus>
+                <apex:outputPanel id="messages">
+                    <apex:PageMessages />
+               </apex:outputPanel>
+               <apex:pageBlock id="chequeForm">
+                  <apex:outputPanel id="chequePanel">
+                        <apex:pageblockSection title="Cheques Summary" columns="1" collapsible="false">
+                      <apex:outputLabel rendered="{!rwList.size != 0}" style="font-size: 14px; font-weight:  700; color:black;" value="Total Receipts : {!total_size}"/>
+                            <apex:pageBlockTable id="ctable" value="{!rwList}" var="item" width="100%">
+                                <apex:column headerValue="Received"> 
+                                    <apex:inputField value="{!item.rCloned.Physically_Cheque_Received__c}" rendered="{!NOT(item.r.Physically_Cheque_Received__c )}"/>
+                                    <apex:outputField value="{!item.r.Physically_Cheque_Received__c}" rendered="{!(item.r.Physically_Cheque_Received__c)}"/>
+                                </apex:column>
+                                <apex:column headerValue="Receipt Number"><a href='/{!item.r.id}' target="_blank">{!item.r.Receipt_Number__c}</a></apex:column>
+                                <apex:column headerValue="Applicant Names" value="{!item.applicantNames}"/>
+                                <apex:column headerValue="Instrument No." value="{!item.r.Cheque_DD__c}"/>
+                                <apex:column headerValue="Instrument Date" value="{!item.r.Cheque_DD_Date__c}"/>
+                                 <apex:column headerValue="Instrument Type" value="{!item.r.Mode__c}"/>
+                                <apex:column value="{!item.r.Bank__r.name}"/>
+                                <apex:column headerValue="In favour Of" >
+                                    <apex:Outputtext value="{!item.r.Drawn_in_favour_of__c}" rendered="{!item.r.Mode__c != 'TDS'}"/>
+                                    <apex:Outputtext value="{!item.r.PAN_no_of_TDS_Deductor__c}" rendered="{!item.r.Mode__c == 'TDS'}"/>
+                                </apex:column>
+                                <apex:column value="{!item.r.Currency__c}"/>
+                                <apex:column value="{!item.r.Total_Amount__c}"/>
+                                <apex:column value="{!item.r.Receipt_Status__c }"/>
+                                <apex:column headerValue="Physical Verification Status"> 
+                                    <apex:inputField style="background-color:#B9D48B;width: 125px; height: 25px"  styleClass="{!item.style0}" value="{!item.rCloned.Reason_for_rejection_new__c}" rendered="{!NOT(item.r.Physically_Cheque_Received__c)}"/> 
+                                    <apex:outputField value="{!item.r.Reason_for_rejection_new__c}" rendered="{!(item.r.Physically_Cheque_Received__c)}"/> 
+                                </apex:column>
+                                <apex:column headerValue="Payment Status"> 
+                                    <apex:inputField style="background-color:#F5B9AE;width: 125px; height: 25px" styleClass="{!item.style1}"     value="{!item.rCloned.Banking__c}" rendered="{!(item.r.Banking__c == null && item.r.Reason_for_rejection_new__c!=null) }"/> 
+                                    <apex:outputField value="{!item.r.Banking__c}" rendered="{!(item.r.Banking__c != null)}"/> 
+                                </apex:column>
+                                <apex:column headerValue="Forex Amount"> 
+                                    <apex:inputField styleClass="{!item.style2}" style="background-color:#34DDDD;width: 100px; height: 25px" value="{!item.rCloned.FOREX__c}" rendered="{!(item.r.Currency__c != 'Indian Rupee' && item.r.Currency__c != 'RUPEES' && item.r.Reason_for_rejection_new__c == 'Accepted')}"/> 
+                                    <apex:outputField value="{!item.r.FOREX__c}" rendered="{!(item.r.FOREX__c != null)}"/>
+                                </apex:column>
+                                    <apex:facet name="footer">Showing Page # {!pageNumber} of {!totalPages}</apex:facet>
+                            </apex:pageBlockTable> 
+                        </apex:pageblockSection>
+                    </apex:outputPanel>
+                    <apex:pageBlockButtons location="both" id="buttonsPanel">
+                        <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Submit" action="{!save}" title="Submit" disabled="{!(rwList == null)}" rerender="chequePanel,messages" status="status"/>
+                        <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Back" action="{!back}" title="Back"  immediate="true" />
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+                                
+                <apex:outputPanel id="buttons" rendered="{!rwList.size != 0}">
+                  <apex:pageBlock >
+                  
+                     <apex:commandButton id="cm1" styleClass="slds-button slds-button--brand slds-button--small" action="{!Beginning}" title="Beginning" disabled="{!disablePrevious}" value="<<" reRender="chequePanel,buttons,ctable" status="status"/> <!-- disabled="{!disablePrevious}" -->
+                        <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" action="{!Previous}" title="Previous" value="<" disabled="{!disablePrevious}" reRender="chequePanel,buttons,ctable" status="status"/>        
+                           <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" action="{!Next}" title="Next" value=">" disabled="{!disableNext}" reRender="chequePanel,buttons,ctable" status="status"/> <!-- disabled="{!disableNext}" -->
+                             <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" action="{!End}" title="End" value=">>" disabled="{!disableNext}" reRender="chequePanel,buttons,ctable" status="status"/>
+                  
+                  </apex:pageBlock>
+                  </apex:outputPanel>
+                  
+
+                </apex:form>
+        </fieldset>
+        <!-- / BOXED AREA -->
+      </div>
+    <!-- / CHEQUE RECEIVING -->
+    </div>
+    <!-- / PRIMARY CONTENT WRAPPER -->
+  </div>
+  <!-- / REQUIRED SLDS WRAPPER -->  
+   <script>
+        var j$ = jQuery.noConflict();
+        j$(document).ready(function() {
+            bindEvents();
+        });
+        function bindEvents() {
+        }
+    </script>
+</body>
+</html>
+</apex:page>

@@ -1,0 +1,569 @@
+<apex:page controller="S_sendDemandInvoice2" showHeader="false" standardStylesheets="true" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    <html
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <title>Send Demand Invoice</title>
+            <apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+            <script src="/soap/ajax/9.0/connection.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+            <link href="https://fonts.googleapis.com/css?family=Buda:300" rel="stylesheet" type="text/css"/>
+        </head>
+        <!-- Define Tab panel .css styles -->
+    <style>
+    .slds h1, .slds h2, .slds h3, .slds h4, .slds h5, .slds h6, .slds th, .slds td {
+        font-family: 'Lato';
+    }
+    .slds .slds-theme--shade {
+    background-color: aliceblue;
+    }
+    .slds .slds-button {
+        background-color:#838B8B;
+    }
+    body .bPageBlock .pbBody .pbSubheader {
+        background-color:#838B8B;
+        border-color:#838B8B;
+    }
+    .activeTab {
+        background-color: #838B8B; 
+        color: white;
+        background-image:none;
+        font-size: 13px;
+        text-align:center !important;
+    }
+    .inactiveTab { 
+        background-color: #E0EEEE; 
+        background-image:none;
+        color: white;
+        font-size: 10px;
+        text-align:center !important
+    }
+    .header {
+        text-align:center;
+    }
+    .slds table {
+        font-size: 10.5px;
+        empty-cells:show;
+    }
+    .slds th {
+        padding: 3px;
+        background-color:#104E8B;
+        text-align:center;
+    }
+ 
+    .slds td {
+        text-align:left;
+    }
+    
+    div.fadeMe {
+      opacity:    0.5; 
+      background: #D9E9FF; 
+      width:      100%;
+      height:     100%; 
+      z-index:    1000;
+      top:        0; 
+      left:       0; 
+      position:   fixed; 
+    }
+    .error {
+        border-color: red !important;
+        background-color: light blue;
+        border-width: 2px;
+    }
+    </style>
+            
+  <body>    
+  <a href="/home/home.jsp"><img src="{!$Resource.Home}" style="float:left; width:4%; height:4%;"></img></a>
+  <br/><br/>
+  <!-- REQUIRED SLDS WRAPPER -->
+  <div class="slds">    
+  <!-- PRIMARY CONTENT WRAPPER -->
+    <div class="myapp">   
+        <!-- SEARCH DEMANDS-->
+      <div aria-labelledby="DSform">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme--shade slds-container--large slds-container--center slds-grid--align-spread">
+          <legend id="dsForm" class="slds-text-heading--medium slds-p-vertical--medium">View/Search Demand Invoice</legend>
+          <!-- DEMAND SEARCH FORM-->
+                    <!-- Create Tab panel -->
+                <apex:tabPanel switchType="client" value="{!selectedTab}" id="demandsTab" tabClass="activeTab" inactiveTabClass="inactiveTab">
+                    <apex:tab label="Show Pending FlatCost Demands" name="name1" id="tabOne">
+                        <apex:form id="showPendDemand" styleClass="slds-form--inline">
+                            <apex:actionStatus id="status">
+                            <apex:facet name="start">
+                            <div class="fadeMe">
+                                &nbsp;
+                            </div>
+                            <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                                <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                                    <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                                    <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                                </div>
+                            </div>
+                            </apex:facet>
+                            </apex:actionStatus>
+                            <apex:actionFunction name="getCustomersFunction" action="{!getCustomersTowerWise}" rerender="customerPanel,messages" oncomplete="bindEvents()">
+                                <apex:param id="tName" name="towerName" value="" />
+                                <apex:param id="pName" name="projectName" value="" />
+                            </apex:actionFunction>
+                            <apex:outputPanel id="messages">
+                                <apex:PageMessages />
+                            </apex:outputPanel>
+                            <apex:pageBlock >
+                            <apex:outputPanel id="pendingDemandsPanel">
+                            <apex:pageblockSection title="Pending Demands Summary" columns="1" collapsible="true">
+                                <apex:pageBlockTable style="font-size:12px;width:100%;background-color:#FADADD"  id="towerNamestable" value="{!tw}" var="tower">
+                                    <apex:column headerValue="Project Name">
+                                         <apex:outputText value="{!tower.project}"  />
+                                     </apex:column>
+                                    <apex:column headerValue="Tower Name">
+                                         <apex:outputLink value="#" onclick="getCustomers('{!tower.towerName}', '{!tower.project}');return false;">{!tower.towerName}</apex:outputLink>
+                                     </apex:column>
+                                     <apex:column headerValue="Pending Invoice Count">
+                                         <apex:outputText value="{!tower.count}" />
+                                     </apex:column>
+                                     <apex:column headerValue="Total Amount">
+                                         <apex:outputtext value="{!tower.Amount}" />
+                                     </apex:column>
+                                     <apex:column headerValue="Total Amount in words">
+                                         <apex:outputtext value="{!tower.strAmtWords}" />
+                                     </apex:column>
+                                </apex:pageBlockTable>
+                            </apex:pageblockSection>
+                            </apex:outputPanel>
+                                  <apex:outputPanel id="customerPanel">
+                                        <apex:pageblock rendered="{!customerTowerList != null}" >
+                                            <apex:outputLabel ></apex:outputLabel>
+                                            <p style="font-size: 12px; font-weight:  600;">Customer must have Email ID to receive Demand Invoice.</p>
+                                            <br />
+                                            <apex:pageblockSection title="Customers (Total : {!total_size})" columns="1" collapsible="false">
+                                                <apex:variable var="index" value="{!0}"/>
+                                                <apex:pageBlockTable id="pendingDemandsTable" value="{!customerTowerList}" var="Customer">
+                                                        <apex:column >
+                                                            <apex:facet name="header">
+                                                                <apex:inputCheckbox onclick="selectAllCheckboxes(this,'selectId')"/>
+                                                            </apex:facet>
+                                                            <apex:inputCheckbox id="selectId" value="{!Customer.Selected }" rendered="{!AND(Customer.EmailId <> null && Customer.EmailId <> '')}"/>
+                                                        </apex:column>
+                                                        <apex:column styleClass="{!Customer.style1}"  headerValue="Name " >
+                                                            <apex:outputtext value="{!Customer.Name}"/>
+                                                        </apex:column>
+                                                        <apex:column styleClass="{!Customer.style1}"  headerValue="Email Id" >
+                                                            <apex:outputtext value="{!Customer.EmailId}"/>
+                                                        </apex:column>
+                                                        <apex:column styleClass="{!Customer.style1}"  headerValue="Stage Name" >
+                                                            <apex:outputtext value="{!Customer.StageName}"/>
+                                                        </apex:column>
+                                                        <apex:column styleClass="{!Customer.style1}" headerValue="Principal Amt." >
+                                                            <apex:outputtext value="{!Customer.strInstallAmt}"/>
+                                                        </apex:column>
+                                                        <apex:column styleClass="{!Customer.style1}" headerValue="Demand Date " >
+                                                            <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                                                <apex:param value="{!Customer.DemandDueDate}"/>
+                                                            </apex:outputtext>
+                                                        </apex:column>
+                                                        <apex:column headerValue="Project Unit Name " >
+                                                            <apex:outputtext styleClass="{!Customer.style1}"  value="{!Customer.ProjectUnit}"/>
+                                                        </apex:column>
+                                                        <apex:column styleClass="{!Customer.style1}"  headerValue="RM Name " >
+                                                            <apex:outputtext value="{!Customer.RM}"/>
+                                                        </apex:column>
+                                                        <apex:column headerValue="Physcial Demand " >
+                                                            <apex:outputtext value="✔" rendered="{!Customer.physicalDemand}"/>
+                                                            <apex:outputtext value="✘" rendered="{!NOT(Customer.physicalDemand)}"/>
+                                                        </apex:column>
+                                                        <apex:column headerValue="Revised Invoice Date " >
+                                                            <apex:inputField style="background-color:#ACDEB2" styleClass="{!Customer.style}"  value="{!Customer.scppd.Revised_Invoice_Date__c}"/>
+                                                        </apex:column>
+                                                        <apex:column headerValue="Reason for Deferment " >
+                                                            <apex:inputField style="background-color:#ACDEB2" styleClass="{!Customer.style}"  value="{!Customer.scppd.Reason_for_deferment__c}"/>
+                                                        </apex:column>
+                                                        <apex:column headerValue="Preview" >
+                                                            <!--  dont make changes, dont add rerender etc., -->
+                                                            <apex:commandLink target="_blank" value="SHOW PREVIEW" action="{!showPreview}">
+                                                                <apex:param name="rowIndex" value="{!index}" assignTo="{!rowIndex}" />
+                                                                <apex:param id="pending" name="tabName" value="pendingDemands" assignTo="{!tabName}" />
+                                                            </apex:commandLink>
+                                                            <apex:variable var="index" value="{!index + 1}" />
+                                                        </apex:column>
+                                                        <apex:facet name="footer">Showing Page # {!pageNumber} of {!totalPages}</apex:facet>
+                                                    </apex:pageBlockTable>
+                                                </apex:pageblockSection>
+                                                <br/>
+                                                <center>
+                                                    <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Send To Selected " action="{!SendMail}"  rerender="pendingDemandsPanel,customerPanel,messages" status="status">
+                                                    <apex:param id="pending" name="tabName" value="pendingDemands" assignTo="{!tabName}" />
+                                                    </apex:commandButton>
+                                                </center>
+                                                        <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" action="{!Beginning}" title="Beginning" value="<<" disabled="{!disablePrevious}" reRender="customerPanel" status="status"/>
+                                                        <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" action="{!Previous}" title="Previous" value="<" disabled="{!disablePrevious}" reRender="customerPanel" status="status"/>        
+                                                        <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" action="{!Next}" title="Next" value=">" disabled="{!disableNext}" reRender="customerPanel" status="status"/>
+                                                        <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" action="{!End}" title="End" value=">>" disabled="{!disableNext}" reRender="customerPanel" status="status"/>
+                                            </apex:pageblock>
+                                  </apex:outputPanel>
+                            </apex:pageBlock>
+                        </apex:form>
+                    </apex:tab>
+                    <apex:tab label="Show Pending Registrations" name="name2" id="tabTwo">
+                        <apex:form id="pendRegistration" styleClass="slds-form--inline">
+                            <apex:actionFunction name="getRegFunction" action="{!getCustomersTowerWiseReg}" rerender="customerPanel1,messages1">
+                                <apex:param id="tName" name="towerNameReg" value="" />
+                            </apex:actionFunction>
+                            <apex:outputPanel id="messages1">
+                                <apex:PageMessages />
+                            </apex:outputPanel>
+                            <apex:pageBlock title="Pending Registration Demands Tower-Wise">
+                            <apex:outputPanel id="customerPanel1">
+                            <table class="list" border="0" cellpadding="0" cellspacing="0">
+                                <tr class="headerRow  ">
+                                  <apex:repeat value="{!towerNamesReg}" var="heading">
+                                    <th class="headerRow ">
+                                       <apex:commandLink value="{!heading}" onclick="getRegCustomers('{!heading}');return false;" />
+                                    </th>
+                                  </apex:repeat>
+                               </tr>
+                            </table>
+                              
+                                <apex:pageblock rendered="{!customerTowerListReg != null}">
+                                    <apex:outputLabel ></apex:outputLabel>
+                                    <p style="font-size: 12px; font-weight:  600;">Customer must have Email ID to receive Demand Invoice.</p>
+                                    <br />
+                                    <apex:pageblockSection title="Customers" columns="1" collapsible="false">
+                                        <apex:variable var="index" value="{!0}"/>
+                                        <apex:pageBlockTable value="{!customerTowerListReg}" var="Customer">
+                                                <apex:column >
+                                                    <apex:facet name="header">
+                                                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'customerId')"/>
+                                                    </apex:facet>
+                                                    <apex:inputCheckbox id="customerId" value="{!Customer.Selected }" rendered="{!AND(Customer.EmailId <> null && Customer.EmailId <> '')}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Name " >
+                                                    <apex:outputtext value="{!Customer.Name}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Email Id" >
+                                                    <apex:outputtext value="{!Customer.EmailId}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Stage Name" >
+                                                    <apex:outputtext value="{!Customer.StageName}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Principal Amt." >
+                                                    <apex:outputtext value="{!Customer.InstallAmt}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Invoice Due Date " >
+                                                    <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                                        <apex:param value="{!Customer.InvoiceDueDate}"/>
+                                                    </apex:outputtext>
+                                                </apex:column>
+                                                <apex:column headerValue="Project Unit Name " >
+                                                    <apex:outputtext value="{!Customer.ProjectUnit}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Preview">
+                                                    <!--  dont make changes, dont add rerender etc., -->
+                                                            <apex:commandLink target="_blank" value="SHOW PREVIEW" action="{!showPreview}" >
+                                                                <apex:param name="rowIndex" value="{!index}" assignTo="{!rowIndex}" />
+                                                                <apex:param id="pending" name="tabName" value="pendingRegistrations" assignTo="{!tabName}" />
+                                                            </apex:commandLink>
+                                                            <apex:variable var="index" value="{!index + 1}" />
+                                                </apex:column>
+                                            </apex:pageBlockTable>
+                                        </apex:pageblockSection>
+                                        <br/>
+                                        <center>
+                                            <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Send To Selected " action="{!SendMail}" rerender="customerPanel1,messages1" status="status">
+                                            <apex:param id="registration" name="tabName" value="pendingRegistrations" assignTo="{!tabName}" />
+                                            </apex:commandButton>
+                                        </center>
+                                    </apex:pageblock>
+                                </apex:outputPanel>
+                            </apex:pageBlock>
+                        </apex:form>
+                    </apex:tab>
+                    
+                    <apex:tab label="Show Pending Cancellations" name="name2C" id="tabTwoC">
+                        <apex:form id="pendCancellations" styleClass="slds-form--inline">
+                            <apex:actionFunction name="getCanFunction" action="{!getCustomersTowerWiseCan}" rerender="customerPanel1C,messages1C">
+                                <apex:param id="tName" name="towerNameCan" value="" />
+                            </apex:actionFunction>
+                            <apex:outputPanel id="messages1C">
+                                <apex:PageMessages />
+                            </apex:outputPanel>
+                            <apex:pageBlock title="Pending Cancellations Tower-Wise">
+                            <apex:outputPanel id="customerPanel1C">
+                            <table class="list" border="0" cellpadding="0" cellspacing="0">
+                                <tr class="headerRow  ">
+                                  <apex:repeat value="{!towerNamesCan}" var="heading">
+                                    <th class="headerRow ">
+                                       <apex:commandLink value="{!heading}" onclick="getCanCustomers('{!heading}');return false;" />
+                                    </th>
+                                  </apex:repeat>
+                               </tr>
+                            </table>
+                              
+                                <apex:pageblock rendered="{!customerTowerListCan != null}">
+                                    <apex:outputLabel ></apex:outputLabel>
+                                    <p style="font-size: 12px; font-weight:  600;">Customer must have Email ID to receive Cancellation Intimations.</p>
+                                    <br />
+                                    <apex:pageblockSection title="Customers" columns="1" collapsible="false">
+                                        <apex:variable var="index" value="{!0}"/>
+                                        <apex:pageBlockTable value="{!customerTowerListCan}" var="Customer">
+                                                <apex:column >
+                                                    <apex:facet name="header">
+                                                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'customerId')"/>
+                                                    </apex:facet>
+                                                    <apex:inputCheckbox id="customerId" value="{!Customer.Selected}" rendered="{!AND(Customer.EmailId <> null && Customer.EmailId <> '')}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Name " >
+                                                    <apex:outputtext value="{!Customer.Name}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Email Id" >
+                                                    <apex:outputtext value="{!Customer.EmailId}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Project Unit Name " >
+                                                    <apex:outputtext value="{!Customer.intimationrec.Unit__r.Project__r.Name}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Project Unit Name " >
+                                                    <apex:outputtext value="{!Customer.intimationrec.Letter_Category__c}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Cancellation Type " >
+                                                    <apex:outputtext value="{!Customer.intimationrec.Customer__r.Cancellation_Type__c}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Preview">
+                                                    <!--  dont make changes, dont add rerender etc., -->
+                                                            <apex:commandLink target="_blank" value="SHOW PREVIEW" action="{!showPreview}" >
+                                                                <apex:param name="rowIndex" value="{!index}" assignTo="{!rowIndex}" />
+                                                                <apex:param id="pending" name="tabName" value="pendingCancellations" assignTo="{!tabName}" />
+                                                            </apex:commandLink>
+                                                            <apex:variable var="index" value="{!index + 1}" />
+                                                </apex:column>
+                                            </apex:pageBlockTable>
+                                        </apex:pageblockSection>
+                                        <br/>
+                                        <center>
+                                            <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Send To Selected " action="{!SendMail}" rerender="customerPanel1C,messages1C" status="status">
+                                            <apex:param id="cancellations" name="tabName" value="pendingCancellations" assignTo="{!tabName}" />
+                                            </apex:commandButton>
+                                        </center>
+                                    </apex:pageblock>
+                                </apex:outputPanel>
+                            </apex:pageBlock>
+                        </apex:form>
+                    </apex:tab>
+                    
+                    <apex:tab label="Search Demands" name="name3" id="tabThree">
+                    <!-- CREATE DEMAND INVOICE FORM -->
+                            <apex:form id="sendDemandPage" styleClass="slds-form--inline">
+                                <apex:outputPanel id="messages2">
+                                <apex:PageMessages />
+                               </apex:outputPanel>
+                               <apex:actionFunction name="rerenderStageFunction" action="{!dummy}" rerender="stagesPanel"/>
+                               <apex:actionFunction name="rerenderTowerFunction" action="{!dummy}" rerender="towersPanel"/>
+                               <apex:actionFunction name="rerenderTowerFunction1" action="{!dummy}" rerender="towersPanel1"/>
+                               <apex:actionFunction name="rerenderSearchPanelsFunction" action="{!dummy}" rerender="searchPanels,searchButton" />
+                               <apex:actionFunction name="searchFunction" action="{!search}" rerender="customerPanel2,messages2"/>
+
+                                <apex:pageblock >
+                                    
+                                    <apex:pageBlockSection rendered="{!IF(lstBooking[0].Project__r.Name != null && lstBooking[0].Project__r.Name != '', true, false)}">
+                                        
+                                        <apex:outputLabel >Customers under 
+                                            <strong>{!lstBooking[0].Project__r.Name}</strong> project.
+                                        </apex:outputLabel>
+                                        
+                                    </apex:pageBlockSection>
+                                    
+                                    <apex:pageBlockSection columns="1">
+                                        <apex:outputLabel styleClass="slds-form-element__label slds-form-element__label--top" >Search Based On</apex:outputLabel>
+                                        <apex:selectRadio value="{!selectedCriteria}" styleClass="radio" onChange="rerenderSearchPanelsFunction()">
+                                            <apex:selectOptions value="{!searchOptions}"/>
+                                        </apex:selectRadio>
+                                    </apex:pageBlockSection>
+                                    
+                                    <apex:outputPanel id="searchPanels">
+                                    <apex:pageBlockSection title="Milestone Based Search" id="pgBlockSectionDI"  collapsible="false" columns="3" rendered="{!selectedCriteria == 'Construction Stage'}">
+                                    
+                                        <apex:pageBlockSectionItem >
+                                        <apex:outputPanel styleclass="slds-form-element">
+                                            <apex:outputLabel styleclass="slds-form-element__label">Select Project</apex:outputLabel>
+                                                <apex:selectList styleclass="slds-select" value="{!selectedProjectId }" size="1" multiselect="false" disabled="{!lstProjects == null}" onchange="rerenderTowerFunction();">
+                                                    <apex:selectOptions value="{!lstProjects}"/>
+                                                </apex:selectList>
+                                         </apex:outputPanel>
+                                         </apex:pageBlockSectionItem>
+                                            
+                                         <apex:pageBlockSectionItem >
+                                          <apex:outputPanel id="towersPanel" styleclass="slds-form-element">
+                                            <apex:outputLabel styleclass="slds-form-element__label">Tower</apex:outputLabel>
+                                            <apex:selectList size="1" styleclass="slds-select"  value="{!selectedTowerId}" multiselect="false" disabled="{!lstTower.size == 1}" onchange="rerenderStageFunction();">
+                                                <apex:selectOptions value="{!lstTower}"/>
+                                            </apex:selectList>
+                                            </apex:outputPanel>
+                                         </apex:pageBlockSectionItem>
+                                       
+                                        <apex:pageBlockSectionItem >
+                                         <apex:outputPanel id="stagesPanel" styleclass="slds-form-element">
+                                           <apex:outputLabel styleclass="slds-form-element__label">Project Construction Stage</apex:outputLabel>
+                                            <apex:selectList styleclass="slds-select" value="{!selectedConsStageId}" size="1" multiselect="false" disabled="{!lstStructionStages.size ==  1}">
+                                                <apex:selectOptions value="{!lstStructionStages}"/>
+                                            </apex:selectList>
+                                           </apex:outputPanel>
+                                        </apex:pageBlockSectionItem>
+                                        
+                                    </apex:pageBlockSection>
+                                    <apex:pageBlockSection title="Due Date based Search"  rendered="{!selectedCriteria == 'Due Date'}" columns="2" collapsible="false">                                  
+                                        <apex:pageBlockSectionItem >
+                                        <apex:outputPanel styleclass="slds-form-element">
+                                            <apex:outputLabel styleclass="slds-form-element__label">Select Project</apex:outputLabel>
+                                                <apex:selectList styleclass="slds-select" value="{!selectedProjectId }" size="1" multiselect="false" disabled="{!lstProjects == null}" onchange="rerenderTowerFunction1();">
+                                                    <apex:selectOptions value="{!lstProjects}"/>
+                                                </apex:selectList>
+                                         </apex:outputPanel>
+                                         </apex:pageBlockSectionItem>
+                                            
+                                         <apex:pageBlockSectionItem >
+                                          <apex:outputPanel id="towersPanel1" styleclass="slds-form-element">
+                                            <apex:outputLabel styleclass="slds-form-element__label">Tower</apex:outputLabel>
+                                            <apex:selectList size="1" styleclass="slds-select"  value="{!selectedTowerId}" multiselect="false" disabled="{!lstTower.size == 1}">
+                                                <apex:selectOptions value="{!lstTower}"/>
+                                            </apex:selectList>
+                                            </apex:outputPanel>
+                                         </apex:pageBlockSectionItem>
+                                         
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputPanel styleclass="slds-form-element">
+                                                <apex:outputLabel styleclass="slds-form-element__label">From</apex:outputLabel>
+                                                <apex:inputField value="{!objSCPPD.Due_Date__c}"/>
+                                           </apex:outputPanel>
+                                         </apex:pageBlockSectionItem>
+                                        
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputPanel styleclass="slds-form-element">
+                                                <apex:outputLabel styleclass="slds-form-element__label">To</apex:outputLabel>
+                                                <apex:inputField value="{!objSCPPD1.Due_Date__c}"/>
+                                            </apex:outputPanel>
+                                         </apex:pageBlockSectionItem>
+                                         
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>                                
+                                </apex:pageblock>
+                                <apex:outputPanel id="searchButton">
+                                    <center>
+                                        <apex:commandButton value="Search" styleClass="slds-button slds-button--brand slds-button--small" onclick="searchFunction();return false;"  rendered="{!selectedCriteria == 'Construction Stage' || selectedCriteria == 'Due Date'}"/>
+                                    </center>
+                                    <br/>
+                                    <br/>
+                                </apex:outputPanel>
+                                <apex:outputPanel id="customerPanel2">
+                                <apex:pageblock >
+                                    <apex:outputLabel ></apex:outputLabel>
+                                    <p style="font-size: 12px; font-weight:  600;">Customer must have Email ID to receive Demand Invoice.</p>
+                                    <br />
+                                    <apex:pageblockSection title="Customers" columns="1" collapsible="false">
+                                        <apex:variable var="index" value="{!0}"/>
+                                        <apex:pageBlockTable value="{!lstCustomers}" var="Customer">
+                                            <apex:column >
+                                                <apex:facet name="header">
+                                                    <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                                                </apex:facet>
+                                                <apex:inputCheckbox id="inputId" value="{!Customer.Selected }" rendered="{!AND(Customer.EmailId <> null && Customer.EmailId <> '')}"/>
+                                            </apex:column>
+                                                <apex:column headerValue="Name " >
+                                                    <apex:outputtext value="{!Customer.Name}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Email Id" >
+                                                    <apex:outputtext value="{!Customer.EmailId}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Stage Name" >
+                                                    <apex:outputtext value="{!Customer.StageName}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Principal Amt." >
+                                                    <apex:outputtext value="{!Customer.InstallAmt}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Invoice Due Date " >
+                                                    <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                                        <apex:param value="{!Customer.InvoiceDueDate}"/>
+                                                    </apex:outputtext>
+                                                </apex:column>
+                                                <apex:column headerValue="Project Unit Name " >
+                                                    <apex:outputtext value="{!Customer.ProjectUnit}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Preview">
+                                                    <!--  dont make changes, dont add rerender etc., -->
+                                                       <apex:commandLink target="_blank" value="SHOW PREVIEW" action="{!showPreview}"  rendered="{!lstBooking != null}">
+                                                            <apex:param name="rowIndex" value="{!index}" assignTo="{!rowIndex}" />
+                                                                <apex:param id="pending" name="tabName" value="search" assignTo="{!tabName}" />
+                                                        </apex:commandLink>
+                                                        <apex:variable var="index" value="{!index + 1}" />                                                </apex:column>
+                                            </apex:pageBlockTable>
+                                        </apex:pageblockSection>
+                                        <br/>
+                                        <center>
+                                            <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" disabled="{!lstBooking == null}" value="Send To Selected " action="{!SendMail}">&nbsp;&nbsp;&nbsp;
+                                                <apex:param id="searchCommand" name="tabName" value="search" assignTo="{!tabName}" />
+                                            </apex:commandButton>
+                                         </center>
+                                    </apex:pageblock>
+                                    </apex:outputPanel>
+                                </apex:form>
+                                <!-- CREATE NEW TASK FORM -->
+                      
+                    </apex:tab>
+                </apex:tabPanel>
+          <!-- DEMAND SEARCH FORM -->
+    
+        </fieldset>
+        <!-- / BOXED AREA -->
+      </div>
+  <!-- / SEARCH DEMANDS -->
+    </div>
+    <!-- / PRIMARY CONTENT WRAPPER -->
+  </div>
+  <!-- / REQUIRED SLDS WRAPPER -->  
+   <script>
+        var j$ = jQuery.noConflict();
+        j$(document).ready(function() {
+            bindEvents();
+        });
+        function bindEvents() {
+            colorLinksNew();
+            setInterval(blinker, 1000);
+        }
+        function getCustomers(towerName, projectName) {
+            getCustomersFunction(towerName, projectName);
+        }
+        function getRegCustomers(towerName) {
+            getRegFunction(towerName);
+        }
+        function getCanCustomers(towerName) {
+            getCanFunction(towerName);
+        }
+
+        function colorLinksNew() { 
+            j$("[id$='towerNamestable']" + ' a').each( function() {
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++ ) {
+                    color += letters[Math.round(Math.random() * 15)];
+                }
+                j$(this).css('color',color);
+            });
+        }
+        function selectAllCheckboxes(obj,receivedInputID){
+            console.log('obj:' + obj.id);
+            var inputCheckBox = document.getElementsByTagName("input");                  
+            for(var i=0; i<inputCheckBox.length; i++){          
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+        function blinker() {
+            j$('.blinkMe').fadeOut(500);
+            j$('.blinkMe').fadeIn(4000);
+            j$('.blinkMe').css('color','red');
+        }       
+    </script>
+  </body>
+  </html>
+</apex:page>

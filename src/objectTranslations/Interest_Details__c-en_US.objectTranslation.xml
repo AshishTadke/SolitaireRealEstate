@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Interest Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Interest Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Aging (System) --></label>
+        <name>Aging_System__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corrected Age --></label>
+        <name>Corrected_Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- Interest Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- EFT delayed --></label>
+        <name>EFT_delayed__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installment Amount --></label>
+        <name>Installment_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest On Flatcost --></label>
+        <name>Interest_On_Flatcost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest On Servicetax --></label>
+        <name>Interest_On_Servicetax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Customer Pay Plan Detail --></label>
+        <name>Milestone__c</name>
+        <relationshipLabel><!-- Interest Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Interest Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Receipt Details --></label>
+        <name>Receipt_Details__c</name>
+        <relationshipLabel><!-- Interest Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Receipt --></label>
+        <name>Receipt__c</name>
+        <relationshipLabel><!-- Interest Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sequence --></label>
+        <name>Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Amount --></label>
+        <name>Service_Tax_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Interest Detail Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Interest Amounts --></label>
+            <section>Interest Amounts</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

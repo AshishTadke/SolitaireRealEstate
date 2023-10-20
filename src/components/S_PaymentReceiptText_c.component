@@ -1,0 +1,15 @@
+<apex:component controller="S_PaymentReceiptComponentController" access="global">
+    <apex:attribute name="receiptId" type="String" description="Attribute on the component." assignTo="{!strReceiptId}"/>
+    {!ReceiptDetails}
+    Dear {!lstReceipt[0].Opportunity__r.Primary_Name__c},
+    <br/>
+    Thank you for making payment against your flat  no {!lstReceipt[0].Project_Unit__r.Name} in {!lstReceipt[0].Project__r.Name}.
+    <br/>
+    Please find attached the receipt.
+    <br/>
+    Please note - all payments are subject to realization.
+    <br/>
+    Regards,
+    <br/>
+    Solitaire Developers
+</apex:component>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Rate List Header</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Rate List Headers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Effective From --></label>
+        <name>Effective_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Till --></label>
+        <name>Effective_Till__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Plan --></label>
+        <name>Payment_Plan__c</name>
+        <relationshipLabel><!-- Rate List Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Charges --></label>
+        <name>Project_Charges__c</name>
+        <relationshipLabel><!-- Rate List Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Rate List Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rate List Status --></label>
+        <name>Rate_List_Status_Reference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate List Status --></label>
+        <name>Rate_List_Status__c</name>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UnProcessed</masterLabel>
+            <translation><!-- UnProcessed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rate list --></label>
+        <name>Rate_list__c</name>
+        <picklistValues>
+            <masterLabel>All Charges</masterLabel>
+            <translation><!-- All Charges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inaugural Discount</masterLabel>
+            <translation><!-- Inaugural Discount --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Project Charge Per Day --></label>
+        <name>Unique_Project_Charge_Per_Day__c</name>
+    </fields>
+    <fields>
+        <label><!-- UniqyePayplanRatelist --></label>
+        <name>UniqyePayplanRatelist__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version Date --></label>
+        <name>Version_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version Number --></label>
+        <name>Version_Number__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You have to Choose Project Chages for All Charges --></errorMessage>
+        <name>All_Charges</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can create Rate List Header only on Launch Stage of Project --></errorMessage>
+        <name>CreateRateListHeaderOnlyOn_Launch_Stage</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You Can not Enter Today as Effective From  date --></errorMessage>
+        <name>Effective_Date_Not_Today</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Effective Till Date Cannot Be Less Than Effective From Date --></errorMessage>
+        <name>Effective_Till_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Effective Date Must be after Start Date of Project --></errorMessage>
+        <name>Project_Created_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You Can not Choose Project Charges for Inaugural Discount --></errorMessage>
+        <name>Rate_List_Validation</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Process --></label>
+        <name>Process</name>
+    </webLinks>
+</CustomObjectTranslation>

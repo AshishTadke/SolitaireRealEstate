@@ -1,0 +1,3644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ComposeGmail</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LogCall</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MailMerge</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SendEmail</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewAll</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Pick up address</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Ageing__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(ISPICKVAL( Task_Type__c, &apos;Completed&apos;),Task_Closure_Date__c - DATEVALUE(CreatedDate) ,  Today() - DATEVALUE(CreatedDate))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ageing</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attempted_By1__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.FirstName +&apos; &apos;+ CreatedBy.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Attempted By</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attempted_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Attempted By</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Aditya pawar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Atharva kale</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chandni shinde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chetan mangde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dattatray Mohite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Harshad Kadam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jyoti jadhav</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kanif Murade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Koushik Goswami</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pooja Gavade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poonam Kulkarni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shubham Pimpalkar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shweta dekate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sohail shaikh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Srushti lohar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amol Misal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ruchita Gorde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tejas Jadhav</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chanda Ghogare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pallavi Pawar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Karishma Satarkar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sanjay Sahni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shubhangi Chaudhari</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Subham Kalshetti</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shraddha Gosavi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sudeep Deshmukh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Range__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(  NOT(ISNULL(Budget_Site_Visit_In_Lacs__c)),
+    if(Budget_Site_Visit_In_Lacs__c &lt; 35,
+    &apos;Below 35L&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt;= 35 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;=50,
+    &apos;36 To 50L&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 50 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 75,
+    &apos;51 To 75L&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 75 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 100,
+    &apos;76 To 1Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 100 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 125,
+    &apos;1 To 1.25Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 125 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 150,
+    &apos;1.25 To 1.50Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 150 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 175,
+    &apos;1.50 To 1.75Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 175 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 200,
+    &apos;1.75 To 2Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 200 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 225,
+    &apos;2 To 2.25Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 225 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 250,
+    &apos;2.25 To 2.50Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 250 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 275,
+    &apos;2.50 To 2.75Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 275 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 300,
+    &apos;2.75 To 3Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 300 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 325,
+    &apos;3 To 3.25Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 325 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 350,
+    &apos;3.25 To 3.50Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 350 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 375,
+    &apos;3.50 To 3.75Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 375 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 400,
+    &apos;3.75 To 4Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 400 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 425,
+    &apos;4 To 4.25Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 425 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 450,
+    &apos;4.25 To 4.50Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 450 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 475,
+    &apos;4.50 To 4.75Cr.&apos;,
+    if(Budget_Site_Visit_In_Lacs__c &gt; 475 &amp;&amp; Budget_Site_Visit_In_Lacs__c &lt;= 500,
+    &apos;4.75 To 5Cr.&apos;,
+    &apos;Above 5Cr.&apos;)))))))))))))))))))),&apos;&apos;
+    )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Budget</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Budget_Site_Visit_In_Lacs__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget Site Visit(In Lacs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Budget_WebForm__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget_WebForm</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Budget__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Below 1 Cr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1 to 2 Cr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 to 5 Cr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5 to 7.5 Cr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7.5 to 10 Cr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10 to 15 Cr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15 to 25 Cr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25 to 50 Cr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50 Cr &amp; above</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Call_Attempt_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Attempt Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Follow up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Site Visit Sheduled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Site Visit done</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Center Visit Confirmed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Center Visit Done</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Contactable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Call_Attempted_By_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Closing Manager</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Prashant Kalal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kunal Takle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Namonarayan Shirothiya</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gaurav B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Atul Chordia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vickrant Agarwal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shailesh Khandelwal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jagrat Ranka</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parkeen Shah</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vishal Bafna</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vaibhav Andhare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vishal Mantri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ravi Sharma</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indrajit Dhurwe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pratima Soni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ravi Harale</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ravi Tripathi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Akhil Chaturvedi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiran Shinde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mayank Yadav</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pooja Jadhav</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vaseem Patel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nitin Deshpande</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vivek Gupta</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reema Kadam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sajesh Pattanaik</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sarfraz Syed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gaurav Herwade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yash Kothari</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tanmay Gore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Namita Hiremath</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pavan Shinde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lakshadip Thakur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Omkar Patil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhavana Dwaram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Avik Sarkar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bobby George</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Call_Back_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Back Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Call_Back__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Back</label>
+        <picklist>
+            <picklistValues>
+                <fullName>YES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Call_Disposition__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Disposition</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Call_Proposed_Date_Of_Visit__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Proposed Date Of Visit</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Call_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Visit Rating</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Booked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lost</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Call_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Channel Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Presales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Call_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Status</label>
+        <picklist>
+            <controllingField>Communication_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Call complete</fullName>
+                <default>false</default>
+                <controllingFieldValues>Inbound Call</controllingFieldValues>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Call incomplete</fullName>
+                <default>false</default>
+                <controllingFieldValues>Inbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ringing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Email</controllingFieldValues>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disconnected</fullName>
+                <default>false</default>
+                <controllingFieldValues>Email</controllingFieldValues>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invalid number</fullName>
+                <default>false</default>
+                <controllingFieldValues>Email</controllingFieldValues>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wrong number</fullName>
+                <default>false</default>
+                <controllingFieldValues>Email</controllingFieldValues>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Reachable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Email</controllingFieldValues>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spoke to 3rd party</fullName>
+                <default>false</default>
+                <controllingFieldValues>Email</controllingFieldValues>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Call Back</fullName>
+                <default>false</default>
+                <controllingFieldValues>Email</controllingFieldValues>
+                <controllingFieldValues>Inbound Call</controllingFieldValues>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone Switched off</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Call_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Time</label>
+        <picklist>
+            <picklistValues>
+                <fullName>08:00 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>08:30 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>09:00 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>09:30 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10:00 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10:30 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11:00 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11:30 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:00 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>07:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>07:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>08:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Lookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign Lookup</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Case_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Close</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Channel_Partner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Channel Partner</label>
+        <referenceTo>Channel_Partner__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Communication_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Communication Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outbound Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Configuration__c</fullName>
+        <externalId>false</externalId>
+        <label>Configuration</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1.5 BHK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1 BHK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2.5 BHK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 BHK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3.5 BHK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3 BHK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4 BHK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5 BHK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Duplex</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Penthouse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio Apartment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Villa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Core</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Showroom</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Status</label>
+        <picklist>
+            <controllingField>Function__c</controllingField>
+            <picklistValues>
+                <fullName>Roadblock</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+                <controllingFieldValues>Banking Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Milestone Billed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Milestone Recovered</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interest Demand</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interest Recovered</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession Billing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession amount Recovered</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession Done</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agreement Soft Copy Ready</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KYC for Registration Done</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration Done</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration Scheduled</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>File Not Received</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>File Accepted</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>File Rejected</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Welcome Call Done</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation in Process</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>File returned to Sales</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fit Out Possession In Process</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fit Out Possession Done</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Documents Collection WIP</fullName>
+                <default>false</default>
+                <controllingFieldValues>Banking Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan Application Approved</fullName>
+                <default>false</default>
+                <controllingFieldValues>Banking Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan Application Done</fullName>
+                <default>false</default>
+                <controllingFieldValues>Banking Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+                <controllingFieldValues>Banking Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sanctioned</fullName>
+                <default>false</default>
+                <controllingFieldValues>Banking Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan from self source</fullName>
+                <default>false</default>
+                <controllingFieldValues>Banking Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Self-funding</fullName>
+                <default>false</default>
+                <controllingFieldValues>Banking Management</controllingFieldValues>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DB_Activity_Type__c</fullName>
+        <description>This is a field that is installed by and used with the Adoption Dashboard AppExchange package.  If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and then delete this field.</description>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS( Subject , &quot;Email&quot;), &quot;Email&quot;, IF(CONTAINS( Subject , &quot;Cold Call&quot;), &quot;Cold Call&quot;, IF(CONTAINS( Subject , &quot;Call&quot;), &quot;Call&quot;, IF(CONTAINS( Subject , &quot;Meeting&quot;), &quot;Meeting&quot;, IF(CONTAINS( Subject , &quot;On Site Visit&quot;), &quot;Site Visit&quot;, IF(CONTAINS( Subject , &quot;Quote&quot;), &quot;Send Letter/Quote&quot;, &quot;Other&quot;))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DB Activity Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Decision_Maker__c</fullName>
+        <externalId>false</externalId>
+        <label>Decision Maker</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Self</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Company</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DueTime__c</fullName>
+        <externalId>false</externalId>
+        <label>DueTime</label>
+        <picklist>
+            <picklistValues>
+                <fullName>9:30 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10:00 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10:30 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11:00 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11:30 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9:00 AM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Duplicate_Received_Date__c</fullName>
+        <description>Date on which the latest duplicate enquiry was recd</description>
+        <externalId>false</externalId>
+        <label>Duplicate Received Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Email_Id__c</fullName>
+        <description>Also using for loan officer Email Id</description>
+        <externalId>false</externalId>
+        <label>Email Id</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Visit Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Lost</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cold - Follow Up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warm - Follow up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Revisit Proposed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Revisit Confirmed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Revisit Done</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blocked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Booked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Existing_Channel_Partner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Existing Channel Partner</label>
+        <referenceTo>Broker__c</referenceTo>
+        <relationshipLabel>Activities (Existing Channel Partner)</relationshipLabel>
+        <relationshipName>ActivityBroker</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Revisit_Date__c</fullName>
+        <description>VDNB related</description>
+        <externalId>false</externalId>
+        <label>Expected Revisit Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expected_closure_date__c</fullName>
+        <description>VDNB related</description>
+        <externalId>false</externalId>
+        <label>Expected closure date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Institute__c</fullName>
+        <externalId>false</externalId>
+        <label>Visiting At</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Site</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Venue Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow Up Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Deciding - Need More Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Discussing with Family</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Arranging Funds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Looking for Other Options</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting Loan Eligibility/Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Price Deviation Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment Schedule Deviation Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow Up Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>FullName__c</fullName>
+        <description>web2lead enquiry fields</description>
+        <externalId>false</externalId>
+        <label>FullName</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Function__c</fullName>
+        <externalId>false</externalId>
+        <label>Function</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Account Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Banking Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>IP_Address_Web2Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>IP Address Web2Lead</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L2__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason Category</label>
+        <picklist>
+            <controllingField>Reason_For_Call__c</controllingField>
+            <picklistValues>
+                <fullName>Grievance</fullName>
+                <default>false</default>
+                <controllingFieldValues>Post Sales</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Post Sales</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feedback / General Interaction</fullName>
+                <default>false</default>
+                <controllingFieldValues>Post Sales</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greetings</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demand Intimation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Due Date Intimation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation Intimation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operation Calls</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suggestions</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Know Your Customer</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Appreciation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PTP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Promised to pay</fullName>
+                <default>false</default>
+                <controllingFieldValues>Collections</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delay Expected</fullName>
+                <default>false</default>
+                <controllingFieldValues>Collections</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Contactable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Collections</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DNC</fullName>
+                <default>false</default>
+                <controllingFieldValues>Collections</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>For Bank Disbursement</fullName>
+                <default>false</default>
+                <controllingFieldValues>Collections</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asked to call back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Need to call back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect number</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>L3__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason Sub Category</label>
+        <picklist>
+            <controllingField>L2__c</controllingField>
+            <picklistValues>
+                <fullName>Interest waiver not accepted</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession delay</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Car parks not being alloted</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unhappy with RM</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delay in registration</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs to talk to a senior</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs to talk to Promoter</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Revised area not acceptable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wants to resell prior to lock in ending</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disputing resale transfer charges</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mis-selling</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contemplating Legal Action</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disputing changes in Flat</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Concerns due to media report</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Old payment not reflecting</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flat issues on possession</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+                <controllingFieldValues>Feedback / General Interaction</controllingFieldValues>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Duplicate invoice request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Receipt request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ledger required</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Architect certificate request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request for registration</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MVAT and Stamp duty details required</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TDS Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs copy of Agreement for Sale</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Haven&apos;t received confirmation / Allotment</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change in correspondance requests</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change in applicant name</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resale process enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resale NOC request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bank NOC request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal transfer of unit</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interior change request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fit out handover request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Tax Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession related</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation process know how</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refund process know how</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Information on portal usage required</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loyalty details</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CP registration process know how</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maintenance Request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback / General Interaction</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAM Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback / General Interaction</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Property Tax Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback / General Interaction</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Car Park Query</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback / General Interaction</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Need duplicate CAM bill</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback / General Interaction</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Event</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Campaign</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greetings1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Greetings</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demand Intimation1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Demand Intimation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Due Date Intimation1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Due Date Intimation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation Intimation1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Intimation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operation Calls1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation Calls</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suggestions1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Suggestions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Know Your Customer1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Know Your Customer</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Appreciation1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Appreciation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Full Payment</fullName>
+                <default>false</default>
+                <controllingFieldValues>PTP</controllingFieldValues>
+                <controllingFieldValues>Promised to pay</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part - Funds issue - will clear outstanding with next installment</fullName>
+                <default>false</default>
+                <controllingFieldValues>PTP</controllingFieldValues>
+                <controllingFieldValues>Promised to pay</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part - Funds issue - will clear outstanding within next month</fullName>
+                <default>false</default>
+                <controllingFieldValues>PTP</controllingFieldValues>
+                <controllingFieldValues>Promised to pay</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part - Funds issue - will clear outstanding within next quarter</fullName>
+                <default>false</default>
+                <controllingFieldValues>PTP</controllingFieldValues>
+                <controllingFieldValues>Promised to pay</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part - Will apply for bank loan for balance</fullName>
+                <default>false</default>
+                <controllingFieldValues>PTP</controllingFieldValues>
+                <controllingFieldValues>Promised to pay</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part - Will apply for bank loan for next payment</fullName>
+                <default>false</default>
+                <controllingFieldValues>PTP</controllingFieldValues>
+                <controllingFieldValues>Promised to pay</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part - Requested for deviation in payment</fullName>
+                <default>false</default>
+                <controllingFieldValues>PTP</controllingFieldValues>
+                <controllingFieldValues>Promised to pay</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Under cancellation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan Sanction awaited - Non RFA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan Sanction awaited - RFA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan disbursal pending - Non RFA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan disbursal pending - RFA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan disbursal pending; Registration delay - Customer issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan disbursal pending; Registration delay - Radius issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ineligible for loan-Banking Plan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ineligible for loan -Rejected by RFA and Non RFA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial Constraint-Requested for Deferment</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial Constraint-Applying for loan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial Constraint-Inelligible for Loan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal Case</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer in progress</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resale in progress</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Humanitarian grounds (medical / Death)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approval Issue - Unapproved floor - Bank funded</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approval Issue - Building/floor cancelled</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TDS Due</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&lt;0.5% Due - Shall pay in next Installment</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration delay - Customer issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration delay - Radius issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invoicing error</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment tracking under process</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dispute - Delay in Possession</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dispute - Interest waiver requested</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dispute - Delay providing documents - Radius Issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dispute - Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demand not sent - records not updated</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer service Issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Management Deviation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wrong no</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No not reachable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attempted - 1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attempted - 2</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attempted - 3</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attempted - 4</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attempted - 5</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asked to Call back</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Someone else attended</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Management Direction</fullName>
+                <default>false</default>
+                <controllingFieldValues>DNC</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment on Possession</fullName>
+                <default>false</default>
+                <controllingFieldValues>DNC</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bank has query - Contact bank RM</fullName>
+                <default>false</default>
+                <controllingFieldValues>For Bank Disbursement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Send original demand to Bank</fullName>
+                <default>false</default>
+                <controllingFieldValues>For Bank Disbursement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Send architecht certificate to Bank</fullName>
+                <default>false</default>
+                <controllingFieldValues>For Bank Disbursement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sub Category 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sub Category 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sub Category 3</fullName>
+                <default>false</default>
+                <controllingFieldValues>Need to call back</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sub Category 4</fullName>
+                <default>false</default>
+                <controllingFieldValues>Incorrect number</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Source</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Sub_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Sub Source</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_No__c</fullName>
+        <description>Also using for Loan Officer Contact Number</description>
+        <externalId>false</externalId>
+        <label>Mobile No</label>
+        <required>false</required>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_Number_Webform__c</fullName>
+        <description>web2lead enquiry mobile number</description>
+        <externalId>false</externalId>
+        <label>Mobile Number Webform</label>
+        <required>false</required>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Mobile Number</label>
+        <required>false</required>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Name1__c</fullName>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name_Of_Banks__c</fullName>
+        <externalId>false</externalId>
+        <label>Visit Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>OBM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Site Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Venue Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home Presentation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Office Presentation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Name_of_TL__c</fullName>
+        <externalId>false</externalId>
+        <label>Closing TL</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Gaurav Baranwal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kaustabh P</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Keyur P</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kunal T</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Namonarayan Sirothiya</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parkin Shah</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pratima Soni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ravi Harale</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shreshta C</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vishal Bafna</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vivek Mishra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vivek Pathak</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiran Shinde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reema Kadam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>New_Channel_Partner_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>New Channel Partner Email</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_Channel_Partner_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>New Channel Partner Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_Channel_Partner_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>New Channel Partner Phone</label>
+        <required>false</required>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Next_Action_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Action Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PTP_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount promised</inlineHelpText>
+        <label>PTP Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PTP_Date1__c</fullName>
+        <externalId>false</externalId>
+        <label>PTP Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PTP_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Promise to Pay Date</inlineHelpText>
+        <label>PTP Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Instrument__c</fullName>
+        <description>Two values of this field  is also used for Home loan  home loan closure, transfer of home loan,</description>
+        <externalId>false</externalId>
+        <label>Payment Instrument</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Cheque</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demand Draft / Pay Order</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EFT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Previous_Call_Attempt_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Previous Call Attempt Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Previous_Call_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Previous Call Rating</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProjectInterestedWeb__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Project Interested will be used by web enquiries as well, call attempts entered by presales team</description>
+        <externalId>false</externalId>
+        <label>Project Interested</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_Date_of_Visit__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Date of Visit</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>RM__c</fullName>
+        <externalId>false</externalId>
+        <label>RM</label>
+        <picklist>
+            <controllingField>Function__c</controllingField>
+            <picklistValues>
+                <fullName>Jonita D’souza</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manisha Khandagale</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suchika Ahuja</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mousumi Dey</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shital Mahale</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amruta Kamble</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rashi Khare</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tarun Thakur</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sandeep Marne</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Siddharth Chauhan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Banking Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jagdish Purohit</fullName>
+                <default>false</default>
+                <controllingFieldValues>Banking Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aisha Shaikh</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kriti Sharma</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deepali Dange</fullName>
+                <default>false</default>
+                <controllingFieldValues>Account Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ameeth Katay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jyotsna Shrivastava</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Neetu Chauhan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pooja Deokule</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_For_Call__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason For Call</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Collections</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Target Calling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feedback</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_For_Lost__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason For Lost</label>
+        <picklist>
+            <controllingField>Call_Attempt_Status__c</controllingField>
+            <picklistValues>
+                <fullName>3rd Party Answers</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Booked With Others</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Interested</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Booked With Us</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Interested</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget Mismatch</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Interested</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Call Later</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desired Configuration Not Available</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Interested</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Did Not Enquire</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Interested</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hot</fullName>
+                <default>false</default>
+                <controllingFieldValues>Follow up</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hung Up</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invalid Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Interested</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invalid number</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Location Mismatch</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Interested</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Never Contactable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Interested</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not interested in real estate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Looking For Property</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Interested</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Reachable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Interested</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession Date Mismatch</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Interested</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ringing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Switch Off</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warm</fullName>
+                <default>false</default>
+                <controllingFieldValues>Follow up</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Inbound__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Inbound Communication</label>
+        <picklist>
+            <controllingField>Communication_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Project information</fullName>
+                <default>false</default>
+                <controllingFieldValues>Inbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missed / Abandon call</fullName>
+                <default>false</default>
+                <controllingFieldValues>Inbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Directional query</fullName>
+                <default>false</default>
+                <controllingFieldValues>Inbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SMS blast</fullName>
+                <default>false</default>
+                <controllingFieldValues>Inbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Blast</fullName>
+                <default>false</default>
+                <controllingFieldValues>Inbound Call</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Outbound_Communication__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Outbound Communication</label>
+        <picklist>
+            <controllingField>Communication_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Cross project</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow up</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open calling</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit reminder</fullName>
+                <default>false</default>
+                <controllingFieldValues>Outbound Call</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Registraion_Status__c</fullName>
+        <description>registration related</description>
+        <externalId>false</externalId>
+        <label>Source Details</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reporting_Date_Time__c</fullName>
+        <description>reigstration related</description>
+        <externalId>false</externalId>
+        <label>Reporting Date Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Revisit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether this is a visit or a revisit record</description>
+        <externalId>false</externalId>
+        <label>Revisit</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>S_Activity_Created_Date__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <externalId>false</externalId>
+        <label>Activity Created Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Attempted_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Manager</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Prashant Kalal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kunal Takle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Namonarayan Shirothiya</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gaurav B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Atul Chordia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jagrat Ranka</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parkeen Shah</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vishal Bafna</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vaibhav Andhare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vishal Mantri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ravi Sharma</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pratima Soni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ravi Harale</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiran Shinde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ravi Tripathi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Akhil Chaturvedi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mayank Yadav</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pooja Jadhav</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vaseem Patel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nitin Deshpande</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vivek Gupta</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sajesh Pattanaik</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sarfraz Syed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gaurav Herwade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yash Kothari</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tanmay Gore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Namita Hiremath</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pavan Shinde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lakshadip Thakur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Omkar Patil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhavana Dwaram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bobby George</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Purnima Upadhyay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pratik Paleja</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aditya Mukherjee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rudresh Bhise</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunny Faldu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anurag Rangankar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dhanashree Naik</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amandeep Singh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malka Khanam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lokesh Shewaramani</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rahul Arora</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Avishkar Dandwate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ravindra Patil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dharmesh Sanghavi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Priyanka Sengar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sagar Date</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sandeep Dasila</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suraj Salunke</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eram Kittur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_ManagerL__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ShowWalkInSource__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Show Walk In Source</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sourcing_Manager__c</fullName>
+        <externalId>false</externalId>
+        <label>Sourcing Manager</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Atul Chordia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gaurav B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jagrat Ranka</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kunal Takle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Namonarayan Shirothiya</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parkeen Shah</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prashant Kalal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pratima Soni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ravi Harale</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ravi Sharma</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shailesh Khandelwal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vaibhav Andhare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vickrant Agarwal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vishal Bafna</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vishal Mantri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiran Shinde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reema Kadam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ravi Tripathi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Akhil Chaturvedi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mayank Yadav</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pooja Jadhav</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vaseem Patel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nitin Deshpande</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vivek Gupta</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sajesh Pattanaik</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sarfraz Syed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gaurav Herwade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yash Kothari</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tanmay Gore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Namita Hiremath</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pavan Shinde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lakshadip Thakur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Omkar Patil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhavana Dwaram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Avik Sarkar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bobby George</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Purnima Upadhyay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunny Faldu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anurag Rangankar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sagar Date</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amandeep Singh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malka Khanam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suraj Salunke</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sourcing_TL__c</fullName>
+        <externalId>false</externalId>
+        <label>Sourcing TL</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Vivek Mishra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kaustabh P</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gaurav Baranwal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kunal T</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pratima Soni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ravi Harale</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiran Shinde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reema Kadam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Specify_Others__c</fullName>
+        <externalId>false</externalId>
+        <label>Specify Others</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stamp_duty_charges_to_be_paid__c</fullName>
+        <externalId>false</externalId>
+        <label>Stamp duty charges to be paid</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Standard_Customer_Pay_Plan_Detail__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Milestone name against which the customer payment needs to be collected.</inlineHelpText>
+        <label>Standard Customer Pay Plan Detail</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Standard_Customer_Pay_Plan_Detail__c.Charge_Amount_Due__c</field>
+                <operation>greaterThan</operation>
+                <value>0</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.WhatId</field>
+                <operation>equals</operation>
+                <valueField>Standard_Customer_Pay_Plan_Detail__c.Customer_Pay_Plan_Header__r.Customer__c</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Standard_Customer_Pay_Plan_Detail__c</referenceTo>
+        <relationshipLabel>Collections Call Details</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Task_Closure_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Task Closure Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Task_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Task Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Enquiry Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Presales Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CRM Interaction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Team_Attended_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Team Attended By</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pre Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CRM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>UTM_Campaign__c</fullName>
+        <externalId>false</externalId>
+        <label>UTM Campaign</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>UTM_Display__c</fullName>
+        <externalId>false</externalId>
+        <label>UTM Display</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>UTM_Medium__c</fullName>
+        <externalId>false</externalId>
+        <label>UTM Medium</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>UTM_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>UTM Source</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>UTM_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>UTM Term</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Visit_Form_No__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>false</externalId>
+        <label>Visit Form Number</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Visited_With__c</fullName>
+        <externalId>false</externalId>
+        <label>Visited With</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Alone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Friend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Onbehalf</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Visitor_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Visitor Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Walk_in_Respective_Customer_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Booked Customer Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Activities Customer (Walk-in Respective Customer Account)</relationshipLabel>
+        <relationshipName>ActivitiesCustomer</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Walk_in_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Walk-in Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Channel Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corprate Activity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exhibition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Existing Client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Newspaper</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Perimeter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SMS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Walk-In</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Walk_in_Sub_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Source</label>
+        <picklist>
+            <controllingField>Walk_in_Source__c</controllingField>
+            <picklistValues>
+                <fullName>99 acres</fullName>
+                <default>false</default>
+                <controllingFieldValues>Digital</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Magic Bricks</fullName>
+                <default>false</default>
+                <controllingFieldValues>Digital</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Common Floor</fullName>
+                <default>false</default>
+                <controllingFieldValues>Digital</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+                <controllingFieldValues>Digital</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Company Website</fullName>
+                <default>false</default>
+                <controllingFieldValues>Digital</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Different Areas</fullName>
+                <default>false</default>
+                <controllingFieldValues>Corprate Activity</controllingFieldValues>
+                <controllingFieldValues>Perimeter</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Newspaper Names</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Different Dates</fullName>
+                <default>false</default>
+                <controllingFieldValues>SMS</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client Reference</fullName>
+                <default>false</default>
+                <controllingFieldValues>Reference</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Reference</fullName>
+                <default>false</default>
+                <controllingFieldValues>Reference</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exhibition Names</fullName>
+                <default>false</default>
+                <controllingFieldValues>Exhibition</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Different Projects</fullName>
+                <default>false</default>
+                <controllingFieldValues>Existing Client</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Times Of India</fullName>
+                <default>false</default>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indian Express</fullName>
+                <default>false</default>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DNA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Economic Times</fullName>
+                <default>false</default>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sakaal</fullName>
+                <default>false</default>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maharashtra Times</fullName>
+                <default>false</default>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Management Reference</fullName>
+                <default>false</default>
+                <controllingFieldValues>Reference</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Walkin_Source_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Walkin Source Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Web_Banner_Size__c</fullName>
+        <description>Also using for loan officer name</description>
+        <externalId>false</externalId>
+        <label>Web Banner Size</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Web_Banner_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Web Banner Source</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Xcelerate_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( AND(ISNULL( Channel_Partner__c ), ISBLANK( Channel_Partner__c )), &apos; &apos;, Channel_Partner__r.Channel_Partner__r.Xcelerate_ID__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Xcelerate ID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>country__c</fullName>
+        <externalId>false</externalId>
+        <label>country</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>dialingCode__c</fullName>
+        <externalId>false</externalId>
+        <label>dialingCode</label>
+        <length>10</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>emailAddress__c</fullName>
+        <description>web2lead enquiry fields</description>
+        <externalId>false</externalId>
+        <label>emailAddress</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>source__c</fullName>
+        <description>web2lead enquiry fields</description>
+        <externalId>false</externalId>
+        <label>source</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>voice_log_url__c</fullName>
+        <externalId>false</externalId>
+        <label>voice_log_url</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <listViews>
+        <fullName>MyActivities</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyDelegatedActivities</fullName>
+        <filterScope>Delegated</filterScope>
+        <label>My Delegated Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyTeamsActivities</fullName>
+        <filterScope>Team</filterScope>
+        <label>My Team&apos;s Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>TodaysTasks</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>lessThan</operation>
+            <value>TOMORROW</value>
+        </filters>
+        <label>Today&apos;s Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>UpcomingEvents</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>greaterThan</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <label>Upcoming Events</label>
+    </listViews>
+    <searchLayouts>
+        <searchResultsAdditionalFields>TASK.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.WHO_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.WHAT_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.DUE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

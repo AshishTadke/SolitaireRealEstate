@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Project__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Opportunity.Floor__c</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Flat_No__c</field>
+    </columns>
+    <columns>
+        <field>FK_OPP_LEAD_SOURCE</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Weekly Booking Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Booking__c@Booking__c.Opportunity__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Booking__c.Flat_No__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Booking__c.Booking_Date__c</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

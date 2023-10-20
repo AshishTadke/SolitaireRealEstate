@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Standard Pay Plan Header</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Standard Pay Plan Headers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Project Charges --></label>
+        <name>Charge_Code__c</name>
+        <relationshipLabel><!-- Standard Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Charge --></label>
+        <name>Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective To --></label>
+        <name>Effective_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective from --></label>
+        <name>Effective_from__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Plan ID --></label>
+        <name>Pay_Plan_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Plan --></label>
+        <name>Payment_Plan__c</name>
+        <relationshipLabel><!-- Standard Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PlanCode Unique --></label>
+        <name>PlanCode_Unique__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Code --></label>
+        <name>Plan_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Description --></label>
+        <name>Plan_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Id --></label>
+        <name>Project_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Standard Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tower --></label>
+        <name>Tower__c</name>
+        <relationshipLabel><!-- Standard Pay Plan Headers --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Standard Pay Plan Header Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Effective from cann&apos;t be less than Project Start Date --></errorMessage>
+        <name>Effective_from_not_Less_than_Project_S_D</name>
+    </validationRules>
+</CustomObjectTranslation>

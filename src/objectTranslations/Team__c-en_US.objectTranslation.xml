@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Team</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Teams</value>
+    </caseValues>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Teams --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Team Type --></label>
+        <name>Team_Type__c</name>
+        <picklistValues>
+            <masterLabel>CRM Lead</masterLabel>
+            <translation><!-- CRM Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CRM Team</masterLabel>
+            <translation><!-- CRM Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Owner Assignment Team</masterLabel>
+            <translation><!-- Opportunity Owner Assignment Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post sales CRM</masterLabel>
+            <translation><!-- Post sales CRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Approvers Team</masterLabel>
+            <translation><!-- Sales Approvers Team --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tower Lookup --></label>
+        <name>TowerLookup__c</name>
+        <relationshipLabel><!-- Teams --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tower --></label>
+        <name>Tower__c</name>
+    </fields>
+    <layouts>
+        <layout>Team Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

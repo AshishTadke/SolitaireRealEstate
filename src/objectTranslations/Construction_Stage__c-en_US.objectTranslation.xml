@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Construction Stage</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Construction Stage</value>
+    </caseValues>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Construction Stages --></label>
+        <name>Project_Construction_Stages__c</name>
+        <relationshipLabel><!-- Construction Stage --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tower Name --></label>
+        <name>Tower_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

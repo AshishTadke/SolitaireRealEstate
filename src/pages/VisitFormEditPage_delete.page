@@ -1,0 +1,351 @@
+<apex:page standardController="Task"  extensions="CustomTaskControllerClass" showHeader="false" standardStylesheets="true" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">    
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+
+<head>
+  <title>Task Edit</title>
+  <apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+  <script src="/soap/ajax/9.0/connection.js"></script>
+</head>
+<body> 
+<apex:actionStatus id="status">
+    <apex:facet name="start">
+    <div class="fadeMe">
+        &nbsp;
+    </div>
+    <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+        <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+            <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+            <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+        </div>
+    </div>
+    </apex:facet>
+ </apex:actionStatus>   
+  <!-- REQUIRED SLDS WRAPPER -->
+  <div class="slds">    
+  <!-- PRIMARY CONTENT WRAPPER -->
+    <div class="myapp">   
+        <!-- CREATE/EDIT TASK -->
+      <div aria-labelledby="newtaskform">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme--shade slds-container--large slds-container--center slds-grid--align-spread">
+          <legend id="newtaskform" class="slds-text-heading--medium slds-p-vertical--medium">Visit Form</legend>
+    
+          <!-- CREATE NEW TASK FORM -->
+            <apex:form id="newtaskform" styleClass="slds-form--inline">
+                <div class="slds-notify slds-notify--alert slds-theme--inverse-text slds-theme--alert-texture">
+                    <apex:pageMessages id="error"/>
+                </div>
+               <apex:pageBlock id="pgBlock" mode="edit">
+                    <apex:pageBlockButtons location="both" styleClass="slds-button-group">
+                        <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Save" action="{!save}" disabled="{!(error)}"/>
+                        <apex:commandButton styleClass="slds-button slds-button--brand slds-button--small" value="Cancel" action="{!cancel}" immediate="true"  html-formnovalidate="formnovalidate"/>
+                    </apex:pageBlockButtons>
+
+                <apex:pageBlockSection id="pgBlockSectionCallInfo" title="System Details" collapsible="false" columns="2">
+                        <apex:pageBlockSectionItem >
+                           <apex:outputLabel >Customer Name</apex:outputLabel>
+                           <apex:outputField id="Opportunity" value="{!Task.whoId}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >Opportunity Name</apex:outputLabel>
+                           <apex:outputField id="Opportunity" value="{!Task.whatId}" />
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:outputField id="Subject" value="{!Task.Subject}" />
+                       <!-- <apex:outputField id="mobile" value="{!Task.Mobile_Number__c}" /> -->
+                        
+               </apex:pageBlockSection>
+               <apex:pageBlockSection id="pgBlockSectionVisitDetails" title="Visit Details" collapsible="false" columns="2" rendered="{!NOT(task.Revisit__c)}">
+               <!-- Shifted From  System Details Section to Visit Details Section - Netra -->
+                       
+                        <apex:pageBlockSectionItem rendered="{!NOT(task.Revisit__c)}"> 
+                            <apex:outputLabel >Visit Date</apex:outputLabel>
+                            <apex:InputField id="DueDate" value="{!Task.ActivityDate}" required="true" />
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem rendered="{!NOT(task.Revisit__c)}">   
+                            <apex:outputLabel >Visit Time</apex:outputLabel>
+                            <apex:InputField id="CallTime" value="{!Task.Call_Time__c}" required="false" />
+                        </apex:pageBlockSectionItem>
+                                               
+                        <!-- New Fields added in Task - Netra -->
+                        <apex:pageBlockSectionItem rendered="{!NOT(task.Revisit__c)}"> 
+                            <apex:outputLabel >Visitor Name</apex:outputLabel>
+                            <apex:InputField id="VisitorName" value="{!Task.Visitor_Name__c}" required="true" />
+                        </apex:pageBlockSectionItem>
+                        
+                        
+                         
+                                                
+                        <apex:pageBlockSectionItem rendered="{!NOT(task.Revisit__c)}"> 
+                            <apex:outputLabel >Sourcing Manager</apex:outputLabel>
+                            <apex:InputField id="SourcingManager" value="{!Task.Sourcing_Manager__c}" required="true" />
+                        </apex:pageBlockSectionItem>
+                        
+                        
+                        <!-- ----------------------------------------------------------------- -->
+                        
+                        <apex:inputField id="formNo" value="{!Task.Visit_Form_No__c}" required="true"/>
+                        <apex:inputField id="scallAttemptedBy" value="{!Task.Call_Attempted_By_Name__c}" required="true"/>
+                        <!--<apex:inputField id="occupation" value="{!Task.Occupation__c}"/>-->
+                        <apex:inputField id="visittype" value="{!Task.Name_Of_Banks__c}" required="false"/> 
+                          
+                        <!--<apex:inputField id="designation" value="{!Task.Designation__c}"/>-->
+                         
+                        <apex:inputField id="config" value="{!Task.Configuration__c}" required="true"/> 
+                        <apex:inputField id="visitingat" value="{!Task.Financial_Institute__c}" required="false"/> 
+                        <apex:inputField id="scallrating" value="{!Task.Call_Rating__c}" required="true"/> 
+                        <apex:inputField id="visitstatus" value="{!Task.Event_Status__c}" required="false"/> 
+                        <apex:inputField id="NextActionDate" value="{!Task.Next_Action_Date__c}" required="false" />
+                        <apex:inputField id="Budget" value="{!Task.Budget__c}" required="true"/>    
+                        <apex:inputField id="reasonsForLost" value="{!Task.Reason_For_Lost__c}" required="false"/> 
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >Visit Remarks</apex:outputLabel>
+                            <apex:inputField styleClass="slds-textarea" id="comments" value="{!Task.Description}" required="true"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        
+                        
+                        
+                  <!--      <apex:pageBlockSectionItem rendered="{!NOT(task.Revisit__c)}"> 
+                            <apex:outputLabel >Visited Onbehalf of</apex:outputLabel>
+                            <apex:actionRegion >
+                            <apex:InputField id="VisitedOnbehalfof" value="{!Task.Visited_onbehalf_of__c}" required="true">
+                                 <apex:actionSupport event="onchange" rerender="visitorsdetails,visitors"/>
+                            </apex:InputField> 
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>   -->  
+
+                </apex:pageBlockSection>             
+         <!--       <apex:outputPanel id="visitorsdetails" rendered="{!NOT(task.Revisit__c)}">
+                         <apex:pageBlockSection id="visitors" title="Visitor's Details" collapsible="false" columns="2" rendered="{!If(OR(Task.Visited_onbehalf_of__c = 'Friend',Task.Visited_onbehalf_of__c = 'Family',Task.Visited_onbehalf_of__c = 'Employer'),true,false)}">
+                                <apex:inputField id="VisitorPhone" value="{!Task.Visitor_s_Phone_No__c}" required="true"/>
+                                <apex:inputField id="VisitorEmailId" value="{!Task.Visitor_s_Email_Id__c}" required="true"/>                            
+                          </apex:pageBlockSection>
+                </apex:outputPanel> <br></br>   -->
+                <apex:pageBlockSection id="pgBlockSectionSoureDetails" title="Visit Source Details" collapsible="false" columns="2" rendered="{!NOT(task.Revisit__c)}">
+                       <apex:inputField id="source"  value="{!Task.Walk_in_Source__c}" required="true"/>  
+                 <!--      <apex:actionRegion >
+                   
+                        <apex:inputField id="source"  value="{!Task.Walk_in_Source__c}" required="true">  
+                             <apex:actionSupport event="onchange" rerender="pageBlockSectionItemSubsourceDetails,sourcedetails" status="status"/>
+                        </apex:inputField>                    
+                    </apex:actionRegion>    -->
+                    <apex:pageBlockSectionItem id="pageBlockSectionItemSubsourceDetails">
+                        <apex:outputLabel >Walk-in Subsource</apex:outputLabel>
+                        <apex:actionRegion >
+                            <apex:inputField id="subSource" value="{!Task.Walk_in_Sub_Source__c}" required="true">
+                     <!--           <apex:actionSupport event="onchange" rerender="sourcedetails" status="status"/>  -->
+                            </apex:inputField>
+                            </apex:actionRegion>
+                   </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>        
+                
+       <!--         <apex:outputPanel id="sourcedetails">
+                
+                    <apex:pageBlockSection id="pgBlockSectionNewCPDetails" title="New Channel Partner Details" collapsible="false" columns="2" rendered="{!IF(AND(NOT(task.Revisit__c),task.Walk_in_Sub_Source__c='New'),true,false)}"  ><!-- {!IF(AND(NOT(task.Revisit__c),task.Walk_in_Sub_Source__c='New'),true,false)}
+                            <apex:inputField id="CPName" value="{!Task.New_Channel_Partner_Name__c}" required="true"  />
+                            <apex:inputField id="CPPhone" value="{!Task.New_Channel_Partner_Phone__c}" required="true"/>
+                            <apex:inputField id="CPEmail" value="{!Task.New_Channel_Partner_Email__c}" />  --> <!-- required="true" -->                           
+      <!--              </apex:pageBlockSection>
+                     <apex:pageBlockSection id="pgBlockSectionExistingCPDetails" title="Existing Channel Partner Details" collapsible="false" columns="2" rendered="{!IF(AND(NOT(task.Revisit__c),task.Walk_in_Sub_Source__c='Registered'),true,false)}" >
+                            <apex:inputField id="ExistingCP" value="{!Task.Existing_Channel_Partner__c}" required="true"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection id="pgBlockSectionExistingEmpDetails" title="Employee Details" collapsible="false" columns="2" rendered="{!IF(AND(NOT(task.Revisit__c),task.Walk_in_Sub_Source__c='Employee Reference'),true,false)}" >
+                            <apex:inputField id="EmpName" value="{!Task.Walk_in_Employee_Name__c}" required="true" />
+                            <apex:inputField id="EmpId" value="{!Task.Walk_in_Employee_Id__c}" required="true"/>
+                    </apex:pageBlockSection>
+                     <apex:pageBlockSection id="pgBlockSectionExistingCustDetails" title="Reference Customer Details" collapsible="false" columns="1" rendered="{!IF(AND(NOT(task.Revisit__c),task.Walk_in_Sub_Source__c='Booked Customer Reference'),true,false)}" >
+                            <apex:inputField id="custLookup" value="{!Task.Walk_in_Respective_Customer_Account__c}" required="true"/>
+                    </apex:pageBlockSection>   -->
+                    <!-- Added For If walk in source = Reference and Walk in subsoruce = Others -->                    
+           <!--               <apex:pageBlockSection id="pgBlockSectionOthers" title="Other Details" collapsible="false" columns="2" rendered="{!IF(AND(NOT(task.Revisit__c),task.Walk_in_Sub_Source__c=='Others'),true,false)}"  >   -->
+                            <!--<apex:inputField id="Name1" value="{!Task.Name1__c}" required="true"/>-->
+                  <!--          <apex:inputField id="Name1" value="{!Task.Name1__c}" required="{!IF(AND(NOT(task.Revisit__c),task.Walk_in_Sub_Source__c='Others'),true,false)}"/>
+                            <apex:inputField id="MobileNo2" value="{!Task.Mobile_No__c}" required="true"/>
+                            <apex:inputField id="EmailId3" value="{!Task.Email_Id__c}" />
+                            <apex:inputField id="Relation4" value="{!Task.Relation_With_Radius__c}" required="true"/> 
+                    </apex:pageBlockSection>
+                </apex:outputPanel>    -->
+                
+                 <!--------------- ****** Revisit Section Starts ****** ----------------------->
+                 <apex:pageBlockSection id="pgBlockSectionRevisitDetails" title="Revisit Details" collapsible="false" columns="2" rendered="{!task.Revisit__c}">
+                        <!-- Shifted From  System Details Section to Visit Details Section - Netra -->
+                        <apex:pageBlockSectionItem rendered="{!task.Revisit__c}">
+                            <apex:outputLabel >Revisit Date</apex:outputLabel>
+                            <apex:InputField id="DueDate" value="{!Task.ActivityDate}" required="true" />
+                        </apex:pageBlockSectionItem>
+                         
+                        <apex:pageBlockSectionItem rendered="{!task.Revisit__c}">
+                            <apex:outputLabel >Revisit Time</apex:outputLabel>
+                            <apex:InputField id="CallTime" value="{!Task.Call_Time__c}" required="false" />
+                        </apex:pageBlockSectionItem>
+                        
+                        <!-- New Fields added in Task - Netra -->
+                        <apex:pageBlockSectionItem rendered="{!(task.Revisit__c)}"> 
+                            <apex:outputLabel >Visitor Name</apex:outputLabel>
+                            <apex:InputField id="VisitorName" value="{!Task.Visitor_Name__c}" required="false" />
+                        </apex:pageBlockSectionItem>
+                        <!-----New fields added on 1/03/16--------->
+                       <apex:pageBlockSectionItem rendered="{!task.Revisit__c}">
+                            <apex:outputLabel >Next Action Date</apex:outputLabel>
+                            <apex:InputField id="NextDate"  value="{!Task.Next_Action_Date__c}" Required="false"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >Revisit Form Number</apex:outputLabel>
+                            <apex:inputField id="formNo" value="{!Task.Visit_Form_No__c}" required="true" />
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField id="scallAttemptedBy" value="{!Task.Call_Attempted_By_Name__c}" required="true"/>
+                        <apex:inputField id="scallrating" value="{!Task.Call_Rating__c}" required="true" />   
+                        <apex:inputField id="visitingat" value="{!Task.Financial_Institute__c}" required="false"/> 
+                        <apex:inputField id="visittype" value="{!Task.Name_Of_Banks__c}" required="false"/> 
+                        <apex:inputField id="visitstatus" value="{!Task.Event_Status__c}" required="false"/> 
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >Revisit Remarks</apex:outputLabel>
+                            <apex:inputField styleClass="slds-textarea" id="comments" value="{!Task.Description}" required="true"/>
+                      </apex:pageBlockSectionItem>
+                      <apex:inputField id="reasonsForLost" value="{!Task.Reason_For_Lost__c}" required="false"/> 
+                <!--         <apex:pageBlockSectionItem rendered="{!(task.Revisit__c)}">
+                            <apex:outputLabel >Visited Onbehalf of</apex:outputLabel> 
+                            <apex:actionRegion >
+                                <apex:InputField id="VisitedOnbehalfof" value="{!Task.Visited_onbehalf_of__c}" required="true">
+                                     <apex:actionSupport event="onchange" rerender="visitorsdetails2,visitors2"/>
+                                </apex:InputField> 
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>     -->
+                        
+                  </apex:pageBlockSection>   
+          <!--      <apex:outputPanel id="visitorsdetails2" rendered="{!(task.Revisit__c)}">
+                            <apex:pageBlockSection id="visitors2" title="Visitor's Details" collapsible="false" columns="2" rendered="{!If(OR(Task.Visited_onbehalf_of__c = 'Friend',Task.Visited_onbehalf_of__c = 'Family',Task.Visited_onbehalf_of__c = 'Employer'),true,false)}">
+                                <apex:inputField id="VisitorPhone" value="{!Task.Visitor_s_Phone_No__c}" required="true"/>
+                                <apex:inputField id="VisitorEmailId" value="{!Task.Visitor_s_Email_Id__c}" required="true"/>                            
+                           </apex:pageBlockSection>
+                 </apex:outputPanel> <br></br>               -->
+                 <apex:pageBlockSection id="originalwalkinsource" title="Original Visit Source Details" collapsible="false" columns="2" rendered="{!task.Revisit__c}">
+                    <apex:pageBlockSectionItem >
+                         <apex:outputLabel >Walk-in Source</apex:outputLabel>
+                         <apex:outputText id="oldwalkinsource" value="{!walksource}"/> <!-- {!opp[0].Walk_in_Source__c}       -->             
+                   </apex:pageBlockSectionItem>                           
+                   <apex:pageBlockSectionItem >
+                         <apex:outputLabel >Walk-in Sub-Source</apex:outputLabel>
+                         <apex:outputText id="oldwalkinsubsource" value="{!walksubsource}"/> 
+                   </apex:pageBlockSectionItem>
+             <!--        <apex:outputText value="{!CPName}" Label="Channel Partner Name" rendered="{!IF(walksubsource = 'New',true,false)}"/> 
+                         <apex:outputText value="{!CPPhone}" Label="Channel Partner Phone" rendered="{!IF(walksubsource = 'New',true,false)}"/>
+                         <apex:outputText value="{!CPEmail}" Label="Channel Partner Email" rendered="{!IF(walksubsource = 'New',true,false)}"/> 
+                         <apex:outputText value="{!BookedCustomer}" Label="Booked Customer Reference" rendered="{!IF(walksubsource = 'Booked Customer Reference',true,false)}"/> 
+                         <apex:outputText value="{!EmpName}" Label="Employee Name" rendered="{!IF(walksubsource = 'Employee Reference',true,false)}"/> 
+                         <apex:outputText value="{!EmpId}" Label="Employee Id Reference" rendered="{!IF(walksubsource = 'Employee Reference',true,false)}"/> 
+                         <apex:outputText id="Name12" value="{!NameO}" label="Name" rendered="{!IF(walksubsource = 'Others',true,false)}"/>
+                         <apex:outputText id="MobileNo22" value="{!MobO}" label="Mobile No" rendered="{!IF(walksubsource = 'Others',true,false)}"/>
+                         <apex:outputText id="EmailId32" value="{!EmailO}" label="Email Id" rendered="{!IF(walksubsource = 'Others',true,false)}" />
+                         <apex:outputText id="Relation42" value="{!RelationO}" label="Relation with Radius" rendered="{!IF(walksubsource = 'Others',true,false)}"/> 
+                         <apex:outputText value="{!ChannelPName}" label="Channel Partner Name" rendered="{!IF(walksubsource = 'Registered',true,false)}"/> 
+                         <apex:outputText value="{!ChannelPCode}" label="Channel Partner Id" rendered="{!IF(walksubsource = 'Registered',true,false)}"/> 
+                         <apex:outputText value="{!ChannelPCompany}" label="Channel Partner Company" rendered="{!IF(walksubsource = 'Registered',true,false)}"/> 
+                 <apex:outputText value="{!ChannelRepresentativeName}" label="Representative" rendered="{!IF(walksubsource = 'Registered',true,false)}"/>      -->
+                 </apex:pageBlockSection>                            
+               
+                 
+                  <!--  
+                  <apex:pageBlockSection id="m2" title="New Visit Source Details" collapsible="false" columns="2" rendered="{!(task.Revisit__c)}"><!-- {!And(task.Revisit__c,check1==true)} 
+                     <apex:pageBlockSectionItem >
+                <!-- Show Walk in source Details - Added By Netra   
+                     <apex:outputLabel rendered="{!(task.Revisit__c)}" > Source not same as original source </apex:outputLabel>
+                      <apex:inputCheckbox id="showwalkinsource" value="{!check1}" rendered="{!(task.Revisit__c)}" >
+                      </apex:inputCheckbox>
+                <!--     <apex:actionRegion >
+                         <apex:inputCheckbox id="showwalkinsource" value="{!check1}" rendered="{!(task.Revisit__c)}" >
+                                 <apex:actionSupport event="onchange" Rerender="m2,sourcedetails2" status="status" />
+                         </apex:inputCheckbox>
+                     </apex:actionRegion>  
+                 </apex:pageBlockSectionItem>    
+                 <apex:OutputLabel ></apex:OutputLabel>
+                    <apex:inputField id="source2"  value="{!Task.Walk_in_Source__c}"  required="true"/>  <!-- rendered="{!check1 == True}" 
+                    <apex:pageBlockSectionItem >
+                    <apex:outputLabel > Walk-in Subsource </apex:outputLabel>   <!-- rendered="{!(check1 == True)}" 
+                       <apex:actionRegion >
+                            <apex:inputField id="subSource2" value="{!Task.Walk_in_Sub_Source__c}"  required="true">    <!-- rendered="{!check1 == True}" 
+                                <apex:actionSupport event="onchange" rerender="sourcedetails2" status="status" />
+                            </apex:inputField>
+                       </apex:actionRegion>
+                   </apex:pageBlockSectionItem>
+                   
+                </apex:pageBlockSection>
+                -->
+                
+                
+      <!--          <apex:outputPanel id="sourcedetails2">     
+                    <apex:pageBlockSection id="pgBlockSectionNewCPDetails2" title="New Channel Partner Details" collapsible="false" columns="2" rendered="{!IF(AND(task.Revisit__c,check1,task.Walk_in_Sub_Source__c='New'),true,false)}"  > <!-- OLD   {!IF(task.Walk_in_Sub_Source__c='New',true,false)}-->
+         <!--               <apex:inputField id="CPName" value="{!Task.New_Channel_Partner_Name__c}" required="true"/>
+                            <apex:inputField id="CPPhone" value="{!Task.New_Channel_Partner_Phone__c}" required="true"/>
+                            <apex:inputField id="CPEmail" value="{!Task.New_Channel_Partner_Email__c}" />   --> <!-- required="true" -->
+                           
+     <!--            </apex:pageBlockSection>
+                     <apex:pageBlockSection id="pgBlockSectionExistingCPDetails2" title="Existing Channel Partner Details" collapsible="false" columns="2" rendered="{!IF(AND(task.Revisit__c,check1,task.Walk_in_Sub_Source__c='Registered'),true,false)}"  > <!-- {!IF(task.Walk_in_Sub_Source__c='Registered',true,false)} -->
+       <!--                   <apex:inputField id="ExistingCP2" value="{!Task.Existing_Channel_Partner__c}" required="true" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection id="pgBlockSectionExistingEmpDetails2" title="Employee Details" collapsible="false" columns="2" rendered="{!IF(AND(task.Revisit__c,check1,task.Walk_in_Sub_Source__c='Employee Reference'),true,false)}" > <!-- {!IF(task.Walk_in_Sub_Source__c='Employee Reference',true,false)} -->
+        <!--                  <apex:inputField id="EmpName2" value="{!Task.Walk_in_Employee_Name__c}" required="true"/>
+                            <apex:inputField id="EmpId2" value="{!Task.Walk_in_Employee_Id__c}" required="true"/>
+                    </apex:pageBlockSection>
+                     <apex:pageBlockSection id="pgBlockSectionExistingCustDetails2" title="Reference Customer Details" collapsible="false" columns="1" rendered="{!IF(AND(task.Revisit__c,check1,task.Walk_in_Sub_Source__c='Booked Customer Reference'),true,false)}" > <!-- {!IF(task.Walk_in_Sub_Source__c='Booked Customer Reference',true,false)} -->
+      <!--                    <apex:inputField id="custLookup2" value="{!Task.Walk_in_Respective_Customer_Account__c}" required="true"/>
+                    </apex:pageBlockSection>   -->
+                    <!-- Added For If walk in source = Reference and Walk in subsoruce = Others -->
+                    
+        <!--            <apex:pageBlockSection id="pgBlockSectionOthers2" title="Other Details" collapsible="false" columns="2" rendered="{!IF(AND(task.Revisit__c,check1,task.Walk_in_Sub_Source__c='Others' ),true,false)}"  > <!-- {!IF(task.Walk_in_Sub_Source__c='Others',true,false)} -->
+        <!--                    <apex:inputField id="Name12" value="{!Task.Name1__c}" required="true"/>
+                            <apex:inputField id="MobileNo22" value="{!Task.Mobile_No__c}" required="true"/>
+                            <apex:inputField id="EmailId32" value="{!Task.Email_Id__c}" />
+                            <apex:inputField id="Relation42" value="{!Task.Relation_With_Radius__c}" required="true"/> 
+                    </apex:pageBlockSection>
+                    
+                    
+                    
+                    
+                    
+                  </apex:outputPanel>  -->
+                    
+                
+                
+                
+              </apex:pageBlock>
+              </apex:form>
+          <!-- CREATE NEW TASK FORM -->
+    
+        </fieldset>
+        <!-- / BOXED AREA -->
+      </div>
+  <!-- / CREATE NEW TASK -->
+    </div>
+    <!-- / PRIMARY CONTENT WRAPPER -->
+  </div>
+  <!-- / REQUIRED SLDS WRAPPER -->    
+    <!-- JAVASCRIPT -->
+    <script>
+      var j$ = jQuery.noConflict();
+ 
+        j$(document).ready(function() {
+        });
+     </script>
+     
+     <script>
+         function ShowWalkInSource()
+         { 
+             
+         }    
+     </script>
+     
+     
+     
+     
+     
+    <!-- / JAVASCRIPT -->
+</body>
+</html>
+</apex:page>

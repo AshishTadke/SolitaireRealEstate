@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Car Parking</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Car Parking</value>
+    </caseValues>
+    <fields>
+        <label><!-- Car Type --></label>
+        <name>Car_Type__c</name>
+        <picklistValues>
+            <masterLabel>Big Car</masterLabel>
+            <translation><!-- Big Car --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small Car</masterLabel>
+            <translation><!-- Small Car --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Additional</masterLabel>
+            <translation><!-- Additional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Earmarked</masterLabel>
+            <translation><!-- Earmarked --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Floor/Podium No --></label>
+        <name>Floor_Podium_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- No. Of Big Car Available --></label>
+        <name>No_Of_Big_Car_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Of Big Car Booked --></label>
+        <name>No_Of_Big_Car_Booked__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Of Remaining Big Car --></label>
+        <name>No_Of_Remaining_Big_Car__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Of Remaining Small Car --></label>
+        <name>No_Of_Remaining_Small_Car__c</name>
+    </fields>
+    <fields>
+        <label><!-- No. Of Small Car Available --></label>
+        <name>No_Of_Small_Car_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Of Small Car Booked --></label>
+        <name>No_Of_Small_Car_Booked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parking Amount --></label>
+        <name>Parking_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parking Slot No. --></label>
+        <name>Parking_Slot_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parking Type --></label>
+        <name>Parking__c</name>
+        <picklistValues>
+            <masterLabel>Dependable-Stack</masterLabel>
+            <translation><!-- Dependable-Stack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puzzle</masterLabel>
+            <translation><!-- Puzzle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single - Independent</masterLabel>
+            <translation><!-- Single - Independent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single- Dependent</masterLabel>
+            <translation><!-- Single- Dependent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stack</masterLabel>
+            <translation><!-- Stack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stack-3</masterLabel>
+            <translation><!-- Stack-3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Two Wheeler</masterLabel>
+            <translation><!-- Two Wheeler --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Car Parking --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Small Car Charge --></label>
+        <name>Small_Car_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Booked</masterLabel>
+            <translation><!-- Booked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sold</masterLabel>
+            <translation><!-- Sold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacant</masterLabel>
+            <translation><!-- Vacant --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unique Floor No --></label>
+        <name>Unique_Floor_No__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

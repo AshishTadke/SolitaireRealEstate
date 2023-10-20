@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Communication</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Communications</value>
+    </caseValues>
+    <fields>
+        <label><!-- AccountName --></label>
+        <name>AccountName__c</name>
+        <relationshipLabel><!-- Communications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ActivityDate --></label>
+        <name>ActivityDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- ActivityTime --></label>
+        <name>ActivityTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Attempt Status --></label>
+        <name>Call_Attempt_Status__c</name>
+        <picklistValues>
+            <masterLabel>Booking Done</masterLabel>
+            <translation><!-- Booking Done --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Follow up</masterLabel>
+            <translation><!-- Follow up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost</masterLabel>
+            <translation><!-- Lost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting Fixed</masterLabel>
+            <translation><!-- Meeting Fixed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting Proposed</masterLabel>
+            <translation><!-- Meeting Proposed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting done</masterLabel>
+            <translation><!-- Meeting done --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Show</masterLabel>
+            <translation><!-- No Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMD + MD</masterLabel>
+            <translation><!-- TMD + MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tele Meeting Done</masterLabel>
+            <translation><!-- Tele Meeting Done --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tele Meeting Fixed</masterLabel>
+            <translation><!-- Tele Meeting Fixed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visit confirmed</masterLabel>
+            <translation><!-- Visit confirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visit done</masterLabel>
+            <translation><!-- Visit done --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visit proposed</masterLabel>
+            <translation><!-- Visit proposed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Back Date --></label>
+        <name>Call_Back_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Back --></label>
+        <name>Call_Back__c</name>
+        <picklistValues>
+            <masterLabel>NO</masterLabel>
+            <translation><!-- NO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YES</masterLabel>
+            <translation><!-- YES --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Proposed Date Of Visit --></label>
+        <name>Call_Proposed_Date_Of_Visit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Rating --></label>
+        <name>Call_Rating__c</name>
+        <picklistValues>
+            <masterLabel>Cold</masterLabel>
+            <translation><!-- Cold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot</masterLabel>
+            <translation><!-- Hot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warm</masterLabel>
+            <translation><!-- Warm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Source --></label>
+        <name>Call_Source__c</name>
+        <picklistValues>
+            <masterLabel>Channel Partner</masterLabel>
+            <translation><!-- Channel Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presales</masterLabel>
+            <translation><!-- Presales --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Status --></label>
+        <name>Call_Status__c</name>
+        <picklistValues>
+            <masterLabel>Call back later</masterLabel>
+            <translation><!-- Call back later --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call complete</masterLabel>
+            <translation><!-- Call complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call incomplete</masterLabel>
+            <translation><!-- Call incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disconnected</masterLabel>
+            <translation><!-- Disconnected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engaged</masterLabel>
+            <translation><!-- Engaged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invalid number</masterLabel>
+            <translation><!-- Invalid number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Reachable</masterLabel>
+            <translation><!-- Not Reachable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out of coverage</masterLabel>
+            <translation><!-- Out of coverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Switched off</masterLabel>
+            <translation><!-- Phone Switched off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ringing</masterLabel>
+            <translation><!-- Ringing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spoke to 3rd party</masterLabel>
+            <translation><!-- Spoke to 3rd party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong number</masterLabel>
+            <translation><!-- Wrong number --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Campaign Lookup --></label>
+        <name>Campaign_Lookup__c</name>
+        <relationshipLabel><!-- Communications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Phone --></label>
+        <name>Channel_Partner_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Communication Type --></label>
+        <name>Communication_Type__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound Call</masterLabel>
+            <translation><!-- Inbound Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound Call</masterLabel>
+            <translation><!-- Outbound Call --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Configuration --></label>
+        <name>Configuration__c</name>
+        <picklistValues>
+            <masterLabel>1 BHK</masterLabel>
+            <translation><!-- 1 BHK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1.5 BHK</masterLabel>
+            <translation><!-- 1.5 BHK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 BHK</masterLabel>
+            <translation><!-- 2 BHK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.5 BHK</masterLabel>
+            <translation><!-- 2.5 BHK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 BHK</masterLabel>
+            <translation><!-- 3 BHK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.5 BHK</masterLabel>
+            <translation><!-- 3.5 BHK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 BHK</masterLabel>
+            <translation><!-- 4 BHK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 BHK</masterLabel>
+            <translation><!-- 5 BHK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplex</masterLabel>
+            <translation><!-- Duplex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Penthouse</masterLabel>
+            <translation><!-- Penthouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Studio Apartment</masterLabel>
+            <translation><!-- Studio Apartment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Villa</masterLabel>
+            <translation><!-- Villa --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer First Name --></label>
+        <name>Customer_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Last Name --></label>
+        <name>Customer_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Mobile Phone --></label>
+        <name>Customer_Mobile_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Preferred Email --></label>
+        <name>Customer_Preferred_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Proposed Date of Visit For SMS --></label>
+        <name>Date_of_Visit_SMS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Id --></label>
+        <name>Email_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enquiry Received Project Lookup --></label>
+        <name>Enquiry_Received_Project_Lookup__c</name>
+        <relationshipLabel><!-- Communications (Enquiry Received Project Lookup) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Event Status --></label>
+        <name>Event_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled By Customer</masterLabel>
+            <translation><!-- Cancelled By Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Existing Channel Partner --></label>
+        <name>ExistingChannelPartner__c</name>
+        <relationshipLabel><!-- Communications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Visiting At --></label>
+        <name>Financial_Institute__c</name>
+        <picklistValues>
+            <masterLabel>HP</masterLabel>
+            <translation><!-- HP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OP</masterLabel>
+            <translation><!-- OP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site</masterLabel>
+            <translation><!-- Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venue Meeting</masterLabel>
+            <translation><!-- Venue Meeting --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- IsFirstPresalesCall --></label>
+        <name>IsFirstPresalesCall__c</name>
+    </fields>
+    <fields>
+        <label><!-- LeadName --></label>
+        <name>LeadName__c</name>
+        <relationshipLabel><!-- Communications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lead Project --></label>
+        <name>Lead_Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile Number Webform --></label>
+        <name>Mobile_Number_Webform__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile Number --></label>
+        <name>Mobile_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name Of Account --></label>
+        <name>Name_Of_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner Name --></label>
+        <name>NewChannel_Partner_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Action Date --></label>
+        <name>Next_Action_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- OptyName --></label>
+        <name>OptyName__c</name>
+        <relationshipLabel><!-- Communications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- OptyOwner --></label>
+        <name>OptyOwner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous Call Attempt Status --></label>
+        <name>Previous_Call_Attempt_Status__c</name>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project Interested --></label>
+        <name>Project_Interested__c</name>
+        <relationshipLabel><!-- Communications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registraion Status --></label>
+        <name>Registraion_Status__c</name>
+        <picklistValues>
+            <masterLabel>Agreement Pending</masterLabel>
+            <translation><!-- Agreement Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agreement Registered</masterLabel>
+            <translation><!-- Agreement Registered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registration Deferred-Indemnity Given</masterLabel>
+            <translation><!-- Registration Deferred-Indemnity Given --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WIP Details Sent to Client</masterLabel>
+            <translation><!-- WIP Details Sent to Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WIP-Registration Date Fixed</masterLabel>
+            <translation><!-- WIP-Registration Date Fixed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Registration Date --></label>
+        <name>Registration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revisit --></label>
+        <name>Revisit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager --></label>
+        <name>Sales_Attempted_By__c</name>
+        <picklistValues>
+            <masterLabel>Netra</masterLabel>
+            <translation><!-- Netra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SM1@g.com</masterLabel>
+            <translation><!-- SM1@g.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SM2@g.com</masterLabel>
+            <translation><!-- SM2@g.com --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager Email --></label>
+        <name>Sales_Manager_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager Mobile --></label>
+        <name>Sales_Manager_Mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager Name --></label>
+        <name>Sales_Manager_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show Walk In Source --></label>
+        <name>Show_Walk_In_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sourcing Manager --></label>
+        <name>Sourcing_Manager__c</name>
+        <picklistValues>
+            <masterLabel>No Sourcing Manger</masterLabel>
+            <translation><!-- No Sourcing Manger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SM1</masterLabel>
+            <translation><!-- SM1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SM2</masterLabel>
+            <translation><!-- SM2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+        <picklistValues>
+            <masterLabel>Has Home Loan Query</masterLabel>
+            <translation><!-- Has Home Loan Query --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Loan</masterLabel>
+            <translation><!-- Home Loan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Loan Closure</masterLabel>
+            <translation><!-- Home Loan Closure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Loan not being disbursed: Bank has query</masterLabel>
+            <translation><!-- Home Loan not being disbursed: Bank has query --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home loan not being disbursed: Defaulted on EMI</masterLabel>
+            <translation><!-- Home loan not being disbursed: Defaulted on EMI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send Letter</masterLabel>
+            <translation><!-- Send Letter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send Quote</masterLabel>
+            <translation><!-- Send Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Visit</masterLabel>
+            <translation><!-- Site Visit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transfer of Home Loan</masterLabel>
+            <translation><!-- Transfer of Home Loan --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TaskId --></label>
+        <name>TaskId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Type --></label>
+        <name>Task_Type__c</name>
+        <picklistValues>
+            <masterLabel>Enquiry Received</masterLabel>
+            <translation><!-- Enquiry Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Loan</masterLabel>
+            <translation><!-- Home Loan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Sales Call</masterLabel>
+            <translation><!-- Post Sales Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presales Call</masterLabel>
+            <translation><!-- Presales Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registration</masterLabel>
+            <translation><!-- Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Call</masterLabel>
+            <translation><!-- Sales Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Visit</masterLabel>
+            <translation><!-- Site Visit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Team Attended By --></label>
+        <name>Team_Attended_By__c</name>
+        <picklistValues>
+            <masterLabel>NRI</masterLabel>
+            <translation><!-- NRI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RI</masterLabel>
+            <translation><!-- RI --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Visit Form Number --></label>
+        <name>Visit_Form_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visit Status --></label>
+        <name>Visit_Status__c</name>
+        <picklistValues>
+            <masterLabel>Blocked</masterLabel>
+            <translation><!-- Blocked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Booked</masterLabel>
+            <translation><!-- Booked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cold - Follow Up</masterLabel>
+            <translation><!-- Cold - Follow Up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost</masterLabel>
+            <translation><!-- Lost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revisit Confirmed</masterLabel>
+            <translation><!-- Revisit Confirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revisit Done</masterLabel>
+            <translation><!-- Revisit Done --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revisit Proposed</masterLabel>
+            <translation><!-- Revisit Proposed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warm - Follow up</masterLabel>
+            <translation><!-- Warm - Follow up --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Visit Type --></label>
+        <name>Visit_Type__c</name>
+        <picklistValues>
+            <masterLabel>OBM</masterLabel>
+            <translation><!-- OBM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Visit</masterLabel>
+            <translation><!-- Site Visit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Visitor&apos;s Email Id --></label>
+        <name>Visitor_s_Email_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visitor&apos;s Phone No --></label>
+        <name>Visitor_s_Phone_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Walk-in Source --></label>
+        <name>Walk_in_Source__c</name>
+        <picklistValues>
+            <masterLabel>Channel Partner</masterLabel>
+            <translation><!-- Channel Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presales</masterLabel>
+            <translation><!-- Presales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reference</masterLabel>
+            <translation><!-- Reference --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Walk-in Sub Source --></label>
+        <name>Walk_in_Sub_Source__c</name>
+        <picklistValues>
+            <masterLabel>Booked Customer Reference</masterLabel>
+            <translation><!-- Booked Customer Reference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Tie Ups</masterLabel>
+            <translation><!-- Corporate Tie Ups --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cross Project</masterLabel>
+            <translation><!-- Cross Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Walk-in</masterLabel>
+            <translation><!-- Direct Walk-in --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Reference</masterLabel>
+            <translation><!-- Employee Reference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exhibitions</masterLabel>
+            <translation><!-- Exhibitions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hoardings</masterLabel>
+            <translation><!-- Hoardings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inserts</masterLabel>
+            <translation><!-- Inserts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loyalty Programme</masterLabel>
+            <translation><!-- Loyalty Programme --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media Campaigns</masterLabel>
+            <translation><!-- Media Campaigns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newspaper</masterLabel>
+            <translation><!-- Newspaper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registered</masterLabel>
+            <translation><!-- Registered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMS</masterLabel>
+            <translation><!-- SMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Media</masterLabel>
+            <translation><!-- Social Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word of Mouth</masterLabel>
+            <translation><!-- Word of Mouth --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- sobjectName --></label>
+        <name>sobjectName__c</name>
+    </fields>
+    <layouts>
+        <layout>Communication Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <authorizeUrl>https://accounts.google.com/o/oauth2/v2/auth</authorizeUrl>
+    <consumerKey>1066637942831-vb0022h5vhbkuik9r8b8gnhgpincplgo.apps.googleusercontent.com</consumerKey>
+    <consumerSecret>sh6dOyzVGYZ2CRXU69JZLYenc9i9+1eQcEEY92ILatc=</consumerSecret>
+    <executionUser>sysadmin@solitaire.in.sollight</executionUser>
+    <friendlyName>Google</friendlyName>
+    <iconUrl>https://test.salesforce.com/icons/google-grey.png</iconUrl>
+    <includeOrgIdInIdentifier>false</includeOrgIdInIdentifier>
+    <providerType>Google</providerType>
+    <registrationHandler>AutocreatedRegHandler1571642946583</registrationHandler>
+    <sendAccessTokenInHeader>false</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+    <tokenUrl>https://accounts.google.com/o/oauth2/v2/token</tokenUrl>
+    <userInfoUrl>https://www.googleapis.com/oauth2/v2/userinfo.email</userInfoUrl>
+</AuthProvider>

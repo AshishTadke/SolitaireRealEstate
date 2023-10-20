@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Approved</fullName>
+        <field>Quote_Status__c</field>
+        <literalValue>Valid</literalValue>
+        <name>Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approved1</fullName>
+        <field>Quote_Status__c</field>
+        <literalValue>Valid</literalValue>
+        <name>Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Level_One_Status_Update</fullName>
+        <field>Current_Approval_Status__c</field>
+        <formula>&apos;Approval Pending&apos;</formula>
+        <name>Level One Status Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Level_One_Status_Update_Rejection</fullName>
+        <field>Current_Approval_Status__c</field>
+        <formula>Level_One_Approver__r.Username + &apos; Rejected&apos;</formula>
+        <name>Level One Status Update - Rejection</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Level_Three_Status_Update</fullName>
+        <field>Current_Approval_Status__c</field>
+        <formula>&apos;Approved&apos;</formula>
+        <name>Level Three Status Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Level_Three_Status_Update_Rejection</fullName>
+        <field>Current_Approval_Status__c</field>
+        <formula>Level_Three_Approver__r.Username + &apos; Rejected&apos;</formula>
+        <name>Level Three Status Update - Rejection</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Level_Two_Status_Update</fullName>
+        <field>Current_Approval_Status__c</field>
+        <formula>&apos;Approval Pending&apos;</formula>
+        <name>Level Two Status Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Level_Two_Status_Update_Rejection</fullName>
+        <field>Current_Approval_Status__c</field>
+        <formula>Level_Two_Approver__r.Username + &apos; Rejected&apos;</formula>
+        <name>Level Two Status Update - Rejection</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejection</fullName>
+        <field>Quote_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Rejection</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+</Workflow>

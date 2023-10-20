@@ -1,0 +1,236 @@
+<apex:component controller="S_DemandLetter" access="global">
+    <apex:attribute name="DemandInvId" type="String" description="Attribute on the component." assignTo="{!strDemandInvId}"/>
+    <head>
+    <style>
+           
+           body {
+                font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; 
+                font-weight:normal; 
+                font-size:9px; 
+                mso-line-height-rule: exactly;
+            }
+
+        </style>
+    </head>
+    <body >
+    {!DemandLetter}
+    <table id="main" border="0" cellspacing="0" cellpadding="0" align="center" style="display:{!displayStyleGST}">
+    <tr>
+    <td>
+    <table>
+               <tr>
+                    <td width="100%" colspan="4">
+                       <!-- <strong>Subject: Your residence {!projectName} {!clusterName} | {!towerName}-{!UnitName}</strong> --->
+                        Dear {!CustomerPrimaryName},
+                        <br/>
+                        <br/>
+                        Greetings from the {!projectName},
+                        <br/>
+                        We are pleased to inform you that the next milestone of your Residence No. {!towerName}-{!UnitName}, in {!clusterName} in {!projectName}, as per your 
+                        payment schedule, is now initiated.<br/><br/>
+                        
+                        Correspondingly, the following payments are due on or before <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!InvoiceDueDate}"/></apex:outputtext>
+                        (for the fresh milestone; past dues, if any, are already payable as per respective due dates).
+                        
+                        <br/>
+                    </td>
+                </tr>
+          </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+                  <table  border="1" style="border-collapse: collapse;" width="100%">
+                  
+                    <tr width="100%">
+                    </tr>
+                    
+                    <tr width="100%">
+                        <apex:repeat value="{!headerMap}" var="index">
+                            <th colspan="2">{!headerMap[index]}</th>
+                        </apex:repeat>
+                    </tr>
+                    
+                    <tr width="100%">
+                        <th colspan="2">Particulars </th>
+                        <th colspan="1">Principal Amount (Inclusive of TDS) </th>   
+                        <th colspan="1">Taxable Value </th>     
+                        <th colspan="1"> GST </th>   
+                        <th colspan="1">Invoice Total</th>                    
+                    </tr>
+                    
+                   <tr width="100%">
+                        <apex:repeat value="{!subHeaderMap}" var="index1">
+
+                        </apex:repeat>
+                    </tr>
+                    
+                        <apex:repeat value="{!wrpDemand.chargenameMap}" var="eachCharge">
+                        <tr>
+                            <td colspan="2">{!eachCharge}</td>
+                            <td colspan="1">{!wrpDemand.chargeAmountMap[eachCharge]}</td>
+                            <td colspan="1">{!wrpDemand.ChargeTaxMap[eachCharge+' TAXABLE VALUE']}</td> 
+                            <td colspan="1">{!wrpDemand.chargeTaxMap[eachCharge + ' TOTAL TAX AMT']}</td>
+                            <td colspan="1">{!wrpDemand.ChargeOverallTotal[eachCharge]}</td>
+                         </tr>
+                        </apex:repeat>
+                        <tr width="100%">
+                           <td style="font-weight:bold;" colspan="2">Current Dues</td>
+                           <td>{!totalPrincipal}</td>
+                           <td>{!totalTaxable}</td>
+                           <td>{!totaloftotalTaxes}</td>
+                           <td>{!invoiceTotal}</td>
+                       </tr>
+                   
+            </table>
+            <apex:outputPanel >
+                <table border="1" style="border-collapse: collapse;" width="100%" >
+                  
+                    <tr width="100%">
+                        <td> Add Previous Dues towards Consideration Value</td>
+                        <td> {!totalOuststandingFormatted }</td>
+                   
+                        
+                    </tr>
+                    <tr width="100%">
+                        <td> Add Previous Dues towards (GST )</td>
+                        <td>{!totalTaxOutstandingformatted}</td>
+                                           
+                    </tr>
+                    <tr width="100%">
+                        <td style="font-weight:bold;"> Total Previous Dues</td>
+                        <td style="font-weight:bold;">{!totalpreviousDues}</td>
+                    </tr>
+                    <tr width="100%">
+                        <td style="font-weight:bold;"> Final Net Due</td>
+                        <td style="font-weight:bold;">{!totalNetdue}</td>
+                    </tr>
+                    <tr width="100%">
+                        <td colspan="10" style="font-weight:bold;">(In Words) {!totalNetdueWords}</td>
+                    </tr>
+            </table> 
+           </apex:outputPanel>
+            <!--  for printing details of the outstanding demand -->
+           <!-- <apex:outputPanel rendered="{!hasOutstandings}">
+            <table  border="1" style="border-collapse: collapse;" width="100%">
+                  
+                    <tr width="100%">
+                    </tr>
+                    
+                    <tr width="100%">
+                        <apex:repeat value="{!headerMapO}" var="index">
+                            <th colspan="{!subHeaderSizeMapO[index]}">{!headerMapO[index]}</th>
+                        </apex:repeat>
+                    </tr>
+                    
+                    <tr width="100%">
+                        <apex:variable var="cnt" value="{!1}" /> 
+                        <apex:repeat value="{!subHeaderMapO}" var="index">
+                            
+                            <apex:repeat value="{!subHeaderMapO[index]}" var="subHeaders">
+                                <th colspan="{!taxColSizeO[cnt]}">{!subHeaders}</th>
+                                <apex:variable var="cnt" value="{!cnt+1}"/>
+                            </apex:repeat>
+                        </apex:repeat> 
+                    </tr>                   
+                        <apex:repeat value="{!outstandingChargesSet}" var="eachCharge">
+                        <tr>
+                            <td>{!eachCharge}</td>
+                            <td>{!demandedChargesMapStr[eachCharge + ' DEMANDED']}</td>
+                            <td>{!demandedChargesMapStr[eachCharge + ' RECD']}</td>
+                            <td>{!demandedChargesMapStr[eachCharge + ' OUTSTANDING']}</td>
+                            <td>{!demandedChargesMapStr[eachCharge + ' TAX DEMANDED']}</td>
+                            <td>{!demandedChargesMapStr[eachCharge + ' TAX RECD']}</td>
+                            <td>{!demandedChargesMapStr[eachCharge + ' TAX OUTSTANDING']}</td>
+                            <td>{!demandedChargesMapStr[eachCharge + ' INTEREST OUTSTANDING']}</td>
+                            <td>{!demandedChargesMapStr[eachCharge + ' TOTAL OUTSTANDING']}</td>
+                            <td>{!demandedChargesMapStr[eachCharge + ' TOTAL OUTSTANDING WORDS']}</td>
+                         </tr>
+                        </apex:repeat>
+            </table>
+            </apex:outputPanel> -->
+            
+           <!-- <table   border="1" style="border-collapse: collapse;" width="100%">
+                  
+                    <tr width="100%">
+                        <td> Total Payable (A = B+C)</td>
+                        <td> {!demandedChargesMapStr['GRAND OVERALL TOTAL']}</td>
+                        <td> {!demandedChargesMapStr['GRAND OVERALL TOTAL WORDS']}</td>
+                        
+                    </tr>
+                    <tr width="100%">
+                        <td> Principal Amount (B)</td>
+                        <td>{!demandedChargesMapStr['GRAND AMT TOTAL']}</td>
+                        <td>{!demandedChargesMapStr['GRAND AMT TOTAL WORDS']}</td>
+                        
+                    </tr>
+                    <tr width="100%">
+                        <td> Tax Amount (C)</td>
+                        <td>{!demandedChargesMapStr['GRAND TAX TOTAL']}</td>
+                        <td>{!demandedChargesMapStr['GRAND TAX TOTAL WORDS']}</td>
+                        
+                    </tr>
+            </table> -->
+            
+        </td>
+    </tr>
+    <tr>
+    <td>
+    <br/>
+    <br/>
+   We request you to make the payment within the due date to avoid any interest penalties.
+     <br/>
+     <br/>
+    For any clarification or assistance, please contact your 
+    <br/>
+    Relationship Manager: {!crmName}
+     <br/>
+    Mobile Number: {!crmMobile}
+     <br/>
+    Email: {!crmEmail}
+      <br/>
+     <br/>
+    Regards,
+     <br/>
+    Solitaire Developers
+    </td>
+    </tr>
+   </table>
+   <table id="main" border="0" cellspacing="0" cellpadding="0" align="center" style="display:{!displayStyleReg}">
+               
+    <tr style="display:{!displayStyleReg}">
+                    <td width="100%" colspan="4" >
+                        Dear {!Customer.Primary_Name__c},
+                        <br/>
+                        Greetings from {!greentingName}.
+                        <br/>
+                        <br/>
+                        Subject: Registration Intimation
+                        <br/>
+                        <br/>
+                        We refer to your booking application for {!UnitName} in {!projectName}. As you have made {!PercentPaid} of the flat payment to us, 
+                        we would require you to register the Agreement for Sale for the said flat. Details of statutory payments along with other charges are attached. 
+                        We request you to make these payments latest by <apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!InvoiceDueDate}"/></apex:outputtext>
+                        and also verify your personal details (given below) for payment of stamp duty.
+                        <br/>
+                    </td>
+                </tr>
+    <tr>
+    <td>    
+     For any clarification or assistance, please contact your 
+    <br/>
+    Relationship Manager: {!crmName}
+     <br/>
+    Mobile Number: {!crmMobile}
+     <br/>
+    Email: {!crmEmail}
+      <br/>
+     <br/>
+    Regards,
+     <br/>
+    Solitaire Developers
+    </td>
+    </tr>
+   </table>
+    </body>
+ </apex:component>

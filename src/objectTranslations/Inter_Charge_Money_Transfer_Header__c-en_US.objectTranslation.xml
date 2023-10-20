@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Inter Charge Money Transfer Header</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Inter Charge Money Transfer Headers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Booking --></label>
+        <name>Booking__c</name>
+        <relationshipLabel><!-- Inter Charge Money Transfer Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Inter Charge Money Transfer Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Project_Unit__c</name>
+        <relationshipLabel><!-- Inter Charge Money Transfer Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Inter Charge Money Transfer Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Receipt --></label>
+        <name>Receipts__c</name>
+        <relationshipLabel><!-- Inter Charge Money Transfer Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unprocessed</masterLabel>
+            <translation><!-- Unprocessed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TDS --></label>
+        <name>TDS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transfer on Date --></label>
+        <name>Transfer_on_Date__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New_Inter_Charge_Money_Transfer_Header --></label>
+        <name>New_Inter_Charge_Money_Transfer_Header</name>
+    </webLinks>
+</CustomObjectTranslation>

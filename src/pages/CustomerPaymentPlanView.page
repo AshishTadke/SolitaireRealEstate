@@ -1,0 +1,596 @@
+<apex:page docType="html-5.0"   showHeader="false" Controller="QuotationDiscountView1" sidebar="false" standardStylesheets="false">
+    <html>
+        <!--
+        xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink">-->
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+            <script src="/soap/ajax/9.0/connection.js"></script>
+            <!--<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>-->
+            <style>
+    table {
+        font-family: Lato,verdana, arial, sans-serif;
+        font-size: 12px;
+        color: #333333;
+        border-width: 3px;
+        border-color: #3A3A3A;
+        border-collapse: collapse;
+        empty-cells:show;
+    }
+ 
+    table th {
+        border-width: 1px;
+        padding: 3px;
+        border-style: solid;
+        color: white;
+        border-color: white;
+        background-color:#104E8B;
+        }
+ 
+    table td {
+        border-width: 1px;
+        padding: 1px;
+        border-style: dotted solid dotted solid;
+        border-color: #081B26;
+        background-color: #ffffff;
+    }
+
+    .bold, .aval, .avalDisc {
+        font-weight:700;
+    }
+    
+    .projectStyle {
+        border-width: 1px;
+        font-weight:700;
+        text-align:center;
+        border-style: solid;
+    }
+    
+    .header {
+        border-width: 1px;
+        padding: 5px;
+        border-style: solid;
+        color: white;
+        border-color: #081B26;
+        background-color: #585858;
+    }
+    
+    .readOnly {
+        background-color: #CCFFFF;
+        border-color: #003F87;
+        padding: 2.5px;
+        color: #333366;
+    }
+    .Edit {
+        border-color:#ff69b4;
+        border-width: 1px;
+        border-style: dotted dotted dotted dotted;
+    }
+    .zoomin {
+        border-color: #727B84 !important;
+        background-color: #DF9496 !important;
+    }
+    .error {
+        border-color: red !important;
+        background-color: light blue;
+        border-width: 2px;
+    }
+    
+    /** copying salesforce lookup input styles
+    since we are turning off the std styles **/
+    .lookupInput
+    {
+        display: inline;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+    .lookupInput img
+    {
+        background-repeat: no-repeat;
+        margin-right: .25em;
+        vertical-align: middle;
+    }
+    .lookupInput .disabled
+    {
+        background-color: #ccc;
+    }
+    .lookupInput .emptyDependentLookup
+    {
+        font-style: italic;
+    }
+    .lookupInput input[readonly]
+    {
+        background-color: #e6e6e6;
+        border: 2px solid #e6e6e6;
+        color: #333;
+        cursor: default;
+    }
+    .lookupInput a.readOnly
+    {
+        float: right;
+    }
+    .lookupInput span.readOnly
+    {
+        display: block;
+        white-space: normal;
+    }
+    .lookupInput span.totalSummary
+    {
+        font-weight: bold;
+    }
+    .inlineEditRequiredDiv .lookupInput img,.inlineEditDiv .lookupInput img
+    {
+        vertical-align: middle;
+    }
+    .quickCreateModule .lookupInput input {
+        max-width: 155px
+    }
+    .lookupIcon {
+        background-image: url(/img/func_icons/util/lookup20.gif);
+        background-position: 0 0;
+        width: 20px;
+        height: 20px;
+        background-position: top left
+    }
+    .lookupIconOn {
+        background-image: url(/img/func_icons/util/lookup20.gif);
+        background-position: 0 0;
+        width: 20px;
+        height: 20px;
+        background-position: top right
+    }
+    .messageTable {
+        font-family: Lato,verdana, arial, sans-serif;
+        font-weight:700;
+        color: #BE2625;
+        width:100%;
+        background-color:#EEB4B4; !important
+    }
+    .messageTable td{
+        height:15px;
+    }
+    .messageCell td{
+        height:0px;
+    }
+    div.fadeMe {
+      opacity:    0.5; 
+      background: #D9E9FF; 
+      width:      100%;
+      height:     100%; 
+      z-index:    1000;
+      top:        0; 
+      left:       0; 
+      position:   fixed; 
+    }
+    
+    .footerclass {
+        width:100%;
+    }
+    /*@media print
+    {    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    }*/
+    
+     .sfdc_richtext img {
+              border: 0;
+              width: 5000px;
+              height:90px;
+            }
+    
+    </style>
+    
+
+        </head>
+        <body>
+            <apex:form id="newquoteform">
+                <apex:outputPanel id="messages" >
+                    <!--<button name="print" value="print" style="float:right;" onclick="window.print();" class="no-print"> Print Quotation Snapshot</button>-->
+                    <br/>
+                    <br/>
+                    <br/>
+                    <apex:PageMessages id="pageMsgs" />
+                </apex:outputPanel>
+                <apex:outputPanel id="printArea">
+                    <!--<table id="projectAddress" width='100%'>
+                        <tr>
+                            <td class="projectStyle">
+                                <apex:image url="{!$Resource.RadiusHDLogo}"  height="80"/>
+                            </td>
+                            <td class="projectStyle">
+                                <h2>{!q.Project__r.Name}</h2>
+                                <br>{!q.Project__r.Address__c}</br>
+                            </td>
+                            <td class="projectStyle">
+                                <h2>Head Office</h2>
+                                <br>Radius Developers</br>
+                                One BKC,"A" Wing, Level 14, BKC
+                                
+                                <br>Bandra East. Mumbai - 400051.</br>
+                                India.
+                          
+                            </td>
+                        </tr>
+                    </table>-->
+                    <!-- Address Close -->
+                    <table id="header" border="0" cellpadding="0" cellspacing="0" align="center">
+                            <tr>
+                                <td colspan="3" width="5%" align="right" valign="top" style="border:none;">
+                                   <apex:outputtext escape="false" value="{!q.Project__r.Project_Image__c}" />                            
+                                </td>
+                            </tr>
+                    </table>
+                    <table  width='100%'>
+                                <tr border="1">
+                                     <td align="Center" style="font-size:19px;">Customer Pay Plan</td>
+                                </tr>
+                                <tr>
+                                     <td align="Center" style="font-size:20px;">
+                                          <b>{!q.Project__r.Name}</b>
+                                          
+                                     </td>
+                                </tr>
+                        </table>
+                    <table id="quoteDetails" width='100%'>
+                        <tr>
+                            <td class="projectStyle">
+                                Prepared For:{!q.Opportunity__r.Name}
+                                <br></br>
+                               Unit No. - <a href="/{!q.Project_Unit__c}" target="_Blank">{!q.Project_Unit__r.Name}</a>
+                            </td>
+                            <td class="projectStyle">
+                                Quotation Prepared Date:&nbsp;
+                                <apex:OutputField value="{!q.Prepared_Date__c}"/>
+                                <br></br>
+                                Quotation Effective Till:&nbsp; 
+                                <apex:OutputField value="{!q.Valid_Till_Date__c}"/>
+                            </td>
+                            <!--<td class="projectStyle"><apex:commandButton value="Save and Print" action="{!savePrint}"/></td>-->
+                        </tr>
+                    </table>
+                    <!-- quoteDetails Close-->
+                    <!-- Table2 -->
+                    <table width="100%" border-style="solid">
+                        <tr width="100%">
+                            <th align="center" colspan="3">Customer Pay Plan</th>
+                        </tr>
+                        <tr width="100%">
+                            <td width="50%">
+                                <table width="100%">
+                                    <tr>
+                                        <th>Payment Schedule</th>
+                                        <th>Due Date</th>
+                                        <th>%</th>
+                                        <th>Installment</th>
+                                        <th>GST Tax</th>
+                                    </tr>
+                                    <apex:repeat value="{!wrapperscppdList}" var="x">
+                                        <tr>
+                                            <td>{!x.stdCustomerPayPlan.Is_to_be__c}</td>
+                                            <td>
+                                                <!-- <apex:outputText value="{0, date, dd-MMM-yyyy}" rendered="{!IF((x.wduedate == ''), True,False)}" > -->
+                                                    <apex:outputText value="{0, date, dd-MMM-yyyy}" rendered="{!IF((x.dueDate != null), True,False)}" > 
+                                                        <apex:param value="{!x.dueDate}"  />
+                                                    </apex:outputText>
+                                                    <apex:outputText value="{!x.wduedate}" rendered="{!IF((x.wduedate != ''), True,False)}" />
+                                            </td>
+                                            <!-- <td>{!x.wduedate}</td> -->
+                                            <td>{!x.stdCustomerPayPlan.Value__c}</td>
+                                            <td>{!x.installment}</td>
+                                            <td>{!x.servicetax}</td>
+                                        </tr>  
+                                    </apex:repeat>
+                                    <tr>
+                                        <td class="bold header">Grand Total</td>
+                                        <td class="bold header"></td>
+                                        <td class="bold header">100.00%</td>
+                                        <td class="bold header">{!installment}</td>
+                                        <td class="bold header">{!servicetax}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>                    
+                </apex:outputPanel><br></br>                
+                        <table id="header" border="0" cellpadding="0" cellspacing="0" align="center">
+                        <tr>
+                            <td style="width:100%;border:none;">
+                             <img src="{!q.Project__r.Footer_Logo__c}"  />
+
+                               <!--<apex:outputtext escape="false" value="{!q.Project__r.Footer_Image__c}" rendered="{!If(letterhead == '1',True,False)}"/>-->
+                                                           
+                            </td>
+                        </tr>
+                </table>
+                  
+            </apex:form>
+            
+            
+            <!-- -----------------------JAVASCRIPT --------------------->
+            <!-- -----------------------JAVASCRIPT --------------------->
+            <script>
+            function getValue(){
+            alert('document.getElementBy');
+            document.getElementById("{!$Component.newquoteform.test}").style.width="1500px";
+            //document.getElementById("test").style.width="100%";
+             //var c = document.getElementById("{!$Component.newquoteform.test}");
+             alert('document.getElementBy');
+            }
+           // window.onload(getValue());
+            </script>
+             <script>
+          var j$ = jQuery.noConflict();
+     
+            j$(document).ready(function() {
+                bindEvents();
+            });
+            
+            // events are not bound if partial refresh happens. we need to bind it again
+            // hence keeping bindevents separately and call them when needed
+            
+            function bindEvents() {
+                adjustTableRowsTop();
+                adjustTableRowsBottom();
+                var selectedPlan =  "{!$CurrentPage.parameters.planId}";
+                if(selectedPlan != "") {
+                    j$('#planOptions').val(selectedPlan);
+                }
+                j$("[id$='saveScheduleBtn']").hide();
+                j$("[id$='applyScheduleBtn']").hide();
+                j$('#planOptions').on("change",function(event, ui){
+                    if(j$('#planOptions :selected').val().length != 0) {
+                        console.log("Context Obj:" + j$('#planOptions :selected').val());
+                        j$("[id$='right2']").find("tr:gt(1)").remove();
+                        j$("[id$='left2']" + ' tr').each(function () {
+                            if(j$(this).find('td:empty').length==j$(this).find('td').length) 
+                            j$(this).remove();
+                        });                     
+                        var planId = j$('#planOptions :selected').val();
+                        sessionStorage.setItem('planName', j$('#planOptions :selected').text());
+                        sessionStorage.setItem('planID', j$('#planOptions :selected').val());
+                        var aVal = j$('.aval').text();
+                        aVal = removeFormat(aVal);
+                        var aValDisc = j$('.avalDisc').text();
+                        aValDisc = removeFormat(aValDisc);
+                        console.log('Aval:' + aVal);
+                        console.log('Aval Discounted:' + aValDisc)
+                        if(aValDisc === null || aValDisc =='')
+                            RefreshPlanDiv(planId,aVal);
+                        else
+                            RefreshPlanDiv(planId,aValDisc);
+                    }
+                });
+                j$("[id$='ppTable'] tr").last().find('td').each (function() {
+                        j$(this).addClass("header");
+                });
+            }
+        function populatePlan1(){
+                var rowHtml = "
+                <tr>
+                    <th>Schedule</th>
+                    <th>Date</th>
+                    <th>%</th>
+                    <th>Towards CV</th>
+                    <th>Service Tax</th>
+                </tr>";
+                j$("[id$='ppTable']" + '> tbody > tr:first').before(rowHtml);
+                j$("[id$='ppTable'] tr").last().find('td').each (function() {
+                        j$(this).addClass("header");
+                });      
+                 adjustTableRowsBottom();
+        }
+        function fixHeaderforStaticArea() {
+                var rowHtml = "
+                <tr>
+                    <th>Schedule</th>
+                    <th>Date</th>
+                    <th>%</th>
+                    <th>Towards CV</th>
+                </tr>";
+                j$("[id$='ppTable2static']" + '> tbody > tr:first').before(rowHtml);
+                j$("[id$='ppTable2static'] tr").last().find('td').each (function() {
+                        j$(this).addClass("header");
+                });
+        }
+        
+       function populatePlan2(){
+                var rowHtml1 = "
+                <tr>
+                    <th>Milestone Type</th>
+                    <th>Add Delay</th>
+                    <th>Days/Months</th>
+                    <th>Construction Link</th>
+                    <th>Pay Type</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>CV</th>
+                    <th>Action</th>
+                </tr>";
+                j$("[id$='ppTable2']" + '> tbody > tr:first').before(rowHtml1);
+                j$("[id$='ppTable2'] tr").last().find('td').each (function() {
+                        j$(this).addClass("header");
+                }); 
+                j$('.messageCell').hide();
+                // disable edits of payment plan on the edit schedule screen
+                j$('#planOptions :selected').prop('disabled',true);
+                j$("[id$='editScheduleBtn']").hide();
+                j$("[id$='saveScheduleBtn']").show();
+                j$("[id$='applyScheduleBtn']").show();
+                
+        }
+        function PreselectPlan(){
+            // calling bind events to re-register handlers on partial page updates
+            bindEvents();
+            console.log("In Preselect");
+            var planName = sessionStorage.getItem('planName');
+            var planIden = sessionStorage.getItem('planID');
+            console.log('planID from session: 13' + planName + '::' + planIden);
+             if(planName === null) {
+             } else {
+                console.log('setting planName:' + planName + '::' + planIden);
+                j$('#planOptions').val(planIden);
+                j$('#planOptions').change();
+            }
+        }
+        
+        function PreselectPlanAfterSave() {
+        // making this separate from the above, because here
+        // we dont want to trigger change event after setting the plan
+            bindEvents();
+            var planName = sessionStorage.getItem('planName');
+            var planIden = sessionStorage.getItem('planID');
+            console.log('planID from session: 13' + planName + '::' + planIden);
+             if(planName === null) {
+             } else {
+                console.log('setting planName:' + planName + '::' + planIden);
+                j$('#planOptions').val(planIden);
+            }
+            // once edited and saved, the plan cant be changed, till cancel is clicked
+            j$('#planOptions').prop('disabled',true);
+            
+            j$("[id$='ppTable'] tr").last().find('td').each (function() {
+                        j$(this).addClass("header");
+            });
+            j$('.messageTable').hide();
+            j$("#projectAddress").show();
+            j$("#quoteDetails").show();
+        }
+        
+        function PreselectPlanOnCancel() {
+            bindEvents();
+            // remove restriction plan change on cancel
+            j$('#planOptions').prop('disabled',false);
+            var planName = sessionStorage.getItem('planName');
+            var planIden = sessionStorage.getItem('planID');
+            console.log('planID from session: 13' + planName + '::' + planIden);
+             if(planName === null) {
+             } else {
+                console.log('setting planName:' + planName + '::' + planIden);
+                // set the existing plan and render the original plan details
+                j$('#planOptions').val(planIden).change();              
+            }
+
+            j$("[id$='ppTable'] tr").last().find('td').each (function() {
+                        j$(this).addClass("header");
+            });
+            j$("#projectAddress").show();
+            j$("#quoteDetails").show();
+        }
+        
+        function editSchedule(){
+            console.log('edit schedule');
+            j$("[id$='right1']").closest("td").prev().toggle("explode");
+            j$("[id$='right1']").closest("td").next().toggle("explode");
+            j$("[id$='right1']").closest("td").toggle("explode");
+            j$("[id$='right2']").closest("td").prev().toggle("explode");
+            j$("[id$='right2']").closest("td").next().toggle("explode");
+            j$("#projectAddress").hide();
+            j$("#quoteDetails").hide();
+            var planId = j$('#planOptions :selected').val();
+            
+            var aVal = j$('.aval').text();
+            aVal = removeFormat(aVal);
+            var aValDisc = j$('.avalDisc').text();
+            aValDisc = removeFormat(aValDisc);
+            console.log('Aval:' + aVal);
+            console.log('Aval Discounted:' + aValDisc)
+            if(aValDisc === null || aValDisc =='')
+                RefreshPlanEditDiv(planId,aVal);
+            else
+                RefreshPlanEditDiv(planId,aValDisc);
+            // disable edits of payment plan on the edit schedule screen
+            j$('#planOptions :selected').prop('disabled',true);
+            j$("[id$='ppTable']").toggle();
+         }
+    
+            function rowModify(index,type) {
+                rowModifyFunction(index,type);
+            }
+        
+        function adjustTableRowsTop(){
+            var left1Count = j$("[id$='left1']" + ' tr').size();
+            var right1Count = j$("[id$='right1']" + ' tr').size();
+            var adjustByCount =0;
+            
+            if(left1Count != right1Count && left1Count < right1Count) {
+                adjustByCount = right1Count -  left1Count;
+                console.log('calling adjust rows:' + adjustByCount);
+                adjustRowsTop('left1', adjustByCount);
+            } else if(left1Count != right1Count && left1Count > right1Count) {
+                adjustByCount = left1Count - right1Count;
+                adjustRowsTop('right1',adjustByCount);
+            }
+            console.log('Left1:' + left1Count);
+            console.log('Right1:' + right1Count);       
+        }
+        
+       function adjustTableRowsBottom(){
+            var left2Count = j$("[id$='left2']" + ' tr').size();
+            var right2Count = j$("[id$='right2']" + ' tr').size();
+            var adjustByCount =0;     
+            if(left2Count != right2Count && left2Count < right2Count) {
+                adjustByCount = right2Count -  left2Count;
+                adjustRowsBottom('left2', adjustByCount);
+            } else if(left2Count != right2Count && left2Count > right2Count) {
+                adjustByCount = left2Count - right2Count;
+                adjustRowsBottom('right2', adjustByCount);
+            }
+            console.log('Left2:' + left2Count);
+            console.log('Right2:' + right2Count);
+       }
+         
+       function adjustRowsTop(divid, rowcount) {
+            console.log('adjust for ' + divid + ' ' + rowcount);
+            var rowHtml = null;
+            for(count=0; count
+                
+                <rowcount; count++){
+                rowHtml = rowHtml + '
+                    <tr>
+                        <td colspan="2" width="100%" height="15px"></td>
+                    </tr>';
+            }
+            console.log('divid:' + j$("[id$='"+divid+"']").attr('id'));
+            j$("[id$='"+divid+"']").append(rowHtml);
+        }   
+        
+       function adjustRowsBottom(divid, rowcount) {
+            console.log('adjust for ' + divid + ' ' + rowcount);
+            var rowHtml = null;
+            for(count=0; count < rowcount; count++){
+                rowHtml = rowHtml + '
+                    <tr>
+                        <td colspan="5" width="100%" height="15px"></td>
+                    </tr>';
+            }
+            console.log('divid:' + j$("[id$='"+divid+"']").attr('id'));
+            j$("[id$='"+divid+"']").append(rowHtml);
+        }       
+        
+        function removeFormat(money) {
+            money = money.replace(/,/g,'');
+            money = money.replace(/₹ /,'');
+            return money;
+        }    
+        
+      
+        
+      
+                </script>
+                <script>
+         var link = document.getElementById('T3');
+         var discount = {!q.Discount_Applied__c};
+         //alert(discount);
+         if(discount == false)
+         {
+             link.style.display = 'none';
+         }
+         //link.style.visibility = 'hidden';
+</script>
+                <!-- / JAVASCRIPT -->
+            </body>
+        </html>
+    </apex:page>

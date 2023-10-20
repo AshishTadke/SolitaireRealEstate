@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Welcome Call Checklist</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>WelcomeCallChecklist</value>
+    </caseValues>
+    <fields>
+        <label><!-- Bank Loan Status --></label>
+        <name>Bank_Loan_Status__c</name>
+        <picklistValues>
+            <masterLabel>Need help to apply</masterLabel>
+            <translation><!-- Need help to apply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sanctioned</masterLabel>
+            <translation><!-- Sanctioned --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Disposition --></label>
+        <name>Call_Disposition__c</name>
+        <picklistValues>
+            <masterLabel>Call Back requested</masterLabel>
+            <translation><!-- Call Back requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ringing/Switched Off/Not Reachable</masterLabel>
+            <translation><!-- Ringing/Switched Off/Not Reachable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome call accepted</masterLabel>
+            <translation><!-- Welcome call accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome call rejected</masterLabel>
+            <translation><!-- Welcome call rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong Number/ No Number</masterLabel>
+            <translation><!-- Wrong Number/ No Number --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Delivery of Invoices and receipts --></label>
+        <name>Delivery_of_Invoices_and_receipts__c</name>
+        <picklistValues>
+            <masterLabel>Soft Copy via Email</masterLabel>
+            <translation><!-- Soft Copy via Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soft copy via email and hardcopy</masterLabel>
+            <translation><!-- Soft copy via email and hardcopy --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Detail --></label>
+        <name>Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Type --></label>
+        <name>Document_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Funding --></label>
+        <name>Funding__c</name>
+        <picklistValues>
+            <masterLabel>Bank Loan</masterLabel>
+            <translation><!-- Bank Loan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Funded</masterLabel>
+            <translation><!-- Self Funded --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Verify --></label>
+        <name>Verify__c</name>
+    </fields>
+    <fields>
+        <label><!-- Welcome Call Header --></label>
+        <name>Welcome_Call_Header__c</name>
+        <relationshipLabel><!-- WelcomeCallChecklist --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Welcome Call Checklist Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

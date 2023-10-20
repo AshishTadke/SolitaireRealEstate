@@ -1,0 +1,8 @@
+Dear {!Demand_Invoice__c.Customer__c},<br/><br/>
+Greetings from Solitaire! <br/><br/>
+With reference to our Payment Request Letter No. <u>{!Demand_Invoice__c.Name}</u> dated  {!Demand_Invoice__c.Invoice_Date__c}, please note that we have still not received the outstanding payment of {!Demand_Invoice__c.Total_Amount__c}. <br/><br/>
+We request you to clear the overdue amount without any further delay and also to avoid further accrual of interest in accordance with the mutually agreed terms as per the agreement to sell.
+We look forward to your timely co-operation. Please feel free to contact us for any queries. <br/><br/>
+NOTE : If the payment has already made, please disregard this email.<br/><br/>
+Regards,<br/><br/>
+Team CRM

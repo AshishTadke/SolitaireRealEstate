@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Close</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewTask</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ActivityDate</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDisposition</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDurationInSeconds</fullName>
+    </fields>
+    <fields>
+        <fullName>CallObject</fullName>
+    </fields>
+    <fields>
+        <fullName>CallType</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>IsRecurrence</fullName>
+    </fields>
+    <fields>
+        <fullName>IsReminderSet</fullName>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+                <highPriority>true</highPriority>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Normal</fullName>
+                <default>true</default>
+                <highPriority>false</highPriority>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+                <highPriority>false</highPriority>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RecurrenceInterval</fullName>
+    </fields>
+    <fields>
+        <fullName>RecurrenceRegeneratedType</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <closed>true</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scheduled</fullName>
+                <default>true</default>
+                <closed>false</closed>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home Loan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home Loan Closure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer of Home Loan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home loan not being disbursed: Defaulted on EMI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home Loan not being disbursed: Bank has query</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Has Home Loan Query</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TaskSubtype</fullName>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Site Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WhatId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WhoId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <listViews>
+        <fullName>MyActivities</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyDelegatedActivities</fullName>
+        <filterScope>Delegated</filterScope>
+        <label>My Delegated Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyTeamsActivities</fullName>
+        <filterScope>Team</filterScope>
+        <label>My Team&apos;s Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>TodaysTasks</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>lessThan</operation>
+            <value>TOMORROW</value>
+        </filters>
+        <label>Today&apos;s Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>UpcomingEvents</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>greaterThan</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <label>Upcoming Events</label>
+    </listViews>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Channel_Partner_Email_Mandatory</fullName>
+        <active>false</active>
+        <description>Channel Partner lookup is mandatory if sub source is New</description>
+        <errorConditionFormula>AND(ISPICKVAL(Walk_in_Sub_Source__c, &apos;New&apos;), New_Channel_Partner_Email__c  == null)</errorConditionFormula>
+        <errorDisplayField>New_Channel_Partner_Email__c</errorDisplayField>
+        <errorMessage>This field is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Channel_Partner_Name_Mandatory</fullName>
+        <active>false</active>
+        <description>Channel Partner lookup is mandatory if sub source is New</description>
+        <errorConditionFormula>AND(ISPICKVAL(Walk_in_Sub_Source__c, &apos;New&apos;), New_Channel_Partner_Name__c  == null)</errorConditionFormula>
+        <errorDisplayField>New_Channel_Partner_Name__c</errorDisplayField>
+        <errorMessage>This field is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Channel_Partner_Phone_Mandatory</fullName>
+        <active>false</active>
+        <description>Channel Partner Phone is mandatory if sub source is New</description>
+        <errorConditionFormula>AND(ISPICKVAL(Walk_in_Sub_Source__c, &apos;New&apos;), New_Channel_Partner_Phone__c  == null)</errorConditionFormula>
+        <errorDisplayField>New_Channel_Partner_Phone__c</errorDisplayField>
+        <errorMessage>This field is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Date_for_Visit_Mnadatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>(ISPICKVAL(Call_Attempt_Status__c , &apos;Visit confirmed&apos;)||
+ISPICKVAL(Call_Attempt_Status__c , &apos;Visit proposed&apos;)||
+ISPICKVAL(Call_Attempt_Status__c , &apos;Meeting Proposed&apos;)||
+ISPICKVAL(Call_Attempt_Status__c , &apos;Meeting Fixed&apos; ))&amp;&amp;((ISBLANK( TEXT( Call_Proposed_Date_Of_Visit__c )))|| ISNULL( TEXT( Call_Proposed_Date_Of_Visit__c )))</errorConditionFormula>
+        <errorDisplayField>Call_Proposed_Date_Of_Visit__c</errorDisplayField>
+        <errorMessage>Please enter date of visit</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NextActionDate_Mandatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND ( OR( (ISPICKVAL(Call_Attempt_Status__c , &apos;Follow up&apos;)),(ISPICKVAL(Case_Status__c , &apos;Open&apos;))),  
+(ISBLANK( TEXT( Next_Action_Date__c )) ||  ISNULL( TEXT( Next_Action_Date__c )) ))</errorConditionFormula>
+        <errorMessage>Please Enter Next Action Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Reason_For_Lost_Manadatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(ISPICKVAL( Event_Status__c , &apos;Lost&apos;), ISBLANK( TEXT(Reason_For_Lost__c )) || ISNULL( TEXT( Reason_For_Lost__c )))</errorConditionFormula>
+        <errorDisplayField>S_Activity_Created_Date__c</errorDisplayField>
+        <errorMessage>Please Select Reason For Lost</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VDNBReasonForLostCancelledMndatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND ( (ISPICKVAL(00N2800000IK46j, &apos;Lost&apos;) || ISPICKVAL(00N2800000IK46j, &apos;Cancelled&apos;)), 
+(ISBLANK( TEXT( 00N2800000IK46i)) || ISNULL( TEXT( 00N2800000IK46i)) ))</errorConditionFormula>
+        <errorDisplayField>S_Activity_Created_Date__c</errorDisplayField>
+        <errorMessage>Please Select 
+VDNB Reason for Lost/Cancelled</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Visiting_At_Mandatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND ( (ISPICKVAL(Event_Status__c, &apos;Revisit Proposed&apos;) || ISPICKVAL(Event_Status__c, &apos;Revisit Confirmed&apos;)), 
+(ISBLANK( TEXT( Financial_Institute__c)) || ISNULL( TEXT( Financial_Institute__c)) ))</errorConditionFormula>
+        <errorDisplayField>S_Activity_Created_Date__c</errorDisplayField>
+        <errorMessage>Please Select Visiting At</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Walk_in_Referred_by_Existing_Customer</fullName>
+        <active>false</active>
+        <description>Customer Lookup mandatory for customer referrals</description>
+        <errorConditionFormula>AND(ISPICKVAL( Walk_in_Sub_Source__c , &apos;Booked Customer Reference&apos;), ISBLANK( Walk_in_Respective_Customer_Account__c))</errorConditionFormula>
+        <errorDisplayField>Walk_in_Respective_Customer_Account__c</errorDisplayField>
+        <errorMessage>This field is required</errorMessage>
+    </validationRules>
+</CustomObject>

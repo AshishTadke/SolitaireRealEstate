@@ -1,0 +1,384 @@
+<apex:page showHeader="false" standardController="Booking__c" extensions="CustomerTakeaway2Class">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            __sfdcSessionId = '{!$Api.Session_Id}';
+        </script>
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+        <script src="/soap/ajax/9.0/connection.js"></script>
+        
+        <style type="text/css">
+         p {page-break-after: always;}
+       </style>
+        
+        
+        <style>
+            @page {
+                size: A4;
+                margin: 2mm //5mm;
+                @bottom-center {
+                    content: "Page " counter(page)" of " counter(pages);
+                }
+            }
+            .page-break {
+                display: block;
+                page-break-after: auto;
+            }
+            table,
+            tr,
+            td {
+                font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+                //'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+            }
+            body {
+                font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+                //'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+                font-weight: normal;
+                font-size: 12px;
+                mso-line-height-rule: exactly;
+            }
+            .infobox {
+                font-size: 90%;
+            }
+            /*.sfdc_richtext img {
+              border: 0;
+              width: 100px;
+              height:90px;
+            }
+            */
+        </style>
+    </head>
+    <body width="100%" onload="window.print();breakeveryheader();">
+   <br/><br/>
+        <!-- <apex:pageBlockSection id="myPage" rendered="{!if(AND(wrapperList != null,wrapperList2 != null),True,False)}">-->
+        <table id="main" border="0" cellspacing="0" cellpadding="0" align="center" width="90%">
+            <table id="main2" border="0" cellspacing="0" cellpadding="0" align="center" width="90%">
+                <tr width="100%">
+                    <td colspan="1" align="left" width="55%" valign="top">
+                        <apex:panelGrid columns="1" styleClass="infobox">
+                            <apex:outputLabel value="Booking Date:">
+                                <apex:outputtext value="{0, date,dd'-'MMM'-'yyyy}" label="Booking Date:">
+                                    <apex:param value="{!bList[0].Booking_Date__c}" />
+                                </apex:outputtext>
+                            </apex:outputLabel>
+                        </apex:panelGrid>
+                    </td>
+                    <td colspan="1" align="Right" width="55%" valign="top">
+                        <apex:panelGrid columns="1" styleClass="infobox">
+                            <apex:outputLabel value="Application No.">
+                                <apex:outputText value="{!bList[0].Application_No__c}" /></apex:outputLabel>
+                        </apex:panelGrid>
+                    </td>
+                </tr>
+            </table>
+            <div align="center" style="font-size:20px; ">
+                Know your Deal Information Sheet - Customer Copy
+            </div>
+            <br/>
+            <table cellspacing="0" cellpadding="3" align="center" width="90%">
+                <tr>
+                    <td style="font-weight:Bold;background:Black;color: White;">Customer Details</td>
+                </tr>
+            </table>
+            <br/>
+            <table cellspacing="0" cellpadding="0" align="center" width="90%">
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Name of Primary Applicant :  ">
+                            <apex:outputText value="{!bList[0].Opportunity__r.Primary_Name__c} " /></apex:outputLabel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Name of Co-applicant(s) (if any) :   ">
+                            <apex:outputText value="{!bList[0].Opportunity__r.Other_Applicants_Name__c}" /></apex:outputLabel>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <table cellspacing="0" cellpadding="0" align="center" width="90%">
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Communication Address :   ">
+                            <apex:outputText Value="{!bList[0].Opportunity__r.Mailing_Address__c}" label="" /></apex:outputLabel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="27%">
+                        <apex:outputLabel value="City : ">
+                            <apex:outputText Value="{!applicantList[0].City__c}" /></apex:outputLabel>
+                    </td>
+                    <td width="27%">
+                        <apex:outputLabel value="State :">
+                            <apex:outputText Value="{!applicantList[0].State__c}" /></apex:outputLabel>
+                    </td>
+                    <td width="26%">
+                        <apex:outputLabel value="Country : ">
+                            <apex:outputText Value="{!applicantList[0].Country__c}" /></apex:outputLabel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Mobile Number :   ">
+                            <apex:OutputText Value="{!bList[0].Opportunity__r.Primary_Phone__c}" label="" /></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputLabel value="Landline Number :   ">
+                            <apex:OutputText Value="{!applicantList[0].Landline_Number__c}" label="" /></apex:outputLabel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Email :   ">
+                            <apex:OutputText Value="{!applicantList[0].Email_Address__c}" label="" /></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputLabel value="Pan No :   ">
+                            <apex:OutputText Value="{!applicantList[0].PancardNo__c}" label="" /></apex:outputLabel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Residential Status :   ">
+                            <apex:OutputText Value="{!applicantList[0].Subtype_Of_Applicant__c}" label="" /></apex:outputLabel>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <table cellspacing="0" cellpadding="3" align="center" width="90%">
+                <tr>
+                    <td style="font-weight:Bold;background:Black;color: White;">Unit Details</td>
+                </tr>
+            </table>
+            <br/>
+            <table cellspacing="0" cellpadding="3" align="center" width="90%">
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Project Name :   ">
+                            <apex:OutputText value="{!bList[0].Project__r.Name}" Label="" /></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputLabel value="Unit :   ">
+                            <apex:OutputText value="{!bList[0].Unit_No__r.Name}" Label="" /></apex:outputLabel>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Typology :   ">
+                            <apex:OutputText value="{!bList[0].Unit_No__r.RDS_Project_Unit_Type__r.Name}" Label="" /></apex:outputLabel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Saleable Area :   ">
+                            <apex:OutputText value="{!bList[0].Unit_No__r.Actual_Area_value__c}" label="" /></apex:outputLabel>sq.ft.</td>
+                    <td>
+                        <apex:outputLabel value="Carpet Area :   ">
+                            <apex:OutputText value="{!bList[0].Unit_No__r.Carpet_Area__c}" label="" /></apex:outputLabel>sq.ft.</td>
+                            
+                  <!-- commented by vikas on dated 01/09/16 ----------
+                    <td>
+                        <apex:outputLabel value="Exclusive right to use :   ">
+                            <apex:OutputText value="{!bList[0].Unit_No__r.Carpet_Area__c}" label="" /></apex:outputLabel>sq.ft.</td>
+                         -------------------------------------->
+                </tr>
+
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Parking(s) requested :   ">
+                            <apex:OutputText value="{!bList[0].No_of_Parking__c}" label="" /></apex:outputLabel>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Consideration Value : Rs.  ">
+                            <apex:OutputText value="{!bList[0].Allotment_Premium__c}" label="" /></apex:outputLabel>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <apex:outputLabel value="In Words  :    ">
+                            <apex:OutputText value="{!wordNumber}" label="" /></apex:outputLabel>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Date for offer of possession (for fitouts)  :   ">
+                            <apex:outputtext value="{0, date,dd'-'MMM'-'yyyy}">
+                                <apex:param value="{!bList[0].Date_for_offer_of_Possession__c}" /></apex:outputtext>
+                        </apex:outputLabel>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <table cellspacing="0" cellpadding="3" align="center" width="90%">
+                <tr>
+                    <td style="font-weight:Bold;background:Black;color: White;">Booking Source Details</td>
+                </tr>
+            </table>
+            <table cellspacing="0" cellpadding="3" align="center" width="90%">
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Source of Booking :  ">
+                            <apex:OutputText value="{!bList[0].Source_of_Booking__c}" /></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputLabel value="Booking Source Details :  ">
+                            <apex:OutputText value="{!bList[0].Booking_Source_Details__c}" /></apex:outputLabel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Sub-Source of Booking :   ">
+                            <apex:OutputText value="{!bList[0].Sub_Source__c}" /></apex:outputLabel>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <apex:outputPanel id="Receipt" rendered="{!if(AND(receipt ==True,wrapperList != null),True,False)}">
+                <table cellspacing="0" cellpadding="3" align="center" width="90%">
+                    <tr>
+                        <td style="font-weight:Bold;background:Black;color: White;">Booking Amount Details</td>
+                    </tr>
+                </table>
+                <br/>
+                <!--<apex:outputPanel id="Receipt"  rendered="{!if(AND(receipt == True,wrapperList != null),True,False)}">-->
+                <table id="table1" align="Center" style="border:1px solid black;width:90%;border-collapse: collapse;" cellspacing="0" cellpadding="0">
+                    <tr style="font-weight:Bold;background:#D3D3D3;">
+                        <td align="center" style="border:1px solid black;">PAYMENT MODE</td>
+                        <td align="center" style="border:1px solid black;">AMOUNT (Rs.)</td>
+                        <td align="center" style="border:1px solid black;">BANK</td>
+                        <td align="center" style="border:1px solid black;">INSTRUMENT No.</td>
+                        <td align="center" style="border:1px solid black;">DATE</td>
+                    </tr>
+                    <apex:repeat value="{!wrapperList}" var="x">
+                        <tr>
+                            <td align="center" style="border:1px solid black;">{!x.instrument }</td>
+                            <td align="center" style="border:1px solid black;">{!x.totalAmt}</td>
+                            <td align="center" style="border:1px solid black;">{!x.bankName}</td>
+                            <td align="center" style="border:1px solid black;">{!x.chequeno}</td>
+                            <td align="center" style="border:1px solid black;">
+                                <apex:outputtext value="{0, date,dd'-'MMM'-'yyyy}">
+                                    <apex:param value="{!x.recDate}" /></apex:outputtext>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+
+                    <tr style="border:1px solid black;">
+                        <td align="center" style="border:1px solid black;"><b>TOTAL</b>
+                        </td>
+                        <td style="border:1px solid black;" align="center"><b>{!totAmount}</b>
+                        </td>
+                        <td style="border:1px solid black;" colspan="3">&nbsp;</td>
+                    </tr>
+                </table>
+            </apex:outputPanel>
+            <br/>
+            
+        </table>
+        
+
+        <p name="newpg" id="newpg2" >
+        
+        <table id="main2" border="0" cellspacing="0" cellpadding="0" align="center" width="90%">
+            <apex:outputPanel id="Milestone" rendered="{!if(AND(milestone==True,wrapperList2 != null),True,False)}">
+                <table cellspacing="0" cellpadding="3" align="center" width="90%">
+                    <br/><br/><br/><br/>
+                    <tr>
+                        <td style="font-weight:Bold;background:Black;color: White;">Time Bound Payment Details</td>
+                    </tr>
+                </table>
+                <br/>
+                <!-- <apex:outputPanel id="Milestone" rendered="{!if(AND(milestone==True,wrapperList2 != null),True,False)}">-->
+                <table id="table2" align="Center" style="border:1px solid black;width:90%;border-collapse: collapse;" cellspacing="0" cellpadding="0">
+                    <tr style="font-weight:Bold;background:#D3D3D3;">
+                        <td align="center" style="border:1px solid black;">S No.</td>
+                        <td align="center" style="border:1px solid black;">Milestone(s)</td>
+                        <td align="center" style="border:1px solid black;">% of CV Payable</td>
+                        <td align="center" style="border:1px solid black;">Payable Towards CV (Rs.)</td>
+                        <td align="center" style="border:1px solid black;">ST Amount (Rs.)*</td>
+                        <td align="center" style="border:1px solid black;">Total Amount due (Rs.)
+                            <br/>(CV + ST)</td>
+                        <td align="center" style="border:1px solid black;">Due Date</td>
+                    </tr>
+                    <apex:repeat value="{!wrapperList2}" var="x">
+                        <tr>
+                            <td align="center" style="border:1px solid black;">{!x.sNo}</td>
+                            <td align="center" style="border:1px solid black;">{!x.toBePaid1}</td>
+                            <td align="center" style="border:1px solid black;">{!x.amtValue1}</td>
+                            <td align="center" style="border:1px solid black;">{!x.installment1}</td>
+                            <td align="center" style="border:1px solid black;">{!x.serviceTaxAmt1}</td>
+                            <td align="center" style="border:1px solid black;">{!x.finalAmt1}</td>
+                            <td align="center" style="border:1px solid black;">
+                                <apex:outputtext value="{0, date,dd'-'MMM'-'yyyy}">
+                                    <apex:param value="{!x.dueDate1}" /></apex:outputtext>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+            </apex:outputPanel>
+            <br/>
+            <table cellspacing="0" cellpadding="0" align="center" width="90%">
+                <tr>
+                    <td><b>*All statutory charges and taxes will be borne by Customer as per the rates applicable from time to time, and the same is subject to revision. </b>
+                    </td>
+                </tr>
+            </table>
+            <hr style="border-width: 2px;color:Black;" width="90%"></hr>
+            <br/>
+            <table cellspacing="0" cellpadding="0" align="center" width="90%">
+                <tr>
+                    <td><b> I hereby acknowledge the receipt of a copy of the Know Your Deal Information Sheet.</b> 
+                    </td>
+                </tr>
+                <tr>
+                    <td><b> I also agree to pay the necessary dues on or before the respective  due dates mentioned without any intermediate intervention, failing which I shall be liable to pay the penalties as applicable, as mentioned in the application form.</b> 
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <br/>
+            <table cellspacing="0" cellpadding="0" align="center" width="90%">
+                <tr>
+                    <td align="center">­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­_______________________________</td>
+                    <td align="center">_______________________________</td>
+                    <td align="center">_______________________________</td>
+                </tr>
+                <tr>
+                    <td align="center">Signature of Sales Manager</td>
+                    <td align="center">Signature of Primary/Co-Applicant</td>
+                    <td align="center">Signature of Team Lead</td>
+                </tr>
+                <tr>
+                    <td align="center">&#8826;Name of SM&#8827;</td>
+                    <td align="center">&#8826;Name of Primary Applicant&#8827;</td>
+                    <td align="center">&nbsp;</td>
+                </tr>
+            </table>
+
+
+        </table>
+        </p>
+        <!--</apex:pageBlockSection>-->
+    </body>
+</apex:page>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Blocking Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Blocking Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account_Name__c</name>
+        <relationshipLabel><!-- Blocking Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Blocked with Token --></label>
+        <name>Blocked_with_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blocked without Token --></label>
+        <name>Blocked_without_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blocking Date --></label>
+        <name>Blocking_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blocking Information --></label>
+        <name>Blocking_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cheque Number --></label>
+        <name>Cheque_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- ClusterName --></label>
+        <name>ClusterName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instrument Date --></label>
+        <name>Instrument_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Name --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Blocking Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Preferred Mobile Phone --></label>
+        <name>PersonMobilePhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preferred Email --></label>
+        <name>Person_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- ProjectName --></label>
+        <name>ProjectName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unblock Comments --></label>
+        <name>Release_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager Email --></label>
+        <name>Sales_Manager_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager --></label>
+        <name>Sales_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Blocked</masterLabel>
+            <translation><!-- Blocked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Released</masterLabel>
+            <translation><!-- Released --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Token Amount --></label>
+        <name>Token_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- TowerName --></label>
+        <name>TowerName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Number --></label>
+        <name>Unit_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit --></label>
+        <name>Unit__c</name>
+        <relationshipLabel><!-- Blocking Details --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Blocking Detail Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Unit details can&apos;t be modified --></errorMessage>
+        <name>Prevent_Modification_Of_Unit_Details</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Restricting to one blocking request per unit --></errorMessage>
+        <name>Restricting_multiblocking_of_a_unit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Check Opportunity Stage It Must Not Be [Booked,Sold,Cancelled,Closed Lost]. --></errorMessage>
+        <name>UnBlock_Unit</name>
+    </validationRules>
+</CustomObjectTranslation>

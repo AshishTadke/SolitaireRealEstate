@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Channel Partner</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Channel Partners</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- CP Rating --></label>
+        <name>CP_Rating__c</name>
+        <picklistValues>
+            <masterLabel>P0</masterLabel>
+            <translation><!-- P0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P1</masterLabel>
+            <translation><!-- P1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P2</masterLabel>
+            <translation><!-- P2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P3</masterLabel>
+            <translation><!-- P3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CP Type --></label>
+        <name>CP_Type__c</name>
+        <picklistValues>
+            <masterLabel>ICP/IPC</masterLabel>
+            <translation><!-- ICP/IPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regular</masterLabel>
+            <translation><!-- Regular --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel Partner --></label>
+        <name>Channel_Partner__c</name>
+        <relationshipLabel><!-- Channel Partners --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Primary Email ID --></label>
+        <name>Email_ID_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email ID 2 --></label>
+        <name>Email_ID_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maha RERA No. --></label>
+        <name>Maha_RERA_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile No. 2 --></label>
+        <name>Mobile_No_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile No. --></label>
+        <name>Mobile_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office No. --></label>
+        <name>Office_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pan Card No. --></label>
+        <name>Pan_Card_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact Person Name --></label>
+        <name>Primary_Contact_Person_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Xcelerate ID --></label>
+        <name>Xcelerate_ID__c</name>
+    </fields>
+    <layouts>
+        <layout>Channel Partner Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

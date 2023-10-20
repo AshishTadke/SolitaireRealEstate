@@ -1,0 +1,161 @@
+<apex:page controller="S_PaymentsPaidClass" showHeader="false" standardStylesheets="true" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    <html
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <title>Receipts Dashboard</title>
+            <apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+            <script src="/soap/ajax/9.0/connection.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+        </head>
+        <!-- Define Tab panel .css styles -->
+    <style>
+    .activeTab {
+    background-color: #104E8B; 
+    color:white; 
+    background-image:none;
+    font-family: Lato,verdana, arial, sans-serif;
+    font-size: 15px;    
+    }
+    .inactiveTab { 
+    background-color: #525C65; 
+    color:white; 
+    background-image:none;
+    font-family: Lato,verdana, arial, sans-serif;
+    font-size: 15px;
+    }
+    .slds table {
+        font-family: Lato,verdana, arial, sans-serif;
+        font-size: 12px;
+        empty-cells:show;
+    }
+    .slds th {
+        padding: 1px;
+        background-color:#104E8B;
+        text-align:center;
+    }
+ 
+    .slds td {
+        text-align:left;
+    }
+    
+    </style>
+            
+<body>    
+<!-- REQUIRED SLDS WRAPPER -->
+<div class="slds">    
+<!-- PRIMARY CONTENT WRAPPER -->
+<div class="myapp">   
+<!-- SEARCH DEMANDS-->
+<div aria-labelledby="DSform">
+<!-- BOXED AREA -->
+<fieldset class="slds-box slds-theme--shade slds-container--large slds-container--center slds-grid--align-spread">
+  <legend id="dsForm" class="slds-text-heading--medium slds-p-vertical--medium">Payments Made</legend>
+    <apex:form id="pendRegistration" styleClass="slds-form--inline">
+            <apex:outputPanel id="messages">
+                <apex:PageMessages id="pageMsgs" />
+            </apex:outputPanel>
+                <!--<apex:outputPanel id="searchButton">
+                    <center>
+                       
+                        &nbsp;&nbsp;
+                        <apex:commandButton value="New Receipt" styleClass="slds-button slds-button--brand slds-button--small" onclick="window.open('/apex/S_ReceiptModule');" />
+                    </center><br/>
+                                                
+                </apex:outputPanel>-->
+                <apex:outputPanel id="customerPanel2">
+                <apex:pageblock id="collectionspageblock">
+                <apex:outputLabel ></apex:outputLabel>                                                        
+                  <apex:pageblockSection title="Receipts" rendered="{!objR.size != 0}" columns="1" id="collectionspageblocksection" >
+                    <apex:pageBlockTable value="{!objR}" var="R">                                                                           
+                             <apex:column headerValue="Cheque/DD Date" >
+                                  <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                  <apex:param value="{!R.Cheque_DD_Date__c}"/>
+                                  </apex:outputtext>
+                             </apex:column>
+                             <apex:column headerValue="Receipt Number" >
+                                <apex:Outputtext value="{!R.Name}"/>
+                             </apex:column>
+                             <!--<apex:column headerValue="Status" >
+                                <apex:Outputtext value="{!R.Receipt_Status__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="Instrument" >
+                                <apex:Outputtext value="{!R.Mode__c}"/>
+                             </apex:column> -->
+                             <apex:column headerValue="Cheque/DD No." >
+                                <apex:Outputtext value="{!R.Cheque_DD__c}"/>
+                             </apex:column>
+                              
+                             <apex:column headerValue="Drawee Bank" >
+                                <apex:Outputtext value="{!R.DraweeBank__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="Token Amount" >
+                                <apex:OutputField value="{!R.Token_Amount_Receipt__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="ST on Token Amount" >
+                                <apex:OutputField value="{!R.Token_Amount_ST__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="Milestone" >
+                                <apex:Outputtext value="{!R.Standard_Customer_Pay_Plan_Detail__r.Is_to_be__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="Currency" >
+                                <apex:Outputtext value="{!R.Currency__c}"/>
+                             </apex:column>
+                             <apex:column headerValue="Amount" >
+                                <apex:Outputtext value="{!R.Total_Amount__c}"/>
+                             </apex:column>
+                              
+                    </apex:pageBlockTable>        
+                </apex:pageblockSection>    
+                <apex:pageblockSection rendered="{!objR.size == 0}" columns="1"  >   
+                    <h4> No payments have been made by this customer</h4>             
+                </apex:pageblockSection>    
+               </apex:pageblock>
+                </apex:outputPanel>
+            </apex:form>
+<!--  </apex:tab>
+            
+        </apex:tabPanel>-->
+  <!-- DEMAND SEARCH FORM -->
+
+</fieldset>
+<!-- / BOXED AREA -->
+</div>
+<!-- / SEARCH DEMANDS -->
+</div>
+<!-- / PRIMARY CONTENT WRAPPER -->
+</div>
+<!-- / REQUIRED SLDS WRAPPER -->  
+<script>
+    var j$ = jQuery.noConflict();
+    j$(document).ready(function() {
+        bindEvents();
+    });
+    function bindEvents() {
+        //colorLinks();
+        //colorRows();
+    }
+    function getCustomers(towerName) {
+        getCustomersFunction(towerName);
+    }
+    function colorLinks() { 
+        var links = document.getElementsByTagName('a');
+        for (var a = 0; a < links.length; a++) {
+            var randomColor = '#' + (Math.random().toFixed(6).toString(16)).slice(2);
+            links[a].style.color = randomColor;
+        }
+    }        
+    function selectAllCheckboxes(obj,receivedInputID){
+        var inputCheckBox = document.getElementsByTagName("input");                  
+        for(var i=0; i<inputCheckBox.length; i++){          
+            if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+                inputCheckBox[i].checked = obj.checked;
+            }
+        }
+    }
+</script>
+</body>
+  </html>
+</apex:page>

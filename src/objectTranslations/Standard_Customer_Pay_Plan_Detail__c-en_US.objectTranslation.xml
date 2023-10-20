@@ -1,0 +1,1197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Standard Customer Pay Plan Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Standard Customer Pay Plan Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Revise Due Date --></label>
+        <name>Actual_Revise_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Add Token GST --></label>
+        <name>Add_Token_GST__c</name>
+    </fields>
+    <fields>
+        <label><!-- Advance Demand Id --></label>
+        <name>Advance_Demand_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- %/Amount Value --></label>
+        <name>Amount_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- %/Amount --></label>
+        <name>Amount__c</name>
+        <picklistValues>
+            <masterLabel>Amount</masterLabel>
+            <translation><!-- Amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Basic Original --></label>
+        <name>Basic_Original__c</name>
+    </fields>
+    <fields>
+        <label><!-- Basic --></label>
+        <name>Basic__c</name>
+    </fields>
+    <fields>
+        <label><!-- CPPH Name --></label>
+        <name>CPPH_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculate Installment Amount as(%) --></label>
+        <name>Calculate_Installment_Amount_as__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Comments --></label>
+        <name>Call_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installment Amount (Advance Recd) --></label>
+        <name>Charge_Amount_Advance_Recd__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installment Amount (Demanded) --></label>
+        <name>Charge_Amount_Billed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installment Amount (Balance) --></label>
+        <name>Charge_Amount_Due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installment Amount (Paid) --></label>
+        <name>Charge_Amount_Paid__c</name>
+    </fields>
+    <fields>
+        <label><!-- CheckUpdateStdCustPayPlanDet --></label>
+        <name>CheckUpdateStdCustPayPlanDet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Construction Stage Update Date --></label>
+        <name>Construction_Stage_Update_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contribution From --></label>
+        <name>Contribution_From__c</name>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Institution</masterLabel>
+            <translation><!-- Financial Institution --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Pay Plan Header --></label>
+        <name>Customer_Pay_Plan_Header__c</name>
+        <relationshipLabel><!-- Standard Customer Pay Plan Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Day 0 ServiceTax Amount --></label>
+        <name>Day_0_ServiceTax_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Day/Months Value --></label>
+        <name>Days_Months_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days/Months --></label>
+        <name>Days_Months__c</name>
+        <picklistValues>
+            <masterLabel>Day(s)</masterLabel>
+            <translation><!-- Day(s) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Month(s)</masterLabel>
+            <translation><!-- Month(s) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Deduct Token --></label>
+        <name>Deduct_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demand Link --></label>
+        <name>Demand_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demand Overdue Ageing --></label>
+        <name>Demand_Overdue_Ageing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Development Charges --></label>
+        <name>Development_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dont Override --></label>
+        <name>Dont_Override__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date on which the demand should be raised for this milestone. Automatically managed by the system based on the  Construction Stages --></help>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date (on Quote) --></label>
+        <name>Due_Date_on_Quote__c</name>
+    </fields>
+    <fields>
+        <label><!-- Floor Rise --></label>
+        <name>Floor_Rise__c</name>
+    </fields>
+    <fields>
+        <label><!-- Infrastructure Charges --></label>
+        <name>Infrastructure_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inst No --></label>
+        <name>Inst_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installment Number --></label>
+        <name>Installment_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installment Amount --></label>
+        <name>Installment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int Flatcost (Paid) --></label>
+        <name>Int_Flatcost_Paid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int Flatcost (Pending) --></label>
+        <name>Int_Flatcost_Pending__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int Flatcost (Total) --></label>
+        <name>Int_Flatcost_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int Flatcost (Waived) --></label>
+        <name>Int_Flatcost_Waived__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int ServiceTax (Paid) --></label>
+        <name>Int_ServiceTax_Paid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int ServiceTax (Pending) --></label>
+        <name>Int_ServiceTax_Pending__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int ServiceTax (Total) --></label>
+        <name>Int_ServiceTax_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Int ServiceTax (Waived) --></label>
+        <name>Int_ServiceTax_Waived__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integer Installment No --></label>
+        <name>Integer_Installment_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- InterestTest --></label>
+        <name>InterestTest__c</name>
+    </fields>
+    <fields>
+        <label><!-- InterestValue --></label>
+        <name>InterestValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice OverDue --></label>
+        <name>Invoice_OverDue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Raised Date --></label>
+        <name>Invoice_Raised_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This flag indicates if a payment is overdue. --></help>
+        <label><!-- IsPaymentOverdue --></label>
+        <name>IsPaymentOverdue__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsDemandLetterSent --></label>
+        <name>IsSendDemandLetter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Milestone Achieved --></label>
+        <name>Is_Milestone_Achieved__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTP Partly Paid --></label>
+        <name>Is_PTP_Partly_Paid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Registration Done --></label>
+        <name>Is_Registration_Done__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is to be Paid --></label>
+        <name>Is_to_be_Paid__c</name>
+        <picklistValues>
+            <masterLabel>Construction Stage</masterLabel>
+            <translation><!-- Construction Stage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>From Dt. of Booking</masterLabel>
+            <translation><!-- From Dt. of Booking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>From Dt. of Registration</masterLabel>
+            <translation><!-- From Dt. of Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registration</masterLabel>
+            <translation><!-- Registration --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is to be Paid --></label>
+        <name>Is_to_be__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason For Call --></label>
+        <name>L1__c</name>
+        <picklistValues>
+            <masterLabel>Collections</masterLabel>
+            <translation><!-- Collections --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feedback</masterLabel>
+            <translation><!-- Feedback --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Sales</masterLabel>
+            <translation><!-- Post Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Target Calling</masterLabel>
+            <translation><!-- Target Calling --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason Category --></label>
+        <name>L2__c</name>
+        <picklistValues>
+            <masterLabel>Appreciation</masterLabel>
+            <translation><!-- Appreciation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asked to call back</masterLabel>
+            <translation><!-- Asked to call back --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign</masterLabel>
+            <translation><!-- Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancellation Intimation</masterLabel>
+            <translation><!-- Cancellation Intimation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNC</masterLabel>
+            <translation><!-- DNC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delay Expected</masterLabel>
+            <translation><!-- Delay Expected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demand Intimation</masterLabel>
+            <translation><!-- Demand Intimation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Due Date Intimation</masterLabel>
+            <translation><!-- Due Date Intimation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enquiry</masterLabel>
+            <translation><!-- Enquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event</masterLabel>
+            <translation><!-- Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feedback / General Interaction</masterLabel>
+            <translation><!-- Feedback / General Interaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>For Bank Disbursement</masterLabel>
+            <translation><!-- For Bank Disbursement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greetings</masterLabel>
+            <translation><!-- Greetings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grievance</masterLabel>
+            <translation><!-- Grievance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect number</masterLabel>
+            <translation><!-- Incorrect number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Know Your Customer</masterLabel>
+            <translation><!-- Know Your Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need to call back</masterLabel>
+            <translation><!-- Need to call back --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Contactable</masterLabel>
+            <translation><!-- Not Contactable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operation Calls</masterLabel>
+            <translation><!-- Operation Calls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Promised to pay</masterLabel>
+            <translation><!-- Promised to pay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suggestions</masterLabel>
+            <translation><!-- Suggestions --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason Sub Category --></label>
+        <name>L3__c</name>
+        <picklistValues>
+            <masterLabel>&lt;0.5% Due - Shall pay in next Installment</masterLabel>
+            <translation><!-- &lt;0.5% Due - Shall pay in next Installment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appreciation1</masterLabel>
+            <translation><!-- Appreciation1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approval Issue - Building/floor cancelled</masterLabel>
+            <translation><!-- Approval Issue - Building/floor cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approval Issue - Unapproved floor - Bank funded</masterLabel>
+            <translation><!-- Approval Issue - Unapproved floor - Bank funded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Architect certificate request</masterLabel>
+            <translation><!-- Architect certificate request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asked to Call back</masterLabel>
+            <translation><!-- Asked to Call back --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attempted - 1</masterLabel>
+            <translation><!-- Attempted - 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attempted - 2</masterLabel>
+            <translation><!-- Attempted - 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attempted - 3</masterLabel>
+            <translation><!-- Attempted - 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attempted - 4</masterLabel>
+            <translation><!-- Attempted - 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attempted - 5</masterLabel>
+            <translation><!-- Attempted - 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bank NOC request</masterLabel>
+            <translation><!-- Bank NOC request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bank has query - Contact bank RM</masterLabel>
+            <translation><!-- Bank has query - Contact bank RM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAM Enquiry</masterLabel>
+            <translation><!-- CAM Enquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CP registration process know how</masterLabel>
+            <translation><!-- CP registration process know how --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign1</masterLabel>
+            <translation><!-- Campaign1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancellation Intimation1</masterLabel>
+            <translation><!-- Cancellation Intimation1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancellation process know how</masterLabel>
+            <translation><!-- Cancellation process know how --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Car Park Query</masterLabel>
+            <translation><!-- Car Park Query --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Car parks not being alloted</masterLabel>
+            <translation><!-- Car parks not being alloted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change in applicant name</masterLabel>
+            <translation><!-- Change in applicant name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change in correspondance requests</masterLabel>
+            <translation><!-- Change in correspondance requests --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concerns due to media report</masterLabel>
+            <translation><!-- Concerns due to media report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contemplating Legal Action</masterLabel>
+            <translation><!-- Contemplating Legal Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer service Issue</masterLabel>
+            <translation><!-- Customer service Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delay in registration</masterLabel>
+            <translation><!-- Delay in registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demand Intimation1</masterLabel>
+            <translation><!-- Demand Intimation1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demand not sent - records not updated</masterLabel>
+            <translation><!-- Demand not sent - records not updated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dispute - Delay in Possession</masterLabel>
+            <translation><!-- Dispute - Delay in Possession --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dispute - Delay providing documents - Radius Issue</masterLabel>
+            <translation><!-- Dispute - Delay providing documents - Radius Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dispute - Interest waiver requested</masterLabel>
+            <translation><!-- Dispute - Interest waiver requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dispute - Other</masterLabel>
+            <translation><!-- Dispute - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disputing changes in Flat</masterLabel>
+            <translation><!-- Disputing changes in Flat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disputing resale transfer charges</masterLabel>
+            <translation><!-- Disputing resale transfer charges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Due Date Intimation1</masterLabel>
+            <translation><!-- Due Date Intimation1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate invoice request</masterLabel>
+            <translation><!-- Duplicate invoice request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event1</masterLabel>
+            <translation><!-- Event1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Constraint-Applying for loan</masterLabel>
+            <translation><!-- Financial Constraint-Applying for loan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Constraint-Inelligible for Loan</masterLabel>
+            <translation><!-- Financial Constraint-Inelligible for Loan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Constraint-Requested for Deferment</masterLabel>
+            <translation><!-- Financial Constraint-Requested for Deferment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fit out handover request</masterLabel>
+            <translation><!-- Fit out handover request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flat issues on possession</masterLabel>
+            <translation><!-- Flat issues on possession --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Payment</masterLabel>
+            <translation><!-- Full Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greetings1</masterLabel>
+            <translation><!-- Greetings1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haven&apos;t received confirmation / Allotment</masterLabel>
+            <translation><!-- Haven&apos;t received confirmation / Allotment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Humanitarian grounds (medical / Death)</masterLabel>
+            <translation><!-- Humanitarian grounds (medical / Death) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ineligible for loan -Rejected by RFA and Non RFA</masterLabel>
+            <translation><!-- Ineligible for loan -Rejected by RFA and Non RFA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ineligible for loan-Banking Plan</masterLabel>
+            <translation><!-- Ineligible for loan-Banking Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information on portal usage required</masterLabel>
+            <translation><!-- Information on portal usage required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interest waiver not accepted</masterLabel>
+            <translation><!-- Interest waiver not accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interior change request</masterLabel>
+            <translation><!-- Interior change request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal transfer of unit</masterLabel>
+            <translation><!-- Internal transfer of unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoicing error</masterLabel>
+            <translation><!-- Invoicing error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Know Your Customer1</masterLabel>
+            <translation><!-- Know Your Customer1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ledger required</masterLabel>
+            <translation><!-- Ledger required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Case</masterLabel>
+            <translation><!-- Legal Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Sanction awaited - Non RFA</masterLabel>
+            <translation><!-- Loan Sanction awaited - Non RFA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Sanction awaited - RFA</masterLabel>
+            <translation><!-- Loan Sanction awaited - RFA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan disbursal pending - Non RFA</masterLabel>
+            <translation><!-- Loan disbursal pending - Non RFA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan disbursal pending - RFA</masterLabel>
+            <translation><!-- Loan disbursal pending - RFA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan disbursal pending; Registration delay - Customer issue</masterLabel>
+            <translation><!-- Loan disbursal pending; Registration delay - Customer issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan disbursal pending; Registration delay - Radius issue</masterLabel>
+            <translation><!-- Loan disbursal pending; Registration delay - Radius issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loyalty details</masterLabel>
+            <translation><!-- Loyalty details --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MVAT and Stamp duty details required</masterLabel>
+            <translation><!-- MVAT and Stamp duty details required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maintenance Request</masterLabel>
+            <translation><!-- Maintenance Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management Deviation</masterLabel>
+            <translation><!-- Management Deviation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management Direction</masterLabel>
+            <translation><!-- Management Direction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mis-selling</masterLabel>
+            <translation><!-- Mis-selling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need duplicate CAM bill</masterLabel>
+            <translation><!-- Need duplicate CAM bill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs copy of Agreement for Sale</masterLabel>
+            <translation><!-- Needs copy of Agreement for Sale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs to talk to Promoter</masterLabel>
+            <translation><!-- Needs to talk to Promoter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs to talk to a senior</masterLabel>
+            <translation><!-- Needs to talk to a senior --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No not reachable</masterLabel>
+            <translation><!-- No not reachable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Old payment not reflecting</masterLabel>
+            <translation><!-- Old payment not reflecting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operation Calls1</masterLabel>
+            <translation><!-- Operation Calls1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part - Funds issue - will clear outstanding with next installment</masterLabel>
+            <translation><!-- Part - Funds issue - will clear outstanding with next installment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part - Funds issue - will clear outstanding within next month</masterLabel>
+            <translation><!-- Part - Funds issue - will clear outstanding within next month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part - Funds issue - will clear outstanding within next quarter</masterLabel>
+            <translation><!-- Part - Funds issue - will clear outstanding within next quarter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part - Requested for deviation in payment</masterLabel>
+            <translation><!-- Part - Requested for deviation in payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part - Will apply for bank loan for balance</masterLabel>
+            <translation><!-- Part - Will apply for bank loan for balance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part - Will apply for bank loan for next payment</masterLabel>
+            <translation><!-- Part - Will apply for bank loan for next payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment on Possession</masterLabel>
+            <translation><!-- Payment on Possession --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment tracking under process</masterLabel>
+            <translation><!-- Payment tracking under process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Possession delay</masterLabel>
+            <translation><!-- Possession delay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Possession related</masterLabel>
+            <translation><!-- Possession related --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property Tax Enquiry</masterLabel>
+            <translation><!-- Property Tax Enquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Receipt request</masterLabel>
+            <translation><!-- Receipt request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refund process know how</masterLabel>
+            <translation><!-- Refund process know how --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registration delay - Customer issue</masterLabel>
+            <translation><!-- Registration delay - Customer issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registration delay - Radius issue</masterLabel>
+            <translation><!-- Registration delay - Radius issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request for registration</masterLabel>
+            <translation><!-- Request for registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resale NOC request</masterLabel>
+            <translation><!-- Resale NOC request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resale in progress</masterLabel>
+            <translation><!-- Resale in progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resale process enquiry</masterLabel>
+            <translation><!-- Resale process enquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revised area not acceptable</masterLabel>
+            <translation><!-- Revised area not acceptable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send architecht certificate to Bank</masterLabel>
+            <translation><!-- Send architecht certificate to Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send original demand to Bank</masterLabel>
+            <translation><!-- Send original demand to Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Tax Enquiry</masterLabel>
+            <translation><!-- Service Tax Enquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Someone else attended</masterLabel>
+            <translation><!-- Someone else attended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suggestions1</masterLabel>
+            <translation><!-- Suggestions1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDS Due</masterLabel>
+            <translation><!-- TDS Due --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDS Enquiry</masterLabel>
+            <translation><!-- TDS Enquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transfer in progress</masterLabel>
+            <translation><!-- Transfer in progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under cancellation</masterLabel>
+            <translation><!-- Under cancellation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unhappy with RM</masterLabel>
+            <translation><!-- Unhappy with RM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wants to resell prior to lock in ending</masterLabel>
+            <translation><!-- Wants to resell prior to lock in ending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong no</masterLabel>
+            <translation><!-- Wrong no --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Call Disposition --></label>
+        <name>Last_Call_Disposition__c</name>
+        <picklistValues>
+            <masterLabel>Asked to call back</masterLabel>
+            <translation><!-- Asked to call back --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect number</masterLabel>
+            <translation><!-- Incorrect number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need to call back</masterLabel>
+            <translation><!-- Need to call back --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Promised to pay</masterLabel>
+            <translation><!-- Promised to pay --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Marked for Interest --></label>
+        <name>Marked_for_Interest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Milestone Demand Id --></label>
+        <name>Milestone_Demand_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Milestone Percentage --></label>
+        <name>Milestone_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- OC Milestone --></label>
+        <name>OC_Milestone__c</name>
+    </fields>
+    <fields>
+        <label><!-- On date --></label>
+        <name>On_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Percentage --></label>
+        <name>Original_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTP Amount --></label>
+        <name>PTP_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTP Date --></label>
+        <name>PTP_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTP Instrument --></label>
+        <name>PTP_Instrument__c</name>
+        <picklistValues>
+            <masterLabel>Cheque</masterLabel>
+            <translation><!-- Cheque --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demand Draft</masterLabel>
+            <translation><!-- Demand Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEFT</masterLabel>
+            <translation><!-- NEFT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pay Order</masterLabel>
+            <translation><!-- Pay Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTGS</masterLabel>
+            <translation><!-- RTGS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PayPlanIID --></label>
+        <name>PayPlanIID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Due Date --></label>
+        <name>Payment_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pick up address --></label>
+        <name>Pick_up_address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium 1 --></label>
+        <name>Premium_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium 2 --></label>
+        <name>Premium_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium 3 --></label>
+        <name>Premium_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium 4 --></label>
+        <name>Premium_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Charge --></label>
+        <name>Project_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Construction Stages --></label>
+        <name>Project_Construction_Stages__c</name>
+        <relationshipLabel><!-- Standard Customer Pay Plan Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Standard Customer Pay Plan Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Raised Advance Demand --></label>
+        <name>Raised_Advance_Demand__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for deferment --></label>
+        <name>Reason_for_deferment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration Linked --></label>
+        <name>Registration_Linked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remark__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remider 1 Reg. Unit --></label>
+        <name>Remider_1_Reg_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remider 1 Un-Reg. Unit --></label>
+        <name>Remider_1_Un_Reg_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remider 2 Reg. Unit --></label>
+        <name>Remider_2_Reg_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remider 2 Un-Reg. Unit --></label>
+        <name>Remider_2_Un_Reg_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revised Invoice Date --></label>
+        <name>Revised_Invoice_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ST On Basic --></label>
+        <name>ST_On_Basic__c</name>
+    </fields>
+    <fields>
+        <label><!-- ST On Development Charges --></label>
+        <name>ST_On_Development_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- ST On Floor Rise --></label>
+        <name>ST_On_Floor_Rise__c</name>
+    </fields>
+    <fields>
+        <label><!-- ST On Infrastructure Charges --></label>
+        <name>ST_On_Infrastructure_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- ST on Premium 1 --></label>
+        <name>ST_on_Premium_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- ST on Premium 2 --></label>
+        <name>ST_on_Premium_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- ST on Premium 3 --></label>
+        <name>ST_on_Premium_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- ST on Premium 4 --></label>
+        <name>ST_on_Premium_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Amount (Advance Recd) --></label>
+        <name>Service_Tax_Amount_Advance_Recd__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Amount (Demanded) --></label>
+        <name>Service_Tax_Amount_Billed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Amount (Balance) --></label>
+        <name>Service_Tax_Amount_Due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Amount (Paid) --></label>
+        <name>Service_Tax_Amount_Paid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Tax Amount (On Quote) --></label>
+        <name>Service_Tax_Amount_Q__c</name>
+    </fields>
+    <fields>
+        <label><!-- StageIID --></label>
+        <name>StageIID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Pay Plan Header --></label>
+        <name>Standard_Pay_Plan_Header__c</name>
+        <relationshipLabel><!-- Standard Customer Pay Plan Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- TDS --></label>
+        <name>TDS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Amount 1 --></label>
+        <name>Tax_Amount_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Amount 2 --></label>
+        <name>Tax_Amount_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Name 1 --></label>
+        <name>Tax_Name_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Name 2 --></label>
+        <name>Tax_Name_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Charge Value Minus --></label>
+        <name>Total_Charge_Value_Minus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Flat Cost --></label>
+        <name>Total_Flat_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Interest Amount --></label>
+        <name>Total_Interest_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total ST --></label>
+        <name>Total_ST__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total of Tax &amp; Av Milestone wise --></label>
+        <name>Total_of_Tax_Av_Milestone_wise__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tower --></label>
+        <name>Tower__c</name>
+        <relationshipLabel><!-- Standard Customer Pay Plan Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Unique ConstructionStage --></label>
+        <name>Unique_ConstructionStage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- gst --></label>
+        <name>gst__c</name>
+    </fields>
+    <layouts>
+        <layout>SCPPD for All</layout>
+        <sections>
+            <label><!-- Call Log Details --></label>
+            <section>Call Log Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Standard Customer Pay Plan Detail Layout</layout>
+        <sections>
+            <label><!-- Call Log Details --></label>
+            <section>Call Log Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Demand Details --></label>
+            <section>Demand Details</section>
+        </sections>
+        <sections>
+            <label><!-- Individual Components of Basic --></label>
+            <section>Individual Components of Basic</section>
+        </sections>
+        <sections>
+            <label><!-- Interest Details --></label>
+            <section>Interest Details</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Details --></label>
+            <section>Payment Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- After Selecting Percentage Picklist Value of %Amount  ,You cannot  enter %/Amount Value greater than 100. --></errorMessage>
+        <name>After_Selected_PercentageAmount_Value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting On Date Pick Value of Is to be Paid Pick List,On Date cann&apos;t be blank. --></errorMessage>
+        <name>After_Selecting_On_date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- % Amount Value cannot be blank,When Calculate Installment Amount as(%) or Total Charge Value Minus are blank --></errorMessage>
+        <name>Amount_cannt_be_blank</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Select atleast Days or Months Picklist Value --></errorMessage>
+        <name>Enter_Days_Months_Value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Entering in %Amount Value,You cannot insert in Calculate Installment Amount as(%) and in Total Charge Value Minus or After Entering in Calculate Installment Amount as(%) and in Total Charge Value Minus,You cannot enter in %Amount Value --></errorMessage>
+        <name>Entering_value_in_Amount_Value_and_Calcu</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You Cannot set Percentage in %Amount  if  From Date of Booking is selected  in Is to be paid &amp;  Day/Month  value is 0 and customer pay plan header is null. --></errorMessage>
+        <name>If_Is_to_be_paid_From_Date_of_Booking</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting From Dt. of Booking Picklist Value,You Cannot enter in &quot;On date&quot; field --></errorMessage>
+        <name>Is_To_Be_Paid_PickList_ValidationAfterOn</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting On Date  Pick Value,You cannn&apos;t enter in Project Construction Stages --></errorMessage>
+        <name>Is_To_Be_Paid_PickList_ValidationCS</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting On Date Pick Value,You cannn&apos;t enter in Days/Months --></errorMessage>
+        <name>Is_To_Be_Paid_PickList_ValidationDay</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting On Date Pick Value,You cannn&apos;t enter in Day/Months Value --></errorMessage>
+        <name>Is_To_Be_Paid_PickList_ValidationDayM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting From Dt. of Booking Picklist Value,You cannot select Project Construction Stages. --></errorMessage>
+        <name>Is_To_Be_Paid_PickList_Validation_Cons</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting  Dt. of Booking Picklist Value of Is to be Paid Day/Months Value cannot be left blank. --></errorMessage>
+        <name>Is_To_Be_Paid_PickList_Validation_DayVa</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Construction Stage Picklist  Value,Day/Months Value Cannot be left  blank. --></errorMessage>
+        <name>Is_To_Be_Paid_PickList_Validation_DayVal</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Construction Stage Pick Value,You cannn&apos;t enter in On date. --></errorMessage>
+        <name>Is_To_Be_Paid_PickList_Validation_Ondate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Construction Stage Picklist Value,Project Construction Stages Cannot be left blank. --></errorMessage>
+        <name>Is_To_Be_Paid_PickList_Validation_Projec</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- On date should be less than the Effective from date of the Payment Plan. --></errorMessage>
+        <name>On_Date_Should_not_be_less_than_Effectiv</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Percentage Picklist value of %/Amount ,You cannot enter in Calculate Installment Amount as(%) --></errorMessage>
+        <name>Select_Percent_Amount_Entering_in_Calcul</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting Percentage Picklist value of %/Amount ,You cannot enter in Total Charge Value Minus field --></errorMessage>
+        <name>Select_Percent_Amount_Entering_in_Minus</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Ownership Transfer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Transfer Header</value>
+    </caseValues>
+    <fields>
+        <label><!-- Buyers Agreement --></label>
+        <name>Buyers_Agreement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Define Charges --></label>
+        <name>Define_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Ownership Transfers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Received From Buyer --></label>
+        <name>Received_From_Buyer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Received From Seller --></label>
+        <name>Received_From_Seller__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unprocessed</masterLabel>
+            <translation><!-- Unprocessed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total(In Rs.) --></label>
+        <name>Total_In_Rs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transfer Charges --></label>
+        <name>Transfer_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transfer Date --></label>
+        <name>Transfer_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transfer From Customer --></label>
+        <name>Transfer_From_Customer__c</name>
+        <relationshipLabel><!-- Ownership Transfers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Transfer No. --></label>
+        <name>Transfer_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transfer To customer --></label>
+        <name>Transfer_To_customer__c</name>
+        <relationshipLabel><!-- Transfer Header (Transfer To customer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Transfer Value --></label>
+        <name>Transfer_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transfer Without Dues --></label>
+        <name>Transfer_Without_Dues__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transfer Without Interest --></label>
+        <name>Transfer_Without_Interest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Unit --></label>
+        <name>Unit_No__c</name>
+        <relationshipLabel><!-- Ownership Transfers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- identity proof of buyer --></label>
+        <name>identity_proof_of_buyer__c</name>
+    </fields>
+    <fields>
+        <label><!-- identity proof of seller --></label>
+        <name>identity_proof_of_seller__c</name>
+    </fields>
+    <fields>
+        <label><!-- letter of alotement --></label>
+        <name>letter_of_alotement__c</name>
+    </fields>
+    <fields>
+        <label><!-- original receipts --></label>
+        <name>original_receipts__c</name>
+    </fields>
+    <fields>
+        <label><!-- transfer form(3 copies) --></label>
+        <name>transfer_form_3_copies__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Process --></label>
+        <name>Process</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Transfer_Ownership --></label>
+        <name>Transfer_Ownership</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Document Checklist</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Document Checklists</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Values --></label>
+        <name>Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Checklist Header --></label>
+        <name>Document_Checklist_Header__c</name>
+        <relationshipLabel><!-- Document Checklists --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rejection Remarks --></label>
+        <name>Rejection_Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Verified --></label>
+        <name>Verified__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

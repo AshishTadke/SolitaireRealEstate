@@ -1,0 +1,496 @@
+<apex:page id="pageid" controller="PrintLedgerDemandsRecieptsController"  applyHtmlTag="false" showHeader="false" sidebar="false" standardStylesheets="false" renderas="pdf"> <!--  -->
+<head>
+      <!--  <style>
+            @page { 
+            size: A4 landscape;
+            margin: 5mm; 
+         }     
+         </style> -->
+         
+        <style>
+            @page {
+                size: A4 landscape;
+                margin: 10mm;
+                @bottom-center {
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+            @media print {
+              table.withBorders thead {display: table-header-group;}    
+            }
+            .sfdc_richtext img {
+              border: 0;
+              width: 100px;
+              height:90px;
+            }
+            .page-break {
+                display:block;
+                page-break-before:always;
+            }
+            body {
+                font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+                font-weight:normal; 
+                font-size:10px; 
+                mso-line-height-rule: exactly;
+            }
+            table.withBorders tbody {
+                display: table-row-group;
+            }
+            table.withBorders thead {
+               display:table-header-group;
+            }
+            table.withBorders  {
+                border-collapse: collapse;
+                border: 1px solid #CAD1C3;
+            }
+            table.withBorders td, table.withBorders th {
+                border: 1px solid #CAD1C3;
+            }
+            table.withBorders tr{
+                page-break-inside: avoid;
+            }
+        </style>
+</head>
+<body>
+    <apex:pageBlock >
+    <apex:outputPanel id="outermost">
+        <apex:outputPanel id="errorPanel" rendered="{!error}">
+            <table id="errorTable" align="center">
+                <tr>
+                    <td>{!errMsg}</td>
+                </tr>
+            </table>
+        </apex:outputPanel>
+        <apex:outputPanel id="ledgerPanel" rendered="{!NOT(error)}" >
+            <table id="outermostTable" align="center" >
+                <tr>
+                    <td>
+                        <table width="100%" id="headerTable" >
+                            <tr width="100%">
+                                <td colspan="1">
+                                    Current Unit Status:{!CustomerUnitStatus }
+                                </td>
+                                <td colspan="2">
+                                    <table id="headerCenterTable" >
+                                        <tr>
+                                            <td align="center"><h4>{!le.Name}</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{!le.RDS_Address1__c}</td>
+                                         </tr>
+                                         <tr>
+                                            <td>{!le.RDS_Address2__c}</td>
+                                         </tr>
+                                         <tr>
+                                            <td align="center"><h4>Account Details as on:<apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!ledgerDate}"/></apex:outputtext></h4></td>
+                                         </tr>
+                                    </table>
+                                </td>
+                                <td colpsan="1" width="5%" align="right" valign="top">
+                                   <!-- <apex:outputField value="{!Customer.Project__r.Project_Image__c}"></apex:outputField>-->
+                                   <apex:outputField value="{!ledgerList[0].Project__r.Project_Image__c}" rendered="{!If(ledgerList.size > 0,true,False)}"></apex:outputField>
+                                </td>
+                            </tr>
+                       </table>
+                    </td>
+                </tr>
+                <table id="le"  width="100%" style="page-break-before:auto;width:100%;" class="withBorders">
+                <tr>
+                    <td>
+                        <table width="100%" id="contactDetailsTable">
+                            <tr width="100%">
+                                <td colspan="1">
+                                    <table id="toAddress" width="100%"   class="withBorders">
+                                        <tr>
+                                            <td colspan="2"><b><apex:outputText value="{!CustomerPrimaryName }"/></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><apex:outputText value="{!CustomerApplicantName }"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address:</td>
+                                            <td><apex:outputText value="{!CustomerMailingAddress }"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phone:</td>
+                                            <td><apex:outputText value="{!CustomerPhone }"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email:</td>
+                                            <td><apex:outputText value="{!CustomerEmail }"/></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table id="UnitDetailsTable" width="100%"  class="withBorders">
+                                        <tr>
+                                            <td>Project Name</td>
+                                            <td colspan="1"><b><apex:outputText value="{!ProjectName}"/></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Flat No.</td>
+                                            <td colspan="1"><b><apex:outputText value="{!ProjectUnitName }"/></b></td>
+                                         </tr>
+                                         <tr>
+                                            <td>Area in [Sq. Ft.]</td>
+                                            <td colspan="1"><b><apex:outputText value="{!UnitActualArea }"/></b></td>
+                                         </tr>
+                                         <tr>
+                                            <td>Car Parks Allotted</td>
+                                            <td colspan="1"><b><apex:outputText value="{!CarParksAllotted}"/></b></td>
+                                         </tr>
+                                         <!-- <tr>
+                                            <td>Agreement Value</td>
+                                            <td><b><apex:outputText value="{!agreementValue}"/></b></td>
+                                         </tr> -->
+                                    </table>
+                                </td>
+                              
+                                <td colspan="2">
+                                    <table id="DuesTable"  width="100%" height="100%"  class="withBorders" style="display:{!ledgerStyle}">
+                                        <tr>
+                                            <td colspan="2" rowspan="2"></td>
+                                            <td colspan="1">Total Dues as on </td>
+                                            <td><apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!ledgerDate}"/></apex:outputtext></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="1">Amount</td>
+                                            <td colspan="1">Interest</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Flat Cost</td>
+                                            <td colspan="1">{!totalBasicOutstanding}</td>
+                                            <td colspan="1" rowspan="2">{!totalInterestDue}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Service Tax</td>
+                                            <td colspan="1">{!totalBasicTaxOutstanding}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Other Charges</td>
+                                            <td colspan="1">{!totalOtherOutstanding}</td>
+                                            <td colspan="1">{!totalOtherTaxOutstanding}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                           
+                            <table id="pendingTable"  width="100%" style="page-break-before:auto;width:100%;" class="withBorders" >
+                                <thead>
+                                    <tr>
+                                         <td colspan="12" align="center" style="background-color:#B9D7D9"><b>Pending flat Cost Details</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th style="background-color:#E2DDD9" align="center"><b>Agreement Value</b></th>
+                                    <th style="background-color:#E2DDD9" align="center"><b>Agreement Value without TDS</b></th>
+                                    <th style="background-color:#E2DDD9" align="center"><b>Pending Flat Cost</b></th>
+                                </tr>
+                                <tr>
+                                    <td align="center"><b><apex:outputText value="{!agreementValue}"/></b></td>
+                                    <td align="center"><b><apex:outputText value="{!AgreementValueWithoutTDS}"/></b></td>
+                                    <td align="center"><b><apex:outputText value="{!pendingFlatCost}"/></b></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <tr>
+                                <td colspan="4" width="100%">
+                                    <table id="DemandsReceiptstable"  width="100%" height="100%" class="withBorders"  style="display:{!ledgerStyle}">
+                                        <tr>
+                                            <td colspan="2" rowspan="2"></td>
+                                            <td colspan="2" style="background-color:#B9D7D9"><b>Total Demands</b></td>
+                                            <td colspan="2" style="background-color:#B9D7D9"><b>Total Receipts</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="background-color:#E2DDD9"><b>Amount</b></td>
+                                            <td colspan="1" style="background-color:#E2DDD9"><b>Amount</b></td>
+                                            <td colspan="1" style="background-color:#E2DDD9"><b>Percentage</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Flat Cost</td>
+                                            <td colspan="2">{!totalBasicDemanded}</td>
+                                            <td colspan="1">{!totalBasicPaid}</td>
+                                            <td colspan="1">{!PercentagePaidBasic}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">TDS Payable on Flat Cost</td>
+                                            <td colspan="2">{!tdsOnFlatCost}</td>
+                                            <td colspan="2">NA</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Service Tax</td>
+                                            <td colspan="2">{!totalBasicTaxDemanded}</td>
+                                            <td colspan="1">{!totalBasicTaxPaid}</td>
+                                            <td colspan="1">{!PercentagePaidBasicTax}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Interest</td>
+                                            <td colspan="2">{!totalInterest}</td>
+                                            <td colspan="1">{!totalInterestSettled}</td>
+                                            <td colspan="1">{!PercentageInterestPaid}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Other Charges</td>
+                                            <td colspan="2">{!totalOtherDemanded}</td>
+                                            <td colspan="1">{!totalOtherPaid}</td>
+                                            <td colspan="1">{!PercentagePaidOther}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><b>Total</b></td>
+                                            <td colspan="2">{!gtDemanded}</td>
+                                            <td colspan="1">{!gtPaid}</td>
+                                            <td colspan="1">{!gtPercentage}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><b>Any unadjusted payments - On Account</b></td>
+                                            <td colspan="4">{!OnAccountMoney}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                       </table>
+                    </td>
+                </tr>
+                </Table>
+                <!-- from here copied -->
+               </table> 
+      </apex:outputPanel> 
+              &nbsp;
+                         <table id="ledger1Table"  width="100%" style="page-break-before:auto;width:100%;" class="withBorders" >
+                            <thead>
+                                <tr>
+                                     <td colspan="13" align="center" style="background-color:#B9D7D9"><b>Milestone Details</b></td>
+                                </tr>
+                             </thead>
+                             <tbody>
+                                <tr>
+                                    <td style="background-color:#E2DDD9"><b>Name</b></td>
+                                    <td style="background-color:#E2DDD9"><b>Due Date</b></td> 
+                                    <td style="background-color:#E2DDD9"><b>Installment Amount</b></td>
+                                    <td style="background-color:#E2DDD9"><b>Installment Amount<br/>(Demanded)</b></td>
+                                    <td style="background-color:#E2DDD9"><b>Installment Amount<br/>(Paid)</b></td>
+                                    <td style="background-color:#E2DDD9"><b>Installment Amount<br/>(Balance)</b></td>
+                                    <td style="background-color:#E2DDD9"><b>ServiceTax Amount<br/>(Demanded)</b></td>
+                                    <td style="background-color:#E2DDD9"><b>ServiceTax Amount<br/>(Paid)</b></td>
+                                    <td style="background-color:#E2DDD9"><b>ServiceTax Amount<br/>(Balance)</b></td> 
+                                    <td style="background-color:#E2DDD9"><b>Int Flatcost<br/>(Total)</b></td> 
+                                    <td style="background-color:#E2DDD9"><b>Int Flatcost<br/>(Pending)</b></td> 
+                                    <td style="background-color:#E2DDD9"><b>Int ServiceTax<br/>(Total)</b></td> 
+                                    <td style="background-color:#E2DDD9"><b>Int ServiceTax<br/>(Pending)</b></td> 
+                                </tr>
+                               
+                                <apex:repeat value="{!SCPPDList}" var="scppd">
+                                 <tr>
+                                 
+                                <td style="background-color:{!scppd.Remarks__c}">{!scppd.Is_to_be__c}</td>
+                                <td><apex:outputField value="{!scppd.Payment_Due_Date__c}"/></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!scppd.Installment__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!scppd.Charge_Amount_Billed__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!scppd.Charge_Amount_Paid__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!scppd.Charge_Amount_Due__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!scppd.Service_Tax_Amount_Billed__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!scppd.Service_Tax_Amount_Paid__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!scppd.Service_Tax_Amount_Due__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!scppd.Int_Flatcost_Total__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!scppd.Int_Flatcost_Pending__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!scppd.Int_ServiceTax_Total__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!scppd.Int_ServiceTax_Pending__c}" /></apex:outputText></td>
+                                
+                                <!-- <td><apex:outputField value="{!scppd.Due_Date__c}" /></td> -->
+                               
+                                </tr>
+                                </apex:repeat>
+                                
+                            </tbody>
+                      </table>
+                      &nbsp;&nbsp;
+                       <table id="DemandsTable"  width="100%" style="page-break-before:auto;width:100%;" class="withBorders" >
+                            <thead>
+                                <tr>
+                                     <td colspan="9" align="center" style="background-color:#B9D7D9"><b>Demand Details</b></td>
+                                </tr>
+                             </thead>
+                             <tbody>
+                                <tr>
+                                    <th style="background-color:#E2DDD9"><b>Demand Name</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Invoice Date</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Due Date</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Total Demanded (Installment)</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Outstanding (Installment)</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Current Demand (Installment)</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Total Payable (Installment)</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Total Payable (Overall)</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Print Invoice</b></th>
+                                </tr>
+                               
+                                <apex:repeat value="{!DemandsList}" var="dmd">
+                                 <tr>
+                                <td>{!dmd.Name}</td>
+                                <td><apex:outputField value="{!dmd.Invoice_Date__c}"/></td>
+                                <td><apex:outputField value="{!dmd.Due_Date__c}"/></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!dmd.Total_Demanded_Installment__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!dmd.Outstanding_Installment__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!dmd.Current_Demand_Installment__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!dmd.Total_Payable_Installment__c}" /></apex:outputText></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!dmd.Total_Payable_Overall__c}" /></apex:outputText></td>
+                                <td><apex:outputLink value="apex/DemandLetterTemplate?DemandInvId={!dmd.Id}" target="_blank">Print Invoice</apex:outputLink></td>
+                                </tr>
+                                </apex:repeat>
+                                
+                            </tbody>
+                      </table>
+                       &nbsp;&nbsp;
+                       <table id="ReceiptTable"  width="100%" style="page-break-before:auto;width:100%;" class="withBorders" >
+                            <thead>
+                                <tr>
+                                     <td colspan="10" align="center" style="background-color:#B9D7D9"><b>Receipt Details</b></td>
+                                </tr>
+                             </thead>
+                             <tbody>
+                                <tr>
+                                    <th style="background-color:#E2DDD9"><b>Receipt Name</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Receipt Date</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Amount</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Instrument</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Cheque/DD No</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Drawee Bank</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Currency</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Token Amount Receipt</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Token Amount ST</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Print Receipt</b></th>
+                                </tr>
+                               
+                                <apex:repeat value="{!ReceiptList}" var="rct">
+                                 <tr>
+                                <td>{!rct.Name}</td>
+                                <td><apex:outputField value="{!rct.Receipt_Date__c}"/></td>
+                                <td><apex:outputText value="Rs.{0,number,#,###,###}/-"> <apex:param value="{!rct.Total_Amount__c}" /></apex:outputText></td>
+                                <td>{!rct.Mode__c}</td>
+                                <td>{!rct.Cheque_DD__c}</td>
+                                <td>{!rct.DraweeBank__c}</td>
+                                <td>{!rct.Currency__c}</td>
+                                <td><apex:outputField value="{!rct.Token_Amount_Receipt__c}"/> </td>
+                                <td><apex:outputField value="{!rct.Token_Amount_ST__c}"/></td>
+                                <td><apex:outputLink value="apex/S_PrintReceipt?letterhead=0&id={!rct.Id}" target="blank">Print Receipt</apex:outputLink></td>
+                                </tr>
+                                </apex:repeat>
+                                
+                            </tbody>
+                      </table>
+                  <Table id="ledger1Table2"  width="100%" style="page-break-before:auto;width:100%;" class="withBorders">
+                <tr>
+                    <td colspan="4">
+                        <table id="ledgerTable"  width="100%" style="page-break-before:auto;width:100%;display:{!ledgerStyle}" class="withBorders" >
+                            <tr>
+                                <td colspan="8" align="center" style="background-color:#B9D7D9"><b>Client Ledger Upto <apex:outputtext value="{0, date, dd MMM,YYYY}" style="background-color:#B9D7D9"><apex:param value="{!ledgerDate}"/></apex:outputtext></b></td>
+                            </tr>
+                            <thead>
+                                <tr>
+                                    <th style="background-color:#E2DDD9"><b>Posting Date</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Particulars</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Details</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Adjusted/Raised Against</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Ref. No</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Debit</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Credit</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Balance</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td colspan="8">
+                                    <apex:repeat value="{!lpwLocalList}" var="lpw">
+                                        <tr style="display:{!lpw.header}" class="page-break">
+                                        </tr>
+                                        <tr style="display:{!lpw.header}">
+                                            <td colspan="8" align="center" style="background-color:#B9D7D9"><b>Client Ledger Upto <apex:outputtext value="{0, date, dd MMM,YYYY}" style="background-color:#B9D7D9"><apex:param value="{!ledgerDate}"/></apex:outputtext></b></td>
+                                        </tr>
+                                        <tr style="display:{!lpw.header}">
+                                                <th style="background-color:#E2DDD9"><b>Posting Date</b></th>
+                                                <th style="background-color:#E2DDD9"><b>Particulars</b></th>
+                                                <th style="background-color:#E2DDD9"><b>Details</b></th>
+                                                <th style="background-color:#E2DDD9"><b>Adjusted/Raised Against</b></th>
+                                                <th style="background-color:#E2DDD9"><b>Ref. No</b></th>
+                                                <th style="background-color:#E2DDD9"><b>Debit</b></th>
+                                                <th style="background-color:#E2DDD9"><b>Credit</b></th>
+                                                <th style="background-color:#E2DDD9"><b>Balance</b></th>
+                                        </tr>
+                                        <tr>
+                                            <td width="12%"><apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!lpw.l.Transaction_Date__c}" /></apex:outputtext></td>
+                                            <td width="18%">
+                                                <apex:outputtext value="{!lpw.demandFor}" rendered="{!lpw.l.Debit_Credit__c == 'Debit'}" escape="false"> </apex:outputtext>
+                                                <apex:outputtext value="{!lpw.paymentFor}" rendered="{!lpw.l.Debit_Credit__c == 'Credit'}" escape="false"> </apex:outputtext>
+                                            </td>
+                                            <td width="15%">
+                                                <apex:outputtext value="{!lpw.demandDetails}" rendered="{!lpw.l.Debit_Credit__c == 'Debit'}" escape="false" > </apex:outputtext>
+                                                <apex:outputtext value="{!lpw.paymentDetails}" rendered="{!lpw.l.Debit_Credit__c == 'Credit'}" escape="false" > </apex:outputtext>
+                                            </td>
+                                            <td width="10%"><apex:outputtext value="{!lpw.chargeName}"></apex:outputtext></td>
+                                            <td width="5%" align="center"><apex:outputtext value="{!lpw.refString}"></apex:outputtext></td>
+                                            <td width="13%"  style="background-color:{!IF(lpw.l.Debit_Credit__c == 'Debit',lpw.colorCode,'')}"><apex:outputtext value="{!lpw.Amount}" rendered="{!lpw.l.Debit_Credit__c == 'Debit'}" ></apex:outputtext></td>
+                                            <td width="13%"  style="background-color:{!IF(lpw.l.Debit_Credit__c == 'Credit',lpw.colorCode,'')}"><apex:outputtext value="{!lpw.Amount}" rendered="{!lpw.l.Debit_Credit__c == 'Credit'}" ></apex:outputtext></td>
+                                            <td width="13%"><apex:outputtext value="{!lpw.Balance}" ></apex:outputtext></td>
+                                        </tr>
+                                        
+                                    </apex:repeat>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>&nbsp;&nbsp;
+                        <!-- to here copied -->
+                        <table id="paymentsTable"  width="100%" style="page-break-before:auto;width:100%;display:{!paymentsStyle}" class="withBorders" >
+                            <tr>
+                                <td colspan="5" align="center" style="background-color:#B9D7D9"><b>Client Payments Upto <apex:outputtext value="{0, date, dd MMM,YYYY}" style="background-color:#B9D7D9"><apex:param value="{!ledgerDate}"/></apex:outputtext></b></td>
+                            </tr>
+                            <thead>
+                                <tr>
+                                    <th style="background-color:#E2DDD9"><b>Posting Date</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Particulars</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Details</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Adjusted/Raised Against</b></th>
+                                    <th style="background-color:#E2DDD9"><b>Credit</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td colspan="5">
+                                    <apex:repeat value="{!lpwLocalList}" var="lpw">
+                                        <tr style="display:{!lpw.header}" class="page-break">
+                                        </tr>
+                                        <tr style="display:{!lpw.header}">
+                                            <td colspan="5" align="center" style="background-color:#B9D7D9"><b>Client Payments Upto <apex:outputtext value="{0, date, dd MMM,YYYY}" style="background-color:#B9D7D9"><apex:param value="{!ledgerDate}"/></apex:outputtext></b></td>
+                                        </tr>
+                                        <tr style="display:{!lpw.header}">
+                                                <th style="background-color:#E2DDD9"><b>Posting Date</b></th>
+                                                <th style="background-color:#E2DDD9"><b>Particulars</b></th>
+                                                <th style="background-color:#E2DDD9"><b>Details</b></th>
+                                                <th style="background-color:#E2DDD9"><b>Adjusted/Raised Against</b></th>
+                                                <th style="background-color:#E2DDD9"><b>Credit</b></th>
+                                        </tr>
+                                        <tr>
+                                            <td width="20%"><apex:outputtext value="{0, date, dd MMM,YYYY}"><apex:param value="{!lpw.l.Transaction_Date__c}" /></apex:outputtext></td>
+                                            <td width="20%">
+                                                <apex:outputtext value="{!lpw.paymentFor}" escape="false"> </apex:outputtext>
+                                            </td>
+                                            <td width="20%">
+                                                <apex:outputtext value="{!lpw.paymentDetails}" escape="false" > </apex:outputtext>
+                                            </td>
+                                            <td width="20%"><apex:outputtext value="{!lpw.chargeName}"></apex:outputtext></td>
+                                            <td width="20%"><apex:outputtext value="{!lpw.Amount}" rendered="{!lpw.l.Debit_Credit__c == 'Credit'}" ></apex:outputtext></td>
+                                        </tr>
+                                        
+                                    </apex:repeat>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+        
+                    </td>
+                </tr>
+                </Table>
+       
+    </apex:outputPanel>
+    </apex:pageBlock>
+</body>
+</apex:page>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Details of radius centralized  email id, contact no and office hours</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ContactNo__c</fullName>
+        <externalId>false</externalId>
+        <label>ContactNo</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>EmailID__c</fullName>
+        <externalId>false</externalId>
+        <label>EmailID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operation_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Operation Hours</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Centralized Details</label>
+    <visibility>Protected</visibility>
+</CustomObject>

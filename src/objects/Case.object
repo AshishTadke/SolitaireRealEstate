@@ -1,0 +1,1903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChangeStatus</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloneAsChild</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloseCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MassClose</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <fields>
+        <fullName>ACCOUNT_MANAGEMENT_REMARKS__c</fullName>
+        <externalId>false</externalId>
+        <label>ACCOUNT MANAGEMENT REMARKS</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ACCOUNT_MANAGEMENT_STATUS__c</fullName>
+        <externalId>false</externalId>
+        <label>ACCOUNT MANAGEMENT STATUS</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Agreement Soft Copy Ready</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KYC for Registration Done</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration Done</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration Scheduled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>File Not Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>File Accepted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>File Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Welcome Call Done</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession Done</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AssetId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Attempted_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Attempted By</label>
+        <picklist>
+            <picklistValues>
+                <fullName>test</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>test1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>test2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BANKING_REMARKS__c</fullName>
+        <externalId>false</externalId>
+        <label>BANKING REMARKS</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BANKING_STATUS__c</fullName>
+        <externalId>false</externalId>
+        <label>BANKING STATUS</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Documents Collection WIP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan Application Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan Application Done</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roadblock</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sanctioned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BusinessHoursId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ClosedDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Comments</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactFax</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContactMobile</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsClosedOnCreate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsEscalated</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>L1__c</fullName>
+        <externalId>false</externalId>
+        <label>L1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>SDR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Documents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Updation of info on systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loyalty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Construction Update</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possessions Related</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vol - Cancellation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation Due to Default</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Collection Related</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>L2__c</fullName>
+        <externalId>false</externalId>
+        <label>L2</label>
+        <picklist>
+            <controllingField>L1__c</controllingField>
+            <picklistValues>
+                <fullName>Payment</fullName>
+                <default>false</default>
+                <controllingFieldValues>SDR</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paid</fullName>
+                <default>false</default>
+                <controllingFieldValues>SDR</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal</fullName>
+                <default>false</default>
+                <controllingFieldValues>SDR</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>customer not contactable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Collection Related</controllingFieldValues>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+                <controllingFieldValues>Possessions Related</controllingFieldValues>
+                <controllingFieldValues>SDR</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>process</fullName>
+                <default>false</default>
+                <controllingFieldValues>TDS</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Provided Challan</fullName>
+                <default>false</default>
+                <controllingFieldValues>TDS</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Requires Original/Duplicate</fullName>
+                <default>false</default>
+                <controllingFieldValues>Documents</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Contact Information</fullName>
+                <default>false</default>
+                <controllingFieldValues>Updation of info on systems</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs more time to confirm</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>needs status of construction</fullName>
+                <default>false</default>
+                <controllingFieldValues>Construction Update</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre-Possession</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possessions Related</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PDL Sent Payment Pending</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possessions Related</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100% CV received site visit pending</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possessions Related</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Site visit done-readiness pending</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possessions Related</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Readiness received handover pending</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possessions Related</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession Done</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possessions Related</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Society Handover</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possessions Related</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation Process/ Letter</fullName>
+                <default>false</default>
+                <controllingFieldValues>Vol - Cancellation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation Process/Communication</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Due to Default</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment made - not received yet</fullName>
+                <default>false</default>
+                <controllingFieldValues>Collection Related</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PTP</fullName>
+                <default>false</default>
+                <controllingFieldValues>Collection Related</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment made</fullName>
+                <default>false</default>
+                <controllingFieldValues>Collection Related</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delay Expected</fullName>
+                <default>false</default>
+                <controllingFieldValues>Collection Related</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interest Waiver</fullName>
+                <default>false</default>
+                <controllingFieldValues>Collection Related</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lost</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow up</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No show</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit Proposed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit Confirmed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit Done</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meeting fixed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meeting Proposed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meeting done</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Booking done</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tele Meeting done</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tele meeting fixed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Loyalty</controllingFieldValues>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>L3__c</fullName>
+        <externalId>false</externalId>
+        <label>L3</label>
+        <picklist>
+            <controllingField>L2__c</controllingField>
+            <picklistValues>
+                <fullName>PTP</fullName>
+                <default>false</default>
+                <controllingFieldValues>PDL Sent Payment Pending</controllingFieldValues>
+                <controllingFieldValues>Payment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>disputing agreement clause</fullName>
+                <default>false</default>
+                <controllingFieldValues>Payment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>wants to read draft agrement</fullName>
+                <default>false</default>
+                <controllingFieldValues>Payment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>scheduled</fullName>
+                <default>false</default>
+                <controllingFieldValues>Paid</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>rescheduled</fullName>
+                <default>false</default>
+                <controllingFieldValues>Paid</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>customer stalling</fullName>
+                <default>false</default>
+                <controllingFieldValues>Paid</controllingFieldValues>
+                <controllingFieldValues>Payment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>completed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Paid</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yet to be initated</fullName>
+                <default>false</default>
+                <controllingFieldValues>Internal</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>no answer</fullName>
+                <default>false</default>
+                <controllingFieldValues>Open</controllingFieldValues>
+                <controllingFieldValues>customer not contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>callback</fullName>
+                <default>false</default>
+                <controllingFieldValues>customer not contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ROC</fullName>
+                <default>false</default>
+                <controllingFieldValues>Requires Original/Duplicate</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NOC</fullName>
+                <default>false</default>
+                <controllingFieldValues>Requires Original/Duplicate</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approval documents</fullName>
+                <default>false</default>
+                <controllingFieldValues>Requires Original/Duplicate</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demand letter</fullName>
+                <default>false</default>
+                <controllingFieldValues>Requires Original/Duplicate</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment receipt</fullName>
+                <default>false</default>
+                <controllingFieldValues>Requires Original/Duplicate</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TDS receipt</fullName>
+                <default>false</default>
+                <controllingFieldValues>Requires Original/Duplicate</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Account statement</fullName>
+                <default>false</default>
+                <controllingFieldValues>Requires Original/Duplicate</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registered agreement</fullName>
+                <default>false</default>
+                <controllingFieldValues>Requires Original/Duplicate</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone number updation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Customer Contact Information</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Name Change</fullName>
+                <default>false</default>
+                <controllingFieldValues>Customer Contact Information</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Address Change</fullName>
+                <default>false</default>
+                <controllingFieldValues>Customer Contact Information</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email ID</fullName>
+                <default>false</default>
+                <controllingFieldValues>Customer Contact Information</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Date of visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Already made investments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Does not have funds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>offering not good enough</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>does not have the budget</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>date field</fullName>
+                <default>false</default>
+                <controllingFieldValues>Needs more time to confirm</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession Timelines</fullName>
+                <default>false</default>
+                <controllingFieldValues>Pre-Possession</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delayed Possession Query</fullName>
+                <default>false</default>
+                <controllingFieldValues>Pre-Possession</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compensation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Pre-Possession</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Statutory Compliance (OC / Approvals)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Pre-Possession</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Design/ Amenity related/View Query</fullName>
+                <default>false</default>
+                <controllingFieldValues>Pre-Possession</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parking Allotment</fullName>
+                <default>false</default>
+                <controllingFieldValues>Pre-Possession</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Site visit request</fullName>
+                <default>false</default>
+                <controllingFieldValues>PDL Sent Payment Pending</controllingFieldValues>
+                <controllingFieldValues>Pre-Possession</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Charges (CAM/Society /Demurrage)</fullName>
+                <default>false</default>
+                <controllingFieldValues>PDL Sent Payment Pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Site Visit Denied</fullName>
+                <default>false</default>
+                <controllingFieldValues>PDL Sent Payment Pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Site visit scheduled</fullName>
+                <default>false</default>
+                <controllingFieldValues>100% CV received site visit pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting Site Visit Confirmation</fullName>
+                <default>false</default>
+                <controllingFieldValues>100% CV received site visit pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Design/ Amenity related Compensation demand</fullName>
+                <default>false</default>
+                <controllingFieldValues>Site visit done-readiness pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parking Allotment Query/Request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Site visit done-readiness pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Re-visit request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Site visit done-readiness pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Snags given after site-visit</fullName>
+                <default>false</default>
+                <controllingFieldValues>Site visit done-readiness pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delay in snag rectification</fullName>
+                <default>false</default>
+                <controllingFieldValues>Site visit done-readiness pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality of construction</fullName>
+                <default>false</default>
+                <controllingFieldValues>Site visit done-readiness pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Readiness Timelines</fullName>
+                <default>false</default>
+                <controllingFieldValues>Site visit done-readiness pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OC Not Received</fullName>
+                <default>false</default>
+                <controllingFieldValues>PDL Sent Payment Pending</controllingFieldValues>
+                <controllingFieldValues>Possession Done</controllingFieldValues>
+                <controllingFieldValues>Site visit done-readiness pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refunds</fullName>
+                <default>false</default>
+                <controllingFieldValues>Readiness received handover pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amenities Related</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possession Done</controllingFieldValues>
+                <controllingFieldValues>Readiness received handover pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession Scheduled/Re-scheduled</fullName>
+                <default>false</default>
+                <controllingFieldValues>Readiness received handover pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accounts recon pending</fullName>
+                <default>false</default>
+                <controllingFieldValues>Readiness received handover pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Liveability</fullName>
+                <default>false</default>
+                <controllingFieldValues>Readiness received handover pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession Pending - FM Issues</fullName>
+                <default>false</default>
+                <controllingFieldValues>Readiness received handover pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment Pending</fullName>
+                <default>false</default>
+                <controllingFieldValues>Readiness received handover pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FM services/PCMA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possession Done</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vehicle Slots</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possession Done</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post Possession Snags</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possession Done</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Re-sale</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possession Done</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Society formed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Possession Done</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Process Expalined</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Process/ Letter</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Format Sent</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Process/ Letter</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Process/ Letter</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Received Cancel letter</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Process/ Letter</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demise in the family</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Process/Communication</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial Constraints</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Process/Communication</controllingFieldValues>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan Eligibility issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Process/Communication</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lack of Approvals</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Process/Communication</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Due to Possession Timelines</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Process/Communication</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medical Reasons</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Process/Communication</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mis-selling</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Process/Communication</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cheque dropped at site</fullName>
+                <default>false</default>
+                <controllingFieldValues>Payment made - not received yet</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Online payment not reflecting</fullName>
+                <default>false</default>
+                <controllingFieldValues>Payment made - not received yet</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Handed over to channel partner</fullName>
+                <default>false</default>
+                <controllingFieldValues>Payment made - not received yet</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Transit-Courier</fullName>
+                <default>false</default>
+                <controllingFieldValues>Payment made - not received yet</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client will pay by self</fullName>
+                <default>false</default>
+                <controllingFieldValues>PTP</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment will come from bank</fullName>
+                <default>false</default>
+                <controllingFieldValues>PTP</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pick up to be arranged</fullName>
+                <default>false</default>
+                <controllingFieldValues>PTP</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Received</fullName>
+                <default>false</default>
+                <controllingFieldValues>Payment made</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reason for non payment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interest Waiver Communication</fullName>
+                <default>false</default>
+                <controllingFieldValues>Interest Waiver</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waiver under review</fullName>
+                <default>false</default>
+                <controllingFieldValues>Interest Waiver</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waiver given - agreeable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Interest Waiver</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waiver given - not agreeable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Interest Waiver</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer not eligible</fullName>
+                <default>false</default>
+                <controllingFieldValues>Interest Waiver</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <controllingFieldValues>100% CV received site visit pending</controllingFieldValues>
+                <controllingFieldValues>Cancellation Process/Communication</controllingFieldValues>
+                <controllingFieldValues>PDL Sent Payment Pending</controllingFieldValues>
+                <controllingFieldValues>Possession Done</controllingFieldValues>
+                <controllingFieldValues>Pre-Possession</controllingFieldValues>
+                <controllingFieldValues>Readiness received handover pending</controllingFieldValues>
+                <controllingFieldValues>Site visit done-readiness pending</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ineligible for loan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal case</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration delay</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan Sanction Awaited</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Management deviation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Small amount/ ST/ TDS due</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Voluntary cancellation request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joint Retention Efforts with SM</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ringing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Open</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Call back - Third party answered</fullName>
+                <default>false</default>
+                <controllingFieldValues>Open</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Broker</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Builder Credibility</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competition</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Committee Disapproved</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Construction Timeline</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Currency Issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Easy Lease</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invalid Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inventory Choice Availability</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Location</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Contactable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not interested</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment Schedule</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wrong number</fullName>
+                <default>false</default>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email requested</fullName>
+                <default>false</default>
+                <controllingFieldValues>Follow up</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Call back requested</fullName>
+                <default>false</default>
+                <controllingFieldValues>Follow up</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lost</fullName>
+                <default>false</default>
+                <controllingFieldValues>No show</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Busy</fullName>
+                <default>false</default>
+                <controllingFieldValues>No show</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs some more time</fullName>
+                <default>false</default>
+                <controllingFieldValues>Meeting done</controllingFieldValues>
+                <controllingFieldValues>No show</controllingFieldValues>
+                <controllingFieldValues>Tele Meeting done</controllingFieldValues>
+                <controllingFieldValues>Visit Done</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Booked</fullName>
+                <default>false</default>
+                <controllingFieldValues>Meeting done</controllingFieldValues>
+                <controllingFieldValues>Tele Meeting done</controllingFieldValues>
+                <controllingFieldValues>Visit Done</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unit details</fullName>
+                <default>false</default>
+                <controllingFieldValues>Booking done</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compensation, Statutory Compliance (OC / Approvals)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>explained</fullName>
+                <default>false</default>
+                <controllingFieldValues>process</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>L4__c</fullName>
+        <externalId>false</externalId>
+        <label>L4</label>
+        <picklist>
+            <controllingField>L3__c</controllingField>
+            <picklistValues>
+                <fullName>Broker</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Builder Credibility</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competition</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Committee Disapproved</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Construction Timeline</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Currency Issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Easy Lease</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invalid Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inventory Choice Availability</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Location</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Contactable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not interested</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment Schedule</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wrong number</fullName>
+                <default>false</default>
+                <controllingFieldValues>Busy</controllingFieldValues>
+                <controllingFieldValues>Lost</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unit details</fullName>
+                <default>false</default>
+                <controllingFieldValues>Booked</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delayed Possession</fullName>
+                <default>false</default>
+                <controllingFieldValues>Compensation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Design/Amenity/View Related</fullName>
+                <default>false</default>
+                <controllingFieldValues>Compensation</controllingFieldValues>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mode__c</fullName>
+        <externalId>false</externalId>
+        <label>Mode</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Origin</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Walkin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PTP_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>PTP Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PTP_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>PTP Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Possession_Scheduled_Re_scheduled_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Possession Scheduled/Re-scheduled Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RECOVERY_REMARKS__c</fullName>
+        <externalId>false</externalId>
+        <label>RECOVERY REMARKS</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>RECOVERY_STATUS__c</fullName>
+        <externalId>false</externalId>
+        <label>RECOVERY STATUS</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Booking &amp; Other Costs Recd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Latest Demand Generated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession Done</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession Dues Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roadblock</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Complex functionality</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inquiry</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grievance</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operation</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New problem</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>User didn&apos;t attend training</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Existing problem</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Repeat</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_Outcome__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason (For Outcome)</label>
+        <picklist>
+            <controllingField>Status</controllingField>
+            <picklistValues>
+                <fullName>System</fullName>
+                <default>false</default>
+                <controllingFieldValues>Open</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Policy/Process</fullName>
+                <default>false</default>
+                <controllingFieldValues>Open</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client</fullName>
+                <default>false</default>
+                <controllingFieldValues>Open</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <controllingFieldValues>Open</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Personal Follow up</fullName>
+                <default>false</default>
+                <controllingFieldValues>Open</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed Satisfied</fullName>
+                <default>false</default>
+                <controllingFieldValues>Closed</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed Unsatisfied</fullName>
+                <default>false</default>
+                <controllingFieldValues>Closed</controllingFieldValues>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Remarks__c</fullName>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <closed>true</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+                <closed>false</closed>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedCompany</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedName</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Problem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <listViews>
+        <fullName>AllOpenCases</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>MyCases</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>MyOpenCases</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>default_case_queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>default case queue</label>
+        <queue>default_case_queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>email_to_case_queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>email to case queue</label>
+        <queue>email_to_case_queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.PRIORITY</customTabListAdditionalFields>
+        <excludedStandardButtons>NewCase</excludedStandardButtons>
+        <listViewButtons>New_Case1</listViewButtons>
+        <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.STATUS</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.CASE_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.SUBJECT</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.STATUS</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CASE_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Call_back_requested_Date_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(
+AND(
+TEXT( L3__c) = &quot;Call back requested&quot;,
+ISBLANK(Date__c)), True, False
+)</errorConditionFormula>
+        <errorMessage>Enter Date value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Email_requested_Date_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(
+AND(
+TEXT( L3__c) = &quot;Email requested&quot;,
+ISBLANK(Date__c)), True, False
+)</errorConditionFormula>
+        <errorMessage>Enter Date value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Meeting_Proposed_Date_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(
+AND(
+TEXT( L2__c) = &quot;Meeting Proposed&quot;,
+ISBLANK(Date__c)), True, False
+)</errorConditionFormula>
+        <errorMessage>Enter Date value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Meeting_fixed_Date_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(
+AND(
+TEXT( L2__c) = &quot;Meeting fixed&quot;,
+ISBLANK(Date__c)), True, False
+)</errorConditionFormula>
+        <errorMessage>Enter Date value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Needs_some_more_time_Date_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(
+AND(
+TEXT( L3__c) = &quot;Needs some more time&quot;,
+ISBLANK(Date__c)), True, False
+)</errorConditionFormula>
+        <errorMessage>Enter Date value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PTP_Date_and_PTP_Amount_mndatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(ISPICKVAL( L3__c , &apos;PTP&apos;), ISNULL( PTP_Amount__c), ISBLANK(PTP_Amount__c), ISBLANK( PTP_Date__c), ISNULL(PTP_Date__c))</errorConditionFormula>
+        <errorMessage>Please Enter PTP Amount and PTP Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Payment_Date_And_Payment_Amount_mndatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( OR(ISPICKVAL( L3__c , &apos;Cheque dropped at site&apos;),
+ISPICKVAL( L3__c , &apos;Online payment not reflecting&apos;),
+ISPICKVAL( L3__c , &apos;Handed over to channel partner&apos;),
+ISPICKVAL( L3__c , &apos;In Transit-Courier&apos;),
+ISPICKVAL( L3__c , &apos;Client will pay by self&apos;),
+ISPICKVAL( L3__c , &apos;Payment will come from bank&apos;),
+ISPICKVAL( L3__c , &apos;PTP&apos;),
+ISPICKVAL( L3__c , &apos;Pick up to be arranged&apos;)),
+ ISNULL( Amount__c ),  ISBLANK(Amount__c ),
+ ISBLANK( Date__c), ISNULL(Date__c) )</errorConditionFormula>
+        <errorMessage>Please Enter Amount And  Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Possession_Scheduled_Date_mndatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL(L3__c , &apos;Possession Scheduled/Re-scheduled&apos;) , ISNULL( Date__c ), ISBLANK(Date__c))</errorConditionFormula>
+        <errorMessage>Enter Date value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SDR_L3_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( 
+AND( 
+TEXT( L1__c) = &quot;SDR&quot;, 
+TEXT( L2__c) = &quot;customer not contactable&quot;, 
+ISPICKVAL(L3__c, &apos;&apos;)), True, False 
+)</errorConditionFormula>
+        <errorMessage>Please enter L3 value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Tele_meeting_fixed_Date_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(
+AND(
+TEXT( L2__c) = &quot;Tele meeting fixed&quot;,
+ISBLANK(Date__c)), True, False
+)</errorConditionFormula>
+        <errorMessage>Enter Date value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Visit_Confirmed_Date_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(
+AND(
+TEXT( L2__c) = &quot;Visit Confirmed&quot;,
+ISBLANK(Date__c)), True, False
+)</errorConditionFormula>
+        <errorMessage>Enter Date value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Visit_Proposed_Date_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(
+AND(
+TEXT( L2__c) = &quot;Visit Proposed&quot;,
+ISBLANK(Date__c)), True, False
+)</errorConditionFormula>
+        <errorMessage>Enter Date value</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Case1</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Case</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/500/e?CF00NO0000001kubF={!Opportunity.Name}&amp;CF00NO0000001kubF_lkid={!Opportunity.Id}&amp;CF00NO0000001kub5={!Opportunity.Formula_Project_Name__c}&amp;CF00NO0000001kub5_lkid={!Opportunity.ProjectId__c}&amp;def_account_id={!Opportunity.AccountId}&amp;retURL=%2F{!Opportunity.Id}</url>
+    </webLinks>
+</CustomObject>

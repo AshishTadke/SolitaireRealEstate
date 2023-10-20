@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Revisit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Revisits</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attended By Sales Executive --></label>
+        <name>Attended_By_Sales_Executive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Number --></label>
+        <name>Contact_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Visit --></label>
+        <name>Date_of_Visit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Intime --></label>
+        <name>Intime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Revisits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Outtime --></label>
+        <name>Outtime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Representative Comments --></label>
+        <name>Representative_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revisit Form No. --></label>
+        <name>Revisit_Form_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revisits --></label>
+        <name>Revisit__c</name>
+        <picklistValues>
+            <masterLabel>Revisits 1</masterLabel>
+            <translation><!-- Revisits 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revisits 2</masterLabel>
+            <translation><!-- Revisits 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revisits 3</masterLabel>
+            <translation><!-- Revisits 3 --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

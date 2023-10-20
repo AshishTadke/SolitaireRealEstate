@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Global Charges</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Global Charges</value>
+    </caseValues>
+    <fields>
+        <label><!-- + ACH --></label>
+        <name>ACH__c</name>
+    </fields>
+    <fields>
+        <label><!-- ACNO --></label>
+        <name>ACNO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge ID --></label>
+        <name>Charge_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge Type --></label>
+        <name>Charge_Type__c</name>
+        <picklistValues>
+            <masterLabel>Amenity Charge</masterLabel>
+            <translation><!-- Amenity Charge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Basic</masterLabel>
+            <translation><!-- Basic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brokerage Expense</masterLabel>
+            <translation><!-- Brokerage Expense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancellation Charges</masterLabel>
+            <translation><!-- Cancellation Charges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Car Parking</masterLabel>
+            <translation><!-- Car Parking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cheque Dishonor</masterLabel>
+            <translation><!-- Cheque Dishonor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interest Payable</masterLabel>
+            <translation><!-- Interest Payable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interest Rcvd</masterLabel>
+            <translation><!-- Interest Rcvd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Charges</masterLabel>
+            <translation><!-- Legal Charges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MVAT</masterLabel>
+            <translation><!-- MVAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLC</masterLabel>
+            <translation><!-- PLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Backup</masterLabel>
+            <translation><!-- Power Backup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refund Head</masterLabel>
+            <translation><!-- Refund Head --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registration</masterLabel>
+            <translation><!-- Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Society Charges</masterLabel>
+            <translation><!-- Society Charges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stamp Duty</masterLabel>
+            <translation><!-- Stamp Duty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tax</masterLabel>
+            <translation><!-- Tax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transfer</masterLabel>
+            <translation><!-- Transfer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Code --></label>
+        <name>Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master_Config --></label>
+        <name>Master_Config__c</name>
+        <relationshipLabel><!-- Global Charges --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Nature of Charge --></label>
+        <name>Nature_of_Charge__c</name>
+        <picklistValues>
+            <masterLabel>Debtors</masterLabel>
+            <translation><!-- Debtors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Income</masterLabel>
+            <translation><!-- Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liability</masterLabel>
+            <translation><!-- Liability --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- + PC --></label>
+        <name>PC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Posting to FA system --></label>
+        <name>Posting_to_FA_system__c</name>
+        <picklistValues>
+            <masterLabel>ACNO</masterLabel>
+            <translation><!-- ACNO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CLC</masterLabel>
+            <translation><!-- CLC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sequence No --></label>
+        <name>Sequence_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Short Name --></label>
+        <name>Short_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Charge ID --></label>
+        <name>Standard_Charge_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Charges --></label>
+        <name>Tax_Charge__c</name>
+        <relationshipLabel><!-- Global Charges --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Global Charge Code must be three digit. --></errorMessage>
+        <name>Length_Code_Count</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting CLC  Pick Value,You cannn&apos;t enter in ACNO --></errorMessage>
+        <name>Posting_To_Fa_System_ACNO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting ACNO Pick Value,You cannn&apos;t enter in  +PC --></errorMessage>
+        <name>Posting_To_Fa_System_CLC</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- After Selecting ACNO Pick Value,You cannn&apos;t enter in +ACH --></errorMessage>
+        <name>Posting_To_Fa_System_CLC_ACNO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You Cannot Select Tax Charge for Tax --></errorMessage>
+        <name>Tax_Charge_must_be_value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannn&apos;t enter in ACNO without selecting Posting to FA System Pick Value. --></errorMessage>
+        <name>Without_Selecting_Entering_in_ACNO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannn&apos;t enter in ACH without selecting Posting to FA System Pick Value. --></errorMessage>
+        <name>Without_Selecting_Entering_in_CLC</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannn&apos;t enter in PC without selecting Posting to FA System Pick Value. --></errorMessage>
+        <name>Without_Selecting_Entering_in_PC</name>
+    </validationRules>
+</CustomObjectTranslation>

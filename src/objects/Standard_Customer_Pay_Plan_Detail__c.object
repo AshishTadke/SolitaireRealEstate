@@ -1,0 +1,2294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Revise_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Revise Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Add_Token_GST__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Add Token GST</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Advance_Demand_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Advance Demand Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount_Value__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>%/Amount Value</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>%/Amount</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Percentage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amount</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Basic_Original__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Basic Original</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Basic__c</fullName>
+        <externalId>false</externalId>
+        <label>Basic</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPPH_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>CPPH Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Calculate_Installment_Amount_as__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Calculate Installment Amount as(%)</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Comments</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Charge_Amount_Advance_Recd__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Any advance paid by the customer against this milestone cost</description>
+        <externalId>false</externalId>
+        <label>Installment Amount (Advance Recd)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Charge_Amount_Billed__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Billed amount for charge type [basic, utilities, infra, legal etc.,]</description>
+        <externalId>false</externalId>
+        <label>Installment Amount (Demanded)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Charge_Amount_Due__c</fullName>
+        <externalId>false</externalId>
+        <formula>Charge_Amount_Billed__c -  Charge_Amount_Paid__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Installment Amount (Balance)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Charge_Amount_Paid__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Amount received from customer against the billed amount</description>
+        <externalId>false</externalId>
+        <label>Installment Amount (Paid)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CheckUpdateStdCustPayPlanDet__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CheckUpdateStdCustPayPlanDet</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Construction_Stage_Update_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Construction Stage Update Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contribution_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Contribution From</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial Institution</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Pay_Plan_Header__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Customer Pay Plan Header</label>
+        <referenceTo>Customer_Pay_Plan_Header__c</referenceTo>
+        <relationshipLabel>Standard Customer Pay Plan Details</relationshipLabel>
+        <relationshipName>Standard_Customer_Pay_Plan_Detail</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Day_0_ServiceTax_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Day 0 ServiceTax Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Months_Value__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Day/Months Value</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Months__c</fullName>
+        <externalId>false</externalId>
+        <label>Days/Months</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Day(s)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Month(s)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Deduct_Token__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enter the stage at which token is to be deducted</description>
+        <externalId>false</externalId>
+        <label>Deduct Token</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Demand_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(!ISBLANK(Milestone_Demand_Id__c), HYPERLINK(&quot;/&quot;&amp; Milestone_Demand_Id__c, &quot;Milestone Demand&quot;),&quot;Not Raised&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Demand Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Demand_Overdue_Ageing__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(IsPaymentOverdue__c = TRUE,  (TODAY() -   Payment_Due_Date__c) , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Demand Overdue Ageing</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Development_Charges__c</fullName>
+        <externalId>false</externalId>
+        <label>Development Charges</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dont_Override__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Dont Override</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date on which the demand should be raised for this milestone. Automatically managed by the system based on the  Construction Stages</inlineHelpText>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Due_Date_on_Quote__c</fullName>
+        <description>Storing the original due date as on the quote for reference</description>
+        <externalId>false</externalId>
+        <label>Due Date (on Quote)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Floor_Rise__c</fullName>
+        <externalId>false</externalId>
+        <label>Floor Rise</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Infrastructure_Charges__c</fullName>
+        <externalId>false</externalId>
+        <label>Infrastructure Charges</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inst_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Inst No</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Installment_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Installment Number</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Installment__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Installment Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Int_Flatcost_Paid__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Int Flatcost (Paid)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Int_Flatcost_Pending__c</fullName>
+        <externalId>false</externalId>
+        <formula>Int_Flatcost_Total__c -(  Int_Flatcost_Paid__c +  Int_Flatcost_Waived__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Int Flatcost (Pending)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Int_Flatcost_Total__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Int Flatcost (Total)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Int_Flatcost_Waived__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Int Flatcost (Waived)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Int_ServiceTax_Paid__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Int ServiceTax (Paid)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Int_ServiceTax_Pending__c</fullName>
+        <externalId>false</externalId>
+        <formula>Int_ServiceTax_Total__c - (  Int_ServiceTax_Waived__c  +  Int_ServiceTax_Paid__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Int ServiceTax (Pending)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Int_ServiceTax_Total__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Int ServiceTax (Total)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Int_ServiceTax_Waived__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Int ServiceTax (Waived)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Integer_Installment_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE( Inst_No__c ) * 100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Integer Installment No</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InterestTest__c</fullName>
+        <externalId>false</externalId>
+        <label>InterestTest</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>InterestValue__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(IsPaymentOverdue__c = True,
+(Charge_Amount_Due__c+Service_Tax_Amount_Due__c)*Project__r.RDS_Interest_Rate__c/36500*(TODAY()-Payment_Due_Date__c) ,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>InterestValue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_OverDue__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( Due_Date__c &lt; TODAY()&amp;&amp;  NOT(IsSendDemandLetter__c) &amp;&amp;  Is_Milestone_Achieved__c , true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice OverDue</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Raised_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Raised Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IsPaymentOverdue__c</fullName>
+        <externalId>false</externalId>
+        <formula>AND((Payment_Due_Date__c &lt;  TODAY()),OR((Charge_Amount_Due__c &gt; 0), (Service_Tax_Amount_Due__c &gt;0)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This flag indicates if a payment is overdue.</inlineHelpText>
+        <label>IsPaymentOverdue</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsSendDemandLetter__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsDemandLetterSent</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Milestone_Achieved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether the construction stage is complete</description>
+        <externalId>false</externalId>
+        <label>Is Milestone Achieved</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_PTP_Partly_Paid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>PTP Partly Paid</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Registration_Done__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Registration Done</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_to_be_Paid__c</fullName>
+        <externalId>false</externalId>
+        <label>Is to be Paid</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Construction Stage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>From Dt. of Booking</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>From Dt. of Registration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Is_to_be__c</fullName>
+        <externalId>false</externalId>
+        <label>Is to be Paid</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L1__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason For Call</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Collections</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Target Calling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feedback</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>L2__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason Category</label>
+        <picklist>
+            <controllingField>L1__c</controllingField>
+            <picklistValues>
+                <fullName>Grievance</fullName>
+                <default>false</default>
+                <controllingFieldValues>Post Sales</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Post Sales</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feedback / General Interaction</fullName>
+                <default>false</default>
+                <controllingFieldValues>Post Sales</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greetings</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demand Intimation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Due Date Intimation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation Intimation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operation Calls</fullName>
+                <default>false</default>
+                <controllingFieldValues>Target Calling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suggestions</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Know Your Customer</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Appreciation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delay Expected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Contactable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DNC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>For Bank Disbursement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asked to call back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Need to call back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect number</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Promised to pay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>L3__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason Sub Category</label>
+        <picklist>
+            <controllingField>L2__c</controllingField>
+            <picklistValues>
+                <fullName>Interest waiver not accepted</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession delay</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Car parks not being alloted</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unhappy with RM</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delay in registration</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs to talk to a senior</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs to talk to Promoter</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Revised area not acceptable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wants to resell prior to lock in ending</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disputing resale transfer charges</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mis-selling</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contemplating Legal Action</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disputing changes in Flat</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Concerns due to media report</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Old payment not reflecting</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flat issues on possession</fullName>
+                <default>false</default>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+                <controllingFieldValues>Feedback / General Interaction</controllingFieldValues>
+                <controllingFieldValues>Grievance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Duplicate invoice request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Receipt request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ledger required</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Architect certificate request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request for registration</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MVAT and Stamp duty details required</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TDS Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs copy of Agreement for Sale</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Haven&apos;t received confirmation / Allotment</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change in correspondance requests</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change in applicant name</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resale process enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resale NOC request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bank NOC request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal transfer of unit</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interior change request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fit out handover request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Tax Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possession related</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation process know how</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refund process know how</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Information on portal usage required</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loyalty details</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CP registration process know how</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maintenance Request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback / General Interaction</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAM Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback / General Interaction</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Property Tax Enquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback / General Interaction</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Car Park Query</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback / General Interaction</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Need duplicate CAM bill</fullName>
+                <default>false</default>
+                <controllingFieldValues>Feedback / General Interaction</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Event</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Campaign</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greetings1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Greetings</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demand Intimation1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Demand Intimation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Due Date Intimation1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Due Date Intimation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation Intimation1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cancellation Intimation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operation Calls1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation Calls</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suggestions1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Suggestions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Know Your Customer1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Know Your Customer</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Appreciation1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Appreciation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Full Payment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part - Funds issue - will clear outstanding with next installment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part - Funds issue - will clear outstanding within next month</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part - Funds issue - will clear outstanding within next quarter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part - Will apply for bank loan for balance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part - Will apply for bank loan for next payment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part - Requested for deviation in payment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Under cancellation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan Sanction awaited - Non RFA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan Sanction awaited - RFA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan disbursal pending - Non RFA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan disbursal pending - RFA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan disbursal pending; Registration delay - Customer issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loan disbursal pending; Registration delay - Radius issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ineligible for loan-Banking Plan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ineligible for loan -Rejected by RFA and Non RFA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial Constraint-Requested for Deferment</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial Constraint-Applying for loan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial Constraint-Inelligible for Loan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal Case</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer in progress</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resale in progress</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Humanitarian grounds (medical / Death)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approval Issue - Unapproved floor - Bank funded</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approval Issue - Building/floor cancelled</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TDS Due</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&lt;0.5% Due - Shall pay in next Installment</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration delay - Customer issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration delay - Radius issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invoicing error</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment tracking under process</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dispute - Delay in Possession</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dispute - Interest waiver requested</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dispute - Delay providing documents - Radius Issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dispute - Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demand not sent - records not updated</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer service Issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Management Deviation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Delay Expected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wrong no</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No not reachable</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attempted - 1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attempted - 2</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attempted - 3</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attempted - 4</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attempted - 5</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asked to Call back</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Someone else attended</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not Contactable</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Management Direction</fullName>
+                <default>false</default>
+                <controllingFieldValues>DNC</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment on Possession</fullName>
+                <default>false</default>
+                <controllingFieldValues>DNC</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bank has query - Contact bank RM</fullName>
+                <default>false</default>
+                <controllingFieldValues>For Bank Disbursement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Send original demand to Bank</fullName>
+                <default>false</default>
+                <controllingFieldValues>For Bank Disbursement</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Send architecht certificate to Bank</fullName>
+                <default>false</default>
+                <controllingFieldValues>For Bank Disbursement</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Last_Call_Disposition__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Call Disposition</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Promised to pay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asked to call back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Need to call back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect number</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Marked_for_Interest__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Marked for Interest</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Milestone_Demand_Id__c</fullName>
+        <description>Id of demand record that was raised for demanding the payment for this milestone</description>
+        <externalId>false</externalId>
+        <label>Milestone Demand Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Milestone_Percentage__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Milestone Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>OC_Milestone__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>OC Milestone</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>On_date__c</fullName>
+        <externalId>false</externalId>
+        <label>On date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Original_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Standard_Pay_Plan_Header__r.Charge_Code__r.S_Charge_Percentage__c  &lt;&gt; 0,Standard_Pay_Plan_Header__r.Charge_Code__r.S_Charge_Percentage__c,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Original Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PTP_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>PTP Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PTP_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>PTP Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PTP_Instrument__c</fullName>
+        <externalId>false</externalId>
+        <label>PTP Instrument</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Cheque</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demand Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NEFT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RTGS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pay Order</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PayPlanIID__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>PayPlanIID</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Due Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pick_up_address__c</fullName>
+        <externalId>false</externalId>
+        <label>Pick up address</label>
+        <length>400</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Premium_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Premium 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Premium_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Premium 2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Premium_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Premium 3</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Premium_4__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Premium 4</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Charge__c</fullName>
+        <externalId>false</externalId>
+        <formula>Standard_Pay_Plan_Header__r.Charge_Code__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Construction_Stages__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Construction Stages</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Project_Construction_Stages__c.Tower__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Tower__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Project_Construction_Stages__c</referenceTo>
+        <relationshipLabel>Standard Customer Pay Plan Details</relationshipLabel>
+        <relationshipName>Standard_Customer_Pay_Plan_Detail</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Standard Customer Pay Plan Details</relationshipLabel>
+        <relationshipName>Standard_Customer_Pay_Plan_Details</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Raised_Advance_Demand__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether an advance demand has been raised on this milestone</description>
+        <externalId>false</externalId>
+        <label>Raised Advance Demand</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_deferment__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for deferment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Registration_Linked__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Registration Linked</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Remark__c</fullName>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Remarks__c</fullName>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Remider_1_Reg_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Remider 1 Reg. Unit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Remider_1_Un_Reg_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Remider 1 Un-Reg. Unit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Remider_2_Reg_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Remider 2 Reg. Unit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Remider_2_Un_Reg_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Remider 2 Un-Reg. Unit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Revised_Invoice_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Revised Invoice Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ST_On_Basic__c</fullName>
+        <externalId>false</externalId>
+        <label>ST On Basic</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ST_On_Development_Charges__c</fullName>
+        <externalId>false</externalId>
+        <label>ST On Development Charges</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ST_On_Floor_Rise__c</fullName>
+        <externalId>false</externalId>
+        <label>ST On Floor Rise</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ST_On_Infrastructure_Charges__c</fullName>
+        <externalId>false</externalId>
+        <label>ST On Infrastructure Charges</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ST_on_Premium_1__c</fullName>
+        <externalId>false</externalId>
+        <label>ST on Premium 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ST_on_Premium_2__c</fullName>
+        <externalId>false</externalId>
+        <label>ST on Premium 2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ST_on_Premium_3__c</fullName>
+        <externalId>false</externalId>
+        <label>ST on Premium 3</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ST_on_Premium_4__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>ST on Premium 4</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Tax_Amount_Advance_Recd__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Any advance recd on service tax for this milestone</description>
+        <externalId>false</externalId>
+        <label>Service Tax Amount (Advance Recd)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Tax_Amount_Billed__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Amount of service tax for which invoice has been raised</description>
+        <externalId>false</externalId>
+        <label>Service Tax Amount (Demanded)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Tax_Amount_Due__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Tax_Amount_Billed__c -  Service_Tax_Amount_Paid__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Tax Amount (Balance)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Tax_Amount_Paid__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Amount paid against service tax for this milestone</description>
+        <externalId>false</externalId>
+        <label>Service Tax Amount (Paid)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Tax_Amount_Q__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Service Tax Amount (On Quote)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StageIID__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>StageIID</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Standard_Pay_Plan_Header__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Standard Pay Plan Header</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Standard_Pay_Plan_Header__c.Tower__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Tower__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Standard_Pay_Plan_Header__c</referenceTo>
+        <relationshipLabel>Standard Customer Pay Plan Details</relationshipLabel>
+        <relationshipName>Standard_Customer_Pay_Plan_Details</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TDS__c</fullName>
+        <externalId>false</externalId>
+        <label>TDS</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tax_Amount_1__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Tax Amount 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tax_Amount_2__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Tax Amount 2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tax_Name_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax Name 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tax_Name_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax Name 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Charge_Value_Minus__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Charge Value Minus</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Flat_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>Basic__c +  Development_Charges__c +  Floor_Rise__c +  Infrastructure_Charges__c +  Premium_1__c +  Premium_2__c +  Premium_3__c + Premium_4__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Flat Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Interest_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total Interest Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_ST__c</fullName>
+        <externalId>false</externalId>
+        <formula>ST_On_Basic__c +  ST_On_Development_Charges__c +  ST_On_Floor_Rise__c +   ST_On_Infrastructure_Charges__c +  ST_on_Premium_1__c +  ST_on_Premium_2__c +  ST_on_Premium_3__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total ST</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_of_Tax_Av_Milestone_wise__c</fullName>
+        <externalId>false</externalId>
+        <formula>Installment__c  +  Service_Tax_Amount_Q__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total of Tax &amp; Av Milestone wise</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tower__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Tower</label>
+        <referenceTo>Tower__c</referenceTo>
+        <relationshipLabel>Standard Customer Pay Plan Details</relationshipLabel>
+        <relationshipName>Standard_Customer_Pay_Plan_Details</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Unique_ConstructionStage__c</fullName>
+        <externalId>false</externalId>
+        <label>Unique ConstructionStage</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Value</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gst__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>gst</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Standard Customer Pay Plan Detail</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SCPPD-{000}</displayFormat>
+        <label>Standard Customer Pay Plan Detail Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Standard Customer Pay Plan Details</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Installment_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Is_to_be__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Installment__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Charge_Amount_Due__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>After_Selected_PercentageAmount_Value</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Amount__c ,&apos;Percentage&apos;) , Amount_Value__c  &gt; 100)</errorConditionFormula>
+        <errorDisplayField>Amount__c</errorDisplayField>
+        <errorMessage>After Selecting Percentage Picklist Value of %Amount  ,You cannot  enter %/Amount Value greater than 100.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>After_Selecting_On_date</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Is_to_be_Paid__c , &apos;On Date&apos;) , ISBLANK(  On_date__c  ) )</errorConditionFormula>
+        <errorDisplayField>On_date__c</errorDisplayField>
+        <errorMessage>After Selecting On Date Pick Value of Is to be Paid Pick List,On Date cann&apos;t be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Amount_cannt_be_blank</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(OR(ISPICKVAL( Amount__c ,&apos;Amount&apos;) , ISPICKVAL( Amount__c , &apos;Percentage&apos;)) ,  ISBLANK( Calculate_Installment_Amount_as__c ), ISBLANK( Total_Charge_Value_Minus__c ), ISBLANK( Amount_Value__c ) )</errorConditionFormula>
+        <errorDisplayField>Amount__c</errorDisplayField>
+        <errorMessage>% Amount Value cannot be blank,When Calculate Installment Amount as(%) or Total Charge Value Minus are blank</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Enter_Days_Months_Value</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Days_Months__c , &apos;&apos;) , NOT( ISBLANK( Days_Months_Value__c ) ) )</errorConditionFormula>
+        <errorDisplayField>Days_Months__c</errorDisplayField>
+        <errorMessage>Please Select atleast Days or Months Picklist Value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Entering_value_in_Amount_Value_and_Calcu</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(AND( NOT( ISBLANK( Amount_Value__c ) ),Amount_Value__c!=0.00) ,OR(NOT( ISBLANK(  Calculate_Installment_Amount_as__c  ) ),
+NOT(ISBLANK( Total_Charge_Value_Minus__c))))</errorConditionFormula>
+        <errorMessage>After Entering in %Amount Value,You cannot insert in Calculate Installment Amount as(%) and in Total Charge Value Minus or After Entering in Calculate Installment Amount as(%) and in Total Charge Value Minus,You cannot enter in %Amount Value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>If_Is_to_be_paid_From_Date_of_Booking</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( Customer_Pay_Plan_Header__c == null, ISPICKVAL( Is_to_be_Paid__c , &apos;From Dt. of Booking&apos;),  Days_Months_Value__c ==0, ISPICKVAL( Amount__c , &apos;Percentage&apos;)  )</errorConditionFormula>
+        <errorMessage>You Cannot set Percentage in %Amount  if  From Date of Booking is selected  in Is to be paid &amp;  Day/Month  value is 0 and customer pay plan header is null.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Is_To_Be_Paid_PickList_ValidationAfterOn</fullName>
+        <active>true</active>
+        <description>When User Select From Dt. of Booking of PickList and Enter data in On date</description>
+        <errorConditionFormula>AND( ISPICKVAL( Is_to_be_Paid__c ,&apos;From Dt. of Booking&apos;) ,NOT( ISBLANK( On_date__c ) ))</errorConditionFormula>
+        <errorDisplayField>On_date__c</errorDisplayField>
+        <errorMessage>After Selecting From Dt. of Booking Picklist Value,You Cannot enter in &quot;On date&quot; field</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Is_To_Be_Paid_PickList_ValidationCS</fullName>
+        <active>true</active>
+        <description>When User Select On Date of PickList and Enter data in Project Construction Stages</description>
+        <errorConditionFormula>AND(
+ISPICKVAL( Is_to_be_Paid__c , &apos;On Date&apos;) ,NOT( ISBLANK( Project_Construction_Stages__c ) )  )</errorConditionFormula>
+        <errorMessage>After Selecting On Date  Pick Value,You cannn&apos;t enter in Project Construction Stages</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Is_To_Be_Paid_PickList_ValidationDay</fullName>
+        <active>true</active>
+        <description>When User Select On Date of PickList and Enter data in Days/Months</description>
+        <errorConditionFormula>AND(
+ISPICKVAL( Is_to_be_Paid__c , &apos;On Date&apos;), ISPICKVAL( Days_Months__c , &apos;Day(s)&apos;)  )</errorConditionFormula>
+        <errorDisplayField>Days_Months__c</errorDisplayField>
+        <errorMessage>After Selecting On Date Pick Value,You cannn&apos;t enter in Days/Months</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Is_To_Be_Paid_PickList_ValidationDayM</fullName>
+        <active>true</active>
+        <description>When User Select On Date of PickList and Enter data in Day/Months Value</description>
+        <errorConditionFormula>AND(
+ISPICKVAL( Is_to_be_Paid__c , &apos;On Date&apos;) , 
+NOT( ISBLANK( Days_Months_Value__c ) ))</errorConditionFormula>
+        <errorDisplayField>Days_Months_Value__c</errorDisplayField>
+        <errorMessage>After Selecting On Date Pick Value,You cannn&apos;t enter in Day/Months Value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Is_To_Be_Paid_PickList_Validation_Cons</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( ISPICKVAL( Is_to_be_Paid__c , &apos;From Dt. of Booking&apos;) ,  NOT( ISBLANK( Project_Construction_Stages__c ) ) )</errorConditionFormula>
+        <errorDisplayField>Project_Construction_Stages__c</errorDisplayField>
+        <errorMessage>After Selecting From Dt. of Booking Picklist Value,You cannot select Project Construction Stages.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Is_To_Be_Paid_PickList_Validation_DayVa</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Is_to_be_Paid__c , &apos;From Dt. of Booking&apos;) , ISBLANK( Days_Months_Value__c ) )</errorConditionFormula>
+        <errorDisplayField>Days_Months_Value__c</errorDisplayField>
+        <errorMessage>After Selecting  Dt. of Booking Picklist Value of Is to be Paid Day/Months Value cannot be left blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Is_To_Be_Paid_PickList_Validation_DayVal</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Is_to_be_Paid__c , &apos;Construction Stage&apos;) ,  ISBLANK( Days_Months_Value__c ) )</errorConditionFormula>
+        <errorDisplayField>Days_Months_Value__c</errorDisplayField>
+        <errorMessage>After Selecting Construction Stage Picklist  Value,Day/Months Value Cannot be left  blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Is_To_Be_Paid_PickList_Validation_Ondate</fullName>
+        <active>true</active>
+        <description>When User Select Construction Stage of PickList and Enter data in On date.</description>
+        <errorConditionFormula>AND( ISPICKVAL( Is_to_be_Paid__c , &apos;Construction Stage&apos;) , NOT( ISBLANK( On_date__c ) ) )</errorConditionFormula>
+        <errorDisplayField>On_date__c</errorDisplayField>
+        <errorMessage>After Selecting Construction Stage Pick Value,You cannn&apos;t enter in On date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Is_To_Be_Paid_PickList_Validation_Projec</fullName>
+        <active>true</active>
+        <description>When User Select Construction Stage of PickList and Enter data in Project Construction Stages.</description>
+        <errorConditionFormula>AND( ISPICKVAL( Is_to_be_Paid__c , &apos;Construction Stage&apos;) , ISBLANK( Project_Construction_Stages__c ))</errorConditionFormula>
+        <errorDisplayField>Project_Construction_Stages__c</errorDisplayField>
+        <errorMessage>After Selecting Construction Stage Picklist Value,Project Construction Stages Cannot be left blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>On_Date_Should_not_be_less_than_Effectiv</fullName>
+        <active>true</active>
+        <errorConditionFormula>On_date__c  &lt;   Standard_Pay_Plan_Header__r.Effective_from__c</errorConditionFormula>
+        <errorDisplayField>On_date__c</errorDisplayField>
+        <errorMessage>On date should be less than the Effective from date of the Payment Plan.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Select_Percent_Amount_Entering_in_Calcul</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( ISPICKVAL( Amount__c , &apos;Percentage&apos;) ,  NOT( ISBLANK( Calculate_Installment_Amount_as__c ) )  )</errorConditionFormula>
+        <errorDisplayField>Calculate_Installment_Amount_as__c</errorDisplayField>
+        <errorMessage>After Selecting Percentage Picklist value of %/Amount ,You cannot enter in Calculate Installment Amount as(%)</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Select_Percent_Amount_Entering_in_Minus</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( ISPICKVAL( Amount__c , &apos;Percentage&apos;) , NOT( ISBLANK(  Total_Charge_Value_Minus__c  ) ) )</errorConditionFormula>
+        <errorDisplayField>Total_Charge_Value_Minus__c</errorDisplayField>
+        <errorMessage>After Selecting Percentage Picklist value of %/Amount ,You cannot enter in Total Charge Value Minus field</errorMessage>
+    </validationRules>
+</CustomObject>
